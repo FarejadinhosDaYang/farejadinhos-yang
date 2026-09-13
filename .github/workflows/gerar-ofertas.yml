@@ -3,21 +3,43 @@ name: Gerar oferta
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   gerar:
     runs-on: windows-latest
 
     steps:
-
       - name: Baixar repositorio
         uses: actions/checkout@v4
 
-      - name: Testar gerador
+      - name: Gerar oferta de teste
         shell: pwsh
         run: |
-          Write-Host "Gerador encontrado:"
-          Test-Path ".\gerador\gerar-oferta.ps1"
+          .\gerador\gerar-oferta.ps1 `
+            -Produto "Oferta de Teste Yang" `
+            -Preco "29,90" `
+            -PrecoAntigo "49,90" `
+            -Cupom "YANG10" `
+            -Link "https://example.com" `
+            -Imagem ".\assets\Captura de tela 2026-09-12 214619.png" `
+            -Slug "oferta-de-teste-yang"
 
-          Write-Host ""
-          Write-Host "Arquivos do gerador:"
-          Get-ChildItem ".\gerador"
+      - name: Mostrar resultado
+        shell: pwsh
+        run: |
+          Write-Host "Arquivos gerados:"
+          Get-ChildItem ".\ofertas\oferta-de-teste-yang" -Recurse
+
+      - name: Salvar no GitHub
+        shell: pwsh
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add assets ofertas
+
+          git commit -m "Teste: gera oferta automaticamente"
+
+          git push
