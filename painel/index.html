@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Farejadinhos da Yang</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    padding:20px;
+    background:#f4f4f4;
+    font-family:Arial,sans-serif;
+    color:#222;
+}
+
+.container{
+    max-width:600px;
+    margin:auto;
+}
+
+.card{
+    background:#fff;
+    border-radius:20px;
+    padding:24px;
+    box-shadow:0 8px 30px rgba(0,0,0,.08);
+}
+
+.logo{
+    text-align:center;
+    font-size:24px;
+    font-weight:900;
+    margin-bottom:6px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#777;
+    margin-bottom:25px;
+}
+
+label{
+    display:block;
+    font-weight:700;
+    margin-top:16px;
+    margin-bottom:6px;
+}
+
+input{
+    width:100%;
+    padding:13px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+    outline:none;
+}
+
+input:focus{
+    border-color:#e5232e;
+}
+
+button{
+    width:100%;
+    border:0;
+    border-radius:12px;
+    padding:16px;
+    margin-top:24px;
+    background:#e5232e;
+    color:white;
+    font-size:17px;
+    font-weight:900;
+    cursor:pointer;
+}
+
+button:hover{
+    opacity:.92;
+}
+
+.optional{
+    color:#888;
+    font-size:13px;
+    font-weight:normal;
+}
+
+.status{
+    display:none;
+    margin-top:20px;
+    padding:14px;
+    border-radius:10px;
+    background:#f1f1f1;
+    text-align:center;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+<div class="card">
+
+
+<div class="logo">
+🐶 FAREJADINHOS DA YANG
+</div>
+
+
+<div class="subtitle">
+Gerador de ofertas
+</div>
+
+
+<form id="ofertaForm">
+
+
+<label>
+Produto
+</label>
+
+<input
+    type="text"
+    id="produto"
+    placeholder="Ex.: Air Fryer Mondial 4L"
+    required
+>
+
+
+<label>
+Preço
+</label>
+
+<input
+    type="text"
+    id="preco"
+    placeholder="Ex.: 38,80"
+    required
+>
+
+
+<label>
+Preço antigo
+<span class="optional">(opcional)</span>
+</label>
+
+<input
+    type="text"
+    id="precoAntigo"
+    placeholder="Ex.: 59,90"
+>
+
+
+<label>
+Cupom
+<span class="optional">(opcional)</span>
+</label>
+
+<input
+    type="text"
+    id="cupom"
+    placeholder="Ex.: YANG10"
+>
+
+
+<label>
+Link da oferta
+</label>
+
+<input
+    type="url"
+    id="link"
+    placeholder="https://..."
+    required
+>
+
+
+<label>
+Imagem
+</label>
+
+<input
+    type="file"
+    id="imagem"
+    accept="image/*"
+    required
+>
+
+
+<button type="submit">
+🔥 GERAR OFERTA
+</button>
+
+
+</form>
+
+
+<div
+    class="status"
+    id="status"
+>
+Aguardando...
+</div>
+
+
+</div>
+
+</div>
+
+
+<script>
+
+const formulario =
+    document.getElementById("ofertaForm");
+
+const status =
+    document.getElementById("status");
+
+
+formulario.addEventListener(
+    "submit",
+    function(event){
+
+        event.preventDefault();
+
+        status.style.display = "block";
+
+        status.textContent =
+            "🚧 Painel funcionando! A publicação será conectada na próxima etapa.";
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
+
