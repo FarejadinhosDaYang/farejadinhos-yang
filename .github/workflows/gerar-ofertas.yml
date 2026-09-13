@@ -17,14 +17,7 @@ jobs:
       - name: Gerar oferta de teste
         shell: pwsh
         run: |
-          .\gerador\gerar-oferta.ps1 `
-            -Produto "Oferta de Teste Yang" `
-            -Preco "29,90" `
-            -PrecoAntigo "49,90" `
-            -Cupom "YANG10" `
-            -Link "https://example.com" `
-            -Imagem ".\teste\produto-teste.png"
-            -Slug "oferta-de-teste-yang"
+          & ".\gerador\gerar-oferta.ps1" -Produto "Oferta de Teste Yang" -Preco "29,90" -PrecoAntigo "49,90" -Cupom "YANG10" -Link "https://example.com" -Imagem ".\teste\produto-teste.png" -Slug "oferta-de-teste-yang"
 
       - name: Mostrar resultado
         shell: pwsh
