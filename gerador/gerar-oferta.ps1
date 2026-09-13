@@ -91,8 +91,7 @@ function HtmlEncode([string]$Texto) {
 $Gerador =
     Split-Path -Parent $MyInvocation.MyCommand.Path
 
-$Site =
-    "C:\Users\berna\OneDrive\Documentos\GitHub\farejadinhos-yang"
+$Site = Split-Path -Parent $Gerador
 
 $Assets =
     Join-Path $Site "assets"
