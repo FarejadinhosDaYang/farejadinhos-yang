@@ -5,8 +5,7 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Farejadinhos da Yang</title>
 
@@ -86,6 +85,11 @@ button:hover{
     opacity:.92;
 }
 
+button:disabled{
+    opacity:.6;
+    cursor:wait;
+}
+
 .optional{
     color:#888;
     font-size:13px;
@@ -99,33 +103,49 @@ button:hover{
     border-radius:10px;
     background:#f1f1f1;
     text-align:center;
+    word-break:break-word;
+}
+
+.resultado{
+    display:none;
+    margin-top:20px;
+    padding:16px;
+    border-radius:12px;
+    background:#eef9ee;
+}
+
+.resultado a{
+    display:block;
+    margin-top:10px;
+    color:#e5232e;
+    font-weight:700;
+    word-break:break-all;
+}
+
+.erro{
+    background:#fff0f0;
+    color:#b00000;
 }
 
 </style>
 
 </head>
 
-
 <body>
-
 
 <div class="container">
 
 <div class="card">
 
-
 <div class="logo">
 🐶 FAREJADINHOS DA YANG
 </div>
-
 
 <div class="subtitle">
 Gerador de ofertas
 </div>
 
-
 <form id="ofertaForm">
-
 
 <label>
 Produto
@@ -138,7 +158,6 @@ Produto
     required
 >
 
-
 <label>
 Preço
 </label>
@@ -149,7 +168,6 @@ Preço
     placeholder="Ex.: 38,80"
     required
 >
-
 
 <label>
 Preço antigo
@@ -162,7 +180,6 @@ Preço antigo
     placeholder="Ex.: 59,90"
 >
 
-
 <label>
 Cupom
 <span class="optional">(opcional)</span>
@@ -173,7 +190,6 @@ Cupom
     id="cupom"
     placeholder="Ex.: YANG10"
 >
-
 
 <label>
 Link da oferta
@@ -186,7 +202,6 @@ Link da oferta
     required
 >
 
-
 <label>
 Imagem
 </label>
@@ -198,27 +213,52 @@ Imagem
     required
 >
 
+<label>
+Senha
+</label>
 
-<button type="submit">
+<input
+    type="password"
+    id="senha"
+    placeholder="Senha do painel"
+    required
+>
+
+<button
+    type="submit"
+    id="botao"
+>
 🔥 GERAR OFERTA
 </button>
 
-
 </form>
-
 
 <div
     class="status"
     id="status"
 >
-Aguardando...
+Processando...
 </div>
 
+<div
+    class="resultado"
+    id="resultado"
+>
+
+<b>🎉 Oferta enviada com sucesso!</b>
+
+<a
+    id="urlOferta"
+    href="#"
+    target="_blank"
+>
+</a>
 
 </div>
 
 </div>
 
+</div>
 
 <script>
 
@@ -228,25 +268,188 @@ const formulario =
 const status =
     document.getElementById("status");
 
+const resultado =
+    document.getElementById("resultado");
+
+const urlOferta =
+    document.getElementById("urlOferta");
+
+const botao =
+    document.getElementById("botao");
 
 formulario.addEventListener(
     "submit",
-    function(event){
+    async function(event){
 
         event.preventDefault();
 
-        status.style.display = "block";
+        const produto =
+            document.getElementById("produto").value.trim();
+
+        const preco =
+            document.getElementById("preco").value.trim();
+
+        const precoAntigo =
+            document.getElementById("precoAntigo").value.trim();
+
+        const cupom =
+            document.getElementById("cupom").value.trim();
+
+        const link =
+            document.getElementById("link").value.trim();
+
+        const senha =
+            document.getElementById("senha").value;
+
+        const imagem =
+            document.getElementById("imagem").files[0];
+
+        if(!imagem){
+
+            alert("Selecione uma imagem.");
+
+            return;
+        }
+
+        /*
+         * Gera o slug automaticamente
+         */
+
+        let slug =
+            produto
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g,"")
+                .replace(/[^a-z0-9]+/g,"-")
+                .replace(/^-+|-+$/g,"");
+
+        /*
+         * Monta o formulário
+         */
+
+        const dados =
+            new FormData();
+
+        dados.append(
+            "produto",
+            produto
+        );
+
+        dados.append(
+            "preco",
+            preco
+        );
+
+        dados.append(
+            "precoAntigo",
+            precoAntigo
+        );
+
+        dados.append(
+            "cupom",
+            cupom
+        );
+
+        dados.append(
+            "link",
+            link
+        );
+
+        dados.append(
+            "slug",
+            slug
+        );
+
+        dados.append(
+            "senha",
+            senha
+        );
+
+        dados.append(
+            "imagem",
+            imagem
+        );
+
+        /*
+         * Interface
+         */
+
+        botao.disabled = true;
+
+        botao.textContent =
+            "⏳ GERANDO OFERTA...";
+
+        status.style.display =
+            "block";
+
+        status.classList.remove("erro");
 
         status.textContent =
-            "🚧 Painel funcionando! A publicação será conectada na próxima etapa.";
+            "🐶 Enviando oferta...";
+
+        resultado.style.display =
+            "none";
+
+        try{
+
+            const resposta =
+                await fetch(
+                    "https://holy-pine-e7fc.bernard-shimizu.workers.dev/",
+                    {
+                        method:"POST",
+                        body:dados
+                    }
+                );
+
+            const texto =
+                await resposta.text();
+
+            if(!resposta.ok){
+
+                throw new Error(texto);
+
+            }
+
+            const dadosResposta =
+                JSON.parse(texto);
+
+            status.textContent =
+                "🚀 Oferta enviada! Aguardando publicação...";
+
+            resultado.style.display =
+                "block";
+
+            urlOferta.href =
+                dadosResposta.url;
+
+            urlOferta.textContent =
+                dadosResposta.url;
+
+            botao.textContent =
+                "🔥 GERAR OUTRA OFERTA";
+
+        }catch(erro){
+
+            status.classList.add("erro");
+
+            status.textContent =
+                "❌ " + erro.message;
+
+            botao.textContent =
+                "TENTAR NOVAMENTE";
+
+        }finally{
+
+            botao.disabled =
+                false;
+
+        }
 
     }
 );
 
 </script>
 
-
 </body>
 
 </html>
-
