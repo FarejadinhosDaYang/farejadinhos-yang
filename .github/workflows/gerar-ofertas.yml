@@ -1,0 +1,19 @@
+name: Gerar oferta
+
+on:
+  workflow_dispatch:
+
+jobs:
+  gerar:
+    runs-on: windows-latest
+
+    steps:
+
+      - name: Baixar repositorio
+        uses: actions/checkout@v4
+
+      - name: Testar PowerShell
+        shell: pwsh
+        run: |
+          Write-Host "GitHub Actions funcionando!"
+          Write-Host "PowerShell funcionando!"
