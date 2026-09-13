@@ -12,8 +12,12 @@ jobs:
       - name: Baixar repositorio
         uses: actions/checkout@v4
 
-      - name: Testar PowerShell
+      - name: Testar gerador
         shell: pwsh
         run: |
-          Write-Host "GitHub Actions funcionando!"
-          Write-Host "PowerShell funcionando!"
+          Write-Host "Gerador encontrado:"
+          Test-Path ".\gerador\gerar-oferta.ps1"
+
+          Write-Host ""
+          Write-Host "Arquivos do gerador:"
+          Get-ChildItem ".\gerador"
