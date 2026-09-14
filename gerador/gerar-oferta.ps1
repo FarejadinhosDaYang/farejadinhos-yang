@@ -169,6 +169,7 @@ Copy-Item `
 Add-Type -AssemblyName System.Drawing
 
 $LarguraMaxima = 1200
+$LarguraMinima = 600
 $QualidadeJpeg = 85
 
 $CaminhoImagemFinal = Join-Path $Assets $ImagemNome
@@ -183,8 +184,16 @@ try {
     $AlturaOriginal = $ImagemOriginal.Height
 
     if ($LarguraOriginal -gt $LarguraMaxima) {
+        # Imagem grande demais: encolhe
         $NovaLargura = $LarguraMaxima
         $NovaAltura = [int]([double]$AlturaOriginal * ($LarguraMaxima / $LarguraOriginal))
+    }
+    elseif ($LarguraOriginal -lt $LarguraMinima) {
+        # Imagem pequena demais pro WhatsApp mostrar o preview grande:
+        # amplia até a largura mínima segura (perde um pouco de nitidez,
+        # mas é melhor que cair no preview minúsculo)
+        $NovaLargura = $LarguraMinima
+        $NovaAltura = [int]([double]$AlturaOriginal * ($LarguraMinima / $LarguraOriginal))
     }
     else {
         $NovaLargura = $LarguraOriginal
