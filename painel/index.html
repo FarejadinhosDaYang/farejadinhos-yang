@@ -83,6 +83,21 @@ select:focus{
     border-color:#e5232e;
 }
 
+textarea{
+    width:100%;
+    padding:13px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:15px;
+    outline:none;
+    font-family:inherit;
+    resize:vertical;
+}
+
+textarea:focus{
+    border-color:#e5232e;
+}
+
 .checkboxLabel{
     display:flex;
     align-items:center;
@@ -299,6 +314,15 @@ Senha
         📷 Foto
         </button>
 
+        <button
+            type="button"
+            class="aba"
+            id="abaTexto"
+            onclick="mudarAba('texto')"
+        >
+        📋 Texto
+        </button>
+
     </div>
 
     <div id="campoLink">
@@ -315,6 +339,14 @@ Senha
             id="fotoExtrair"
             accept="image/*"
         >
+    </div>
+
+    <div id="campoTexto" style="display:none">
+        <textarea
+            id="textoExtrair"
+            rows="6"
+            placeholder="Cole aqui a mensagem inteira do grupo de promoção"
+        ></textarea>
     </div>
 
     <button
@@ -499,11 +531,17 @@ function mudarAba(modo){
     document.getElementById("abaFoto")
         .classList.toggle("ativa", modo === "foto");
 
+    document.getElementById("abaTexto")
+        .classList.toggle("ativa", modo === "texto");
+
     document.getElementById("campoLink").style.display =
         modo === "link" ? "block" : "none";
 
     document.getElementById("campoFoto").style.display =
         modo === "foto" ? "block" : "none";
+
+    document.getElementById("campoTexto").style.display =
+        modo === "texto" ? "block" : "none";
 }
 
 async function extrairDados(){
@@ -533,7 +571,7 @@ async function extrairDados(){
 
         dados.append("link", link);
 
-    } else {
+    } else if(abaAtual === "foto"){
 
         const arquivo =
             document.getElementById("fotoExtrair").files[0];
@@ -544,6 +582,18 @@ async function extrairDados(){
         }
 
         dados.append("imagem", arquivo);
+
+    } else {
+
+        const texto =
+            document.getElementById("textoExtrair").value.trim();
+
+        if(!texto){
+            alert("Cole o texto da mensagem.");
+            return;
+        }
+
+        dados.append("texto", texto);
     }
 
     const btn =
@@ -596,6 +646,10 @@ async function extrairDados(){
         if(abaAtual === "link"){
             const linkColado = document.getElementById("linkExtrair").value.trim();
             document.getElementById("link").value = resultado.linkAfiliado || linkColado;
+        }
+
+        if(abaAtual === "texto" && resultado.link){
+            document.getElementById("link").value = resultado.link;
         }
 
         /*
