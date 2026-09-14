@@ -178,6 +178,7 @@ $ImagemNomeH =
 # ==========================================
 
 $OldBlock = ""
+$PrecoAntigoFormatado = ""
 
 
 if ($PrecoAntigo.Trim() -ne "") {
@@ -221,13 +222,11 @@ $BaseUrl =
 
 
 # ==========================================
-# IMAGEM DO PREVIEW
-#
-# AGORA USA A IMAGEM ORIGINAL
+# IMAGEM DO PREVIEW (URL absoluta, sem ../../)
 # ==========================================
 
 $ImageUrl =
-    $BaseUrl + "../../assets/" + $ImagemNome
+    "https://farejadinhosdayang.github.io/farejadinhos-yang/assets/$ImagemNome"
 
 
 # ==========================================
@@ -412,6 +411,15 @@ h1{
     margin-top:15px
 }
 
+.voltar{
+    display:block;
+    text-align:center;
+    color:#999;
+    font-size:12px;
+    text-decoration:none;
+    margin-top:14px
+}
+
 </style>
 
 </head>
@@ -477,6 +485,9 @@ Alguns links podem gerar comiss$([char]0xE3)o.
 </div>
 
 
+<a class="voltar" href="../">Ver todas as ofertas</a>
+
+
 </div>
 
 
@@ -507,6 +518,65 @@ $Utf8NoBom =
 [System.IO.File]::WriteAllText(
     $Arquivo,
     $Html,
+    $Utf8NoBom
+)
+
+
+# ==========================================
+# CATÁLOGO (ofertas.json)
+#
+# Guarda os dados de cada oferta num arquivo único,
+# que alimenta a página de catálogo em /ofertas/
+# ==========================================
+
+$CatalogoPath =
+    Join-Path $Site "ofertas.json"
+
+if (Test-Path -LiteralPath $CatalogoPath) {
+
+    $CatalogoTexto =
+        Get-Content -LiteralPath $CatalogoPath -Raw -Encoding UTF8
+
+    if ([string]::IsNullOrWhiteSpace($CatalogoTexto)) {
+        $Catalogo = @()
+    }
+    else {
+        $Catalogo = @($CatalogoTexto | ConvertFrom-Json)
+    }
+
+}
+else {
+
+    $Catalogo = @()
+
+}
+
+# Remove uma entrada anterior com o mesmo slug, se existir
+# (permite rodar o gerador de novo pra atualizar uma oferta)
+$Catalogo =
+    @($Catalogo | Where-Object { $_.slug -ne $Slug })
+
+$NovaEntrada = [PSCustomObject]@{
+    produto     = $Produto
+    preco       = $PrecoFormatado
+    precoAntigo = $PrecoAntigoFormatado
+    cupom       = $Cupom
+    imagem      = $ImagemNome
+    link        = $Link
+    url         = $BaseUrl
+    slug        = $Slug
+    data        = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
+}
+
+$Catalogo =
+    @($Catalogo) + $NovaEntrada
+
+$CatalogoJson =
+    $Catalogo | ConvertTo-Json -Depth 5 -AsArray
+
+[System.IO.File]::WriteAllText(
+    $CatalogoPath,
+    $CatalogoJson,
     $Utf8NoBom
 )
 
@@ -543,10 +613,16 @@ Write-Host (Join-Path $Assets $ImagemNome)
 Write-Host ""
 
 
+Write-Host "Catalogo atualizado:"
+Write-Host $CatalogoPath
+
+
+Write-Host ""
+
+
 Write-Host "URL da oferta:"
 Write-Host $BaseUrl `
     -ForegroundColor Cyan
 
 
 Write-Host ""
-
