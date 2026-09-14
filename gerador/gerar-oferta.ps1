@@ -154,6 +154,97 @@ Copy-Item `
 
 
 # ==========================================
+# OTIMIZAR IMAGEM PARA PREVIEW (WhatsApp etc)
+#
+# O WhatsApp só mostra o preview GRANDE quando a imagem:
+# - tem pelo menos ~300px de largura (o ideal é por volta de 1200px)
+# - pesa menos de 600KB (o ideal é bem menos que isso)
+# - não é SVG
+# Como a imagem de origem varia muito (print de tela, foto de
+# marketplace, foto da Amazon), a gente sempre redimensiona e
+# recomprime aqui, garantindo que todo produto fique dentro do
+# que o WhatsApp aceita para o preview grande.
+# ==========================================
+
+Add-Type -AssemblyName System.Drawing
+
+$LarguraMaxima = 1200
+$QualidadeJpeg = 85
+
+$CaminhoImagemFinal = Join-Path $Assets $ImagemNome
+$ImagemLargura = $null
+$ImagemAltura = $null
+
+try {
+
+    $ImagemOriginal = [System.Drawing.Image]::FromFile($CaminhoImagemFinal)
+
+    $LarguraOriginal = $ImagemOriginal.Width
+    $AlturaOriginal = $ImagemOriginal.Height
+
+    if ($LarguraOriginal -gt $LarguraMaxima) {
+        $NovaLargura = $LarguraMaxima
+        $NovaAltura = [int]([double]$AlturaOriginal * ($LarguraMaxima / $LarguraOriginal))
+    }
+    else {
+        $NovaLargura = $LarguraOriginal
+        $NovaAltura = $AlturaOriginal
+    }
+
+    $Bitmap = New-Object System.Drawing.Bitmap($NovaLargura, $NovaAltura)
+    $Graficos = [System.Drawing.Graphics]::FromImage($Bitmap)
+    $Graficos.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
+    $Graficos.DrawImage($ImagemOriginal, 0, 0, $NovaLargura, $NovaAltura)
+
+    $ImagemOriginal.Dispose()
+    $Graficos.Dispose()
+
+    # Sempre salva como JPG — formato mais confiável pro preview
+    $NomeBase = [System.IO.Path]::GetFileNameWithoutExtension($ImagemNome)
+    $NovoNomeArquivo = "$NomeBase.jpg"
+    $NovoCaminho = Join-Path $Assets $NovoNomeArquivo
+
+    $CodecJpeg = [System.Drawing.Imaging.ImageCodecInfo]::GetImageEncoders() |
+        Where-Object { $_.MimeType -eq "image/jpeg" }
+
+    $ParametrosCodec = New-Object System.Drawing.Imaging.EncoderParameters(1)
+    $ParametrosCodec.Param[0] = New-Object System.Drawing.Imaging.EncoderParameter(
+        [System.Drawing.Imaging.Encoder]::Quality, $QualidadeJpeg
+    )
+
+    $Bitmap.Save($NovoCaminho, $CodecJpeg, $ParametrosCodec)
+    $Bitmap.Dispose()
+
+    # Remove o arquivo original se o nome mudou (ex: era .png, virou .jpg)
+    if ($NovoNomeArquivo -ne $ImagemNome -and (Test-Path -LiteralPath $CaminhoImagemFinal)) {
+        Remove-Item -LiteralPath $CaminhoImagemFinal -Force
+    }
+
+    $ImagemNome = $NovoNomeArquivo
+    $ImagemLargura = $NovaLargura
+    $ImagemAltura = $NovaAltura
+
+}
+catch {
+
+    Write-Host "Aviso: nao foi possivel otimizar a imagem, usando original. $($_.Exception.Message)" -ForegroundColor Yellow
+
+    try {
+        $ImagemDims = [System.Drawing.Image]::FromFile($CaminhoImagemFinal)
+        $ImagemLargura = $ImagemDims.Width
+        $ImagemAltura = $ImagemDims.Height
+        $ImagemDims.Dispose()
+    }
+    catch {
+        # Se nem isso funcionar, segue sem as dimensões — a imagem
+        # original continua sendo usada normalmente, só sem os
+        # meta tags de largura/altura.
+    }
+
+}
+
+
+# ==========================================
 # PREPARAR DADOS
 # ==========================================
 
@@ -210,6 +301,21 @@ if ($Cupom.Trim() -ne "") {
         (HtmlEncode $Cupom) +
         '</div>'
 
+}
+
+
+# ==========================================
+# DIMENSÕES DA IMAGEM (og:image:width / height)
+# ==========================================
+
+$DimensoesBlock = ""
+
+if ($ImagemLargura -and $ImagemAltura) {
+
+    $DimensoesBlock =
+        '<meta property="og:image:width" content="' + $ImagemLargura + '">' +
+        "`n" +
+        '<meta property="og:image:height" content="' + $ImagemAltura + '">'
 }
 
 
@@ -281,6 +387,9 @@ $EmojiFire $ProdutoH | Farejadinhos da Yang
 
 <meta property="og:image:alt"
       content="$ProdutoH">
+
+
+$DimensoesBlock
 
 
 <meta property="og:url"
