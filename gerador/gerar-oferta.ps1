@@ -16,7 +16,11 @@ param(
     [string]$Imagem,
 
     [Parameter(Mandatory=$true)]
-    [string]$Slug
+    [string]$Slug,
+
+    [string]$Categoria = "",
+
+    [string]$Destaque = "false"
 )
 
 $ErrorActionPreference = "Stop"
@@ -695,6 +699,8 @@ $NovaEntrada = [PSCustomObject]@{
     preco       = $PrecoFormatado
     precoAntigo = $PrecoAntigoFormatado
     cupom       = $Cupom
+    categoria   = $Categoria
+    destaque    = ($Destaque -eq "true")
     imagem      = $ImagemNome
     link        = $Link
     url         = $BaseUrl
