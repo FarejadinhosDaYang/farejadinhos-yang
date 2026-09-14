@@ -127,6 +127,55 @@ button:disabled{
     color:#b00000;
 }
 
+/* ===== Seção de extração automática ===== */
+
+.extrair{
+    margin-top:20px;
+    padding:18px;
+    border-radius:16px;
+    background:#fff8f0;
+    border:1px solid #ffe2c2;
+}
+
+.extrairTitulo{
+    font-weight:900;
+    margin-bottom:12px;
+}
+
+.abas{
+    display:flex;
+    gap:8px;
+    margin-bottom:12px;
+}
+
+.aba{
+    flex:1;
+    padding:10px;
+    margin-top:0;
+    border-radius:10px;
+    background:#fff;
+    color:#e5232e;
+    border:1px solid #e5232e;
+    font-weight:700;
+    font-size:14px;
+    cursor:pointer;
+}
+
+.aba.ativa{
+    background:#e5232e;
+    color:#fff;
+}
+
+.btnExtrair{
+    background:#222;
+}
+
+.divisor{
+    border:none;
+    border-top:1px dashed #ddd;
+    margin:22px 0 6px;
+}
+
 </style>
 
 </head>
@@ -144,6 +193,76 @@ button:disabled{
 <div class="subtitle">
 Gerador de ofertas
 </div>
+
+<label>
+Senha
+</label>
+
+<input
+    type="password"
+    id="senha"
+    placeholder="Senha do painel"
+    required
+>
+
+<div class="extrair">
+
+    <div class="extrairTitulo">
+    ✨ Preencher automaticamente
+    </div>
+
+    <div class="abas">
+
+        <button
+            type="button"
+            class="aba ativa"
+            id="abaLink"
+            onclick="mudarAba('link')"
+        >
+        🔗 Link
+        </button>
+
+        <button
+            type="button"
+            class="aba"
+            id="abaFoto"
+            onclick="mudarAba('foto')"
+        >
+        📷 Foto
+        </button>
+
+    </div>
+
+    <div id="campoLink">
+        <input
+            type="url"
+            id="linkExtrair"
+            placeholder="Cole o link do produto"
+        >
+    </div>
+
+    <div id="campoFoto" style="display:none">
+        <input
+            type="file"
+            id="fotoExtrair"
+            accept="image/*"
+        >
+    </div>
+
+    <button
+        type="button"
+        class="btnExtrair"
+        id="btnExtrair"
+        onclick="extrairDados()"
+    >
+    🔎 Extrair dados
+    </button>
+
+    <div class="status" id="statusExtrair"></div>
+
+</div>
+
+<hr class="divisor">
 
 <form id="ofertaForm">
 
@@ -213,17 +332,6 @@ Imagem
     required
 >
 
-<label>
-Senha
-</label>
-
-<input
-    type="password"
-    id="senha"
-    placeholder="Senha do painel"
-    required
->
-
 <button
     type="submit"
     id="botao"
@@ -261,6 +369,165 @@ Processando...
 </div>
 
 <script>
+
+const WORKER_URL =
+    "https://holy-pine-e7fc.bernard-shimizu.workers.dev";
+
+let abaAtual = "link";
+
+function mudarAba(modo){
+
+    abaAtual = modo;
+
+    document.getElementById("abaLink")
+        .classList.toggle("ativa", modo === "link");
+
+    document.getElementById("abaFoto")
+        .classList.toggle("ativa", modo === "foto");
+
+    document.getElementById("campoLink").style.display =
+        modo === "link" ? "block" : "none";
+
+    document.getElementById("campoFoto").style.display =
+        modo === "foto" ? "block" : "none";
+}
+
+async function extrairDados(){
+
+    const senha =
+        document.getElementById("senha").value;
+
+    if(!senha){
+        alert("Digite a senha do painel primeiro.");
+        return;
+    }
+
+    const dados = new FormData();
+
+    dados.append("senha", senha);
+    dados.append("modo", abaAtual);
+
+    if(abaAtual === "link"){
+
+        const link =
+            document.getElementById("linkExtrair").value.trim();
+
+        if(!link){
+            alert("Cole o link do produto.");
+            return;
+        }
+
+        dados.append("link", link);
+
+    } else {
+
+        const arquivo =
+            document.getElementById("fotoExtrair").files[0];
+
+        if(!arquivo){
+            alert("Selecione uma foto do produto.");
+            return;
+        }
+
+        dados.append("imagem", arquivo);
+    }
+
+    const btn =
+        document.getElementById("btnExtrair");
+
+    const statusExtrair =
+        document.getElementById("statusExtrair");
+
+    btn.disabled = true;
+    btn.textContent = "⏳ Analisando...";
+
+    statusExtrair.style.display = "block";
+    statusExtrair.classList.remove("erro");
+    statusExtrair.textContent = "🤖 Lendo os dados do produto...";
+
+    try{
+
+        const resposta = await fetch(
+            WORKER_URL + "/extrair",
+            {
+                method: "POST",
+                body: dados
+            }
+        );
+
+        const texto = await resposta.text();
+
+        if(!resposta.ok){
+            throw new Error(texto);
+        }
+
+        const resultado = JSON.parse(texto);
+
+        if(resultado.produto){
+            document.getElementById("produto").value = resultado.produto;
+        }
+
+        if(resultado.preco){
+            document.getElementById("preco").value = resultado.preco;
+        }
+
+        if(resultado.precoAntigo){
+            document.getElementById("precoAntigo").value = resultado.precoAntigo;
+        }
+
+        if(resultado.cupom){
+            document.getElementById("cupom").value = resultado.cupom;
+        }
+
+        if(abaAtual === "link"){
+            const link = document.getElementById("linkExtrair").value.trim();
+            document.getElementById("link").value = link;
+        }
+
+        /*
+         * Se veio uma imagem (base64), transforma em arquivo
+         * e já coloca no campo de imagem do formulário principal.
+         */
+
+        if(resultado.imagemBase64){
+
+            const respostaImagem = await fetch(
+                `data:${resultado.imagemMime};base64,${resultado.imagemBase64}`
+            );
+
+            const blob = await respostaImagem.blob();
+
+            const extensao =
+                resultado.imagemMime && resultado.imagemMime.includes("png")
+                    ? "png"
+                    : "jpg";
+
+            const arquivoImagem = new File(
+                [blob],
+                `produto.${extensao}`,
+                { type: resultado.imagemMime }
+            );
+
+            const dt = new DataTransfer();
+            dt.items.add(arquivoImagem);
+
+            document.getElementById("imagem").files = dt.files;
+        }
+
+        statusExtrair.textContent =
+            "✅ Dados preenchidos! Confira tudo antes de gerar a oferta.";
+
+    }catch(erro){
+
+        statusExtrair.classList.add("erro");
+        statusExtrair.textContent = "❌ " + erro.message;
+
+    }finally{
+
+        btn.disabled = false;
+        btn.textContent = "🔎 Extrair dados";
+    }
+}
 
 const formulario =
     document.getElementById("ofertaForm");
@@ -394,7 +661,7 @@ formulario.addEventListener(
 
             const resposta =
                 await fetch(
-                    "https://holy-pine-e7fc.bernard-shimizu.workers.dev/",
+                    WORKER_URL + "/",
                     {
                         method:"POST",
                         body:dados
