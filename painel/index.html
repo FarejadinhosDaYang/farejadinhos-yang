@@ -122,6 +122,45 @@ button:disabled{
     word-break:break-all;
 }
 
+.legendaBox{
+    margin-top:18px;
+    padding-top:16px;
+    border-top:1px dashed #cde5cd;
+}
+
+.legendaDica{
+    font-size:13px;
+    color:#4a6b4a;
+    margin-bottom:10px;
+}
+
+.baixarImagemLink{
+    display:inline-block;
+    margin-bottom:10px;
+    color:#e5232e;
+    font-weight:700;
+    font-size:13px;
+    text-decoration:none;
+}
+
+.legendaPre{
+    background:#fff;
+    border:1px solid #dcecdc;
+    border-radius:10px;
+    padding:12px;
+    font-family:inherit;
+    font-size:14px;
+    white-space:pre-wrap;
+    word-break:break-word;
+    margin:0 0 10px;
+    color:#222;
+}
+
+#btnCopiarLegenda{
+    background:#25D366;
+    margin-top:0;
+}
+
 .erro{
     background:#fff0f0;
     color:#b00000;
@@ -362,6 +401,28 @@ Processando...
 >
 </a>
 
+<div class="legendaBox">
+
+<div class="legendaDica">
+📲 Pra postar igual ao exemplo (foto grande + legenda), baixe a imagem do produto e anexe ela no WhatsApp, colando esta legenda como texto da foto:
+</div>
+
+<a id="baixarImagem" class="baixarImagemLink" href="#" download>
+⬇️ Baixar imagem do produto
+</a>
+
+<pre id="legendaTexto" class="legendaPre"></pre>
+
+<button
+    type="button"
+    id="btnCopiarLegenda"
+    onclick="copiarLegenda()"
+>
+📋 Copiar legenda
+</button>
+
+</div>
+
 </div>
 
 </div>
@@ -480,8 +541,8 @@ async function extrairDados(){
         }
 
         if(abaAtual === "link"){
-            const link = document.getElementById("linkExtrair").value.trim();
-            document.getElementById("link").value = link;
+            const linkColado = document.getElementById("linkExtrair").value.trim();
+            document.getElementById("link").value = resultado.linkAfiliado || linkColado;
         }
 
         /*
@@ -515,7 +576,9 @@ async function extrairDados(){
         }
 
         statusExtrair.textContent =
-            "✅ Dados preenchidos! Confira tudo antes de gerar a oferta.";
+            resultado.avisoImagem
+                ? "⚠️ Dados preenchidos, mas a imagem falhou: " + resultado.avisoImagem
+                : "✅ Dados preenchidos! Confira tudo antes de gerar a oferta.";
 
     }catch(erro){
 
@@ -527,6 +590,68 @@ async function extrairDados(){
         btn.disabled = false;
         btn.textContent = "🔎 Extrair dados";
     }
+}
+
+function montarLegenda(){
+
+    const produto =
+        document.getElementById("produto").value.trim();
+
+    const preco =
+        document.getElementById("preco").value.trim();
+
+    const precoAntigo =
+        document.getElementById("precoAntigo").value.trim();
+
+    const cupom =
+        document.getElementById("cupom").value.trim();
+
+    const link =
+        document.getElementById("link").value.trim();
+
+    const linhas = [];
+
+    linhas.push("🐶 *Farejadinhos da Yang*");
+    linhas.push("");
+    linhas.push(`🔥 *${produto}*`);
+    linhas.push("");
+
+    if(precoAntigo){
+        linhas.push(`~${precoAntigo}~  *${preco}*`);
+    } else {
+        linhas.push(`*${preco}*`);
+    }
+
+    if(cupom){
+        linhas.push("");
+        linhas.push(`🏷️ CUPOM: *${cupom}*`);
+    }
+
+    linhas.push("");
+    linhas.push(`🔗 ${link}`);
+
+    return linhas.join("\n");
+}
+
+function copiarLegenda(){
+
+    const texto =
+        document.getElementById("legendaTexto").textContent;
+
+    const botao =
+        document.getElementById("btnCopiarLegenda");
+
+    navigator.clipboard.writeText(texto).then(function(){
+
+        const original = botao.textContent;
+
+        botao.textContent = "✅ Copiado!";
+
+        setTimeout(function(){
+            botao.textContent = original;
+        }, 1500);
+
+    });
 }
 
 const formulario =
@@ -691,6 +816,18 @@ formulario.addEventListener(
 
             urlOferta.textContent =
                 dadosResposta.url;
+
+            document.getElementById("legendaTexto").textContent =
+                montarLegenda();
+
+            const linkBaixar =
+                document.getElementById("baixarImagem");
+
+            linkBaixar.href =
+                URL.createObjectURL(imagem);
+
+            linkBaixar.download =
+                imagem.name || "produto.jpg";
 
             botao.textContent =
                 "🔥 GERAR OUTRA OFERTA";
