@@ -38,6 +38,17 @@ on:
         required: true
         type: string
 
+      categoria:
+        description: "Categoria"
+        required: false
+        type: string
+
+      destaque:
+        description: "Destacar na home"
+        required: false
+        type: boolean
+        default: false
+
 permissions:
   contents: write
 
@@ -59,6 +70,8 @@ jobs:
           LINK: ${{ inputs.link }}
           IMAGEM: ${{ inputs.imagem }}
           SLUG: ${{ inputs.slug }}
+          CATEGORIA: ${{ inputs.categoria }}
+          DESTAQUE: ${{ inputs.destaque }}
         run: |
           & ".\gerador\gerar-oferta.ps1" `
             -Produto "$env:PRODUTO" `
@@ -67,7 +80,9 @@ jobs:
             -Cupom "$env:CUPOM" `
             -Link "$env:LINK" `
             -Imagem "$env:IMAGEM" `
-            -Slug "$env:SLUG"
+            -Slug "$env:SLUG" `
+            -Categoria "$env:CATEGORIA" `
+            -Destaque "$env:DESTAQUE"
 
       - name: Remover imagem temporaria
         shell: pwsh
