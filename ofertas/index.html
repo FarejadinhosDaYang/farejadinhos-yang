@@ -1,928 +1,214 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Farejadinhos da Yang</title>
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🔥 Ofertas | Farejadinhos da Yang</title>
+<meta name="description" content="Todas as ofertas selecionadas pelo Farejadinhos da Yang.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="🔥 Ofertas | Farejadinhos da Yang">
+<meta property="og:description" content="Confira todos os achadinhos selecionados pela Yang.">
+<meta property="og:image" content="../assets/og-padrao.png">
 <style>
-
-*{
-    box-sizing:border-box;
-}
-
-body{
-    margin:0;
-    padding:20px;
-    background:#f4f4f4;
-    font-family:Arial,sans-serif;
-    color:#222;
-}
-
-.container{
-    max-width:600px;
-    margin:auto;
-}
-
-.card{
-    background:#fff;
-    border-radius:20px;
-    padding:24px;
-    box-shadow:0 8px 30px rgba(0,0,0,.08);
-}
-
-.logo{
-    text-align:center;
-    font-size:24px;
-    font-weight:900;
-    margin-bottom:6px;
-}
-
-.subtitle{
-    text-align:center;
-    color:#777;
-    margin-bottom:25px;
-}
-
-label{
-    display:block;
-    font-weight:700;
-    margin-top:16px;
-    margin-bottom:6px;
-}
-
-input{
-    width:100%;
-    padding:13px;
-    border:1px solid #ddd;
-    border-radius:10px;
-    font-size:16px;
-    outline:none;
-}
-
-input:focus{
-    border-color:#e5232e;
-}
-
-select{
-    width:100%;
-    padding:13px;
-    border:1px solid #ddd;
-    border-radius:10px;
-    font-size:16px;
-    outline:none;
-    background:#fff;
-    color:#222;
-}
-
-select:focus{
-    border-color:#e5232e;
-}
-
-.checkboxLabel{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    font-weight:700;
-    margin-top:16px;
-    cursor:pointer;
-}
-
-.checkboxLabel input[type="checkbox"]{
-    width:auto;
-    margin:0;
-}
-
-button{
-    width:100%;
-    border:0;
-    border-radius:12px;
-    padding:16px;
-    margin-top:24px;
-    background:#e5232e;
-    color:white;
-    font-size:17px;
-    font-weight:900;
-    cursor:pointer;
-}
-
-button:hover{
-    opacity:.92;
-}
-
-button:disabled{
-    opacity:.6;
-    cursor:wait;
-}
-
-.optional{
-    color:#888;
-    font-size:13px;
-    font-weight:normal;
-}
-
-.status{
-    display:none;
-    margin-top:20px;
-    padding:14px;
-    border-radius:10px;
-    background:#f1f1f1;
-    text-align:center;
-    word-break:break-word;
-}
-
-.resultado{
-    display:none;
-    margin-top:20px;
-    padding:16px;
-    border-radius:12px;
-    background:#eef9ee;
-}
-
-.resultado a{
-    display:block;
-    margin-top:10px;
-    color:#e5232e;
-    font-weight:700;
-    word-break:break-all;
-}
-
-.legendaBox{
-    margin-top:18px;
-    padding-top:16px;
-    border-top:1px dashed #cde5cd;
-}
-
-.legendaDica{
-    font-size:13px;
-    color:#4a6b4a;
-    margin-bottom:10px;
-}
-
-.baixarImagemLink{
-    display:inline-block;
-    margin-bottom:10px;
-    color:#e5232e;
-    font-weight:700;
-    font-size:13px;
-    text-decoration:none;
-}
-
-.legendaPre{
-    background:#fff;
-    border:1px solid #dcecdc;
-    border-radius:10px;
-    padding:12px;
-    font-family:inherit;
-    font-size:14px;
-    white-space:pre-wrap;
-    word-break:break-word;
-    margin:0 0 10px;
-    color:#222;
-}
-
-#btnCopiarLegenda{
-    background:#25D366;
-    margin-top:0;
-}
-
-.erro{
-    background:#fff0f0;
-    color:#b00000;
-}
-
-/* ===== Seção de extração automática ===== */
-
-.extrair{
-    margin-top:20px;
-    padding:18px;
-    border-radius:16px;
-    background:#fff8f0;
-    border:1px solid #ffe2c2;
-}
-
-.extrairTitulo{
-    font-weight:900;
-    margin-bottom:12px;
-}
-
-.abas{
-    display:flex;
-    gap:8px;
-    margin-bottom:12px;
-}
-
-.aba{
-    flex:1;
-    padding:10px;
-    margin-top:0;
-    border-radius:10px;
-    background:#fff;
-    color:#e5232e;
-    border:1px solid #e5232e;
-    font-weight:700;
-    font-size:14px;
-    cursor:pointer;
-}
-
-.aba.ativa{
-    background:#e5232e;
-    color:#fff;
-}
-
-.btnExtrair{
-    background:#222;
-}
-
-.divisor{
-    border:none;
-    border-top:1px dashed #ddd;
-    margin:22px 0 6px;
-}
-
+*{box-sizing:border-box}
+body{margin:0;background:#f4f4f4;font-family:Arial,sans-serif;color:#222}
+.header{background:#e5232e;color:#fff;padding:24px 16px;text-align:center}
+.header h1{margin:0;font-size:22px}
+.header p{margin:6px 0 0;opacity:.9;font-size:14px}
+.wrap{max-width:960px;margin:auto;padding:18px}
+.busca{width:100%;padding:13px;border-radius:12px;border:1px solid #ddd;font-size:15px;margin-bottom:14px;outline:none}
+.busca:focus{border-color:#e5232e}
+.categorias{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.categoriaBtn{padding:8px 14px;border-radius:20px;border:1px solid #ddd;background:#fff;color:#555;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
+.categoriaBtn.ativa{background:#e5232e;border-color:#e5232e;color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.08);display:flex;flex-direction:column}
+.card img{width:100%;aspect-ratio:1/1;object-fit:cover;background:#f0f0f0;display:block}
+.card .info{padding:14px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:15px;margin:0 0 8px;line-height:1.3;min-height:39px}
+.tagCategoria{display:inline-block;font-size:10px;font-weight:700;background:#f1f1f1;color:#666;padding:3px 8px;border-radius:8px;margin-bottom:8px;align-self:flex-start;text-transform:uppercase;letter-spacing:.3px}
+.old{font-size:13px;color:#999;text-decoration:line-through}
+.preco{font-size:20px;font-weight:900;margin:2px 0 8px}
+.cupom{display:inline-block;font-size:11px;font-weight:700;background:#fff6f6;border:1px dashed #e5232e;color:#e5232e;padding:3px 8px;border-radius:8px;margin-bottom:10px;align-self:flex-start}
+.botoes{margin-top:auto;display:flex;gap:8px}
+.botoes a,.botoes button{flex:1;text-align:center;padding:10px;border-radius:10px;font-size:13px;font-weight:800;border:0;cursor:pointer;text-decoration:none;font-family:inherit}
+.abrir{background:#e5232e;color:#fff}
+.copiar{background:#f1f1f1;color:#222}
+.vazio{text-align:center;color:#888;padding:50px 0}
 </style>
-
 </head>
-
 <body>
 
-<div class="container">
-
-<div class="card">
-
-<div class="logo">
-🐶 FAREJADINHOS DA YANG
+<div class="header">
+<h1>🐶 Farejadinhos da Yang</h1>
+<p>🔥 Todos os achadinhos, em um só lugar</p>
 </div>
 
-<div class="subtitle">
-Gerador de ofertas
-</div>
+<div class="wrap">
 
-<label>
-Senha
-</label>
+<input class="busca" id="busca" type="text" placeholder="Buscar produto...">
 
-<input
-    type="password"
-    id="senha"
-    placeholder="Senha do painel"
-    required
->
+<div class="categorias" id="categorias"></div>
 
-<div class="extrair">
+<div class="grid" id="grid"></div>
 
-    <div class="extrairTitulo">
-    ✨ Preencher automaticamente
-    </div>
-
-    <div class="abas">
-
-        <button
-            type="button"
-            class="aba ativa"
-            id="abaLink"
-            onclick="mudarAba('link')"
-        >
-        🔗 Link
-        </button>
-
-        <button
-            type="button"
-            class="aba"
-            id="abaFoto"
-            onclick="mudarAba('foto')"
-        >
-        📷 Foto
-        </button>
-
-    </div>
-
-    <div id="campoLink">
-        <input
-            type="url"
-            id="linkExtrair"
-            placeholder="Cole o link do produto"
-        >
-    </div>
-
-    <div id="campoFoto" style="display:none">
-        <input
-            type="file"
-            id="fotoExtrair"
-            accept="image/*"
-        >
-    </div>
-
-    <button
-        type="button"
-        class="btnExtrair"
-        id="btnExtrair"
-        onclick="extrairDados()"
-    >
-    🔎 Extrair dados
-    </button>
-
-    <div class="status" id="statusExtrair"></div>
-
-</div>
-
-<hr class="divisor">
-
-<form id="ofertaForm">
-
-<label>
-Produto
-</label>
-
-<input
-    type="text"
-    id="produto"
-    placeholder="Ex.: Air Fryer Mondial 4L"
-    required
->
-
-<label>
-Preço
-</label>
-
-<input
-    type="text"
-    id="preco"
-    placeholder="Ex.: 38,80"
-    required
->
-
-<label>
-Preço antigo
-<span class="optional">(opcional)</span>
-</label>
-
-<input
-    type="text"
-    id="precoAntigo"
-    placeholder="Ex.: 59,90"
->
-
-<label>
-Cupom
-<span class="optional">(opcional)</span>
-</label>
-
-<input
-    type="text"
-    id="cupom"
-    placeholder="Ex.: YANG10"
->
-
-<label>
-Categoria
-<span class="optional">(opcional)</span>
-</label>
-
-<select id="categoria">
-<option value="">Sem categoria</option>
-<option value="Café">☕ Café</option>
-<option value="Casa">🏠 Casa</option>
-<option value="Academia">🏋️ Academia</option>
-<option value="Eletrônicos">🔌 Eletrônicos</option>
-<option value="Beleza">💄 Beleza</option>
-<option value="Moda">👕 Moda</option>
-<option value="Pet">🐾 Pet</option>
-<option value="Cozinha">🍳 Cozinha</option>
-<option value="Outros">📦 Outros</option>
-</select>
-
-<label class="checkboxLabel">
-<input type="checkbox" id="destaque">
-⭐ Destacar na página principal
-</label>
-
-<label>
-Link da oferta
-</label>
-
-<input
-    type="url"
-    id="link"
-    placeholder="https://..."
-    required
->
-
-
-<label>
-Imagem
-</label>
-
-<input
-    type="file"
-    id="imagem"
-    accept="image/*"
-    required
->
-
-<button
-    type="submit"
-    id="botao"
->
-🔥 GERAR OFERTA
-</button>
-
-</form>
-
-<div
-    class="status"
-    id="status"
->
-Processando...
-</div>
-
-<div
-    class="resultado"
-    id="resultado"
->
-
-<b>🎉 Oferta enviada com sucesso!</b>
-
-<a
-    id="urlOferta"
-    href="#"
-    target="_blank"
->
-</a>
-
-<div class="legendaBox">
-
-<div class="legendaDica">
-📲 Pra postar igual ao exemplo (foto grande + legenda), baixe a imagem do produto e anexe ela no WhatsApp, colando esta legenda como texto da foto:
-</div>
-
-<a id="baixarImagem" class="baixarImagemLink" href="#" download>
-⬇️ Baixar imagem do produto
-</a>
-
-<pre id="legendaTexto" class="legendaPre"></pre>
-
-<button
-    type="button"
-    id="btnCopiarLegenda"
-    onclick="copiarLegenda()"
->
-📋 Copiar legenda
-</button>
-
-</div>
-
-</div>
-
-</div>
+<div class="vazio" id="vazio" style="display:none">Nenhuma oferta encontrada com esse filtro.</div>
 
 </div>
 
 <script>
 
-const WORKER_URL =
-    "https://holy-pine-e7fc.bernard-shimizu.workers.dev";
+const HORAS_EXPIRACAO = 24;
 
-let abaAtual = "link";
+let ofertas = [];
+let categoriaAtual = "";
 
-function mudarAba(modo){
-
-    abaAtual = modo;
-
-    document.getElementById("abaLink")
-        .classList.toggle("ativa", modo === "link");
-
-    document.getElementById("abaFoto")
-        .classList.toggle("ativa", modo === "foto");
-
-    document.getElementById("campoLink").style.display =
-        modo === "link" ? "block" : "none";
-
-    document.getElementById("campoFoto").style.display =
-        modo === "foto" ? "block" : "none";
+function escapeHtml(texto){
+  const div = document.createElement("div");
+  div.textContent = texto == null ? "" : texto;
+  return div.innerHTML;
 }
 
-async function extrairDados(){
+async function carregar(){
 
-    const senha =
-        document.getElementById("senha").value;
+  let todas = [];
 
-    if(!senha){
-        alert("Digite a senha do painel primeiro.");
-        return;
-    }
+  try{
+    const resp = await fetch("../ofertas.json", { cache: "no-store" });
+    todas = await resp.json();
+  }catch(e){
+    todas = [];
+  }
 
-    const dados = new FormData();
+  if(!Array.isArray(todas)){
+    todas = [todas];
+  }
 
-    dados.append("senha", senha);
-    dados.append("modo", abaAtual);
+  // Ofertas somem do catálogo depois de 24h (o link direto continua
+  // funcionando normalmente, só não aparece mais aqui na listagem).
+  const agora = new Date();
 
-    if(abaAtual === "link"){
+  ofertas = todas.filter(o => {
+    const dataOferta = new Date(o.data);
+    if(isNaN(dataOferta)) return true;
+    const horasPassadas = (agora - dataOferta) / (1000 * 60 * 60);
+    return horasPassadas <= HORAS_EXPIRACAO;
+  });
 
-        const link =
-            document.getElementById("linkExtrair").value.trim();
+  ofertas.sort((a, b) => new Date(b.data) - new Date(a.data));
 
-        if(!link){
-            alert("Cole o link do produto.");
-            return;
-        }
-
-        dados.append("link", link);
-
-    } else {
-
-        const arquivo =
-            document.getElementById("fotoExtrair").files[0];
-
-        if(!arquivo){
-            alert("Selecione uma foto do produto.");
-            return;
-        }
-
-        dados.append("imagem", arquivo);
-    }
-
-    const btn =
-        document.getElementById("btnExtrair");
-
-    const statusExtrair =
-        document.getElementById("statusExtrair");
-
-    btn.disabled = true;
-    btn.textContent = "⏳ Analisando...";
-
-    statusExtrair.style.display = "block";
-    statusExtrair.classList.remove("erro");
-    statusExtrair.textContent = "🤖 Lendo os dados do produto...";
-
-    try{
-
-        const resposta = await fetch(
-            WORKER_URL + "/extrair",
-            {
-                method: "POST",
-                body: dados
-            }
-        );
-
-        const texto = await resposta.text();
-
-        if(!resposta.ok){
-            throw new Error(texto);
-        }
-
-        const resultado = JSON.parse(texto);
-
-        if(resultado.produto){
-            document.getElementById("produto").value = resultado.produto;
-        }
-
-        if(resultado.preco){
-            document.getElementById("preco").value = resultado.preco;
-        }
-
-        if(resultado.precoAntigo){
-            document.getElementById("precoAntigo").value = resultado.precoAntigo;
-        }
-
-        if(resultado.cupom){
-            document.getElementById("cupom").value = resultado.cupom;
-        }
-
-        if(abaAtual === "link"){
-            const linkColado = document.getElementById("linkExtrair").value.trim();
-            document.getElementById("link").value = resultado.linkAfiliado || linkColado;
-        }
-
-        /*
-         * Se veio uma imagem (base64), transforma em arquivo
-         * e já coloca no campo de imagem do formulário principal.
-         */
-
-        if(resultado.imagemBase64){
-
-            const respostaImagem = await fetch(
-                `data:${resultado.imagemMime};base64,${resultado.imagemBase64}`
-            );
-
-            const blob = await respostaImagem.blob();
-
-            const extensao =
-                resultado.imagemMime && resultado.imagemMime.includes("png")
-                    ? "png"
-                    : "jpg";
-
-            const arquivoImagem = new File(
-                [blob],
-                `produto.${extensao}`,
-                { type: resultado.imagemMime }
-            );
-
-            const dt = new DataTransfer();
-            dt.items.add(arquivoImagem);
-
-            document.getElementById("imagem").files = dt.files;
-        }
-
-        statusExtrair.textContent =
-            resultado.avisoImagem
-                ? "⚠️ Dados preenchidos, mas a imagem falhou: " + resultado.avisoImagem
-                : "✅ Dados preenchidos! Confira tudo antes de gerar a oferta.";
-
-    }catch(erro){
-
-        statusExtrair.classList.add("erro");
-        statusExtrair.textContent = "❌ " + erro.message;
-
-    }finally{
-
-        btn.disabled = false;
-        btn.textContent = "🔎 Extrair dados";
-    }
+  montarCategorias();
+  aplicarFiltros();
 }
 
-function montarLegenda(){
+function montarCategorias(){
 
-    const produto =
-        document.getElementById("produto").value.trim();
+  const container = document.getElementById("categorias");
 
-    const preco =
-        document.getElementById("preco").value.trim();
+  const categorias = [...new Set(
+    ofertas.map(o => (o.categoria || "").trim()).filter(c => c !== "")
+  )].sort();
 
-    const precoAntigo =
-        document.getElementById("precoAntigo").value.trim();
+  if(categorias.length === 0){
+    container.innerHTML = "";
+    return;
+  }
 
-    const cupom =
-        document.getElementById("cupom").value.trim();
+  let html = `<button type="button" class="categoriaBtn ativa" data-categoria="">Todas</button>`;
 
-    const link =
-        document.getElementById("link").value.trim();
+  categorias.forEach(c => {
+    html += `<button type="button" class="categoriaBtn" data-categoria="${escapeHtml(c)}">${escapeHtml(c)}</button>`;
+  });
 
-    const linhas = [];
+  container.innerHTML = html;
 
-    linhas.push("🐶 *Farejadinhos da Yang*");
-    linhas.push("");
-    linhas.push(`🔥 *${produto}*`);
-    linhas.push("");
-
-    if(precoAntigo){
-        linhas.push(`~${precoAntigo}~  *${preco}*`);
-    } else {
-        linhas.push(`*${preco}*`);
-    }
-
-    if(cupom){
-        linhas.push("");
-        linhas.push(`🏷️ CUPOM: *${cupom}*`);
-    }
-
-    linhas.push("");
-    linhas.push(`🔗 ${link}`);
-
-    return linhas.join("\n");
-}
-
-function copiarLegenda(){
-
-    const texto =
-        document.getElementById("legendaTexto").textContent;
-
-    const botao =
-        document.getElementById("btnCopiarLegenda");
-
-    navigator.clipboard.writeText(texto).then(function(){
-
-        const original = botao.textContent;
-
-        botao.textContent = "✅ Copiado!";
-
-        setTimeout(function(){
-            botao.textContent = original;
-        }, 1500);
-
+  container.querySelectorAll(".categoriaBtn").forEach(btn => {
+    btn.addEventListener("click", function(){
+      categoriaAtual = this.dataset.categoria;
+      container.querySelectorAll(".categoriaBtn").forEach(b => b.classList.remove("ativa"));
+      this.classList.add("ativa");
+      aplicarFiltros();
     });
+  });
 }
 
-const formulario =
-    document.getElementById("ofertaForm");
+function aplicarFiltros(){
 
-const status =
-    document.getElementById("status");
+  const termo = document.getElementById("busca").value.toLowerCase();
 
-const resultado =
-    document.getElementById("resultado");
+  const filtradas = ofertas.filter(o => {
+    const bateBusca = (o.produto || "").toLowerCase().includes(termo);
+    const bateCategoria = !categoriaAtual || (o.categoria || "") === categoriaAtual;
+    return bateBusca && bateCategoria;
+  });
 
-const urlOferta =
-    document.getElementById("urlOferta");
+  render(filtradas);
+}
 
-const botao =
-    document.getElementById("botao");
+function render(lista){
 
-formulario.addEventListener(
-    "submit",
-    async function(event){
+  const grid = document.getElementById("grid");
+  const vazio = document.getElementById("vazio");
 
-        event.preventDefault();
+  grid.innerHTML = "";
 
-        const produto =
-            document.getElementById("produto").value.trim();
+  if(lista.length === 0){
+    vazio.style.display = "block";
+    return;
+  }
 
-        const preco =
-            document.getElementById("preco").value.trim();
+  vazio.style.display = "none";
 
-        const precoAntigo =
-            document.getElementById("precoAntigo").value.trim();
+  lista.forEach(o => {
 
-        const cupom =
-            document.getElementById("cupom").value.trim();
+    const card = document.createElement("div");
+    card.className = "card";
 
-        const link =
-            document.getElementById("link").value.trim();
+    const oldHtml = o.precoAntigo
+      ? `<div class="old">${escapeHtml(o.precoAntigo)}</div>`
+      : "";
 
-        const senha =
-            document.getElementById("senha").value;
+    const cupomHtml = o.cupom
+      ? `<div class="cupom">🏷️ ${escapeHtml(o.cupom)}</div>`
+      : "";
 
-        const categoria =
-            document.getElementById("categoria").value;
+    const categoriaHtml = o.categoria
+      ? `<div class="tagCategoria">${escapeHtml(o.categoria)}</div>`
+      : "";
 
-        const destaque =
-            document.getElementById("destaque").checked;
+    card.innerHTML = `
+      <img src="../assets/${encodeURIComponent(o.imagem)}" alt="${escapeHtml(o.produto)}" loading="lazy">
+      <div class="info">
+        ${categoriaHtml}
+        <h3>${escapeHtml(o.produto)}</h3>
+        ${oldHtml}
+        <div class="preco">${escapeHtml(o.preco)}</div>
+        ${cupomHtml}
+        <div class="botoes">
+          <a class="abrir" href="${o.url}">Abrir oferta</a>
+          <button class="copiar" type="button">Copiar link</button>
+        </div>
+      </div>
+    `;
 
-        const imagem =
-            document.getElementById("imagem").files[0];
+    card.querySelector(".copiar").addEventListener("click", function(){
+      const botao = this;
+      navigator.clipboard.writeText(o.link).then(() => {
+        const original = botao.textContent;
+        botao.textContent = "Copiado!";
+        setTimeout(() => { botao.textContent = original; }, 1500);
+      });
+    });
 
-        if(!imagem){
+    grid.appendChild(card);
+  });
+}
 
-            alert("Selecione uma imagem.");
+document.getElementById("busca").addEventListener("input", aplicarFiltros);
 
-            return;
-        }
-
-        /*
-         * Gera o slug automaticamente
-         */
-
-        let slug =
-            produto
-                .toLowerCase()
-                .normalize("NFD")
-                .replace(/[\u0300-\u036f]/g,"")
-                .replace(/[^a-z0-9]+/g,"-")
-                .replace(/^-+|-+$/g,"");
-
-        /*
-         * Monta o formulário
-         */
-
-        const dados =
-            new FormData();
-
-        dados.append(
-            "produto",
-            produto
-        );
-
-        dados.append(
-            "preco",
-            preco
-        );
-
-        dados.append(
-            "precoAntigo",
-            precoAntigo
-        );
-
-        dados.append(
-            "cupom",
-            cupom
-        );
-
-        dados.append(
-            "categoria",
-            categoria
-        );
-
-        dados.append(
-            "destaque",
-            destaque ? "true" : "false"
-        );
-
-        dados.append(
-            "link",
-            link
-        );
-
-        dados.append(
-            "slug",
-            slug
-        );
-
-        dados.append(
-            "senha",
-            senha
-        );
-
-        dados.append(
-            "imagem",
-            imagem
-        );
-
-        /*
-         * Interface
-         */
-
-        botao.disabled = true;
-
-        botao.textContent =
-            "⏳ GERANDO OFERTA...";
-
-        status.style.display =
-            "block";
-
-        status.classList.remove("erro");
-
-        status.textContent =
-            "🐶 Enviando oferta...";
-
-        resultado.style.display =
-            "none";
-
-        try{
-
-            const resposta =
-                await fetch(
-                    WORKER_URL + "/",
-                    {
-                        method:"POST",
-                        body:dados
-                    }
-                );
-
-            const texto =
-                await resposta.text();
-
-            if(!resposta.ok){
-
-                throw new Error(texto);
-
-            }
-
-            const dadosResposta =
-                JSON.parse(texto);
-
-            status.textContent =
-                "🚀 Oferta enviada! Aguardando publicação...";
-
-            resultado.style.display =
-                "block";
-
-            urlOferta.href =
-                dadosResposta.url;
-
-            urlOferta.textContent =
-                dadosResposta.url;
-
-            document.getElementById("legendaTexto").textContent =
-                montarLegenda();
-
-            const linkBaixar =
-                document.getElementById("baixarImagem");
-
-            linkBaixar.href =
-                URL.createObjectURL(imagem);
-
-            linkBaixar.download =
-                imagem.name || "produto.jpg";
-
-            botao.textContent =
-                "🔥 GERAR OUTRA OFERTA";
-
-        }catch(erro){
-
-            status.classList.add("erro");
-
-            status.textContent =
-                "❌ " + erro.message;
-
-            botao.textContent =
-                "TENTAR NOVAMENTE";
-
-        }finally{
-
-            botao.disabled =
-                false;
-
-        }
-
-    }
-);
+carregar();
 
 </script>
 
 </body>
-
 </html>
