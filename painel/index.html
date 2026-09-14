@@ -68,6 +68,35 @@ input:focus{
     border-color:#e5232e;
 }
 
+select{
+    width:100%;
+    padding:13px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+    outline:none;
+    background:#fff;
+    color:#222;
+}
+
+select:focus{
+    border-color:#e5232e;
+}
+
+.checkboxLabel{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-weight:700;
+    margin-top:16px;
+    cursor:pointer;
+}
+
+.checkboxLabel input[type="checkbox"]{
+    width:auto;
+    margin:0;
+}
+
 button{
     width:100%;
     border:0;
@@ -350,6 +379,29 @@ Cupom
 >
 
 <label>
+Categoria
+<span class="optional">(opcional)</span>
+</label>
+
+<select id="categoria">
+<option value="">Sem categoria</option>
+<option value="Café">☕ Café</option>
+<option value="Casa">🏠 Casa</option>
+<option value="Academia">🏋️ Academia</option>
+<option value="Eletrônicos">🔌 Eletrônicos</option>
+<option value="Beleza">💄 Beleza</option>
+<option value="Moda">👕 Moda</option>
+<option value="Pet">🐾 Pet</option>
+<option value="Cozinha">🍳 Cozinha</option>
+<option value="Outros">📦 Outros</option>
+</select>
+
+<label class="checkboxLabel">
+<input type="checkbox" id="destaque">
+⭐ Destacar na página principal
+</label>
+
+<label>
 Link da oferta
 </label>
 
@@ -359,6 +411,7 @@ Link da oferta
     placeholder="https://..."
     required
 >
+
 
 <label>
 Imagem
@@ -693,6 +746,12 @@ formulario.addEventListener(
         const senha =
             document.getElementById("senha").value;
 
+        const categoria =
+            document.getElementById("categoria").value;
+
+        const destaque =
+            document.getElementById("destaque").checked;
+
         const imagem =
             document.getElementById("imagem").files[0];
 
@@ -740,6 +799,16 @@ formulario.addEventListener(
         dados.append(
             "cupom",
             cupom
+        );
+
+        dados.append(
+            "categoria",
+            categoria
+        );
+
+        dados.append(
+            "destaque",
+            destaque ? "true" : "false"
         );
 
         dados.append(
