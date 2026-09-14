@@ -170,7 +170,6 @@ Add-Type -AssemblyName System.Drawing
 
 $LarguraMaxima = 1200
 $LarguraMinima = 600
-$QualidadeJpeg = 85
 
 $CaminhoImagemFinal = Join-Path $Assets $ImagemNome
 $ImagemLargura = $null
@@ -216,12 +215,29 @@ try {
     $CodecJpeg = [System.Drawing.Imaging.ImageCodecInfo]::GetImageEncoders() |
         Where-Object { $_.MimeType -eq "image/jpeg" }
 
-    $ParametrosCodec = New-Object System.Drawing.Imaging.EncoderParameters(1)
-    $ParametrosCodec.Param[0] = New-Object System.Drawing.Imaging.EncoderParameter(
-        [System.Drawing.Imaging.Encoder]::Quality, $QualidadeJpeg
-    )
+    # Compressão progressiva: o WhatsApp é bem mais rígido que o
+    # Facebook quanto ao peso do arquivo (relatos apontam ~300KB,
+    # bem menor que os 600KB documentados oficialmente). Começa em
+    # qualidade 85 e vai reduzindo até caber num limite seguro.
+    $LimiteBytes = 250KB
+    $TentativasQualidade = @(85, 75, 65, 55, 45)
 
-    $Bitmap.Save($NovoCaminho, $CodecJpeg, $ParametrosCodec)
+    foreach ($Qualidade in $TentativasQualidade) {
+
+        $ParametrosCodec = New-Object System.Drawing.Imaging.EncoderParameters(1)
+        $ParametrosCodec.Param[0] = New-Object System.Drawing.Imaging.EncoderParameter(
+            [System.Drawing.Imaging.Encoder]::Quality, $Qualidade
+        )
+
+        $Bitmap.Save($NovoCaminho, $CodecJpeg, $ParametrosCodec)
+
+        $TamanhoAtual = (Get-Item -LiteralPath $NovoCaminho).Length
+
+        if ($TamanhoAtual -le $LimiteBytes) {
+            break
+        }
+    }
+
     $Bitmap.Dispose()
 
     # Remove o arquivo original se o nome mudou (ex: era .png, virou .jpg)
