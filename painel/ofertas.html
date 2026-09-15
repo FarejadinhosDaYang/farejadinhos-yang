@@ -85,7 +85,7 @@ function estaAtiva(oferta){
 
 function horasRestantes(oferta){
   const dataOferta = new Date(oferta.data);
-  if(isNaN(dataOferta)) return null;
+  if(isNaN(dataOferta)) return HORAS_EXPIRACAO;
   const horasPassadas = (new Date() - dataOferta) / (1000 * 60 * 60);
   return Math.max(0, HORAS_EXPIRACAO - horasPassadas);
 }
@@ -127,39 +127,70 @@ function render(){
 
   ofertas.forEach(o => {
 
-    const ativa = estaAtiva(o);
-    const restante = horasRestantes(o);
+    try {
 
-    const statusBadge = ativa
-      ? `<span class="badge badgeAtiva">🟢 Ativa · expira em ${restante.toFixed(1)}h</span>`
-      : `<span class="badge badgeExpirada">⚪ Expirada</span>`;
+      const semDados = !o.produto && !o.preco && !o.imagem;
 
-    const categoriaBadge = o.categoria
-      ? `<span class="badge badgeCategoria">${escapeHtml(o.categoria)}</span>`
-      : "";
+      const ativa = estaAtiva(o);
+      const restante = horasRestantes(o);
 
-    const destaqueBadge = o.destaque
-      ? `<span class="badge badgeDestaque">⭐ Destaque</span>`
-      : "";
+      const statusBadge = semDados
+        ? `<span class="badge badgeExpirada">⚠️ Sem dados</span>`
+        : ativa
+          ? `<span class="badge badgeAtiva">🟢 Ativa · expira em ${restante.toFixed(1)}h</span>`
+          : `<span class="badge badgeExpirada">⚪ Expirada</span>`;
 
-    const item = document.createElement("div");
-    item.className = "item";
+      const categoriaBadge = o.categoria
+        ? `<span class="badge badgeCategoria">${escapeHtml(o.categoria)}</span>`
+        : "";
 
-    item.innerHTML = `
-      <img src="../assets/${encodeURIComponent(o.imagem)}" alt="${escapeHtml(o.produto)}">
-      <div class="info">
-        <h3>${escapeHtml(o.produto)}</h3>
-        <div class="preco">${escapeHtml(o.preco)}</div>
-        <div class="badges">${statusBadge}${categoriaBadge}${destaqueBadge}</div>
-      </div>
-      <button class="remover" type="button">🗑️ Remover</button>
-    `;
+      const destaqueBadge = o.destaque
+        ? `<span class="badge badgeDestaque">⭐ Destaque</span>`
+        : "";
 
-    item.querySelector(".remover").addEventListener("click", function(){
-      removerOferta(o.slug, this);
-    });
+      const nomeProduto = o.produto || "(sem nome — entrada incompleta)";
+      const precoExibido = o.preco || "—";
+      const imagemSrc = o.imagem
+        ? `../assets/${encodeURIComponent(o.imagem)}`
+        : "../assets/placeholder.svg";
 
-    lista.appendChild(item);
+      const item = document.createElement("div");
+      item.className = "item";
+
+      item.innerHTML = `
+        <img src="${imagemSrc}" alt="${escapeHtml(nomeProduto)}" onerror="this.src='../assets/placeholder.svg'">
+        <div class="info">
+          <h3>${escapeHtml(nomeProduto)}</h3>
+          <div class="preco">${escapeHtml(precoExibido)}</div>
+          <div class="badges">${statusBadge}${categoriaBadge}${destaqueBadge}</div>
+        </div>
+        <button class="remover" type="button">🗑️ Remover</button>
+      `;
+
+      item.querySelector(".remover").addEventListener("click", function(){
+        removerOferta(o.slug, this);
+      });
+
+      lista.appendChild(item);
+
+    } catch (erroItem) {
+
+      // Uma entrada malformada não pode travar a lista inteira —
+      // mostra um card de erro em vez de quebrar tudo.
+      const itemErro = document.createElement("div");
+      itemErro.className = "item";
+      itemErro.innerHTML = `
+        <div class="info">
+          <h3>⚠️ Entrada com erro (slug: ${escapeHtml(o.slug || "desconhecido")})</h3>
+          <div class="badges"><span class="badge badgeExpirada">Dados inválidos</span></div>
+        </div>
+        <button class="remover" type="button">🗑️ Remover</button>
+      `;
+      itemErro.querySelector(".remover").addEventListener("click", function(){
+        removerOferta(o.slug, this);
+      });
+      lista.appendChild(itemErro);
+    }
   });
 }
 
