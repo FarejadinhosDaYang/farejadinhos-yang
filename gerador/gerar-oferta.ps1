@@ -50,11 +50,30 @@ function FormatarPreco([string]$Valor) {
     # Remove R$
     $Valor = $Valor -replace 'R\$', ''
 
-    # Remove espaços
-    $Valor = $Valor.Trim()
+    # Remove espaços (inclusive espaços internos, tipo "6.499, 00")
+    $Valor = $Valor -replace '\s', ''
 
-    # Aceita ponto ou vírgula
-    $Valor = $Valor -replace '\.', ','
+    if ($Valor -match ',') {
+
+        # Já tem vírgula: assume formato BR (ex: "6.499,00").
+        # Remove os pontos, que aqui são separador de milhar.
+        $Valor = $Valor -replace '\.', ''
+
+    }
+    elseif ($Valor -match '^\d+\.\d{2}$') {
+
+        # Só tem ponto, com exatamente 2 casas no final (ex: "38.80"):
+        # trata como separador decimal americano.
+        $Valor = $Valor -replace '\.', ','
+
+    }
+    else {
+
+        # Ponto com outra quantidade de casas (ex: "6.499") ou
+        # nenhum separador: trata o ponto como separador de milhar.
+        $Valor = $Valor -replace '\.', ''
+
+    }
 
     try {
 
