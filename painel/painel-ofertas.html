@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ofertas ativas | Farejadinhos da Yang</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;padding:20px;background:#f4f4f4;font-family:Arial,sans-serif;color:#222}
+.container{max-width:720px;margin:auto}
+.header{text-align:center;margin-bottom:20px}
+.header h1{font-size:20px;margin:0 0 4px}
+.header p{color:#777;margin:0;font-size:13px}
+.voltar{display:inline-block;margin-bottom:16px;color:#e5232e;font-weight:700;text-decoration:none;font-size:14px}
+.senhaBox{background:#fff;border-radius:14px;padding:16px;margin-bottom:18px;box-shadow:0 6px 20px rgba(0,0,0,.06)}
+.senhaBox label{display:block;font-weight:700;margin-bottom:8px;font-size:14px}
+.senhaBox input{width:100%;padding:11px;border:1px solid #ddd;border-radius:9px;font-size:15px;outline:none}
+.senhaBox input:focus{border-color:#e5232e}
+.lista{display:flex;flex-direction:column;gap:12px}
+.item{background:#fff;border-radius:16px;padding:14px;box-shadow:0 6px 18px rgba(0,0,0,.06);display:flex;gap:12px;align-items:center}
+.item img{width:64px;height:64px;border-radius:10px;object-fit:cover;background:#f0f0f0;flex-shrink:0}
+.item .info{flex:1;min-width:0}
+.item h3{font-size:14px;margin:0 0 4px;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.item .preco{font-size:15px;font-weight:900;margin-bottom:4px}
+.badges{display:flex;gap:6px;flex-wrap:wrap}
+.badge{font-size:10px;font-weight:700;padding:3px 8px;border-radius:8px;text-transform:uppercase}
+.badgeAtiva{background:#eafbea;color:#1a7d1a}
+.badgeExpirada{background:#f1f1f1;color:#888}
+.badgeCategoria{background:#fff6f6;color:#e5232e}
+.badgeDestaque{background:#fff8e1;color:#b8860b}
+.remover{background:#fff0f0;color:#b00000;border:1px solid #ffd0d0;border-radius:9px;padding:8px 12px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap}
+.remover:hover{background:#ffe0e0}
+.remover:disabled{opacity:.5;cursor:wait}
+.vazio{text-align:center;color:#888;padding:40px 0}
+.statusGeral{display:none;text-align:center;padding:10px;border-radius:10px;margin-bottom:14px;font-size:13px}
+.statusGeral.erro{display:block;background:#fff0f0;color:#b00000}
+.statusGeral.sucesso{display:block;background:#eafbea;color:#1a7d1a}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<a class="voltar" href="index.html">← Voltar pro gerador</a>
+
+<div class="header">
+<h1>📋 Ofertas ativas</h1>
+<p>Todas as ofertas — ativas e expiradas — com opção de remover antes da hora</p>
+</div>
+
+<div class="senhaBox">
+<label>Senha do painel (só precisa pra remover)</label>
+<input type="password" id="senha" placeholder="Senha do painel">
+</div>
+
+<div class="statusGeral" id="statusGeral"></div>
+
+<div class="lista" id="lista"></div>
+
+<div class="vazio" id="vazio" style="display:none">Nenhuma oferta cadastrada ainda.</div>
+
+</div>
+
+<script>
+
+const WORKER_URL =
+    "https://holy-pine-e7fc.bernard-shimizu.workers.dev";
+
+const HORAS_EXPIRACAO = 24;
+
+let ofertas = [];
+
+function escapeHtml(texto){
+  const div = document.createElement("div");
+  div.textContent = texto == null ? "" : texto;
+  return div.innerHTML;
+}
+
+function estaAtiva(oferta){
+  const dataOferta = new Date(oferta.data);
+  if(isNaN(dataOferta)) return true;
+  const horas = (new Date() - dataOferta) / (1000 * 60 * 60);
+  return horas <= HORAS_EXPIRACAO;
+}
+
+function horasRestantes(oferta){
+  const dataOferta = new Date(oferta.data);
+  if(isNaN(dataOferta)) return null;
+  const horasPassadas = (new Date() - dataOferta) / (1000 * 60 * 60);
+  return Math.max(0, HORAS_EXPIRACAO - horasPassadas);
+}
+
+async function carregar(){
+
+  let todas = [];
+
+  try{
+    const resp = await fetch("../ofertas.json", { cache: "no-store" });
+    todas = await resp.json();
+  }catch(e){
+    todas = [];
+  }
+
+  if(!Array.isArray(todas)){
+    todas = [todas];
+  }
+
+  todas.sort((a, b) => new Date(b.data) - new Date(a.data));
+
+  ofertas = todas;
+  render();
+}
+
+function render(){
+
+  const lista = document.getElementById("lista");
+  const vazio = document.getElementById("vazio");
+
+  lista.innerHTML = "";
+
+  if(ofertas.length === 0){
+    vazio.style.display = "block";
+    return;
+  }
+
+  vazio.style.display = "none";
+
+  ofertas.forEach(o => {
+
+    const ativa = estaAtiva(o);
+    const restante = horasRestantes(o);
+
+    const statusBadge = ativa
+      ? `<span class="badge badgeAtiva">🟢 Ativa · expira em ${restante.toFixed(1)}h</span>`
+      : `<span class="badge badgeExpirada">⚪ Expirada</span>`;
+
+    const categoriaBadge = o.categoria
+      ? `<span class="badge badgeCategoria">${escapeHtml(o.categoria)}</span>`
+      : "";
+
+    const destaqueBadge = o.destaque
+      ? `<span class="badge badgeDestaque">⭐ Destaque</span>`
+      : "";
+
+    const item = document.createElement("div");
+    item.className = "item";
+
+    item.innerHTML = `
+      <img src="../assets/${encodeURIComponent(o.imagem)}" alt="${escapeHtml(o.produto)}">
+      <div class="info">
+        <h3>${escapeHtml(o.produto)}</h3>
+        <div class="preco">${escapeHtml(o.preco)}</div>
+        <div class="badges">${statusBadge}${categoriaBadge}${destaqueBadge}</div>
+      </div>
+      <button class="remover" type="button">🗑️ Remover</button>
+    `;
+
+    item.querySelector(".remover").addEventListener("click", function(){
+      removerOferta(o.slug, this);
+    });
+
+    lista.appendChild(item);
+  });
+}
+
+async function removerOferta(slug, botao){
+
+  const senha = document.getElementById("senha").value;
+  const statusGeral = document.getElementById("statusGeral");
+
+  if(!senha){
+    alert("Digite a senha do painel primeiro.");
+    return;
+  }
+
+  if(!confirm("Remover essa oferta da listagem? O link individual continua funcionando.")){
+    return;
+  }
+
+  botao.disabled = true;
+  botao.textContent = "Removendo...";
+
+  const dados = new FormData();
+  dados.append("senha", senha);
+  dados.append("slug", slug);
+
+  try{
+
+    const resposta = await fetch(WORKER_URL + "/remover", {
+      method: "POST",
+      body: dados
+    });
+
+    const texto = await resposta.text();
+
+    if(!resposta.ok){
+      throw new Error(texto);
+    }
+
+    ofertas = ofertas.filter(o => o.slug !== slug);
+    render();
+
+    statusGeral.className = "statusGeral sucesso";
+    statusGeral.textContent = "✅ Oferta removida.";
+    setTimeout(() => { statusGeral.className = "statusGeral"; }, 2500);
+
+  }catch(erro){
+
+    statusGeral.className = "statusGeral erro";
+    statusGeral.textContent = "❌ " + erro.message;
+
+    botao.disabled = false;
+    botao.textContent = "🗑️ Remover";
+  }
+}
+
+carregar();
+
+</script>
+
+</body>
+</html>
