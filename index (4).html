@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Farejadinhos da Yang 🐾 | Achadinhos e ofertas</title>
+
+<meta name="description" content="A Yang fareja os melhores preços pra você. Achadinhos de casa, café e academia, todo dia.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Farejadinhos da Yang">
+<meta property="og:title" content="Farejadinhos da Yang 🐾">
+<meta property="og:description" content="A Yang fareja os melhores preços pra você. Achadinhos de casa, café e academia, todo dia.">
+<meta property="og:image" content="assets/og-padrao.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/nav.css">
+
+<style>
+
+:root{
+    --red:#E5232E;
+    --red-dark:#C21A24;
+    --orange:#F7941D;
+    --cream:#FDF3E3;
+    --cream-2:#FFFAF1;
+    --ink:#2B1B12;
+    --muted:#8A7563;
+    --line:#F0DFC4;
+}
+
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    background:var(--cream);
+    font-family:'Work Sans',Arial,sans-serif;
+    color:var(--ink);
+}
+
+h1,h2,h3,.brand{
+    font-family:'Baloo 2','Work Sans',sans-serif;
+}
+
+.wrap{
+    max-width:760px;
+    margin:auto;
+    padding:26px 18px 60px;
+}
+
+/* ===== PAW TRAIL DIVIDER ===== */
+
+.trail{
+    display:flex;
+    justify-content:center;
+    gap:26px;
+    margin:34px 0;
+    opacity:.55;
+}
+
+.trail span{
+    font-size:15px;
+    transform:rotate(var(--r,0deg));
+}
+
+.trail span:nth-child(2n){ --r:18deg; transform:translateY(6px) rotate(18deg); }
+.trail span:nth-child(3n){ --r:-14deg; }
+
+/* ===== HEADER ===== */
+
+header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+    padding:6px 4px 0;
+}
+
+header .brand-group{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    min-width:0;
+}
+
+.logo-badge{
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    flex:none;
+}
+
+.brand{
+    font-size:21px;
+    font-weight:800;
+    line-height:1.1;
+    color:var(--red-dark);
+}
+
+.brand small{
+    display:block;
+    font-family:'Work Sans',sans-serif;
+    font-weight:500;
+    font-size:13px;
+    color:var(--muted);
+    margin-top:2px;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+    margin-top:26px;
+    background:linear-gradient(155deg,var(--red) 0%,#f0462f 55%,var(--orange) 130%);
+    border-radius:28px;
+    padding:32px 26px;
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.hero::after{
+    content:"🐾";
+    position:absolute;
+    font-size:180px;
+    opacity:.12;
+    right:-38px;
+    bottom:-56px;
+    transform:rotate(-18deg);
+}
+
+.hero-text{ flex:1; min-width:0; }
+
+.hero h1{
+    font-size:26px;
+    margin:0 0 8px;
+    line-height:1.2;
+}
+
+.hero p{
+    margin:0;
+    font-size:15px;
+    opacity:.95;
+    line-height:1.5;
+}
+
+.hero img{
+    width:120px;
+    height:auto;
+    border-radius:20px;
+    flex:none;
+    box-shadow:0 10px 24px rgba(0,0,0,.22);
+    position:relative;
+    z-index:1;
+}
+
+/* ===== CATEGORY CHIPS ===== */
+
+.chips{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:22px;
+}
+
+.chip{
+    background:var(--cream-2);
+    border:1.5px solid var(--line);
+    border-radius:999px;
+    padding:9px 16px;
+    font-weight:600;
+    font-size:14px;
+    color:var(--ink);
+}
+
+/* ===== CARD ===== */
+
+.card{
+    background:var(--cream-2);
+    border:1.5px solid var(--line);
+    border-radius:24px;
+    padding:26px;
+    margin-top:8px;
+}
+
+.card h2{
+    font-size:19px;
+    margin:0 0 10px;
+    color:var(--red-dark);
+}
+
+.card p{
+    margin:0 0 18px;
+    line-height:1.6;
+    color:#4a3c30;
+}
+
+.steps{
+    display:grid;
+    gap:14px;
+    margin:0 0 18px;
+}
+
+.step{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+}
+
+.step .paw{
+    flex:none;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:#fff;
+    border:1.5px solid var(--line);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:16px;
+}
+
+.step div{ font-size:14.5px; line-height:1.5; padding-top:5px; color:#4a3c30; }
+.step b{ color:var(--ink); }
+
+.btn{
+    display:inline-block;
+    background:linear-gradient(135deg,var(--red),var(--red-dark));
+    color:#fff;
+    text-decoration:none;
+    text-align:center;
+    padding:15px 22px;
+    border-radius:14px;
+    font-weight:800;
+    font-size:15px;
+    box-shadow:0 8px 20px rgba(229,35,46,.28);
+}
+
+.btn.ghost{
+    background:#fff;
+    color:var(--red-dark);
+    border:1.5px solid var(--line);
+    box-shadow:none;
+}
+
+.row-btns{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+/* ===== DESTAQUES ===== */
+
+.destaques{
+    margin-top:30px;
+}
+
+.destaques h2{
+    font-size:19px;
+    margin:0 0 14px;
+    color:var(--red-dark);
+    padding:0 2px;
+}
+
+.destaques-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+    gap:12px;
+}
+
+.destaque-card{
+    background:var(--cream-2);
+    border:1.5px solid var(--line);
+    border-radius:18px;
+    overflow:hidden;
+    text-decoration:none;
+    color:var(--ink);
+    display:flex;
+    flex-direction:column;
+}
+
+.destaque-card img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    background:#f0e6d6;
+    display:block;
+}
+
+.destaque-card .info{
+    padding:11px 12px 13px;
+}
+
+.destaque-card h3{
+    font-size:13px;
+    line-height:1.3;
+    margin:0 0 6px;
+    min-height:34px;
+    font-family:'Work Sans',sans-serif;
+    font-weight:600;
+}
+
+.destaque-card .preco{
+    font-family:'Baloo 2',sans-serif;
+    font-weight:800;
+    color:var(--red-dark);
+    font-size:16px;
+}
+
+.destaques-vazio{
+    background:var(--cream-2);
+    border:1.5px dashed var(--line);
+    border-radius:18px;
+    padding:22px;
+    text-align:center;
+    color:var(--muted);
+    font-size:14px;
+}
+
+.ver-todas{
+    display:block;
+    text-align:center;
+    margin-top:14px;
+    color:var(--red-dark);
+    font-weight:700;
+    text-decoration:none;
+    font-size:14px;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+    text-align:center;
+    color:var(--muted);
+    font-size:12.5px;
+    margin-top:38px;
+    line-height:1.6;
+}
+
+footer a{ color:var(--red-dark); font-weight:600; text-decoration:none; }
+
+</style>
+
+</head>
+
+<body>
+
+<div class="wrap">
+
+<header>
+<div class="brand-group">
+<img class="logo-badge" src="assets/yang-badge.png" alt="Yang, a mascote farejadora">
+<div class="brand">
+Farejadinhos da Yang
+<small>a Yang fareja os melhores preços 🐾</small>
+</div>
+</div>
+<div data-yang-nav data-base=""></div>
+</header>
+
+<div class="hero">
+<div class="hero-text">
+<h1>Achadinhos de verdade, farejados por ela mesma</h1>
+<p>Casa, café e academia — a Yang vasculha ofertas boas todos os dias e traz só o que vale a pena.</p>
+</div>
+<img src="assets/yang-hero.png" alt="Yang, a cachorrinha mascote do Farejadinhos da Yang">
+</div>
+
+<div class="destaques">
+<h2>🔥 Destaques de agora</h2>
+<div class="destaques-grid" id="destaquesGrid"></div>
+<div class="destaques-vazio" id="destaquesVazio" style="display:none">
+A Yang tá farejando a próxima oferta 🐾 — volta já já!
+</div>
+<a class="ver-todas" href="ofertas/">Ver todas as ofertas →</a>
+</div>
+
+<div class="chips">
+<span class="chip">🏠 Casa</span>
+<span class="chip">☕ Café</span>
+<span class="chip">🏋️ Academia</span>
+</div>
+
+<div class="trail">
+<span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span>
+</div>
+
+<div class="card">
+<h2>Como funciona o faro da Yang</h2>
+<div class="steps">
+<div class="step"><div class="paw">🐾</div><div><b>1. Ela fareja</b> — garimpamos ofertas de verdade, com preço que compensa.</div></div>
+<div class="step"><div class="paw">🐾</div><div><b>2. A gente publica aqui</b> — cada achadinho vira uma página com preço, cupom (quando tem) e link direto.</div></div>
+<div class="step"><div class="paw">🐾</div><div><b>3. Você economiza</b> — é só clicar em "pegar oferta" e ir direto pra loja.</div></div>
+</div>
+<div class="row-btns">
+<a class="btn" href="ofertas/">Ver todas as ofertas</a>
+<a class="btn ghost" href="calculadora/">🧮 Vale a pena parcelar?</a>
+<a class="btn ghost" href="https://www.instagram.com/farejadinhosdayang" target="_blank" rel="noopener">Seguir no Instagram</a>
+</div>
+</div>
+
+<footer>
+🐶 Farejadinhos da Yang — achadinhos, ofertas e cupons.<br>
+Alguns links desta página podem ser de afiliado: ao comprar por eles, podemos ganhar uma pequena comissão, sem custo extra pra você.<br>
+<a href="https://www.instagram.com/farejadinhosdayang" target="_blank" rel="noopener">@farejadinhosdayang</a>
+</footer>
+
+</div>
+
+<script src="assets/nav.js"></script>
+<script>
+
+const HORAS_EXPIRACAO_DESTAQUES = 24;
+
+function escapeHtml(texto){
+    const div = document.createElement("div");
+    div.textContent = texto == null ? "" : texto;
+    return div.innerHTML;
+}
+
+async function carregarDestaques(){
+
+    const grid = document.getElementById("destaquesGrid");
+    const vazio = document.getElementById("destaquesVazio");
+
+    let todas = [];
+
+    try{
+        const resp = await fetch("ofertas.json", { cache: "no-store" });
+        todas = await resp.json();
+        if(!Array.isArray(todas)) todas = [todas];
+    }catch(e){
+        todas = [];
+    }
+
+    const agora = new Date();
+
+    let ativas = todas.filter(o => {
+        if(!o || !o.slug) return false;
+        const dataOferta = new Date(o.data);
+        if(isNaN(dataOferta)) return true;
+        const horas = (agora - dataOferta) / (1000 * 60 * 60);
+        return horas <= HORAS_EXPIRACAO_DESTAQUES;
+    });
+
+    ativas.sort((a, b) => {
+        if(!!b.destaque !== !!a.destaque) return (b.destaque ? 1 : 0) - (a.destaque ? 1 : 0);
+        return new Date(b.data) - new Date(a.data);
+    });
+
+    ativas = ativas.slice(0, 6);
+
+    if(ativas.length === 0){
+        vazio.style.display = "block";
+        grid.innerHTML = "";
+        return;
+    }
+
+    vazio.style.display = "none";
+
+    grid.innerHTML = ativas.map(o => `
+        <a class="destaque-card" href="ofertas/${encodeURIComponent(o.slug)}/">
+            <img src="assets/${encodeURIComponent(o.imagem)}" alt="${escapeHtml(o.produto)}" loading="lazy">
+            <div class="info">
+                <h3>${escapeHtml(o.produto)}</h3>
+                <div class="preco">${escapeHtml(o.preco)}</div>
+            </div>
+        </a>
+    `).join("");
+}
+
+carregarDestaques();
+
+</script>
+
+</body>
+</html>

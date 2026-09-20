@@ -1,0 +1,126 @@
+/* Farejadinhos da Yang — Calculadora "Vale a pena parcelar?" */
+
+.calc-yang{
+    font-family:'Work Sans',Arial,sans-serif;
+    color:var(--ink,#2B1B12);
+}
+
+.calc-yang-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.calc-yang-grid label{
+    display:block;
+    font-weight:700;
+    font-size:12.5px;
+    color:var(--ink,#2B1B12);
+}
+
+.calc-yang-grid input{
+    width:100%;
+    margin-top:6px;
+    padding:11px 12px;
+    border:1.5px solid var(--line,#F0DFC4);
+    border-radius:11px;
+    font-size:14.5px;
+    font-family:'Work Sans',Arial,sans-serif;
+    background:#fff;
+    color:var(--ink,#2B1B12);
+    outline:none;
+}
+
+.calc-yang-grid input:focus{
+    border-color:var(--red,#E5232E);
+}
+
+.calc-yang-cdi{
+    margin-top:12px;
+    font-size:12.5px;
+    color:var(--muted,#8A7563);
+}
+
+.calc-yang-cdi-data{
+    opacity:.8;
+}
+
+.calc-yang-btn{
+    display:block;
+    width:100%;
+    margin-top:14px;
+    border:0;
+    border-radius:13px;
+    padding:14px;
+    background:linear-gradient(135deg,var(--red,#E5232E),var(--red-dark,#C21A24));
+    color:#fff;
+    font-family:'Baloo 2',sans-serif;
+    font-weight:800;
+    font-size:15px;
+    cursor:pointer;
+    box-shadow:0 8px 18px rgba(229,35,46,.25);
+}
+
+.calc-yang-btn:hover{ opacity:.93; }
+
+.calc-yang-resultado{
+    margin-top:16px;
+    padding:16px;
+    border-radius:14px;
+    font-size:15px;
+    line-height:1.5;
+}
+
+.calc-yang-resultado--verde{
+    background:#eaf9ec;
+    border:1.5px solid #a9dfb2;
+    color:#1c6b2c;
+}
+
+.calc-yang-resultado--vermelho{
+    background:#fdeceb;
+    border:1.5px solid #f0b3ac;
+    color:#a3271c;
+}
+
+.calc-yang-resultado--neutro{
+    background:#fff6e9;
+    border:1.5px solid var(--orange,#F7941D);
+    color:#8a5a10;
+}
+
+.calc-yang-resultado--erro{
+    background:#f4f4f4;
+    border:1.5px solid #ddd;
+    color:#666;
+    font-size:13.5px;
+}
+
+/* compact = versão embutida na página de oferta */
+
+.calc-yang--compact .calc-yang-grid{
+    grid-template-columns:1fr 1fr;
+}
+
+.calc-yang--compact .calc-yang-grid label{
+    font-size:11.5px;
+}
+
+.calc-yang--compact .calc-yang-grid input{
+    padding:9px 10px;
+    font-size:13.5px;
+}
+
+.calc-yang--compact .calc-yang-btn{
+    padding:12px;
+    font-size:14px;
+}
+
+.calc-yang--compact .calc-yang-resultado{
+    font-size:13.5px;
+    padding:13px;
+}
+
+@media (max-width:380px){
+    .calc-yang-grid{ grid-template-columns:1fr; }
+}
