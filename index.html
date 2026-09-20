@@ -53,26 +53,8 @@ h1,h2,h3,.brand{
 .wrap{
     max-width:1080px;
     margin:auto;
-    padding:22px 18px 60px;
+    padding:18px 18px 60px;
 }
-
-/* ===== PAW TRAIL DIVIDER ===== */
-
-.trail{
-    display:flex;
-    justify-content:center;
-    gap:26px;
-    margin:34px 0;
-    opacity:.55;
-}
-
-.trail span{
-    font-size:15px;
-    transform:rotate(var(--r,0deg));
-}
-
-.trail span:nth-child(2n){ --r:18deg; transform:translateY(6px) rotate(18deg); }
-.trail span:nth-child(3n){ --r:-14deg; }
 
 /* ===== HEADER ===== */
 
@@ -88,19 +70,19 @@ header{
 header .brand-group{
     display:flex;
     align-items:center;
-    gap:14px;
+    gap:12px;
     min-width:0;
 }
 
 .logo-badge{
-    width:52px;
-    height:52px;
+    width:46px;
+    height:46px;
     border-radius:50%;
     flex:none;
 }
 
 .brand{
-    font-size:20px;
+    font-size:18px;
     font-weight:800;
     line-height:1.1;
     color:var(--red-dark);
@@ -110,7 +92,7 @@ header .brand-group{
     display:block;
     font-family:'Work Sans',sans-serif;
     font-weight:500;
-    font-size:12.5px;
+    font-size:12px;
     color:var(--muted);
     margin-top:2px;
 }
@@ -130,7 +112,7 @@ header .brand-group{
     padding:4px 4px 4px 16px;
     gap:6px;
     flex:1;
-    min-width:180px;
+    min-width:160px;
     max-width:320px;
 }
 
@@ -147,157 +129,230 @@ header .brand-group{
 
 .busca-home button{
     flex:none;
-    width:34px;
-    height:34px;
+    width:32px;
+    height:32px;
     border-radius:50%;
     border:0;
     background:linear-gradient(135deg,var(--red),var(--red-dark));
     color:#fff;
-    font-size:14px;
+    font-size:13px;
     cursor:pointer;
     display:flex;
     align-items:center;
     justify-content:center;
 }
 
-/* ===== HERO ===== */
+/* ===== HERO CARROSSEL ===== */
 
-.hero{
-    margin-top:22px;
-    background:linear-gradient(155deg,var(--red) 0%,#f0462f 55%,var(--orange) 130%);
-    border-radius:28px;
-    padding:34px 28px;
-    color:#fff;
+.hero-carrossel{
+    margin-top:16px;
     position:relative;
+    border-radius:26px;
     overflow:hidden;
-    display:flex;
-    align-items:center;
-    gap:22px;
 }
 
-.hero::after{
+.hero-slides{
+    display:flex;
+    transition:transform .45s ease;
+}
+
+.hero-slide{
+    flex:0 0 100%;
+    background:linear-gradient(155deg,var(--red) 0%,#f0462f 55%,var(--orange) 130%);
+    color:#fff;
+    padding:26px 24px;
+    display:flex;
+    align-items:flex-start;
+    gap:20px;
+    min-height:200px;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-slide::after{
     content:"🐾";
     position:absolute;
-    font-size:200px;
+    font-size:170px;
     opacity:.12;
-    right:-38px;
-    bottom:-60px;
+    right:-30px;
+    bottom:-50px;
     transform:rotate(-18deg);
 }
 
-.hero-text{ flex:1; min-width:0; position:relative; z-index:1; }
+.hero-slide-texto{ flex:1; min-width:0; position:relative; z-index:1; }
 
-.hero-badge{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    background:rgba(255,255,255,.2);
-    border:1px solid rgba(255,255,255,.4);
-    padding:6px 14px;
-    border-radius:999px;
-    font-size:12.5px;
-    font-weight:700;
-    letter-spacing:.3px;
-    text-transform:uppercase;
-    margin-bottom:14px;
-}
-
-.hero h1{
-    font-size:28px;
-    margin:0 0 10px;
+.hero-slide-texto h2{
+    font-size:22px;
+    margin:0 0 8px;
     line-height:1.2;
 }
 
-.hero p{
-    margin:0;
-    font-size:15px;
+.hero-slide-texto p{
+    margin:0 0 14px;
+    font-size:14px;
     opacity:.95;
     line-height:1.5;
-    max-width:440px;
+    max-width:420px;
 }
 
-.hero-img-wrap{
-    position:relative;
+.hero-slide-texto .trust-line{
+    font-size:12.5px;
+    opacity:.9;
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.hero-slide .btn-slide{
+    display:inline-block;
+    background:#fff;
+    color:var(--red-dark);
+    text-decoration:none;
+    font-weight:800;
+    font-size:13.5px;
+    padding:10px 18px;
+    border-radius:11px;
+}
+
+.hero-slide-img{
     flex:none;
-    width:220px;
-}
-
-.hero img{
-    width:100%;
-    height:auto;
-    border-radius:24px;
-    display:block;
-    box-shadow:0 14px 30px rgba(0,0,0,.25);
+    width:150px;
     position:relative;
     z-index:1;
+}
+
+.hero-slide-img img{
+    width:100%;
+    border-radius:20px;
+    display:block;
+    box-shadow:0 12px 26px rgba(0,0,0,.24);
     border:3px solid rgba(255,255,255,.5);
 }
 
-.hero-img-wrap{ margin-top:46px; }
+.hero-slide-img.com-nota{
+    margin-top:32px;
+}
 
 .hero-nota{
     position:absolute;
-    top:-46px;
-    right:6px;
-    left:6px;
-    text-align:right;
+    top:-30px;
+    left:0;
+    right:0;
+    text-align:center;
     font-family:'Caveat',cursive;
     font-weight:700;
-    font-size:18px;
+    font-size:16px;
     line-height:1.15;
     color:#fff;
-    transform:rotate(-2deg);
     text-shadow:0 2px 6px rgba(0,0,0,.25);
+}
+
+.hero-dots{
+    position:absolute;
+    bottom:12px;
+    left:0;
+    right:0;
+    display:flex;
+    justify-content:center;
+    gap:7px;
     z-index:2;
 }
 
-.hero-nota svg{
-    display:block;
-    width:40px;
-    margin:2px 4px 0 auto;
-    opacity:.9;
+.hero-dots button{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    border:0;
+    background:rgba(255,255,255,.5);
+    padding:0;
+    cursor:pointer;
 }
 
-@media (max-width:640px){
-    .hero-img-wrap{ width:150px; margin-top:0; }
+.hero-dots button.ativa{ background:#fff; width:20px; border-radius:5px; }
+
+.hero-seta{
+    position:absolute;
+    top:calc(50% - 16px);
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    border:0;
+    background:rgba(255,255,255,.85);
+    color:var(--red-dark);
+    font-size:16px;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    z-index:2;
+}
+
+.hero-seta.esq{ left:10px; }
+.hero-seta.dir{ right:10px; }
+
+@media (min-width:560px){
+    .hero-seta{ display:flex; }
+    .hero-slide{ padding-left:54px; padding-right:54px; }
+}
+
+@media (max-width:560px){
+    .hero-slide{ flex-direction:column; text-align:center; padding:24px 20px 40px; }
+    .hero-slide-texto p{ max-width:none; }
+    .hero-slide-texto .trust-line{ justify-content:center; }
+    .hero-slide-img{ width:110px; }
     .hero-nota{ display:none; }
 }
 
-.trust-row{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+/* ===== CATEGORIAS (filtro) ===== */
+
+.categorias-row{
+    display:flex;
     gap:10px;
-    margin-top:22px;
-    position:relative;
-    z-index:1;
+    flex-wrap:wrap;
+    margin-top:18px;
 }
 
-.trust-item{
+.categoria-btn{
     display:flex;
     align-items:center;
     gap:8px;
-    font-size:12.5px;
-    font-weight:600;
-    line-height:1.3;
-    background:rgba(255,255,255,.14);
-    border-radius:12px;
-    padding:9px 10px;
+    background:var(--cream-2);
+    border:1.5px solid var(--line);
+    border-radius:999px;
+    padding:9px 16px 9px 9px;
+    font-weight:700;
+    font-size:13.5px;
+    color:var(--ink);
+    cursor:pointer;
+    font-family:'Work Sans',sans-serif;
 }
 
-.trust-item span{ font-size:16px; flex:none; }
-
-/* ===== CATEGORIAS ===== */
-
-.secao{
-    margin-top:34px;
+.categoria-btn.ativa{
+    background:var(--ink);
+    border-color:var(--ink);
+    color:#fff;
 }
+
+.categoria-btn .ic{
+    width:26px;
+    height:26px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+    color:#fff;
+    flex:none;
+}
+
+/* ===== BUSCA/GRID DE OFERTAS ===== */
 
 .secao-head{
     display:flex;
     align-items:center;
     justify-content:space-between;
     gap:10px;
-    margin-bottom:14px;
+    margin:26px 0 14px;
     padding:0 2px;
 }
 
@@ -307,219 +362,19 @@ header .brand-group{
     color:var(--red-dark);
 }
 
-.link-discreto{
-    color:var(--red-dark);
-    font-weight:700;
-    text-decoration:none;
-    font-size:13.5px;
-    white-space:nowrap;
-}
-
-.categorias-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:14px;
-}
-
-.categoria-card{
-    background:var(--cream-2);
-    border:1.5px solid var(--line);
-    border-radius:20px;
-    padding:18px;
-    text-decoration:none;
-    color:var(--ink);
-    display:flex;
-    align-items:center;
-    gap:14px;
-    transition:transform .15s ease, box-shadow .15s ease;
-}
-
-.categoria-card:hover{
-    transform:translateY(-2px);
-    box-shadow:0 10px 22px rgba(43,27,18,.1);
-}
-
-.categoria-icone{
-    flex:none;
-    width:52px;
-    height:52px;
-    border-radius:16px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:24px;
-    color:#fff;
-}
-
-.categoria-card h3{
-    font-size:16px;
-    margin:0 0 2px;
-    font-family:'Baloo 2',sans-serif;
-}
-
-.categoria-card p{
-    margin:0;
-    font-size:12.5px;
+.contagem{
+    font-size:13px;
     color:var(--muted);
+    font-weight:600;
 }
 
-/* ===== CARD "COMO FUNCIONA" ===== */
-
-.card{
-    background:var(--cream-2);
-    border:1.5px solid var(--line);
-    border-radius:24px;
-    padding:26px;
-    margin-top:8px;
-}
-
-.card h2{
-    font-size:19px;
-    margin:0 0 10px;
-    color:var(--red-dark);
-}
-
-.card > p{
-    margin:0 0 18px;
-    line-height:1.6;
-    color:#4a3c30;
-}
-
-.steps{
+.grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:16px;
-    margin:0 0 20px;
-}
-
-.step{
-    display:flex;
-    flex-direction:column;
-    gap:8px;
-}
-
-.step .num{
-    flex:none;
-    width:36px;
-    height:36px;
-    border-radius:50%;
-    background:linear-gradient(135deg,var(--red),var(--red-dark));
-    color:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:16px;
-    font-weight:800;
-    font-family:'Baloo 2',sans-serif;
-}
-
-.step div.txt{ font-size:14px; line-height:1.5; color:#4a3c30; }
-.step b{ color:var(--ink); display:block; margin-bottom:2px; font-family:'Baloo 2',sans-serif; font-size:14.5px; }
-
-.como-funciona-layout{
-    display:flex;
-    gap:28px;
-    align-items:flex-start;
-}
-
-.como-funciona-foto{
-    flex:none;
-    width:180px;
-    margin-top:38px;
-    position:relative;
-}
-
-.como-funciona-foto img{
-    width:100%;
-    border-radius:22px;
-    display:block;
-    box-shadow:0 10px 24px rgba(43,27,18,.18);
-}
-
-.fala-bubble{
-    position:absolute;
-    top:-38px;
-    left:50%;
-    transform:translateX(-50%) rotate(-2deg);
-    width:180px;
-    background:#fff;
-    border:2px solid var(--line);
-    border-radius:18px;
-    padding:8px 12px;
-    font-family:'Caveat',cursive;
-    font-weight:700;
-    font-size:19px;
-    line-height:1.2;
-    text-align:center;
-    color:var(--red-dark);
-    box-shadow:0 8px 18px rgba(43,27,18,.12);
-}
-
-.fala-bubble::after{
-    content:"";
-    position:absolute;
-    bottom:-9px;
-    left:50%;
-    transform:translateX(-50%) rotate(45deg);
-    width:16px;
-    height:16px;
-    background:#fff;
-    border-right:2px solid var(--line);
-    border-bottom:2px solid var(--line);
-}
-
-.como-funciona-conteudo{ flex:1; min-width:0; }
-
-@media (max-width:640px){
-    .como-funciona-layout{ flex-direction:column; }
-    .como-funciona-foto{ width:150px; margin:20px auto 0; }
-    .fala-bubble{ font-size:17px; white-space:normal; text-align:center; width:170px; }
-}
-
-.btn{
-    display:inline-block;
-    background:linear-gradient(135deg,var(--red),var(--red-dark));
-    color:#fff;
-    text-decoration:none;
-    text-align:center;
-    padding:15px 22px;
-    border-radius:14px;
-    font-weight:800;
-    font-size:15px;
-    box-shadow:0 8px 20px rgba(229,35,46,.28);
-}
-
-.btn.ghost{
-    background:#fff;
-    color:var(--red-dark);
-    border:1.5px solid var(--line);
-    box-shadow:none;
-}
-
-.row-btns{
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
-}
-
-/* ===== DESTAQUES (carrossel) ===== */
-
-.carrossel-wrap{
-    position:relative;
-}
-
-.destaques-grid{
-    display:flex;
+    grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
     gap:14px;
-    overflow-x:auto;
-    scroll-snap-type:x mandatory;
-    padding-bottom:4px;
-    scrollbar-width:none;
 }
 
-.destaques-grid::-webkit-scrollbar{ display:none; }
-
-.destaque-card{
+.oferta-card{
     background:var(--cream-2);
     border:1.5px solid var(--line);
     border-radius:18px;
@@ -528,17 +383,11 @@ header .brand-group{
     color:var(--ink);
     display:flex;
     flex-direction:column;
-    flex:0 0 auto;
-    width:190px;
-    scroll-snap-align:start;
-    position:relative;
 }
 
-.destaque-card .img-wrap{
-    position:relative;
-}
+.oferta-card .img-wrap{ position:relative; }
 
-.destaque-card img{
+.oferta-card img{
     width:100%;
     aspect-ratio:1/1;
     object-fit:cover;
@@ -570,117 +419,85 @@ header .brand-group{
     border-radius:999px;
 }
 
-.destaque-card .info{
-    padding:11px 12px 13px;
+.oferta-card .info{
+    padding:12px 13px 14px;
     flex:1;
     display:flex;
     flex-direction:column;
 }
 
-.destaque-card h3{
-    font-size:13px;
+.oferta-card .tagCategoria{
+    font-size:10px;
+    font-weight:700;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:.3px;
+    margin-bottom:6px;
+}
+
+.oferta-card h3{
+    font-size:13.5px;
     line-height:1.3;
     margin:0 0 6px;
-    min-height:34px;
+    min-height:35px;
     font-family:'Work Sans',sans-serif;
     font-weight:600;
 }
 
-.destaque-card .old{
+.oferta-card .old{
     font-size:11.5px;
     color:var(--muted);
     text-decoration:line-through;
 }
 
-.destaque-card .preco{
+.oferta-card .preco{
     font-family:'Baloo 2',sans-serif;
     font-weight:800;
     color:var(--red-dark);
-    font-size:16px;
-    margin-bottom:8px;
+    font-size:17px;
+    margin-bottom:9px;
 }
 
-.destaque-card .ver-oferta{
+.oferta-card .cupom{
+    font-size:11px;
+    font-weight:700;
+    background:#fff6e9;
+    border:1px dashed var(--orange);
+    color:var(--red-dark);
+    padding:3px 8px;
+    border-radius:8px;
+    margin-bottom:9px;
+    align-self:flex-start;
+}
+
+.oferta-card .ver-oferta{
     margin-top:auto;
     background:var(--ink);
     color:#fff;
     text-align:center;
-    font-size:12px;
+    font-size:12.5px;
     font-weight:700;
-    padding:8px;
+    padding:9px;
     border-radius:9px;
 }
 
-.destaques-vazio{
+.vazio{
     background:var(--cream-2);
     border:1.5px dashed var(--line);
     border-radius:18px;
-    padding:22px;
+    padding:40px 20px;
     text-align:center;
     color:var(--muted);
     font-size:14px;
 }
 
-.seta{
-    display:none;
-    position:absolute;
-    top:calc(50% - 18px);
-    width:36px;
-    height:36px;
-    border-radius:50%;
-    border:1.5px solid var(--line);
-    background:#fff;
-    color:var(--red-dark);
-    font-size:18px;
-    line-height:1;
-    align-items:center;
-    justify-content:center;
-    cursor:pointer;
-    box-shadow:0 6px 16px rgba(43,27,18,.12);
-    z-index:2;
-}
-
-.seta.esq{ left:-14px; }
-.seta.dir{ right:-14px; }
-
-@media (min-width:640px){
-    .seta{ display:flex; }
-}
-
 /* ===== FOOTER ===== */
-
-.footer-links{
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
-    justify-content:center;
-    margin-top:40px;
-}
-
-.footer-link{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    background:var(--cream-2);
-    border:1.5px solid var(--line);
-    border-radius:14px;
-    padding:12px 16px;
-    text-decoration:none;
-    color:var(--ink);
-    font-size:13.5px;
-    font-weight:700;
-    flex:1;
-    min-width:200px;
-    justify-content:center;
-}
-
-.footer-link span{ font-size:17px; }
 
 footer{
     text-align:center;
     color:var(--muted);
     font-size:12.5px;
-    margin-top:26px;
+    margin-top:40px;
     line-height:1.6;
 }
 
@@ -703,100 +520,72 @@ Farejadinhos da Yang
 </div>
 </a>
 <div class="header-right">
-<form class="busca-home" action="ofertas/index.html" method="get">
-<input type="text" name="q" placeholder="Buscar ofertas...">
+<form class="busca-home" id="formBusca">
+<input type="text" id="busca" placeholder="Buscar ofertas...">
 <button type="submit" aria-label="Buscar">🔍</button>
 </form>
 <div data-yang-nav data-base=""></div>
 </div>
 </header>
 
-<div class="hero">
-<div class="hero-text">
-<div class="hero-badge">🔥 Ofertas reais, todo dia</div>
-<h1>Achadinhos de verdade, farejados por ela mesma</h1>
+<div class="hero-carrossel" id="heroCarrossel">
+<button class="hero-seta esq" type="button" aria-label="Anterior" onclick="mudarSlide(-1)">‹</button>
+<button class="hero-seta dir" type="button" aria-label="Próximo" onclick="mudarSlide(1)">›</button>
+
+<div class="hero-slides" id="heroSlides">
+
+<div class="hero-slide">
+<div class="hero-slide-texto">
+<h2>Achadinhos de verdade, farejados por ela mesma</h2>
 <p>Casa, café e academia — a Yang vasculha ofertas boas todos os dias e traz só o que vale a pena.</p>
-<div class="trust-row">
-<div class="trust-item"><span>✅</span> Ofertas verificadas</div>
-<div class="trust-item"><span>🔒</span> Links diretos e seguros</div>
-<div class="trust-item"><span>🏷️</span> Descontos de verdade</div>
-<div class="trust-item"><span>🐾</span> Ofertas novas todo dia</div>
+<div class="trust-line">
+<span>✅ Ofertas verificadas</span>
+<span>🔒 Links diretos</span>
+<span>🏷️ Descontos de verdade</span>
 </div>
 </div>
-<div class="hero-img-wrap">
-<div class="hero-nota">
-✨ Yang sempre farejando<br>o melhor pra você!
-<svg viewBox="0 0 60 34" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4C22 6 42 10 50 26" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="1 7"/><path d="M40 22L50 26L44 32" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-</div>
+<div class="hero-slide-img com-nota">
+<div class="hero-nota">✨ Yang sempre farejando o melhor pra você!</div>
 <img src="assets/yang-hero.png" alt="Yang, a cachorrinha mascote do Farejadinhos da Yang">
 </div>
 </div>
 
-<div class="secao">
+<div class="hero-slide">
+<div class="hero-slide-texto">
+<h2>🧮 Vale a pena parcelar?</h2>
+<p>Antes de fechar a compra, descubra se compensa mais pagar à vista ou parcelado — a calculadora faz a conta pra você, com direito a imposto de renda e tudo.</p>
+<a class="btn-slide" href="calculadora/">Simular agora</a>
+</div>
+<div class="hero-slide-img">
+<img src="assets/yang-hero.png" alt="Yang, a cachorrinha mascote do Farejadinhos da Yang">
+</div>
+</div>
+
+<div class="hero-slide">
+<div class="hero-slide-texto">
+<h2>📸 Segue a Yang no Instagram</h2>
+<p>Fica sabendo de toda oferta nova assim que ela sai, direto no story.</p>
+<a class="btn-slide" href="https://www.instagram.com/farejadinhosdayang" target="_blank" rel="noopener">Ver Instagram</a>
+</div>
+<div class="hero-slide-img">
+<img src="assets/yang-hero.png" alt="Yang, a cachorrinha mascote do Farejadinhos da Yang">
+</div>
+</div>
+
+</div>
+
+<div class="hero-dots" id="heroDots"></div>
+</div>
+
+<div class="categorias-row" id="categoriasRow"></div>
+
 <div class="secao-head">
-<h2>Por categoria</h2>
-</div>
-<div class="categorias-grid">
-<a class="categoria-card" href="ofertas/index.html?categoria=Casa">
-<div class="categoria-icone" style="background:var(--orange)">🏠</div>
-<div><h3>Casa</h3><p>Tudo pro seu lar</p></div>
-</a>
-<a class="categoria-card" href="ofertas/index.html?categoria=Café">
-<div class="categoria-icone" style="background:#6B4226">☕</div>
-<div><h3>Café</h3><p>Sabor e praticidade</p></div>
-</a>
-<a class="categoria-card" href="ofertas/index.html?categoria=Academia">
-<div class="categoria-icone" style="background:#2E7D4F">🏋️</div>
-<div><h3>Academia</h3><p>Mais saúde e disposição</p></div>
-</a>
-</div>
+<h2 id="tituloGrid">🔥 Ofertas de agora</h2>
+<span class="contagem" id="contagem"></span>
 </div>
 
-<div class="secao">
-<div class="secao-head">
-<h2>🔥 Destaques de agora</h2>
-<a class="link-discreto" href="ofertas/">Ver todas as ofertas →</a>
-</div>
-<div class="carrossel-wrap">
-<button class="seta esq" type="button" aria-label="Anterior" onclick="moverCarrossel(-1)">‹</button>
-<div class="destaques-grid" id="destaquesGrid"></div>
-<button class="seta dir" type="button" aria-label="Próxima" onclick="moverCarrossel(1)">›</button>
-</div>
-<div class="destaques-vazio" id="destaquesVazio" style="display:none">
-A Yang tá farejando a próxima oferta 🐾 — volta já já!
-</div>
-</div>
-
-<div class="trail">
-<span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span>
-</div>
-
-<div class="card">
-<div class="como-funciona-layout">
-<div class="como-funciona-foto">
-<div class="fala-bubble">Eu farejo, você economiza! 🐾</div>
-<img src="assets/yang-hero.png" alt="Yang sorrindo, mascote do Farejadinhos da Yang">
-</div>
-<div class="como-funciona-conteudo">
-<h2>Como funciona o faro da Yang</h2>
-<div class="steps">
-<div class="step"><div class="num">1</div><div class="txt"><b>Ela fareja</b>Garimpamos ofertas de verdade, com preço que compensa.</div></div>
-<div class="step"><div class="num">2</div><div class="txt"><b>A gente publica aqui</b>Cada achadinho vira uma página com preço, cupom (quando tem) e link direto.</div></div>
-<div class="step"><div class="num">3</div><div class="txt"><b>Você economiza</b>É só clicar em "pegar oferta" e ir direto pra loja.</div></div>
-</div>
-<div class="row-btns">
-<a class="btn" href="ofertas/">Ver todas as ofertas</a>
-<a class="btn ghost" href="calculadora/">🧮 Vale a pena parcelar?</a>
-<a class="btn ghost" href="https://www.instagram.com/farejadinhosdayang" target="_blank" rel="noopener">Seguir no Instagram</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="footer-links">
-<a class="footer-link" href="calculadora/"><span>🧮</span> Calculadora de parcelamento</a>
-<a class="footer-link" href="https://www.instagram.com/farejadinhosdayang" target="_blank" rel="noopener"><span>📸</span> Nosso Instagram</a>
-</div>
+<div class="grid" id="grid"></div>
+<div class="vazio" id="vazio" style="display:none">A Yang tá farejando a próxima oferta 🐾 — volta já já!</div>
 
 <footer>
 🐶 Farejadinhos da Yang — achadinhos, ofertas e cupons.<br>
@@ -809,7 +598,14 @@ Alguns links desta página podem ser de afiliado: ao comprar por eles, podemos g
 <script src="assets/nav.js"></script>
 <script>
 
-const HORAS_EXPIRACAO_DESTAQUES = 24;
+const HORAS_EXPIRACAO = 24;
+
+let ofertas = [];
+let categoriaAtual = "";
+
+const parametrosUrl = new URLSearchParams(window.location.search);
+const categoriaInicial = parametrosUrl.get("categoria") || "";
+const buscaInicial = parametrosUrl.get("q") || "";
 
 function escapeHtml(texto){
     const div = document.createElement("div");
@@ -823,15 +619,51 @@ function paraNumero(valor){
     return isNaN(n) ? null : n;
 }
 
-function moverCarrossel(direcao){
-    const grid = document.getElementById("destaquesGrid");
-    grid.scrollBy({ left: direcao * 220, behavior: "smooth" });
+/* ===== HERO CARROSSEL (autoplay) ===== */
+
+let slideAtual = 0;
+const totalSlides = document.querySelectorAll(".hero-slide").length;
+let autoplayTimer = null;
+
+function montarDots(){
+    const dots = document.getElementById("heroDots");
+    let html = "";
+    for(let i = 0; i < totalSlides; i++){
+        html += `<button type="button" class="${i === 0 ? 'ativa' : ''}" onclick="irParaSlide(${i})" aria-label="Slide ${i+1}"></button>`;
+    }
+    dots.innerHTML = html;
 }
 
-async function carregarDestaques(){
+function atualizarSlide(){
+    document.getElementById("heroSlides").style.transform = `translateX(-${slideAtual * 100}%)`;
+    document.querySelectorAll("#heroDots button").forEach((b, i) => {
+        b.classList.toggle("ativa", i === slideAtual);
+    });
+}
 
-    const grid = document.getElementById("destaquesGrid");
-    const vazio = document.getElementById("destaquesVazio");
+function irParaSlide(i){
+    slideAtual = i;
+    atualizarSlide();
+    reiniciarAutoplay();
+}
+
+function mudarSlide(direcao){
+    slideAtual = (slideAtual + direcao + totalSlides) % totalSlides;
+    atualizarSlide();
+    reiniciarAutoplay();
+}
+
+function reiniciarAutoplay(){
+    clearInterval(autoplayTimer);
+    autoplayTimer = setInterval(() => mudarSlide(1), 6000);
+}
+
+montarDots();
+reiniciarAutoplay();
+
+/* ===== CARREGAR OFERTAS ===== */
+
+async function carregar(){
 
     let todas = [];
 
@@ -845,30 +677,103 @@ async function carregarDestaques(){
 
     const agora = new Date();
 
-    let ativas = todas.filter(o => {
+    ofertas = todas.filter(o => {
         if(!o || !o.slug) return false;
         const dataOferta = new Date(o.data);
         if(isNaN(dataOferta)) return true;
         const horas = (agora - dataOferta) / (1000 * 60 * 60);
-        return horas <= HORAS_EXPIRACAO_DESTAQUES;
+        return horas <= HORAS_EXPIRACAO;
     });
 
-    ativas.sort((a, b) => {
+    ofertas.sort((a, b) => {
         if(!!b.destaque !== !!a.destaque) return (b.destaque ? 1 : 0) - (a.destaque ? 1 : 0);
         return new Date(b.data) - new Date(a.data);
     });
 
-    ativas = ativas.slice(0, 10);
+    if(buscaInicial){
+        document.getElementById("busca").value = buscaInicial;
+    }
+    categoriaAtual = categoriaInicial;
 
-    if(ativas.length === 0){
+    montarCategorias();
+    aplicarFiltros();
+}
+
+function montarCategorias(){
+
+    const container = document.getElementById("categoriasRow");
+
+    const iconesPadrao = {
+        "Casa": { icone: "🏠", cor: "var(--orange)" },
+        "Café": { icone: "☕", cor: "#6B4226" },
+        "Academia": { icone: "🏋️", cor: "#2E7D4F" }
+    };
+
+    const categorias = [...new Set(
+        ofertas.map(o => (o.categoria || "").trim()).filter(c => c !== "")
+    )].sort();
+
+    if(categorias.length === 0){
+        container.innerHTML = "";
+        return;
+    }
+
+    let html = `<button type="button" class="categoria-btn${categoriaAtual === "" ? " ativa" : ""}" data-categoria="">Todas</button>`;
+
+    categorias.forEach(c => {
+        const padrao = iconesPadrao[c];
+        const icHtml = padrao
+            ? `<span class="ic" style="background:${padrao.cor}">${padrao.icone}</span>`
+            : "";
+        const ativa = c === categoriaAtual ? " ativa" : "";
+        html += `<button type="button" class="categoria-btn${ativa}" data-categoria="${escapeHtml(c)}">${icHtml}${escapeHtml(c)}</button>`;
+    });
+
+    container.innerHTML = html;
+
+    container.querySelectorAll(".categoria-btn").forEach(btn => {
+        btn.addEventListener("click", function(){
+            categoriaAtual = this.dataset.categoria;
+            container.querySelectorAll(".categoria-btn").forEach(b => b.classList.remove("ativa"));
+            this.classList.add("ativa");
+            aplicarFiltros();
+        });
+    });
+}
+
+function aplicarFiltros(){
+
+    const termo = document.getElementById("busca").value.toLowerCase();
+
+    const filtradas = ofertas.filter(o => {
+        const bateBusca = (o.produto || "").toLowerCase().includes(termo);
+        const bateCategoria = !categoriaAtual || (o.categoria || "") === categoriaAtual;
+        return bateBusca && bateCategoria;
+    });
+
+    render(filtradas);
+}
+
+function render(lista){
+
+    const grid = document.getElementById("grid");
+    const vazio = document.getElementById("vazio");
+    const contagem = document.getElementById("contagem");
+
+    grid.innerHTML = "";
+    contagem.textContent = lista.length > 0 ? `${lista.length} oferta${lista.length > 1 ? "s" : ""}` : "";
+
+    if(lista.length === 0){
+        vazio.textContent = ofertas.length === 0
+            ? "A Yang tá farejando a próxima oferta 🐾 — volta já já!"
+            : "Nenhuma oferta encontrada com esse filtro.";
         vazio.style.display = "block";
-        grid.innerHTML = "";
         return;
     }
 
     vazio.style.display = "none";
 
-    grid.innerHTML = ativas.map(o => {
+    grid.innerHTML = lista.map(o => {
 
         const precoNum = paraNumero(o.preco);
         const antigoNum = paraNumero(o.precoAntigo);
@@ -884,25 +789,33 @@ async function carregarDestaques(){
         let badgeCanto = "";
         if(o.destaque){
             badgeCanto = `<div class="badge-canto">⭐ Destaque</div>`;
-        } else if(o.cupom){
-            badgeCanto = `<div class="badge-canto">🏷️ Cupom</div>`;
         }
 
         const oldHtml = o.precoAntigo
             ? `<div class="old">${escapeHtml(o.precoAntigo)}</div>`
             : "";
 
+        const categoriaHtml = o.categoria
+            ? `<div class="tagCategoria">${escapeHtml(o.categoria)}</div>`
+            : "";
+
+        const cupomHtml = o.cupom
+            ? `<div class="cupom">🏷️ ${escapeHtml(o.cupom)}</div>`
+            : "";
+
         return `
-        <a class="destaque-card" href="ofertas/${encodeURIComponent(o.slug)}/">
+        <a class="oferta-card" href="ofertas/${encodeURIComponent(o.slug)}/">
             <div class="img-wrap">
                 <img src="assets/${encodeURIComponent(o.imagem)}" alt="${escapeHtml(o.produto)}" loading="lazy">
                 ${badgeCanto}
                 ${badgeDesconto}
             </div>
             <div class="info">
+                ${categoriaHtml}
                 <h3>${escapeHtml(o.produto)}</h3>
                 ${oldHtml}
                 <div class="preco">${escapeHtml(o.preco)}</div>
+                ${cupomHtml}
                 <div class="ver-oferta">Ver oferta →</div>
             </div>
         </a>
@@ -910,7 +823,10 @@ async function carregarDestaques(){
     }).join("");
 }
 
-carregarDestaques();
+document.getElementById("busca").addEventListener("input", aplicarFiltros);
+document.getElementById("formBusca").addEventListener("submit", function(e){ e.preventDefault(); aplicarFiltros(); });
+
+carregar();
 
 </script>
 
