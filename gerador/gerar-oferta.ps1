@@ -48,34 +48,41 @@ $EmojiPaw  = [char]::ConvertFromUtf32(0x1F43E)
 # FORMATAR PREÇO
 # ==========================================
 
-function FormatarPreco([string]$Valor) {
+# Interpreta um preço digitado em qualquer um desses formatos:
+#   "129,52"      -> já em formato brasileiro (vírgula decimal)
+#   "2.199,00"    -> formato brasileiro com ponto de milhar
+#   "129.52"      -> formato americano (ponto decimal, sem milhar)
+# Importante: só troca "." por "," quando o valor NÃO tem vírgula —
+# se já tem vírgula, o ponto (se houver) é separador de milhar de
+# verdade e não pode ser mexido, senão "2.199,00" vira "2,199,00"
+# (inválido) em vez de continuar sendo dois mil e cento e noventa e nove reais.
+function ParseValorBR([string]$Valor) {
 
     $Valor = $Valor.Trim()
     $Valor = $Valor -replace 'R\$', ''
     $Valor = $Valor.Trim()
-    $Valor = $Valor -replace '\.', ','
+
+    if ($Valor -notmatch ',') {
+        $Valor = $Valor -replace '\.', ','
+    }
 
     try {
-        $Numero = [decimal]::Parse($Valor, $CulturaBR)
+        return [decimal]::Parse($Valor, $CulturaBR)
     }
     catch {
         throw "Preco invalido: $Valor"
     }
+}
 
+function FormatarPreco([string]$Valor) {
+    $Numero = ParseValorBR $Valor
     return $Numero.ToString("C2", $CulturaBR)
 }
 
 # Versão só com o número (sem "R$"), formato "1234,56",
 # usada no ofertas.json e na calculadora.
 function NumeroPreco([string]$Valor) {
-
-    $Valor = $Valor.Trim()
-    $Valor = $Valor -replace 'R\$', ''
-    $Valor = $Valor.Trim()
-    $Valor = $Valor -replace '\.', ','
-
-    $Numero = [decimal]::Parse($Valor, $CulturaBR)
-
+    $Numero = ParseValorBR $Valor
     return $Numero.ToString("0.00", $CulturaBR)
 }
 
