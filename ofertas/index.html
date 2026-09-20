@@ -91,7 +91,13 @@ body{margin:0;background:var(--cream);font-family:'Work Sans',Arial,sans-serif;c
 const HORAS_EXPIRACAO = 24;
 
 let ofertas = [];
-let categoriaAtual = "";
+
+// Permite chegar aqui já filtrado, vindo de um link tipo
+// "ofertas/?categoria=Casa" ou "ofertas/?q=fone" (usado pela busca
+// e pelos cards de categoria da home).
+const parametrosUrl = new URLSearchParams(window.location.search);
+let categoriaAtual = parametrosUrl.get("categoria") || "";
+const buscaInicial = parametrosUrl.get("q") || "";
 
 function escapeHtml(texto){
   const div = document.createElement("div");
@@ -127,6 +133,10 @@ async function carregar(){
 
   ofertas.sort((a, b) => new Date(b.data) - new Date(a.data));
 
+  if(buscaInicial){
+    document.getElementById("busca").value = buscaInicial;
+  }
+
   montarCategorias();
   aplicarFiltros();
 }
@@ -144,10 +154,11 @@ function montarCategorias(){
     return;
   }
 
-  let html = `<button type="button" class="categoriaBtn ativa" data-categoria="">Todas</button>`;
+  let html = `<button type="button" class="categoriaBtn${categoriaAtual === "" ? " ativa" : ""}" data-categoria="">Todas</button>`;
 
   categorias.forEach(c => {
-    html += `<button type="button" class="categoriaBtn" data-categoria="${escapeHtml(c)}">${escapeHtml(c)}</button>`;
+    const ativa = c === categoriaAtual ? " ativa" : "";
+    html += `<button type="button" class="categoriaBtn${ativa}" data-categoria="${escapeHtml(c)}">${escapeHtml(c)}</button>`;
   });
 
   container.innerHTML = html;
