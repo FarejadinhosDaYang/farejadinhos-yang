@@ -20,7 +20,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="assets/nav.css">
 
@@ -51,9 +51,9 @@ h1,h2,h3,.brand{
 }
 
 .wrap{
-    max-width:760px;
+    max-width:1080px;
     margin:auto;
-    padding:26px 18px 60px;
+    padding:22px 18px 60px;
 }
 
 /* ===== PAW TRAIL DIVIDER ===== */
@@ -81,6 +81,7 @@ header{
     align-items:center;
     justify-content:space-between;
     gap:14px;
+    flex-wrap:wrap;
     padding:6px 4px 0;
 }
 
@@ -92,14 +93,14 @@ header .brand-group{
 }
 
 .logo-badge{
-    width:58px;
-    height:58px;
+    width:52px;
+    height:52px;
     border-radius:50%;
     flex:none;
 }
 
 .brand{
-    font-size:21px;
+    font-size:20px;
     font-weight:800;
     line-height:1.1;
     color:var(--red-dark);
@@ -109,41 +110,101 @@ header .brand-group{
     display:block;
     font-family:'Work Sans',sans-serif;
     font-weight:500;
-    font-size:13px;
+    font-size:12.5px;
     color:var(--muted);
     margin-top:2px;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.busca-home{
+    display:flex;
+    align-items:center;
+    background:var(--cream-2);
+    border:1.5px solid var(--line);
+    border-radius:999px;
+    padding:4px 4px 4px 16px;
+    gap:6px;
+    flex:1;
+    min-width:180px;
+    max-width:320px;
+}
+
+.busca-home input{
+    border:0;
+    background:transparent;
+    outline:none;
+    font-family:'Work Sans',sans-serif;
+    font-size:14px;
+    color:var(--ink);
+    width:100%;
+    padding:8px 0;
+}
+
+.busca-home button{
+    flex:none;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    border:0;
+    background:linear-gradient(135deg,var(--red),var(--red-dark));
+    color:#fff;
+    font-size:14px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 /* ===== HERO ===== */
 
 .hero{
-    margin-top:26px;
+    margin-top:22px;
     background:linear-gradient(155deg,var(--red) 0%,#f0462f 55%,var(--orange) 130%);
     border-radius:28px;
-    padding:32px 26px;
+    padding:34px 28px;
     color:#fff;
     position:relative;
     overflow:hidden;
     display:flex;
     align-items:center;
-    gap:18px;
+    gap:22px;
 }
 
 .hero::after{
     content:"🐾";
     position:absolute;
-    font-size:180px;
+    font-size:200px;
     opacity:.12;
     right:-38px;
-    bottom:-56px;
+    bottom:-60px;
     transform:rotate(-18deg);
 }
 
-.hero-text{ flex:1; min-width:0; }
+.hero-text{ flex:1; min-width:0; position:relative; z-index:1; }
+
+.hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:rgba(255,255,255,.2);
+    border:1px solid rgba(255,255,255,.4);
+    padding:6px 14px;
+    border-radius:999px;
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:.3px;
+    text-transform:uppercase;
+    margin-bottom:14px;
+}
 
 .hero h1{
-    font-size:26px;
-    margin:0 0 8px;
+    font-size:28px;
+    margin:0 0 10px;
     line-height:1.2;
 }
 
@@ -152,38 +213,157 @@ header .brand-group{
     font-size:15px;
     opacity:.95;
     line-height:1.5;
+    max-width:440px;
+}
+
+.hero-img-wrap{
+    position:relative;
+    flex:none;
+    width:220px;
 }
 
 .hero img{
-    width:120px;
+    width:100%;
     height:auto;
-    border-radius:20px;
-    flex:none;
-    box-shadow:0 10px 24px rgba(0,0,0,.22);
+    border-radius:24px;
+    display:block;
+    box-shadow:0 14px 30px rgba(0,0,0,.25);
+    position:relative;
+    z-index:1;
+    border:3px solid rgba(255,255,255,.5);
+}
+
+.hero-img-wrap{ margin-top:46px; }
+
+.hero-nota{
+    position:absolute;
+    top:-46px;
+    right:6px;
+    left:6px;
+    text-align:right;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:18px;
+    line-height:1.15;
+    color:#fff;
+    transform:rotate(-2deg);
+    text-shadow:0 2px 6px rgba(0,0,0,.25);
+    z-index:2;
+}
+
+.hero-nota svg{
+    display:block;
+    width:40px;
+    margin:2px 4px 0 auto;
+    opacity:.9;
+}
+
+@media (max-width:640px){
+    .hero-img-wrap{ width:150px; margin-top:0; }
+    .hero-nota{ display:none; }
+}
+
+.trust-row{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+    gap:10px;
+    margin-top:22px;
     position:relative;
     z-index:1;
 }
 
-/* ===== CATEGORY CHIPS ===== */
-
-.chips{
+.trust-item{
     display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    margin-top:22px;
+    align-items:center;
+    gap:8px;
+    font-size:12.5px;
+    font-weight:600;
+    line-height:1.3;
+    background:rgba(255,255,255,.14);
+    border-radius:12px;
+    padding:9px 10px;
 }
 
-.chip{
+.trust-item span{ font-size:16px; flex:none; }
+
+/* ===== CATEGORIAS ===== */
+
+.secao{
+    margin-top:34px;
+}
+
+.secao-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    margin-bottom:14px;
+    padding:0 2px;
+}
+
+.secao-head h2{
+    font-size:19px;
+    margin:0;
+    color:var(--red-dark);
+}
+
+.link-discreto{
+    color:var(--red-dark);
+    font-weight:700;
+    text-decoration:none;
+    font-size:13.5px;
+    white-space:nowrap;
+}
+
+.categorias-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:14px;
+}
+
+.categoria-card{
     background:var(--cream-2);
     border:1.5px solid var(--line);
-    border-radius:999px;
-    padding:9px 16px;
-    font-weight:600;
-    font-size:14px;
+    border-radius:20px;
+    padding:18px;
+    text-decoration:none;
     color:var(--ink);
+    display:flex;
+    align-items:center;
+    gap:14px;
+    transition:transform .15s ease, box-shadow .15s ease;
 }
 
-/* ===== CARD ===== */
+.categoria-card:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 22px rgba(43,27,18,.1);
+}
+
+.categoria-icone{
+    flex:none;
+    width:52px;
+    height:52px;
+    border-radius:16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    color:#fff;
+}
+
+.categoria-card h3{
+    font-size:16px;
+    margin:0 0 2px;
+    font-family:'Baloo 2',sans-serif;
+}
+
+.categoria-card p{
+    margin:0;
+    font-size:12.5px;
+    color:var(--muted);
+}
+
+/* ===== CARD "COMO FUNCIONA" ===== */
 
 .card{
     background:var(--cream-2);
@@ -199,7 +379,7 @@ header .brand-group{
     color:var(--red-dark);
 }
 
-.card p{
+.card > p{
     margin:0 0 18px;
     line-height:1.6;
     color:#4a3c30;
@@ -207,31 +387,94 @@ header .brand-group{
 
 .steps{
     display:grid;
-    gap:14px;
-    margin:0 0 18px;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:16px;
+    margin:0 0 20px;
 }
 
 .step{
     display:flex;
-    gap:12px;
-    align-items:flex-start;
+    flex-direction:column;
+    gap:8px;
 }
 
-.step .paw{
+.step .num{
     flex:none;
-    width:34px;
-    height:34px;
+    width:36px;
+    height:36px;
     border-radius:50%;
-    background:#fff;
-    border:1.5px solid var(--line);
+    background:linear-gradient(135deg,var(--red),var(--red-dark));
+    color:#fff;
     display:flex;
     align-items:center;
     justify-content:center;
     font-size:16px;
+    font-weight:800;
+    font-family:'Baloo 2',sans-serif;
 }
 
-.step div{ font-size:14.5px; line-height:1.5; padding-top:5px; color:#4a3c30; }
-.step b{ color:var(--ink); }
+.step div.txt{ font-size:14px; line-height:1.5; color:#4a3c30; }
+.step b{ color:var(--ink); display:block; margin-bottom:2px; font-family:'Baloo 2',sans-serif; font-size:14.5px; }
+
+.como-funciona-layout{
+    display:flex;
+    gap:28px;
+    align-items:flex-start;
+}
+
+.como-funciona-foto{
+    flex:none;
+    width:180px;
+    margin-top:38px;
+    position:relative;
+}
+
+.como-funciona-foto img{
+    width:100%;
+    border-radius:22px;
+    display:block;
+    box-shadow:0 10px 24px rgba(43,27,18,.18);
+}
+
+.fala-bubble{
+    position:absolute;
+    top:-38px;
+    left:50%;
+    transform:translateX(-50%) rotate(-2deg);
+    width:180px;
+    background:#fff;
+    border:2px solid var(--line);
+    border-radius:18px;
+    padding:8px 12px;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:19px;
+    line-height:1.2;
+    text-align:center;
+    color:var(--red-dark);
+    box-shadow:0 8px 18px rgba(43,27,18,.12);
+}
+
+.fala-bubble::after{
+    content:"";
+    position:absolute;
+    bottom:-9px;
+    left:50%;
+    transform:translateX(-50%) rotate(45deg);
+    width:16px;
+    height:16px;
+    background:#fff;
+    border-right:2px solid var(--line);
+    border-bottom:2px solid var(--line);
+}
+
+.como-funciona-conteudo{ flex:1; min-width:0; }
+
+@media (max-width:640px){
+    .como-funciona-layout{ flex-direction:column; }
+    .como-funciona-foto{ width:150px; margin:20px auto 0; }
+    .fala-bubble{ font-size:17px; white-space:normal; text-align:center; width:170px; }
+}
 
 .btn{
     display:inline-block;
@@ -259,24 +502,22 @@ header .brand-group{
     flex-wrap:wrap;
 }
 
-/* ===== DESTAQUES ===== */
+/* ===== DESTAQUES (carrossel) ===== */
 
-.destaques{
-    margin-top:30px;
-}
-
-.destaques h2{
-    font-size:19px;
-    margin:0 0 14px;
-    color:var(--red-dark);
-    padding:0 2px;
+.carrossel-wrap{
+    position:relative;
 }
 
 .destaques-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
-    gap:12px;
+    display:flex;
+    gap:14px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    padding-bottom:4px;
+    scrollbar-width:none;
 }
+
+.destaques-grid::-webkit-scrollbar{ display:none; }
 
 .destaque-card{
     background:var(--cream-2);
@@ -287,6 +528,14 @@ header .brand-group{
     color:var(--ink);
     display:flex;
     flex-direction:column;
+    flex:0 0 auto;
+    width:190px;
+    scroll-snap-align:start;
+    position:relative;
+}
+
+.destaque-card .img-wrap{
+    position:relative;
 }
 
 .destaque-card img{
@@ -297,8 +546,35 @@ header .brand-group{
     display:block;
 }
 
+.badge-canto{
+    position:absolute;
+    top:8px;
+    left:8px;
+    background:var(--ink);
+    color:#fff;
+    font-size:10.5px;
+    font-weight:700;
+    padding:3px 9px;
+    border-radius:999px;
+}
+
+.badge-desconto{
+    position:absolute;
+    top:8px;
+    right:8px;
+    background:var(--red);
+    color:#fff;
+    font-size:10.5px;
+    font-weight:800;
+    padding:3px 8px;
+    border-radius:999px;
+}
+
 .destaque-card .info{
     padding:11px 12px 13px;
+    flex:1;
+    display:flex;
+    flex-direction:column;
 }
 
 .destaque-card h3{
@@ -310,11 +586,29 @@ header .brand-group{
     font-weight:600;
 }
 
+.destaque-card .old{
+    font-size:11.5px;
+    color:var(--muted);
+    text-decoration:line-through;
+}
+
 .destaque-card .preco{
     font-family:'Baloo 2',sans-serif;
     font-weight:800;
     color:var(--red-dark);
     font-size:16px;
+    margin-bottom:8px;
+}
+
+.destaque-card .ver-oferta{
+    margin-top:auto;
+    background:var(--ink);
+    color:#fff;
+    text-align:center;
+    font-size:12px;
+    font-weight:700;
+    padding:8px;
+    border-radius:9px;
 }
 
 .destaques-vazio{
@@ -327,23 +621,66 @@ header .brand-group{
     font-size:14px;
 }
 
-.ver-todas{
-    display:block;
-    text-align:center;
-    margin-top:14px;
+.seta{
+    display:none;
+    position:absolute;
+    top:calc(50% - 18px);
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    border:1.5px solid var(--line);
+    background:#fff;
     color:var(--red-dark);
-    font-weight:700;
-    text-decoration:none;
-    font-size:14px;
+    font-size:18px;
+    line-height:1;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    box-shadow:0 6px 16px rgba(43,27,18,.12);
+    z-index:2;
+}
+
+.seta.esq{ left:-14px; }
+.seta.dir{ right:-14px; }
+
+@media (min-width:640px){
+    .seta{ display:flex; }
 }
 
 /* ===== FOOTER ===== */
+
+.footer-links{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-top:40px;
+}
+
+.footer-link{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    background:var(--cream-2);
+    border:1.5px solid var(--line);
+    border-radius:14px;
+    padding:12px 16px;
+    text-decoration:none;
+    color:var(--ink);
+    font-size:13.5px;
+    font-weight:700;
+    flex:1;
+    min-width:200px;
+    justify-content:center;
+}
+
+.footer-link span{ font-size:17px; }
 
 footer{
     text-align:center;
     color:var(--muted);
     font-size:12.5px;
-    margin-top:38px;
+    margin-top:26px;
     line-height:1.6;
 }
 
@@ -365,30 +702,69 @@ Farejadinhos da Yang
 <small>a Yang fareja os melhores preços 🐾</small>
 </div>
 </a>
+<div class="header-right">
+<form class="busca-home" action="ofertas/index.html" method="get">
+<input type="text" name="q" placeholder="Buscar ofertas...">
+<button type="submit" aria-label="Buscar">🔍</button>
+</form>
 <div data-yang-nav data-base=""></div>
+</div>
 </header>
 
 <div class="hero">
 <div class="hero-text">
+<div class="hero-badge">🔥 Ofertas reais, todo dia</div>
 <h1>Achadinhos de verdade, farejados por ela mesma</h1>
 <p>Casa, café e academia — a Yang vasculha ofertas boas todos os dias e traz só o que vale a pena.</p>
+<div class="trust-row">
+<div class="trust-item"><span>✅</span> Ofertas verificadas</div>
+<div class="trust-item"><span>🔒</span> Links diretos e seguros</div>
+<div class="trust-item"><span>🏷️</span> Descontos de verdade</div>
+<div class="trust-item"><span>🐾</span> Ofertas novas todo dia</div>
+</div>
+</div>
+<div class="hero-img-wrap">
+<div class="hero-nota">
+✨ Yang sempre farejando<br>o melhor pra você!
+<svg viewBox="0 0 60 34" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4C22 6 42 10 50 26" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="1 7"/><path d="M40 22L50 26L44 32" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
 </div>
 <img src="assets/yang-hero.png" alt="Yang, a cachorrinha mascote do Farejadinhos da Yang">
 </div>
+</div>
 
-<div class="destaques">
+<div class="secao">
+<div class="secao-head">
+<h2>Por categoria</h2>
+</div>
+<div class="categorias-grid">
+<a class="categoria-card" href="ofertas/index.html?categoria=Casa">
+<div class="categoria-icone" style="background:var(--orange)">🏠</div>
+<div><h3>Casa</h3><p>Tudo pro seu lar</p></div>
+</a>
+<a class="categoria-card" href="ofertas/index.html?categoria=Café">
+<div class="categoria-icone" style="background:#6B4226">☕</div>
+<div><h3>Café</h3><p>Sabor e praticidade</p></div>
+</a>
+<a class="categoria-card" href="ofertas/index.html?categoria=Academia">
+<div class="categoria-icone" style="background:#2E7D4F">🏋️</div>
+<div><h3>Academia</h3><p>Mais saúde e disposição</p></div>
+</a>
+</div>
+</div>
+
+<div class="secao">
+<div class="secao-head">
 <h2>🔥 Destaques de agora</h2>
+<a class="link-discreto" href="ofertas/">Ver todas as ofertas →</a>
+</div>
+<div class="carrossel-wrap">
+<button class="seta esq" type="button" aria-label="Anterior" onclick="moverCarrossel(-1)">‹</button>
 <div class="destaques-grid" id="destaquesGrid"></div>
+<button class="seta dir" type="button" aria-label="Próxima" onclick="moverCarrossel(1)">›</button>
+</div>
 <div class="destaques-vazio" id="destaquesVazio" style="display:none">
 A Yang tá farejando a próxima oferta 🐾 — volta já já!
 </div>
-<a class="ver-todas" href="ofertas/">Ver todas as ofertas →</a>
-</div>
-
-<div class="chips">
-<span class="chip">🏠 Casa</span>
-<span class="chip">☕ Café</span>
-<span class="chip">🏋️ Academia</span>
 </div>
 
 <div class="trail">
@@ -396,17 +772,30 @@ A Yang tá farejando a próxima oferta 🐾 — volta já já!
 </div>
 
 <div class="card">
+<div class="como-funciona-layout">
+<div class="como-funciona-foto">
+<div class="fala-bubble">Eu farejo, você economiza! 🐾</div>
+<img src="assets/yang-hero.png" alt="Yang sorrindo, mascote do Farejadinhos da Yang">
+</div>
+<div class="como-funciona-conteudo">
 <h2>Como funciona o faro da Yang</h2>
 <div class="steps">
-<div class="step"><div class="paw">🐾</div><div><b>1. Ela fareja</b> — garimpamos ofertas de verdade, com preço que compensa.</div></div>
-<div class="step"><div class="paw">🐾</div><div><b>2. A gente publica aqui</b> — cada achadinho vira uma página com preço, cupom (quando tem) e link direto.</div></div>
-<div class="step"><div class="paw">🐾</div><div><b>3. Você economiza</b> — é só clicar em "pegar oferta" e ir direto pra loja.</div></div>
+<div class="step"><div class="num">1</div><div class="txt"><b>Ela fareja</b>Garimpamos ofertas de verdade, com preço que compensa.</div></div>
+<div class="step"><div class="num">2</div><div class="txt"><b>A gente publica aqui</b>Cada achadinho vira uma página com preço, cupom (quando tem) e link direto.</div></div>
+<div class="step"><div class="num">3</div><div class="txt"><b>Você economiza</b>É só clicar em "pegar oferta" e ir direto pra loja.</div></div>
 </div>
 <div class="row-btns">
 <a class="btn" href="ofertas/">Ver todas as ofertas</a>
 <a class="btn ghost" href="calculadora/">🧮 Vale a pena parcelar?</a>
 <a class="btn ghost" href="https://www.instagram.com/farejadinhosdayang" target="_blank" rel="noopener">Seguir no Instagram</a>
 </div>
+</div>
+</div>
+</div>
+
+<div class="footer-links">
+<a class="footer-link" href="calculadora/"><span>🧮</span> Calculadora de parcelamento</a>
+<a class="footer-link" href="https://www.instagram.com/farejadinhosdayang" target="_blank" rel="noopener"><span>📸</span> Nosso Instagram</a>
 </div>
 
 <footer>
@@ -426,6 +815,17 @@ function escapeHtml(texto){
     const div = document.createElement("div");
     div.textContent = texto == null ? "" : texto;
     return div.innerHTML;
+}
+
+function paraNumero(valor){
+    if(valor === undefined || valor === null || valor === "") return null;
+    const n = parseFloat(String(valor).replace(/\./g,"").replace(",","."));
+    return isNaN(n) ? null : n;
+}
+
+function moverCarrossel(direcao){
+    const grid = document.getElementById("destaquesGrid");
+    grid.scrollBy({ left: direcao * 220, behavior: "smooth" });
 }
 
 async function carregarDestaques(){
@@ -458,7 +858,7 @@ async function carregarDestaques(){
         return new Date(b.data) - new Date(a.data);
     });
 
-    ativas = ativas.slice(0, 6);
+    ativas = ativas.slice(0, 10);
 
     if(ativas.length === 0){
         vazio.style.display = "block";
@@ -468,15 +868,46 @@ async function carregarDestaques(){
 
     vazio.style.display = "none";
 
-    grid.innerHTML = ativas.map(o => `
+    grid.innerHTML = ativas.map(o => {
+
+        const precoNum = paraNumero(o.preco);
+        const antigoNum = paraNumero(o.precoAntigo);
+
+        let badgeDesconto = "";
+        if(precoNum !== null && antigoNum !== null && antigoNum > precoNum){
+            const pct = Math.round((1 - (precoNum / antigoNum)) * 100);
+            if(pct > 0){
+                badgeDesconto = `<div class="badge-desconto">-${pct}%</div>`;
+            }
+        }
+
+        let badgeCanto = "";
+        if(o.destaque){
+            badgeCanto = `<div class="badge-canto">⭐ Destaque</div>`;
+        } else if(o.cupom){
+            badgeCanto = `<div class="badge-canto">🏷️ Cupom</div>`;
+        }
+
+        const oldHtml = o.precoAntigo
+            ? `<div class="old">${escapeHtml(o.precoAntigo)}</div>`
+            : "";
+
+        return `
         <a class="destaque-card" href="ofertas/${encodeURIComponent(o.slug)}/">
-            <img src="assets/${encodeURIComponent(o.imagem)}" alt="${escapeHtml(o.produto)}" loading="lazy">
+            <div class="img-wrap">
+                <img src="assets/${encodeURIComponent(o.imagem)}" alt="${escapeHtml(o.produto)}" loading="lazy">
+                ${badgeCanto}
+                ${badgeDesconto}
+            </div>
             <div class="info">
                 <h3>${escapeHtml(o.produto)}</h3>
+                ${oldHtml}
                 <div class="preco">${escapeHtml(o.preco)}</div>
+                <div class="ver-oferta">Ver oferta →</div>
             </div>
         </a>
-    `).join("");
+        `;
+    }).join("");
 }
 
 carregarDestaques();
