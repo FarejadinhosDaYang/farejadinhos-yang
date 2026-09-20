@@ -100,6 +100,16 @@ function HtmlEncode([string]$Texto) {
 # CAMINHOS
 # ==========================================
 
+# Segunda camada de proteção: um slug longo demais quebra a
+# criação/commit da pagina no runner do Windows (limite de caminho).
+# O painel já corta em 60 caracteres antes de enviar, mas garante
+# aqui também, caso o slug chegue grande por outro caminho.
+$Slug = $Slug.Trim().Trim('-')
+if ($Slug.Length -gt 60) {
+    $Slug = $Slug.Substring(0, 60) -replace '-+[^-]*$', ''
+    $Slug = $Slug.Trim('-')
+}
+
 $Gerador = Split-Path -Parent $MyInvocation.MyCommand.Path
 $Site = Split-Path -Parent $Gerador
 
