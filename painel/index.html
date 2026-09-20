@@ -905,6 +905,19 @@ formulario.addEventListener(
                 .replace(/^-+|-+$/g,"");
 
         /*
+         * Nomes de produto muito longos (comum quando vem de
+         * extra\u00e7\u00e3o autom\u00e1tica, que \u00e0s vezes traz o t\u00edtulo inteiro
+         * da p\u00e1gina) geram um slug longo demais \u2014 isso quebra a
+         * cria\u00e7\u00e3o da p\u00e1gina no Windows (limite de caminho). Corta
+         * em 60 caracteres, sempre numa quebra de h\u00edfen, pra nunca
+         * gerar um slug maior que isso.
+         */
+
+        if(slug.length > 60){
+            slug = slug.slice(0, 60).replace(/-+[^-]*$/, "");
+        }
+
+        /*
          * Monta o formulário
          */
 
