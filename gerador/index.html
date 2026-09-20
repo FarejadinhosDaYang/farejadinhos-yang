@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gerador | Farejadinhos da Yang</title>
+
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --red:#E5232E;
+    --red-dark:#C21A24;
+    --orange:#F7941D;
+    --cream:#FDF3E3;
+    --cream-2:#FFFAF1;
+    --ink:#2B1B12;
+    --muted:#8A7563;
+    --line:#F0DFC4;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    padding:22px 16px;
+    background:var(--cream);
+    font-family:'Work Sans',Arial,sans-serif;
+    color:var(--ink);
+}
+
+.container{
+    max-width:560px;
+    margin:auto;
+}
+
+.card{
+    background:var(--cream-2);
+    border:1.5px solid var(--line);
+    border-radius:24px;
+    padding:26px 24px;
+    box-shadow:0 14px 40px rgba(43,27,18,.10);
+}
+
+.brand-row{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:4px;
+}
+
+.brand-row img{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+}
+
+.logo{
+    text-align:center;
+    font-family:'Baloo 2',sans-serif;
+    font-size:21px;
+    font-weight:800;
+    color:var(--red-dark);
+}
+
+.subtitle{
+    text-align:center;
+    color:var(--muted);
+    margin-bottom:26px;
+    font-size:14px;
+}
+
+label{
+    display:block;
+    font-weight:700;
+    margin-top:16px;
+    margin-bottom:6px;
+    font-size:14px;
+    color:var(--ink);
+}
+
+input{
+    width:100%;
+    padding:13px 14px;
+    border:1.5px solid var(--line);
+    border-radius:12px;
+    font-size:15px;
+    outline:none;
+    font-family:'Work Sans',Arial,sans-serif;
+    background:#fff;
+    color:var(--ink);
+}
+
+input:focus{
+    border-color:var(--red);
+}
+
+button{
+    width:100%;
+    border:0;
+    border-radius:14px;
+    padding:16px;
+    margin-top:26px;
+    background:linear-gradient(135deg,var(--red),var(--red-dark));
+    color:white;
+    font-size:16px;
+    font-weight:800;
+    font-family:'Baloo 2',sans-serif;
+    cursor:pointer;
+    box-shadow:0 10px 22px rgba(229,35,46,.28);
+}
+
+button:hover{
+    opacity:.92;
+}
+
+button:disabled{
+    opacity:.6;
+    cursor:wait;
+}
+
+.optional{
+    color:var(--muted);
+    font-size:12.5px;
+    font-weight:normal;
+}
+
+.status{
+    display:none;
+    margin-top:20px;
+    padding:14px;
+    border-radius:12px;
+    background:#fff6e9;
+    border:1.5px dashed var(--orange);
+    text-align:center;
+    word-break:break-word;
+    font-size:14px;
+}
+
+.resultado{
+    display:none;
+    margin-top:20px;
+    padding:18px;
+    border-radius:14px;
+    background:#eef9ee;
+    border:1.5px solid #cdeccd;
+}
+
+.resultado a{
+    display:block;
+    margin-top:10px;
+    color:var(--red-dark);
+    font-weight:700;
+    word-break:break-all;
+    text-decoration:none;
+}
+
+.erro{
+    background:#fff0f0;
+    color:#b00000;
+    border-color:#f3c6c6;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<div class="brand-row">
+<img src="../assets/yang-badge.png" alt="Yang">
+<div class="logo">FAREJADINHOS DA YANG</div>
+</div>
+
+<div class="subtitle">
+Gerador de ofertas
+</div>
+
+<form id="ofertaForm">
+
+<label>
+Produto
+</label>
+
+<input
+    type="text"
+    id="produto"
+    placeholder="Ex.: Air Fryer Mondial 4L"
+    required
+>
+
+<label>
+Preço
+</label>
+
+<input
+    type="text"
+    id="preco"
+    placeholder="Ex.: 38,80"
+    required
+>
+
+<label>
+Preço antigo
+<span class="optional">(opcional)</span>
+</label>
+
+<input
+    type="text"
+    id="precoAntigo"
+    placeholder="Ex.: 59,90"
+>
+
+<label>
+Cupom
+<span class="optional">(opcional)</span>
+</label>
+
+<input
+    type="text"
+    id="cupom"
+    placeholder="Ex.: YANG10"
+>
+
+<label>
+Link da oferta
+</label>
+
+<input
+    type="url"
+    id="link"
+    placeholder="https://..."
+    required
+>
+
+<label>
+Imagem
+</label>
+
+<input
+    type="file"
+    id="imagem"
+    accept="image/*"
+    required
+>
+
+<label>
+Senha
+</label>
+
+<input
+    type="password"
+    id="senha"
+    placeholder="Senha do painel"
+    required
+>
+
+<button
+    type="submit"
+    id="botao"
+>
+🔥 GERAR OFERTA
+</button>
+
+</form>
+
+<div
+    class="status"
+    id="status"
+>
+Processando...
+</div>
+
+<div
+    class="resultado"
+    id="resultado"
+>
+
+<b>🎉 Oferta enviada com sucesso!</b>
+
+<a
+    id="urlOferta"
+    href="#"
+    target="_blank"
+>
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const formulario =
+    document.getElementById("ofertaForm");
+
+const status =
+    document.getElementById("status");
+
+const resultado =
+    document.getElementById("resultado");
+
+const urlOferta =
+    document.getElementById("urlOferta");
+
+const botao =
+    document.getElementById("botao");
+
+formulario.addEventListener(
+    "submit",
+    async function(event){
+
+        event.preventDefault();
+
+        const produto =
+            document.getElementById("produto").value.trim();
+
+        const preco =
+            document.getElementById("preco").value.trim();
+
+        const precoAntigo =
+            document.getElementById("precoAntigo").value.trim();
+
+        const cupom =
+            document.getElementById("cupom").value.trim();
+
+        const link =
+            document.getElementById("link").value.trim();
+
+        const senha =
+            document.getElementById("senha").value;
+
+        const imagem =
+            document.getElementById("imagem").files[0];
+
+        if(!imagem){
+
+            alert("Selecione uma imagem.");
+
+            return;
+        }
+
+        /*
+         * Gera o slug automaticamente
+         */
+
+        let slug =
+            produto
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[̀-ͯ]/g,"")
+                .replace(/[^a-z0-9]+/g,"-")
+                .replace(/^-+|-+$/g,"");
+
+        /*
+         * Monta o formulário
+         */
+
+        const dados =
+            new FormData();
+
+        dados.append(
+            "produto",
+            produto
+        );
+
+        dados.append(
+            "preco",
+            preco
+        );
+
+        dados.append(
+            "precoAntigo",
+            precoAntigo
+        );
+
+        dados.append(
+            "cupom",
+            cupom
+        );
+
+        dados.append(
+            "link",
+            link
+        );
+
+        dados.append(
+            "slug",
+            slug
+        );
+
+        dados.append(
+            "senha",
+            senha
+        );
+
+        dados.append(
+            "imagem",
+            imagem
+        );
+
+        /*
+         * Interface
+         */
+
+        botao.disabled = true;
+
+        botao.textContent =
+            "⏳ GERANDO OFERTA...";
+
+        status.style.display =
+            "block";
+
+        status.classList.remove("erro");
+
+        status.textContent =
+            "🐶 Enviando oferta...";
+
+        resultado.style.display =
+            "none";
+
+        try{
+
+            const resposta =
+                await fetch(
+                    "https://holy-pine-e7fc.bernard-shimizu.workers.dev/",
+                    {
+                        method:"POST",
+                        body:dados
+                    }
+                );
+
+            const texto =
+                await resposta.text();
+
+            if(!resposta.ok){
+
+                throw new Error(texto);
+
+            }
+
+            const dadosResposta =
+                JSON.parse(texto);
+
+            status.textContent =
+                "🚀 Oferta enviada! Aguardando publicação...";
+
+            resultado.style.display =
+                "block";
+
+            urlOferta.href =
+                dadosResposta.url;
+
+            urlOferta.textContent =
+                dadosResposta.url;
+
+            botao.textContent =
+                "🔥 GERAR OUTRA OFERTA";
+
+        }catch(erro){
+
+            status.classList.add("erro");
+
+            status.textContent =
+                "❌ " + erro.message;
+
+            botao.textContent =
+                "TENTAR NOVAMENTE";
+
+        }finally{
+
+            botao.disabled =
+                false;
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>

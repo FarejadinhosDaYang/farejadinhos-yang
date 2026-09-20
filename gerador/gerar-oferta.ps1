@@ -16,11 +16,7 @@ param(
     [string]$Imagem,
 
     [Parameter(Mandatory=$true)]
-    [string]$Slug,
-
-    [string]$Categoria = "",
-
-    [string]$Destaque = "false"
+    [string]$Slug
 )
 
 $ErrorActionPreference = "Stop"
@@ -33,10 +29,9 @@ $ErrorActionPreference = "Stop"
 # EMOJIS
 # ==========================================
 
-$EmojiDog  = [char]::ConvertFromUtf32(0x1F436)
 $EmojiFire = [char]::ConvertFromUtf32(0x1F525)
 $EmojiTag  = [char]::ConvertFromUtf32(0x1F3F7)
-$EmojiCart = [char]::ConvertFromUtf32(0x1F6D2)
+$EmojiPaw  = [char]::ConvertFromUtf32(0x1F43E)
 
 
 # ==========================================
@@ -50,30 +45,11 @@ function FormatarPreco([string]$Valor) {
     # Remove R$
     $Valor = $Valor -replace 'R\$', ''
 
-    # Remove espaços (inclusive espaços internos, tipo "6.499, 00")
-    $Valor = $Valor -replace '\s', ''
+    # Remove espaços
+    $Valor = $Valor.Trim()
 
-    if ($Valor -match ',') {
-
-        # Já tem vírgula: assume formato BR (ex: "6.499,00").
-        # Remove os pontos, que aqui são separador de milhar.
-        $Valor = $Valor -replace '\.', ''
-
-    }
-    elseif ($Valor -match '^\d+\.\d{2}$') {
-
-        # Só tem ponto, com exatamente 2 casas no final (ex: "38.80"):
-        # trata como separador decimal americano.
-        $Valor = $Valor -replace '\.', ','
-
-    }
-    else {
-
-        # Ponto com outra quantidade de casas (ex: "6.499") ou
-        # nenhum separador: trata o ponto como separador de milhar.
-        $Valor = $Valor -replace '\.', ''
-
-    }
+    # Aceita ponto ou vírgula
+    $Valor = $Valor -replace '\.', ','
 
     try {
 
@@ -177,122 +153,6 @@ Copy-Item `
 
 
 # ==========================================
-# OTIMIZAR IMAGEM PARA PREVIEW (WhatsApp etc)
-#
-# O WhatsApp só mostra o preview GRANDE quando a imagem:
-# - tem pelo menos ~300px de largura (o ideal é por volta de 1200px)
-# - pesa menos de 600KB (o ideal é bem menos que isso)
-# - não é SVG
-# Como a imagem de origem varia muito (print de tela, foto de
-# marketplace, foto da Amazon), a gente sempre redimensiona e
-# recomprime aqui, garantindo que todo produto fique dentro do
-# que o WhatsApp aceita para o preview grande.
-# ==========================================
-
-Add-Type -AssemblyName System.Drawing
-
-$LarguraMaxima = 1200
-$LarguraMinima = 600
-
-$CaminhoImagemFinal = Join-Path $Assets $ImagemNome
-$ImagemLargura = $null
-$ImagemAltura = $null
-
-try {
-
-    $ImagemOriginal = [System.Drawing.Image]::FromFile($CaminhoImagemFinal)
-
-    $LarguraOriginal = $ImagemOriginal.Width
-    $AlturaOriginal = $ImagemOriginal.Height
-
-    if ($LarguraOriginal -gt $LarguraMaxima) {
-        # Imagem grande demais: encolhe
-        $NovaLargura = $LarguraMaxima
-        $NovaAltura = [int]([double]$AlturaOriginal * ($LarguraMaxima / $LarguraOriginal))
-    }
-    elseif ($LarguraOriginal -lt $LarguraMinima) {
-        # Imagem pequena demais pro WhatsApp mostrar o preview grande:
-        # amplia até a largura mínima segura (perde um pouco de nitidez,
-        # mas é melhor que cair no preview minúsculo)
-        $NovaLargura = $LarguraMinima
-        $NovaAltura = [int]([double]$AlturaOriginal * ($LarguraMinima / $LarguraOriginal))
-    }
-    else {
-        $NovaLargura = $LarguraOriginal
-        $NovaAltura = $AlturaOriginal
-    }
-
-    $Bitmap = New-Object System.Drawing.Bitmap($NovaLargura, $NovaAltura)
-    $Graficos = [System.Drawing.Graphics]::FromImage($Bitmap)
-    $Graficos.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
-    $Graficos.DrawImage($ImagemOriginal, 0, 0, $NovaLargura, $NovaAltura)
-
-    $ImagemOriginal.Dispose()
-    $Graficos.Dispose()
-
-    # Sempre salva como JPG — formato mais confiável pro preview
-    $NomeBase = [System.IO.Path]::GetFileNameWithoutExtension($ImagemNome)
-    $NovoNomeArquivo = "$NomeBase.jpg"
-    $NovoCaminho = Join-Path $Assets $NovoNomeArquivo
-
-    $CodecJpeg = [System.Drawing.Imaging.ImageCodecInfo]::GetImageEncoders() |
-        Where-Object { $_.MimeType -eq "image/jpeg" }
-
-    # Compressão progressiva: o WhatsApp é bem mais rígido que o
-    # Facebook quanto ao peso do arquivo (relatos apontam ~300KB,
-    # bem menor que os 600KB documentados oficialmente). Começa em
-    # qualidade 85 e vai reduzindo até caber num limite seguro.
-    $LimiteBytes = 250KB
-    $TentativasQualidade = @(85, 75, 65, 55, 45)
-
-    foreach ($Qualidade in $TentativasQualidade) {
-
-        $ParametrosCodec = New-Object System.Drawing.Imaging.EncoderParameters(1)
-        $ParametrosCodec.Param[0] = New-Object System.Drawing.Imaging.EncoderParameter(
-            [System.Drawing.Imaging.Encoder]::Quality, $Qualidade
-        )
-
-        $Bitmap.Save($NovoCaminho, $CodecJpeg, $ParametrosCodec)
-
-        $TamanhoAtual = (Get-Item -LiteralPath $NovoCaminho).Length
-
-        if ($TamanhoAtual -le $LimiteBytes) {
-            break
-        }
-    }
-
-    $Bitmap.Dispose()
-
-    # Remove o arquivo original se o nome mudou (ex: era .png, virou .jpg)
-    if ($NovoNomeArquivo -ne $ImagemNome -and (Test-Path -LiteralPath $CaminhoImagemFinal)) {
-        Remove-Item -LiteralPath $CaminhoImagemFinal -Force
-    }
-
-    $ImagemNome = $NovoNomeArquivo
-    $ImagemLargura = $NovaLargura
-    $ImagemAltura = $NovaAltura
-
-}
-catch {
-
-    Write-Host "Aviso: nao foi possivel otimizar a imagem, usando original. $($_.Exception.Message)" -ForegroundColor Yellow
-
-    try {
-        $ImagemDims = [System.Drawing.Image]::FromFile($CaminhoImagemFinal)
-        $ImagemLargura = $ImagemDims.Width
-        $ImagemAltura = $ImagemDims.Height
-        $ImagemDims.Dispose()
-    }
-    catch {
-        # Se nem isso funcionar, segue sem as dimensões — a imagem
-        # original continua sendo usada normalmente, só sem os
-        # meta tags de largura/altura.
-    }
-
-}
-
-
-# ==========================================
 # PREPARAR DADOS
 # ==========================================
 
@@ -317,7 +177,6 @@ $ImagemNomeH =
 # ==========================================
 
 $OldBlock = ""
-$PrecoAntigoFormatado = ""
 
 
 if ($PrecoAntigo.Trim() -ne "") {
@@ -353,21 +212,6 @@ if ($Cupom.Trim() -ne "") {
 
 
 # ==========================================
-# DIMENSÕES DA IMAGEM (og:image:width / height)
-# ==========================================
-
-$DimensoesBlock = ""
-
-if ($ImagemLargura -and $ImagemAltura) {
-
-    $DimensoesBlock =
-        '<meta property="og:image:width" content="' + $ImagemLargura + '">' +
-        "`n" +
-        '<meta property="og:image:height" content="' + $ImagemAltura + '">'
-}
-
-
-# ==========================================
 # URL DA OFERTA
 # ==========================================
 
@@ -376,11 +220,13 @@ $BaseUrl =
 
 
 # ==========================================
-# IMAGEM DO PREVIEW (URL absoluta, sem ../../)
+# IMAGEM DO PREVIEW
+#
+# USA A IMAGEM ORIGINAL DO PRODUTO
 # ==========================================
 
 $ImageUrl =
-    "https://farejadinhosdayang.github.io/farejadinhos-yang/assets/$ImagemNome"
+    $BaseUrl + "../../assets/" + $ImagemNome
 
 
 # ==========================================
@@ -437,9 +283,6 @@ $EmojiFire $ProdutoH | Farejadinhos da Yang
       content="$ProdutoH">
 
 
-$DimensoesBlock
-
-
 <meta property="og:url"
       content="$BaseUrl">
 
@@ -464,8 +307,11 @@ $DimensoesBlock
       content="$ImageUrl">
 
 
-<meta name="twitter:image:alt"
-      content="$ProdutoH">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 
 <!-- =====================================
@@ -474,107 +320,149 @@ $DimensoesBlock
 
 <style>
 
+:root{
+    --red:#E5232E;
+    --red-dark:#C21A24;
+    --orange:#F7941D;
+    --cream:#FDF3E3;
+    --cream-2:#FFFAF1;
+    --ink:#2B1B12;
+    --muted:#8A7563;
+    --line:#F0DFC4;
+}
+
 *{
     box-sizing:border-box
 }
 
 body{
     margin:0;
-    background:#f4f4f4;
-    font-family:Arial,sans-serif;
-    color:#222
+    background:var(--cream);
+    font-family:'Work Sans',Arial,sans-serif;
+    color:var(--ink)
 }
 
 .wrap{
     max-width:560px;
     margin:auto;
-    padding:22px 14px
+    padding:24px 14px 40px
 }
 
 .card{
-    background:#fff;
-    border-radius:24px;
+    background:var(--cream-2);
+    border-radius:26px;
     overflow:hidden;
-    box-shadow:0 8px 35px rgba(0,0,0,.10)
+    box-shadow:0 14px 40px rgba(43,27,18,.12);
+    border:1.5px solid var(--line)
 }
 
 .top{
-    background:#e5232e;
+    background:linear-gradient(120deg,var(--red) 0%,#f0462f 60%,var(--orange) 140%);
     color:#fff;
-    padding:13px 18px;
+    padding:14px 18px;
     text-align:center;
     font-weight:800;
-    letter-spacing:.5px
+    font-family:'Baloo 2',sans-serif;
+    letter-spacing:.3px;
+    font-size:15px
 }
 
 .content{
-    padding:20px
+    padding:22px
 }
 
 .brand{
-    font-weight:800;
-    margin-bottom:14px
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Baloo 2',sans-serif;
+    font-weight:700;
+    margin-bottom:16px;
+    color:var(--red-dark);
+    font-size:15px
+}
+
+.brand img{
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    flex:none
 }
 
 .product{
     width:100%;
-    border-radius:16px;
-    background:#f7f7f7;
-    display:block
+    border-radius:18px;
+    background:#f7f1e6;
+    display:block;
+    border:1px solid var(--line)
 }
 
 h1{
-    font-size:25px;
-    line-height:1.2;
-    margin:18px 0 8px
+    font-family:'Baloo 2',sans-serif;
+    font-size:24px;
+    line-height:1.25;
+    margin:18px 0 8px;
+    color:var(--ink)
 }
 
 .old{
     text-decoration:line-through;
-    color:#888;
-    margin-top:8px
+    color:var(--muted);
+    margin-top:6px;
+    font-size:15px
 }
 
 .price{
-    font-size:34px;
-    font-weight:900;
-    margin-top:4px
+    font-size:36px;
+    font-weight:800;
+    margin-top:2px;
+    font-family:'Baloo 2',sans-serif;
+    color:var(--red-dark)
 }
 
 .coupon{
     margin:18px 0;
-    padding:13px;
-    border:2px dashed #e5232e;
-    border-radius:12px;
-    background:#fff6f6
+    padding:13px 14px;
+    border:2px dashed var(--orange);
+    border-radius:14px;
+    background:#fff6e9;
+    font-size:14.5px
+}
+
+.coupon b{
+    color:var(--red-dark)
 }
 
 .btn{
     display:block;
-    background:#e5232e;
+    background:linear-gradient(135deg,var(--red),var(--red-dark));
     color:#fff;
     text-decoration:none;
     text-align:center;
-    padding:16px;
-    border-radius:13px;
-    font-weight:900;
-    margin-top:18px
+    padding:17px;
+    border-radius:15px;
+    font-weight:800;
+    font-family:'Baloo 2',sans-serif;
+    font-size:16px;
+    margin-top:18px;
+    box-shadow:0 10px 22px rgba(229,35,46,.28)
 }
 
 .note{
     text-align:center;
-    color:#777;
+    color:var(--muted);
     font-size:12px;
-    margin-top:15px
+    margin-top:16px;
+    line-height:1.5
 }
 
-.voltar{
+.back{
     display:block;
     text-align:center;
-    color:#999;
-    font-size:12px;
-    text-decoration:none;
-    margin-top:14px
+    margin-top:16px;
+    font-size:13px;
+    color:var(--muted);
+    text-decoration:none
 }
 
 </style>
@@ -600,7 +488,8 @@ $EmojiFire ACHADINHO DO DIA
 
 
 <div class="brand">
-$EmojiDog Farejadinhos da Yang
+<img src="../../assets/yang-badge.png" alt="Yang">
+Farejadinhos da Yang
 </div>
 
 
@@ -632,7 +521,7 @@ $CupomBlock
     href="$LinkH"
     rel="nofollow sponsored"
 >
-$EmojiCart PEGAR OFERTA
+$EmojiPaw PEGAR OFERTA
 </a>
 
 
@@ -641,9 +530,7 @@ Voc$([char]0xEA) ser$([char]0xE1) direcionado para a loja.
 Alguns links podem gerar comiss$([char]0xE3)o.
 </div>
 
-
-<a class="voltar" href="../">Ver todas as ofertas</a>
-
+<a class="back" href="../../">&larr; voltar pro in$([char]0xED)cio</a>
 
 </div>
 
@@ -680,67 +567,6 @@ $Utf8NoBom =
 
 
 # ==========================================
-# CATÁLOGO (ofertas.json)
-#
-# Guarda os dados de cada oferta num arquivo único,
-# que alimenta a página de catálogo em /ofertas/
-# ==========================================
-
-$CatalogoPath =
-    Join-Path $Site "ofertas.json"
-
-if (Test-Path -LiteralPath $CatalogoPath) {
-
-    $CatalogoTexto =
-        Get-Content -LiteralPath $CatalogoPath -Raw -Encoding UTF8
-
-    if ([string]::IsNullOrWhiteSpace($CatalogoTexto)) {
-        $Catalogo = @()
-    }
-    else {
-        $Catalogo = @($CatalogoTexto | ConvertFrom-Json)
-    }
-
-}
-else {
-
-    $Catalogo = @()
-
-}
-
-# Remove uma entrada anterior com o mesmo slug, se existir
-# (permite rodar o gerador de novo pra atualizar uma oferta)
-$Catalogo =
-    @($Catalogo | Where-Object { $_.slug -ne $Slug })
-
-$NovaEntrada = [PSCustomObject]@{
-    produto     = $Produto
-    preco       = $PrecoFormatado
-    precoAntigo = $PrecoAntigoFormatado
-    cupom       = $Cupom
-    categoria   = $Categoria
-    destaque    = ($Destaque -eq "true")
-    imagem      = $ImagemNome
-    link        = $Link
-    url         = $BaseUrl
-    slug        = $Slug
-    data        = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
-}
-
-$Catalogo =
-    @($Catalogo) + $NovaEntrada
-
-$CatalogoJson =
-    $Catalogo | ConvertTo-Json -Depth 5 -AsArray
-
-[System.IO.File]::WriteAllText(
-    $CatalogoPath,
-    $CatalogoJson,
-    $Utf8NoBom
-)
-
-
-# ==========================================
 # RESULTADO
 # ==========================================
 
@@ -767,13 +593,6 @@ Write-Host ""
 
 Write-Host "Imagem copiada para:"
 Write-Host (Join-Path $Assets $ImagemNome)
-
-
-Write-Host ""
-
-
-Write-Host "Catalogo atualizado:"
-Write-Host $CatalogoPath
 
 
 Write-Host ""
