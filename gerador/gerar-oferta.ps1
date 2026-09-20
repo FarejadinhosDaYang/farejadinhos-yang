@@ -563,10 +563,10 @@ $EmojiFire ACHADINHO DO DIA
 
 
 <div class="header-row">
-<div class="brand" style="margin-bottom:0">
+<a href="../../" class="brand" style="margin-bottom:0;text-decoration:none;color:inherit">
 <img src="../../assets/yang-badge.png" alt="Yang">
 Farejadinhos da Yang
-</div>
+</a>
 <div data-yang-nav data-base="../../"></div>
 </div>
 
