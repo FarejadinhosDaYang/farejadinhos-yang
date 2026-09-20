@@ -26,8 +26,7 @@
             "</div>" +
             '<button type="button" class="yang-nav-close" aria-label="Fechar menu">✕</button>' +
             "</div>" +
-            '<a href="' + base + 'index.html">🏠 Início</a>' +
-            '<a href="' + base + 'ofertas/">🔥 Todas as ofertas</a>' +
+            '<a href="' + base + 'index.html">🏠 Início e ofertas</a>' +
             '<a href="' + base + 'calculadora/">🧮 Vale a pena parcelar?</a>' +
             '<a href="https://www.instagram.com/farejadinhosdayang" target="_blank" rel="noopener">📸 Instagram</a>' +
             "</nav>";
