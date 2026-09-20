@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "produto": "Notebook Dell 15 15-I1300-A30P",
+    "preco": "R$ 3.599,10",
+    "precoAntigo": "R$ 3.999,00",
+    "cupom": "TESTE",
+    "categoria": "Eletrônicos",
+    "destaque": false,
+    "imagem": "b0aa0467-dab1-42bb-aafe-3d5d8207cea2.png",
+    "link": "https://link.amazon/B0a3PH1pA",
+    "url": "https://farejadinhosdayang.github.io/farejadinhos-yang/ofertas/notebook-dell-15-15-i1300-a30p/",
+    "slug": "notebook-dell-15-15-i1300-a30p",
+    "data": "2026-09-20T17:42:37Z",
+    "precoAVista": "3599,10",
+    "precoAPrazo": "3999,00"
+  }
+]
