@@ -85,18 +85,28 @@ jobs:
           PRECO_A_VISTA: ${{ inputs.precoAVista }}
           PRECO_A_PRAZO: ${{ inputs.precoAPrazo }}
         run: |
-          & ".\gerador\gerar-oferta.ps1" `
-            -Produto "$env:PRODUTO" `
-            -Preco "$env:PRECO" `
-            -PrecoAntigo "$env:PRECO_ANTIGO" `
-            -Cupom "$env:CUPOM" `
-            -Link "$env:LINK" `
-            -Imagem "$env:IMAGEM" `
-            -Slug "$env:SLUG" `
-            -Categoria "$env:CATEGORIA" `
-            -Destaque "$env:DESTAQUE" `
-            -PrecoAVista "$env:PRECO_A_VISTA" `
-            -PrecoAPrazo "$env:PRECO_A_PRAZO"
+          # Usamos "splatting" (hashtable + @Params) em vez de montar a
+          # chamada como texto ("-Produto "$env:PRODUTO"") porque, se o
+          # nome do produto tiver uma aspa de verdade (ex.: TV 50", monitor
+          # 25"), essa aspa fecha a string cedo demais e quebra o comando
+          # inteiro sem gerar nenhum erro visível — a oferta simplesmente
+          # nunca é criada. Com splatting, cada valor entra como string já
+          # pronta, sem ser reinterpretado, então aspas dentro do valor não
+          # quebram nada.
+          $Params = @{
+            Produto     = $env:PRODUTO
+            Preco       = $env:PRECO
+            PrecoAntigo = $env:PRECO_ANTIGO
+            Cupom       = $env:CUPOM
+            Link        = $env:LINK
+            Imagem      = $env:IMAGEM
+            Slug        = $env:SLUG
+            Categoria   = $env:CATEGORIA
+            Destaque    = $env:DESTAQUE
+            PrecoAVista = $env:PRECO_A_VISTA
+            PrecoAPrazo = $env:PRECO_A_PRAZO
+          }
+          & ".\gerador\gerar-oferta.ps1" @Params
 
       - name: Remover imagem temporaria
         shell: pwsh
