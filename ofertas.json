@@ -43,5 +43,20 @@
     "data": "2026-09-28T21:42:00Z",
     "precoAVista": "979,00",
     "precoAPrazo": "1140,48"
+  },
+  {
+    "produto": "Suplemento em pasta Dr. Peanut",
+    "preco": "R$ 39,60",
+    "precoAntigo": "R$ 62,00",
+    "cupom": "",
+    "categoria": "Academia",
+    "destaque": false,
+    "imagem": "7f82fc6d-635e-4709-8e1f-c01ee28037e3.png",
+    "link": "https://meli.la/1dhH4St",
+    "url": "https://farejadinhosdayang.github.io/farejadinhos-yang/ofertas/suplemento-em-pasta-dr-peanut/",
+    "slug": "suplemento-em-pasta-dr-peanut",
+    "data": "2026-09-29T01:35:46Z",
+    "precoAVista": "",
+    "precoAPrazo": ""
   }
 ]
