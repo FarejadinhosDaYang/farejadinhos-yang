@@ -239,6 +239,28 @@ button:disabled{
     color:var(--ink);
 }
 
+.baixarStoryLink{
+    display:block;
+    text-align:center;
+    margin-bottom:10px;
+    padding:13px;
+    border-radius:10px;
+    background:linear-gradient(135deg,var(--red),var(--red-dark));
+    color:#fff;
+    font-weight:800;
+    font-size:14px;
+    text-decoration:none;
+}
+
+.storyPreview{
+    display:none;
+    width:100%;
+    max-width:220px;
+    margin:0 auto 6px;
+    border-radius:14px;
+    box-shadow:0 8px 20px rgba(43,27,18,.18);
+}
+
 #btnCopiarLegenda{
     background:#25D366;
     margin-top:0;
@@ -578,11 +600,27 @@ Processando...
 
 </div>
 
+<div class="legendaBox">
+
+<div class="legendaDica">
+📱 Já deixamos uma imagem pronta pro story do Instagram (com preço, desconto e a marca da Yang) — é só baixar e postar:
+</div>
+
+<a id="baixarStory" class="baixarStoryLink" href="#" download>
+📱 Baixar imagem pro story
+</a>
+
+<img id="previewStory" class="storyPreview" alt="Pré-visualização da imagem do story">
+
+</div>
+
 </div>
 
 </div>
 
 </div>
+
+<canvas id="canvasStory" width="1080" height="1920" style="display:none"></canvas>
 
 <script>
 
@@ -767,6 +805,225 @@ async function extrairDados(){
         btn.disabled = false;
         btn.textContent = "🔎 Extrair dados";
     }
+}
+
+/* ==========================================
+ * IMAGEM PRONTA PRO STORY
+ *
+ * Monta, no navegador mesmo (sem depender do gerador nem do
+ * worker), uma imagem 1080x1920 com foto do produto + preço +
+ * desconto + marca da Yang, pronta pra baixar e postar no story.
+ * ========================================== */
+
+function paraNumeroReais(valor){
+    if(!valor) return null;
+    const limpo =
+        String(valor)
+            .replace(/R\$/gi, "")
+            .trim()
+            .replace(/\./g, "")
+            .replace(",", ".");
+    const numero = parseFloat(limpo);
+    return isNaN(numero) ? null : numero;
+}
+
+function formatarExibicaoPreco(valor){
+    valor = (valor || "").trim();
+    if(!valor) return "";
+    return valor.toUpperCase().startsWith("R$") ? valor : "R$ " + valor;
+}
+
+function carregarImagemEl(src){
+    return new Promise(function(resolve, reject){
+        const img = new Image();
+        img.onload = function(){ resolve(img); };
+        img.onerror = reject;
+        img.src = src;
+    });
+}
+
+function quebrarTextoCanvas(ctx, texto, larguraMax){
+    const palavras = texto.split(" ");
+    const linhas = [];
+    let linhaAtual = "";
+    palavras.forEach(function(palavra){
+        const teste = linhaAtual ? linhaAtual + " " + palavra : palavra;
+        if(ctx.measureText(teste).width > larguraMax && linhaAtual){
+            linhas.push(linhaAtual);
+            linhaAtual = palavra;
+        } else {
+            linhaAtual = teste;
+        }
+    });
+    if(linhaAtual) linhas.push(linhaAtual);
+    return linhas;
+}
+
+function cantoArredondadoCanvas(ctx, x, y, w, h, r){
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+}
+
+async function gerarImagemStory(dados){
+
+    if(document.fonts && document.fonts.ready){
+        try{ await document.fonts.ready; }catch(e){}
+    }
+
+    const canvas = document.getElementById("canvasStory");
+    const ctx = canvas.getContext("2d");
+    const W = canvas.width;
+    const H = canvas.height;
+
+    /* Fundo com o gradiente da marca */
+    const grad = ctx.createLinearGradient(0, 0, W, H);
+    grad.addColorStop(0, "#E5232E");
+    grad.addColorStop(0.55, "#f0462f");
+    grad.addColorStop(1, "#F7941D");
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, W, H);
+
+    /* Textura leve de patinhas */
+    ctx.save();
+    ctx.globalAlpha = 0.10;
+    ctx.font = "340px Arial";
+    ctx.fillStyle = "#ffffff";
+    ctx.fillText("🐾", -40, 300);
+    ctx.fillText("🐾", 760, 1900);
+    ctx.restore();
+
+    /* Badge + nome no topo */
+    try{
+        const badge = await carregarImagemEl("../assets/yang-badge.png");
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(150, 150, 65, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.clip();
+        ctx.drawImage(badge, 85, 85, 130, 130);
+        ctx.restore();
+    }catch(e){}
+
+    ctx.fillStyle = "#ffffff";
+    ctx.font = "800 46px 'Baloo 2', Arial, sans-serif";
+    ctx.textBaseline = "alphabetic";
+    ctx.fillText("Farejadinhos da Yang", 240, 162);
+
+    /* Cartão central */
+    const cardX = 60, cardY = 320, cardW = W - 120, cardH = 1290;
+    ctx.save();
+    ctx.shadowColor = "rgba(0,0,0,.25)";
+    ctx.shadowBlur = 40;
+    ctx.shadowOffsetY = 20;
+    ctx.fillStyle = "#FFFAF1";
+    cantoArredondadoCanvas(ctx, cardX, cardY, cardW, cardH, 48);
+    ctx.fill();
+    ctx.restore();
+
+    /* Foto do produto (quadrada, cover) */
+    const fotoX = cardX + 50, fotoY = cardY + 50, fotoTam = cardW - 100;
+    ctx.save();
+    cantoArredondadoCanvas(ctx, fotoX, fotoY, fotoTam, fotoTam, 32);
+    ctx.clip();
+    ctx.fillStyle = "#f0e6d6";
+    ctx.fillRect(fotoX, fotoY, fotoTam, fotoTam);
+
+    if(dados.imagemImg){
+        const imgW = dados.imagemImg.naturalWidth || dados.imagemImg.width;
+        const imgH = dados.imagemImg.naturalHeight || dados.imagemImg.height;
+        const escala = Math.max(fotoTam / imgW, fotoTam / imgH);
+        const destW = imgW * escala;
+        const destH = imgH * escala;
+        const offX = fotoX + (fotoTam - destW) / 2;
+        const offY = fotoY + (fotoTam - destH) / 2;
+        ctx.drawImage(dados.imagemImg, offX, offY, destW, destH);
+    }
+    ctx.restore();
+
+    /* Selo de desconto */
+    if(dados.percentualDesconto){
+        const selo = `-${dados.percentualDesconto}%`;
+        ctx.font = "800 40px 'Baloo 2', Arial, sans-serif";
+        const largura = ctx.measureText(selo).width + 50;
+        ctx.fillStyle = "#E5232E";
+        cantoArredondadoCanvas(ctx, fotoX + fotoTam - largura - 24, fotoY + 24, largura, 68, 20);
+        ctx.fill();
+        ctx.fillStyle = "#ffffff";
+        ctx.textAlign = "center";
+        ctx.fillText(selo, fotoX + fotoTam - largura / 2 - 24, fotoY + 24 + 46);
+        ctx.textAlign = "left";
+    }
+
+    /* Textos abaixo da foto */
+    let cursorY = fotoY + fotoTam + 66;
+
+    if(dados.categoria){
+        ctx.font = "700 28px 'Work Sans', Arial, sans-serif";
+        ctx.fillStyle = "#8A7563";
+        ctx.fillText(dados.categoria.toUpperCase(), fotoX, cursorY);
+        cursorY += 50;
+    }
+
+    ctx.font = "700 50px 'Baloo 2', Arial, sans-serif";
+    ctx.fillStyle = "#2B1B12";
+    const linhasProduto = quebrarTextoCanvas(ctx, dados.produto, fotoTam).slice(0, 3);
+    linhasProduto.forEach(function(linha){
+        ctx.fillText(linha, fotoX, cursorY);
+        cursorY += 58;
+    });
+
+    cursorY += 16;
+
+    if(dados.precoAntigo){
+        ctx.font = "500 34px 'Work Sans', Arial, sans-serif";
+        ctx.fillStyle = "#8A7563";
+        const largOld = ctx.measureText(dados.precoAntigo).width;
+        ctx.fillText(dados.precoAntigo, fotoX, cursorY);
+        ctx.strokeStyle = "#8A7563";
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.moveTo(fotoX, cursorY - 12);
+        ctx.lineTo(fotoX + largOld, cursorY - 12);
+        ctx.stroke();
+        cursorY += 58;
+    }
+
+    ctx.font = "800 68px 'Baloo 2', Arial, sans-serif";
+    ctx.fillStyle = "#C21A24";
+    ctx.fillText(dados.preco, fotoX, cursorY);
+    cursorY += 70;
+
+    if(dados.cupom){
+        const textoCupom = `🏷️ CUPOM: ${dados.cupom}`;
+        ctx.font = "700 32px 'Work Sans', Arial, sans-serif";
+        const largCupom = ctx.measureText(textoCupom).width + 40;
+        ctx.strokeStyle = "#F7941D";
+        ctx.setLineDash([8, 6]);
+        ctx.lineWidth = 3;
+        cantoArredondadoCanvas(ctx, fotoX, cursorY - 42, largCupom, 60, 14);
+        ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.fillStyle = "#C21A24";
+        ctx.fillText(textoCupom, fotoX + 20, cursorY - 4);
+    }
+
+    /* Rodapé */
+    ctx.textAlign = "center";
+    ctx.font = "700 38px 'Baloo 2', Arial, sans-serif";
+    ctx.fillStyle = "#ffffff";
+    ctx.fillText("🐾 @farejadinhosdayang", W / 2, H - 90);
+    ctx.textAlign = "left";
+
+    return new Promise(function(resolve){
+        canvas.toBlob(function(blob){
+            resolve(URL.createObjectURL(blob));
+        }, "image/png");
+    });
 }
 
 function montarLegenda(){
@@ -1050,6 +1307,55 @@ formulario.addEventListener(
 
             linkBaixar.download =
                 imagem.name || "produto.jpg";
+
+            try{
+
+                const imagemImg =
+                    await carregarImagemEl(linkBaixar.href);
+
+                const precoNum = paraNumeroReais(preco);
+                const precoAntigoNum = paraNumeroReais(precoAntigo);
+
+                let percentualDesconto = null;
+
+                if(
+                    precoNum !== null &&
+                    precoAntigoNum !== null &&
+                    precoAntigoNum > precoNum
+                ){
+                    percentualDesconto =
+                        Math.round((1 - precoNum / precoAntigoNum) * 100);
+                }
+
+                const urlStory = await gerarImagemStory({
+                    produto: produto,
+                    preco: formatarExibicaoPreco(preco),
+                    precoAntigo: precoAntigo ? formatarExibicaoPreco(precoAntigo) : "",
+                    cupom: cupom,
+                    categoria: categoria,
+                    imagemImg: imagemImg,
+                    percentualDesconto: percentualDesconto
+                });
+
+                const linkStory =
+                    document.getElementById("baixarStory");
+
+                linkStory.href = urlStory;
+                linkStory.download = (slug || "oferta") + "-story.png";
+
+                const preview =
+                    document.getElementById("previewStory");
+
+                preview.src = urlStory;
+                preview.style.display = "block";
+
+            }catch(erroStory){
+
+                console.warn(
+                    "Nao foi possivel gerar a imagem do story:",
+                    erroStory
+                );
+            }
 
             botao.textContent =
                 "🔥 GERAR OUTRA OFERTA";
