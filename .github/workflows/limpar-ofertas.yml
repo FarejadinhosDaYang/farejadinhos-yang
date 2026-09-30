@@ -1,0 +1,42 @@
+name: Limpar ofertas expiradas
+
+on:
+  schedule:
+    # a cada 6 horas (00h, 06h, 12h, 18h UTC) — nao precisa ser exato
+    # na hora, so precisa rodar de tempos em tempos pra nao deixar o
+    # ofertas.json crescer pra sempre com ofertas que ja sumiram do site.
+    - cron: "0 */6 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  limpar:
+    runs-on: windows-latest
+
+    steps:
+      - name: Baixar repositorio
+        uses: actions/checkout@v4
+
+      - name: Limpar ofertas expiradas
+        shell: pwsh
+        run: |
+          .\gerador\limpar-ofertas.ps1
+
+      - name: Salvar no GitHub
+        shell: pwsh
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add ofertas.json
+
+          $temAlteracoes = git status --porcelain
+
+          if ([string]::IsNullOrWhiteSpace($temAlteracoes)) {
+            Write-Host "Nada para commitar."
+          } else {
+            git commit -m "Limpeza automatica: remove ofertas expiradas"
+            git push
+          }
