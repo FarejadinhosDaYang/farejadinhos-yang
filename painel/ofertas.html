@@ -46,6 +46,23 @@ body{margin:0;padding:20px;background:var(--cream);font-family:'Work Sans',Arial
 .remover{background:#fff0f0;color:#b00000;border:1.5px solid #ffd0d0;border-radius:9px;padding:8px 12px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:'Work Sans',sans-serif}
 .remover:hover{background:#ffe0e0}
 .remover:disabled{opacity:.5;cursor:wait}
+.editar{background:#eef4ff;color:#1a4fb8;border:1.5px solid #c9dbff;border-radius:9px;padding:8px 12px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:'Work Sans',sans-serif}
+.editar:hover{background:#dfeaff}
+.editar:disabled{opacity:.5;cursor:wait}
+.botoes{display:flex;flex-direction:column;gap:6px;flex-shrink:0}
+.badgeAgendada{background:#eef4ff;color:#1a4fb8}
+.item{flex-wrap:wrap}
+.painelEdicao{display:none;width:100%;margin-top:12px;padding-top:12px;border-top:1.5px dashed var(--line)}
+.painelEdicao.aberto{display:block}
+.painelEdicao label{display:block;font-size:12px;font-weight:700;margin-top:10px;margin-bottom:4px}
+.painelEdicao label:first-child{margin-top:0}
+.painelEdicao input[type="text"]{width:100%;padding:10px;border:1.5px solid var(--line);border-radius:8px;font-size:14px;outline:none;font-family:'Work Sans',sans-serif;background:#fff;color:var(--ink)}
+.painelEdicao input[type="text"]:focus{border-color:var(--red)}
+.painelEdicao .linhaCheckbox{display:flex;align-items:center;gap:8px;margin-top:12px}
+.painelEdicao .linhaCheckbox input{width:auto}
+.painelEdicao .linhaCheckbox label{margin:0}
+.salvarEdicao{width:100%;border:0;border-radius:10px;padding:12px;margin-top:14px;background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;font-size:14px;font-weight:800;font-family:'Baloo 2',sans-serif;cursor:pointer}
+.salvarEdicao:disabled{opacity:.6;cursor:wait}
 .vazio{text-align:center;color:var(--muted);padding:40px 0}
 .statusGeral{display:none;text-align:center;padding:10px;border-radius:10px;margin-bottom:14px;font-size:13px}
 .statusGeral.erro{display:block;background:#fff0f0;color:#b00000}
@@ -128,6 +145,22 @@ function horasRestantes(oferta){
   return Math.max(0, HORAS_EXPIRACAO - horasPassadas);
 }
 
+// Oferta de lote cujo horário de liberação ainda não chegou — já
+// existe no catálogo, mas o site (index.html) ainda está escondendo
+// ela da vitrine.
+function estaAgendada(oferta){
+  if(!oferta.liberacao) return false;
+  const dataLiberacao = new Date(oferta.liberacao);
+  if(isNaN(dataLiberacao)) return false;
+  return dataLiberacao > new Date();
+}
+
+function formatarDataHora(iso){
+  const d = new Date(iso);
+  if(isNaN(d)) return "";
+  return d.toLocaleString("pt-BR", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
+}
+
 async function carregar(){
 
   let todas = [];
@@ -171,12 +204,15 @@ function render(){
 
       const ativa = estaAtiva(o);
       const restante = horasRestantes(o);
+      const agendada = estaAgendada(o);
 
       const statusBadge = semDados
         ? `<span class="badge badgeExpirada">⚠️ Sem dados</span>`
-        : ativa
-          ? `<span class="badge badgeAtiva">🟢 Ativa · expira em ${restante.toFixed(1)}h</span>`
-          : `<span class="badge badgeExpirada">⚪ Expirada</span>`;
+        : agendada
+          ? `<span class="badge badgeAgendada">🕒 Agendada pra ${formatarDataHora(o.liberacao)}</span>`
+          : ativa
+            ? `<span class="badge badgeAtiva">🟢 Ativa · expira em ${restante.toFixed(1)}h</span>`
+            : `<span class="badge badgeExpirada">⚪ Expirada</span>`;
 
       const categoriaBadge = o.categoria
         ? `<span class="badge badgeCategoria">${escapeHtml(o.categoria)}</span>`
@@ -197,6 +233,10 @@ function render(){
       const item = document.createElement("div");
       item.className = "item";
 
+      const opcoesCategoria = ["Café","Casa","Academia","Eletrônicos","Beleza","Moda","Pet","Cozinha","Outros"]
+        .map(c => `<option value="${c}" ${o.categoria === c ? "selected" : ""}>${c}</option>`)
+        .join("");
+
       item.innerHTML = `
         <img src="${imagemSrc}" alt="${escapeHtml(nomeProduto)}" onerror="this.src='../assets/placeholder.svg'">
         <div class="info">
@@ -205,11 +245,48 @@ function render(){
           ${melhorPrecoHtml}
           <div class="badges">${statusBadge}${categoriaBadge}${destaqueBadge}</div>
         </div>
-        <button class="remover" type="button">🗑️ Remover</button>
+        <div class="botoes">
+          <button class="editar" type="button">✏️ Editar</button>
+          <button class="remover" type="button">🗑️ Remover</button>
+        </div>
+        <div class="painelEdicao">
+          <label>Produto</label>
+          <input type="text" class="campoProduto" value="${escapeHtml(o.produto || "")}">
+          <label>Preço</label>
+          <input type="text" class="campoPreco" value="${escapeHtml(o.preco || "")}">
+          <label>Preço antigo</label>
+          <input type="text" class="campoPrecoAntigo" value="${escapeHtml(o.precoAntigo || "")}">
+          <label>Cupom</label>
+          <input type="text" class="campoCupom" value="${escapeHtml(o.cupom || "")}" placeholder="Ex.: YANG10">
+          <label>Categoria</label>
+          <select class="campoCategoria">
+            <option value="" ${!o.categoria ? "selected" : ""}>Sem categoria</option>
+            ${opcoesCategoria}
+          </select>
+          <label>Preço à vista <span style="font-weight:normal;color:var(--muted)">(calculadora)</span></label>
+          <input type="text" class="campoPrecoAVista" value="${escapeHtml(o.precoAVista || "")}">
+          <label>Preço a prazo <span style="font-weight:normal;color:var(--muted)">(calculadora)</span></label>
+          <input type="text" class="campoPrecoAPrazo" value="${escapeHtml(o.precoAPrazo || "")}">
+          <label>Link da oferta</label>
+          <input type="text" class="campoLink" value="${escapeHtml(o.link || "")}">
+          <div class="linhaCheckbox">
+            <input type="checkbox" class="campoDestaque" id="destaque-${escapeHtml(o.slug)}" ${o.destaque ? "checked" : ""}>
+            <label for="destaque-${escapeHtml(o.slug)}">⭐ Destacar na página principal</label>
+          </div>
+          <button class="salvarEdicao" type="button">💾 Salvar alterações</button>
+        </div>
       `;
 
       item.querySelector(".remover").addEventListener("click", function(){
         removerOferta(o.slug, this);
+      });
+
+      item.querySelector(".editar").addEventListener("click", function(){
+        item.querySelector(".painelEdicao").classList.toggle("aberto");
+      });
+
+      item.querySelector(".salvarEdicao").addEventListener("click", function(){
+        salvarEdicao(o, item, this);
       });
 
       lista.appendChild(item);
@@ -283,6 +360,70 @@ async function removerOferta(slug, botao){
 
     botao.disabled = false;
     botao.textContent = "🗑️ Remover";
+  }
+}
+
+async function salvarEdicao(oferta, item, botao){
+
+  const senha = document.getElementById("senha").value;
+  const statusGeral = document.getElementById("statusGeral");
+
+  if(!senha){
+    alert("Digite a senha do painel primeiro.");
+    return;
+  }
+
+  const produto = item.querySelector(".campoProduto").value.trim();
+  const preco = item.querySelector(".campoPreco").value.trim();
+
+  if(!produto || !preco){
+    alert("Produto e preço não podem ficar vazios.");
+    return;
+  }
+
+  botao.disabled = true;
+  botao.textContent = "Salvando...";
+
+  const dados = new FormData();
+  dados.append("senha", senha);
+  dados.append("slug", oferta.slug);
+  dados.append("produto", produto);
+  dados.append("preco", preco);
+  dados.append("precoAntigo", item.querySelector(".campoPrecoAntigo").value.trim());
+  dados.append("cupom", item.querySelector(".campoCupom").value.trim());
+  dados.append("categoria", item.querySelector(".campoCategoria").value);
+  dados.append("precoAVista", item.querySelector(".campoPrecoAVista").value.trim());
+  dados.append("precoAPrazo", item.querySelector(".campoPrecoAPrazo").value.trim());
+  dados.append("link", item.querySelector(".campoLink").value.trim());
+  dados.append("destaque", item.querySelector(".campoDestaque").checked ? "true" : "false");
+
+  try{
+
+    const resposta = await fetch(WORKER_URL + "/editar", {
+      method: "POST",
+      body: dados
+    });
+
+    const texto = await resposta.text();
+
+    if(!resposta.ok){
+      throw new Error(texto);
+    }
+
+    statusGeral.className = "statusGeral sucesso";
+    statusGeral.textContent = "✅ Oferta atualizada! Pode levar 1-2 minutos pra aparecer no site.";
+    setTimeout(() => { statusGeral.className = "statusGeral"; }, 4000);
+
+    botao.disabled = false;
+    botao.textContent = "💾 Salvar alterações";
+
+  }catch(erro){
+
+    statusGeral.className = "statusGeral erro";
+    statusGeral.textContent = "❌ " + erro.message;
+
+    botao.disabled = false;
+    botao.textContent = "💾 Salvar alterações";
   }
 }
 
