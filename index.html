@@ -333,6 +333,12 @@ header .brand-group{
     color:#fff;
 }
 
+.categoria-btn .fechar{
+    opacity:.7;
+    font-size:12px;
+    margin-left:2px;
+}
+
 .categoria-btn .ic{
     width:26px;
     height:26px;
@@ -601,7 +607,9 @@ Alguns links desta página podem ser de afiliado: ao comprar por eles, podemos g
 const HORAS_EXPIRACAO = 24;
 
 let ofertas = [];
-let categoriaAtual = "";
+
+// filtroAtivo.tipo: "todas" | "categoria"
+let filtroAtivo = { tipo: "todas", valor: "" };
 
 const parametrosUrl = new URLSearchParams(window.location.search);
 const categoriaInicial = parametrosUrl.get("categoria") || "";
@@ -679,6 +687,17 @@ async function carregar(){
 
     ofertas = todas.filter(o => {
         if(!o || !o.slug) return false;
+
+        // Ofertas de lote/agendadas carregam um horário de liberação —
+        // enquanto esse horário não chega, a oferta fica escondida da
+        // vitrine (mas a página dela já existe, só não aparece na lista).
+        if(o.liberacao){
+            const dataLiberacao = new Date(o.liberacao);
+            if(!isNaN(dataLiberacao) && dataLiberacao > agora){
+                return false;
+            }
+        }
+
         const dataOferta = new Date(o.data);
         if(isNaN(dataOferta)) return true;
         const horas = (agora - dataOferta) / (1000 * 60 * 60);
@@ -687,33 +706,40 @@ async function carregar(){
 
     ofertas.sort((a, b) => {
         if(!!b.destaque !== !!a.destaque) return (b.destaque ? 1 : 0) - (a.destaque ? 1 : 0);
-        return new Date(b.data) - new Date(a.data);
+        // ordena pelo horário em que a oferta realmente ficou visível
+        // (liberacao, quando existir) em vez de quando foi criada
+        const dataA = new Date(a.liberacao || a.data);
+        const dataB = new Date(b.liberacao || b.data);
+        return dataB - dataA;
     });
 
     if(buscaInicial){
         document.getElementById("busca").value = buscaInicial;
     }
-    categoriaAtual = categoriaInicial;
+
+    filtroAtivo = categoriaInicial
+        ? { tipo: "categoria", valor: categoriaInicial }
+        : { tipo: "todas", valor: "" };
 
     montarCategorias();
     aplicarFiltros();
 }
 
+const ICONES_CATEGORIA = {
+    "Casa": { icone: "🏠", cor: "var(--orange)" },
+    "Café": { icone: "☕", cor: "#6B4226" },
+    "Academia": { icone: "🏋️", cor: "#2E7D4F" },
+    "Eletrônicos": { icone: "🔌", cor: "#2E5E8C" },
+    "Beleza": { icone: "💄", cor: "#C2185B" },
+    "Moda": { icone: "👕", cor: "#6A4C93" },
+    "Pet": { icone: "🐾", cor: "#8A5A44" },
+    "Cozinha": { icone: "🍳", cor: "#D68910" },
+    "Outros": { icone: "📦", cor: "var(--muted)" }
+};
+
 function montarCategorias(){
 
     const container = document.getElementById("categoriasRow");
-
-    const iconesPadrao = {
-        "Casa": { icone: "🏠", cor: "var(--orange)" },
-        "Café": { icone: "☕", cor: "#6B4226" },
-        "Academia": { icone: "🏋️", cor: "#2E7D4F" },
-        "Eletrônicos": { icone: "🔌", cor: "#2E5E8C" },
-        "Beleza": { icone: "💄", cor: "#C2185B" },
-        "Moda": { icone: "👕", cor: "#6A4C93" },
-        "Pet": { icone: "🐾", cor: "#8A5A44" },
-        "Cozinha": { icone: "🍳", cor: "#D68910" },
-        "Outros": { icone: "📦", cor: "var(--muted)" }
-    };
 
     const categorias = [...new Set(
         ofertas.map(o => (o.categoria || "").trim()).filter(c => c !== "")
@@ -724,24 +750,59 @@ function montarCategorias(){
         return;
     }
 
-    let html = `<button type="button" class="categoria-btn${categoriaAtual === "" ? " ativa" : ""}" data-categoria="">Todas</button>`;
+    /*
+     * Com um filtro selecionado, some com as abinhas das outras
+     * categorias e deixa só a que está ativa (com um "x" pra
+     * limpar e ver todas de novo) — deixa a fileira mais limpa
+     * em vez de mostrar tudo o tempo todo.
+     */
 
-    categorias.forEach(c => {
-        const padrao = iconesPadrao[c];
+    if(filtroAtivo.tipo !== "todas"){
+
+        const rotulo = filtroAtivo.valor;
+        const padrao = ICONES_CATEGORIA[filtroAtivo.valor];
         const icHtml = padrao
             ? `<span class="ic" style="background:${padrao.cor}">${padrao.icone}</span>`
             : "";
-        const ativa = c === categoriaAtual ? " ativa" : "";
-        html += `<button type="button" class="categoria-btn${ativa}" data-categoria="${escapeHtml(c)}">${icHtml}${escapeHtml(c)}</button>`;
+
+        container.innerHTML =
+            `<button type="button" class="categoria-btn ativa" data-limpar="1">` +
+            `${icHtml}${escapeHtml(rotulo)} <span class="fechar">✕</span>` +
+            `</button>`;
+
+        container.querySelector(".categoria-btn").addEventListener("click", function(){
+            filtroAtivo = { tipo: "todas", valor: "" };
+            montarCategorias();
+            aplicarFiltros();
+        });
+
+        return;
+    }
+
+    let html = `<button type="button" class="categoria-btn ativa" data-tipo="todas">Todas</button>`;
+
+    categorias.forEach(c => {
+        const padrao = ICONES_CATEGORIA[c];
+        const icHtml = padrao
+            ? `<span class="ic" style="background:${padrao.cor}">${padrao.icone}</span>`
+            : "";
+        html += `<button type="button" class="categoria-btn" data-tipo="categoria" data-valor="${escapeHtml(c)}">${icHtml}${escapeHtml(c)}</button>`;
     });
 
     container.innerHTML = html;
 
     container.querySelectorAll(".categoria-btn").forEach(btn => {
         btn.addEventListener("click", function(){
-            categoriaAtual = this.dataset.categoria;
-            container.querySelectorAll(".categoria-btn").forEach(b => b.classList.remove("ativa"));
-            this.classList.add("ativa");
+
+            const tipo = this.dataset.tipo;
+
+            if(tipo === "todas"){
+                return;
+            }
+
+            filtroAtivo = { tipo: tipo, valor: this.dataset.valor || "" };
+
+            montarCategorias();
             aplicarFiltros();
         });
     });
@@ -752,9 +813,16 @@ function aplicarFiltros(){
     const termo = document.getElementById("busca").value.toLowerCase();
 
     const filtradas = ofertas.filter(o => {
+
         const bateBusca = (o.produto || "").toLowerCase().includes(termo);
-        const bateCategoria = !categoriaAtual || (o.categoria || "") === categoriaAtual;
-        return bateBusca && bateCategoria;
+
+        let bateFiltro = true;
+
+        if(filtroAtivo.tipo === "categoria"){
+            bateFiltro = (o.categoria || "") === filtroAtivo.valor;
+        }
+
+        return bateBusca && bateFiltro;
     });
 
     render(filtradas);
