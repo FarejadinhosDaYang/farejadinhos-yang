@@ -24,7 +24,25 @@ param(
     [string]$Imagem,
 
     [Parameter(Mandatory=$true)]
-    [string]$Slug
+    [string]$Slug,
+
+    # Quando "true": $Imagem não é um caminho pra copiar, é só o NOME
+    # do arquivo que já está em assets/ (usado ao editar uma oferta
+    # que já existe, sem reenviar a foto de novo).
+    [string]$ImagemExistente = "false",
+
+    # Horário (UTC, formato yyyy-MM-ddTHH:mm:ssZ) em que a oferta deve
+    # passar a aparecer no site. Vazio = aparece imediatamente (igual
+    # o comportamento de sempre). Usado pelo lote, pra espalhar a
+    # liberação das ofertas ao longo do dia.
+    [string]$Liberacao = "",
+
+    # Data "oficial" da oferta (usada pra ordenar e pra contar as 24h
+    # de expiração). Vazio = usa o momento atual (comportamento de
+    # sempre). Ao editar uma oferta já publicada, passamos a data
+    # original aqui, pra edição não resetar o relógio de expiração
+    # nem pular pra topo da lista de "mais recentes" à toa.
+    [string]$Data = ""
 )
 
 $ErrorActionPreference = "Stop"
@@ -126,24 +144,45 @@ New-Item -ItemType Directory -Force -Path $Out | Out-Null
 # LOCALIZAR IMAGEM
 # ==========================================
 
-$ImagemAbs = $Imagem.Trim().Trim('"')
+$UsaImagemExistente = $ImagemExistente.Trim().ToLower() -eq "true"
 
-if (-not [System.IO.Path]::IsPathRooted($ImagemAbs)) {
-    $ImagemAbs = Join-Path (Get-Location) $ImagemAbs
+if ($UsaImagemExistente) {
+
+    # Modo edição: $Imagem já é só o nome do arquivo, que já
+    # deveria estar em assets/ de uma geração anterior.
+    $ImagemNome = $Imagem.Trim().Trim('"')
+
+    if ([string]::IsNullOrWhiteSpace($ImagemNome)) {
+        throw "ImagemExistente=true mas nenhum nome de imagem foi informado."
+    }
+
+    $CaminhoEsperado = Join-Path $Assets $ImagemNome
+
+    if (-not (Test-Path -LiteralPath $CaminhoEsperado)) {
+        throw "Imagem existente nao encontrada em assets: $CaminhoEsperado"
+    }
+
+} else {
+
+    $ImagemAbs = $Imagem.Trim().Trim('"')
+
+    if (-not [System.IO.Path]::IsPathRooted($ImagemAbs)) {
+        $ImagemAbs = Join-Path (Get-Location) $ImagemAbs
+    }
+
+    if (-not (Test-Path -LiteralPath $ImagemAbs)) {
+        throw "Imagem nao encontrada: $ImagemAbs"
+    }
+
+    $ImagemNome = Split-Path -Leaf $ImagemAbs
+
+
+    # ==========================================
+    # COPIAR IMAGEM PARA ASSETS
+    # ==========================================
+
+    Copy-Item -LiteralPath $ImagemAbs -Destination (Join-Path $Assets $ImagemNome) -Force
 }
-
-if (-not (Test-Path -LiteralPath $ImagemAbs)) {
-    throw "Imagem nao encontrada: $ImagemAbs"
-}
-
-$ImagemNome = Split-Path -Leaf $ImagemAbs
-
-
-# ==========================================
-# COPIAR IMAGEM PARA ASSETS
-# ==========================================
-
-Copy-Item -LiteralPath $ImagemAbs -Destination (Join-Path $Assets $ImagemNome) -Force
 
 
 # ==========================================
@@ -245,6 +284,12 @@ $Catalogo = @($Catalogo | Where-Object {
     $_ -and $_.slug -and ($_.slug -ne $Slug)
 })
 
+$DataFinal = if ($Data.Trim() -ne "") {
+    $Data.Trim()
+} else {
+    (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
+}
+
 $NovaEntrada = [ordered]@{
     produto       = $Produto
     preco         = $PrecoFormatado
@@ -256,9 +301,13 @@ $NovaEntrada = [ordered]@{
     link          = $Link
     url           = $BaseUrl
     slug          = $Slug
-    data          = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
+    data          = $DataFinal
     precoAVista   = $PrecoAVistaJs
     precoAPrazo   = $PrecoAPrazoJs
+}
+
+if ($Liberacao.Trim() -ne "") {
+    $NovaEntrada.liberacao = $Liberacao.Trim()
 }
 
 $Catalogo = @($Catalogo) + $NovaEntrada
