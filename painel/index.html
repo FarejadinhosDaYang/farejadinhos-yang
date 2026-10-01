@@ -441,6 +441,17 @@ Senha
 <form id="ofertaForm">
 
 <label>
+Chamada
+<span class="optional">(opcional — linha do topo da legenda, ex.: "PARA OS TIKTOKERS")</span>
+</label>
+
+<input
+    type="text"
+    id="chamada"
+    placeholder="Ex.: RENOVAR SEU ESTOQUE"
+>
+
+<label>
 Produto
 </label>
 
@@ -1030,7 +1041,47 @@ async function gerarImagemStory(dados){
     });
 }
 
+// Mesmos emojis usados nos filtros de categoria do site (index.html),
+// só pra não ficar sem emoji nenhum na legenda quando a oferta tem
+// categoria escolhida.
+const ICONES_CATEGORIA_LEGENDA = {
+    "Casa": "🏠",
+    "Café": "☕",
+    "Academia": "🏋️",
+    "Eletrônicos": "🔌",
+    "Beleza": "💄",
+    "Moda": "👕",
+    "Pet": "🐾",
+    "Cozinha": "🍳",
+    "Outros": "📦"
+};
+
+function formatarNumeroBR(numero){
+    return numero.toLocaleString("pt-BR", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+}
+
+// Se o nome do produto começar com "Kit N" (ex.: "Kit 6 Cuecas..."),
+// calcula o preço por unidade pra mostrar "(X,XX cada)" na legenda.
+function calcularPrecoCada(produto, preco){
+    const match = produto.match(/\bkit\s+(\d+)\b/i);
+    if(!match) return null;
+
+    const quantidade = parseInt(match[1], 10);
+    if(!quantidade || quantidade < 2) return null;
+
+    const numeroPreco = paraNumeroReais(preco);
+    if(numeroPreco === null) return null;
+
+    return formatarNumeroBR(numeroPreco / quantidade);
+}
+
 function montarLegenda(){
+
+    const chamada =
+        document.getElementById("chamada").value.trim();
 
     const produto =
         document.getElementById("produto").value.trim();
@@ -1044,20 +1095,31 @@ function montarLegenda(){
     const cupom =
         document.getElementById("cupom").value.trim();
 
+    const categoria =
+        document.getElementById("categoria").value;
+
     const link =
         document.getElementById("link").value.trim();
 
+    const emoji = ICONES_CATEGORIA_LEGENDA[categoria] || "🔥";
+
     const linhas = [];
 
-    linhas.push("🐶 *Farejadinhos da Yang*");
-    linhas.push("");
-    linhas.push(`🔥 *${produto}*`);
+    if(chamada){
+        linhas.push(chamada.toUpperCase());
+        linhas.push("");
+    }
+
+    linhas.push(`${emoji} *${produto}*`);
     linhas.push("");
 
+    const precoCada = calcularPrecoCada(produto, preco);
+    const sufixoCada = precoCada ? ` (${precoCada} cada)` : "";
+
     if(precoAntigo){
-        linhas.push(`~${precoAntigo}~  *${preco}*`);
+        linhas.push(`🔥 ~DE ${precoAntigo}~ | POR ${preco} no Pix${sufixoCada}`);
     } else {
-        linhas.push(`*${preco}*`);
+        linhas.push(`🔥 POR ${preco} no Pix${sufixoCada}`);
     }
 
     if(cupom){
