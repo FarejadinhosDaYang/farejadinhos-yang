@@ -1,0 +1,44 @@
+name: Gerar lote de ofertas
+
+on:
+  workflow_dispatch:
+    inputs:
+      arquivoLote:
+        description: "Caminho do arquivo JSON do lote (em entrada/)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  gerar-lote:
+    runs-on: windows-latest
+
+    steps:
+      - name: Baixar repositorio
+        uses: actions/checkout@v4
+
+      - name: Gerar ofertas do lote
+        shell: pwsh
+        env:
+          ARQUIVO_LOTE: ${{ inputs.arquivoLote }}
+        run: |
+          .\gerador\gerar-lote.ps1 -ArquivoLote $env:ARQUIVO_LOTE
+
+      - name: Salvar no GitHub
+        shell: pwsh
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add assets ofertas entrada ofertas.json
+
+          $temAlteracoes = git status --porcelain
+
+          if ([string]::IsNullOrWhiteSpace($temAlteracoes)) {
+            Write-Host "Nada para commitar."
+          } else {
+            git commit -m "Lote de ofertas importado"
+            git push
+          }
