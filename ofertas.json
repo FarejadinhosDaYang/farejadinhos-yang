@@ -15,21 +15,6 @@
     "precoAPrazo": "635,00"
   },
   {
-    "produto": "Micro-ondas Electrolux de bancada Branco 34L",
-    "preco": "R$ 597,55",
-    "precoAntigo": "R$ 799,00",
-    "cupom": "",
-    "categoria": "Eletrônicos",
-    "destaque": false,
-    "imagem": "a3dfd6af-844e-40c0-aa4c-de73954cb541.jpg",
-    "link": "https://meli.la/1ntBSja",
-    "url": "https://farejadinhosdayang.github.io/farejadinhos-yang/ofertas/micro-ondas-electrolux-de-bancada-branco-34l/",
-    "slug": "micro-ondas-electrolux-de-bancada-branco-34l",
-    "data": "2026-09-30T13:40:32Z",
-    "precoAVista": "584,71",
-    "precoAPrazo": "629,00"
-  },
-  {
     "produto": "Micro-ondas Electrolux Branco 36L Efficient (ME36B) 127V",
     "preco": "R$ 571,00",
     "precoAntigo": "R$ 660,00",
@@ -58,5 +43,20 @@
     "data": "2026-09-30T13:51:57Z",
     "precoAVista": "",
     "precoAPrazo": ""
+  },
+  {
+    "produto": "Micro-ondas Electrolux de bancada Branco 34L",
+    "preco": "R$ 626,38",
+    "precoAntigo": "R$ 770,00",
+    "cupom": "",
+    "categoria": "Cozinha",
+    "destaque": false,
+    "imagem": "33b77b69-ac6b-4352-a1d1-c60f468b2846.png",
+    "link": "https://meli.la/24KYZbN",
+    "url": "https://farejadinhosdayang.github.io/farejadinhos-yang/ofertas/micro-ondas-electrolux-de-bancada-branco-34l/",
+    "slug": "micro-ondas-electrolux-de-bancada-branco-34l",
+    "data": "2026-10-01T15:00:44Z",
+    "precoAVista": "626,38",
+    "precoAPrazo": "659,65"
   }
 ]
