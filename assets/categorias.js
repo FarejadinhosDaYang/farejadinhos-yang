@@ -60,7 +60,7 @@
       "vestido", "saia", "jaqueta", "moletom", "casaco", "jeans", "tenis",
       "sapato", "sandalia", "chinelo", "bota", "bolsa", "mochila", "carteira",
       "oculos", "relogio", "meia", "cueca", "calcinha", "sutia", "pijama",
-      "bone", "cinto", "guarda chuva", "sombrinha", "pulseira", "colar",
+      "bone", "cinto", "pulseira", "colar",
       "brinco", "anel", "biquini", "maio", "legging", "cropped", "conjunto feminino",
       "conjunto masculino", "polo", "blazer"
     ],
@@ -78,6 +78,17 @@
       "panela eletrica", "torradeira", "espremedor", "centrifuga", "batedeira",
       "mixer de mao", "pipoqueira", "waffle"
     ],
+    "Utilidades": [
+      "utilidade", "guarda chuva", "sombrinha", "lanterna", "pilha", "pilhas recarregaveis",
+      "bateria recarregavel", "fita adesiva", "fita isolante", "fita dupla face",
+      "cadeado", "balanca", "termometro", "mala de viagem", "mala", "necessaire",
+      "organizador de mala", "chaveiro", "bomba de ar", "encher pneu", "compressor de ar",
+      "calibrador", "kit ferramenta", "ferramenta", "alicate", "trena", "multimetro",
+      "chave de fenda", "jogo de chaves", "cola instantanea", "super cola",
+      "abracadeira", "enforca gato", "gancho adesivo", "ventosa", "porta documento",
+      "porta cartao", "canivete", "estilete", "tesoura", "regua", "kit emergencia",
+      "capa de chuva", "saco a vacuo", "etiquetadora", "relogio de parede", "despertador"
+    ],
     "Casa": [
       "casa", "varal", "varal de roupa", "organizador", "cabide", "tapete", "cortina", "persiana",
       "travesseiro", "lencol", "edredom", "cobertor", "manta", "toalha", "almofada",
@@ -85,10 +96,10 @@
       "limpeza", "ventilador", "umidificador", "aromatizador", "difusor", "tomada",
       "extensao", "filtro de linha", "benjamim", "prateleira", "estante",
       "nicho", "decoracao", "quadro", "vaso", "cadeira", "mesa", "colchao", "cama",
-      "banheiro", "chuveiro", "ducha", "porta toalha", "lixeira", "ferramenta",
-      "furadeira", "parafusadeira", "chave de fenda", "jardim", "mangueira",
+      "banheiro", "chuveiro", "ducha", "porta toalha", "lixeira",
+      "furadeira", "parafusadeira", "jardim", "mangueira",
       "ar condicionado", "aquecedor", "cesto", "caixa organizadora", "sapateira",
-      "rack", "escrivaninha", "espelho", "fechadura", "campainha", "lanterna",
+      "rack", "escrivaninha", "espelho", "fechadura", "campainha",
       "pano de chao", "balde", "dispenser", "cabideiro", "guarda roupa"
     ]
   };
