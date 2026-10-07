@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Importar planilha | Farejadinhos da Yang</title>
+<link rel="icon" href="../assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<style>
+
+:root{
+    --red:#E5232E;
+    --red-dark:#C21A24;
+    --orange:#F7941D;
+    --cream:#FDF3E3;
+    --cream-2:#FFFAF1;
+    --ink:#2B1B12;
+    --muted:#8A7563;
+    --line:#F0DFC4;
+}
+
+*{box-sizing:border-box}
+
+body{margin:0;padding:20px;background:var(--cream);font-family:'Work Sans',Arial,sans-serif;color:var(--ink)}
+
+.container{max-width:780px;margin:auto}
+
+.voltar{display:inline-block;margin-bottom:16px;color:var(--red-dark);font-weight:700;text-decoration:none;font-size:14px}
+
+.header{text-align:center;margin-bottom:20px}
+.header h1{font-size:20px;margin:0 0 4px;font-family:'Baloo 2',sans-serif;color:var(--red-dark)}
+.header p{color:var(--muted);margin:0;font-size:13px}
+
+.card{background:var(--cream-2);border:1.5px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 8px 30px rgba(43,27,18,.10);margin-bottom:16px}
+
+label{display:block;font-weight:700;margin-bottom:6px;font-size:14px}
+
+input[type="password"]{width:100%;padding:12px;border:1.5px solid var(--line);border-radius:10px;font-size:15px;outline:none;font-family:'Work Sans',sans-serif;background:#fff;color:var(--ink)}
+input[type="password"]:focus{border-color:var(--red)}
+
+.colunas{background:#fff8f0;border:1.5px solid #ffe2c2;border-radius:12px;padding:14px 16px;font-size:13px;line-height:1.7;margin-top:14px}
+.colunas b{color:var(--red-dark)}
+.colunas code{background:#fff;padding:1px 6px;border-radius:5px;border:1px solid var(--line)}
+
+.inputArquivo{margin-top:14px}
+.inputArquivo input{font-size:14px}
+
+table{width:100%;border-collapse:collapse;margin-top:14px;font-size:12.5px}
+th,td{padding:8px;border:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:#fff6e9;color:var(--red-dark)}
+tr.linhaErro td{background:#fff0f0}
+.erroCampo{color:#b00000;font-size:11px;font-weight:700;display:block;margin-top:2px}
+.tabelaWrap{overflow-x:auto}
+.celulaFoto{min-width:190px}
+.inputFoto{width:100%;padding:7px 8px;border:1.5px solid var(--line);border-radius:8px;font-size:12px;font-family:'Work Sans',sans-serif;background:#fff;color:var(--ink)}
+.inputFoto:focus{outline:none;border-color:var(--red)}
+.miniFoto{display:block;width:56px;height:56px;object-fit:contain;background:#fff;border:1px solid var(--line);border-radius:8px;margin-bottom:6px}
+.abrirProduto{display:inline-block;margin-top:5px;font-size:11.5px;font-weight:700;color:var(--red-dark);text-decoration:none}
+
+.resumo{margin-top:12px;font-size:13.5px}
+.resumo b{color:var(--red-dark)}
+
+button{width:100%;border:0;border-radius:12px;padding:15px;margin-top:16px;background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;font-size:16px;font-weight:800;font-family:'Baloo 2',sans-serif;cursor:pointer;box-shadow:0 10px 22px rgba(229,35,46,.25)}
+button:disabled{opacity:.55;cursor:wait}
+
+.status{display:none;margin-top:16px;padding:14px;border-radius:10px;text-align:center;font-size:13.5px;word-break:break-word}
+.status.erro{display:block;background:#fff0f0;color:#b00000;border:1.5px dashed #f3c6c6}
+.status.sucesso{display:block;background:#eafbea;color:#1a7d1a;border:1.5px dashed #cdeccd}
+.status.carregando{display:block;background:#fff6e9;color:var(--red-dark);border:1.5px dashed var(--orange)}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<a class="voltar" href="index.html">← Voltar pro gerador</a>
+
+<div class="header">
+<h1>📊 Importar planilha</h1>
+<p>Suba vários produtos de uma vez — as ofertas vão sendo liberadas aos poucos ao longo do dia, sozinhas.</p>
+</div>
+
+<div class="card">
+
+<label>Senha do painel</label>
+<input type="password" id="senha" placeholder="Senha do painel">
+
+<div class="colunas">
+<b>Colunas que a planilha precisa ter</b> (a ordem não importa, os nomes podem variar um pouco):<br>
+<code>produto</code> · <code>preco</code> · <code>precoAntigo</code> <i>(opcional)</i> · <code>cupom</code> <i>(opcional)</i> · <code>categoria</code> <i>(opcional)</i> · <code>destaque</code> <i>(opcional, "sim"/"true")</i> · <code>link</code> · <code>imagemUrl</code> (o link direto da foto do produto)<br>
+🛍️ <b>Planilha da Shopee</b> (exportação de links em lote do programa de afiliados) também funciona do jeito que vem: o nome, o preço e o link de afiliado são lidos sozinhos. Se a foto não vier na planilha, dá pra colar o link da foto direto na tabela abaixo.
+</div>
+
+<div class="inputArquivo">
+<label>Arquivo (.xlsx ou .csv)</label>
+<input type="file" id="arquivo" accept=".xlsx,.xls,.csv">
+</div>
+
+<div class="status" id="statusLeitura"></div>
+
+</div>
+
+<div class="card" id="cardPreview" style="display:none">
+
+<div class="tabelaWrap">
+<table id="tabelaPreview">
+<thead><tr id="cabecalhoPreview"></tr></thead>
+<tbody id="corpoPreview"></tbody>
+</table>
+</div>
+
+<div class="resumo" id="resumo"></div>
+
+<button type="button" id="btnEnviar" onclick="enviarLote()">🚀 Enviar lote</button>
+
+<div class="status" id="statusEnvio"></div>
+
+</div>
+
+</div>
+
+<script>
+
+const WORKER_URL =
+    "https://holy-pine-e7fc.bernard-shimizu.workers.dev";
+
+// Mapeia cabeçalhos da planilha (com variações de acento/maiúsculas)
+// pros nomes de campo que o sistema usa internamente.
+const MAPA_CABECALHOS = {
+    "produto": "produto",
+    "nome": "produto",
+    "preco": "preco",
+    "preço": "preco",
+    "precoantigo": "precoAntigo",
+    "precoanterior": "precoAntigo",
+    "preçoantigo": "precoAntigo",
+    "cupom": "cupom",
+    "categoria": "categoria",
+    "destaque": "destaque",
+    "link": "link",
+    "linkafiliado": "link",
+    "imagemurl": "imagemUrl",
+    "imagem": "imagemUrl",
+    "foto": "imagemUrl",
+    "fotourl": "imagemUrl",
+    "linkdafoto": "imagemUrl",
+    "linkimagem": "imagemUrl",
+
+    // Exportação em lote do Programa de Afiliados da Shopee
+    "itemname": "produto",
+    "price": "preco",
+    "offerlink": "link",
+    "productlink": "linkProduto",
+    "nomedaloja": "loja",
+    "shopname": "loja",
+    "imageurl": "imagemUrl",
+    "image": "imagemUrl",
+    "imagelink": "imagemUrl"
+};
+
+// Quando duas colunas da planilha caem no mesmo campo, vale a primeira
+// preenchida — mas o link de afiliado ("Offer Link") sempre ganha do
+// link comum do produto, porque é ele que gera a comissão.
+
+function normalizarCabecalho(texto){
+    return String(texto || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[̀-ͯ]/g, "")
+        .replace(/[^a-z0-9]/g, "");
+}
+
+function normalizarBooleano(valor){
+    const v = String(valor ?? "").trim().toLowerCase();
+    return v === "true" || v === "sim" || v === "1" || v === "x" || v === "yes";
+}
+
+let itensValidos = [];
+let itensProcessados = [];
+
+document.getElementById("arquivo").addEventListener("change", function(e){
+
+    const arquivo = e.target.files[0];
+    const statusLeitura = document.getElementById("statusLeitura");
+    const cardPreview = document.getElementById("cardPreview");
+
+    cardPreview.style.display = "none";
+    itensValidos = [];
+
+    if(!arquivo){
+        return;
+    }
+
+    statusLeitura.className = "status carregando";
+    statusLeitura.textContent = "Lendo planilha...";
+
+    const leitor = new FileReader();
+
+    leitor.onload = function(ev){
+
+        try{
+
+            const dados = new Uint8Array(ev.target.result);
+            const ehCsv = /\.csv$/i.test(arquivo.name);
+            const workbook = ehCsv
+                ? XLSX.read(new TextDecoder("utf-8").decode(dados), { type: "string", raw: true })
+                : XLSX.read(dados, { type: "array" });
+            const primeiraAba = workbook.SheetNames[0];
+            const planilha = workbook.Sheets[primeiraAba];
+            const linhas = XLSX.utils.sheet_to_json(planilha, { defval: "" });
+
+            if(linhas.length === 0){
+                throw new Error("A planilha não tem nenhuma linha de produto.");
+            }
+
+            processarLinhas(linhas);
+
+            statusLeitura.className = "status";
+            statusLeitura.textContent = "";
+
+        }catch(erro){
+            statusLeitura.className = "status erro";
+            statusLeitura.textContent = "❌ " + erro.message;
+        }
+    };
+
+    leitor.onerror = function(){
+        statusLeitura.className = "status erro";
+        statusLeitura.textContent = "❌ Não consegui ler esse arquivo.";
+    };
+
+    leitor.readAsArrayBuffer(arquivo);
+});
+
+function processarLinhas(linhas){
+
+    // Descobre quais colunas da planilha correspondem a quais
+    // campos internos, olhando os cabeçalhos da primeira linha.
+    const cabecalhosOriginais = Object.keys(linhas[0]);
+    const correspondencia = {};
+
+    cabecalhosOriginais.forEach(cab => {
+        const normalizado = normalizarCabecalho(cab);
+        if(MAPA_CABECALHOS[normalizado]){
+            correspondencia[cab] = MAPA_CABECALHOS[normalizado];
+        }
+    });
+
+    itensProcessados = linhas.map(linha => {
+
+        const item = {
+            produto: "", preco: "", precoAntigo: "", cupom: "",
+            categoria: "", destaque: false, link: "", imagemUrl: ""
+        };
+
+        let linkProduto = "";
+
+        for(const cabOriginal in correspondencia){
+            const campo = correspondencia[cabOriginal];
+            const valor = linha[cabOriginal];
+
+            if(campo === "loja"){
+                continue;
+            }
+
+            if(campo === "linkProduto"){
+                linkProduto = String(valor ?? "").trim();
+                continue;
+            }
+
+            if(campo === "destaque"){
+                item.destaque = item.destaque || normalizarBooleano(valor);
+                continue;
+            }
+
+            const texto = String(valor ?? "").trim();
+            if(texto && !item[campo]){
+                item[campo] = texto;
+            }
+        }
+
+        // Sem link de afiliado: usa o link comum do produto
+        if(!item.link && linkProduto){
+            item.link = linkProduto;
+        }
+
+        return { item, linkProduto, erros: [] };
+    });
+
+    // Ignora linhas totalmente vazias (comum no fim de CSVs)
+    itensProcessados = itensProcessados.filter(p =>
+        p.item.produto || p.item.preco || p.item.link || p.item.imagemUrl
+    );
+
+    if(itensProcessados.length === 0){
+        throw new Error("Não encontrei nenhum produto. Confira se a planilha tem as colunas de nome, preço e link.");
+    }
+
+    validarItens();
+    montarPreview();
+}
+
+function validarItens(){
+
+    itensProcessados.forEach(p => {
+        const item = p.item;
+        const erros = [];
+        if(!item.produto) erros.push("produto");
+        if(!item.preco) erros.push("preço");
+        if(!item.link) erros.push("link");
+        if(!item.imagemUrl) erros.push("link da imagem");
+        p.erros = erros;
+    });
+
+    itensValidos = itensProcessados.filter(p => p.erros.length === 0).map(p => p.item);
+}
+
+function montarPreview(){
+
+    const cabecalho = document.getElementById("cabecalhoPreview");
+    const corpo = document.getElementById("corpoPreview");
+    const cardPreview = document.getElementById("cardPreview");
+
+    // A foto vem primeiro: é a coluna que mais precisa ser preenchida à mão
+    const colunas = ["imagemUrl", "produto", "preco", "precoAntigo", "cupom", "categoria", "destaque", "link"];
+
+    cabecalho.innerHTML = colunas.map(c => `<th>${c === "imagemUrl" ? "foto" : c}</th>`).join("");
+
+    corpo.innerHTML = itensProcessados.map(({ item, linkProduto, erros }, indice) => {
+
+        const classe = erros.length > 0 ? ' class="linhaErro"' : "";
+
+        const celulas = colunas.map(c => {
+
+            const ehCampoComErro = erros.includes(
+                c === "preco" ? "preço" : c === "imagemUrl" ? "link da imagem" : c
+            );
+            const avisoFaltando = ehCampoComErro ? '<span class="erroCampo">faltando</span>' : "";
+
+            // Coluna da foto: campo pra colar o link da imagem
+            if(c === "imagemUrl"){
+                const abrir = linkProduto || item.link;
+                return `<td class="celulaFoto">
+                    ${item.imagemUrl ? `<img class="miniFoto" src="${escapeHtml(item.imagemUrl)}" alt="" onerror="this.style.display='none'">` : ""}
+                    <input type="url" class="inputFoto" data-indice="${indice}" placeholder="Cole o link da foto" value="${escapeHtml(item.imagemUrl)}">
+                    ${abrir ? `<a class="abrirProduto" href="${escapeHtml(abrir)}" target="_blank" rel="noopener">abrir produto ↗</a>` : ""}
+                    ${avisoFaltando}
+                </td>`;
+            }
+
+            const valor = c === "destaque" ? (item[c] ? "sim" : "não") : (item[c] || "—");
+            return `<td>${escapeHtml(String(valor))}${avisoFaltando}</td>`;
+        }).join("");
+
+        return `<tr${classe}>${celulas}</tr>`;
+    }).join("");
+
+    corpo.querySelectorAll(".inputFoto").forEach(input => {
+        input.addEventListener("change", function(){
+            const p = itensProcessados[Number(this.dataset.indice)];
+            p.item.imagemUrl = this.value.trim();
+            validarItens();
+            montarPreview();
+        });
+    });
+
+    atualizarResumo();
+    cardPreview.style.display = "block";
+}
+
+function atualizarResumo(){
+
+    const resumo = document.getElementById("resumo");
+    const btnEnviar = document.getElementById("btnEnviar");
+
+    const totalOk = itensValidos.length;
+    const totalErro = itensProcessados.length - totalOk;
+    const semFoto = itensProcessados.filter(p => !p.item.imagemUrl).length;
+
+    resumo.innerHTML =
+        `<b>${totalOk}</b> produto(s) prontos pra importar` +
+        (totalErro > 0 ? `, <b style="color:#b00000">${totalErro}</b> com dados faltando (em vermelho — vão ser ignorados)` : "") +
+        (semFoto > 0 ? `<br>📷 ${semFoto} sem foto: abra o produto, clique com o botão direito na foto → "Copiar endereço da imagem" e cole no campo da linha.` : "");
+
+    btnEnviar.disabled = totalOk === 0;
+}
+
+function escapeHtml(texto){
+    const div = document.createElement("div");
+    div.textContent = texto == null ? "" : texto;
+    return div.innerHTML;
+}
+
+async function enviarLote(){
+
+    const senha = document.getElementById("senha").value;
+    const statusEnvio = document.getElementById("statusEnvio");
+    const btnEnviar = document.getElementById("btnEnviar");
+
+    if(!senha){
+        alert("Digite a senha do painel primeiro.");
+        return;
+    }
+
+    if(itensValidos.length === 0){
+        alert("Nenhum produto válido pra enviar.");
+        return;
+    }
+
+    if(!confirm(`Enviar ${itensValidos.length} produto(s)? Eles vão ser liberados aos poucos ao longo do dia.`)){
+        return;
+    }
+
+    btnEnviar.disabled = true;
+    btnEnviar.textContent = "Enviando...";
+
+    const dados = new FormData();
+    dados.append("senha", senha);
+    dados.append("itens", JSON.stringify(itensValidos));
+
+    try{
+
+        const resposta = await fetch(WORKER_URL + "/lote", {
+            method: "POST",
+            body: dados
+        });
+
+        const texto = await resposta.text();
+
+        if(!resposta.ok){
+            throw new Error(texto);
+        }
+
+        statusEnvio.className = "status sucesso";
+        statusEnvio.textContent = "✅ " + (JSON.parse(texto).mensagem || "Lote enviado!");
+
+        btnEnviar.textContent = "🚀 Enviar lote";
+        btnEnviar.disabled = true;
+        itensValidos = [];
+
+    }catch(erro){
+
+        statusEnvio.className = "status erro";
+        statusEnvio.textContent = "❌ " + erro.message;
+
+        btnEnviar.disabled = false;
+        btnEnviar.textContent = "🚀 Enviar lote";
+    }
+}
+
+</script>
+
+</body>
+</html>
