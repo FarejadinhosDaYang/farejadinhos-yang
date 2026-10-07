@@ -488,8 +488,12 @@ body{
 
 .product{
     width:100%;
+    aspect-ratio:1/1;
+    object-fit:contain;
+    box-sizing:border-box;
+    padding:12px;
     border-radius:18px;
-    background:#f7f1e6;
+    background:#ffffff;
     display:block;
     border:1px solid var(--line)
 }
