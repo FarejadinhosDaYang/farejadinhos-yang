@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="../assets/categorias.js"></script>
 <style>
 
 :root{
@@ -58,6 +59,9 @@ tr.linhaErro td{background:#fff0f0}
 .inputFoto{width:100%;padding:7px 8px;border:1.5px solid var(--line);border-radius:8px;font-size:12px;font-family:'Work Sans',sans-serif;background:#fff;color:var(--ink)}
 .inputFoto:focus{outline:none;border-color:var(--red)}
 .miniFoto{display:block;width:56px;height:56px;object-fit:contain;background:#fff;border:1px solid var(--line);border-radius:8px;margin-bottom:6px}
+.selectCategoria{width:100%;min-width:120px;padding:6px;border:1.5px solid var(--line);border-radius:8px;font-size:12px;font-family:'Work Sans',sans-serif;background:#fff;color:var(--ink)}
+.selectCategoria:focus{outline:none;border-color:var(--red)}
+.tagSugerida{display:block;margin-top:4px;font-size:10.5px;color:var(--muted);font-weight:600}
 .abrirProduto{display:inline-block;margin-top:5px;font-size:11.5px;font-weight:700;color:var(--red-dark);text-decoration:none}
 
 .resumo{margin-top:12px;font-size:13.5px}
@@ -295,7 +299,14 @@ function processarLinhas(linhas){
             item.link = linkProduto;
         }
 
-        return { item, linkProduto, erros: [] };
+        // Sem categoria na planilha: sugere pelo nome do produto
+        let categoriaSugerida = false;
+        if(!item.categoria && item.produto){
+            item.categoria = FarejadinhosCategorias.sugerir(item.produto);
+            categoriaSugerida = true;
+        }
+
+        return { item, linkProduto, categoriaSugerida, erros: [] };
     });
 
     // Ignora linhas totalmente vazias (comum no fim de CSVs)
@@ -453,11 +464,11 @@ function montarPreview(){
     const cardPreview = document.getElementById("cardPreview");
 
     // A foto vem primeiro: é a coluna que mais precisa ser preenchida à mão
-    const colunas = ["imagemUrl", "produto", "preco", "precoAntigo", "cupom", "categoria", "destaque", "link"];
+    const colunas = ["imagemUrl", "produto", "categoria", "preco", "precoAntigo", "cupom", "destaque", "link"];
 
     cabecalho.innerHTML = colunas.map(c => `<th>${c === "imagemUrl" ? "foto" : c}</th>`).join("");
 
-    corpo.innerHTML = itensProcessados.map(({ item, linkProduto, erros }, indice) => {
+    corpo.innerHTML = itensProcessados.map(({ item, linkProduto, categoriaSugerida, erros }, indice) => {
 
         const classe = erros.length > 0 ? ' class="linhaErro"' : "";
 
@@ -479,6 +490,20 @@ function montarPreview(){
                 </td>`;
             }
 
+            // Coluna da categoria: caixinha pra trocar (vem sugerida)
+            if(c === "categoria"){
+                const lista = FarejadinhosCategorias.LISTA.slice();
+                if(item.categoria && !lista.includes(item.categoria)) lista.unshift(item.categoria);
+                const opcoes = ['<option value="">Sem categoria</option>']
+                    .concat(lista.map(cat =>
+                        `<option value="${escapeHtml(cat)}"${cat === item.categoria ? " selected" : ""}>${escapeHtml(cat)}</option>`
+                    )).join("");
+                return `<td>
+                    <select class="selectCategoria" data-indice="${indice}">${opcoes}</select>
+                    ${categoriaSugerida ? '<span class="tagSugerida">🤖 sugerida</span>' : ""}
+                </td>`;
+            }
+
             const valor = c === "destaque" ? (item[c] ? "sim" : "não") : (item[c] || "—");
             return `<td>${escapeHtml(String(valor))}${avisoFaltando}</td>`;
         }).join("");
@@ -492,6 +517,16 @@ function montarPreview(){
             p.item.imagemUrl = this.value.trim();
             validarItens();
             montarPreview();
+        });
+    });
+
+    corpo.querySelectorAll(".selectCategoria").forEach(sel => {
+        sel.addEventListener("change", function(){
+            const p = itensProcessados[Number(this.dataset.indice)];
+            p.item.categoria = this.value;
+            p.categoriaSugerida = false;
+            const tag = this.parentElement.querySelector(".tagSugerida");
+            if(tag) tag.remove();
         });
     });
 
