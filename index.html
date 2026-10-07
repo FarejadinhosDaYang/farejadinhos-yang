@@ -604,9 +604,9 @@ Alguns links desta página podem ser de afiliado: ao comprar por eles, podemos g
 </div>
 
 <script src="assets/nav.js"></script>
+<script src="assets/vitrine.js"></script>
 <script>
 
-const HORAS_EXPIRACAO = 24;
 
 let ofertas = [];
 
@@ -685,26 +685,10 @@ async function carregar(){
         todas = [];
     }
 
-    const agora = new Date();
-
-    ofertas = todas.filter(o => {
-        if(!o || !o.slug) return false;
-
-        // Ofertas de lote/agendadas carregam um horário de liberação —
-        // enquanto esse horário não chega, a oferta fica escondida da
-        // vitrine (mas a página dela já existe, só não aparece na lista).
-        if(o.liberacao){
-            const dataLiberacao = new Date(o.liberacao);
-            if(!isNaN(dataLiberacao) && dataLiberacao > agora){
-                return false;
-            }
-        }
-
-        const dataOferta = new Date(o.data);
-        if(isNaN(dataOferta)) return true;
-        const horas = (agora - dataOferta) / (1000 * 60 * 60);
-        return horas <= HORAS_EXPIRACAO;
-    });
+    // Quem aparece: ofertas liberadas há até 24h, completadas com as
+    // mais recentes de até 3 dias quando faltar pra chegar a 15.
+    // A regra completa está em assets/vitrine.js.
+    ofertas = FarejadinhosVitrine.selecionar(todas, new Date()).visiveis;
 
     ofertas.sort((a, b) => {
         if(!!b.destaque !== !!a.destaque) return (b.destaque ? 1 : 0) - (a.destaque ? 1 : 0);

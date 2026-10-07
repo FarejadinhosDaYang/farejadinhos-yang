@@ -93,26 +93,19 @@ body{margin:0;padding:20px;background:var(--cream);font-family:'Work Sans',Arial
 
 </div>
 
+<script src="../assets/vitrine.js"></script>
 <script>
 
 const WORKER_URL =
     "https://holy-pine-e7fc.bernard-shimizu.workers.dev";
 
-const HORAS_EXPIRACAO = 24;
-
 let ofertas = [];
+let selecaoVitrine = { visiveis: [], frescas: new Set(), reserva: new Set() };
 
 function escapeHtml(texto){
   const div = document.createElement("div");
   div.textContent = texto == null ? "" : texto;
   return div.innerHTML;
-}
-
-function estaAtiva(oferta){
-  const dataOferta = new Date(oferta.data);
-  if(isNaN(dataOferta)) return true;
-  const horas = (new Date() - dataOferta) / (1000 * 60 * 60);
-  return horas <= HORAS_EXPIRACAO;
 }
 
 function paraNumero(valor){
@@ -138,21 +131,10 @@ function melhorPrecoTexto(oferta){
   return `<div class="melhorPreco">💰 Preço ${rotuloUnico}: R$ ${unico.toFixed(2).replace(".", ",")}</div>`;
 }
 
+// Horas que faltam até a oferta deixar de ser "fresca" (24h)
 function horasRestantes(oferta){
-  const dataOferta = new Date(oferta.data);
-  if(isNaN(dataOferta)) return HORAS_EXPIRACAO;
-  const horasPassadas = (new Date() - dataOferta) / (1000 * 60 * 60);
-  return Math.max(0, HORAS_EXPIRACAO - horasPassadas);
-}
-
-// Oferta de lote cujo horário de liberação ainda não chegou — já
-// existe no catálogo, mas o site (index.html) ainda está escondendo
-// ela da vitrine.
-function estaAgendada(oferta){
-  if(!oferta.liberacao) return false;
-  const dataLiberacao = new Date(oferta.liberacao);
-  if(isNaN(dataLiberacao)) return false;
-  return dataLiberacao > new Date();
+  const idade = FarejadinhosVitrine.idadeHoras(oferta, new Date());
+  return Math.max(0, FarejadinhosVitrine.HORAS_FRESCA - idade);
 }
 
 function formatarDataHora(iso){
@@ -176,7 +158,12 @@ async function carregar(){
     todas = [todas];
   }
 
-  todas.sort((a, b) => new Date(b.data) - new Date(a.data));
+  // mais recentes (pelo horário de liberação) primeiro
+  todas.sort((a, b) =>
+    (FarejadinhosVitrine.inicio(b) || 0) - (FarejadinhosVitrine.inicio(a) || 0)
+  );
+
+  selecaoVitrine = FarejadinhosVitrine.selecionar(todas, new Date());
 
   ofertas = todas;
   render();
@@ -202,17 +189,20 @@ function render(){
 
       const semDados = !o.produto && !o.preco && !o.imagem;
 
-      const ativa = estaAtiva(o);
+      const situacao = FarejadinhosVitrine.status(o, selecaoVitrine, new Date());
       const restante = horasRestantes(o);
-      const agendada = estaAgendada(o);
 
       const statusBadge = semDados
         ? `<span class="badge badgeExpirada">⚠️ Sem dados</span>`
-        : agendada
+        : situacao === "agendada"
           ? `<span class="badge badgeAgendada">🕒 Agendada pra ${formatarDataHora(o.liberacao)}</span>`
-          : ativa
-            ? `<span class="badge badgeAtiva">🟢 Ativa · expira em ${restante.toFixed(1)}h</span>`
-            : `<span class="badge badgeExpirada">⚪ Expirada</span>`;
+          : situacao === "fresca"
+            ? `<span class="badge badgeAtiva">🟢 No ar · nova por mais ${restante.toFixed(1)}h</span>`
+            : situacao === "reserva"
+              ? `<span class="badge badgeAgendada">🟡 No ar · segurando o mínimo de ${FarejadinhosVitrine.MINIMO_VITRINE}</span>`
+              : situacao === "fora"
+                ? `<span class="badge badgeExpirada">⏸️ Fora do ar · reserva (volta se faltar oferta)</span>`
+                : `<span class="badge badgeExpirada">⚪ Expirada (mais de 3 dias)</span>`;
 
       const categoriaBadge = o.categoria
         ? `<span class="badge badgeCategoria">${escapeHtml(o.categoria)}</span>`

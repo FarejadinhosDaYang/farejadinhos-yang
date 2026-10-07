@@ -2,8 +2,10 @@
 # LIMPAR OFERTAS EXPIRADAS
 #
 # O site já esconde do visitante qualquer oferta com mais de
-# HORAS_EXPIRACAO horas (24h) — isso acontece via JavaScript, direto
-# no navegador, olhando o campo "data" de cada oferta em ofertas.json.
+# HORAS_EXPIRACAO horas (72h = 3 dias, contadas a partir da
+# liberação) — isso acontece via JavaScript, direto no navegador
+# (regra completa em assets/vitrine.js: até 24h a oferta é "nova";
+# de 24h a 72h ela só aparece se faltar oferta pra completar 15).
 #
 # Só que esconder não é remover: o arquivo ofertas.json nunca perdia
 # uma entrada sozinho, então ele só cresce pra sempre, oferta após
@@ -22,7 +24,22 @@
 
 $ErrorActionPreference = "Stop"
 
-$HORAS_EXPIRACAO = 24
+# Mesmo valor de HORAS_MAXIMA em assets/vitrine.js
+$HORAS_EXPIRACAO = 72
+
+# Converte o valor de data vindo do JSON (o ConvertFrom-Json pode
+# entregar texto ou já um DateTime) pra um horário UTC confiável.
+function ParaDataUtc($Valor) {
+    if ($null -eq $Valor -or [string]::IsNullOrWhiteSpace([string]$Valor)) { return $null }
+    if ($Valor -is [DateTimeOffset]) { return $Valor.ToUniversalTime() }
+    if ($Valor -is [DateTime]) { return [DateTimeOffset]::new($Valor.ToUniversalTime()) }
+    try {
+        return [DateTimeOffset]::Parse([string]$Valor, [Globalization.CultureInfo]::InvariantCulture).ToUniversalTime()
+    }
+    catch {
+        return $null
+    }
+}
 
 $Gerador = Split-Path -Parent $MyInvocation.MyCommand.Path
 $Site = Split-Path -Parent $Gerador
@@ -53,20 +70,18 @@ foreach ($Oferta in $Ofertas) {
         continue
     }
 
-    if (-not $Oferta.data) {
-        # sem data pra comparar, mantém por segurança
+    # O relógio da oferta começa quando ela é liberada no site
+    # (ofertas de lote) — ou, se não tiver liberação, quando foi criada.
+    $Inicio = ParaDataUtc $Oferta.liberacao
+    if (-not $Inicio) { $Inicio = ParaDataUtc $Oferta.data }
+
+    if (-not $Inicio) {
+        # sem data utilizável pra comparar, mantém por segurança
         $Mantidas += $Oferta
         continue
     }
 
-    try {
-        $DataOferta = [DateTimeOffset]::Parse($Oferta.data)
-    }
-    catch {
-        # data em formato inesperado, mantém por segurança em vez de arriscar apagar
-        $Mantidas += $Oferta
-        continue
-    }
+    $DataOferta = $Inicio
 
     $Horas = ($Agora - $DataOferta).TotalHours
 
