@@ -59,6 +59,8 @@ tr.linhaErro td{background:#fff0f0}
 .inputFoto{width:100%;padding:7px 8px;border:1.5px solid var(--line);border-radius:8px;font-size:12px;font-family:'Work Sans',sans-serif;background:#fff;color:var(--ink)}
 .inputFoto:focus{outline:none;border-color:var(--red)}
 .miniFoto{display:block;width:56px;height:56px;object-fit:contain;background:#fff;border:1px solid var(--line);border-radius:8px;margin-bottom:6px}
+.inputCampo[data-campo="produto"]{min-width:170px}
+.inputCampo[data-campo="preco"]{min-width:90px}
 .selectCategoria{width:100%;min-width:120px;padding:6px;border:1.5px solid var(--line);border-radius:8px;font-size:12px;font-family:'Work Sans',sans-serif;background:#fff;color:var(--ink)}
 .selectCategoria:focus{outline:none;border-color:var(--red)}
 .tagSugerida{display:block;margin-top:4px;font-size:10.5px;color:var(--muted);font-weight:600}
@@ -98,7 +100,8 @@ button:disabled{opacity:.55;cursor:wait}
 <div class="colunas">
 <b>Colunas que a planilha precisa ter</b> (a ordem não importa, os nomes podem variar um pouco):<br>
 <code>produto</code> · <code>preco</code> · <code>precoAntigo</code> <i>(opcional)</i> · <code>cupom</code> <i>(opcional)</i> · <code>categoria</code> <i>(opcional)</i> · <code>destaque</code> <i>(opcional, "sim"/"true")</i> · <code>link</code> · <code>imagemUrl</code> (o link direto da foto do produto)<br>
-🛍️ <b>Planilha da Shopee</b> (exportação de links em lote do programa de afiliados) também funciona do jeito que vem: o nome, o preço e o link de afiliado são lidos sozinhos. Se a foto não vier na planilha, o painel busca sozinho (ou você cola o link da foto na tabela).
+🛍️ <b>Planilha da Shopee</b> (exportação de links em lote do programa de afiliados) também funciona do jeito que vem: o nome, o preço e o link de afiliado são lidos sozinhos. Se a foto não vier na planilha, o painel busca sozinho (ou você cola o link da foto na tabela).<br>
+🔗 <b>Só links</b> (ex.: Mercado Livre): uma planilha com um link por linha, sem mais nada, também funciona — o painel busca o nome, o preço e a foto de cada um. O que ele não achar, você completa na tabela.
 </div>
 
 <div class="inputArquivo">
@@ -113,7 +116,7 @@ button:disabled{opacity:.55;cursor:wait}
 <div class="card" id="cardPreview" style="display:none">
 
 <div class="buscaFotos">
-<button type="button" id="btnBuscarFotos" class="btnSecundario" onclick="buscarFotosAutomaticas()">🔎 Buscar fotos automaticamente</button>
+<button type="button" id="btnBuscarFotos" class="btnSecundario" onclick="buscarFotosAutomaticas()">🔎 Buscar dados automaticamente (nome, preço e foto)</button>
 <div class="status" id="statusFotos"></div>
 </div>
 
@@ -222,7 +225,22 @@ document.getElementById("arquivo").addEventListener("change", function(e){
                 : XLSX.read(dados, { type: "array" });
             const primeiraAba = workbook.SheetNames[0];
             const planilha = workbook.Sheets[primeiraAba];
-            const linhas = XLSX.utils.sheet_to_json(planilha, { defval: "" });
+            let linhas = XLSX.utils.sheet_to_json(planilha, { defval: "" });
+
+            // Planilha "só links", sem linha de título: a primeira linha
+            // já é um link. Relê tudo como lista e pega o link de cada linha.
+            const pareceLink = v => /^https?:\/\//i.test(String(v || "").trim());
+            const primeiraLinhaEhLink =
+                linhas.length === 0
+                    ? false
+                    : Object.keys(linhas[0]).some(pareceLink);
+
+            if(primeiraLinhaEhLink || (linhas.length === 0 && planilha["A1"])){
+                const brutas = XLSX.utils.sheet_to_json(planilha, { header: 1, defval: "" });
+                linhas = brutas
+                    .map(celulas => ({ link: String((celulas || []).find(pareceLink) || "").trim() }))
+                    .filter(l => l.link);
+            }
 
             if(linhas.length === 0){
                 throw new Error("A planilha não tem nenhuma linha de produto.");
@@ -260,6 +278,16 @@ function processarLinhas(linhas){
             correspondencia[cab] = MAPA_CABECALHOS[normalizado];
         }
     });
+
+    // Nenhuma coluna reconhecida como link? Usa a primeira coluna
+    // cujo conteúdo é um endereço (http...).
+    if(!Object.values(correspondencia).includes("link")){
+        const colunaDeLinks = cabecalhosOriginais.find(cab =>
+            !correspondencia[cab] &&
+            linhas.some(l => /^https?:\/\//i.test(String(l[cab] || "").trim()))
+        );
+        if(colunaDeLinks) correspondencia[colunaDeLinks] = "link";
+    }
 
     itensProcessados = linhas.map(linha => {
 
@@ -321,18 +349,25 @@ function processarLinhas(linhas){
     validarItens();
     montarPreview();
 
-    // Se a senha já foi digitada, já sai buscando as fotos que faltam
-    if(document.getElementById("senha").value && itensProcessados.some(p => !p.item.imagemUrl)){
+    // Se a senha já foi digitada, já sai buscando o que falta
+    // (nome, preço e/ou foto)
+    if(document.getElementById("senha").value && itensProcessados.some(faltaDado)){
         buscarFotosAutomaticas();
     }
 }
 
 /*
- * Busca no Worker (/foto) a foto de cada linha que veio sem.
- * Uma chamada por produto, 3 de cada vez. O que não for achado
- * continua com o campo pra colar a foto à mão.
+ * Busca no Worker o que falta em cada linha:
+ *  - sem nome ou sem preço -> /produto (nome, preço, preço antigo e foto)
+ *  - só sem foto           -> /foto
+ * 3 de cada vez. O que não for achado fica pra completar à mão.
  */
 let buscandoFotos = false;
+
+function faltaDado(p){
+    const i = p.item;
+    return (!i.imagemUrl || !i.produto || !i.preco) && !!(p.linkProduto || i.link);
+}
 
 async function buscarFotosAutomaticas(){
 
@@ -344,26 +379,26 @@ async function buscarFotosAutomaticas(){
 
     if(!senha){
         statusFotos.className = "status erro";
-        statusFotos.textContent = "Digite a senha do painel lá em cima pra buscar as fotos.";
+        statusFotos.textContent = "Digite a senha do painel lá em cima pra buscar os dados.";
         return;
     }
 
-    const pendentes = itensProcessados.filter(p => !p.item.imagemUrl && (p.linkProduto || p.item.link));
+    const pendentes = itensProcessados.filter(faltaDado);
 
     if(pendentes.length === 0){
         statusFotos.className = "status sucesso";
-        statusFotos.textContent = "Todas as linhas já têm foto. 🐾";
+        statusFotos.textContent = "Todas as linhas já estão completas. 🐾";
         return;
     }
 
     buscandoFotos = true;
     btn.disabled = true;
 
-    let feitos = 0, achados = 0, senhaErrada = false;
+    let feitos = 0, completos = 0, senhaErrada = false;
 
     const atualizarStatus = () => {
         statusFotos.className = "status carregando";
-        statusFotos.textContent = `🐶 Farejando fotos... ${feitos}/${pendentes.length}`;
+        statusFotos.textContent = `🐶 Farejando produtos... ${feitos}/${pendentes.length}`;
     };
     atualizarStatus();
 
@@ -372,26 +407,39 @@ async function buscarFotosAutomaticas(){
     async function trabalhador(){
         while(fila.length > 0 && !senhaErrada){
             const p = fila.shift();
+            const item = p.item;
+            const precisaProduto = !item.produto || !item.preco;
             try{
                 const dados = new FormData();
                 dados.append("senha", senha);
-                dados.append("link", p.linkProduto || p.item.link);
+                dados.append("link", p.linkProduto || item.link);
 
-                const resp = await fetch(WORKER_URL + "/foto", { method: "POST", body: dados });
+                const resp = await fetch(
+                    WORKER_URL + (precisaProduto ? "/produto" : "/foto"),
+                    { method: "POST", body: dados }
+                );
 
                 if(resp.status === 401){
                     senhaErrada = true;
                 } else if(resp.ok){
                     const json = await resp.json();
-                    // só preenche se a pessoa não colou uma foto enquanto isso
-                    if(json.imagemUrl && !p.item.imagemUrl){
-                        p.item.imagemUrl = json.imagemUrl;
-                        achados++;
+                    // só preenche o que ainda estiver vazio (a pessoa pode
+                    // ter digitado algo enquanto isso)
+                    if(json.produto && !item.produto) item.produto = json.produto;
+                    if(json.preco && !item.preco) item.preco = json.preco;
+                    if(json.precoAntigo && !item.precoAntigo) item.precoAntigo = json.precoAntigo;
+                    if(json.imagemUrl && !item.imagemUrl) item.imagemUrl = json.imagemUrl;
+
+                    // nome chegou agora: sugere a categoria
+                    if(item.produto && !item.categoria){
+                        item.categoria = FarejadinhosCategorias.sugerir(item.produto);
+                        p.categoriaSugerida = true;
                     }
                 }
             }catch(e){
-                // segue pro próximo — essa linha fica pra colar à mão
+                // segue pro próximo — essa linha fica pra completar à mão
             }
+            if(item.produto && item.preco && item.imagemUrl) completos++;
             feitos++;
             atualizarStatus();
             validarItens();
@@ -413,18 +461,18 @@ async function buscarFotosAutomaticas(){
 
     montarPreview();
 
-    const faltam = pendentes.length - achados;
+    const faltam = pendentes.length - completos;
     statusFotos.className = faltam === 0 ? "status sucesso" : "status carregando";
     statusFotos.textContent = faltam === 0
-        ? `✅ Achei a foto de todos os ${achados} produto(s)!`
-        : `📷 Achei ${achados} de ${pendentes.length}. Nos ${faltam} que faltam, cole a foto à mão (ou clique pra tentar de novo).`;
+        ? `✅ Completei os ${completos} produto(s)!`
+        : `📷 Completei ${completos} de ${pendentes.length}. Nos ${faltam} em vermelho, preencha o que faltar à mão (ou clique pra tentar de novo).`;
 }
 
 // Atualiza só a célula da foto de uma linha, sem redesenhar a tabela
 // inteira (pra não atrapalhar quem estiver colando foto em outra linha)
 function atualizarLinhaFoto(p){
     const indice = itensProcessados.indexOf(p);
-    const input = document.querySelector(`.inputFoto[data-indice="${indice}"]`);
+    const input = document.querySelector(`.inputFoto:not(.inputCampo)[data-indice="${indice}"]`);
     if(!input || !p.item.imagemUrl) return;
     const td = input.closest("td");
     const tr = td.closest("tr");
@@ -504,6 +552,15 @@ function montarPreview(){
                 </td>`;
             }
 
+            // Nome ou preço faltando: campo pra digitar
+            if((c === "produto" || c === "preco") && !item[c]){
+                return `<td>
+                    <input type="text" class="inputFoto inputCampo" data-indice="${indice}" data-campo="${c}"
+                        placeholder="${c === "produto" ? "Nome do produto" : "Ex.: 49,90"}">
+                    ${avisoFaltando}
+                </td>`;
+            }
+
             const valor = c === "destaque" ? (item[c] ? "sim" : "não") : (item[c] || "—");
             return `<td>${escapeHtml(String(valor))}${avisoFaltando}</td>`;
         }).join("");
@@ -511,10 +568,24 @@ function montarPreview(){
         return `<tr${classe}>${celulas}</tr>`;
     }).join("");
 
-    corpo.querySelectorAll(".inputFoto").forEach(input => {
+    corpo.querySelectorAll(".inputFoto:not(.inputCampo)").forEach(input => {
         input.addEventListener("change", function(){
             const p = itensProcessados[Number(this.dataset.indice)];
             p.item.imagemUrl = this.value.trim();
+            validarItens();
+            montarPreview();
+        });
+    });
+
+    corpo.querySelectorAll(".inputCampo").forEach(input => {
+        input.addEventListener("change", function(){
+            const p = itensProcessados[Number(this.dataset.indice)];
+            const valor = this.value.trim();
+            p.item[this.dataset.campo] = valor;
+            if(this.dataset.campo === "produto" && valor && !p.item.categoria){
+                p.item.categoria = FarejadinhosCategorias.sugerir(valor);
+                p.categoriaSugerida = true;
+            }
             validarItens();
             montarPreview();
         });
@@ -546,7 +617,7 @@ function atualizarResumo(){
     resumo.innerHTML =
         `<b>${totalOk}</b> produto(s) prontos pra importar` +
         (totalErro > 0 ? `, <b style="color:#b00000">${totalErro}</b> com dados faltando (em vermelho — vão ser ignorados)` : "") +
-        (semFoto > 0 ? `<br>📷 ${semFoto} sem foto: use o botão "Buscar fotos automaticamente" — ou abra o produto, clique com o botão direito na foto → "Copiar endereço da imagem" e cole no campo da linha.` : "");
+        (semFoto > 0 ? `<br>📷 ${semFoto} sem foto: use o botão "Buscar dados automaticamente" — ou abra o produto, clique com o botão direito na foto → "Copiar endereço da imagem" e cole no campo da linha.` : "");
 
     btnEnviar.disabled = totalOk === 0;
 }
