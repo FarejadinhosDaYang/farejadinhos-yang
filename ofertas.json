@@ -304,22 +304,6 @@
     "liberacao": "2026-10-08T00:38:27Z"
   },
   {
-    "produto": "Kit 6 Pote Vidro Porta Temperos Hermético Cozinha Organiza V Vidro/tampa De Bambu",
-    "preco": "R$ 40,89",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Cozinha",
-    "destaque": false,
-    "imagem": "5063beb0-bb95-4bd4-8eac-34dbb2602d25.webp",
-    "link": "https://meli.la/1AZiFBo",
-    "url": "https://farejadinhosdayang.github.io/farejadinhos-yang/ofertas/kit-6-pote-vidro-porta-temperos-hermetico-cozinha-organiza/",
-    "slug": "kit-6-pote-vidro-porta-temperos-hermetico-cozinha-organiza",
-    "data": "2026-10-08T00:38:28Z",
-    "precoAVista": "",
-    "precoAPrazo": "",
-    "liberacao": "2026-10-08T00:38:27Z"
-  },
-  {
     "produto": "Copo Térmico Inóx Com Canudo E Tampa Grande 1200ml 1.2litros Azul Celeste Liso",
     "preco": "R$ 38,33",
     "precoAntigo": "",
@@ -574,5 +558,21 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-08T15:00:00Z"
+  },
+  {
+    "produto": "Kit 6 Pote Vidro Porta Temperos Hermético Cozinha Organiza V Vidro/tampa De Bambu",
+    "preco": "R$ 40,89",
+    "precoAntigo": "",
+    "cupom": "",
+    "categoria": "Cozinha",
+    "destaque": true,
+    "imagem": "5063beb0-bb95-4bd4-8eac-34dbb2602d25.webp",
+    "link": "https://meli.la/1AZiFBo",
+    "url": "https://farejadinhosdayang.github.io/farejadinhos-yang/ofertas/kit-6-pote-vidro-porta-temperos-hermetico-cozinha-organiza/",
+    "slug": "kit-6-pote-vidro-porta-temperos-hermetico-cozinha-organiza",
+    "data": "2026-10-08T00:38:28Z",
+    "precoAVista": "",
+    "precoAPrazo": "",
+    "liberacao": "2026-10-08T00:38:27Z"
   }
 ]
