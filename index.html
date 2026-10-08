@@ -478,15 +478,48 @@ header .brand-group{
     align-self:flex-start;
 }
 
-.oferta-card .ver-oferta{
-    margin-top:auto;
-    background:var(--ink);
+/* o card leva pra página da oferta; o botão vermelho vai direto pra loja */
+.oferta-card .card-link{
+    display:flex;
+    flex-direction:column;
+    flex:1;
+    text-decoration:none;
+    color:inherit;
+}
+
+.oferta-card .card-link:hover h3{ color:var(--red-dark); }
+
+.oferta-card .pegar-oferta{
+    display:block;
+    margin:0 13px 14px;
+    background:linear-gradient(135deg,var(--red),var(--red-dark));
     color:#fff;
     text-align:center;
-    font-size:12.5px;
-    font-weight:700;
-    padding:9px;
-    border-radius:9px;
+    text-decoration:none;
+    font-family:'Baloo 2',sans-serif;
+    font-size:14px;
+    font-weight:800;
+    letter-spacing:.2px;
+    padding:8px 9px 7px;
+    border-radius:10px;
+    box-shadow:0 6px 14px rgba(229,35,46,.25);
+    transition:transform .12s ease, box-shadow .12s ease;
+}
+
+.oferta-card .pegar-oferta{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+/* celular: grade com 2 por linha e botão mais compacto */
+@media(max-width:560px){
+    .grid{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+    .oferta-card .info{ padding:10px 10px 12px; }
+    .oferta-card h3{ font-size:12.5px; min-height:32px; }
+    .oferta-card .preco{ font-size:16px; margin-bottom:6px; }
+    .oferta-card .pegar-oferta{ font-size:12.5px; margin:0 9px 10px; padding:7px 6px 6px; }
+}
+
+.oferta-card .pegar-oferta:hover{
+    transform:translateY(-1px);
+    box-shadow:0 8px 18px rgba(229,35,46,.32);
 }
 
 .vazio{
@@ -1318,22 +1351,28 @@ function cardHtml(o){
             ? `<div class="cupom">🏷️ ${escapeHtml(o.cupom)}</div>`
             : "";
 
+        const paginaOferta = `ofertas/${encodeURIComponent(o.slug)}/`;
+        // Link de afiliado direto pra loja; sem link, cai na página da oferta
+        const linkLoja = /^https?:\/\//i.test(o.link || "") ? o.link : paginaOferta;
+
         return `
-        <a class="oferta-card" href="ofertas/${encodeURIComponent(o.slug)}/">
-            <div class="img-wrap">
-                <img src="assets/${encodeURIComponent(o.imagem)}" alt="${escapeHtml(o.produto)}" loading="lazy">
-                ${badgeCanto}
-                ${badgeDesconto}
-            </div>
-            <div class="info">
-                ${categoriaHtml}
-                <h3>${escapeHtml(o.produto)}</h3>
-                ${oldHtml}
-                <div class="preco">${escapeHtml(o.preco)}</div>
-                ${cupomHtml}
-                <div class="ver-oferta">Ver oferta →</div>
-            </div>
-        </a>
+        <article class="oferta-card">
+            <a class="card-link" href="${paginaOferta}">
+                <div class="img-wrap">
+                    <img src="assets/${encodeURIComponent(o.imagem)}" alt="${escapeHtml(o.produto)}" loading="lazy">
+                    ${badgeCanto}
+                    ${badgeDesconto}
+                </div>
+                <div class="info">
+                    ${categoriaHtml}
+                    <h3>${escapeHtml(o.produto)}</h3>
+                    ${oldHtml}
+                    <div class="preco">${escapeHtml(o.preco)}</div>
+                    ${cupomHtml}
+                </div>
+            </a>
+            <a class="pegar-oferta" href="${escapeHtml(linkLoja)}"${linkLoja === paginaOferta ? "" : ' target="_blank" rel="sponsored noopener"'}>🐾 Pegar oferta</a>
+        </article>
         `;
 }
 
