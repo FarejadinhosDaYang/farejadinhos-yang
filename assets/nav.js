@@ -29,6 +29,11 @@
             '<a href="' + base + 'index.html">🏠 Início e ofertas</a>' +
             '<a href="' + base + 'calculadora/">🧮 Vale a pena parcelar?</a>' +
             '<a href="https://www.instagram.com/farejadinhosdayang" target="_blank" rel="noopener">📸 Instagram</a>' +
+            '<div class="yang-nav-cupons">' +
+            '<span>Cupons das lojas</span>' +
+            '<a class="yang-nav-cupom shopee" href="https://s.shopee.com.br/4VdOXKYQfW" target="_blank" rel="sponsored noopener">🏷️ Cupons Shopee</a>' +
+            '<a class="yang-nav-cupom ml" href="https://www.mercadolivre.com.br/cupons?source_page=mperfil#nav-header" target="_blank" rel="sponsored noopener">🏷️ Cupons Mercado Livre</a>' +
+            "</div>" +
             "</nav>";
 
         var toggle = el.querySelector(".yang-nav-toggle");

@@ -122,3 +122,36 @@
 [data-yang-nav].yang-nav-open .yang-nav-toggle{
     visibility:hidden;
 }
+
+/* Botões de cupons das lojas dentro do menu */
+.yang-nav-cupons{
+    margin-top:14px;
+    padding-top:14px;
+    border-top:1.5px solid var(--line,#F0DFC4);
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.yang-nav-cupons span{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--muted,#8A7563);
+    padding:0 4px;
+}
+
+.yang-nav-drawer a.yang-nav-cupom{
+    text-align:center;
+    border-radius:999px;
+    font-family:'Baloo 2',sans-serif;
+    font-weight:800;
+    font-size:16px;
+    padding:11px 14px;
+    box-shadow:0 3px 0 rgba(0,0,0,.14);
+}
+
+.yang-nav-drawer a.yang-nav-cupom.shopee{ background:#EE4D2D; color:#fff; }
+.yang-nav-drawer a.yang-nav-cupom.ml{ background:#FFE600; color:#2D3277; }
+.yang-nav-drawer a.yang-nav-cupom:hover{ filter:brightness(1.05); }
