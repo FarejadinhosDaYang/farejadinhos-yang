@@ -50,6 +50,11 @@ body{margin:0;padding:20px;background:var(--cream);font-family:'Work Sans',Arial
 .editar:hover{background:#dfeaff}
 .editar:disabled{opacity:.5;cursor:wait}
 .botoes{display:flex;flex-direction:column;gap:6px;flex-shrink:0}
+.divulgar{display:flex;gap:6px;width:100%;margin-top:10px}
+.btnArte,.btnLegenda{flex:1;border-radius:9px;padding:9px 10px;font-size:12.5px;font-weight:700;cursor:pointer;font-family:'Work Sans',sans-serif;white-space:nowrap}
+.btnArte{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;border:0}
+.btnLegenda{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+.btnArte:disabled,.btnLegenda:disabled{opacity:.6;cursor:wait}
 .badgeAgendada{background:#eef4ff;color:#1a4fb8}
 .item{flex-wrap:wrap}
 .painelEdicao{display:none;width:100%;margin-top:12px;padding-top:12px;border-top:1.5px dashed var(--line)}
@@ -77,7 +82,7 @@ body{margin:0;padding:20px;background:var(--cream);font-family:'Work Sans',Arial
 
 <div class="header">
 <h1>📋 Ofertas ativas</h1>
-<p>Todas as ofertas — ativas e expiradas — com opção de remover antes da hora</p>
+<p>Todas as ofertas, com arte do story, legenda, edição e remoção</p>
 </div>
 
 <div class="senhaBox">
@@ -94,6 +99,7 @@ body{margin:0;padding:20px;background:var(--cream);font-family:'Work Sans',Arial
 </div>
 
 <script src="../assets/vitrine.js"></script>
+<script src="../assets/divulgacao.js"></script>
 <script>
 
 const WORKER_URL =
@@ -239,6 +245,10 @@ function render(){
           <button class="editar" type="button">✏️ Editar</button>
           <button class="remover" type="button">🗑️ Remover</button>
         </div>
+        ${semDados ? "" : `<div class="divulgar">
+          <button class="btnArte" type="button">📱 Arte do story</button>
+          <button class="btnLegenda" type="button">📋 Copiar legenda</button>
+        </div>`}
         <div class="painelEdicao">
           <label>Produto</label>
           <input type="text" class="campoProduto" value="${escapeHtml(o.produto || "")}">
@@ -279,6 +289,15 @@ function render(){
         salvarEdicao(o, item, this);
       });
 
+      if(!semDados){
+        item.querySelector(".btnArte").addEventListener("click", function(){
+          baixarArte(o, imagemSrc, this);
+        });
+        item.querySelector(".btnLegenda").addEventListener("click", function(){
+          copiarLegendaOferta(o, this);
+        });
+      }
+
       lista.appendChild(item);
 
     } catch (erroItem) {
@@ -300,6 +319,86 @@ function render(){
       lista.appendChild(itemErro);
     }
   });
+}
+
+/* ===== DIVULGAÇÃO: arte do story + legenda de cada oferta ===== */
+
+function avisarNoBotao(botao, texto, ms){
+  const original = botao.dataset.original || botao.textContent;
+  botao.dataset.original = original;
+  botao.textContent = texto;
+  setTimeout(() => { botao.textContent = original; botao.disabled = false; }, ms || 1800);
+}
+
+async function baixarArte(oferta, imagemSrc, botao){
+
+  botao.disabled = true;
+  botao.dataset.original = botao.dataset.original || botao.textContent;
+  botao.textContent = "⏳ Gerando…";
+
+  try{
+    const blob = await FarejadinhosDivulgacao.gerarArte({
+      produto: oferta.produto,
+      preco: oferta.preco,
+      precoAntigo: oferta.precoAntigo,
+      cupom: oferta.cupom,
+      categoria: oferta.categoria,
+      imagem: imagemSrc,
+      assets: "../assets/"
+    });
+
+    const nome = `${oferta.slug || "oferta"}-story.png`;
+    const arquivo = new File([blob], nome, { type: "image/png" });
+
+    // No celular: abre o "compartilhar" (dá pra mandar direto pro Instagram).
+    // No computador: baixa o arquivo.
+    if(navigator.canShare && navigator.canShare({ files: [arquivo] }) && /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)){
+      try{
+        await navigator.share({ files: [arquivo] });
+        avisarNoBotao(botao, "✅ Pronto!");
+        return;
+      }catch(e){
+        if(e && e.name === "AbortError"){ avisarNoBotao(botao, "📱 Arte do story", 10); return; }
+      }
+    }
+
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = nome;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 4000);
+
+    avisarNoBotao(botao, "✅ Baixada!");
+
+  }catch(erro){
+    avisarNoBotao(botao, "❌ Não deu, tenta de novo", 2500);
+  }
+}
+
+async function copiarLegendaOferta(oferta, botao){
+
+  const texto = FarejadinhosDivulgacao.legenda({
+    produto: oferta.produto,
+    preco: oferta.preco,
+    precoAntigo: oferta.precoAntigo,
+    cupom: oferta.cupom,
+    categoria: oferta.categoria,
+    link: oferta.link
+  });
+
+  botao.disabled = true;
+
+  try{
+    await navigator.clipboard.writeText(texto);
+    avisarNoBotao(botao, "✅ Copiada!");
+  }catch(e){
+    // sem permissão de área de transferência: mostra o texto pra copiar à mão
+    window.prompt("Copie a legenda:", texto);
+    botao.disabled = false;
+  }
 }
 
 async function removerOferta(slug, botao){
