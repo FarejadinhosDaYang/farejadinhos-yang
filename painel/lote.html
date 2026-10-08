@@ -64,6 +64,9 @@ tr.linhaErro td{background:#fff0f0}
 .selectCategoria{width:100%;min-width:120px;padding:6px;border:1.5px solid var(--line);border-radius:8px;font-size:12px;font-family:'Work Sans',sans-serif;background:#fff;color:var(--ink)}
 .selectCategoria:focus{outline:none;border-color:var(--red)}
 .tagSugerida{display:block;margin-top:4px;font-size:10.5px;color:var(--muted);font-weight:600}
+.motivo{margin-top:6px;font-size:11px;color:var(--muted)}
+.motivo summary{cursor:pointer;font-weight:700}
+.motivo pre{white-space:pre-wrap;word-break:break-word;font-size:10.5px;background:#fff;border:1px solid var(--line);border-radius:6px;padding:6px;margin:4px 0 0}
 .abrirProduto{display:inline-block;margin-top:5px;font-size:11.5px;font-weight:700;color:var(--red-dark);text-decoration:none}
 
 .resumo{margin-top:12px;font-size:13.5px}
@@ -421,8 +424,10 @@ async function buscarFotosAutomaticas(){
 
                 if(resp.status === 401){
                     senhaErrada = true;
-                } else if(resp.ok){
-                    const json = await resp.json();
+                } else {
+                    const json = await resp.json().catch(() => ({}));
+                    // guarda o caminho que o Worker tentou (ajuda a entender o que faltou)
+                    if(Array.isArray(json.tentativas)) p.motivo = json.tentativas.join("\n");
                     // só preenche o que ainda estiver vazio (a pessoa pode
                     // ter digitado algo enquanto isso)
                     if(json.produto && !item.produto) item.produto = json.produto;
@@ -516,7 +521,7 @@ function montarPreview(){
 
     cabecalho.innerHTML = colunas.map(c => `<th>${c === "imagemUrl" ? "foto" : c}</th>`).join("");
 
-    corpo.innerHTML = itensProcessados.map(({ item, linkProduto, categoriaSugerida, erros }, indice) => {
+    corpo.innerHTML = itensProcessados.map(({ item, linkProduto, categoriaSugerida, erros, motivo }, indice) => {
 
         const classe = erros.length > 0 ? ' class="linhaErro"' : "";
 
@@ -535,6 +540,7 @@ function montarPreview(){
                     <input type="url" class="inputFoto" data-indice="${indice}" placeholder="Cole o link da foto" value="${escapeHtml(item.imagemUrl)}">
                     ${abrir ? `<a class="abrirProduto" href="${escapeHtml(abrir)}" target="_blank" rel="noopener">abrir produto ↗</a>` : ""}
                     ${avisoFaltando}
+                    ${motivo && erros.length > 0 ? `<details class="motivo"><summary>por que faltou?</summary><pre>${escapeHtml(motivo)}</pre></details>` : ""}
                 </td>`;
             }
 
