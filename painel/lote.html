@@ -61,6 +61,11 @@ tr.linhaErro td{background:#fff0f0}
 .miniFoto{display:block;width:56px;height:56px;object-fit:contain;background:#fff;border:1px solid var(--line);border-radius:8px;margin-bottom:6px}
 .inputCampo[data-campo="produto"]{min-width:170px}
 .inputCampo[data-campo="preco"]{min-width:90px}
+.celulaPrazo{min-width:120px}
+.linhaPrazo{display:flex;align-items:center;gap:4px;margin-bottom:4px}
+.inputPrazo{width:100%;padding:6px;border:1.5px solid var(--line);border-radius:8px;font-size:12px;font-family:'Work Sans',sans-serif;background:#fff;color:var(--ink)}
+.inputPrazo:focus{outline:none;border-color:var(--red)}
+.inputParcelas{width:46px}
 .selectCategoria{width:100%;min-width:120px;padding:6px;border:1.5px solid var(--line);border-radius:8px;font-size:12px;font-family:'Work Sans',sans-serif;background:#fff;color:var(--ink)}
 .selectCategoria:focus{outline:none;border-color:var(--red)}
 .tagSugerida{display:block;margin-top:4px;font-size:10.5px;color:var(--muted);font-weight:600}
@@ -104,7 +109,8 @@ button:disabled{opacity:.55;cursor:wait}
 <b>Colunas que a planilha precisa ter</b> (a ordem não importa, os nomes podem variar um pouco):<br>
 <code>produto</code> · <code>preco</code> · <code>precoAntigo</code> <i>(opcional)</i> · <code>cupom</code> <i>(opcional)</i> · <code>categoria</code> <i>(opcional)</i> · <code>destaque</code> <i>(opcional, "sim"/"true")</i> · <code>link</code> · <code>imagemUrl</code> (o link direto da foto do produto)<br>
 🛍️ <b>Planilha da Shopee</b> (exportação de links em lote do programa de afiliados) também funciona do jeito que vem: o nome, o preço e o link de afiliado são lidos sozinhos. Se a foto não vier na planilha, o painel busca sozinho (ou você cola o link da foto na tabela).<br>
-🔗 <b>Só links</b> (ex.: Mercado Livre): uma planilha com um link por linha, sem mais nada, também funciona — o painel busca o nome, o preço e a foto de cada um. O que ele não achar, você completa na tabela.
+🔗 <b>Só links</b> (ex.: Mercado Livre): uma planilha com um link por linha, sem mais nada, também funciona — o painel busca o nome, o preço, a foto e o parcelamento de cada um. O que ele não achar, você completa na tabela.<br>
+🧮 <b>A prazo</b> (opcional): quando a oferta tem o preço a prazo e o número de parcelas, a página dela ganha a calculadora "Vale a pena parcelar?".
 </div>
 
 <div class="inputArquivo">
@@ -176,7 +182,15 @@ const MAPA_CABECALHOS = {
     "shopname": "loja",
     "imageurl": "imagemUrl",
     "image": "imagemUrl",
-    "imagelink": "imagemUrl"
+    "imagelink": "imagemUrl",
+
+    // Parcelamento (opcional) — liga a calculadora "Vale a pena parcelar?"
+    "precoavista": "precoAVista",
+    "avista": "precoAVista",
+    "precoaprazo": "precoAPrazo",
+    "aprazo": "precoAPrazo",
+    "parcelas": "parcelas",
+    "parcelamento": "parcelas"
 };
 
 // Quando duas colunas da planilha caem no mesmo campo, vale a primeira
@@ -296,7 +310,8 @@ function processarLinhas(linhas){
 
         const item = {
             produto: "", preco: "", precoAntigo: "", cupom: "",
-            categoria: "", destaque: false, link: "", imagemUrl: ""
+            categoria: "", destaque: false, link: "", imagemUrl: "",
+            precoAVista: "", precoAPrazo: "", parcelas: ""
         };
 
         let linkProduto = "";
@@ -435,6 +450,13 @@ async function buscarFotosAutomaticas(){
                     if(json.precoAntigo && !item.precoAntigo) item.precoAntigo = json.precoAntigo;
                     if(json.imagemUrl && !item.imagemUrl) item.imagemUrl = json.imagemUrl;
 
+                    // Parcelamento achado na página (ex.: 10x de 12,99)
+                    if(json.precoAPrazo && json.parcelas && !item.precoAPrazo){
+                        item.precoAPrazo = json.precoAPrazo;
+                        item.parcelas = json.parcelas;
+                        p.semJuros = json.semJuros || "";
+                    }
+
                     // nome chegou agora: sugere a categoria
                     if(item.produto && !item.categoria){
                         item.categoria = FarejadinhosCategorias.sugerir(item.produto);
@@ -517,11 +539,12 @@ function montarPreview(){
     const cardPreview = document.getElementById("cardPreview");
 
     // A foto vem primeiro: é a coluna que mais precisa ser preenchida à mão
-    const colunas = ["imagemUrl", "produto", "categoria", "preco", "precoAntigo", "cupom", "destaque", "link"];
+    const colunas = ["imagemUrl", "produto", "categoria", "preco", "aPrazo", "precoAntigo", "cupom", "destaque", "link"];
 
-    cabecalho.innerHTML = colunas.map(c => `<th>${c === "imagemUrl" ? "foto" : c}</th>`).join("");
+    const titulos = { imagemUrl: "foto", preco: "à vista", aPrazo: "a prazo" };
+    cabecalho.innerHTML = colunas.map(c => `<th>${titulos[c] || c}</th>`).join("");
 
-    corpo.innerHTML = itensProcessados.map(({ item, linkProduto, categoriaSugerida, erros, motivo }, indice) => {
+    corpo.innerHTML = itensProcessados.map(({ item, linkProduto, categoriaSugerida, erros, motivo, semJuros }, indice) => {
 
         const classe = erros.length > 0 ? ' class="linhaErro"' : "";
 
@@ -541,6 +564,22 @@ function montarPreview(){
                     ${abrir ? `<a class="abrirProduto" href="${escapeHtml(abrir)}" target="_blank" rel="noopener">abrir produto ↗</a>` : ""}
                     ${avisoFaltando}
                     ${motivo && erros.length > 0 ? `<details class="motivo"><summary>por que faltou?</summary><pre>${escapeHtml(motivo)}</pre></details>` : ""}
+                </td>`;
+            }
+
+            // Coluna "a prazo": parcelas + total (opcional — liga a calculadora)
+            if(c === "aPrazo"){
+                const total = paraNumeroBR(item.precoAPrazo);
+                const n = parseInt(item.parcelas, 10);
+                const parcela = total && n ? (total / n).toFixed(2).replace(".", ",") : "";
+                return `<td class="celulaPrazo">
+                    <div class="linhaPrazo">
+                        <input type="text" inputmode="numeric" class="inputPrazo inputParcelas" data-indice="${indice}"
+                            placeholder="10" value="${escapeHtml(item.parcelas)}" title="Número de parcelas"><span>x</span>
+                    </div>
+                    <input type="text" inputmode="decimal" class="inputPrazo inputTotalPrazo" data-indice="${indice}"
+                        placeholder="Total a prazo" value="${escapeHtml(item.precoAPrazo)}" title="Preço total a prazo">
+                    ${parcela ? `<span class="tagSugerida">${n}x de R$ ${parcela}${semJuros === "sim" ? " · sem juros" : semJuros === "nao" ? " · com juros" : ""}</span>` : `<span class="tagSugerida">opcional</span>`}
                 </td>`;
             }
 
@@ -597,6 +636,16 @@ function montarPreview(){
         });
     });
 
+    corpo.querySelectorAll(".inputParcelas, .inputTotalPrazo").forEach(input => {
+        input.addEventListener("change", function(){
+            const p = itensProcessados[Number(this.dataset.indice)];
+            const campo = this.classList.contains("inputParcelas") ? "parcelas" : "precoAPrazo";
+            p.item[campo] = this.value.trim().replace(/x$/i, "");
+            p.semJuros = "";
+            montarPreview();
+        });
+    });
+
     corpo.querySelectorAll(".selectCategoria").forEach(sel => {
         sel.addEventListener("change", function(){
             const p = itensProcessados[Number(this.dataset.indice)];
@@ -628,6 +677,13 @@ function atualizarResumo(){
     btnEnviar.disabled = totalOk === 0;
 }
 
+function paraNumeroBR(valor){
+    const s = String(valor || "").replace(/R\$\s?/i, "").trim();
+    if(!s) return 0;
+    const n = s.includes(",") ? Number(s.replace(/\./g, "").replace(",", ".")) : Number(s);
+    return isNaN(n) ? 0 : n;
+}
+
 function escapeHtml(texto){
     const div = document.createElement("div");
     div.textContent = texto == null ? "" : texto;
@@ -657,9 +713,21 @@ async function enviarLote(){
     btnEnviar.disabled = true;
     btnEnviar.textContent = "Enviando...";
 
+    // A calculadora precisa dos dois preços: se tem preço a prazo,
+    // o "à vista" é o próprio preço da oferta. Sem a prazo, não manda nada.
+    const itensEnvio = itensValidos.map(i => {
+        const temPrazo = paraNumeroBR(i.precoAPrazo) > 0;
+        return {
+            ...i,
+            precoAVista: temPrazo ? (i.precoAVista || i.preco) : "",
+            precoAPrazo: temPrazo ? i.precoAPrazo : "",
+            parcelas: temPrazo && /^\d{1,2}$/.test(String(i.parcelas)) ? String(i.parcelas) : ""
+        };
+    });
+
     const dados = new FormData();
     dados.append("senha", senha);
-    dados.append("itens", JSON.stringify(itensValidos));
+    dados.append("itens", JSON.stringify(itensEnvio));
 
     try{
 

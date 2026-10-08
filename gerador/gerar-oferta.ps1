@@ -17,6 +17,10 @@ param(
 
     [string]$PrecoAPrazo = "",
 
+    # Opcional: em quantas vezes sai o preço a prazo (ex.: "10").
+    # Vazio = mantém o que a oferta já tinha (numa edição) ou fica sem.
+    [string]$Parcelas = "",
+
     [Parameter(Mandatory=$true)]
     [string]$Link,
 
@@ -249,9 +253,11 @@ if ($PrecoAVista.Trim() -ne "" -and $PrecoAPrazo.Trim() -ne "") {
 </div>
 "@
 
+    # __PARCELAS__ é preenchido mais abaixo, depois de ler o catálogo
+    # (numa edição, o número de parcelas vem da oferta que já existe)
     $CalcScript =
         "FarejadinhosCalculadora.render(document.getElementById('calculadora'), { precoAVista: '" +
-        $PrecoAVistaJs + "', precoAPrazo: '" + $PrecoAPrazoJs + "', compact: true });"
+        $PrecoAVistaJs + "', precoAPrazo: '" + $PrecoAPrazoJs + "', parcelas: '__PARCELAS__', compact: true });"
 }
 
 
@@ -276,6 +282,16 @@ if (Test-Path -LiteralPath $OfertasJsonPath) {
     if (-not [string]::IsNullOrWhiteSpace($CatalogoTexto)) {
         $Catalogo = @($CatalogoTexto | ConvertFrom-Json)
     }
+}
+
+# Numa edição (mesmo slug), se não veio número de parcelas, mantém o
+# que a oferta já tinha — a edição pelo painel não manda esse campo.
+$ParcelasFinal = $null
+if ($Parcelas -match '^\s*(\d{1,2})\s*$') {
+    $ParcelasFinal = [int]$Matches[1]
+} else {
+    $Anterior = @($Catalogo | Where-Object { $_ -and $_.slug -eq $Slug }) | Select-Object -First 1
+    if ($Anterior -and $Anterior.parcelas) { $ParcelasFinal = [int]$Anterior.parcelas }
 }
 
 # Remove uma entrada antiga com o mesmo slug (regeneracao) e
@@ -309,6 +325,13 @@ $NovaEntrada = [ordered]@{
 if ($Liberacao.Trim() -ne "") {
     $NovaEntrada.liberacao = $Liberacao.Trim()
 }
+
+# Só guarda parcelas quando a oferta tem preço a prazo
+if ($ParcelasFinal -and $PrecoAPrazoJs -ne "") {
+    $NovaEntrada.parcelas = $ParcelasFinal
+}
+
+$CalcScript = $CalcScript.Replace("__PARCELAS__", $(if ($ParcelasFinal) { "$ParcelasFinal" } else { "" }))
 
 $Catalogo = @($Catalogo) + $NovaEntrada
 

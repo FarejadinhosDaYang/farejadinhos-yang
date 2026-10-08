@@ -132,6 +132,7 @@
 
         var precoAVistaInicial = config.precoAVista || "";
         var precoAPrazoInicial = config.precoAPrazo || "";
+        var parcelasInicial = config.parcelas || "";
         var compact = !!config.compact;
 
         container.innerHTML =
@@ -147,7 +148,7 @@
             '</label>' +
 
             '<label>Número de parcelas' +
-            '<input type="text" inputmode="numeric" class="calc-n" placeholder="Ex.: 10">' +
+            '<input type="text" inputmode="numeric" class="calc-n" placeholder="Ex.: 10" value="' + parcelasInicial + '">' +
             '</label>' +
 
             '<label>Seu dinheiro rende quanto do CDI?' +
