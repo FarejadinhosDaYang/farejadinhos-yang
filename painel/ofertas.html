@@ -48,6 +48,9 @@ body{margin:0;padding:20px;background:var(--cream);font-family:'Work Sans',Arial
 .remover:disabled{opacity:.5;cursor:wait}
 .editar{background:#eef4ff;color:#1a4fb8;border:1.5px solid #c9dbff;border-radius:9px;padding:8px 12px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:'Work Sans',sans-serif}
 .editar:hover{background:#dfeaff}
+.liberar{background:#eafbea;color:#1a7d1a;border:1.5px solid #bfe8c4;border-radius:9px;padding:8px 12px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:'Work Sans',sans-serif}
+.liberar:hover{background:#d8f5dc}
+.liberar:disabled{opacity:.5;cursor:wait}
 .editar:disabled{opacity:.5;cursor:wait}
 .botoes{display:flex;flex-direction:column;gap:6px;flex-shrink:0}
 .divulgar{display:flex;gap:6px;width:100%;margin-top:10px}
@@ -86,7 +89,7 @@ body{margin:0;padding:20px;background:var(--cream);font-family:'Work Sans',Arial
 </div>
 
 <div class="senhaBox">
-<label>Senha do painel (só precisa pra remover)</label>
+<label>Senha do painel (precisa pra editar, liberar e remover)</label>
 <input type="password" id="senha" placeholder="Senha do painel">
 </div>
 
@@ -242,6 +245,7 @@ function render(){
           <div class="badges">${statusBadge}${categoriaBadge}${destaqueBadge}</div>
         </div>
         <div class="botoes">
+          ${situacao === "agendada" ? `<button class="liberar" type="button">🚀 Liberar agora</button>` : ""}
           <button class="editar" type="button">✏️ Editar</button>
           <button class="remover" type="button">🗑️ Remover</button>
         </div>
@@ -280,6 +284,13 @@ function render(){
       item.querySelector(".remover").addEventListener("click", function(){
         removerOferta(o.slug, this);
       });
+
+      const btnLiberar = item.querySelector(".liberar");
+      if(btnLiberar){
+        btnLiberar.addEventListener("click", function(){
+          liberarOferta(o, this);
+        });
+      }
 
       item.querySelector(".editar").addEventListener("click", function(){
         item.querySelector(".painelEdicao").classList.toggle("aberto");
@@ -398,6 +409,60 @@ async function copiarLegendaOferta(oferta, botao){
     // sem permissão de área de transferência: mostra o texto pra copiar à mão
     window.prompt("Copie a legenda:", texto);
     botao.disabled = false;
+  }
+}
+
+/* ===== LIBERAR AGORA (oferta agendada) ===== */
+
+async function liberarOferta(oferta, botao){
+
+  const senha = document.getElementById("senha").value;
+  const statusGeral = document.getElementById("statusGeral");
+
+  if(!senha){
+    alert("Digite a senha do painel primeiro.");
+    document.getElementById("senha").focus();
+    return;
+  }
+
+  if(!confirm(`Liberar agora "${oferta.produto}"? Ela aparece no site em 1 ou 2 minutos.`)){
+    return;
+  }
+
+  botao.disabled = true;
+  botao.textContent = "Liberando...";
+
+  const dados = new FormData();
+  dados.append("senha", senha);
+  dados.append("slug", oferta.slug);
+
+  try{
+
+    const resposta = await fetch(WORKER_URL + "/liberar", { method: "POST", body: dados });
+    const texto = await resposta.text();
+
+    if(!resposta.ok){
+      throw new Error(texto);
+    }
+
+    const json = JSON.parse(texto);
+
+    // atualiza a lista na hora (o site leva 1-2 min pra publicar)
+    if(json.liberacao) oferta.liberacao = json.liberacao;
+    selecaoVitrine = FarejadinhosVitrine.selecionar(ofertas, new Date());
+    render();
+
+    statusGeral.className = "statusGeral sucesso";
+    statusGeral.textContent = "🚀 " + (json.mensagem || "Oferta liberada!");
+    setTimeout(() => { statusGeral.className = "statusGeral"; }, 4000);
+
+  }catch(erro){
+
+    statusGeral.className = "statusGeral erro";
+    statusGeral.textContent = "❌ " + erro.message;
+
+    botao.disabled = false;
+    botao.textContent = "🚀 Liberar agora";
   }
 }
 
