@@ -309,7 +309,7 @@ header .brand-group{
     display:flex;
     gap:10px;
     flex-wrap:wrap;
-    margin-top:18px;
+    margin:0 0 14px;
 }
 
 .categoria-btn{
@@ -499,6 +499,275 @@ header .brand-group{
     font-size:14px;
 }
 
+/* ===== PÓDIO (top 3 por desconto) ===== */
+
+.podio-secao{ margin-top:26px; }
+
+.podio-secao .secao-head{ margin-top:0; }
+
+.podio{
+    display:grid;
+    grid-template-columns:1fr 1.15fr 1fr;
+    align-items:end;
+    gap:14px;
+    max-width:760px;
+    margin:0 auto;
+}
+
+.podio-lugar{
+    display:flex;
+    flex-direction:column;
+    min-width:0;
+}
+
+.podio-lugar.p1{ order:2; }
+.podio-lugar.p2{ order:1; }
+.podio-lugar.p3{ order:3; }
+
+.podio-card{
+    position:relative;
+    background:var(--cream-2);
+    border:2px solid var(--medalha);
+    border-radius:18px 18px 0 0;
+    border-bottom:none;
+    overflow:hidden;
+    text-decoration:none;
+    color:var(--ink);
+    display:flex;
+    flex-direction:column;
+    box-shadow:0 10px 24px rgba(43,27,18,.10);
+}
+
+.podio-card img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:contain;
+    background:#fff;
+    padding:10px;
+    box-sizing:border-box;
+    display:block;
+}
+
+.podio-card .medalha{
+    position:absolute;
+    top:8px;
+    left:8px;
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    background:var(--medalha-grad);
+    color:#fff;
+    font-family:'Baloo 2',sans-serif;
+    font-weight:800;
+    font-size:17px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 3px 8px rgba(0,0,0,.25), inset 0 -2px 0 rgba(0,0,0,.15);
+    text-shadow:0 1px 1px rgba(0,0,0,.25);
+}
+
+.podio-card .badge-desconto{ font-size:12px; padding:4px 9px; }
+
+.podio-card .info{ padding:10px 12px 12px; }
+
+.podio-card h3{
+    font-size:13px;
+    line-height:1.3;
+    margin:0 0 6px;
+    font-family:'Work Sans',sans-serif;
+    font-weight:600;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+}
+
+.podio-card .old{ font-size:11.5px; color:var(--muted); text-decoration:line-through; }
+
+.podio-card .preco{
+    font-family:'Baloo 2',sans-serif;
+    font-weight:800;
+    color:var(--red-dark);
+    font-size:18px;
+    line-height:1.1;
+}
+
+/* o "degrau" do pódio */
+.podio-degrau{
+    background:var(--medalha-grad);
+    color:#fff;
+    text-align:center;
+    font-family:'Baloo 2',sans-serif;
+    font-weight:800;
+    border-radius:0 0 12px 12px;
+    text-shadow:0 1px 2px rgba(0,0,0,.25);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    line-height:1.05;
+}
+
+.podio-degrau .lugar{ font-size:26px; }
+.podio-degrau .rotulo{ font-size:11px; letter-spacing:.6px; text-transform:uppercase; opacity:.95; }
+
+.p1 .podio-degrau{ height:74px; }
+.p2 .podio-degrau{ height:52px; }
+.p3 .podio-degrau{ height:38px; }
+
+.p1 .podio-card{ transform:translateY(0); }
+.p1 .podio-card .preco{ font-size:21px; }
+
+.p1{ --medalha:#D4A017; --medalha-grad:linear-gradient(160deg,#F7D774,#D4A017 55%,#B8860B); }
+.p2{ --medalha:#9EA7B0; --medalha-grad:linear-gradient(160deg,#E3E7EA,#A8B0B8 55%,#7F8A94); }
+.p3{ --medalha:#C27A3A; --medalha-grad:linear-gradient(160deg,#EBB07A,#C27A3A 55%,#9A5B26); }
+
+@media(max-width:560px){
+    .podio{ gap:8px; grid-template-columns:1fr 1.1fr 1fr; }
+    .podio-card .info{ padding:8px 8px 10px; }
+    .podio-card h3{ font-size:11.5px; }
+    .podio-card .preco{ font-size:15px; }
+    .p1 .podio-card .preco{ font-size:17px; }
+    .podio-card .medalha{ width:28px; height:28px; font-size:14px; top:6px; left:6px; }
+    .podio-card .badge-desconto{ font-size:10px; padding:3px 6px; top:6px; right:6px; }
+    .podio-degrau .lugar{ font-size:20px; }
+    .podio-degrau .rotulo{ font-size:9.5px; }
+    .p1 .podio-degrau{ height:58px; }
+    .p2 .podio-degrau{ height:42px; }
+    .p3 .podio-degrau{ height:30px; }
+}
+
+/* ===== PRATELEIRAS (uma por categoria, deslizam pro lado) ===== */
+
+.prateleira{ margin-top:26px; }
+
+.prateleira .secao-head{ margin:0 0 10px; }
+
+.prateleira-titulo{
+    display:flex;
+    align-items:center;
+    gap:9px;
+}
+
+.prateleira-titulo .ic{
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:15px;
+    flex:none;
+}
+
+.ver-todas{
+    background:none;
+    border:0;
+    color:var(--red-dark);
+    font-weight:700;
+    font-size:13px;
+    cursor:pointer;
+    font-family:'Work Sans',sans-serif;
+    white-space:nowrap;
+    padding:6px 2px;
+}
+
+.trilho-wrap{ position:relative; }
+
+.trilho{
+    display:grid;
+    grid-auto-flow:column;
+    grid-auto-columns:176px;
+    gap:12px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    scroll-padding:2px;
+    padding:2px 2px 10px;
+    scrollbar-width:thin;
+}
+
+.trilho .oferta-card{ scroll-snap-align:start; }
+
+/* na prateleira a categoria já está no título */
+.trilho .oferta-card .tagCategoria{ display:none; }
+
+.trilho-seta{
+    position:absolute;
+    top:38%;
+    transform:translateY(-50%);
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    border:1.5px solid var(--line);
+    background:#fff;
+    color:var(--ink);
+    font-size:17px;
+    cursor:pointer;
+    box-shadow:0 4px 12px rgba(43,27,18,.15);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:2;
+}
+
+.trilho-seta.esq{ left:-12px; }
+.trilho-seta.dir{ right:-12px; }
+.trilho-seta[hidden]{ display:none; }
+
+@media(max-width:700px){
+    .trilho{ grid-auto-columns:150px; }
+    .trilho-seta{ display:none; }
+}
+
+/* ===== BARRA "TODAS AS OFERTAS" (ordenar) ===== */
+
+.barra-todas{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    flex-wrap:wrap;
+    margin:30px 0 14px;
+    padding-top:18px;
+    border-top:1.5px dashed var(--line);
+}
+
+.barra-todas h2{ font-size:19px; margin:0; color:var(--red-dark); }
+
+.barra-todas .direita{ display:flex; align-items:center; gap:10px; }
+
+.ordenar{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    font-size:13px;
+    font-weight:700;
+    color:var(--muted);
+}
+
+.ordenar select{
+    font-family:'Work Sans',sans-serif;
+    font-size:13.5px;
+    font-weight:600;
+    color:var(--ink);
+    background:var(--cream-2);
+    border:1.5px solid var(--line);
+    border-radius:999px;
+    padding:8px 30px 8px 13px;
+    cursor:pointer;
+    appearance:none;
+    -webkit-appearance:none;
+    background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);
+    background-position:calc(100% - 15px) 52%,calc(100% - 10px) 52%;
+    background-size:5px 5px,5px 5px;
+    background-repeat:no-repeat;
+}
+
+.ordenar select:focus{ outline:none; border-color:var(--red); }
+
+.vitrine-extra[hidden]{ display:none; }
+
 /* ===== FOOTER ===== */
 
 footer{
@@ -585,12 +854,38 @@ Farejadinhos da Yang
 <div class="hero-dots" id="heroDots"></div>
 </div>
 
-<div class="categorias-row" id="categoriasRow"></div>
+<!-- Pódio + prateleiras: somem quando a pessoa busca ou filtra -->
+<div class="vitrine-extra" id="vitrineExtra">
 
+<section class="podio-secao" id="podioSecao" hidden>
 <div class="secao-head">
-<h2 id="tituloGrid">🔥 Ofertas de agora</h2>
-<span class="contagem" id="contagem"></span>
+<h2>🏆 Pódio do dia</h2>
+<span class="contagem">os maiores descontos</span>
 </div>
+<div class="podio" id="podio"></div>
+</section>
+
+<div id="prateleiras"></div>
+
+</div>
+
+<div class="barra-todas" id="barraTodas">
+<h2 id="tituloGrid">🔥 Todas as ofertas</h2>
+<div class="direita">
+<span class="contagem" id="contagem"></span>
+<label class="ordenar">Ordenar
+<select id="ordem">
+<option value="recentes">Mais recentes</option>
+<option value="menor">Menor preço</option>
+<option value="maior">Maior preço</option>
+<option value="desconto">Maior desconto</option>
+<option value="az">Ordem alfabética (A–Z)</option>
+</select>
+</label>
+</div>
+</div>
+
+<div class="categorias-row" id="categoriasRow"></div>
 
 <div class="grid" id="grid"></div>
 <div class="vazio" id="vazio" style="display:none">A Yang tá farejando a próxima oferta 🐾 — volta já já!</div>
@@ -616,6 +911,7 @@ let filtroAtivo = { tipo: "todas", valor: "" };
 const parametrosUrl = new URLSearchParams(window.location.search);
 const categoriaInicial = parametrosUrl.get("categoria") || "";
 const buscaInicial = parametrosUrl.get("q") || "";
+const ordemInicial = parametrosUrl.get("ordem") || "recentes";
 
 function escapeHtml(texto){
     const div = document.createElement("div");
@@ -623,9 +919,12 @@ function escapeHtml(texto){
     return div.innerHTML;
 }
 
+// "R$ 1.299,90" / "1299,90" / "129.9" -> número
 function paraNumero(valor){
     if(valor === undefined || valor === null || valor === "") return null;
-    const n = parseFloat(String(valor).replace(/\./g,"").replace(",","."));
+    let s = String(valor).replace(/[^\d.,]/g, "");
+    if(s.includes(",")) s = s.replace(/\./g, "").replace(",", ".");
+    const n = parseFloat(s);
     return isNaN(n) ? null : n;
 }
 
@@ -707,8 +1006,151 @@ async function carregar(){
         ? { tipo: "categoria", valor: categoriaInicial }
         : { tipo: "todas", valor: "" };
 
+    const selOrdem = document.getElementById("ordem");
+    if([...selOrdem.options].some(o => o.value === ordemInicial)) selOrdem.value = ordemInicial;
+
+    montarPodio();
+    montarPrateleiras();
     montarCategorias();
     aplicarFiltros();
+}
+
+/* ===== DESCONTO / ORDENAÇÃO ===== */
+
+function descontoPct(o){
+    const p = paraNumero(o.preco);
+    const a = paraNumero(o.precoAntigo);
+    if(p === null || a === null || a <= p) return 0;
+    return Math.round((1 - p / a) * 100);
+}
+
+function precoNum(o){
+    const p = paraNumero(o.preco);
+    return p === null ? Infinity : p;
+}
+
+// "ofertas" já vem na ordem padrão (destaque primeiro, depois mais recentes)
+function ordenar(lista, modo){
+    const copia = lista.slice();
+    const nome = o => (o.produto || "").trim();
+    switch(modo){
+        case "menor":    return copia.sort((a, b) => precoNum(a) - precoNum(b));
+        case "maior":    return copia.sort((a, b) => {
+                             const pa = precoNum(a), pb = precoNum(b);
+                             return (pb === Infinity ? -1 : pb) - (pa === Infinity ? -1 : pa);
+                         });
+        case "desconto": return copia.sort((a, b) => descontoPct(b) - descontoPct(a));
+        case "az":       return copia.sort((a, b) => nome(a).localeCompare(nome(b), "pt-BR", { sensitivity: "base" }));
+        default:         return copia;
+    }
+}
+
+/* ===== PÓDIO: as 3 de maior desconto ===== */
+
+function montarPodio(){
+
+    const secao = document.getElementById("podioSecao");
+    const podio = document.getElementById("podio");
+
+    // Maior desconto primeiro; empate (ou sem desconto) -> destaque, depois mais recente
+    const top = ofertas
+        .map((o, i) => ({ o, i, d: descontoPct(o) }))
+        .sort((a, b) => (b.d - a.d) || ((b.o.destaque ? 1 : 0) - (a.o.destaque ? 1 : 0)) || (a.i - b.i))
+        .slice(0, 3)
+        .map(x => x.o);
+
+    if(top.length < 3){
+        secao.hidden = true;
+        podio.innerHTML = "";
+        return;
+    }
+
+    const rotulos = ["Ouro", "Prata", "Bronze"];
+
+    podio.innerHTML = top.map((o, i) => {
+        const pct = descontoPct(o);
+        return `
+        <div class="podio-lugar p${i + 1}">
+            <a class="podio-card" href="ofertas/${encodeURIComponent(o.slug)}/">
+                <img src="assets/${encodeURIComponent(o.imagem)}" alt="${escapeHtml(o.produto)}" loading="lazy">
+                <span class="medalha" aria-hidden="true">${i + 1}º</span>
+                ${pct > 0 ? `<div class="badge-desconto">-${pct}%</div>` : ""}
+                <div class="info">
+                    <h3>${escapeHtml(o.produto)}</h3>
+                    ${o.precoAntigo ? `<div class="old">${escapeHtml(o.precoAntigo)}</div>` : ""}
+                    <div class="preco">${escapeHtml(o.preco)}</div>
+                </div>
+            </a>
+            <div class="podio-degrau">
+                <span class="lugar">${i + 1}º</span>
+                <span class="rotulo">${rotulos[i]}</span>
+            </div>
+        </div>`;
+    }).join("");
+
+    secao.hidden = false;
+}
+
+/* ===== PRATELEIRAS: uma por categoria ===== */
+
+function montarPrateleiras(){
+
+    const container = document.getElementById("prateleiras");
+
+    const porCategoria = {};
+    ofertas.forEach(o => {
+        const c = (o.categoria || "").trim();
+        if(!c || c === "Outros") return;
+        (porCategoria[c] = porCategoria[c] || []).push(o);
+    });
+
+    // Só categorias com pelo menos 2 ofertas; as maiores primeiro
+    const categorias = Object.keys(porCategoria)
+        .filter(c => porCategoria[c].length >= 2)
+        .sort((a, b) => porCategoria[b].length - porCategoria[a].length || a.localeCompare(b, "pt-BR"));
+
+    container.innerHTML = categorias.map(c => {
+        const padrao = ICONES_CATEGORIA[c] || { icone: "📦", cor: "var(--muted)" };
+        const lista = porCategoria[c];
+        return `
+        <section class="prateleira">
+            <div class="secao-head">
+                <h2 class="prateleira-titulo">
+                    <span class="ic" style="background:${padrao.cor}">${padrao.icone}</span>${escapeHtml(c)}
+                </h2>
+                <button type="button" class="ver-todas" data-categoria="${escapeHtml(c)}">ver todas (${lista.length}) →</button>
+            </div>
+            <div class="trilho-wrap">
+                <button type="button" class="trilho-seta esq" aria-label="Voltar" hidden>‹</button>
+                <div class="trilho">${lista.map(cardHtml).join("")}</div>
+                <button type="button" class="trilho-seta dir" aria-label="Avançar">›</button>
+            </div>
+        </section>`;
+    }).join("");
+
+    container.querySelectorAll(".ver-todas").forEach(btn => {
+        btn.addEventListener("click", function(){
+            filtroAtivo = { tipo: "categoria", valor: this.dataset.categoria };
+            montarCategorias();
+            aplicarFiltros();
+            document.getElementById("barraTodas").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    });
+
+    container.querySelectorAll(".trilho-wrap").forEach(wrap => {
+        const trilho = wrap.querySelector(".trilho");
+        const esq = wrap.querySelector(".esq");
+        const dir = wrap.querySelector(".dir");
+        const atualizar = () => {
+            esq.hidden = trilho.scrollLeft <= 4;
+            dir.hidden = trilho.scrollLeft + trilho.clientWidth >= trilho.scrollWidth - 4;
+        };
+        esq.addEventListener("click", () => trilho.scrollBy({ left: -trilho.clientWidth * 0.85, behavior: "smooth" }));
+        dir.addEventListener("click", () => trilho.scrollBy({ left: trilho.clientWidth * 0.85, behavior: "smooth" }));
+        trilho.addEventListener("scroll", atualizar, { passive: true });
+        window.addEventListener("resize", atualizar);
+        atualizar();
+    });
 }
 
 const ICONES_CATEGORIA = {
@@ -812,7 +1254,14 @@ function aplicarFiltros(){
         return bateBusca && bateFiltro;
     });
 
-    render(filtradas);
+    // Buscando ou filtrando: vai direto aos resultados
+    const filtrando = termo.trim() !== "" || filtroAtivo.tipo !== "todas";
+    document.getElementById("vitrineExtra").hidden = filtrando;
+    document.getElementById("tituloGrid").textContent = filtrando
+        ? (termo.trim() ? `🔎 Resultados pra “${document.getElementById("busca").value.trim()}”` : `🔥 ${filtroAtivo.valor}`)
+        : "🔥 Todas as ofertas";
+
+    render(ordenar(filtradas, document.getElementById("ordem").value));
 }
 
 function render(lista){
@@ -834,7 +1283,10 @@ function render(lista){
 
     vazio.style.display = "none";
 
-    grid.innerHTML = lista.map(o => {
+    grid.innerHTML = lista.map(cardHtml).join("");
+}
+
+function cardHtml(o){
 
         const precoNum = paraNumero(o.preco);
         const antigoNum = paraNumero(o.precoAntigo);
@@ -881,10 +1333,16 @@ function render(lista){
             </div>
         </a>
         `;
-    }).join("");
 }
 
 document.getElementById("busca").addEventListener("input", aplicarFiltros);
+document.getElementById("ordem").addEventListener("change", function(){
+    // guarda a escolha no endereço, pra um link compartilhado abrir igual
+    const url = new URL(window.location.href);
+    if(this.value === "recentes") url.searchParams.delete("ordem"); else url.searchParams.set("ordem", this.value);
+    history.replaceState(null, "", url);
+    aplicarFiltros();
+});
 document.getElementById("formBusca").addEventListener("submit", function(e){ e.preventDefault(); aplicarFiltros(); });
 
 carregar();
