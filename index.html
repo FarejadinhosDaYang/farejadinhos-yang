@@ -147,160 +147,289 @@ header .brand-group{
 .hero-carrossel{
     margin-top:16px;
     position:relative;
-    border-radius:26px;
+    border-radius:28px;
     overflow:hidden;
 }
 
 .hero-slides{
     display:flex;
-    transition:transform .45s ease;
+    transition:transform .5s cubic-bezier(.22,.8,.3,1);
 }
 
 .hero-slide{
     flex:0 0 100%;
-    background:linear-gradient(155deg,var(--red) 0%,#f0462f 55%,var(--orange) 130%);
-    color:#fff;
-    padding:26px 24px;
-    display:flex;
-    align-items:flex-start;
-    gap:20px;
-    min-height:200px;
     position:relative;
     overflow:hidden;
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto;
+    align-items:center;
+    gap:28px;
+    min-height:320px;
+    padding:40px 72px 48px;
+    box-sizing:border-box;
 }
 
-.hero-slide::after{
-    content:"🐾";
-    position:absolute;
-    font-size:170px;
-    opacity:.12;
-    right:-30px;
-    bottom:-50px;
-    transform:rotate(-18deg);
-}
+/* três "papéis" diferentes, um por slide */
+.hero-slide.s-marca{ background:var(--red); color:var(--cream-2); }
+.hero-slide.s-conta{ background:var(--cream-2); color:var(--ink); }
+.hero-slide.s-insta{ background:var(--orange); color:var(--ink); }
 
-.hero-slide-texto{ flex:1; min-width:0; position:relative; z-index:1; }
+.hero-texto{ position:relative; z-index:2; max-width:560px; }
 
-.hero-slide-texto h2{
-    font-size:22px;
-    margin:0 0 8px;
-    line-height:1.2;
-}
-
-.hero-slide-texto p{
-    margin:0 0 14px;
-    font-size:14px;
-    opacity:.95;
-    line-height:1.5;
-    max-width:420px;
-}
-
-.hero-slide-texto .trust-line{
-    font-size:12.5px;
-    opacity:.9;
-    display:flex;
-    gap:14px;
-    flex-wrap:wrap;
-}
-
-.hero-slide .btn-slide{
-    display:inline-block;
-    background:#fff;
-    color:var(--red-dark);
-    text-decoration:none;
+.hero-texto h2{
+    font-family:'Baloo 2',sans-serif;
     font-weight:800;
-    font-size:13.5px;
-    padding:10px 18px;
-    border-radius:11px;
+    font-size:clamp(30px,4.6vw,48px);
+    line-height:1;
+    letter-spacing:-.5px;
+    margin:0 0 14px;
 }
 
-.hero-slide-img{
-    flex:none;
-    width:150px;
-    position:relative;
-    z-index:1;
+.hero-texto h2 .linha{ display:block; }
+
+.s-conta .hero-texto h2{ color:var(--red-dark); }
+
+.hero-texto p{
+    font-size:clamp(15px,1.6vw,17.5px);
+    line-height:1.5;
+    margin:0 0 20px;
+    max-width:44ch;
 }
 
-.hero-slide-img img{
-    width:100%;
-    border-radius:20px;
-    display:block;
-    box-shadow:0 12px 26px rgba(0,0,0,.24);
-    border:3px solid rgba(255,255,255,.5);
-}
+.s-marca .hero-texto p{ color:#FFE9DD; }
 
-.hero-slide-img.com-nota{
-    margin-top:32px;
-}
-
-.hero-nota{
-    position:absolute;
-    top:-30px;
-    left:0;
-    right:0;
-    text-align:center;
+/* prova viva: números reais das ofertas no ar
+   (".hero-texto .hero-prova" pra vencer a regra geral de ".hero-texto p") */
+.hero-texto .hero-prova,
+.s-marca .hero-texto .hero-prova{
     font-family:'Caveat',cursive;
     font-weight:700;
-    font-size:16px;
-    line-height:1.15;
-    color:#fff;
-    text-shadow:0 2px 6px rgba(0,0,0,.25);
+    font-size:clamp(25px,2.7vw,31px);
+    line-height:1.12;
+    margin:0 0 22px;
+    color:#FFF3C4;
+    max-width:24ch;
 }
+
+.hero-texto .hero-prova b{ font-weight:700; font-size:1.18em; color:#fff; }
+
+.hero-cta{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:'Baloo 2',sans-serif;
+    font-weight:800;
+    font-size:16.5px;
+    text-decoration:none;
+    padding:11px 22px 9px;
+    border-radius:14px;
+    transition:transform .15s ease;
+}
+
+.hero-cta:hover{ transform:translateY(-2px); }
+.hero-cta:focus-visible{ outline:3px solid var(--ink); outline-offset:3px; }
+
+.s-marca .hero-cta{ background:var(--cream-2); color:var(--red-dark); box-shadow:0 6px 0 rgba(0,0,0,.18); }
+.s-conta .hero-cta{ background:var(--red); color:#fff; box-shadow:0 6px 0 var(--red-dark); }
+.s-insta .hero-cta{ background:var(--ink); color:var(--cream-2); box-shadow:0 6px 0 rgba(0,0,0,.25); }
+
+/* --- polaroide da Yang --- */
+
+.polaroide{
+    position:relative;
+    z-index:2;
+    width:210px;
+    background:#fff;
+    padding:12px 12px 0;
+    border-radius:4px;
+    box-shadow:0 18px 34px rgba(43,27,18,.30), 0 2px 4px rgba(43,27,18,.2);
+    transform:rotate(4deg);
+}
+
+.polaroide img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    display:block;
+    border-radius:2px;
+}
+
+.polaroide figcaption{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:24px;
+    color:var(--ink);
+    text-align:center;
+    padding:8px 4px 12px;
+    line-height:1;
+}
+
+/* fita adesiva segurando a foto */
+.polaroide::before{
+    content:"";
+    position:absolute;
+    top:-14px;
+    left:50%;
+    width:92px;
+    height:28px;
+    transform:translateX(-50%) rotate(-3deg);
+    background:rgba(247,148,29,.55);
+    box-shadow:0 1px 2px rgba(0,0,0,.08);
+}
+
+.s-insta .polaroide{ transform:rotate(-5deg); }
+.s-insta .polaroide::before{ background:rgba(253,243,227,.75); }
+
+/* trilha de patinhas, do texto até a foto */
+.trilha-patas{
+    position:absolute;
+    inset:0;
+    z-index:1;
+    pointer-events:none;
+    color:rgba(255,255,255,.14);
+}
+
+.s-insta .trilha-patas{ color:rgba(43,27,18,.10); }
+
+/* --- cupom fiscal da calculadora --- */
+
+.cupom-conta{
+    position:relative;
+    z-index:2;
+    width:250px;
+    background:#fff;
+    color:var(--ink);
+    font-family:'Work Sans',sans-serif;
+    font-size:13.5px;
+    padding:20px 20px 24px;
+    transform:rotate(-2.5deg);
+    box-shadow:0 18px 30px rgba(43,27,18,.18);
+    /* borda serrilhada embaixo, como papel de cupom */
+    -webkit-mask:linear-gradient(#000 0 0) top/100% calc(100% - 10px) no-repeat,
+                 radial-gradient(circle 6px at 6px 10px,transparent 98%,#000) bottom/12px 10px repeat-x;
+            mask:linear-gradient(#000 0 0) top/100% calc(100% - 10px) no-repeat,
+                 radial-gradient(circle 6px at 6px 10px,transparent 98%,#000) bottom/12px 10px repeat-x;
+}
+
+.cupom-conta .topo{
+    font-family:'Baloo 2',sans-serif;
+    font-weight:800;
+    font-size:15px;
+    text-align:center;
+    padding-bottom:10px;
+    margin-bottom:10px;
+    border-bottom:1.5px dashed var(--line);
+}
+
+.cupom-conta .item{ display:flex; justify-content:space-between; gap:10px; margin:6px 0; }
+.cupom-conta .item span:last-child{ font-weight:700; font-variant-numeric:tabular-nums; white-space:nowrap; }
+
+.cupom-conta .veredito{
+    margin-top:12px;
+    padding:9px 10px 7px;
+    border-radius:8px;
+    background:#E7F6EA;
+    color:#1B6B2E;
+    font-family:'Baloo 2',sans-serif;
+    font-weight:800;
+    font-size:17px;
+    line-height:1.15;
+    text-align:center;
+}
+
+.cupom-conta .veredito small{
+    display:block;
+    font-family:'Work Sans',sans-serif;
+    font-weight:600;
+    font-size:12.5px;
+    margin-top:2px;
+}
+
+.cupom-conta .assinatura{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:20px;
+    color:var(--red-dark);
+    text-align:right;
+    margin-top:8px;
+}
+
+/* --- navegação --- */
 
 .hero-dots{
     position:absolute;
-    bottom:12px;
-    left:0;
-    right:0;
+    bottom:18px;
+    left:72px;
     display:flex;
-    justify-content:center;
     gap:7px;
-    z-index:2;
+    z-index:3;
 }
 
 .hero-dots button{
-    width:8px;
-    height:8px;
+    width:9px;
+    height:9px;
     border-radius:50%;
     border:0;
-    background:rgba(255,255,255,.5);
     padding:0;
     cursor:pointer;
+    background:rgba(43,27,18,.25);
 }
 
-.hero-dots button.ativa{ background:#fff; width:20px; border-radius:5px; }
+.hero-dots button.ativa{ width:24px; border-radius:5px; background:var(--ink); }
+
+.hero-carrossel.em-marca .hero-dots button{ background:rgba(255,255,255,.45); }
+.hero-carrossel.em-marca .hero-dots button.ativa{ background:#fff; }
 
 .hero-seta{
     position:absolute;
-    top:calc(50% - 16px);
-    width:32px;
-    height:32px;
+    top:calc(50% - 20px);
+    width:40px;
+    height:40px;
     border-radius:50%;
     border:0;
-    background:rgba(255,255,255,.85);
-    color:var(--red-dark);
-    font-size:16px;
+    background:rgba(255,255,255,.92);
+    color:var(--ink);
+    font-size:20px;
+    line-height:1;
     display:none;
     align-items:center;
     justify-content:center;
     cursor:pointer;
-    z-index:2;
+    z-index:3;
+    box-shadow:0 4px 12px rgba(43,27,18,.18);
 }
 
-.hero-seta.esq{ left:10px; }
-.hero-seta.dir{ right:10px; }
+.hero-seta:focus-visible, .hero-dots button:focus-visible{ outline:3px solid var(--ink); outline-offset:2px; }
 
-@media (min-width:560px){
+.hero-seta.esq{ left:14px; }
+.hero-seta.dir{ right:14px; }
+
+@media (min-width:700px){
     .hero-seta{ display:flex; }
-    .hero-slide{ padding-left:54px; padding-right:54px; }
 }
 
-@media (max-width:560px){
-    .hero-slide{ flex-direction:column; text-align:center; padding:24px 20px 40px; }
-    .hero-slide-texto p{ max-width:none; }
-    .hero-slide-texto .trust-line{ justify-content:center; }
-    .hero-slide-img{ width:110px; }
-    .hero-nota{ display:none; }
+@media (max-width:700px){
+    .hero-slide{
+        grid-template-columns:minmax(0,1fr);
+        min-height:0;
+        align-content:center;
+        gap:14px;
+        padding:24px 22px 46px;
+    }
+    .hero-visual{ order:-1; justify-self:end; margin:-6px 4px -4px 0; }
+    .polaroide{ width:128px; padding:8px 8px 0; }
+    .polaroide figcaption{ font-size:18px; padding:5px 2px 8px; }
+    .polaroide::before{ width:64px; height:20px; top:-10px; }
+    .cupom-conta{ width:210px; font-size:12.5px; padding:14px 14px 18px; }
+    .cupom-conta .topo, .cupom-conta .assinatura{ display:none; }
+    .cupom-conta .veredito{ font-size:15px; margin-top:8px; }
+    .hero-dots{ left:22px; bottom:16px; }
+    .trilha-patas{ display:none; }
+}
+
+@media (prefers-reduced-motion:reduce){
+    .hero-slides{ transition:none; }
+    .hero-cta{ transition:none; }
 }
 
 /* ===== CATEGORIAS (filtro) ===== */
@@ -844,43 +973,69 @@ Farejadinhos da Yang
 
 <div class="hero-slides" id="heroSlides">
 
-<div class="hero-slide">
-<div class="hero-slide-texto">
-<h2>Achadinhos de verdade, farejados por ela mesma</h2>
-<p>A Yang vasculha a internet atrás dos melhores preços e traz só o que realmente vale a pena — não importa a categoria.</p>
-<div class="trust-line">
-<span>✅ Ofertas verificadas</span>
-<span>🔒 Links diretos</span>
-<span>🏷️ Descontos de verdade</span>
+<!-- 1) A Yang e o que ela achou hoje (números reais, preenchidos pelo script) -->
+<section class="hero-slide s-marca" aria-label="A Yang fareja as ofertas">
+<svg class="trilha-patas" viewBox="0 0 1000 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs>
+<symbol id="pata" viewBox="0 0 40 40"><ellipse cx="20" cy="27" rx="10" ry="8.5"/><ellipse cx="8.5" cy="15" rx="4.2" ry="5.2"/><ellipse cx="16" cy="9" rx="4.2" ry="5.4"/><ellipse cx="24.5" cy="9" rx="4.2" ry="5.4"/><ellipse cx="31.5" cy="15" rx="4.2" ry="5.2"/></symbol>
+</defs>
+<g fill="currentColor">
+<use href="#pata" width="34" height="34" transform="translate(470 262) rotate(-62)"/>
+<use href="#pata" width="34" height="34" transform="translate(528 226) rotate(-50)"/>
+<use href="#pata" width="34" height="34" transform="translate(576 250) rotate(-62)"/>
+<use href="#pata" width="34" height="34" transform="translate(632 206) rotate(-48)"/>
+<use href="#pata" width="34" height="34" transform="translate(680 224) rotate(-60)"/>
+<use href="#pata" width="34" height="34" transform="translate(734 178) rotate(-44)"/>
+</g>
+</svg>
+<div class="hero-texto">
+<h2><span class="linha">A Yang fareja.</span><span class="linha">Você economiza.</span></h2>
+<p class="hero-prova" id="heroProva">Ofertas novas todo dia, de qualquer categoria.</p>
+<a class="hero-cta" href="#podioSecao" id="heroCtaOfertas">Ver as ofertas de hoje</a>
 </div>
-</div>
-<div class="hero-slide-img com-nota">
-<div class="hero-nota">✨ Yang sempre farejando o melhor pra você!</div>
-<img src="assets/yang-hero.png" alt="Yang, a cachorrinha mascote do Farejadinhos da Yang">
-</div>
-</div>
+<figure class="hero-visual polaroide">
+<img src="assets/yang-hero.png" alt="A Yang, cachorrinha shih-tzu com gorro de urso laranja">
+<figcaption>aprovado pela Yang</figcaption>
+</figure>
+</section>
 
-<div class="hero-slide">
-<div class="hero-slide-texto">
-<h2>🧮 Vale a pena parcelar?</h2>
-<p>Antes de fechar a compra, descubra se compensa mais pagar à vista ou parcelado — a calculadora faz a conta pra você, com direito a imposto de renda e tudo.</p>
-<a class="btn-slide" href="calculadora/">Simular agora</a>
+<!-- 2) Calculadora: a conta em forma de cupom fiscal -->
+<section class="hero-slide s-conta" aria-label="Calculadora vale a pena parcelar">
+<div class="hero-texto">
+<h2><span class="linha">À vista ou</span><span class="linha">parcelado?</span></h2>
+<p>A calculadora da Yang faz a conta com o seu dinheiro rendendo no CDI enquanto você paga as parcelas, já descontando imposto.</p>
+<a class="hero-cta" href="calculadora/">Fazer a conta</a>
 </div>
-<div class="hero-slide-img">
-<img src="assets/yang-hero.png" alt="Yang, a cachorrinha mascote do Farejadinhos da Yang">
+<div class="hero-visual cupom-conta" aria-hidden="true">
+<div class="topo">🧮 a conta da Yang</div>
+<div class="item"><span>À vista</span><span>R$ 299,90</span></div>
+<div class="item"><span>10x sem juros</span><span>R$ 29,99</span></div>
+<div class="item"><span>Rende no CDI</span><span>+R$ 9,42</span></div>
+<div class="veredito">✔ Vale parcelar<small>você ganha R$ 9,42</small></div>
+<div class="assinatura">— Yang 🐾</div>
 </div>
-</div>
+</section>
 
-<div class="hero-slide">
-<div class="hero-slide-texto">
-<h2>📸 Segue a Yang no Instagram</h2>
-<p>Fica sabendo de toda oferta nova assim que ela sai, direto no story.</p>
-<a class="btn-slide" href="https://www.instagram.com/farejadinhosdayang" target="_blank" rel="noopener">Ver Instagram</a>
+<!-- 3) Instagram -->
+<section class="hero-slide s-insta" aria-label="Instagram da Yang">
+<svg class="trilha-patas" viewBox="0 0 1000 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<g fill="currentColor">
+<use href="#pata" width="30" height="30" transform="translate(520 60) rotate(120)"/>
+<use href="#pata" width="30" height="30" transform="translate(575 95) rotate(130)"/>
+<use href="#pata" width="30" height="30" transform="translate(612 58) rotate(120)"/>
+<use href="#pata" width="30" height="30" transform="translate(668 98) rotate(132)"/>
+</g>
+</svg>
+<div class="hero-texto">
+<h2><span class="linha">Os achados saem</span><span class="linha">primeiro no story.</span></h2>
+<p>Segue a Yang no Instagram e veja cada oferta assim que ela é farejada, antes de acabar o estoque.</p>
+<a class="hero-cta" href="https://www.instagram.com/farejadinhosdayang" target="_blank" rel="noopener">Seguir @farejadinhosdayang</a>
 </div>
-<div class="hero-slide-img">
-<img src="assets/yang-hero.png" alt="Yang, a cachorrinha mascote do Farejadinhos da Yang">
-</div>
-</div>
+<figure class="hero-visual polaroide">
+<img src="assets/yang-hero.png" alt="A Yang, cachorrinha shih-tzu com gorro de urso laranja">
+<figcaption>me segue! 🐾</figcaption>
+</figure>
+</section>
 
 </div>
 
@@ -980,6 +1135,15 @@ function atualizarSlide(){
     document.getElementById("heroSlides").style.transform = `translateX(-${slideAtual * 100}%)`;
     document.querySelectorAll("#heroDots button").forEach((b, i) => {
         b.classList.toggle("ativa", i === slideAtual);
+        b.setAttribute("aria-current", i === slideAtual ? "true" : "false");
+    });
+    // pontinhos claros sobre o slide vermelho, escuros sobre os outros
+    const slide = document.querySelectorAll(".hero-slide")[slideAtual];
+    document.getElementById("heroCarrossel").classList.toggle("em-marca", !!slide && slide.classList.contains("s-marca"));
+    // só o slide visível fica alcançável pelo teclado
+    document.querySelectorAll(".hero-slide").forEach((s, i) => {
+        s.setAttribute("aria-hidden", i === slideAtual ? "false" : "true");
+        s.querySelectorAll("a").forEach(l => l.tabIndex = i === slideAtual ? 0 : -1);
     });
 }
 
@@ -995,12 +1159,33 @@ function mudarSlide(direcao){
     reiniciarAutoplay();
 }
 
+const movimentoReduzido = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
 function reiniciarAutoplay(){
     clearInterval(autoplayTimer);
-    autoplayTimer = setInterval(() => mudarSlide(1), 6000);
+    if(movimentoReduzido) return;
+    autoplayTimer = setInterval(() => mudarSlide(1), 7000);
 }
 
+// pausa enquanto a pessoa está com o mouse ou o teclado no carrossel
+const carrosselEl = document.getElementById("heroCarrossel");
+carrosselEl.addEventListener("mouseenter", () => clearInterval(autoplayTimer));
+carrosselEl.addEventListener("mouseleave", reiniciarAutoplay);
+carrosselEl.addEventListener("focusin", () => clearInterval(autoplayTimer));
+carrosselEl.addEventListener("focusout", reiniciarAutoplay);
+
+// arrastar com o dedo no celular
+let toqueX = null;
+carrosselEl.addEventListener("touchstart", e => { toqueX = e.touches[0].clientX; }, { passive: true });
+carrosselEl.addEventListener("touchend", e => {
+    if(toqueX === null) return;
+    const dx = e.changedTouches[0].clientX - toqueX;
+    if(Math.abs(dx) > 45) mudarSlide(dx < 0 ? 1 : -1);
+    toqueX = null;
+});
+
 montarDots();
+atualizarSlide();
 reiniciarAutoplay();
 
 /* ===== CARREGAR OFERTAS ===== */
@@ -1045,6 +1230,7 @@ async function carregar(){
     const selOrdem = document.getElementById("ordem");
     if([...selOrdem.options].some(o => o.value === ordemInicial)) selOrdem.value = ordemInicial;
 
+    montarProvaHero();
     montarPodio();
     montarPrateleiras();
     montarCategorias();
@@ -1079,6 +1265,21 @@ function ordenar(lista, modo){
         case "az":       return copia.sort((a, b) => nome(a).localeCompare(nome(b), "pt-BR", { sensitivity: "base" }));
         default:         return copia;
     }
+}
+
+/* ===== HERO: números reais do dia ===== */
+
+function montarProvaHero(){
+    const el = document.getElementById("heroProva");
+    if(!el || ofertas.length === 0) return;
+
+    const melhor = ofertas.reduce((m, o) => descontoPct(o) > descontoPct(m) ? o : m, ofertas[0]);
+    const pct = descontoPct(melhor);
+    const qtd = ofertas.length;
+
+    el.innerHTML = pct > 0
+        ? `Hoje ela farejou <b>${qtd}</b> oferta${qtd > 1 ? "s" : ""}. A melhor está com <b>${pct}%</b> de desconto.`
+        : `Hoje ela farejou <b>${qtd}</b> oferta${qtd > 1 ? "s" : ""} pra você.`;
 }
 
 /* ===== PÓDIO: as 3 de maior desconto ===== */
@@ -1126,6 +1327,15 @@ function montarPodio(){
 
     secao.hidden = false;
 }
+
+// o botão "Ver as ofertas de hoje" desce até o pódio (ou até a grade, se não houver pódio)
+document.getElementById("heroCtaOfertas").addEventListener("click", function(e){
+    e.preventDefault();
+    const alvo = document.getElementById("podioSecao").hidden
+        ? document.getElementById("barraTodas")
+        : document.getElementById("podioSecao");
+    alvo.scrollIntoView({ behavior: movimentoReduzido ? "auto" : "smooth", block: "start" });
+}, { once: false });
 
 /* ===== PRATELEIRAS: uma por categoria ===== */
 
