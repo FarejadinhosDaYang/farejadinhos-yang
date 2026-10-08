@@ -989,6 +989,9 @@ async function carregar(){
     // A regra completa está em assets/vitrine.js.
     ofertas = FarejadinhosVitrine.selecionar(todas, new Date()).visiveis;
 
+    // "Outros" não existe mais: o que estiver nela aparece em Utilidades
+    ofertas.forEach(o => { if((o.categoria || "").trim() === "Outros") o.categoria = "Utilidades"; });
+
     ofertas.sort((a, b) => {
         if(!!b.destaque !== !!a.destaque) return (b.destaque ? 1 : 0) - (a.destaque ? 1 : 0);
         // ordena pelo horário em que a oferta realmente ficou visível
@@ -1100,7 +1103,7 @@ function montarPrateleiras(){
     const porCategoria = {};
     ofertas.forEach(o => {
         const c = (o.categoria || "").trim();
-        if(!c || c === "Outros") return;
+        if(!c) return;
         (porCategoria[c] = porCategoria[c] || []).push(o);
     });
 
@@ -1162,8 +1165,7 @@ const ICONES_CATEGORIA = {
     "Moda": { icone: "👕", cor: "#6A4C93" },
     "Pet": { icone: "🐾", cor: "#8A5A44" },
     "Cozinha": { icone: "🍳", cor: "#D68910" },
-    "Utilidades": { icone: "🧰", cor: "#00897B" },
-    "Outros": { icone: "📦", cor: "var(--muted)" }
+    "Utilidades": { icone: "🧰", cor: "#00897B" }
 };
 
 function montarCategorias(){

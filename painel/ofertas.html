@@ -223,7 +223,7 @@ function render(){
       const item = document.createElement("div");
       item.className = "item";
 
-      const opcoesCategoria = ["Café","Casa","Academia","Eletrônicos","Beleza","Moda","Pet","Cozinha","Utilidades","Outros"]
+      const opcoesCategoria = ["Café","Casa","Academia","Eletrônicos","Beleza","Moda","Pet","Cozinha","Utilidades"]
         .map(c => `<option value="${c}" ${o.categoria === c ? "selected" : ""}>${c}</option>`)
         .join("");
 

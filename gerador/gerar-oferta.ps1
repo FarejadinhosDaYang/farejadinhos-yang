@@ -140,6 +140,9 @@ $Ofertas = Join-Path $Site "ofertas"
 $Out     = Join-Path $Ofertas $Slug
 $OfertasJsonPath = Join-Path $Site "ofertas.json"
 
+# A categoria "Outros" não existe mais: vira Utilidades
+if ($Categoria.Trim() -eq "Outros") { $Categoria = "Utilidades" }
+
 New-Item -ItemType Directory -Force -Path $Assets | Out-Null
 New-Item -ItemType Directory -Force -Path $Out | Out-Null
 

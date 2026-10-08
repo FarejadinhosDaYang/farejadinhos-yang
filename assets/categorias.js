@@ -104,7 +104,8 @@
     ]
   };
 
-  const OUTROS = "Outros";
+  // Sem categoria clara: vai pra Utilidades (a categoria "Outros" não existe mais)
+  const PADRAO = "Utilidades";
 
   function normalizar(texto){
     return " " + String(texto || "")
@@ -127,10 +128,10 @@
     })
   }));
 
-  // Devolve a categoria sugerida ("Outros" se nada bater)
+  // Devolve a categoria sugerida ("Utilidades" se nada bater)
   function sugerir(nomeProduto){
     const texto = normalizar(nomeProduto);
-    let melhor = OUTROS;
+    let melhor = PADRAO;
     let melhorPontos = 0;
 
     for(const regra of REGRAS){
@@ -148,7 +149,7 @@
   }
 
   window.FarejadinhosCategorias = {
-    LISTA: Object.keys(CATEGORIAS).concat(OUTROS),
+    LISTA: Object.keys(CATEGORIAS),
     sugerir
   };
 
