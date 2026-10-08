@@ -942,6 +942,19 @@ footer{
 
 footer a{ color:var(--red-dark); font-weight:600; text-decoration:none; }
 
+
+/* ===== Botões de cupons das lojas ===== */
+.cupons-lojas{ display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:12px; margin:22px auto 4px; }
+.cupons-lojas .rotulo{ font-family:'Caveat',cursive; font-size:24px; color:var(--muted); width:100%; text-align:center; margin-bottom:-4px; }
+.btn-cupom{ display:inline-flex; align-items:center; gap:8px; padding:12px 22px; border-radius:999px; font-family:'Baloo 2',sans-serif; font-weight:800; font-size:17px; text-decoration:none; box-shadow:0 4px 0 rgba(0,0,0,.14); transition:transform .15s, box-shadow .15s; }
+.btn-cupom:hover{ transform:translateY(-2px); box-shadow:0 6px 0 rgba(0,0,0,.14); }
+.btn-cupom:active{ transform:translateY(1px); box-shadow:0 2px 0 rgba(0,0,0,.14); }
+.btn-cupom.shopee{ background:#EE4D2D; color:#fff; }
+.btn-cupom.ml{ background:#FFE600; color:#2D3277; }
+@media(max-width:560px){
+  .cupons-lojas{ gap:8px; }
+  .btn-cupom{ flex:1 1 100%; justify-content:center; padding:11px 14px; font-size:16px; }
+}
 </style>
 
 </head>
@@ -1041,6 +1054,13 @@ Farejadinhos da Yang
 
 <div class="hero-dots" id="heroDots"></div>
 </div>
+
+<!-- Botões de cupons das lojas -->
+<nav class="cupons-lojas" aria-label="Cupons das lojas">
+<span class="rotulo">pega o cupom antes de comprar 🐾</span>
+<a class="btn-cupom shopee" href="https://s.shopee.com.br/4VdOXKYQfW" target="_blank" rel="sponsored noopener">🏷️ Cupons Shopee</a>
+<a class="btn-cupom ml" href="https://www.mercadolivre.com.br/cupons?source_page=mperfil#nav-header" target="_blank" rel="sponsored noopener">🏷️ Cupons Mercado Livre</a>
+</nav>
 
 <!-- Pódio + prateleiras: somem quando a pessoa busca ou filtra -->
 <div class="vitrine-extra" id="vitrineExtra">
