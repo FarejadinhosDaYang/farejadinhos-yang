@@ -14,6 +14,14 @@
 
   // Ordem = desempate (a primeira ganha quando empatar)
   const CATEGORIAS = {
+    "Natal": [
+      "natal", "natalino", "natalina", "arvore de natal", "pisca pisca", "papai noel",
+      "mamae noel", "guirlanda", "presepio", "bola de natal", "bolas de natal",
+      "festao", "rena", "boneco de neve", "meia de natal", "gorro de natal",
+      "luzes de natal", "cascata de led", "cortina de led", "enfeite de natal",
+      "estrela de natal", "amigo secreto", "panetone", "chocotone", "ceia",
+      "laco de natal", "toalha de natal", "noel"
+    ],
     "Pet": [
       "pet", "cachorro", "cao", "caes", "gato", "racao", "petisco", "coleira",
       "arranhador", "areia sanitaria", "areia de gato", "comedouro", "bebedouro pet",
