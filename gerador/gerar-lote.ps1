@@ -60,7 +60,11 @@ if (-not (Test-Path -LiteralPath $CaminhoAbs)) {
 $TextoLote = Get-Content -LiteralPath $CaminhoAbs -Raw -Encoding UTF8
 $Itens = @($TextoLote | ConvertFrom-Json)
 
-if ($Itens.Count -eq 0) {
+# Modo "reorganizar": nenhum produto novo, só remistura a fila
+$SoReorganizar = ($Itens.Count -gt 0) -and $Itens[0].PSObject.Properties["acao"] -and ([string]$Itens[0].acao -eq "reorganizar")
+if ($SoReorganizar) { $Itens = @() }
+
+if ($Itens.Count -eq 0 -and -not $SoReorganizar) {
     Write-Host "Lote vazio, nada a fazer."
     exit 0
 }
@@ -75,7 +79,7 @@ if ($Itens.Count -eq 0) {
 # sem regerar nada nem mexer nos horários.
 # ==========================================
 
-if ($Itens[0].PSObject.Properties["acao"] -and [string]$Itens[0].acao -eq "cupons") {
+if ($Itens.Count -gt 0 -and $Itens[0].PSObject.Properties["acao"] -and [string]$Itens[0].acao -eq "cupons") {
 
     $Catalogo = @((Get-Content -LiteralPath $OfertasJsonPath -Raw -Encoding UTF8) | ConvertFrom-Json)
     $PorSlug = @{}
@@ -188,6 +192,7 @@ function SlugUnico([string]$Base) {
 # ==========================================
 
 $MINIMO_VITRINE = 15
+$META_POR_CATEGORIA = 5   # categorias com menos que isso no ar passam na frente da fila
 $HORAS_FRESCA = 24
 $HORAS_MAXIMA = 72
 $FUSO_BRASILIA = [TimeSpan]::FromHours(-3)   # o Brasil não tem mais horário de verão
@@ -250,7 +255,7 @@ $Total = $Itens.Count
 # ------------------------------------------
 $AgendaInicio = $null
 $AgendaPorDia = 0
-$PrimeiroItem = $Itens[0]
+$PrimeiroItem = if ($Itens.Count -gt 0) { $Itens[0] } else { [pscustomobject]@{} }
 if ($PrimeiroItem.PSObject.Properties["agendaInicio"] -and -not [string]::IsNullOrWhiteSpace([string]$PrimeiroItem.agendaInicio)) {
     try {
         $D = [DateTime]::ParseExact(([string]$PrimeiroItem.agendaInicio).Trim(), "yyyy-MM-dd", [Globalization.CultureInfo]::InvariantCulture)
@@ -356,10 +361,12 @@ if ($ModoAgenda) {
         if ($Qtd -eq 0) { continue }
     }
 
+    if ($Horarios.Count -gt 0) {
     $Ultimo = ($Horarios | Sort-Object | Select-Object -Last 1).ToOffset($FUSO_BRASILIA)
     $TxtInicio = if ($ComecaHoje) { "hoje" } else { $AgendaInicio.ToOffset($FUSO_BRASILIA).ToString("dd/MM") }
     $TxtPorDia = if ($AgendaPorDia -gt 0) { "$AgendaPorDia por dia" } else { "o maximo por dia" }
     Write-Host "Agenda: comecando $TxtInicio, $TxtPorDia, $Imediatos na hora. Ultima sai em $($Ultimo.ToString('dd/MM HH:mm'))."
+}
 }
 
 $Sucessos = 0
@@ -518,14 +525,45 @@ function MesclarFila {
         [void]$Grupos[$C].Add($O)
     }
     $Nomes = @($Grupos.Keys | Sort-Object)
-    $Ordenados = @()
-    for ($g = 0; $g -lt $Nomes.Count; $g++) {
-        $Lista = $Grupos[$Nomes[$g]]
-        for ($i = 0; $i -lt $Lista.Count; $i++) {
-            $Ordenados += [pscustomobject]@{ O = $Lista[$i]; Pos = ($i + 0.5) / $Lista.Count; Desempate = $g }
+
+    # 1) Categorias fracas no site passam na frente: quem tem menos de
+    #    $META_POR_CATEGORIA ofertas no ar (liberadas nas últimas 24h, fora as
+    #    que estão sendo remisturadas) recebe primeiro, alternando entre elas
+    #    — sempre a que estiver com menos no ar — até chegar na meta ou
+    #    acabar o que tem dela na fila.
+    $NaFila = @{}; foreach ($O in $Fila) { $NaFila[[string]$O.slug] = $true }
+    $NoArPorCat = @{}
+    foreach ($O in $Cat) {
+        if (-not $O -or -not $O.slug -or $NaFila.ContainsKey([string]$O.slug)) { continue }
+        $Ini = ParaDataUtc $O.liberacao; if (-not $Ini) { $Ini = ParaDataUtc $O.data }
+        if ($Ini -and $Ini -le $Agora -and ($Agora - $Ini).TotalHours -le $HORAS_FRESCA) {
+            $C = if ($O.categoria) { [string]$O.categoria } else { "-" }
+            $NoArPorCat[$C] = 1 + [int]$NoArPorCat[$C]
         }
     }
-    $Ordenados = @($Ordenados | Sort-Object Pos, Desempate | ForEach-Object { $_.O })
+    $Frente = @()
+    $Usados = @{}
+    $Conta = @{}; foreach ($N in $Nomes) { $Conta[$N] = [int]$NoArPorCat[$N] }
+    $Pos = @{}; foreach ($N in $Nomes) { $Pos[$N] = 0 }
+    while ($true) {
+        $Cands = @($Nomes | Where-Object { $Conta[$_] -lt $META_POR_CATEGORIA -and $Pos[$_] -lt $Grupos[$_].Count })
+        if ($Cands.Count -eq 0) { break }
+        $N = @($Cands | Sort-Object @{ e = { $Conta[$_] } }, @{ e = { -($Grupos[$_].Count - $Pos[$_]) } }, @{ e = { $_ } })[0]
+        $O = $Grupos[$N][$Pos[$N]]
+        $Frente += $O; $Usados[[string]$O.slug] = $true
+        $Pos[$N]++; $Conta[$N]++
+    }
+
+    # 2) O resto: mistura proporcional (cada item ganha uma "posição ideal"
+    #    dentro da própria categoria e a fila é ordenada por ela)
+    $Resto = @()
+    for ($g = 0; $g -lt $Nomes.Count; $g++) {
+        $Lista = @($Grupos[$Nomes[$g]] | Where-Object { -not $Usados.ContainsKey([string]$_.slug) })
+        for ($i = 0; $i -lt $Lista.Count; $i++) {
+            $Resto += [pscustomobject]@{ O = $Lista[$i]; Pos = ($i + 0.5) / $Lista.Count; Desempate = $g }
+        }
+    }
+    $Ordenados = @($Frente) + @($Resto | Sort-Object Pos, Desempate | ForEach-Object { $_.O })
 
     # Horários novos: as recentes mantêm "já liberado"; o resto se
     # espalha por igual na janela de cada dia
@@ -561,7 +599,7 @@ function MesclarFila {
     Write-Host "Fila mesclada: $($Fila.Count) oferta(s) agendada(s), intercalando $Resumo."
 }
 
-if ($Sucessos -gt 0) {
+if ($Sucessos -gt 0 -or $SoReorganizar) {
     try { MesclarFila } catch { Write-Warning "Nao consegui mesclar a fila: $($_.Exception.Message)" }
 }
 
