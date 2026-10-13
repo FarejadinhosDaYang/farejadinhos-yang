@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script src="../assets/categorias.js"></script>
+<script src="../assets/cupons.js"></script>
 <style>
 
 :root{
@@ -96,6 +97,20 @@ button:disabled{opacity:.55;cursor:wait}
 .agenda select,.agenda input{width:100%;padding:10px;border:1.5px solid var(--line);border-radius:10px;font-size:15px;font-family:'Work Sans',sans-serif;background:#fff;color:var(--ink)}
 .agenda .previa{margin-top:10px;font-size:13.5px;color:var(--muted);line-height:1.5}
 .agenda .previa b{color:var(--ink)}
+
+.cuponsDia textarea{width:100%;min-height:120px;padding:12px;border:1.5px solid var(--line);border-radius:10px;font-size:13.5px;font-family:'Work Sans',sans-serif;background:#fff;color:var(--ink);resize:vertical}
+.cuponsDia .acoes{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.listaCupons{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.chipCupom{display:flex;align-items:center;gap:10px;padding:9px 12px;border:1.5px solid var(--line);border-radius:12px;background:#fff;font-size:13.5px}
+.chipCupom code{font-weight:800;color:var(--red-dark);font-size:14px}
+.chipCupom .loja{font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--cream,#FDF3E3);color:var(--muted)}
+.chipCupom .regra{flex:1;color:var(--ink)}
+.chipCupom .regra.semregra{color:var(--muted);font-style:italic}
+.cuponsDia .chipCupom button{flex:none;width:auto;margin:0;border:0;background:none;box-shadow:none;color:var(--muted);font-size:16px;cursor:pointer;padding:2px 6px}
+.cuponsDia .acoes button{width:auto;flex:1 1 160px;margin:0}
+.chipCupom select{border:1px solid var(--line);border-radius:8px;font-size:12px;padding:2px 4px;background:#fff}
+.selectCupom{width:100%;min-width:150px;padding:6px;border:1.5px solid var(--line);border-radius:8px;font-size:12px;background:#fff}
+.precoCupom{display:block;margin-top:4px;font-size:11.5px;font-weight:700;color:#1d7a3a}
 </style>
 </head>
 <body>
@@ -129,6 +144,18 @@ button:disabled{opacity:.55;cursor:wait}
 
 <div class="status" id="statusLeitura"></div>
 
+</div>
+
+<div class="card cuponsDia">
+<label for="textoCupons">🏷️ Cupons do dia <span style="font-weight:400;color:var(--muted)">(opcional)</span></label>
+<p style="margin:0 0 10px;font-size:13px;color:var(--muted);line-height:1.5">Copie as mensagens de cupom do WhatsApp e cole aqui do jeito que vierem. O painel lê o código, a loja e as regras (desconto, mínimo, limite) e escolhe o melhor cupom pra cada produto da planilha. Os cupons ficam guardados até o fim do dia.</p>
+<textarea id="textoCupons" placeholder="Ex.:&#10;➡️ 10% OFF acima de R$149, limitado a R$200 OFF&#10;🎟️ CUPOM: MELHORDEHJ&#10;🔗 https://www.mercadolivre.com.br/..."></textarea>
+<div class="acoes">
+<button type="button" class="btnSecundario" onclick="lerCuponsColados()">🏷️ Ler cupons</button>
+<button type="button" class="btnSecundario" onclick="limparCupons()">🗑️ Limpar</button>
+</div>
+<div class="status" id="statusCupons"></div>
+<div class="listaCupons" id="listaCupons"></div>
 </div>
 
 <div class="card" id="cardPreview" style="display:none">
@@ -567,7 +594,94 @@ function validarItens(){
     itensValidos = itensProcessados.filter(p => p.erros.length === 0).map(p => p.item);
 }
 
+
+// ===== Cupons do dia =====
+const CHAVE_CUPONS = "farejadinhos_cupons_dia";
+let cuponsDia = [];
+
+function hojeLocal(){ const d = new Date(); return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate(); }
+
+function salvarCupons(){
+    try{ localStorage.setItem(CHAVE_CUPONS, JSON.stringify({ dia: hojeLocal(), cupons: cuponsDia })); }catch(e){}
+}
+
+function carregarCupons(){
+    try{
+        const salvo = JSON.parse(localStorage.getItem(CHAVE_CUPONS) || "null");
+        if(salvo && salvo.dia === hojeLocal()) cuponsDia = salvo.cupons || [];
+        else if(salvo){
+            localStorage.removeItem(CHAVE_CUPONS);
+            document.getElementById("statusCupons").textContent = "Os cupons de ontem foram apagados — cole os de hoje.";
+        }
+    }catch(e){}
+    mostrarCupons();
+}
+
+function lerCuponsColados(){
+    const campo = document.getElementById("textoCupons");
+    const novos = FarejadinhosCupons.ler(campo.value);
+    const status = document.getElementById("statusCupons");
+    if(!novos.length){
+        status.className = "status erro";
+        status.textContent = "❌ Não achei nenhum cupom. Confira se o texto tem algo como \"CUPOM: CODIGO\".";
+        return;
+    }
+    let adicionados = 0;
+    novos.forEach(n => {
+        const i = cuponsDia.findIndex(c => c.codigo === n.codigo);
+        if(i >= 0){ if(!cuponsDia[i].tipo && n.tipo) cuponsDia[i] = n; }
+        else { cuponsDia.push(n); adicionados++; }
+    });
+    campo.value = "";
+    status.className = "status sucesso";
+    status.textContent = "✅ " + novos.length + " cupom(ns) lido(s)" + (adicionados < novos.length ? " (" + (novos.length - adicionados) + " já estavam na lista)" : "") + ". Confira a loja de cada um abaixo.";
+    salvarCupons();
+    mostrarCupons();
+}
+
+function limparCupons(){
+    if(cuponsDia.length && !confirm("Apagar todos os cupons do dia?")) return;
+    cuponsDia = [];
+    salvarCupons();
+    mostrarCupons();
+}
+
+function removerCupom(i){ cuponsDia.splice(i, 1); salvarCupons(); mostrarCupons(); }
+function trocarLojaCupom(i, loja){ cuponsDia[i].loja = loja; salvarCupons(); mostrarCupons(); }
+
+function mostrarCupons(){
+    const lista = document.getElementById("listaCupons");
+    lista.innerHTML = cuponsDia.map((c, i) => {
+        const lojas = ["", "Shopee", "Mercado Livre"].map(l =>
+            `<option value="${l}"${l === c.loja ? " selected" : ""}>${l || "loja?"}</option>`).join("");
+        return `<div class="chipCupom">
+            <code>${escapeHtml(c.codigo)}</code>
+            <select onchange="trocarLojaCupom(${i}, this.value)" title="Loja do cupom">${lojas}</select>
+            <span class="regra${c.tipo ? "" : " semregra"}">${escapeHtml(FarejadinhosCupons.descrever(c))}</span>
+            <button type="button" onclick="removerCupom(${i})" title="Tirar">✕</button>
+        </div>`;
+    }).join("");
+    if(typeof itensProcessados !== "undefined" && itensProcessados.length){ montarPreview(); }
+}
+
+// Escolhe o melhor cupom pra cada produto (sem mexer nos que a pessoa escolheu à mão)
+function aplicarCupons(){
+    itensProcessados.forEach(p => {
+        if(p.cupomOriginal === undefined) p.cupomOriginal = p.item.cupom || "";
+        p.opcoesCupom = FarejadinhosCupons.opcoes(cuponsDia, p.item.preco, p.item.link, p.linkProduto);
+        if(p.cupomManual) return;
+        if(p.cupomOriginal){ p.item.cupom = p.cupomOriginal; p.cupomAuto = false; return; }
+        p.item.cupom = p.opcoesCupom.length ? p.opcoesCupom[0].cupom.codigo : "";
+        p.cupomAuto = !!p.item.cupom;
+    });
+}
+
+document.addEventListener("DOMContentLoaded", carregarCupons);
+
 function montarPreview(){
+
+    aplicarCupons();
+
 
     const cabecalho = document.getElementById("cabecalhoPreview");
     const corpo = document.getElementById("corpoPreview");
@@ -618,6 +732,26 @@ function montarPreview(){
                 </td>`;
             }
 
+            // Coluna do cupom: o melhor que se encaixa vem escolhido
+            if(c === "cupom"){
+                const p = itensProcessados[indice];
+                const ops = p.opcoesCupom || [];
+                const atual = item.cupom || "";
+                const lista = ['<option value="">Sem cupom</option>'];
+                if(p.cupomOriginal && !ops.some(o => o.cupom.codigo === p.cupomOriginal))
+                    lista.push(`<option value="${escapeHtml(p.cupomOriginal)}">${escapeHtml(p.cupomOriginal)} (da planilha)</option>`);
+                ops.forEach(o => lista.push(`<option value="${escapeHtml(o.cupom.codigo)}">${escapeHtml(o.cupom.codigo)}${o.desconto ? " → " + FarejadinhosCupons.dinheiro(o.precoFinal) : " (do anúncio)"}</option>`));
+                if(atual && !lista.some(l => l.includes(`value="${escapeHtml(atual)}"`)))
+                    lista.push(`<option value="${escapeHtml(atual)}">${escapeHtml(atual)}</option>`);
+                const html = lista.join("").replace(`value="${escapeHtml(atual)}"`, `value="${escapeHtml(atual)}" selected`);
+                const escolhido = ops.find(o => o.cupom.codigo === atual);
+                return `<td>
+                    <select class="selectCupom" data-indice="${indice}">${html}</select>
+                    ${escolhido && escolhido.desconto ? `<span class="precoCupom">com cupom: ${FarejadinhosCupons.dinheiro(escolhido.precoFinal)}</span>` : ""}
+                    ${p.cupomAuto && atual ? '<span class="tagSugerida">🤖 melhor cupom</span>' : (!atual && cuponsDia.length && !ops.length ? '<span class="tagSugerida">nenhum serve</span>' : "")}
+                </td>`;
+            }
+
             // Coluna da categoria: caixinha pra trocar (vem sugerida)
             if(c === "categoria"){
                 const lista = FarejadinhosCategorias.LISTA.slice();
@@ -652,6 +786,17 @@ function montarPreview(){
         input.addEventListener("change", function(){
             const p = itensProcessados[Number(this.dataset.indice)];
             p.item.imagemUrl = this.value.trim();
+            validarItens();
+            montarPreview();
+        });
+    });
+
+    corpo.querySelectorAll(".selectCupom").forEach(sel => {
+        sel.addEventListener("change", function(){
+            const p = itensProcessados[Number(this.dataset.indice)];
+            p.item.cupom = this.value;
+            p.cupomManual = true;
+            p.cupomAuto = false;
             validarItens();
             montarPreview();
         });
@@ -704,8 +849,11 @@ function atualizarResumo(){
     const totalErro = itensProcessados.length - totalOk;
     const semFoto = itensProcessados.filter(p => !p.item.imagemUrl).length;
 
+    const comCupom = itensProcessados.filter(p => p.cupomAuto && p.item.cupom).length;
+
     resumo.innerHTML =
         `<b>${totalOk}</b> produto(s) prontos pra importar` +
+        (cuponsDia.length ? `<br>🏷️ <b>${comCupom}</b> ganharam cupom automático (pela regra da mensagem — vale conferir uns na loja)` : "") +
         (totalErro > 0 ? `, <b style="color:#b00000">${totalErro}</b> com dados faltando (em vermelho — vão ser ignorados)` : "") +
         (semFoto > 0 ? `<br>📷 ${semFoto} sem foto: use o botão "Buscar dados automaticamente" — ou abra o produto, clique com o botão direito na foto → "Copiar endereço da imagem" e cole no campo da linha.` : "");
 
