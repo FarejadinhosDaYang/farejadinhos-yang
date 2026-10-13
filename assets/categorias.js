@@ -22,6 +22,17 @@
       "estrela de natal", "amigo secreto", "panetone", "chocotone", "ceia",
       "laco de natal", "toalha de natal", "noel"
     ],
+    "Skincare": [
+      "skincare", "skin care", "serum", "serum facial", "protetor solar", "filtro solar",
+      "protetor facial", "hidratante facial", "creme facial", "gel facial", "tonico facial",
+      "agua micelar", "sabonete facial", "gel de limpeza", "limpeza facial", "esfoliante facial",
+      "mascara facial", "argila facial", "vitamina c", "acido hialuronico", "niacinamida",
+      "retinol", "acido salicilico", "anti idade", "antirrugas", "anti rugas", "anti acne",
+      "antiacne", "cravos", "espinhas", "olheiras", "area dos olhos", "creme para olhos",
+      "clareador facial", "manchas", "peeling", "colageno facial", "facial", "rosto",
+      "rolo de jade", "gua sha", "dermaroller", "principia", "cerave", "la roche posay",
+      "creamy", "sallve", "bioderma", "neutrogena", "episol", "isdin"
+    ],
     "Pet": [
       "pet", "cachorro", "cao", "caes", "gato", "racao", "petisco", "coleira",
       "arranhador", "areia sanitaria", "areia de gato", "comedouro", "bebedouro pet",
@@ -44,9 +55,9 @@
     "Beleza": [
       "perfume", "maquiagem", "batom", "rimel", "mascara de cilios", "base liquida",
       "corretivo", "shampoo", "condicionador", "creme", "hidratante",
-      "protetor solar", "secador", "chapinha", "prancha alisadora", "escova secadora",
-      "escova de cabelo", "barbeador", "aparador de pelos", "depilador", "skincare",
-      "serum", "sabonete", "desodorante", "esmalte", "cilios", "sobrancelha",
+      "secador", "chapinha", "prancha alisadora", "escova secadora",
+      "escova de cabelo", "barbeador", "aparador de pelos", "depilador",
+      "sabonete", "desodorante", "esmalte", "cilios", "sobrancelha",
       "maquininha de cortar cabelo", "cortador de cabelo", "body splash", "colonia",
       "creme dental", "escova de dente eletrica", "oleo capilar", "mascara capilar"
     ],
