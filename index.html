@@ -56,91 +56,142 @@ h1,h2,h3,.brand{
     padding:18px 18px 60px;
 }
 
-/* ===== HEADER ===== */
+/* ===== HEADER (barra de loja) ===== */
 
-header{
+.topo{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:var(--red);
+    box-shadow:0 2px 14px rgba(120,20,20,.22);
+}
+
+.topo-linha{
+    max-width:1080px;
+    margin:auto;
+    padding:10px 18px;
     display:flex;
     align-items:center;
-    justify-content:space-between;
-    gap:14px;
-    flex-wrap:wrap;
-    padding:6px 4px 0;
+    gap:18px;
 }
 
-header .brand-group{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    min-width:0;
-}
-
-.logo-badge{
-    width:46px;
-    height:46px;
-    border-radius:50%;
-    flex:none;
-}
-
-.brand{
-    font-size:18px;
-    font-weight:800;
-    line-height:1.1;
-    color:var(--red-dark);
-}
-
-.brand small{
-    display:block;
-    font-family:'Work Sans',sans-serif;
-    font-weight:500;
-    font-size:12px;
-    color:var(--muted);
-    margin-top:2px;
-}
-
-.header-right{
+.topo .brand-group{
     display:flex;
     align-items:center;
     gap:10px;
+    flex:none;
+    text-decoration:none;
 }
+
+.logo-badge{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    flex:none;
+    box-shadow:0 0 0 2.5px #fff;
+}
+
+.brand{
+    font-size:19px;
+    font-weight:800;
+    line-height:.95;
+    color:#fff;
+    letter-spacing:-.2px;
+}
+
+.brand span{ display:block; color:#FFE2C2; }
 
 .busca-home{
-    display:flex;
-    align-items:center;
-    background:var(--cream-2);
-    border:1.5px solid var(--line);
-    border-radius:999px;
-    padding:4px 4px 4px 16px;
-    gap:6px;
     flex:1;
-    min-width:160px;
-    max-width:320px;
+    display:flex;
+    align-items:stretch;
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    min-width:0;
+    box-shadow:inset 0 0 0 2px transparent;
+    transition:box-shadow .15s;
 }
 
+.busca-home:focus-within{ box-shadow:inset 0 0 0 2px var(--orange); }
+
 .busca-home input{
+    flex:1;
+    min-width:0;
     border:0;
     background:transparent;
     outline:none;
     font-family:'Work Sans',sans-serif;
-    font-size:14px;
+    font-size:15px;
     color:var(--ink);
-    width:100%;
-    padding:8px 0;
+    padding:12px 14px;
 }
+
+.busca-home input::placeholder{ color:#9C8A7B; }
 
 .busca-home button{
     flex:none;
-    width:32px;
-    height:32px;
-    border-radius:50%;
+    width:52px;
     border:0;
-    background:linear-gradient(135deg,var(--red),var(--red-dark));
+    background:var(--orange);
     color:#fff;
-    font-size:13px;
     cursor:pointer;
     display:flex;
     align-items:center;
     justify-content:center;
+    transition:background .15s;
 }
+
+.busca-home button:hover{ background:#E5820A; }
+.busca-home button svg{ width:20px; height:20px; }
+
+/* menu ☰ em cima do vermelho */
+.topo .yang-nav-toggle{
+    background:transparent;
+    border:1.5px solid rgba(255,255,255,.55);
+}
+.topo .yang-nav-toggle span{ background:#fff; }
+.topo .yang-nav-toggle:hover{ background:rgba(255,255,255,.12); }
+
+/* faixa de atalhos */
+.topo-atalhos{
+    background:var(--red-dark);
+}
+
+.topo-atalhos nav{
+    max-width:1080px;
+    margin:auto;
+    padding:0 18px;
+    display:flex;
+    gap:4px;
+    overflow-x:auto;
+    scrollbar-width:none;
+}
+.topo-atalhos nav::-webkit-scrollbar{ display:none; }
+
+.topo-atalhos a{
+    flex:none;
+    color:#FFE9DD;
+    text-decoration:none;
+    font-size:13.5px;
+    font-weight:600;
+    padding:8px 10px;
+    border-radius:8px;
+    white-space:nowrap;
+}
+.topo-atalhos a:hover{ color:#fff; background:rgba(255,255,255,.1); }
+.topo-atalhos a.destaque{ color:#fff; }
+
+@media (max-width:700px){
+    .topo-linha{ flex-wrap:wrap; gap:10px; padding:10px 14px; }
+    .topo .brand-group{ flex:1; }
+    .busca-home{ order:3; flex:1 1 100%; }
+    .logo-badge{ width:40px; height:40px; }
+    .brand{ font-size:17px; }
+    .topo-atalhos nav{ padding:0 10px; }
+}
+
+#tituloGrid,#podioSecao{ scroll-margin-top:130px; }
 
 /* ===== HERO CARROSSEL ===== */
 
@@ -961,24 +1012,30 @@ footer a{ color:var(--red-dark); font-weight:600; text-decoration:none; }
 
 <body>
 
-<div class="wrap">
-
-<header>
-<a href="index.html" class="brand-group" style="text-decoration:none;color:inherit">
+<header class="topo">
+<div class="topo-linha">
+<a href="index.html" class="brand-group">
 <img class="logo-badge" src="assets/yang-badge.png" alt="Yang, a mascote farejadora">
-<div class="brand">
-Farejadinhos da Yang
-<small>a Yang fareja os melhores preços 🐾</small>
-</div>
+<div class="brand">Farejadinhos<span>da Yang</span></div>
 </a>
-<div class="header-right">
-<form class="busca-home" id="formBusca">
-<input type="text" id="busca" placeholder="Buscar ofertas...">
-<button type="submit" aria-label="Buscar">🔍</button>
+<form class="busca-home" id="formBusca" role="search">
+<input type="search" id="busca" placeholder="O que você procura? A Yang fareja 🐾" aria-label="Buscar ofertas">
+<button type="submit" aria-label="Buscar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.6-4.6"/></svg></button>
 </form>
 <div data-yang-nav data-base=""></div>
 </div>
+<div class="topo-atalhos">
+<nav aria-label="Atalhos">
+<a class="destaque" href="#tituloGrid">🔥 Ofertas do dia</a>
+<a href="#podioSecao">🏆 Maiores descontos</a>
+<a href="calculadora/">🧮 Vale a pena parcelar?</a>
+<a href="https://s.shopee.com.br/4VdOXKYQfW" target="_blank" rel="sponsored noopener">🏷️ Cupons Shopee</a>
+<a href="https://www.mercadolivre.com.br/cupons?source_page=mperfil#nav-header" target="_blank" rel="sponsored noopener">🏷️ Cupons Mercado Livre</a>
+</nav>
+</div>
 </header>
+
+<div class="wrap">
 
 <div class="hero-carrossel" id="heroCarrossel">
 <button class="hero-seta esq" type="button" aria-label="Anterior" onclick="mudarSlide(-1)">‹</button>
