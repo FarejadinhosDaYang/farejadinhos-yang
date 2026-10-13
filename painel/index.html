@@ -318,6 +318,84 @@ button:disabled{
     background:var(--ink);
 }
 
+.miniAcoes{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:8px;
+}
+
+.miniBtn{
+    width:auto;
+    margin-top:0;
+    padding:8px 14px;
+    border-radius:999px;
+    background:#fff;
+    color:var(--red-dark);
+    border:1.5px solid var(--red);
+    font-family:'Work Sans',sans-serif;
+    font-size:14px;
+    font-weight:700;
+    box-shadow:none;
+}
+
+.miniBtn.secundario{
+    border-color:var(--line);
+    color:var(--muted);
+}
+
+.nomeOriginal{
+    display:none;
+    margin-top:6px;
+    font-size:12px;
+    color:var(--muted);
+    line-height:1.35;
+}
+
+.fotoBox{
+    display:flex;
+    gap:14px;
+    align-items:center;
+    margin-top:10px;
+    padding:12px;
+    border:1.5px dashed var(--line);
+    border-radius:12px;
+    background:#fff;
+}
+
+.fotoBox img{
+    width:110px;
+    height:110px;
+    object-fit:contain;
+    border-radius:10px;
+    background:#fff;
+    border:1px solid var(--line);
+    flex:none;
+}
+
+.fotoBox .vazia{
+    width:110px;
+    height:110px;
+    flex:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:10px;
+    background:#fff8f0;
+    font-size:34px;
+}
+
+.fotoInfo{
+    flex:1;
+    min-width:0;
+    font-size:13px;
+    color:var(--muted);
+}
+
+.fotoInfo .miniBtn{
+    margin-top:8px;
+}
+
 .divisor{
     border:none;
     border-top:1.5px dashed var(--line);
@@ -462,6 +540,12 @@ Produto
     required
 >
 
+<div class="miniAcoes">
+<button type="button" class="miniBtn" id="btnEncurtar" onclick="encurtarNome()">✨ Deixar o nome curto e bonito</button>
+<button type="button" class="miniBtn secundario" id="btnNomeOriginal" onclick="voltarNomeOriginal()" style="display:none">↩️ Voltar ao nome da loja</button>
+</div>
+<div class="nomeOriginal" id="nomeOriginal"></div>
+
 <label>
 Preço
 </label>
@@ -563,6 +647,15 @@ Imagem
     required
 >
 
+<div class="fotoBox">
+<div class="vazia" id="fotoVazia">📷</div>
+<img id="fotoPreview" alt="Foto do produto" style="display:none">
+<div class="fotoInfo">
+<div id="fotoStatus">Sem foto ainda. Ela vem sozinha quando você extrai pelo link — ou escolha um arquivo acima.</div>
+<button type="button" class="miniBtn" id="btnBuscarFoto" onclick="buscarFotoPeloLink()">🔎 Buscar foto pelo link</button>
+</div>
+</div>
+
 <button
     type="submit"
     id="botao"
@@ -637,6 +730,7 @@ Processando...
 
 
 <script src="../assets/divulgacao.js"></script>
+<script src="../assets/categorias.js"></script>
 <script>
 
 const WORKER_URL =
@@ -734,21 +828,55 @@ async function extrairDados(){
 
     try{
 
-        const resposta = await fetch(
-            WORKER_URL + "/extrair",
-            {
-                method: "POST",
-                body: dados
-            }
-        );
+        /*
+         * No modo link, roda junto a mesma busca da planilha (/produto),
+         * que tenta várias fontes (página, ficha do ML, ficha da Shopee,
+         * IA). Ela completa o que o /extrair não achou.
+         */
 
-        const texto = await resposta.text();
+        const linkColadoExtrair =
+            abaAtual === "link"
+                ? document.getElementById("linkExtrair").value.trim()
+                : "";
 
-        if(!resposta.ok){
-            throw new Error(texto);
+        const [respExtrair, respProduto] = await Promise.allSettled([
+            fetch(WORKER_URL + "/extrair", { method: "POST", body: dados })
+                .then(async r => {
+                    const t = await r.text();
+                    if(!r.ok) throw new Error(t);
+                    return JSON.parse(t);
+                }),
+            linkColadoExtrair
+                ? buscarProdutoPeloLink(linkColadoExtrair, senha)
+                : Promise.resolve(null)
+        ]);
+
+        const extra =
+            respProduto.status === "fulfilled" ? respProduto.value : null;
+
+        if(respExtrair.status === "rejected" && !(extra && (extra.produto || extra.preco || extra.imagemUrl))){
+            throw respExtrair.reason;
         }
 
-        const resultado = JSON.parse(texto);
+        const resultado =
+            respExtrair.status === "fulfilled" ? respExtrair.value : {};
+
+        if(extra){
+            if(!resultado.produto && extra.produto) resultado.produto = extra.produto;
+            if(!resultado.preco && extra.preco) resultado.preco = extra.preco;
+            if(!resultado.precoAntigo && extra.precoAntigo) resultado.precoAntigo = extra.precoAntigo;
+        }
+
+        // Nome que veio da loja (pra poder voltar depois de encurtar)
+        nomeDaLoja = resultado.produto || "";
+        document.getElementById("btnNomeOriginal").style.display = "none";
+        document.getElementById("nomeOriginal").style.display = "none";
+
+        // A prazo (só a busca da planilha traz)
+        if(extra && extra.precoAPrazo && (resultado.preco || extra.preco)){
+            document.getElementById("precoAVista").value = resultado.preco || extra.preco;
+            document.getElementById("precoAPrazo").value = extra.precoAPrazo;
+        }
 
         if(resultado.produto){
             document.getElementById("produto").value = resultado.produto;
@@ -803,11 +931,51 @@ async function extrairDados(){
             dt.items.add(arquivoImagem);
 
             document.getElementById("imagem").files = dt.files;
+            mostrarFotoEscolhida("✅ Foto encontrada pelo link.");
+        }
+
+        /*
+         * Sem foto do /extrair? Usa o mesmo caminho da planilha:
+         * endereço da foto pelo /produto ou /foto, e o Worker baixa.
+         */
+
+        let avisoFoto = "";
+
+        if(!resultado.imagemBase64){
+            const linkFoto =
+                linkColadoExtrair ||
+                (abaAtual === "texto" ? (resultado.link || "") : "");
+
+            if(linkFoto){
+                statusExtrair.textContent = "📷 Procurando a foto do produto...";
+                const ok = await buscarFotoPeloLink(linkFoto, extra && extra.imagemUrl);
+                if(!ok) avisoFoto = "não achei a foto — escolha um arquivo no campo Imagem.";
+            } else if(resultado.avisoImagem){
+                avisoFoto = resultado.avisoImagem;
+            }
+        }
+
+        /*
+         * Nome comprido? Já deixa curto e bonito (dá pra voltar ao original).
+         */
+
+        const nomeAtual = document.getElementById("produto").value.trim();
+
+        if(nomeAtual.length > 55){
+            statusExtrair.textContent = "✨ Deixando o nome mais curto...";
+            await encurtarNome(true);
+        }
+
+        // Categoria sugerida pelo nome (igual à planilha), se estiver vazia
+        const selCategoria = document.getElementById("categoria");
+        const nomeParaCategoria = nomeDaLoja || document.getElementById("produto").value;
+        if(!selCategoria.value && nomeParaCategoria && window.FarejadinhosCategorias){
+            selCategoria.value = FarejadinhosCategorias.sugerir(nomeParaCategoria);
         }
 
         statusExtrair.textContent =
-            resultado.avisoImagem
-                ? "⚠️ Dados preenchidos, mas a imagem falhou: " + resultado.avisoImagem
+            avisoFoto
+                ? "⚠️ Dados preenchidos, mas " + avisoFoto
                 : "✅ Dados preenchidos! Confira tudo antes de gerar a oferta.";
 
     }catch(erro){
@@ -821,6 +989,221 @@ async function extrairDados(){
         btn.textContent = "🔎 Extrair dados";
     }
 }
+
+/* ==========================================
+ * BUSCA PELO LINK (mesmo mecanismo da planilha)
+ * ========================================== */
+
+let nomeDaLoja = "";
+
+async function postarWorker(rota, campos){
+    const fd = new FormData();
+    for(const [k, v] of Object.entries(campos)) fd.append(k, v);
+    const r = await fetch(WORKER_URL + rota, { method: "POST", body: fd });
+    return r;
+}
+
+// nome, preço, a prazo e endereço da foto (o mesmo do lote)
+async function buscarProdutoPeloLink(link, senha){
+    try{
+        const r = await postarWorker("/produto", { senha, link });
+        const t = await r.text();
+        try{ return JSON.parse(t); }catch(e){ return null; }
+    }catch(e){
+        return null;
+    }
+}
+
+// só o endereço da foto (o mesmo do lote)
+async function buscarEnderecoFoto(link, senha){
+    try{
+        const r = await postarWorker("/foto", { senha, link });
+        const j = JSON.parse(await r.text());
+        return j && j.imagemUrl ? j.imagemUrl : "";
+    }catch(e){
+        return "";
+    }
+}
+
+// o Worker baixa a foto (a loja não deixa o navegador baixar direto)
+async function baixarFotoComoArquivo(endereco, senha){
+    const r = await postarWorker("/imagem", { senha, url: endereco });
+    const tipo = (r.headers.get("content-type") || "").split(";")[0];
+    if(!r.ok || !tipo.startsWith("image/")){
+        throw new Error(r.ok ? "o Worker ainda é a versão antiga (cole o worker novo na Cloudflare)" : await r.text());
+    }
+    const blob = await r.blob();
+    const ext = tipo.includes("png") ? "png" : tipo.includes("webp") ? "webp" : "jpg";
+    return new File([blob], "produto." + ext, { type: tipo });
+}
+
+function mostrarFotoEscolhida(mensagem){
+    const arquivo = document.getElementById("imagem").files[0];
+    const img = document.getElementById("fotoPreview");
+    const vazia = document.getElementById("fotoVazia");
+    if(arquivo){
+        if(img.dataset.url) URL.revokeObjectURL(img.dataset.url);
+        img.dataset.url = URL.createObjectURL(arquivo);
+        img.src = img.dataset.url;
+        img.style.display = "block";
+        vazia.style.display = "none";
+    } else {
+        img.style.display = "none";
+        vazia.style.display = "flex";
+    }
+    if(mensagem) document.getElementById("fotoStatus").textContent = mensagem;
+}
+
+/*
+ * Procura a foto pelo link e coloca no campo Imagem.
+ * Sem argumentos (botão): usa o link colado no "Preencher
+ * automaticamente" ou, se não tiver, o "Link da oferta".
+ */
+async function buscarFotoPeloLink(link, enderecoJaAchado){
+
+    const senha = document.getElementById("senha").value;
+    const doBotao = typeof link !== "string";
+
+    if(doBotao){
+        link =
+            document.getElementById("linkExtrair").value.trim() ||
+            document.getElementById("link").value.trim();
+        enderecoJaAchado = "";
+    }
+
+    const status = document.getElementById("fotoStatus");
+    const btn = document.getElementById("btnBuscarFoto");
+
+    if(!senha){
+        if(doBotao) alert("Digite a senha do painel primeiro.");
+        return false;
+    }
+
+    if(!link){
+        if(doBotao) alert("Cole o link do produto (no Preencher automaticamente ou no Link da oferta).");
+        return false;
+    }
+
+    btn.disabled = true;
+    btn.textContent = "⏳ Procurando...";
+    status.textContent = "📷 Procurando a foto (igual à planilha)...";
+
+    try{
+
+        // 1) endereço da foto: o que já veio, senão /produto, senão /foto
+        const candidatos = [];
+        if(enderecoJaAchado) candidatos.push(enderecoJaAchado);
+
+        if(!candidatos.length){
+            const p = await buscarProdutoPeloLink(link, senha);
+            if(p && p.imagemUrl) candidatos.push(p.imagemUrl);
+        }
+
+        const pelaFoto = await buscarEnderecoFoto(link, senha);
+        if(pelaFoto && !candidatos.includes(pelaFoto)) candidatos.push(pelaFoto);
+
+        if(!candidatos.length){
+            status.textContent = "😕 Não achei a foto por esse link. Tire um print e escolha o arquivo acima.";
+            return false;
+        }
+
+        // 2) o Worker baixa; tenta cada endereço até um dar certo
+        let ultimoErro = "";
+        for(const endereco of candidatos){
+            try{
+                const arquivo = await baixarFotoComoArquivo(endereco, senha);
+                const dt = new DataTransfer();
+                dt.items.add(arquivo);
+                document.getElementById("imagem").files = dt.files;
+                mostrarFotoEscolhida("✅ Foto encontrada pelo link. Se não gostar, escolha outra no campo acima.");
+                return true;
+            }catch(e){
+                ultimoErro = e.message;
+            }
+        }
+
+        status.textContent = "😕 Achei a foto mas não consegui baixar: " + ultimoErro;
+        return false;
+
+    }finally{
+        btn.disabled = false;
+        btn.textContent = "🔎 Buscar foto pelo link";
+    }
+}
+
+/*
+ * Nome curto e bonito (IA no Worker, com plano B por regras)
+ */
+async function encurtarNome(automatico){
+
+    const campo = document.getElementById("produto");
+    const nome = campo.value.trim();
+    const senha = document.getElementById("senha").value;
+    const btn = document.getElementById("btnEncurtar");
+
+    if(!nome){
+        if(!automatico) alert("Preencha o nome do produto primeiro.");
+        return;
+    }
+
+    if(!senha){
+        if(!automatico) alert("Digite a senha do painel primeiro.");
+        return;
+    }
+
+    // guarda o nome da loja antes de mexer
+    // (se o campo ainda tem o nome que a gente encurtou, reaproveita o da loja)
+    if(btn.dataset.ultimoCurto !== nome || !nomeDaLoja) nomeDaLoja = nome;
+
+    btn.disabled = true;
+    btn.textContent = "⏳ Encurtando...";
+
+    try{
+        const r = await postarWorker("/nome", { senha, nome: nomeDaLoja || nome });
+        const t = await r.text();
+        let j = null;
+        try{ j = JSON.parse(t); }catch(e){}
+
+        if(!r.ok || !j || !j.nome){
+            throw new Error(r.ok ? "o Worker ainda é a versão antiga (cole o worker novo na Cloudflare)" : t);
+        }
+
+        campo.value = j.nome;
+        btn.dataset.ultimoCurto = j.nome;
+
+        const info = document.getElementById("nomeOriginal");
+        info.textContent = "Nome da loja: " + nomeDaLoja;
+        info.style.display = "block";
+        document.getElementById("btnNomeOriginal").style.display = "inline-block";
+
+    }catch(e){
+        if(!automatico) alert("Não deu pra encurtar: " + e.message);
+    }finally{
+        btn.disabled = false;
+        btn.textContent = "✨ Deixar o nome curto e bonito";
+    }
+}
+
+function voltarNomeOriginal(){
+    if(!nomeDaLoja) return;
+    document.getElementById("produto").value = nomeDaLoja;
+    document.getElementById("btnEncurtar").dataset.ultimoCurto = "";
+    document.getElementById("btnNomeOriginal").style.display = "none";
+    document.getElementById("nomeOriginal").style.display = "none";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("imagem").addEventListener("change", () => {
+        mostrarFotoEscolhida("📁 Foto escolhida do seu aparelho.");
+    });
+    // se a pessoa digitar outro nome na mão, ele vira o "nome da loja"
+    document.getElementById("produto").addEventListener("input", () => {
+        nomeDaLoja = "";
+        document.getElementById("btnEncurtar").dataset.ultimoCurto = "";
+        document.getElementById("btnNomeOriginal").style.display = "none";
+        document.getElementById("nomeOriginal").style.display = "none";
+    });
+});
 
 /* ==========================================
  * IMAGEM PRONTA PRO STORY
