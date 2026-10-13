@@ -195,6 +195,20 @@ h1,h2,h3,.brand{
 .s-insta .polaroide{ transform:rotate(-5deg); }
 .s-insta .polaroide::before{ background:rgba(253,243,227,.75); }
 
+/* --- ilustração da Yang (sem moldura) --- */
+.ilustra{
+    position:relative;
+    z-index:2;
+    margin:-24px 0 -40px;
+}
+.ilustra img{
+    display:block;
+    height:300px;
+    width:auto;
+    filter:drop-shadow(0 14px 18px rgba(80,10,10,.35));
+    transform:rotate(-3deg);
+}
+
 /* trilha de patinhas, do texto até a foto */
 .trilha-patas{
     position:absolute;
@@ -333,6 +347,8 @@ h1,h2,h3,.brand{
     }
     .hero-visual{ order:-1; justify-self:end; margin:-6px 4px -4px 0; }
     .polaroide{ width:128px; padding:8px 8px 0; }
+    .ilustra{ margin:-10px 0 -8px; }
+    .ilustra img{ height:170px; }
     .polaroide figcaption{ font-size:18px; padding:5px 2px 8px; }
     .polaroide::before{ width:64px; height:20px; top:-10px; }
     .cupom-conta{ width:210px; font-size:12.5px; padding:14px 14px 18px; }
@@ -963,9 +979,11 @@ footer a{ color:var(--red-dark); font-weight:600; text-decoration:none; }
 <p class="hero-prova" id="heroProva">Ofertas novas todo dia, de qualquer categoria.</p>
 <a class="hero-cta" href="#podioSecao" id="heroCtaOfertas">Ver as ofertas de hoje</a>
 </div>
-<figure class="hero-visual polaroide">
-<img src="assets/yang-hero.png" alt="A Yang, cachorrinha shih-tzu com gorro de urso laranja">
-<figcaption>aprovado pela Yang</figcaption>
+<figure class="hero-visual ilustra">
+<picture>
+<source srcset="assets/yang-ilustrada.webp" type="image/webp">
+<img src="assets/yang-ilustrada.png" alt="Ilustração da Yang de gorro de urso, na caminha com o patinho de pelúcia" width="532" height="640">
+</picture>
 </figure>
 </section>
 
