@@ -437,6 +437,7 @@ $EmojiFire $ProdutoH | Farejadinhos da Yang
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="../../assets/nav.css">
+<link rel="stylesheet" href="../../assets/topo.css">
 <link rel="stylesheet" href="../../assets/calculadora.css">
 
 
@@ -628,6 +629,7 @@ h1{
 
 
 <body>
+<script src="../../assets/topo.js" data-base="../../"></script>
 
 
 <div class="wrap">
@@ -642,15 +644,6 @@ $EmojiFire ACHADINHO DO DIA
 
 
 <div class="content">
-
-
-<div class="header-row">
-<a href="../../" class="brand" style="margin-bottom:0;text-decoration:none;color:inherit">
-<img src="../../assets/yang-badge.png" alt="Yang">
-Farejadinhos da Yang
-</a>
-<div data-yang-nav data-base="../../"></div>
-</div>
 
 
 <img
