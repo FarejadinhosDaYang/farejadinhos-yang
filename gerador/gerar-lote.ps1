@@ -224,6 +224,9 @@ function EspalharNoDia([DateTimeOffset]$De, [int]$Qtd, [bool]$PularPrimeiro) {
     $Min = ((FimDaJanela $De) - $De).TotalMinutes
     $Div = if ($PularPrimeiro) { $Qtd + 1 } else { $Qtd }
     $Passo = [Math]::Max($INTERVALO_MINIMO_MIN, $Min / $Div)
+    # nunca passar do fim da janela (aperta o intervalo se precisar)
+    $UltimoPasso = if ($PularPrimeiro) { $Qtd } else { $Qtd - 1 }
+    if ($UltimoPasso -gt 0 -and $Passo * $UltimoPasso -ge $Min) { $Passo = $Min / $Div }
     $T = $De
     if ($PularPrimeiro) { $T = $T.AddMinutes($Passo) }
     for ($k = 0; $k -lt $Qtd; $k++) { $Lista += $T; $T = $T.AddMinutes($Passo) }
@@ -238,7 +241,23 @@ function CabemNoDia([DateTimeOffset]$De, [bool]$PularPrimeiro) {
     return [int][Math]::Max(0, $Q)
 }
 
-$ModoAgenda = ($AgendaInicio -ne $null) -or ($AgendaPorDia -gt 0)
+# Ofertas que já estão na fila (agendadas pra depois de agora), por dia.
+# Entram na conta do limite diário, pra um lote novo não empilhar em cima
+# de outro — a fila é uma só.
+$PendentesPorDia = @{}
+foreach ($O in @($CatalogoAtual)) {
+    if (-not $O -or -not $O.slug) { continue }
+    $L = ParaDataUtc $O.liberacao
+    if ($L -and $L -gt $Agora) {
+        $K = $L.ToOffset($FUSO_BRASILIA).ToString("yyyy-MM-dd")
+        $PendentesPorDia[$K] = 1 + [int]$PendentesPorDia[$K]
+    }
+}
+function PendentesNoDia([DateTimeOffset]$T) {
+    return [int]$PendentesPorDia[$T.ToOffset($FUSO_BRASILIA).ToString("yyyy-MM-dd")]
+}
+
+$ModoAgenda = $true   # sem agenda escolhida = começa hoje, o máximo por dia
 $ComecaHoje = ($AgendaInicio -eq $null) -or ($AgendaInicio -le (DentroDaJanela $Agora))
 if ($AgendaInicio -ne $null) {
     $LocalHoje = $Agora.ToOffset($FUSO_BRASILIA).Date
@@ -246,43 +265,9 @@ if ($AgendaInicio -ne $null) {
     $ComecaHoje = ($LocalInicio -le $LocalHoje)
 }
 
-if (-not $ModoAgenda) {
+if ($ModoAgenda) {
 
-    # ===== jeito antigo =====
-    $NoAr = ContarNoAr $CatalogoAtual $Agora
-    $Imediatos = [Math]::Min($Total, [Math]::Max(0, $MINIMO_VITRINE - $NoAr))
-    $Restantes = $Total - $Imediatos
-
-    for ($k = 0; $k -lt $Imediatos; $k++) {
-        $Horarios += $Agora
-    }
-
-    if ($Restantes -gt 0) {
-
-        $T = DentroDaJanela $Agora
-        $MinutosNaJanela = ((FimDaJanela $T) - $T).TotalMinutes
-
-        # Se já liberou alguma agora (e estamos dentro da janela), a
-        # próxima não sai junto: começa um intervalo depois. Se a janela
-        # de hoje já fechou, a primeira sai logo na abertura da próxima.
-        $EspacarDoImediato = ($Imediatos -gt 0) -and ($T -eq $Agora)
-        $Divisor = if ($EspacarDoImediato) { $Restantes + 1 } else { $Restantes }
-        $IntervaloMin = [Math]::Max($INTERVALO_MINIMO_MIN, $MinutosNaJanela / $Divisor)
-
-        if ($EspacarDoImediato) { $T = $T.AddMinutes($IntervaloMin) }
-
-        for ($k = 0; $k -lt $Restantes; $k++) {
-            $T = DentroDaJanela $T
-            $Horarios += $T
-            $T = $T.AddMinutes($IntervaloMin)
-        }
-    }
-
-    Write-Host "No ar agora: $NoAr oferta(s). Liberando $Imediatos na hora e $Restantes ao longo da janela das ${JANELA_INICIO}h as ${JANELA_FIM}h."
-
-} else {
-
-    # ===== agenda escolhida no painel =====
+    # ===== agenda (escolhida no painel, ou padrão: hoje, o máximo por dia) =====
     $Falta = $Total
     $NoAr = ContarNoAr $CatalogoAtual $Agora
     $Imediatos = 0
@@ -298,8 +283,9 @@ if (-not $ModoAgenda) {
         $MesmoDia = ($De.ToOffset($FUSO_BRASILIA).Date -eq $Agora.ToOffset($FUSO_BRASILIA).Date)
         if ($MesmoDia -and $Falta -gt 0) {
             $Pular = ($Imediatos -gt 0) -and ($De -eq $Agora)
-            $Cota = if ($AgendaPorDia -gt 0) { $AgendaPorDia - $Imediatos } else { $Falta }
-            $Qtd = [Math]::Min($Falta, [Math]::Min($Cota, (CabemNoDia $De $Pular)))
+            $JaNaFila = PendentesNoDia $De
+            $Cota = if ($AgendaPorDia -gt 0) { $AgendaPorDia - $Imediatos - $JaNaFila } else { $Falta }
+            $Qtd = [Math]::Max(0, [Math]::Min($Falta, [Math]::Min($Cota, (CabemNoDia $De $Pular) - $JaNaFila)))
             $Horarios += EspalharNoDia $De $Qtd $Pular
             $Falta -= $Qtd
         }
@@ -310,13 +296,15 @@ if (-not $ModoAgenda) {
 
     $DiasUsados = 0
     while ($Falta -gt 0) {
-        $Cota = if ($AgendaPorDia -gt 0) { $AgendaPorDia } else { $Falta }
-        $Qtd = [Math]::Min($Falta, [Math]::Min($Cota, (CabemNoDia $Dia $false)))
+        $JaNaFila = PendentesNoDia $Dia
+        $Cota = if ($AgendaPorDia -gt 0) { $AgendaPorDia - $JaNaFila } else { $Falta }
+        $Qtd = [Math]::Max(0, [Math]::Min($Falta, [Math]::Min($Cota, (CabemNoDia $Dia $false) - $JaNaFila)))
         $Horarios += EspalharNoDia $Dia $Qtd $false
         $Falta -= $Qtd
         $Dia = $Dia.AddDays(1)
         $DiasUsados++
         if ($DiasUsados -gt 400) { throw "Agenda longa demais" }
+        if ($Qtd -eq 0) { continue }
     }
 
     $Ultimo = ($Horarios | Sort-Object | Select-Object -Last 1).ToOffset($FUSO_BRASILIA)
@@ -327,6 +315,7 @@ if (-not $ModoAgenda) {
 
 $Sucessos = 0
 $Falhas = @()
+$SlugsDoLote = @{}
 
 for ($i = 0; $i -lt $Total; $i++) {
 
@@ -398,6 +387,7 @@ for ($i = 0; $i -lt $Total; $i++) {
 
         Remove-Item -LiteralPath $ImagemTemp -Force -ErrorAction SilentlyContinue
 
+        $SlugsDoLote[$Slug] = $true
         Write-Host "OK: $NomeParaLog -> slug '$Slug', libera em $Liberacao"
         $Sucessos++
     }
@@ -422,6 +412,98 @@ if ($Falhas.Count -gt 0) {
     foreach ($F in $Falhas) {
         Write-Warning " - $F"
     }
+}
+
+# ==========================================
+# MESCLAR A FILA (intercalar categorias)
+#
+# Junta tudo o que ainda vai ser liberado (deste lote e dos anteriores)
+# e redistribui: as categorias vão se alternando de forma proporcional
+# (ex.: 50 de Natal + 20 de Café -> ~2 de Natal pra cada 1 de Café),
+# mantendo os mesmos dias e reespaçando os horários de cada dia por igual
+# dentro da janela. O que já foi liberado não é mexido.
+# ==========================================
+
+function MesclarFila {
+    $Texto = Get-Content -LiteralPath $OfertasJsonPath -Raw -Encoding UTF8
+    if ([string]::IsNullOrWhiteSpace($Texto)) { return }
+    $Cat = @($Texto | ConvertFrom-Json)
+
+    # Lote com data de início escolhida: as ofertas dele nunca saem antes disso
+    if ($AgendaInicio -ne $null -and -not $ComecaHoje) {
+        $Marca = $AgendaInicio.UtcDateTime.ToString("yyyy-MM-ddTHH:mm:ssZ", [Globalization.CultureInfo]::InvariantCulture)
+        foreach ($O in $Cat) {
+            if ($O -and $O.slug -and $SlugsDoLote.ContainsKey([string]$O.slug)) {
+                $O | Add-Member -NotePropertyName naoAntes -NotePropertyValue $Marca -Force
+            }
+        }
+    }
+
+    $Fila = @($Cat | Where-Object {
+        $_ -and $_.slug -and $_.liberacao -and ((ParaDataUtc $_.liberacao) -gt $Agora)
+    } | Sort-Object { (ParaDataUtc $_.liberacao).UtcTicks })
+    if ($Fila.Count -lt 2) { return }
+
+    # Quantas por dia (os dias continuam os mesmos)
+    $PorDia = [ordered]@{}
+    foreach ($O in $Fila) {
+        $K = (ParaDataUtc $O.liberacao).ToOffset($FUSO_BRASILIA).ToString("yyyy-MM-dd")
+        $PorDia[$K] = 1 + [int]$PorDia[$K]
+    }
+
+    # Ordem intercalada: cada item ganha uma "posição ideal" dentro da
+    # própria categoria ((i+0.5)/total) e a fila é ordenada por ela.
+    $Grupos = @{}
+    foreach ($O in $Fila) {
+        $C = if ($O.categoria) { [string]$O.categoria } else { "-" }
+        if (-not $Grupos.ContainsKey($C)) { $Grupos[$C] = New-Object System.Collections.ArrayList }
+        [void]$Grupos[$C].Add($O)
+    }
+    $Nomes = @($Grupos.Keys | Sort-Object)
+    $Ordenados = @()
+    for ($g = 0; $g -lt $Nomes.Count; $g++) {
+        $Lista = $Grupos[$Nomes[$g]]
+        for ($i = 0; $i -lt $Lista.Count; $i++) {
+            $Ordenados += [pscustomobject]@{ O = $Lista[$i]; Pos = ($i + 0.5) / $Lista.Count; Desempate = $g }
+        }
+    }
+    $Ordenados = @($Ordenados | Sort-Object Pos, Desempate | ForEach-Object { $_.O })
+
+    # Horários novos: em cada dia, espalha por igual na janela
+    $Novos = @()
+    foreach ($K in $PorDia.Keys) {
+        $D = [DateTime]::ParseExact($K, "yyyy-MM-dd", [Globalization.CultureInfo]::InvariantCulture)
+        $Ini = [DateTimeOffset]::new($D.Year, $D.Month, $D.Day, $JANELA_INICIO, 0, 0, $FUSO_BRASILIA).ToUniversalTime()
+        $Pular = $false
+        if ($Ini -lt $Agora) { $Ini = $Agora; $Pular = $true }
+        $Novos += EspalharNoDia $Ini ([int]$PorDia[$K]) $Pular
+    }
+
+    # Cada horário (em ordem) fica com o próximo item da ordem intercalada
+    # que já pode sair nesse horário (respeita o "não antes de").
+    $Novos = @($Novos | Sort-Object { $_.UtcTicks })
+    $Restam = New-Object System.Collections.ArrayList
+    foreach ($O in $Ordenados) { [void]$Restam.Add($O) }
+    foreach ($H in $Novos) {
+        $Escolhido = $null
+        foreach ($O in $Restam) {
+            $NA = if ($O.PSObject.Properties["naoAntes"]) { ParaDataUtc $O.naoAntes } else { $null }
+            if (-not $NA -or $NA -le $H) { $Escolhido = $O; break }
+        }
+        if (-not $Escolhido) { $Escolhido = $Restam[0] }   # não deve acontecer: os dias vieram deles
+        $Escolhido.liberacao = $H.UtcDateTime.ToString("yyyy-MM-ddTHH:mm:ssZ", [Globalization.CultureInfo]::InvariantCulture)
+        [void]$Restam.Remove($Escolhido)
+    }
+
+    $Json = $Cat | ConvertTo-Json -Depth 5 -AsArray
+    [System.IO.File]::WriteAllText($OfertasJsonPath, $Json, (New-Object System.Text.UTF8Encoding($false)))
+
+    $Resumo = ($Grupos.Keys | ForEach-Object { "$_ ($($Grupos[$_].Count))" }) -join ", "
+    Write-Host "Fila mesclada: $($Fila.Count) oferta(s) agendada(s), intercalando $Resumo."
+}
+
+if ($Sucessos -gt 0) {
+    try { MesclarFila } catch { Write-Warning "Nao consegui mesclar a fila: $($_.Exception.Message)" }
 }
 
 # Remove o arquivo de lote consumido (igual a imagem temporaria
