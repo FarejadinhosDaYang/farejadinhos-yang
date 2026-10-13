@@ -353,6 +353,9 @@ Write-Host "Catalogo atualizado: $OfertasJsonPath"
 # HTML
 # ==========================================
 
+# Data em que o preco foi conferido (horario de Brasilia, UTC-3)
+$DataConferida = (Get-Date).ToUniversalTime().AddHours(-3).ToString("dd/MM/yyyy")
+
 $Html = @"
 <!doctype html>
 
@@ -683,8 +686,10 @@ $EmojiPaw PEGAR OFERTA
 
 
 <div class="note">
-Voc$([char]0xEA) ser$([char]0xE1) direcionado para a loja.
-Alguns links podem gerar comiss$([char]0xE3)o.
+Voc&ecirc; ser&aacute; direcionado para a loja.<br>
+Pre&ccedil;o conferido em $DataConferida &mdash; pode mudar na loja; vale sempre o pre&ccedil;o de l&aacute;.<br>
+Este &eacute; um link de afiliado: podemos ganhar uma pequena comiss&atilde;o, sem custo extra pra voc&ecirc;.<br>
+<a href="../../avisos/" style="color:inherit">Avisos e privacidade</a>
 </div>
 
 $CalcBlock
