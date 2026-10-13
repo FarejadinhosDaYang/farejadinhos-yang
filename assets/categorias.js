@@ -29,12 +29,15 @@
       "mascara facial", "argila facial", "vitamina c", "acido hialuronico", "niacinamida",
       "retinol", "acido salicilico", "anti idade", "antirrugas", "anti rugas", "anti acne",
       "antiacne", "cravos", "espinhas", "olheiras", "area dos olhos", "creme para olhos",
-      "clareador facial", "manchas", "peeling", "colageno facial", "facial", "rosto",
+      "clareador facial", "manchas no rosto", "manchas na pele", "peeling", "colageno facial", "facial", "rosto",
       "rolo de jade", "gua sha", "dermaroller", "principia", "cerave", "la roche posay",
-      "creamy", "sallve", "bioderma", "neutrogena", "episol", "isdin"
+      "creamy", "sallve", "bioderma", "neutrogena", "episol", "isdin",
+      "retinal", "booster facial", "ampola facial", "essencia facial", "celimax", "tightening",
+      "skin booster", "kokeshi", "cosrx", "anua"
     ],
     "Pet": [
-      "pet", "cachorro", "cao", "caes", "gato", "racao", "petisco", "coleira",
+      "pet", "cachorro", "cao", "caes", "gato", "racao", "petisco pet", "petisco para cachorro",
+      "petisco para gato", "petisco canino", "coleira",
       "arranhador", "areia sanitaria", "areia de gato", "comedouro", "bebedouro pet",
       "tapete higienico", "caminha pet", "cama pet", "brinquedo para cachorro",
       "brinquedo para gato", "focinheira", "peitoral pet"
@@ -84,7 +87,8 @@
       "conjunto masculino", "polo", "blazer"
     ],
     "Cozinha": [
-      "cozinha", "panela", "frigideira", "air fryer", "airfryer", "fritadeira",
+      "cozinha", "panela", "frigideira", "taca", "jogo de tacas", "ramekin", "molheira",
+      "petisqueira", "travessa", "saladeira", "sousplat", "jogo americano", "air fryer", "airfryer", "fritadeira",
       "forma", "assadeira", "pote", "marmita", "hermetico", "tigela", "bowl",
       "talher", "faqueiro", "faca", "fatiador", "ralador", "descascador",
       "liquidificador", "batedor", "mixer", "processador de alimentos",
@@ -109,7 +113,8 @@
       "capa de chuva", "saco a vacuo", "etiquetadora", "relogio de parede", "despertador"
     ],
     "Casa": [
-      "casa", "varal", "varal de roupa", "organizador", "cabide", "tapete", "cortina", "persiana",
+      "casa", "varal", "varal de roupa", "varal de chao", "varal dobravel", "varal de piso",
+      "maquina de lavar", "lava roupa", "lavanderia", "tira manchas", "pastilha de limpeza", "limpador", "organizador", "cabide", "tapete", "cortina", "persiana",
       "travesseiro", "lencol", "edredom", "cobertor", "manta", "toalha", "almofada",
       "luminaria", "lampada", "abajur", "aspirador", "vassoura", "rodo", "mop",
       "limpeza", "ventilador", "umidificador", "aromatizador", "difusor", "tomada",
@@ -125,6 +130,9 @@
 
   // Sem categoria clara: vai pra Utilidades (a categoria "Outros" não existe mais)
   const PADRAO = "Utilidades";
+
+  // Categorias de temporada (têm prioridade quando aparecem no nome)
+  const TEMPORADA = ["Natal"];
 
   function normalizar(texto){
     return " " + String(texto || "")
@@ -158,6 +166,9 @@
       for(const termo of regra.termos){
         if(termo.regex.test(texto)) pontos += termo.peso;
       }
+      // Categorias de temporada ganham de "toalha", "mesa", "pote"...:
+      // um item de Natal é de Natal, mesmo sendo de cozinha ou de casa.
+      if(TEMPORADA.includes(regra.categoria)) pontos *= 3;
       if(pontos > melhorPontos){
         melhor = regra.categoria;
         melhorPontos = pontos;
