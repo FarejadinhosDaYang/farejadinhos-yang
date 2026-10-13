@@ -189,40 +189,141 @@ function FimDaJanela([DateTimeOffset]$T) {
 }
 
 $Agora = [DateTimeOffset]::UtcNow
+# (só pra teste local: FAREJA_AGORA="2026-10-13T12:00:00Z")
+if ($env:FAREJA_AGORA) { $Agora = ParaDataUtc $env:FAREJA_AGORA }
 $Total = $Itens.Count
 
-$NoAr = ContarNoAr $CatalogoAtual $Agora
-$Imediatos = [Math]::Min($Total, [Math]::Max(0, $MINIMO_VITRINE - $NoAr))
-$Restantes = $Total - $Imediatos
+# ------------------------------------------
+# Agenda escolhida no painel (opcional, vem em cada item):
+#   agendaInicio = "AAAA-MM-DD" -> primeiro dia de liberação
+#   agendaPorDia = N            -> no máximo N ofertas por dia
+# Sem nada disso, segue o jeito antigo (enche hoje e transborda).
+# ------------------------------------------
+$AgendaInicio = $null
+$AgendaPorDia = 0
+$PrimeiroItem = $Itens[0]
+if ($PrimeiroItem.PSObject.Properties["agendaInicio"] -and -not [string]::IsNullOrWhiteSpace([string]$PrimeiroItem.agendaInicio)) {
+    try {
+        $D = [DateTime]::ParseExact(([string]$PrimeiroItem.agendaInicio).Trim(), "yyyy-MM-dd", [Globalization.CultureInfo]::InvariantCulture)
+        $AgendaInicio = [DateTimeOffset]::new($D.Year, $D.Month, $D.Day, $JANELA_INICIO, 0, 0, $FUSO_BRASILIA).ToUniversalTime()
+    } catch {
+        Write-Host "Data de inicio invalida no lote ('$($PrimeiroItem.agendaInicio)'), ignorando."
+    }
+}
+if ($PrimeiroItem.PSObject.Properties["agendaPorDia"]) {
+    $N = 0
+    if ([int]::TryParse(([string]$PrimeiroItem.agendaPorDia).Trim(), [ref]$N) -and $N -gt 0) { $AgendaPorDia = $N }
+}
 
 $Horarios = @()
 
-for ($k = 0; $k -lt $Imediatos; $k++) {
-    $Horarios += $Agora
+# Espalha $Qtd itens por igual entre $De e o fim da janela daquele dia
+function EspalharNoDia([DateTimeOffset]$De, [int]$Qtd, [bool]$PularPrimeiro) {
+    $Lista = @()
+    if ($Qtd -le 0) { return ,$Lista }
+    $Min = ((FimDaJanela $De) - $De).TotalMinutes
+    $Div = if ($PularPrimeiro) { $Qtd + 1 } else { $Qtd }
+    $Passo = [Math]::Max($INTERVALO_MINIMO_MIN, $Min / $Div)
+    $T = $De
+    if ($PularPrimeiro) { $T = $T.AddMinutes($Passo) }
+    for ($k = 0; $k -lt $Qtd; $k++) { $Lista += $T; $T = $T.AddMinutes($Passo) }
+    return ,$Lista
 }
 
-if ($Restantes -gt 0) {
+# Quantos cabem entre $De e o fim da janela, respeitando o intervalo mínimo
+function CabemNoDia([DateTimeOffset]$De, [bool]$PularPrimeiro) {
+    $Min = ((FimDaJanela $De) - $De).TotalMinutes
+    $Q = [Math]::Floor($Min / $INTERVALO_MINIMO_MIN)
+    if (-not $PularPrimeiro) { $Q += 1 }
+    return [int][Math]::Max(0, $Q)
+}
 
-    $T = DentroDaJanela $Agora
-    $MinutosNaJanela = ((FimDaJanela $T) - $T).TotalMinutes
+$ModoAgenda = ($AgendaInicio -ne $null) -or ($AgendaPorDia -gt 0)
+$ComecaHoje = ($AgendaInicio -eq $null) -or ($AgendaInicio -le (DentroDaJanela $Agora))
+if ($AgendaInicio -ne $null) {
+    $LocalHoje = $Agora.ToOffset($FUSO_BRASILIA).Date
+    $LocalInicio = $AgendaInicio.ToOffset($FUSO_BRASILIA).Date
+    $ComecaHoje = ($LocalInicio -le $LocalHoje)
+}
 
-    # Se já liberou alguma agora (e estamos dentro da janela), a
-    # próxima não sai junto: começa um intervalo depois. Se a janela
-    # de hoje já fechou, a primeira sai logo na abertura da próxima.
-    $EspacarDoImediato = ($Imediatos -gt 0) -and ($T -eq $Agora)
-    $Divisor = if ($EspacarDoImediato) { $Restantes + 1 } else { $Restantes }
-    $IntervaloMin = [Math]::Max($INTERVALO_MINIMO_MIN, $MinutosNaJanela / $Divisor)
+if (-not $ModoAgenda) {
 
-    if ($EspacarDoImediato) { $T = $T.AddMinutes($IntervaloMin) }
+    # ===== jeito antigo =====
+    $NoAr = ContarNoAr $CatalogoAtual $Agora
+    $Imediatos = [Math]::Min($Total, [Math]::Max(0, $MINIMO_VITRINE - $NoAr))
+    $Restantes = $Total - $Imediatos
 
-    for ($k = 0; $k -lt $Restantes; $k++) {
-        $T = DentroDaJanela $T
-        $Horarios += $T
-        $T = $T.AddMinutes($IntervaloMin)
+    for ($k = 0; $k -lt $Imediatos; $k++) {
+        $Horarios += $Agora
     }
-}
 
-Write-Host "No ar agora: $NoAr oferta(s). Liberando $Imediatos na hora e $Restantes ao longo da janela das ${JANELA_INICIO}h as ${JANELA_FIM}h."
+    if ($Restantes -gt 0) {
+
+        $T = DentroDaJanela $Agora
+        $MinutosNaJanela = ((FimDaJanela $T) - $T).TotalMinutes
+
+        # Se já liberou alguma agora (e estamos dentro da janela), a
+        # próxima não sai junto: começa um intervalo depois. Se a janela
+        # de hoje já fechou, a primeira sai logo na abertura da próxima.
+        $EspacarDoImediato = ($Imediatos -gt 0) -and ($T -eq $Agora)
+        $Divisor = if ($EspacarDoImediato) { $Restantes + 1 } else { $Restantes }
+        $IntervaloMin = [Math]::Max($INTERVALO_MINIMO_MIN, $MinutosNaJanela / $Divisor)
+
+        if ($EspacarDoImediato) { $T = $T.AddMinutes($IntervaloMin) }
+
+        for ($k = 0; $k -lt $Restantes; $k++) {
+            $T = DentroDaJanela $T
+            $Horarios += $T
+            $T = $T.AddMinutes($IntervaloMin)
+        }
+    }
+
+    Write-Host "No ar agora: $NoAr oferta(s). Liberando $Imediatos na hora e $Restantes ao longo da janela das ${JANELA_INICIO}h as ${JANELA_FIM}h."
+
+} else {
+
+    # ===== agenda escolhida no painel =====
+    $Falta = $Total
+    $NoAr = ContarNoAr $CatalogoAtual $Agora
+    $Imediatos = 0
+
+    if ($ComecaHoje) {
+        # Hoje: completa o mínimo da vitrine na hora (conta na cota do dia)
+        $Imediatos = [Math]::Min($Falta, [Math]::Max(0, $MINIMO_VITRINE - $NoAr))
+        if ($AgendaPorDia -gt 0) { $Imediatos = [Math]::Min($Imediatos, $AgendaPorDia) }
+        for ($k = 0; $k -lt $Imediatos; $k++) { $Horarios += $Agora }
+        $Falta -= $Imediatos
+
+        $De = DentroDaJanela $Agora
+        $MesmoDia = ($De.ToOffset($FUSO_BRASILIA).Date -eq $Agora.ToOffset($FUSO_BRASILIA).Date)
+        if ($MesmoDia -and $Falta -gt 0) {
+            $Pular = ($Imediatos -gt 0) -and ($De -eq $Agora)
+            $Cota = if ($AgendaPorDia -gt 0) { $AgendaPorDia - $Imediatos } else { $Falta }
+            $Qtd = [Math]::Min($Falta, [Math]::Min($Cota, (CabemNoDia $De $Pular)))
+            $Horarios += EspalharNoDia $De $Qtd $Pular
+            $Falta -= $Qtd
+        }
+        $Dia = [DateTimeOffset]::new($Agora.ToOffset($FUSO_BRASILIA).Date.AddDays(1).AddHours($JANELA_INICIO), $FUSO_BRASILIA).ToUniversalTime()
+    } else {
+        $Dia = $AgendaInicio
+    }
+
+    $DiasUsados = 0
+    while ($Falta -gt 0) {
+        $Cota = if ($AgendaPorDia -gt 0) { $AgendaPorDia } else { $Falta }
+        $Qtd = [Math]::Min($Falta, [Math]::Min($Cota, (CabemNoDia $Dia $false)))
+        $Horarios += EspalharNoDia $Dia $Qtd $false
+        $Falta -= $Qtd
+        $Dia = $Dia.AddDays(1)
+        $DiasUsados++
+        if ($DiasUsados -gt 400) { throw "Agenda longa demais" }
+    }
+
+    $Ultimo = ($Horarios | Sort-Object | Select-Object -Last 1).ToOffset($FUSO_BRASILIA)
+    $TxtInicio = if ($ComecaHoje) { "hoje" } else { $AgendaInicio.ToOffset($FUSO_BRASILIA).ToString("dd/MM") }
+    $TxtPorDia = if ($AgendaPorDia -gt 0) { "$AgendaPorDia por dia" } else { "o maximo por dia" }
+    Write-Host "Agenda: comecando $TxtInicio, $TxtPorDia, $Imediatos na hora. Ultima sai em $($Ultimo.ToString('dd/MM HH:mm'))."
+}
 
 $Sucessos = 0
 $Falhas = @()

@@ -88,6 +88,14 @@ button:disabled{opacity:.55;cursor:wait}
 .status.sucesso{display:block;background:#eafbea;color:#1a7d1a;border:1.5px dashed #cdeccd}
 .status.carregando{display:block;background:#fff6e9;color:var(--red-dark);border:1.5px dashed var(--orange)}
 
+
+.agenda{margin:18px 0 6px;padding:16px;border:1.5px dashed var(--line);border-radius:14px;background:var(--cream-2,#FFFAF1)}
+.agenda h3{margin:0 0 10px;font-family:'Baloo 2',sans-serif;font-size:17px;color:var(--red-dark)}
+.agenda .linha{display:flex;gap:14px;flex-wrap:wrap}
+.agenda .linha > div{flex:1 1 200px}
+.agenda select,.agenda input{width:100%;padding:10px;border:1.5px solid var(--line);border-radius:10px;font-size:15px;font-family:'Work Sans',sans-serif;background:#fff;color:var(--ink)}
+.agenda .previa{margin-top:10px;font-size:13.5px;color:var(--muted);line-height:1.5}
+.agenda .previa b{color:var(--ink)}
 </style>
 </head>
 <body>
@@ -98,7 +106,7 @@ button:disabled{opacity:.55;cursor:wait}
 
 <div class="header">
 <h1>📊 Importar planilha</h1>
-<p>Suba vários produtos de uma vez — as ofertas vão sendo liberadas aos poucos ao longo do dia, sozinhas.</p>
+<p>Suba vários produtos de uma vez — as ofertas vão sendo liberadas aos poucos, sozinhas, nos dias que você escolher.</p>
 </div>
 
 <div class="card">
@@ -138,6 +146,32 @@ button:disabled{opacity:.55;cursor:wait}
 </div>
 
 <div class="resumo" id="resumo"></div>
+
+<div class="agenda">
+<h3>📅 Quando liberar</h3>
+<div class="linha">
+<div>
+<label for="agendaQuando">Começar</label>
+<select id="agendaQuando" onchange="atualizarAgenda()">
+<option value="hoje">Hoje</option>
+<option value="amanha">Amanhã</option>
+<option value="data">Escolher data...</option>
+</select>
+<input type="date" id="agendaData" style="display:none;margin-top:8px" onchange="atualizarAgenda()">
+</div>
+<div>
+<label for="agendaPorDia">Quantas por dia</label>
+<select id="agendaPorDia" onchange="atualizarAgenda()">
+<option value="0">O máximo que couber</option>
+<option value="10">10 por dia</option>
+<option value="15" selected>15 por dia</option>
+<option value="20">20 por dia</option>
+<option value="25">25 por dia</option>
+</select>
+</div>
+</div>
+<div class="previa" id="agendaPrevia"></div>
+</div>
 
 <button type="button" id="btnEnviar" onclick="enviarLote()">🚀 Enviar lote</button>
 
@@ -691,6 +725,46 @@ function escapeHtml(texto){
     return div.innerHTML;
 }
 
+
+// ===== Agenda de liberação =====
+function dataISO(d){
+    return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+}
+function lerAgenda(){
+    const quando = document.getElementById("agendaQuando").value;
+    const campoData = document.getElementById("agendaData");
+    campoData.style.display = quando === "data" ? "block" : "none";
+    const hoje = new Date();
+    let inicio = "";
+    if(quando === "amanha"){ const d = new Date(hoje); d.setDate(d.getDate()+1); inicio = dataISO(d); }
+    if(quando === "data"){
+        if(!campoData.min) campoData.min = dataISO(hoje);
+        inicio = campoData.value || "";
+    }
+    const porDia = parseInt(document.getElementById("agendaPorDia").value, 10) || 0;
+    return { quando, inicio, porDia };
+}
+function atualizarAgenda(){
+    const el = document.getElementById("agendaPrevia");
+    if(!el) return;
+    const a = lerAgenda();
+    const total = (typeof itensValidos !== "undefined" && itensValidos) ? itensValidos.length : 0;
+    if(a.quando === "data" && !a.inicio){ el.innerHTML = "Escolha a data no calendário."; return; }
+    const quandoTxt = a.quando === "hoje" ? "hoje" : a.quando === "amanha" ? "amanhã" :
+        a.inicio.split("-").reverse().join("/");
+    if(!total){ el.innerHTML = "Começa <b>" + quandoTxt + "</b>, das 8h às 22h."; return; }
+    if(a.porDia > 0){
+        const dias = Math.ceil(total / a.porDia);
+        el.innerHTML = "Começa <b>" + quandoTxt + "</b>, " + a.porDia + " por dia, das 8h às 22h → os <b>" + total +
+            " produtos</b> duram uns <b>" + dias + " dia" + (dias > 1 ? "s" : "") + "</b>." +
+            (a.quando === "hoje" ? "<br>Se o site estiver com menos de 15 no ar, parte entra na hora pra completar." : "");
+    } else {
+        el.innerHTML = "Começa <b>" + quandoTxt + "</b> e solta o máximo que couber por dia (1 a cada 30 min, das 8h às 22h); o que sobrar passa pro dia seguinte.";
+    }
+}
+document.addEventListener("DOMContentLoaded", atualizarAgenda);
+setInterval(atualizarAgenda, 1500);
+
 async function enviarLote(){
 
     const senha = document.getElementById("senha").value;
@@ -707,7 +781,13 @@ async function enviarLote(){
         return;
     }
 
-    if(!confirm(`Enviar ${itensValidos.length} produto(s)? Eles vão ser liberados aos poucos ao longo do dia.`)){
+    const agenda = lerAgenda();
+    if(agenda.quando === "data" && !agenda.inicio){
+        alert("Escolha a data de início no calendário.");
+        return;
+    }
+
+    if(!confirm(`Enviar ${itensValidos.length} produto(s)?\n\n` + document.getElementById("agendaPrevia").innerText)){
         return;
     }
 
@@ -722,7 +802,9 @@ async function enviarLote(){
             ...i,
             precoAVista: temPrazo ? (i.precoAVista || i.preco) : "",
             precoAPrazo: temPrazo ? i.precoAPrazo : "",
-            parcelas: temPrazo && /^\d{1,2}$/.test(String(i.parcelas)) ? String(i.parcelas) : ""
+            parcelas: temPrazo && /^\d{1,2}$/.test(String(i.parcelas)) ? String(i.parcelas) : "",
+            agendaInicio: agenda.inicio,
+            agendaPorDia: String(agenda.porDia)
         };
     });
 
