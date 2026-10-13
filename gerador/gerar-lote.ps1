@@ -439,14 +439,23 @@ function MesclarFila {
         }
     }
 
-    $Fila = @($Cat | Where-Object {
+    # Também entram as liberadas há pouco (30 min): assim, se uma planilha
+    # encheu a vitrine na hora com uma categoria só e logo chega outra,
+    # a vitrine também se mistura. Os horários delas continuam "já liberado".
+    $Corte = $Agora.AddMinutes(-30)
+    $Recentes = @($Cat | Where-Object {
+        $_ -and $_.slug -and $_.liberacao -and ((ParaDataUtc $_.liberacao) -ge $Corte) -and ((ParaDataUtc $_.liberacao) -le $Agora)
+    })
+    $Futuras = @($Cat | Where-Object {
         $_ -and $_.slug -and $_.liberacao -and ((ParaDataUtc $_.liberacao) -gt $Agora)
     } | Sort-Object { (ParaDataUtc $_.liberacao).UtcTicks })
-    if ($Fila.Count -lt 2) { return }
+    $Fila = @($Recentes) + @($Futuras)
+    if ($Futuras.Count -lt 1 -or $Fila.Count -lt 2) { return }
+    $HorariosRecentes = @($Recentes | ForEach-Object { ParaDataUtc $_.liberacao } | Sort-Object { $_.UtcTicks })
 
     # Quantas por dia (os dias continuam os mesmos)
     $PorDia = [ordered]@{}
-    foreach ($O in $Fila) {
+    foreach ($O in $Futuras) {
         $K = (ParaDataUtc $O.liberacao).ToOffset($FUSO_BRASILIA).ToString("yyyy-MM-dd")
         $PorDia[$K] = 1 + [int]$PorDia[$K]
     }
@@ -469,8 +478,9 @@ function MesclarFila {
     }
     $Ordenados = @($Ordenados | Sort-Object Pos, Desempate | ForEach-Object { $_.O })
 
-    # Horários novos: em cada dia, espalha por igual na janela
-    $Novos = @()
+    # Horários novos: as recentes mantêm "já liberado"; o resto se
+    # espalha por igual na janela de cada dia
+    $Novos = @($HorariosRecentes)
     foreach ($K in $PorDia.Keys) {
         $D = [DateTime]::ParseExact($K, "yyyy-MM-dd", [Globalization.CultureInfo]::InvariantCulture)
         $Ini = [DateTimeOffset]::new($D.Year, $D.Month, $D.Day, $JANELA_INICIO, 0, 0, $FUSO_BRASILIA).ToUniversalTime()
