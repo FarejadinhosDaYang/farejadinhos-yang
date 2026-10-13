@@ -652,7 +652,7 @@ function trocarLojaCupom(i, loja){ cuponsDia[i].loja = loja; salvarCupons(); mos
 function mostrarCupons(){
     const lista = document.getElementById("listaCupons");
     lista.innerHTML = cuponsDia.map((c, i) => {
-        const lojas = ["", "Shopee", "Mercado Livre"].map(l =>
+        const lojas = ["", "Shopee", "Mercado Livre", "Amazon"].map(l =>
             `<option value="${l}"${l === c.loja ? " selected" : ""}>${l || "loja?"}</option>`).join("");
         return `<div class="chipCupom">
             <code>${escapeHtml(c.codigo)}</code>

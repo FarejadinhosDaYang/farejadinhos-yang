@@ -33,6 +33,7 @@
         var l = String(link || "").toLowerCase();
         if (/shopee|shp\.ee/.test(l)) return "Shopee";
         if (/mercadoli[bv]re|meli\.la|mlb-?\d|mercadolibre/.test(l)) return "Mercado Livre";
+        if (/amazon\.|amzn\.(to|com)|a\.co\//.test(l)) return "Amazon";
         return "";
     }
 
@@ -40,6 +41,7 @@
         var l = String(t || "").toLowerCase();
         if (/shopee/.test(l)) return "Shopee";
         if (/mercado ?livre|\bmeli\b|\bml\b/.test(l)) return "Mercado Livre";
+        if (/amazon/.test(l)) return "Amazon";
         return "";
     }
 

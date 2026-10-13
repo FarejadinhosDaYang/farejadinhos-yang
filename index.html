@@ -845,6 +845,63 @@ h1,h2,h3,.brand{
 
 .vitrine-extra[hidden]{ display:none; }
 
+/* ===== FILTRO DE LOJA ===== */
+
+.lojas-row{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex-wrap:wrap;
+    margin:0 0 12px;
+}
+
+.lojas-row .rotulo{
+    font-size:13px;
+    font-weight:700;
+    color:var(--muted);
+    margin-right:2px;
+}
+
+.btn-loja{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    font-family:'Work Sans',sans-serif;
+    font-size:13.5px;
+    font-weight:700;
+    color:var(--ink);
+    background:var(--cream-2);
+    border:1.5px solid var(--line);
+    border-radius:999px;
+    padding:7px 14px;
+    cursor:pointer;
+    transition:border-color .15s, background .15s;
+}
+
+.btn-loja:hover{ border-color:var(--muted); }
+.btn-loja .bolinha{ width:10px; height:10px; border-radius:50%; flex:none; }
+.btn-loja small{ font-weight:600; color:var(--muted); font-size:12px; }
+.btn-loja.ativo{ background:var(--ink); border-color:var(--ink); color:#fff; }
+.btn-loja.ativo small{ color:#E9D9C6; }
+.btn-loja:disabled{ opacity:.45; cursor:default; }
+.btn-loja:disabled:hover{ border-color:var(--line); }
+
+.tagLoja{
+    display:inline-block;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.2px;
+    padding:2px 7px;
+    border-radius:999px;
+    margin-bottom:6px;
+    margin-right:4px;
+    vertical-align:top;
+}
+.tagLoja.shopee{ background:#FFE8E1; color:#C23B16; }
+.tagLoja.ml{ background:#FFF6B8; color:#2D3277; }
+.tagLoja.amazon{ background:#E8EDF3; color:#232F3E; }
+.oferta-card .tagLoja{ align-self:flex-start; width:fit-content; }
+
 /* ===== FOOTER ===== */
 
 footer{
@@ -993,6 +1050,8 @@ footer a{ color:var(--red-dark); font-weight:600; text-decoration:none; }
 </div>
 </div>
 
+<div class="lojas-row" id="lojasRow"></div>
+
 <div class="categorias-row" id="categoriasRow"></div>
 
 <div class="grid" id="grid"></div>
@@ -1022,6 +1081,43 @@ const parametrosUrl = new URLSearchParams(window.location.search);
 const categoriaInicial = parametrosUrl.get("categoria") || "";
 const buscaInicial = parametrosUrl.get("q") || "";
 const ordemInicial = parametrosUrl.get("ordem") || "recentes";
+
+// ===== Lojas =====
+const LOJAS = [
+    { id: "shopee", nome: "Shopee", cor: "#EE4D2D", teste: /shopee|shp\.ee/i },
+    { id: "ml", nome: "Mercado Livre", cor: "#FFE600", teste: /mercadoli[vb]re|meli\.la|mercadolibre/i },
+    { id: "amazon", nome: "Amazon", cor: "#232F3E", teste: /amazon\.|amzn\.(to|com)|a\.co\//i }
+];
+function lojaDe(o){
+    const alvo = (o.loja || "") + " " + (o.link || "");
+    const l = LOJAS.find(l => l.teste.test(alvo));
+    return l ? l.id : "";
+}
+let lojaAtiva = (parametrosUrl.get("loja") || "").toLowerCase();
+if(!LOJAS.some(l => l.id === lojaAtiva)) lojaAtiva = "";
+
+function montarLojas(){
+    const row = document.getElementById("lojasRow");
+    const contagem = {};
+    ofertas.forEach(o => { const id = lojaDe(o); if(id) contagem[id] = (contagem[id] || 0) + 1; });
+    const botoes = [`<button type="button" class="btn-loja${lojaAtiva ? "" : " ativo"}" data-loja="">Todas</button>`]
+        .concat(LOJAS.map(l => {
+            const n = contagem[l.id] || 0;
+            return `<button type="button" class="btn-loja${lojaAtiva === l.id ? " ativo" : ""}" data-loja="${l.id}"${n || lojaAtiva === l.id ? "" : " disabled"}>
+                <span class="bolinha" style="background:${l.cor}"></span>${l.nome} <small>${n}</small></button>`;
+        }));
+    row.innerHTML = '<span class="rotulo">Loja:</span>' + botoes.join("");
+    row.querySelectorAll(".btn-loja").forEach(btn => {
+        btn.addEventListener("click", function(){
+            lojaAtiva = this.dataset.loja;
+            const url = new URL(window.location.href);
+            if(lojaAtiva) url.searchParams.set("loja", lojaAtiva); else url.searchParams.delete("loja");
+            history.replaceState(null, "", url);
+            montarLojas();
+            aplicarFiltros();
+        });
+    });
+}
 
 function escapeHtml(texto){
     const div = document.createElement("div");
@@ -1156,6 +1252,7 @@ async function carregar(){
     montarPodio();
     montarPrateleiras();
     montarCategorias();
+    montarLojas();
     aplicarFiltros();
 }
 
@@ -1418,15 +1515,21 @@ function aplicarFiltros(){
             bateFiltro = (o.categoria || "") === filtroAtivo.valor;
         }
 
-        return bateBusca && bateFiltro;
+        const bateLoja = !lojaAtiva || lojaDe(o) === lojaAtiva;
+
+        return bateBusca && bateFiltro && bateLoja;
     });
 
     // Buscando ou filtrando: vai direto aos resultados
-    const filtrando = termo.trim() !== "" || filtroAtivo.tipo !== "todas";
+    const filtrando = termo.trim() !== "" || filtroAtivo.tipo !== "todas" || !!lojaAtiva;
     document.getElementById("vitrineExtra").hidden = filtrando;
-    document.getElementById("tituloGrid").textContent = filtrando
-        ? (termo.trim() ? `🔎 Resultados pra “${document.getElementById("busca").value.trim()}”` : `🔥 ${filtroAtivo.valor}`)
-        : "🔥 Todas as ofertas";
+    const nomeLoja = lojaAtiva ? LOJAS.find(l => l.id === lojaAtiva).nome : "";
+    let titulo = "🔥 Todas as ofertas";
+    if(termo.trim()) titulo = `🔎 Resultados pra “${document.getElementById("busca").value.trim()}”`;
+    else if(filtroAtivo.tipo !== "todas") titulo = `🔥 ${filtroAtivo.valor}`;
+    else if(nomeLoja) titulo = `🔥 Ofertas ${nomeLoja}`;
+    if(nomeLoja && (termo.trim() || filtroAtivo.tipo !== "todas")) titulo += ` · ${nomeLoja}`;
+    document.getElementById("tituloGrid").textContent = titulo;
 
     render(ordenar(filtradas, document.getElementById("ordem").value));
 }
@@ -1475,9 +1578,10 @@ function cardHtml(o){
             ? `<div class="old">${escapeHtml(o.precoAntigo)}</div>`
             : "";
 
-        const categoriaHtml = o.categoria
+        const loja = LOJAS.find(l => l.id === lojaDe(o));
+        const categoriaHtml = (loja ? `<span class="tagLoja ${loja.id}">${loja.nome}</span>` : "") + (o.categoria
             ? `<div class="tagCategoria">${escapeHtml(o.categoria)}</div>`
-            : "";
+            : "");
 
         const cupomHtml = o.cupom
             ? `<div class="cupom">🏷️ ${escapeHtml(o.cupom)}</div>`
