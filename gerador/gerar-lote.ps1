@@ -67,6 +67,55 @@ if ($Itens.Count -eq 0) {
 
 
 # ==========================================
+# MODO "APLICAR CUPONS" (vem do painel do lote)
+#
+# Em vez de produtos novos, o lote pode trazer só cupons pra ofertas
+# que já existem: [{ "acao": "cupons", "slug": "...", "cupom": "..." }].
+# Atualiza o ofertas.json e o quadrinho de cupom da página da oferta,
+# sem regerar nada nem mexer nos horários.
+# ==========================================
+
+if ($Itens[0].PSObject.Properties["acao"] -and [string]$Itens[0].acao -eq "cupons") {
+
+    $Catalogo = @((Get-Content -LiteralPath $OfertasJsonPath -Raw -Encoding UTF8) | ConvertFrom-Json)
+    $PorSlug = @{}
+    foreach ($O in $Catalogo) { if ($O -and $O.slug) { $PorSlug[[string]$O.slug] = $O } }
+
+    $Tag = [char]::ConvertFromUtf32(0x1F3F7)
+    $Feitos = 0
+
+    foreach ($It in $Itens) {
+        $Slug = [string]$It.slug
+        if (-not $PorSlug.ContainsKey($Slug)) { Write-Warning "Oferta nao encontrada: $Slug"; continue }
+        $Cupom = ([string]$It.cupom).Trim()
+        if ($Cupom -notmatch '^[A-Za-z0-9_-]{0,30}$') { Write-Warning "Cupom invalido para $Slug"; continue }
+
+        $O = $PorSlug[$Slug]
+        if ($O.PSObject.Properties["cupom"]) { $O.cupom = $Cupom } else { $O | Add-Member -NotePropertyName cupom -NotePropertyValue $Cupom }
+
+        $Pagina = Join-Path $Site (Join-Path "ofertas" (Join-Path $Slug "index.html"))
+        if (Test-Path -LiteralPath $Pagina) {
+            $Html = [System.IO.File]::ReadAllText($Pagina, [System.Text.Encoding]::UTF8)
+            $Bloco = if ($Cupom) { '<div class="coupon"><b>' + $Tag + ' CUPOM:</b> ' + $Cupom + '</div>' } else { '' }
+            if ($Html -match '<div class="coupon">.*?</div>') {
+                $Html = [regex]::Replace($Html, '<div class="coupon">.*?</div>', [System.Text.RegularExpressions.MatchEvaluator]{ param($m) $Bloco }, 1)
+            } elseif ($Bloco) {
+                $Html = [regex]::Replace($Html, '(<div class="price">[\s\S]*?</div>)', [System.Text.RegularExpressions.MatchEvaluator]{ param($m) $m.Value + "`n`n" + $Bloco }, 1)
+            }
+            [System.IO.File]::WriteAllText($Pagina, $Html, (New-Object System.Text.UTF8Encoding($false)))
+        }
+        $Feitos++
+        Write-Host "Cupom: $Slug -> '$Cupom'"
+    }
+
+    $Json = $Catalogo | ConvertTo-Json -Depth 5 -AsArray
+    [System.IO.File]::WriteAllText($OfertasJsonPath, $Json, (New-Object System.Text.UTF8Encoding($false)))
+    Write-Host "Cupons aplicados em $Feitos oferta(s)."
+    Remove-Item -LiteralPath $CaminhoAbs -Force -ErrorAction SilentlyContinue
+    exit 0
+}
+
+# ==========================================
 # SLUGS JÁ EXISTENTES (evitar colisao)
 # ==========================================
 

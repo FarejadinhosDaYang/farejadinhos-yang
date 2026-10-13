@@ -156,6 +156,11 @@ button:disabled{opacity:.55;cursor:wait}
 </div>
 <div class="status" id="statusCupons"></div>
 <div class="listaCupons" id="listaCupons"></div>
+<div class="aplicarPublicadas" id="aplicarPublicadas" style="display:none">
+<button type="button" id="btnAplicarPublicadas" onclick="aplicarNasPublicadas()">🔁 Aplicar estes cupons nas ofertas já publicadas</button>
+<div class="previa" style="margin-top:8px;font-size:12.5px;color:var(--muted);line-height:1.5">Vale pras ofertas que estão no ar e as que estão na fila. Cupom que você colocou à mão (que não está na lista acima) não é trocado.</div>
+<div class="status" id="statusPublicadas"></div>
+</div>
 </div>
 
 <div class="card" id="cardPreview" style="display:none">
@@ -662,6 +667,7 @@ function mostrarCupons(){
             <button type="button" onclick="removerCupom(${i})" title="Tirar">✕</button>
         </div>`;
     }).join("");
+    document.getElementById("aplicarPublicadas").style.display = cuponsDia.length ? "block" : "none";
     if(typeof itensProcessados !== "undefined" && itensProcessados.length){ montarPreview(); }
 }
 
@@ -678,6 +684,66 @@ function aplicarCupons(){
 }
 
 document.addEventListener("DOMContentLoaded", carregarCupons);
+
+// ===== Aplicar cupons nas ofertas que já estão no site / na fila =====
+async function aplicarNasPublicadas(){
+    const senha = document.getElementById("senha").value;
+    const status = document.getElementById("statusPublicadas");
+    const btn = document.getElementById("btnAplicarPublicadas");
+    if(!senha){ alert("Digite a senha do painel primeiro (lá em cima)."); return; }
+
+    btn.disabled = true; btn.textContent = "Farejando as ofertas...";
+    status.className = "status"; status.textContent = "";
+    try{
+        const resp = await fetch("../ofertas.json?t=" + Date.now(), { cache: "no-store" });
+        const ofertas = await resp.json();
+        const agora = Date.now();
+        const codigosDoDia = new Set(cuponsDia.map(c => c.codigo));
+        const mudancas = [];
+        let comCupom = 0, semCupom = 0, manuais = 0;
+
+        ofertas.forEach(o => {
+            if(!o || !o.slug) return;
+            const inicio = Date.parse(o.liberacao || o.data || "");
+            if(isFinite(inicio) && agora - inicio > 72 * 3600 * 1000) return;   // já expirou
+            const atual = (o.cupom || "").trim();
+            if(atual && !codigosDoDia.has(atual.toUpperCase())){ manuais++; return; }   // escolhido à mão
+            const ops = FarejadinhosCupons.opcoes(cuponsDia, o.preco, o.link, "");
+            const melhor = ops.length ? ops[0].cupom.codigo : "";
+            if(melhor) comCupom++; else semCupom++;
+            if(melhor !== atual) mudancas.push({ acao: "cupons", slug: o.slug, cupom: melhor, produto: o.produto });
+        });
+
+        if(!mudancas.length){
+            status.className = "status sucesso";
+            status.textContent = "✅ Nada pra mudar: as ofertas já estão com o melhor cupom que se encaixa.";
+            return;
+        }
+
+        const ganham = mudancas.filter(m => m.cupom).length;
+        const perdem = mudancas.length - ganham;
+        if(!confirm(`${ganham} oferta(s) vão ganhar ou trocar de cupom` +
+            (perdem ? ` e ${perdem} vão ficar sem (o cupom de antes não serve mais)` : "") +
+            (manuais ? `.\n${manuais} com cupom escolhido à mão não vão mudar` : "") +
+            ".\n\nAplicar?")) return;
+
+        const dados = new FormData();
+        dados.append("senha", senha);
+        dados.append("itens", JSON.stringify(mudancas));
+        const r = await fetch(WORKER_URL + "/lote", { method: "POST", body: dados });
+        const texto = await r.text();
+        if(!r.ok) throw new Error(texto);
+
+        status.className = "status sucesso";
+        status.textContent = `✅ Enviado! ${ganham} oferta(s) com cupom novo. Leva uns 2-3 minutos pra aparecer no site.`;
+    }catch(erro){
+        status.className = "status erro";
+        status.textContent = "❌ " + erro.message;
+    }finally{
+        btn.disabled = false; btn.textContent = "🔁 Aplicar estes cupons nas ofertas já publicadas";
+    }
+}
+
 
 function montarPreview(){
 
