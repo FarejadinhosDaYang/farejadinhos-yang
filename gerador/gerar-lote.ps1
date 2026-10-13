@@ -192,7 +192,7 @@ function SlugUnico([string]$Base) {
 # ==========================================
 
 $MINIMO_VITRINE = 15
-$META_POR_CATEGORIA = 5   # categorias com menos que isso no ar passam na frente da fila
+$META_POR_CATEGORIA = 8   # categorias com menos que isso no ar passam na frente da fila
 $HORAS_FRESCA = 24
 $HORAS_MAXIMA = 72
 $FUSO_BRASILIA = [TimeSpan]::FromHours(-3)   # o Brasil não tem mais horário de verão
