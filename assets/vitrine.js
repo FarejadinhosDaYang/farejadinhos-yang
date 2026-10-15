@@ -19,6 +19,15 @@
  *    segurando a categoria até chegar oferta nova. O limpar-ofertas.ps1
  *    só tira do ofertas.json as que não aparecem mais.
  *
+ * 6. Categoria com MENOS DE 8 no ar não espera a vez na fila: as
+ *    próximas ofertas agendadas DELA aparecem na hora até chegar a 8
+ *    (como se cada categoria tivesse a sua própria fila). O total do
+ *    site não tem teto: são ~10 por categoria, então quanto mais
+ *    categorias, mais ofertas no ar.
+ * 7. Categorias de ÉPOCA (ex.: Natal) só aparecem dentro do período
+ *    delas (TEMPORADAS, abaixo, repete todo ano). Fora dele somem do
+ *    site e do menu, e a vitrine fica com as outras categorias.
+ *
  * Se mudar os números aqui, mude também no gerador/limpar-ofertas.ps1
  * e no gerador/gerar-lote.ps1.
  * ========================================== */
@@ -29,6 +38,27 @@
   const HORAS_FRESCA = 24;
   const HORAS_MAXIMA = 72;
   const META_CATEGORIA = 10;
+  const MINIMO_CATEGORIA = 8;
+
+  // Categorias de época: só aparecem entre "inicio" e "fim" (mês-dia,
+  // horário de Brasília, todo ano). Pra adicionar outra, ex.:
+  //   "pascoa": { inicio: "03-01", fim: "04-20" }
+  // (nome da categoria sem acento e em minúsculas)
+  const TEMPORADAS = {
+    "natal": { inicio: "09-01", fim: "12-25" }
+  };
+
+  function chaveCategoria(c){
+    return String(c || "").trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
+
+  function foraDeEpoca(oferta, agora){
+    const t = TEMPORADAS[chaveCategoria(oferta.categoria)];
+    if(!t) return false;
+    const br = new Date(agora.getTime() - 3 * 60 * 60 * 1000);   // Brasília (UTC-3)
+    const md = String(br.getUTCMonth() + 1).padStart(2, "0") + "-" + String(br.getUTCDate()).padStart(2, "0");
+    return t.inicio <= t.fim ? !(md >= t.inicio && md <= t.fim) : !(md >= t.inicio || md <= t.fim);
+  }
 
   function inicio(oferta){
     const d = new Date(oferta.liberacao || oferta.data);
@@ -46,7 +76,7 @@
 
     agora = agora || new Date();
 
-    const validas = (Array.isArray(todas) ? todas : [todas]).filter(o => o && o.slug);
+    const validas = (Array.isArray(todas) ? todas : [todas]).filter(o => o && o.slug && !foraDeEpoca(o, agora));
 
     const liberadas = validas.filter(o => idadeHoras(o, agora) >= 0);
 
@@ -88,18 +118,39 @@
         .forEach(o => reserva.push(o));
     }
 
+    // Categoria com menos de MINIMO_CATEGORIA no ar: puxa as próximas
+    // agendadas dela (as que sairiam primeiro) pra aparecer já
+    const noAr = {};
+    frescas.concat(reserva).forEach(o => { noAr[categoria(o)] = 1 + (noAr[categoria(o)] || 0); });
+    const adiantadas = [];
+    const agendadasPorCat = {};
+    validas.filter(o => idadeHoras(o, agora) < 0).forEach(o => {
+      (agendadasPorCat[categoria(o)] = agendadasPorCat[categoria(o)] || []).push(o);
+    });
+    Object.keys(agendadasPorCat).forEach(cat => {
+      const faltam = MINIMO_CATEGORIA - (noAr[cat] || 0);
+      if(faltam <= 0) return;
+      agendadasPorCat[cat]
+        .sort((a, b) => idadeHoras(b, agora) - idadeHoras(a, agora))
+        .slice(0, faltam)
+        .forEach(o => adiantadas.push(o));
+    });
+
     return {
-      visiveis: frescas.concat(reserva),
+      visiveis: frescas.concat(reserva, adiantadas),
       frescas: new Set(frescas),
-      reserva: new Set(reserva)
+      reserva: new Set(reserva),
+      adiantadas: new Set(adiantadas)
     };
   }
 
   // status de uma oferta, pro painel:
-  // "agendada" | "fresca" | "reserva" | "fora" (reserva que não coube) | "expirada"
+  // "agendada" | "adiantada" | "fresca" | "reserva" | "fora" (reserva que não coube) | "expirada" | "foraDeEpoca"
   function status(oferta, selecao, agora){
     agora = agora || new Date();
     const h = idadeHoras(oferta, agora);
+    if(foraDeEpoca(oferta, agora)) return "foraDeEpoca";
+    if(selecao.adiantadas && selecao.adiantadas.has(oferta)) return "adiantada";
     if(h < 0) return "agendada";
     if(selecao.frescas.has(oferta)) return "fresca";
     if(selecao.reserva.has(oferta)) return "reserva";
@@ -108,8 +159,8 @@
   }
 
   window.FarejadinhosVitrine = {
-    MINIMO_VITRINE, HORAS_FRESCA, HORAS_MAXIMA, META_CATEGORIA,
-    inicio, idadeHoras, selecionar, status
+    MINIMO_VITRINE, HORAS_FRESCA, HORAS_MAXIMA, META_CATEGORIA, MINIMO_CATEGORIA, TEMPORADAS,
+    inicio, idadeHoras, selecionar, status, foraDeEpoca
   };
 
 })();

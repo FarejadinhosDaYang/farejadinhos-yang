@@ -204,6 +204,10 @@ function render(){
 
       const statusBadge = semDados
         ? `<span class="badge badgeExpirada">⚠️ Sem dados</span>`
+        : situacao === "adiantada"
+          ? `<span class="badge badgeAtiva">⚡ No ar antes da hora · completando a categoria (mín. ${FarejadinhosVitrine.MINIMO_CATEGORIA})</span>`
+        : situacao === "foraDeEpoca"
+          ? `<span class="badge badgeExpirada">🎄 Fora de época · volta na próxima temporada</span>`
         : situacao === "agendada"
           ? `<span class="badge badgeAgendada">🕒 Agendada pra ${formatarDataHora(o.liberacao)}</span>`
           : situacao === "fresca"
