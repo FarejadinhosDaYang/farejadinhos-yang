@@ -209,7 +209,7 @@ function render(){
           : situacao === "fresca"
             ? `<span class="badge badgeAtiva">🟢 No ar · nova por mais ${restante.toFixed(1)}h</span>`
             : situacao === "reserva"
-              ? `<span class="badge badgeAgendada">🟡 No ar · segurando o mínimo de ${FarejadinhosVitrine.MINIMO_VITRINE}</span>`
+              ? `<span class="badge badgeAgendada">🟡 No ar · segurando a categoria (mín. ${FarejadinhosVitrine.META_CATEGORIA})</span>`
               : situacao === "fora"
                 ? `<span class="badge badgeExpirada">⏸️ Fora do ar · reserva (volta se faltar oferta)</span>`
                 : `<span class="badge badgeExpirada">⚪ Expirada (mais de 3 dias)</span>`;

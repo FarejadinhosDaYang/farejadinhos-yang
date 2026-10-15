@@ -26,6 +26,11 @@ $ErrorActionPreference = "Stop"
 
 # Mesmo valor de HORAS_MAXIMA em assets/vitrine.js
 $HORAS_EXPIRACAO = 72
+# Mesmos valores de HORAS_FRESCA e META_CATEGORIA em assets/vitrine.js:
+# categoria sem nada na fila segura as suas ofertas mais novas (até a
+# meta) mesmo depois de 72h, até chegar oferta nova dela.
+$HORAS_FRESCA = 24
+$META_CATEGORIA = 10
 
 # Converte o valor de data vindo do JSON (o ConvertFrom-Json pode
 # entregar texto ou já um DateTime) pra um horário UTC confiável.
@@ -60,6 +65,38 @@ if ([string]::IsNullOrWhiteSpace($Texto)) {
 $Ofertas = @($Texto | ConvertFrom-Json)
 $Agora = [DateTimeOffset]::UtcNow
 
+# ---- ofertas que seguram uma categoria sem fila (não podem sair) ----
+function InicioDe($O) {
+    $I = ParaDataUtc $O.liberacao
+    if (-not $I) { $I = ParaDataUtc $O.data }
+    return $I
+}
+function CategoriaDe($O) { if ($O.categoria -and ([string]$O.categoria).Trim()) { return ([string]$O.categoria).Trim() } else { return "-" } }
+
+$ComFila = @{}
+$PorCategoria = @{}
+foreach ($O in $Ofertas) {
+    if (-not $O -or -not $O.slug) { continue }
+    $I = InicioDe $O
+    if (-not $I) { continue }
+    $C = CategoriaDe $O
+    if ($I -gt $Agora) { $ComFila[$C] = $true; continue }
+    if (-not $PorCategoria.ContainsKey($C)) { $PorCategoria[$C] = New-Object System.Collections.ArrayList }
+    [void]$PorCategoria[$C].Add($O)
+}
+$Segurando = @{}
+foreach ($C in $PorCategoria.Keys) {
+    if ($ComFila.ContainsKey($C)) { continue }
+    $Lista = @($PorCategoria[$C])
+    $Frescas = @($Lista | Where-Object { ($Agora - (InicioDe $_)).TotalHours -le $HORAS_FRESCA }).Count
+    $Faltam = $META_CATEGORIA - $Frescas
+    if ($Faltam -le 0) { continue }
+    $Lista | Where-Object { ($Agora - (InicioDe $_)).TotalHours -gt $HORAS_FRESCA } |
+        Sort-Object { (InicioDe $_).UtcTicks } -Descending |
+        Select-Object -First $Faltam |
+        ForEach-Object { $Segurando[[string]$_.slug] = $true }
+}
+
 $Mantidas = @()
 $Removidas = @()
 
@@ -85,7 +122,7 @@ foreach ($Oferta in $Ofertas) {
 
     $Horas = ($Agora - $DataOferta).TotalHours
 
-    if ($Horas -le $HORAS_EXPIRACAO) {
+    if ($Horas -le $HORAS_EXPIRACAO -or $Segurando.ContainsKey([string]$Oferta.slug)) {
         $Mantidas += $Oferta
     }
     else {
