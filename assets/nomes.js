@@ -116,7 +116,7 @@
       t = tirarPontaSolta(t.split(" ")).join(" ");
     }
     const virg = t.lastIndexOf(",");
-    if(virg > 15 && t.length - virg < 14) t = t.slice(0, virg);
+    if(virg > 15 && t.length - virg < 14 && !/\d/.test(t.charAt(virg - 1))) t = t.slice(0, virg);
 
     // Se sobrou parêntese aberto no corte
     if((t.match(/\(/g) || []).length > (t.match(/\)/g) || []).length){
