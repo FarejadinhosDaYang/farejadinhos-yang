@@ -1,0 +1,67 @@
+name: Stories do dia
+
+# Todo dia de manhã gera os 3 vídeos do TOP 3 (o mesmo pódio da página
+# inicial) e publica como downloads da release "stories-do-dia" — sempre
+# substituindo os do dia anterior, pra não pesar o repositório.
+# A página painel/stories.html mostra os vídeos com botão de baixar.
+
+on:
+  schedule:
+    # 10:52 UTC = 7:52 em Brasília (prontos antes das 8h)
+    - cron: "52 10 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stories-do-dia
+  cancel-in-progress: true
+
+jobs:
+  stories:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Baixar repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar ferramentas (video, emoji, navegador)
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q ffmpeg fonts-noto-color-emoji
+          python3 -m pip install --quiet playwright numpy pillow
+          python3 -m playwright install --with-deps chromium
+
+      - name: Gerar os 3 videos
+        run: |
+          python3 gerador/stories/gerar_stories.py "$GITHUB_WORKSPACE" saida-stories
+          ls -la saida-stories
+
+      - name: Publicar videos (substitui os de ontem)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view stories-do-dia >/dev/null 2>&1 || \
+            gh release create stories-do-dia --title "Stories do dia" \
+              --notes "Videos do TOP 3 do dia, gerados sozinhos toda manha. Baixe pelo painel: painel/stories.html" \
+              --latest=false
+          gh release upload stories-do-dia saida-stories/top1.mp4 saida-stories/top2.mp4 saida-stories/top3.mp4 --clobber
+
+      - name: Salvar a lista do dia no site
+        run: |
+          mkdir -p stories
+          cp saida-stories/stories.json stories/stories.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add stories/stories.json
+          if git diff --cached --quiet; then
+            echo "Nada para commitar."
+          else
+            git commit -m "Stories do dia gerados"
+            for i in 1 2 3 4; do
+              git pull --rebase && git push && break
+              sleep $((5 * i))
+            done
+          fi

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stories do dia | Painel Farejadinhos</title>
+<link rel="icon" href="../assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+    --red:#E5232E; --red-dark:#C21A24; --orange:#F7941D; --cream:#FDF3E3; --cream-2:#FFFAF1;
+    --ink:#2B1B12; --muted:#8A7563; --line:#F0DFC4;
+}
+*{box-sizing:border-box}
+body{margin:0;padding:20px 16px 40px;background:var(--cream);font-family:'Work Sans',Arial,sans-serif;color:var(--ink)}
+.container{max-width:1000px;margin:auto}
+.voltar{display:inline-block;margin-bottom:16px;color:var(--red-dark);font-weight:700;text-decoration:none;font-size:14px}
+h1{font-family:'Baloo 2',sans-serif;color:var(--red-dark);font-size:26px;margin:0 0 4px}
+.sub{color:var(--muted);font-size:14px;line-height:1.5;margin:0 0 18px}
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px}
+.story{background:var(--cream-2);border:1.5px solid var(--line);border-radius:20px;padding:14px;display:flex;flex-direction:column;gap:10px}
+.story video{width:100%;aspect-ratio:9/16;border-radius:14px;background:#2B1B12;display:block}
+.pos{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:18px;color:var(--red-dark)}
+.nome{font-weight:600;font-size:14px;line-height:1.35}
+.preco{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:20px;color:var(--red-dark)}
+.botoes{display:grid;gap:8px}
+.botoes a,.botoes button{display:block;text-align:center;border:0;border-radius:12px;padding:12px;font:700 14px 'Work Sans',Arial,sans-serif;cursor:pointer;text-decoration:none}
+.baixar{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff}
+.sec{background:#fff;color:var(--red-dark);border:1.5px solid var(--red) !important}
+.dica{margin-top:22px;padding:14px 16px;border:1.5px dashed var(--line);border-radius:14px;font-size:13.5px;line-height:1.6;color:var(--ink);background:var(--cream-2)}
+.aviso{padding:14px;border-radius:12px;background:#fff6e9;border:1.5px solid var(--orange);font-size:14px}
+.copiado{background:#1d6b33 !important;color:#fff !important;border-color:#1d6b33 !important}
+</style>
+</head>
+<body>
+<div class="container">
+
+<a class="voltar" href="index.html">← Voltar pro painel</a>
+
+<h1>🎬 Stories do dia</h1>
+<p class="sub" id="quando">Carregando…</p>
+
+<div class="grade" id="grade"></div>
+
+<div class="dica">
+<b>Como postar:</b> baixe o vídeo, abra no Instagram como story e adicione a figurinha de <b>Link</b> com o endereço da oferta (botão "Copiar link da oferta"). Música dá pra pôr direto no Instagram.<br>
+Os vídeos são gerados sozinhos <b>todo dia às 7h52</b> com o pódio da página inicial naquela hora.
+Pra gerar de novo agora (ex.: depois de subir ofertas novas), abra
+<a href="https://github.com/FarejadinhosDaYang/farejadinhos-yang/actions/workflows/stories-do-dia.yml" target="_blank" rel="noopener">GitHub → Actions → Stories do dia</a>
+e clique em <b>Run workflow</b> — em uns 5 minutos os vídeos novos aparecem aqui.
+</div>
+
+</div>
+
+<script>
+const RELEASE = "https://github.com/FarejadinhosDaYang/farejadinhos-yang/releases/download/stories-do-dia/";
+const MEDALHAS = ["🥇", "🥈", "🥉"];
+
+function esc(t){ const d = document.createElement("div"); d.textContent = t == null ? "" : String(t); return d.innerHTML; }
+
+async function copiar(texto, botao){
+    try{ await navigator.clipboard.writeText(texto); }
+    catch(e){
+        const t = document.createElement("textarea"); t.value = texto; document.body.appendChild(t);
+        t.select(); document.execCommand("copy"); t.remove();
+    }
+    const antes = botao.textContent;
+    botao.textContent = "✅ Copiado!"; botao.classList.add("copiado");
+    setTimeout(() => { botao.textContent = antes; botao.classList.remove("copiado"); }, 1800);
+}
+
+async function carregar(){
+    const quando = document.getElementById("quando");
+    const grade = document.getElementById("grade");
+    let dados;
+    try{
+        const r = await fetch("../stories/stories.json?t=" + Date.now(), { cache: "no-store" });
+        if(!r.ok) throw new Error();
+        dados = await r.json();
+    }catch(e){
+        quando.innerHTML = "";
+        grade.innerHTML = '<div class="aviso">Ainda não tem stories gerados. Eles saem sozinhos todo dia às 7h52 — ou rode agora pelo link de "Run workflow" aqui embaixo.</div>';
+        return;
+    }
+    const data = new Date(dados.gerado);
+    quando.textContent = "Gerados em " + data.toLocaleDateString("pt-BR") + " às " +
+        data.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" }) + " — o TOP 3 do site naquela hora.";
+    const v = encodeURIComponent(dados.gerado);
+
+    grade.innerHTML = dados.itens.map((s, i) => {
+        const url = RELEASE + s.arquivo;
+        const legenda = `${MEDALHAS[i] || "🔥"} TOP ${s.posicao} do dia: ${s.nome} por ${s.preco}` +
+            (s.cupom ? ` (cupom ${s.cupom})` : "") + ` 🐾 Link no story!`;
+        return `<div class="story">
+            <div class="pos">${MEDALHAS[i] || ""} TOP ${s.posicao} do dia</div>
+            <video src="${url}?v=${v}" controls playsinline preload="metadata"></video>
+            <div class="nome">${esc(s.produto)}</div>
+            <div class="preco">${esc(s.preco)}${s.cupom ? ` <small style="font-size:13px;color:#B26200">🏷️ ${esc(s.cupom)}</small>` : ""}</div>
+            <div class="botoes">
+                <a class="baixar" href="${url}?v=${v}">⬇️ Baixar vídeo</a>
+                <button class="sec" data-copiar="${esc(s.pagina)}">🔗 Copiar link da oferta</button>
+                <button class="sec" data-copiar="${esc(legenda)}">📝 Copiar texto sugerido</button>
+            </div>
+        </div>`;
+    }).join("");
+
+    grade.querySelectorAll("[data-copiar]").forEach(b => b.addEventListener("click", () => copiar(b.dataset.copiar, b)));
+}
+
+carregar();
+</script>
+</body>
+</html>

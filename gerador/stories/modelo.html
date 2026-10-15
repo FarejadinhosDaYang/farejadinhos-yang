@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="UTF-8">
+<style>
+@font-face{ font-family:"Baloo"; src:url(fonts/Baloo2.ttf); font-weight:400 800; }
+@font-face{ font-family:"Work"; src:url(fonts/WorkSans.ttf); font-weight:100 900; }
+
+:root{
+  --red:#E5232E; --red-dark:#C21A24; --orange:#F7941D; --cream:#FDF3E3; --cream2:#FFFAF1; --ink:#2B1B12; --yellow:#FFD34D;
+}
+*{ box-sizing:border-box; margin:0; }
+html,body{ width:1080px; height:1920px; overflow:hidden; background:var(--red); }
+.palco{
+  position:relative; width:1080px; height:1920px; overflow:hidden;
+  background:radial-gradient(circle at 50% 30%, #F0402F 0%, var(--red) 45%, #A8131B 100%);
+  font-family:"Work",sans-serif; color:var(--ink);
+}
+
+/* patinhas ao fundo, andando devagar */
+.patas{ position:absolute; inset:-200px; opacity:.13;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 40 40'%3E%3Cg fill='%23fff'%3E%3Cellipse cx='20' cy='27' rx='10' ry='8.5'/%3E%3Cellipse cx='8.5' cy='15' rx='4.2' ry='5.2'/%3E%3Cellipse cx='16' cy='9' rx='4.2' ry='5.4'/%3E%3Cellipse cx='24.5' cy='9' rx='4.2' ry='5.4'/%3E%3Cellipse cx='31.5' cy='15' rx='4.2' ry='5.2'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:180px 180px; transform:rotate(-14deg);
+  animation:andar 13s linear both; }
+@keyframes andar{ from{ background-position:0 0; } to{ background-position:360px -720px; } }
+
+/* ---------- topo: selo da marca ---------- */
+.marca{ position:absolute; top:70px; left:0; right:0; text-align:center;
+  font-family:"Baloo"; font-weight:800; font-size:46px; color:#fff; letter-spacing:.5px;
+  animation:descer .7s cubic-bezier(.2,1.4,.4,1) .1s both, sumir .3s ease-in 9.0s forwards; }
+.marca span{ color:#FFE2C2; }
+@keyframes descer{ from{ transform:translateY(-160px); opacity:0; } to{ transform:none; opacity:1; } }
+
+/* ---------- cena 1: Yang entra e fala ---------- */
+.yang{ position:absolute; width:620px; left:230px; top:760px; transform-origin:50% 100%;
+  filter:drop-shadow(0 26px 30px rgba(60,0,0,.45));
+  animation:
+    yangEntra .8s cubic-bezier(.2,1.5,.4,1) .3s both,
+    yangCanto .7s cubic-bezier(.6,0,.3,1) 2.9s forwards,
+    yangBalanca 1.6s ease-in-out 3.6s infinite; }
+.yang-sobe{ position:absolute; inset:0; animation:abrirEspaco .5s ease-in-out 9.1s both; }
+@keyframes yangEntra{ from{ transform:translateY(900px) scale(.6); } to{ transform:none; } }
+@keyframes yangCanto{ to{ transform:translate(330px,-1050px) scale(.36) rotate(8deg); } }
+@keyframes yangBalanca{
+  0%,100%{ transform:translate(330px,-1050px) scale(.36) rotate(8deg); }
+  50%{ transform:translate(330px,-1062px) scale(.36) rotate(4deg); } }
+
+.balao{ position:absolute; background:#fff; border-radius:44px; padding:34px 46px;
+  font-family:"Baloo"; font-weight:800; color:var(--ink); line-height:1.05; text-align:center;
+  box-shadow:0 18px 40px rgba(60,0,0,.35); }
+.balao::after{ content:""; position:absolute; width:56px; height:56px; background:#fff; transform:rotate(45deg); }
+.b1{ left:150px; right:150px; top:410px; font-size:76px;
+  animation:pop .5s cubic-bezier(.2,1.6,.4,1) .9s both, sumir .3s ease-in 2.75s forwards; }
+.b1::after{ left:calc(50% - 28px); bottom:-24px; }
+.b1 small{ display:block; font-size:44px; color:var(--red-dark); margin-top:8px; }
+.b2{ left:330px; top:300px; font-size:52px; padding:24px 34px;
+  animation:pop .45s cubic-bezier(.2,1.6,.4,1) 6.9s both, sumir .3s ease-in 9.1s forwards; }
+.b2::after{ right:-18px; top:30px; }
+@keyframes pop{ from{ transform:scale(0); opacity:0; } to{ transform:none; opacity:1; } }
+@keyframes sumir{ to{ transform:scale(.6); opacity:0; } }
+
+/* ---------- cena 2: produto ---------- */
+.faixa{ position:absolute; top:175px; left:50%; transform:translateX(-50%);
+  background:var(--yellow); color:var(--ink); font-family:"Baloo"; font-weight:800; font-size:44px;
+  padding:12px 38px; border-radius:999px; white-space:nowrap; box-shadow:0 8px 0 rgba(0,0,0,.18);
+  animation:faixaEntra .5s cubic-bezier(.2,1.6,.4,1) 3.1s both; }
+@keyframes faixaEntra{ from{ transform:translateX(-50%) scale(0) rotate(-10deg); } to{ transform:translateX(-50%) rotate(-2deg); } }
+
+.produto{ position:absolute; left:110px; top:290px; width:860px; height:860px; background:#fff; border-radius:56px;
+  padding:26px; box-shadow:0 34px 70px rgba(60,0,0,.45);
+  animation:produtoEntra .8s cubic-bezier(.2,1.3,.4,1) 3.0s both, zoomLento 7s ease-out 3.8s forwards; }
+.produto img{ width:100%; height:100%; object-fit:cover; border-radius:36px; display:block; }
+@keyframes produtoEntra{ from{ transform:translateX(1200px) rotate(18deg); } to{ transform:rotate(-1.5deg); } }
+@keyframes zoomLento{ from{ transform:rotate(-1.5deg) scale(1); } to{ transform:rotate(-1.5deg) scale(1.03); } }
+
+.categoria{ position:absolute; left:150px; top:1185px; background:#1E7B3C; color:#fff;
+  font-family:"Baloo"; font-weight:800; font-size:38px; padding:8px 28px; border-radius:999px;
+  animation:subir .45s ease-out 3.7s both; }
+.nome{ position:absolute; left:110px; right:110px; top:1255px; color:#fff;
+  font-family:"Baloo"; font-weight:800; font-size:74px; line-height:1.02; text-shadow:0 6px 18px rgba(60,0,0,.35);
+  animation:subir .5s ease-out 3.95s both; }
+.detalhe{ position:absolute; left:110px; top:1430px; color:#FFE2C2; font-size:40px; font-weight:600;
+  animation:subir .5s ease-out 4.4s both; }
+@keyframes subir{ from{ transform:translateY(60px); opacity:0; } to{ transform:none; opacity:1; } }
+
+/* ---------- cena 3: preço ---------- */
+.preco{ position:absolute; right:80px; top:1500px; background:#fff; border-radius:40px; padding:22px 44px 26px;
+  text-align:right; box-shadow:0 22px 50px rgba(60,0,0,.4); transform-origin:100% 50%;
+  animation:carimbo .55s cubic-bezier(.2,1.8,.4,1) 5.6s both, tremer .5s ease-in-out 6.2s 2; }
+.preco small{ display:block; font-size:38px; font-weight:700; color:#8A7563; }
+.preco b{ display:block; font-family:"Baloo"; font-weight:800; font-size:132px; line-height:.95; color:var(--red-dark); }
+@keyframes carimbo{ from{ transform:scale(2.6) rotate(8deg); opacity:0; } to{ transform:rotate(-3deg); opacity:1; } }
+@keyframes tremer{ 0%,100%{ transform:rotate(-3deg); } 25%{ transform:rotate(-5deg) scale(1.03); } 75%{ transform:rotate(-1deg) scale(1.03); } }
+
+.brilho{ position:absolute; width:26px; height:26px; background:var(--yellow); border-radius:50%;
+  left:760px; top:1610px; opacity:0; animation:estourar .8s ease-out forwards; }
+@keyframes estourar{ 0%{ opacity:1; transform:translate(0,0) scale(1); } 100%{ opacity:0; transform:translate(var(--x),var(--y)) scale(.2); } }
+
+/* ---------- cena 4: chamada ---------- */
+.cta{ position:absolute; left:60px; right:60px; bottom:70px; background:var(--ink); color:#fff; border-radius:48px;
+  padding:34px 40px; text-align:center; box-shadow:0 20px 50px rgba(0,0,0,.35);
+  animation:ctaSobe .6s cubic-bezier(.2,1.4,.4,1) 9.2s both; }
+.cta .t1{ font-family:"Baloo"; font-weight:800; font-size:72px; line-height:1; color:var(--yellow);
+  animation:pulsar 1s ease-in-out 9.9s infinite; display:inline-block; }
+.cta .t2{ font-size:42px; font-weight:700; margin-top:12px; }
+.cta .t2 span{ color:var(--orange); }
+@keyframes ctaSobe{ from{ transform:translateY(500px); } to{ transform:none; } }
+@keyframes pulsar{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.07); } }
+
+/* no fim, o preço sobe um pouco pra dar lugar à chamada */
+.preco, .nome, .categoria, .detalhe{ will-change:transform; }
+.cena-final{ animation:abrirEspaco .5s ease-in-out 9.1s both; position:absolute; inset:0; }
+@keyframes abrirEspaco{ to{ transform:translateY(-120px); } }
+
+.preco .de{ display:block; font-size:40px; font-weight:700; color:#8A7563; text-decoration:line-through; }
+.off{ position:absolute; left:80px; top:260px; z-index:3; width:190px; height:190px; border-radius:50%;
+  background:var(--yellow); color:var(--red-dark); font-family:"Baloo"; font-weight:800; font-size:64px;
+  display:flex; align-items:center; justify-content:center; transform:rotate(-12deg);
+  box-shadow:0 12px 26px rgba(60,0,0,.35); animation:carimboOff .5s cubic-bezier(.2,1.8,.4,1) 5.3s both; }
+@keyframes carimboOff{ from{ transform:scale(2.4) rotate(10deg); opacity:0; } to{ transform:rotate(-12deg); opacity:1; } }
+.cupom{ position:absolute; left:80px; top:1520px; background:#fff6e9; border:5px dashed var(--orange); border-radius:28px;
+  padding:16px 26px; font-family:"Baloo"; font-weight:800; color:var(--ink); transform:rotate(2deg);
+  box-shadow:0 14px 30px rgba(60,0,0,.3); animation:pop .45s cubic-bezier(.2,1.6,.4,1) 7.6s both; }
+.cupom small{ display:block; font-size:30px; color:#B26200; }
+.cupom b{ display:block; font-size:50px; line-height:1; letter-spacing:1px; }
+[hidden]{ display:none !important; }
+</style></head>
+<body>
+<div class="palco">
+  <div class="patas"></div>
+  <div class="marca">🐾 Farejadinhos <span>da Yang</span></div>
+
+  <div class="cena-final">
+    <div class="faixa" data-campo="faixa">🔥 ACHADINHO DO DIA</div>
+    <div class="produto"><img src="produto.jpg" alt=""></div>
+    <div class="categoria" data-campo="categoria">🎄 Natal</div>
+    <div class="nome" data-campo="nome">Árvore de Natal Pinheiro 2,10 m</div>
+    <div class="detalhe" data-campo="detalhe">600 galhos · cheia · verde premium</div>
+    <div class="preco"><span class="de" data-campo="de" hidden></span><small>por apenas</small><b data-campo="preco">R$ 64,90</b></div>
+    <div class="cupom" data-campo="cupomBox" hidden><small>🏷️ use o cupom</small><b data-campo="cupom"></b></div>
+    <div class="off" data-campo="off" hidden></div>
+  </div>
+
+  <div class="brilho" style="--x:-260px;--y:-200px;animation-delay:5.75s"></div>
+  <div class="brilho" style="--x:-80px;--y:-280px;animation-delay:5.75s;background:#fff"></div>
+  <div class="brilho" style="--x:160px;--y:-230px;animation-delay:5.8s"></div>
+  <div class="brilho" style="--x:-320px;--y:40px;animation-delay:5.8s;background:#FFE2C2"></div>
+  <div class="brilho" style="--x:120px;--y:160px;animation-delay:5.85s;background:#fff"></div>
+  <div class="brilho" style="--x:-200px;--y:200px;animation-delay:5.85s"></div>
+
+  <div class="yang-sobe">
+    <img class="yang" src="../../assets/yang-ilustrada.png" alt="">
+    <div class="balao b2" data-campo="b2">Cabe no bolso! 💸</div>
+  </div>
+  <div class="balao b1"><span data-campo="b1">Olha o que eu farejei!</span><small>corre ver 🐾</small></div>
+
+  <div class="cta">
+    <div class="t1" data-campo="t1">Corre que acaba! 🏃‍♀️</div>
+    <div class="t2">🔗 Link na bio · <span>@farejadinhosdayang</span></div>
+  </div>
+</div>
+<script>
+(function(){
+  var D = window.DADOS; if(!D) return;
+  function c(n){ return document.querySelector('[data-campo="'+n+'"]'); }
+  if(D.imagem) document.querySelector('.produto img').src = D.imagem;
+  ['faixa','categoria','nome','detalhe','preco','b1','b2','t1'].forEach(function(k){ if(D[k] != null) c(k).textContent = D[k]; });
+  if(D.corCategoria) c('categoria').style.background = D.corCategoria;
+  if(D.de){ c('de').textContent = 'de ' + D.de; c('de').hidden = false; }
+  if(D.off){ c('off').textContent = '-' + D.off + '%'; c('off').hidden = false; }
+  if(D.cupom){ c('cupom').textContent = D.cupom; c('cupomBox').hidden = false; }
+  if(!D.detalhe) c('detalhe').hidden = true;
+  // nome grande: diminui a fonte até caber em 2 linhas
+  var nome = c('nome'), tam = 74;
+  while(nome.scrollHeight > 160 && tam > 46){ tam -= 4; nome.style.fontSize = tam + 'px'; }
+})();
+</script>
+</body></html>
