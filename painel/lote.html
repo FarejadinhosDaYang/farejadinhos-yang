@@ -12,6 +12,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script src="../assets/categorias.js"></script>
 <script src="../assets/cupons.js"></script>
+<script src="../assets/nomes.js"></script>
 <style>
 
 :root{
@@ -61,7 +62,8 @@ tr.linhaErro td{background:#fff0f0}
 .inputFoto{width:100%;padding:7px 8px;border:1.5px solid var(--line);border-radius:8px;font-size:12px;font-family:'Work Sans',sans-serif;background:#fff;color:var(--ink)}
 .inputFoto:focus{outline:none;border-color:var(--red)}
 .miniFoto{display:block;width:56px;height:56px;object-fit:contain;background:#fff;border:1px solid var(--line);border-radius:8px;margin-bottom:6px}
-.inputCampo[data-campo="produto"]{min-width:170px}
+.inputCampo[data-campo="produto"]{min-width:260px}
+.verNomeOriginal{color:var(--red-dark);font-weight:700}
 .inputCampo[data-campo="preco"]{min-width:90px}
 .celulaPrazo{min-width:120px}
 .linhaPrazo{display:flex;align-items:center;gap:4px;margin-bottom:4px}
@@ -425,13 +427,18 @@ function processarLinhas(linhas){
         }
 
         // Sem categoria na planilha: sugere pelo nome do produto
+        // (usa o nome completo, que tem mais pistas)
         let categoriaSugerida = false;
         if(!item.categoria && item.produto){
             item.categoria = FarejadinhosCategorias.sugerir(item.produto);
             categoriaSugerida = true;
         }
 
-        return { item, linkProduto, categoriaSugerida, erros: [] };
+        // Nome enorme da Shopee/ML -> nome curto pro site (editável na tabela)
+        const nomeOriginal = item.produto;
+        if(item.produto) item.produto = FarejadinhosNomes.encurtar(item.produto);
+
+        return { item, linkProduto, categoriaSugerida, nomeOriginal, erros: [] };
     });
 
     // Ignora linhas totalmente vazias (comum no fim de CSVs)
@@ -524,7 +531,10 @@ async function buscarFotosAutomaticas(){
                     if(Array.isArray(json.tentativas)) p.motivo = json.tentativas.join("\n");
                     // só preenche o que ainda estiver vazio (a pessoa pode
                     // ter digitado algo enquanto isso)
-                    if(json.produto && !item.produto) item.produto = json.produto;
+                    if(json.produto && !item.produto){
+                        p.nomeOriginal = json.produto;
+                        item.produto = FarejadinhosNomes.encurtar(json.produto);
+                    }
                     if(json.preco && !item.preco) item.preco = json.preco;
                     if(json.precoAntigo && !item.precoAntigo) item.precoAntigo = json.precoAntigo;
                     if(json.imagemUrl && !item.imagemUrl) item.imagemUrl = json.imagemUrl;
@@ -538,7 +548,7 @@ async function buscarFotosAutomaticas(){
 
                     // nome chegou agora: sugere a categoria
                     if(item.produto && !item.categoria){
-                        item.categoria = FarejadinhosCategorias.sugerir(item.produto);
+                        item.categoria = FarejadinhosCategorias.sugerir(p.nomeOriginal || item.produto);
                         p.categoriaSugerida = true;
                     }
                 }
@@ -853,6 +863,18 @@ function montarPreview(){
                 </td>`;
             }
 
+            // Nome: sempre editável (vem encurtado; dá pra ajustar à mão)
+            if(c === "produto"){
+                const p = itensProcessados[indice];
+                const encurtado = p.nomeOriginal && p.nomeOriginal !== item.produto;
+                return `<td>
+                    <input type="text" class="inputFoto inputCampo" data-indice="${indice}" data-campo="produto"
+                        value="${escapeHtml(item.produto)}" maxlength="80" title="${escapeHtml(p.nomeOriginal || "")}">
+                    ${encurtado ? `<span class="tagSugerida" title="${escapeHtml(p.nomeOriginal)}">✂️ encurtado · <a href="#" class="verNomeOriginal" data-indice="${indice}">voltar ao original</a></span>` : ""}
+                    ${p.jaNoSite ? '<br><span class="tagJaNoSite">♻️ já está no site</span>' : ""}
+                </td>`;
+            }
+
             const valor = c === "destaque" ? (item[c] ? "sim" : "não") : (item[c] || "—");
             const tagSite = c === "produto" && itensProcessados[indice].jaNoSite ? '<br><span class="tagJaNoSite">♻️ já está no site</span>' : "";
             return `<td>${escapeHtml(String(valor))}${tagSite}${avisoFaltando}</td>`;
@@ -890,6 +912,16 @@ function montarPreview(){
                 p.item.categoria = FarejadinhosCategorias.sugerir(valor);
                 p.categoriaSugerida = true;
             }
+            validarItens();
+            montarPreview();
+        });
+    });
+
+    corpo.querySelectorAll(".verNomeOriginal").forEach(a => {
+        a.addEventListener("click", function(ev){
+            ev.preventDefault();
+            const p = itensProcessados[Number(this.dataset.indice)];
+            p.item.produto = p.nomeOriginal;
             validarItens();
             montarPreview();
         });
@@ -954,7 +986,8 @@ async function verificarJaNoSite(){
     });
     jaNoSite = [];
     itensProcessados.forEach(p => {
-        const o = porLink[chaveLink(p.item.link)] || porLink[chaveLink(p.linkProduto)] || porNome[chaveNome(p.item.produto)];
+        const o = porLink[chaveLink(p.item.link)] || porLink[chaveLink(p.linkProduto)] ||
+            porNome[chaveNome(p.item.produto)] || (p.nomeOriginal ? porNome[chaveNome(p.nomeOriginal)] : null);
         p.jaNoSite = o || null;
         if(o){
             const mudou = p.item.preco && Math.abs(paraNumeroBR(p.item.preco) - paraNumeroBR(o.preco)) >= 0.01;
