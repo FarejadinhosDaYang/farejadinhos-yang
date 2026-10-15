@@ -155,3 +155,41 @@
 .yang-nav-drawer a.yang-nav-cupom.shopee{ background:#EE4D2D; color:#fff; }
 .yang-nav-drawer a.yang-nav-cupom.ml{ background:#FFE600; color:#2D3277; }
 .yang-nav-drawer a.yang-nav-cupom:hover{ filter:brightness(1.05); }
+
+/* ----- Categorias dentro do menu ----- */
+.yang-nav-cats{ border-radius:12px; }
+.yang-nav-cats summary{
+    list-style:none;
+    cursor:pointer;
+    padding:12px 10px;
+    border-radius:12px;
+    font-weight:700;
+    color:var(--ink,#2B1B12);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+.yang-nav-cats summary::-webkit-details-marker{ display:none; }
+.yang-nav-cats summary::after{ content:"▾"; color:var(--muted,#8A7563); transition:transform .15s; }
+.yang-nav-cats[open] summary::after{ transform:rotate(180deg); }
+.yang-nav-cats summary:hover{ background:var(--cream,#FDF3E3); }
+.yang-nav-cats-lista{ padding:0 0 6px 8px; font-size:13px; color:var(--muted,#8A7563); }
+.yang-nav-cats-lista a{
+    display:flex !important;
+    align-items:center;
+    gap:10px;
+    padding:8px 10px !important;
+    font-size:14px;
+}
+.yang-nav-cats-lista small{ margin-left:auto; color:var(--muted,#8A7563); font-weight:600; }
+.yang-nav-cat-ic{
+    flex:none;
+    width:26px;
+    height:26px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+}
+.yang-nav-drawer{ overflow-y:auto; }

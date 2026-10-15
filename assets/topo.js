@@ -9,6 +9,23 @@
  * Pra trocar o logo/nome do site inteiro, é só mexer aqui.
  */
 
+// Ícone e cor de cada categoria (usado pela home, pela lateral e pelo menu)
+window.FAREJA_ICONES_CAT = {
+    "Casa": { icone: "🏠", cor: "#F7941D" },
+    "Café": { icone: "☕", cor: "#6B4226" },
+    "Academia": { icone: "🏋️", cor: "#2E7D4F" },
+    "Eletrônicos": { icone: "🔌", cor: "#2E5E8C" },
+    "Eletrodomésticos": { icone: "🧺", cor: "#546E7A" },
+    "Beleza": { icone: "💄", cor: "#C2185B" },
+    "Moda": { icone: "👕", cor: "#6A4C93" },
+    "Pet": { icone: "🐾", cor: "#8A5A44" },
+    "Cozinha": { icone: "🍳", cor: "#D68910" },
+    "Utilidades": { icone: "🧰", cor: "#00897B" },
+    "Natal": { icone: "🎄", cor: "#1E7B3C" },
+    "Skincare": { icone: "🧴", cor: "#D0688A" },
+    "Piscina": { icone: "🏊", cor: "#1E88C7" }
+};
+
 (function () {
     var script = document.currentScript;
     var base = script.getAttribute("data-base") || "";
@@ -41,4 +58,102 @@
         "</header>";
 
     script.insertAdjacentHTML("beforebegin", html);
+
+    // ======================================================
+    // CATEGORIAS NO AR (lateral no computador + menu no celular)
+    // ======================================================
+    var promessa = null;
+
+    function carregarScript(src) {
+        return new Promise(function (ok) {
+            var s = document.createElement("script");
+            s.src = src; s.onload = ok; s.onerror = ok;
+            document.head.appendChild(s);
+        });
+    }
+
+    // [{ nome, icone, cor, n }] das categorias que têm oferta no ar
+    window.FarejadinhosCategoriasNoAr = function () {
+        if (promessa) return promessa;
+        promessa = (window.FarejadinhosVitrine ? Promise.resolve() : carregarScript(base + "assets/vitrine.js"))
+            .then(function () { return fetch(base + "ofertas.json?t=" + Math.floor(Date.now() / 60000), { cache: "no-store" }); })
+            .then(function (r) { return r.json(); })
+            .then(function (d) {
+                var todas = Array.isArray(d) ? d : [d];
+                var visiveis = window.FarejadinhosVitrine ? window.FarejadinhosVitrine.selecionar(todas, new Date()).visiveis : todas;
+                var cont = {};
+                visiveis.forEach(function (o) { var c = (o && o.categoria || "").trim(); if (c) cont[c] = (cont[c] || 0) + 1; });
+                return Object.keys(cont).sort(function (a, b) { return a.localeCompare(b, "pt-BR"); }).map(function (c) {
+                    var ic = window.FAREJA_ICONES_CAT[c] || { icone: "🐾", cor: "#8A7563" };
+                    return { nome: c, icone: ic.icone, cor: ic.cor, n: cont[c], total: visiveis.length };
+                });
+            })
+            .catch(function () { return []; });
+        return promessa;
+    };
+
+    function esc(t) { var d = document.createElement("div"); d.textContent = t; return d.innerHTML; }
+
+    // Abre uma categoria: na home filtra na hora; nas outras páginas vai pra home já filtrada
+    window.farejaAbrirCategoria = function (cat) {
+        if (home && window.farejaFiltrarCategoria) { window.farejaFiltrarCategoria(cat); return; }
+        location.href = inicio + (cat ? "?categoria=" + encodeURIComponent(cat) : "") + "#tituloGrid";
+    };
+
+    function categoriaDaUrl() {
+        try { return new URL(location.href).searchParams.get("categoria") || ""; } catch (e) { return ""; }
+    }
+
+    function montarLateral() {
+        var wrap = document.querySelector("body > .wrap");
+        if (!wrap || document.querySelector(".yt-layout")) return;
+
+        var layout = document.createElement("div");
+        layout.className = "yt-layout";
+        var lateral = document.createElement("aside");
+        lateral.className = "yt-lateral";
+        lateral.setAttribute("aria-label", "Categorias");
+        lateral.innerHTML = '<div class="yt-lat-titulo">🗂️ Categorias</div><div class="yt-lat-lista">…</div>';
+        var main = document.createElement("div");
+        main.className = "yt-main";
+
+        wrap.parentNode.insertBefore(layout, wrap);
+        layout.appendChild(lateral);
+        layout.appendChild(main);
+        main.appendChild(wrap);
+
+        var ativa = home ? categoriaDaUrl() : "__nenhuma__";
+
+        window.FarejadinhosCategoriasNoAr().then(function (cats) {
+            var lista = lateral.querySelector(".yt-lat-lista");
+            if (!cats.length) { lateral.remove(); layout.classList.add("sem-lateral"); return; }
+            var total = cats.length ? cats[0].total : 0;
+            lista.innerHTML =
+                '<a href="' + inicio + '#tituloGrid" data-cat="">' +
+                '<span class="yt-lat-ic" style="background:#E5232E">🔥</span><span class="yt-lat-nome">Todas as ofertas</span><small>' + total + "</small></a>" +
+                cats.map(function (c) {
+                    return '<a href="' + inicio + "?categoria=" + encodeURIComponent(c.nome) + '#tituloGrid" data-cat="' + esc(c.nome) + '">' +
+                        '<span class="yt-lat-ic" style="background:' + c.cor + '">' + c.icone + "</span>" +
+                        '<span class="yt-lat-nome">' + esc(c.nome) + "</span><small>" + c.n + "</small></a>";
+                }).join("");
+            marcar(ativa);
+            lista.querySelectorAll("a").forEach(function (a) {
+                a.addEventListener("click", function (e) {
+                    if (!home) return;
+                    e.preventDefault();
+                    window.farejaAbrirCategoria(a.getAttribute("data-cat"));
+                });
+            });
+        });
+
+        function marcar(cat) {
+            lateral.querySelectorAll("a").forEach(function (a) {
+                a.classList.toggle("ativo", a.getAttribute("data-cat") === cat);
+            });
+        }
+        document.addEventListener("fareja:filtro", function (e) { marcar(e.detail || ""); });
+    }
+
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", montarLateral);
+    else montarLateral();
 })();

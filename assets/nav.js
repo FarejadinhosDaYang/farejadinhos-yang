@@ -27,6 +27,7 @@
             '<button type="button" class="yang-nav-close" aria-label="Fechar menu">✕</button>' +
             "</div>" +
             '<a href="' + base + 'index.html">🏠 Início e ofertas</a>' +
+            '<details class="yang-nav-cats"><summary>🗂️ Categorias</summary><div class="yang-nav-cats-lista">Carregando…</div></details>' +
             '<a href="' + base + 'calculadora/">🧮 Vale a pena parcelar?</a>' +
             '<a href="https://www.instagram.com/farejadinhosdayang" target="_blank" rel="noopener">📸 Instagram</a>' +
             '<a href="' + base + 'avisos/">📜 Avisos e privacidade</a>' +
@@ -47,6 +48,31 @@
         function fechar() {
             el.classList.remove("yang-nav-open");
         }
+
+        // Categorias (lista vem do topo.js: só as que têm oferta no ar)
+        var detalhes = el.querySelector(".yang-nav-cats");
+        var carregou = false;
+        detalhes.addEventListener("toggle", function () {
+            if (!detalhes.open || carregou) return;
+            carregou = true;
+            var lista = detalhes.querySelector(".yang-nav-cats-lista");
+            if (!window.FarejadinhosCategoriasNoAr) { lista.textContent = ""; return; }
+            window.FarejadinhosCategoriasNoAr().then(function (cats) {
+                lista.innerHTML = cats.map(function (c) {
+                    var d = document.createElement("span"); d.textContent = c.nome;
+                    return '<a href="#" data-cat="' + d.innerHTML.replace(/"/g, "&quot;") + '">' +
+                        '<span class="yang-nav-cat-ic" style="background:' + c.cor + '">' + c.icone + "</span>" +
+                        d.innerHTML + " <small>" + c.n + "</small></a>";
+                }).join("") || "Nenhuma categoria no ar.";
+                lista.querySelectorAll("a").forEach(function (a) {
+                    a.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        fechar();
+                        if (window.farejaAbrirCategoria) window.farejaAbrirCategoria(a.getAttribute("data-cat"));
+                    });
+                });
+            });
+        });
 
         toggle.addEventListener("click", function () {
             el.classList.contains("yang-nav-open") ? fechar() : abrir();

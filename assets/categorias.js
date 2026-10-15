@@ -44,6 +44,20 @@
       "filtro de piscina", "bomba de piscina", "escada de piscina", "termometro de piscina",
       "oculos de natacao", "touca de natacao", "natacao", "macarrao de piscina", "espaguete de piscina"
     ],
+    "Eletrodomésticos": [
+      "eletrodomestico", "air fryer", "airfryer", "fritadeira eletrica", "fritadeira sem oleo",
+      "micro ondas", "microondas", "forno eletrico", "forno de embutir", "fogao", "cooktop",
+      "geladeira", "frost free", "refrigerador", "freezer", "frigobar", "adega climatizada", "lava loucas",
+      "lava louca", "maquina de lavar", "lavadora", "lava e seca", "secadora", "tanquinho",
+      "liquidificador", "batedeira", "processador de alimentos", "multiprocessador", "mixer",
+      "cafeteira eletrica", "cafeteira", "sanduicheira", "torradeira", "panela eletrica",
+      "panela de pressao eletrica", "panela de arroz", "chaleira eletrica", "pipoqueira eletrica",
+      "pipoqueira", "waffle", "grill eletrico", "centrifuga", "extrator de suco", "espremedor eletrico",
+      "aspirador de po", "aspirador", "robo aspirador", "aspirador robo", "vaporizador",
+      "ferro de passar", "passadeira", "ventilador", "climatizador", "ar condicionado",
+      "aquecedor", "umidificador de ar", "desumidificador", "purificador de agua", "purificador de ar",
+      "bebedouro", "filtro de agua", "maquina de gelo", "sorveteira", "iogurteira", "bivolt"
+    ],
     "Pet": [
       "pet", "cachorro", "cao", "caes", "gato", "racao", "petisco pet", "petisco para cachorro",
       "petisco para gato", "petisco canino", "coleira",
@@ -96,19 +110,15 @@
       "conjunto masculino", "polo", "blazer"
     ],
     "Cozinha": [
-      "cozinha", "panela", "frigideira", "taca", "jogo de tacas", "ramekin", "molheira",
-      "petisqueira", "travessa", "saladeira", "sousplat", "jogo americano", "air fryer", "airfryer", "fritadeira",
+      "cozinha", "panela", "frigideira", "geladeira", "organizadores de geladeira", "organizador geladeira",
+      "forma de silicone", "forma para air fryer", "papel para air fryer", "cesto de silicone", "tapete de silicone", "taca", "jogo de tacas", "ramekin", "molheira",
+      "petisqueira", "travessa", "saladeira", "sousplat", "jogo americano",
       "forma", "assadeira", "pote", "marmita", "hermetico", "tigela", "bowl",
-      "talher", "faqueiro", "faca", "fatiador", "ralador", "descascador",
-      "liquidificador", "batedor", "mixer", "processador de alimentos",
-      "multiprocessador", "micro ondas", "microondas", "forno", "fogao", "cooktop",
+      "talher", "faqueiro", "faca", "fatiador", "ralador", "descascador", "batedor", "mixer", "forno",
       "tabua de corte", "escorredor", "garrafa termica", "copo", "caneca", "xicara",
       "prato", "espatula", "concha", "pia", "detergente", "esponja", "porta mantimentos",
-      "porta tempero", "forma de gelo", "sanduicheira", "grill", "chaleira",
-      "jarra", "squeeze", "lancheira", "pano de prato", "avental", "utensilio",
-      "geladeira", "organizador de geladeira", "panela de pressao",
-      "panela eletrica", "torradeira", "espremedor", "centrifuga", "batedeira",
-      "mixer de mao", "pipoqueira", "waffle"
+      "porta tempero", "forma de gelo", "grill", "chaleira",
+      "jarra", "squeeze", "lancheira", "pano de prato", "avental", "utensilio", "organizador de geladeira", "panela de pressao", "espremedor"
     ],
     "Utilidades": [
       "utilidade", "guarda chuva", "sombrinha", "lanterna", "pilha", "pilhas recarregaveis",
@@ -122,16 +132,15 @@
       "capa de chuva", "saco a vacuo", "etiquetadora", "relogio de parede", "despertador"
     ],
     "Casa": [
-      "casa", "varal", "varal de roupa", "varal de chao", "varal dobravel", "varal de piso",
-      "maquina de lavar", "lava roupa", "lavanderia", "tira manchas", "pastilha de limpeza", "limpador", "organizador", "cabide", "tapete", "cortina", "persiana",
+      "casa", "maquina de lavar", "limpa maquina", "limpador de maquina", "comprimido efervescente",
+      "varal", "varal de roupa", "varal de chao", "varal dobravel", "varal de piso", "lavanderia", "tira manchas", "pastilha de limpeza", "limpador", "organizador", "cabide", "tapete", "cortina", "persiana",
       "travesseiro", "lencol", "edredom", "cobertor", "manta", "toalha", "almofada",
-      "luminaria", "lampada", "abajur", "aspirador", "vassoura", "rodo", "mop",
-      "limpeza", "ventilador", "umidificador", "aromatizador", "difusor", "tomada",
+      "luminaria", "lampada", "abajur", "vassoura", "rodo", "mop",
+      "limpeza", "aromatizador", "difusor", "tomada",
       "extensao", "filtro de linha", "benjamim", "prateleira", "estante",
       "nicho", "decoracao", "quadro", "vaso", "cadeira", "mesa", "colchao", "cama",
       "banheiro", "chuveiro", "ducha", "porta toalha", "lixeira",
-      "furadeira", "parafusadeira", "jardim", "mangueira",
-      "ar condicionado", "aquecedor", "cesto", "caixa organizadora", "sapateira",
+      "furadeira", "parafusadeira", "jardim", "mangueira", "cesto", "caixa organizadora", "sapateira",
       "rack", "escrivaninha", "espelho", "fechadura", "campainha",
       "pano de chao", "balde", "dispenser", "cabideiro", "guarda roupa"
     ]
