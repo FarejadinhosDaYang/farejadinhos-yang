@@ -163,5 +163,10 @@ jobs:
           } else {
             $Prefixo = if ($env:IMAGEM_EXISTENTE -eq "true") { "Oferta editada" } else { "Nova oferta" }
             git commit -m "$Prefixo`: $env:PRODUTO"
-            git push
+            for ($i = 0; $i -lt 4; $i++) {
+              git pull --rebase
+              git push
+              if ($LASTEXITCODE -eq 0) { break }
+              Start-Sleep -Seconds (5 * ($i + 1))
+            }
           }

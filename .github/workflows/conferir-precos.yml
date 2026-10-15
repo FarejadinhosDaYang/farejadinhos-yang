@@ -1,0 +1,53 @@
+name: Conferir precos
+
+on:
+  schedule:
+    # de hora em hora, no minuto 17 (fora do "minuto zero", que atrasa)
+    - cron: "17 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+# Nunca duas conferencias ao mesmo tempo
+concurrency:
+  group: conferir-precos
+  cancel-in-progress: true
+
+jobs:
+  conferir:
+    runs-on: windows-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Baixar repositorio
+        uses: actions/checkout@v4
+
+      - name: Conferir precos na loja
+        shell: pwsh
+        env:
+          PAINEL_SENHA: ${{ secrets.PAINEL_SENHA }}
+        run: |
+          .\gerador\conferir-precos.ps1
+
+      - name: Salvar no GitHub
+        shell: pwsh
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add ofertas ofertas.json
+
+          $temAlteracoes = git status --porcelain
+
+          if ([string]::IsNullOrWhiteSpace($temAlteracoes)) {
+            Write-Host "Nenhum preco mudou."
+          } else {
+            git commit -m "Precos conferidos automaticamente"
+            for ($i = 0; $i -lt 3; $i++) {
+              git pull --rebase
+              git push
+              if ($LASTEXITCODE -eq 0) { break }
+              Start-Sleep -Seconds 10
+            }
+          }

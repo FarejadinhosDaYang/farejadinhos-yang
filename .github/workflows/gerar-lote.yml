@@ -40,5 +40,10 @@ jobs:
             Write-Host "Nada para commitar."
           } else {
             git commit -m "Lote de ofertas importado"
-            git push
+            for ($i = 0; $i -lt 4; $i++) {
+              git pull --rebase
+              git push
+              if ($LASTEXITCODE -eq 0) { break }
+              Start-Sleep -Seconds (5 * ($i + 1))
+            }
           }
