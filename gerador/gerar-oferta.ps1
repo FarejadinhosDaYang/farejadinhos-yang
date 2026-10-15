@@ -703,6 +703,9 @@ $CalcBlock
 $CalcScript
 </script>
 
+<script src="../../assets/vitrine.js"></script>
+<script src="../../assets/relacionados.js" data-base="../../"></script>
+<script src="../../assets/admin.js" data-base="../../"></script>
 </body>
 
 </html>
