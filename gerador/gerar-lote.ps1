@@ -71,6 +71,69 @@ if ($Itens.Count -eq 0 -and -not $SoReorganizar) {
 
 
 # ==========================================
+# MODO "ATUALIZAR PREÇOS" (vem do painel do lote)
+#
+# A planilha nova (ex.: exportação da Shopee) traz o preço de hoje de
+# produtos que já estão no site: [{ "acao": "precos", "slug": "...",
+# "preco": "...", "precoAntigo": "..." }]. Atualiza o ofertas.json e a
+# página da oferta (preço, preço antigo e "preço conferido em").
+# ==========================================
+
+if ($Itens.Count -gt 0 -and $Itens[0].PSObject.Properties["acao"] -and [string]$Itens[0].acao -eq "precos") {
+
+    $CulturaBR = [System.Globalization.CultureInfo]::GetCultureInfo("pt-BR")
+    function FormatarBR([string]$V) {
+        $V = ($V -replace 'R\$', '').Trim()
+        if ($V -notmatch ',') { $V = $V -replace '\.', ',' }
+        return ([decimal]::Parse($V, $CulturaBR)).ToString("C2", $CulturaBR)
+    }
+    function Enc([string]$T) { return [System.Net.WebUtility]::HtmlEncode($T) }
+
+    $Catalogo = @((Get-Content -LiteralPath $OfertasJsonPath -Raw -Encoding UTF8) | ConvertFrom-Json)
+    $PorSlug = @{}
+    foreach ($O in $Catalogo) { if ($O -and $O.slug) { $PorSlug[[string]$O.slug] = $O } }
+    $Hoje = (Get-Date).ToUniversalTime().AddHours(-3).ToString("dd/MM/yyyy")
+    $Feitos = 0
+
+    foreach ($It in $Itens) {
+        $Slug = [string]$It.slug
+        if (-not $PorSlug.ContainsKey($Slug)) { Write-Warning "Oferta nao encontrada: $Slug"; continue }
+        try {
+            $Novo = FormatarBR ([string]$It.preco)
+            $Antigo = if ($It.precoAntigo -and ([string]$It.precoAntigo).Trim()) { FormatarBR ([string]$It.precoAntigo) } else { "" }
+        } catch { Write-Warning "Preco invalido para ${Slug}: $($It.preco)"; continue }
+
+        $O = $PorSlug[$Slug]
+        $O.preco = $Novo
+        if ($Antigo) {
+            if ($O.PSObject.Properties["precoAntigo"]) { $O.precoAntigo = $Antigo } else { $O | Add-Member -NotePropertyName precoAntigo -NotePropertyValue $Antigo }
+        }
+        if ($O.PSObject.Properties["precoAVista"] -and $O.precoAVista) { $O.precoAVista = $Novo }
+        $Conferido = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
+        $O | Add-Member -NotePropertyName precoConferido -NotePropertyValue $Conferido -Force
+
+        $Pagina = Join-Path $Site (Join-Path "ofertas" (Join-Path $Slug "index.html"))
+        if (Test-Path -LiteralPath $Pagina) {
+            $Html = [System.IO.File]::ReadAllText($Pagina, [System.Text.Encoding]::UTF8)
+            $Html = [regex]::Replace($Html, '(<div class="price">\s*)[^<]*?(\s*</div>)', [System.Text.RegularExpressions.MatchEvaluator]{ param($m) $m.Groups[1].Value + (Enc $Novo) + $m.Groups[2].Value }, 1)
+            if ($Antigo) {
+                $Html = [regex]::Replace($Html, '<div class="old">[^<]*</div>', [System.Text.RegularExpressions.MatchEvaluator]{ param($m) '<div class="old">' + (Enc $Antigo) + '</div>' }, 1)
+            }
+            $Html = [regex]::Replace($Html, 'Pre(ç|&ccedil;)o conferido (em [0-9/]+|na publica(ç|&ccedil;)(ã|&atilde;)o da oferta)', [System.Text.RegularExpressions.MatchEvaluator]{ param($m) "Pre&ccedil;o conferido em $Hoje" }, 1)
+            [System.IO.File]::WriteAllText($Pagina, $Html, (New-Object System.Text.UTF8Encoding($false)))
+        }
+        $Feitos++
+        Write-Host "Preco: $Slug -> $Novo"
+    }
+
+    $Json = $Catalogo | ConvertTo-Json -Depth 5 -AsArray
+    [System.IO.File]::WriteAllText($OfertasJsonPath, $Json, (New-Object System.Text.UTF8Encoding($false)))
+    Write-Host "Precos atualizados em $Feitos oferta(s)."
+    Remove-Item -LiteralPath $CaminhoAbs -Force -ErrorAction SilentlyContinue
+    exit 0
+}
+
+# ==========================================
 # MODO "APLICAR CUPONS" (vem do painel do lote)
 #
 # Em vez de produtos novos, o lote pode trazer só cupons pra ofertas

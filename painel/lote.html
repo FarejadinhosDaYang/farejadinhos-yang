@@ -111,6 +111,11 @@ button:disabled{opacity:.55;cursor:wait}
 .chipCupom select{border:1px solid var(--line);border-radius:8px;font-size:12px;padding:2px 4px;background:#fff}
 .selectCupom{width:100%;min-width:150px;padding:6px;border:1.5px solid var(--line);border-radius:8px;font-size:12px;background:#fff}
 .precoCupom{display:block;margin-top:4px;font-size:11.5px;font-weight:700;color:#1d7a3a}
+
+.jaNoSite{margin-top:14px;padding:14px 16px;border:1.5px solid #9ec9a7;border-radius:14px;background:#eef8f0;font-size:13.5px;line-height:1.55}
+.jaNoSite b{color:#1d6b33}
+.jaNoSite ul{margin:6px 0 0;padding-left:18px;max-height:180px;overflow:auto}
+.tagJaNoSite{display:inline-block;margin-top:4px;font-size:10.5px;font-weight:700;color:#1d6b33;background:#dff1e3;border-radius:999px;padding:2px 7px}
 </style>
 </head>
 <body>
@@ -178,6 +183,12 @@ button:disabled{opacity:.55;cursor:wait}
 </div>
 
 <div class="resumo" id="resumo"></div>
+
+<div class="jaNoSite" id="jaNoSite" style="display:none">
+<div id="jaNoSiteTexto"></div>
+<button type="button" class="btnSecundario" id="btnAtualizarPrecos" onclick="atualizarPrecosNoSite()" style="margin-top:10px">🔄 Atualizar os preços deles no site</button>
+<div class="status" id="statusPrecos"></div>
+</div>
 
 <div class="agenda">
 <h3>📅 Quando liberar</h3>
@@ -843,7 +854,8 @@ function montarPreview(){
             }
 
             const valor = c === "destaque" ? (item[c] ? "sim" : "não") : (item[c] || "—");
-            return `<td>${escapeHtml(String(valor))}${avisoFaltando}</td>`;
+            const tagSite = c === "produto" && itensProcessados[indice].jaNoSite ? '<br><span class="tagJaNoSite">♻️ já está no site</span>' : "";
+            return `<td>${escapeHtml(String(valor))}${tagSite}${avisoFaltando}</td>`;
         }).join("");
 
         return `<tr${classe}>${celulas}</tr>`;
@@ -905,6 +917,96 @@ function montarPreview(){
 
     atualizarResumo();
     cardPreview.style.display = "block";
+    if(!montarPreview._verificando){
+        montarPreview._verificando = true;
+        verificarJaNoSite().finally(() => { montarPreview._verificando = false; });
+    }
+}
+
+
+// ===== Produtos da planilha que já estão no site =====
+// Casa pelo nome (sem acento/maiúscula) ou pelo mesmo link. Esses não
+// são criados de novo (evita oferta repetida) e podem só ter o preço
+// atualizado — é o jeito de "dar refresh" no preço: exportar de novo
+// os links da Shopee e subir aqui.
+let catalogoSite = null;
+let jaNoSite = [];   // { p, oferta, mudou }
+
+function chaveNome(t){
+    return String(t || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
+}
+function chaveLink(l){
+    return String(l || "").trim().toLowerCase().replace(/^https?:\/\//, "").replace(/[?#].*$/, "").replace(/\/$/, "");
+}
+
+async function verificarJaNoSite(){
+    try{
+        if(!catalogoSite){
+            const r = await fetch("../ofertas.json?t=" + Date.now(), { cache: "no-store" });
+            catalogoSite = await r.json();
+        }
+    }catch(e){ return; }
+    const porNome = {}, porLink = {};
+    catalogoSite.forEach(o => {
+        if(!o || !o.slug) return;
+        if(o.produto) porNome[chaveNome(o.produto)] = o;
+        if(o.link) porLink[chaveLink(o.link)] = o;
+    });
+    jaNoSite = [];
+    itensProcessados.forEach(p => {
+        const o = porLink[chaveLink(p.item.link)] || porLink[chaveLink(p.linkProduto)] || porNome[chaveNome(p.item.produto)];
+        p.jaNoSite = o || null;
+        if(o){
+            const mudou = p.item.preco && Math.abs(paraNumeroBR(p.item.preco) - paraNumeroBR(o.preco)) >= 0.01;
+            jaNoSite.push({ p, oferta: o, mudou });
+        }
+    });
+    mostrarJaNoSite();
+}
+
+function mostrarJaNoSite(){
+    const box = document.getElementById("jaNoSite");
+    if(!jaNoSite.length){ box.style.display = "none"; return; }
+    const mudaram = jaNoSite.filter(j => j.mudou);
+    const lista = mudaram.slice(0, 40).map(j =>
+        `<li>${escapeHtml(j.oferta.produto.slice(0, 60))}: ${escapeHtml(j.oferta.preco)} → <b>${escapeHtml(FarejadinhosCupons.dinheiro(paraNumeroBR(j.p.item.preco)))}</b></li>`).join("");
+    document.getElementById("jaNoSiteTexto").innerHTML =
+        `♻️ <b>${jaNoSite.length}</b> produto(s) desta planilha <b>já estão no site</b>. Eles <b>não</b> vão ser criados de novo no "Enviar lote".` +
+        (mudaram.length
+            ? `<br><b>${mudaram.length}</b> mudaram de preço:<ul>${lista}</ul>`
+            : `<br>Nenhum mudou de preço.`);
+    document.getElementById("btnAtualizarPrecos").style.display = mudaram.length ? "" : "none";
+    box.style.display = "block";
+}
+
+async function atualizarPrecosNoSite(){
+    const senha = document.getElementById("senha").value;
+    const status = document.getElementById("statusPrecos");
+    const btn = document.getElementById("btnAtualizarPrecos");
+    if(!senha){ alert("Digite a senha do painel primeiro (lá em cima)."); return; }
+    const mudancas = jaNoSite.filter(j => j.mudou).map(j => ({
+        acao: "precos", slug: j.oferta.slug, preco: j.p.item.preco, precoAntigo: j.p.item.precoAntigo || ""
+    }));
+    if(!mudancas.length) return;
+    if(!confirm(`Atualizar o preço de ${mudancas.length} oferta(s) no site?`)) return;
+    btn.disabled = true; btn.textContent = "Enviando...";
+    try{
+        const dados = new FormData();
+        dados.append("senha", senha);
+        dados.append("itens", JSON.stringify(mudancas));
+        const r = await fetch(WORKER_URL + "/lote", { method: "POST", body: dados });
+        const texto = await r.text();
+        if(!r.ok) throw new Error(texto);
+        status.className = "status sucesso";
+        status.textContent = `✅ Enviado! ${mudancas.length} preço(s) atualizado(s). Leva uns 2-3 minutos pra aparecer no site.`;
+        jaNoSite.forEach(j => { if(j.mudou){ j.oferta.preco = FarejadinhosCupons.dinheiro(paraNumeroBR(j.p.item.preco)); j.mudou = false; } });
+        mostrarJaNoSite();
+    }catch(erro){
+        status.className = "status erro";
+        status.textContent = "❌ " + erro.message;
+    }finally{
+        btn.disabled = false; btn.textContent = "🔄 Atualizar os preços deles no site";
+    }
 }
 
 function atualizarResumo(){
@@ -963,7 +1065,8 @@ function atualizarAgenda(){
     const el = document.getElementById("agendaPrevia");
     if(!el) return;
     const a = lerAgenda();
-    const total = (typeof itensValidos !== "undefined" && itensValidos) ? itensValidos.length : 0;
+    const repet = (typeof itensProcessados !== "undefined" && itensProcessados) ? new Set(itensProcessados.filter(p => p.jaNoSite).map(p => p.item)) : new Set();
+    const total = (typeof itensValidos !== "undefined" && itensValidos) ? itensValidos.filter(i => !repet.has(i)).length : 0;
     if(a.quando === "data" && !a.inicio){ el.innerHTML = "Escolha a data no calendário."; return; }
     const quandoTxt = a.quando === "hoje" ? "hoje" : a.quando === "amanha" ? "amanhã" :
         a.inicio.split("-").reverse().join("/");
@@ -1002,7 +1105,16 @@ async function enviarLote(){
         return;
     }
 
-    if(!confirm(`Enviar ${itensValidos.length} produto(s)?\n\n` + document.getElementById("agendaPrevia").innerText)){
+    const repetidos = new Set(itensProcessados.filter(p => p.jaNoSite).map(p => p.item));
+    const paraEnviar = itensValidos.filter(i => !repetidos.has(i));
+    if(paraEnviar.length === 0){
+        alert("Todos esses produtos já estão no site. Use o botão \"Atualizar os preços deles\" se quiser só atualizar o preço.");
+        return;
+    }
+
+    if(!confirm(`Enviar ${paraEnviar.length} produto(s) novo(s)?` +
+        (repetidos.size ? `\n(${itensValidos.length - paraEnviar.length} já estão no site e ficam de fora)` : "") +
+        `\n\n` + document.getElementById("agendaPrevia").innerText)){
         return;
     }
 
@@ -1011,7 +1123,7 @@ async function enviarLote(){
 
     // A calculadora precisa dos dois preços: se tem preço a prazo,
     // o "à vista" é o próprio preço da oferta. Sem a prazo, não manda nada.
-    const itensEnvio = itensValidos.map(i => {
+    const itensEnvio = paraEnviar.map(i => {
         const temPrazo = paraNumeroBR(i.precoAPrazo) > 0;
         return {
             ...i,
