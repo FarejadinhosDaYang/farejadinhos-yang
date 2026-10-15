@@ -33,6 +33,14 @@ h1{font-family:'Baloo 2',sans-serif;color:var(--red-dark);font-size:26px;margin:
 .dica{margin-top:22px;padding:14px 16px;border:1.5px dashed var(--line);border-radius:14px;font-size:13.5px;line-height:1.6;color:var(--ink);background:var(--cream-2)}
 .aviso{padding:14px;border-radius:12px;background:#fff6e9;border:1.5px solid var(--orange);font-size:14px}
 .copiado{background:#1d6b33 !important;color:#fff !important;border-color:#1d6b33 !important}
+.gerar{background:var(--cream-2);border:1.5px solid var(--line);border-radius:18px;padding:16px;margin:0 0 20px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.gerar input{flex:1 1 200px;padding:12px;border:1.5px solid var(--line);border-radius:10px;font:500 15px 'Work Sans',Arial,sans-serif;background:#fff}
+.gerar button{flex:0 0 auto;border:0;border-radius:12px;padding:13px 18px;font:800 15px 'Baloo 2',sans-serif;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--red),var(--red-dark))}
+.gerar button:disabled{opacity:.6;cursor:wait}
+.status{flex:1 1 100%;font-size:13.5px;line-height:1.5;display:none}
+.status.ok{display:block;color:#1d6b33}
+.status.erro{display:block;color:#a3141c}
+.status.espera{display:block;color:var(--ink)}
 </style>
 </head>
 <body>
@@ -43,6 +51,12 @@ h1{font-family:'Baloo 2',sans-serif;color:var(--red-dark);font-size:26px;margin:
 <h1>🎬 Stories do dia</h1>
 <p class="sub" id="quando">Carregando…</p>
 
+<div class="gerar">
+<input type="password" id="senha" placeholder="Senha do painel" autocomplete="current-password">
+<button type="button" id="btnGerar">🎬 Gerar stories agora</button>
+<div class="status" id="statusGerar"></div>
+</div>
+
 <div class="grade" id="grade"></div>
 
 <div class="dica">
@@ -50,7 +64,7 @@ h1{font-family:'Baloo 2',sans-serif;color:var(--red-dark);font-size:26px;margin:
 Os vídeos são gerados sozinhos <b>todo dia às 7h52</b> com o pódio da página inicial naquela hora.
 Pra gerar de novo agora (ex.: depois de subir ofertas novas), abra
 <a href="https://github.com/FarejadinhosDaYang/farejadinhos-yang/actions/workflows/stories-do-dia.yml" target="_blank" rel="noopener">GitHub → Actions → Stories do dia</a>
-e clique em <b>Run workflow</b> — em uns 5 minutos os vídeos novos aparecem aqui.
+e clique em <b>Run workflow</b> — ou use o botão <b>🎬 Gerar stories agora</b> aqui em cima, que faz a mesma coisa sem precisar entrar no GitHub.
 </div>
 
 </div>
@@ -82,7 +96,7 @@ async function carregar(){
         dados = await r.json();
     }catch(e){
         quando.innerHTML = "";
-        grade.innerHTML = '<div class="aviso">Ainda não tem stories gerados. Eles saem sozinhos todo dia às 7h52 — ou rode agora pelo link de "Run workflow" aqui embaixo.</div>';
+        grade.innerHTML = '<div class="aviso">Ainda não tem stories gerados. Eles saem sozinhos todo dia às 7h52 — ou clique em <b>🎬 Gerar stories agora</b> aqui em cima.</div>';
         return;
     }
     const data = new Date(dados.gerado);
@@ -108,6 +122,66 @@ async function carregar(){
     }).join("");
 
     grade.querySelectorAll("[data-copiar]").forEach(b => b.addEventListener("click", () => copiar(b.dataset.copiar, b)));
+}
+
+// ===== Botão "Gerar stories agora" =====
+const WORKER_URL = "https://holy-pine-e7fc.bernard-shimizu.workers.dev";
+let geradoAtual = "";
+
+try{ document.getElementById("senha").value = localStorage.getItem("farejadinhos_admin_senha") || ""; }catch(e){}
+
+async function lerGerado(){
+    try{
+        const r = await fetch("../stories/stories.json?t=" + Date.now(), { cache: "no-store" });
+        return r.ok ? (await r.json()).gerado || "" : "";
+    }catch(e){ return ""; }
+}
+
+document.getElementById("btnGerar").addEventListener("click", async function(){
+    const senha = document.getElementById("senha").value.trim();
+    const status = document.getElementById("statusGerar");
+    const btn = this;
+    if(!senha){ status.className = "status erro"; status.textContent = "Digite a senha do painel."; return; }
+
+    btn.disabled = true; btn.textContent = "Enviando...";
+    geradoAtual = await lerGerado();
+    try{
+        const dados = new FormData();
+        dados.append("senha", senha);
+        dados.append("itens", JSON.stringify([{ acao: "stories" }]));
+        const r = await fetch(WORKER_URL + "/lote", { method: "POST", body: dados });
+        const texto = await r.text();
+        if(r.status === 401) throw new Error("Senha incorreta.");
+        if(!r.ok) throw new Error(texto);
+        try{ localStorage.setItem("farejadinhos_admin_senha", senha); }catch(e){}
+        btn.textContent = "⏳ Gerando...";
+        esperar(status, btn, Date.now());
+    }catch(erro){
+        status.className = "status erro"; status.textContent = "❌ " + erro.message;
+        btn.disabled = false; btn.textContent = "🎬 Gerar stories agora";
+    }
+});
+
+// confere a cada 30 s se chegaram os vídeos novos (até 20 min)
+function esperar(status, btn, inicio){
+    const min = Math.floor((Date.now() - inicio) / 60000);
+    status.className = "status espera";
+    status.textContent = "⏳ Pedido enviado! A Yang está gravando os 3 vídeos — leva uns 6 a 10 minutos. Pode deixar esta página aberta, ela atualiza sozinha." +
+        (min ? ` (${min} min)` : "");
+    setTimeout(async () => {
+        const g = await lerGerado();
+        if(g && g !== geradoAtual){
+            status.className = "status ok"; status.textContent = "✅ Stories novos prontos!";
+            btn.disabled = false; btn.textContent = "🎬 Gerar stories agora";
+            carregar();
+        } else if(Date.now() - inicio > 20 * 60000){
+            status.className = "status erro";
+            status.textContent = "Demorou mais que o normal. Confira em GitHub → Actions se o 'Stories do dia' deu erro.";
+            btn.disabled = false; btn.textContent = "🎬 Gerar stories agora";
+        } else {
+            esperar(status, btn, inicio);
+        }
+    }, 30000);
 }
 
 carregar();

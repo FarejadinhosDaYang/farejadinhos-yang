@@ -60,6 +60,14 @@ if (-not (Test-Path -LiteralPath $CaminhoAbs)) {
 $TextoLote = Get-Content -LiteralPath $CaminhoAbs -Raw -Encoding UTF8
 $Itens = @($TextoLote | ConvertFrom-Json)
 
+# Modo "stories": o painel só pediu pra gerar os stories do dia (quem
+# dispara é o próprio workflow gerar-lote.yml); aqui não tem nada a fazer.
+if (($Itens.Count -gt 0) -and $Itens[0].PSObject.Properties["acao"] -and ([string]$Itens[0].acao -eq "stories")) {
+    Write-Host "Pedido de stories do dia (tratado pelo workflow)."
+    Remove-Item -LiteralPath $CaminhoAbs -Force -ErrorAction SilentlyContinue
+    exit 0
+}
+
 # Modo "reorganizar": nenhum produto novo, só remistura a fila
 $SoReorganizar = ($Itens.Count -gt 0) -and $Itens[0].PSObject.Properties["acao"] -and ([string]$Itens[0].acao -eq "reorganizar")
 if ($SoReorganizar) { $Itens = @() }

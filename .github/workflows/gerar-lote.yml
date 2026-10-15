@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write
+  actions: write   # pra poder disparar o "Stories do dia" quando o painel pedir
 
 jobs:
   gerar-lote:
@@ -18,6 +19,18 @@ jobs:
     steps:
       - name: Baixar repositorio
         uses: actions/checkout@v4
+
+      - name: Pedido de stories do dia (botao do painel)
+        shell: pwsh
+        env:
+          ARQUIVO_LOTE: ${{ inputs.arquivoLote }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $texto = Get-Content -LiteralPath $env:ARQUIVO_LOTE -Raw -Encoding UTF8
+          if ($texto -match '"acao"\s*:\s*"stories"') {
+            gh workflow run stories-do-dia.yml --ref main
+            Write-Host "Pedido de stories enviado pro workflow 'Stories do dia'."
+          }
 
       - name: Gerar ofertas do lote
         shell: pwsh
