@@ -39,7 +39,8 @@
     "Cozinha": "🍳",
     "Utilidades": "🧰",
     "Natal": "🎄",
-    "Skincare": "🧴"
+    "Skincare": "🧴",
+    "Piscina": "🏊"
   };
 
   // "R$ 1.299,90" / "1299,90" / "129.9" -> número

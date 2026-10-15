@@ -35,6 +35,15 @@
       "retinal", "booster facial", "ampola facial", "essencia facial", "celimax", "tightening",
       "skin booster", "kokeshi", "cosrx", "anua"
     ],
+    "Piscina": [
+      "piscina", "piscina inflavel", "piscina de armacao", "piscina infantil", "boia", "boia de braco",
+      "boia inflavel", "colchao inflavel", "colchao de piscina", "flutuador", "tapete flutuante",
+      "cloro", "pastilha de cloro", "clorador", "clorador flutuante", "clarificante", "algicida",
+      "barrilha", "redutor de ph", "elevador de ph", "teste de ph", "kit teste ph", "aspirador de piscina",
+      "peneira de piscina", "escova de piscina", "cabo telescopico", "capa de piscina", "lona de piscina",
+      "filtro de piscina", "bomba de piscina", "escada de piscina", "termometro de piscina",
+      "oculos de natacao", "touca de natacao", "natacao", "macarrao de piscina", "espaguete de piscina"
+    ],
     "Pet": [
       "pet", "cachorro", "cao", "caes", "gato", "racao", "petisco pet", "petisco para cachorro",
       "petisco para gato", "petisco canino", "coleira",
