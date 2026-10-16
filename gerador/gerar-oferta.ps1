@@ -268,7 +268,7 @@ if ($PrecoAVista.Trim() -ne "" -and $PrecoAPrazo.Trim() -ne "") {
 # URL DA OFERTA
 # ==========================================
 
-$BaseUrl = "https://farejadinhosdayang.github.io/farejadinhos-yang/ofertas/$Slug/"
+$BaseUrl = "https://farejadinhosdayang.com.br/ofertas/$Slug/"
 $ImageUrl = $BaseUrl + "../../assets/" + $ImagemNome
 
 
