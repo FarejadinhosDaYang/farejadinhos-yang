@@ -1329,6 +1329,7 @@ function montarPodio(){
     // Maior desconto primeiro; empate (ou sem desconto) -> destaque, depois mais recente
     const top = ofertas
         .map((o, i) => ({ o, i, d: descontoPct(o) }))
+        .filter(x => FarejadinhosVitrine.podeIrProPodio(x.o))
         .sort((a, b) => (b.d - a.d) || ((b.o.destaque ? 1 : 0) - (a.o.destaque ? 1 : 0)) || (a.i - b.i))
         .slice(0, 3)
         .map(x => x.o);

@@ -48,6 +48,13 @@
     "natal": { inicio: "09-01", fim: "12-25" }
   };
 
+  // Categorias que nunca entram no Top 3 / pódio do dia (nem nos stories)
+  const FORA_DO_PODIO = ["piscina"];
+
+  function podeIrProPodio(oferta){
+    return !FORA_DO_PODIO.includes(chaveCategoria(oferta && oferta.categoria));
+  }
+
   function chaveCategoria(c){
     return String(c || "").trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   }
@@ -160,7 +167,7 @@
 
   window.FarejadinhosVitrine = {
     MINIMO_VITRINE, HORAS_FRESCA, HORAS_MAXIMA, META_CATEGORIA, MINIMO_CATEGORIA, TEMPORADAS,
-    inicio, idadeHoras, selecionar, status, foraDeEpoca
+    inicio, idadeHoras, selecionar, status, foraDeEpoca, podeIrProPodio, FORA_DO_PODIO
   };
 
 })();
