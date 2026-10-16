@@ -11,7 +11,8 @@
  *   FarejadinhosDivulgacao.legenda(dados)    -> texto pronto pra colar
  *
  * dados = { produto, preco, precoAntigo, cupom, categoria, link,
- *           chamada (opcional, só legenda),
+ *           chamada (opcional, só legenda — vazia = frase automática),
+ *           precoAVista, precoAPrazo, parcelas, slug (opcionais, legenda),
  *           imagem: <img> já carregada OU endereço da foto,
  *           assets: caminho da pasta assets (ex.: "../assets/") }
  * ========================================== */
@@ -275,16 +276,132 @@
     });
   }
 
-  /* ---------- LEGENDA ---------- */
+  /* ---------- FRASE DE EFEITO ---------- */
+
+  // Linha do topo da legenda, no estilo "CABELIN LIMPIN E BEM CUIDADO".
+  // Primeiro tenta pelo nome do produto (mais certeiro), depois pela
+  // categoria, e por fim cai nas genéricas.
+  const FRASES_PALAVRA = [
+    [/shampoo|condicionador|\bcabelos?\b|capilar|escova de cabelo|secador de cabelo|chapinha|prancha alisadora/i,
+      ["CABELIN LIMPIN E BEM CUIDADO", "CABELO DE COMERCIAL", "FIOS AGRADECEM", "SALÃO EM CASA"]],
+    [/\bpotes?\b|organizador|dispenser|porta.?(tempero|mantimento|biscoito)/i,
+      ["DESPENSA DE CINEMA", "COZINHA ORGANIZADA É OUTRA VIDA", "TUDO NO SEU LUGAR", "ORGANIZAÇÃO QUE DÁ GOSTO"]],
+    [/air ?fryer|fritadeira/i,
+      ["CROCANTE SEM ÓLEO", "A AIRFRYER MANDOU LEMBRANÇAS"]],
+    [/\bcaf[eé]\b|cafeteira|\bc[aá]psulas?\b|moedor de caf/i,
+      ["CAFEZIN TÁ SERVIDO", "BOM DIA SÓ DEPOIS DO CAFÉ", "PRA QUEM VIVE À BASE DE CAFÉ"]],
+    [/\bfones?\b|headphone|earbud|caixa de som|\bjbl\b/i,
+      ["SOM NA CAIXA", "PRA OUVIR NO TALO", "SEU PODCAST AGRADECE"]],
+    [/carregador|cabo usb|power ?bank|bateria port/i,
+      ["NUNCA MAIS COM 1%", "BATERIA PRA DAR E VENDER"]],
+    [/compressor|\bpneus?\b|\bcarros?\b|\bmotos?\b|automotiv/i,
+      ["SALVA-VIDAS DO PORTA-MALAS", "PRA NUNCA FICAR NA MÃO"]],
+    [/^(?!.*(escova|limpeza|forma de gelo)).*(garrafa|squeeze|copo t[eé]rmic|stanley)/i,
+      ["HIDRATAÇÃO EM DIA", "GELADINHO O DIA INTEIRO"]],
+    [/almofada|capa de almofada|manta|tapete|cortina/i,
+      ["CASA COM CARA DE CASA", "SALA DE REVISTA"]],
+    [/\bespelho/i,
+      ["SE OLHAR NUNCA FOI TÃO BOM", "REFLEXO DE MILIONÁRIO"]],
+    [/limpeza|limpador|\bmop\b|tira manchas|percarbonato|desentupidor|limpa vidros/i,
+      ["FAXINA SEM SOFRIMENTO", "LIMPEZA NO MODO FÁCIL"]],
+    [/\bta[cç]as?\b|jogo de copos|jogo americano|sousplat|pratos|faqueiro|talheres/i,
+      ["MESA POSTA DE RESPEITO", "RECEBER BEM É OUTRA COISA"]],
+    [/\bmala\b|viagem|pochete/i,
+      ["PRONTO PRA VIAJAR", "PÉ NA ESTRADA"]],
+    [/guarda.?chuva/i,
+      ["CHUVA? QUE CHUVA?", "SALVA-VIDAS DO DIA A DIA"]],
+    [/natal|papai noel|\bpisca.?pisca/i,
+      ["O NATAL CHEGOU MAIS CEDO", "HO HO HO DE PREÇO BAIXO", "CLIMA DE NATAL ATIVADO"]],
+    [/piscina|boia|inflável|inflavel/i,
+      ["VERÃO CHEGANDO", "BORA PRA ÁGUA"]],
+    [/s[ée]rum|hidratante|protetor solar|skincare|creme facial/i,
+      ["PELE DE PÊSSEGO", "SKINCARE EM DIA"]],
+    [/\bra[cç][aã]o\b|\bcoleira|\bcaminha pet|\barranhador|\bmordedor|comedouro|bebedouro/i,
+      ["PRO SEU AU AU", "A YANG APROVOU", "MIMO PRO BICHINHO"]]
+  ];
+
+  const FRASES_CATEGORIA = {
+    "Casa": ["CASA COM CARA DE CASA", "SEU CANTINHO MERECE", "DÁ UM UP NA CASA"],
+    "Café": ["CAFEZIN TÁ SERVIDO", "BOM DIA SÓ DEPOIS DO CAFÉ"],
+    "Academia": ["SHAPE INEXPLICÁVEL VEM AÍ", "TREINO PAGO, CORPO PAGO", "BORA PRO TREINO"],
+    "Eletrônicos": ["TECNOLOGIA SEM CHORAR NO PREÇO", "UPGRADE LIBERADO"],
+    "Beleza": ["AUTOESTIMA EM DIA", "PODEROSA E ECONÔMICA", "SE CUIDAR CABE NO BOLSO"],
+    "Moda": ["LOOK DO DIA GARANTIDO", "ESTILO SEM GASTAR MUITO"],
+    "Pet": ["PRO SEU AU AU", "A YANG APROVOU", "MIMO PRO BICHINHO"],
+    "Cozinha": ["CHEF EM CASA", "PRA COZINHAR COM GOSTO", "ACHADINHO DE COZINHA"],
+    "Utilidades": ["MÃO NA RODA", "SALVA-VIDAS DO DIA A DIA", "TODO MUNDO PRECISA DE UM"],
+    "Natal": ["O NATAL CHEGOU MAIS CEDO", "CLIMA DE NATAL ATIVADO"],
+    "Skincare": ["PELE DE PÊSSEGO", "SKINCARE EM DIA"],
+    "Piscina": ["VERÃO CHEGANDO", "BORA PRA ÁGUA"],
+    "Eletrodomésticos": ["TRABALHO DE CASA MAIS LEVE", "MÃO NA RODA"]
+  };
+
+  const FRASES_GERAIS = [
+    "A YANG FAREJOU ESSA",
+    "ACHADINHO DO DIA",
+    "CORRE QUE TÁ BARATO",
+    "PREÇO DE ARRASAR",
+    "OLHA ESSE PREÇO",
+    "NÃO DEIXA PASSAR"
+  ];
+
+  function hash(texto){
+    let h = 0;
+    for(const c of String(texto || "")) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+    return h;
+  }
+
+  // Frases que combinam com a oferta, das mais certeiras pras genéricas
+  function grupos(dados){
+    const porPalavra = [];
+    FRASES_PALAVRA.forEach(([regra, frases]) => {
+      if(regra.test(dados.produto || "")) porPalavra.push(...frases);
+    });
+    return [porPalavra, FRASES_CATEGORIA[dados.categoria] || [], FRASES_GERAIS];
+  }
+
+  function frasesPossiveis(dados){
+    return [...new Set(grupos(dados).flat())];
+  }
+
+  // sorteio = 0 dá sempre a mesma frase pra mesma oferta (a do grupo
+  // mais certeiro); 1, 2, 3... vão passando pelas outras ("🎲 outra frase")
+  function fraseDeEfeito(dados, sorteio){
+    const lista = frasesPossiveis(dados);
+    const melhorGrupo = grupos(dados).find(g => g.length) || FRASES_GERAIS;
+    const preferida = melhorGrupo[hash(dados.slug || dados.produto) % melhorGrupo.length];
+    const inicio = lista.indexOf(preferida);
+    return lista[(inicio + (sorteio || 0)) % lista.length];
+  }
+
+  /* ---------- LEGENDA (WhatsApp / Telegram) ---------- */
 
   // "Kit 6 ..." -> preço por unidade
   function precoCada(produto, preco){
-    const m = String(produto || "").match(/\bkit\s+(\d+)\b/i);
+    const m = String(produto || "").match(/\b(?:kit|pack|conjunto|jogo)\s+(?:c\/\s*|com\s+)?(\d+)\b/i);
     if(!m) return null;
     const qtd = parseInt(m[1], 10);
     const n = numero(preco);
     if(!qtd || qtd < 2 || n === null) return null;
-    return formatarBR(n / qtd);
+    return "R$ " + formatarBR(n / qtd);
+  }
+
+  // Só mostra parcelado quando não fica bem mais caro que à vista
+  // (até 5% a mais); se for igual, avisa "sem juros".
+  function linhaParcelas(dados){
+    const n = parseInt(dados.parcelas, 10);
+    const total = numero(dados.precoAPrazo);
+    const vista = numero(dados.precoAVista) || numero(dados.preco);
+    if(!n || n < 2 || !total || !vista) return "";
+    if(total > vista * 1.05) return "";
+    const semJuros = total <= vista * 1.005 ? " sem juros" : "";
+    return `💳 ou ${n}x de R$ ${formatarBR(total / n)}${semJuros}`;
+  }
+
+  // Nome do produto com a 1ª letra maiúscula (alguns vêm todo minúsculo)
+  function nomeBonito(nome){
+    nome = String(nome || "").trim().replace(/\s+/g, " ");
+    return nome.charAt(0).toUpperCase() + nome.slice(1);
   }
 
   function legenda(dados){
@@ -292,38 +409,43 @@
     const emoji = EMOJI_CATEGORIA[dados.categoria] || "🔥";
     const preco = comReais(dados.preco);
     const precoAntigo = comReais(dados.precoAntigo);
+    const pct = descontoPct(dados.preco, dados.precoAntigo);
     const linhas = [];
 
-    if(dados.chamada){
-      linhas.push(String(dados.chamada).toUpperCase());
-      linhas.push("");
-    }
+    const chamada = String(dados.chamada || "").trim() || fraseDeEfeito(dados);
+    linhas.push(`*${chamada.toUpperCase()}*`);
+    linhas.push("");
 
-    linhas.push(`${emoji} *${dados.produto}*`);
+    linhas.push(`${emoji} *${nomeBonito(dados.produto)}*`);
     linhas.push("");
 
     const cada = precoCada(dados.produto, dados.preco);
     const sufixo = cada ? ` (${cada} cada)` : "";
 
-    if(precoAntigo && descontoPct(dados.preco, dados.precoAntigo) > 0){
-      linhas.push(`🔥 ~DE ${precoAntigo}~ | POR ${preco} no Pix${sufixo}`);
+    if(precoAntigo && pct > 0){
+      linhas.push(`🔥 ~DE ${precoAntigo}~ | POR *${preco}* (-${pct}%)${sufixo}`);
     } else {
-      linhas.push(`🔥 POR ${preco} no Pix${sufixo}`);
+      linhas.push(`🔥 POR *${preco}*${sufixo}`);
     }
 
+    const parcelas = linhaParcelas(dados);
+    if(parcelas) linhas.push(parcelas);
+
     if(dados.cupom){
-      linhas.push("");
-      linhas.push(`🏷️ CUPOM: *${dados.cupom}*`);
+      linhas.push(`🏷️ Cupom: *${String(dados.cupom).trim()}*`);
     }
 
     if(dados.link){
       linhas.push("");
-      linhas.push(`🔗 ${dados.link}`);
+      linhas.push(`👉 ${dados.link}`);
     }
+
+    linhas.push("");
+    linhas.push("🐾 _Farejadinhos da Yang_");
 
     return linhas.join("\n");
   }
 
-  window.FarejadinhosDivulgacao = { gerarArte, legenda, descontoPct, carregarImagem };
+  window.FarejadinhosDivulgacao = { gerarArte, legenda, fraseDeEfeito, frasesPossiveis, descontoPct, carregarImagem };
 
 })();

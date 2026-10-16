@@ -54,7 +54,10 @@ body{margin:0;padding:20px;background:var(--cream);font-family:'Work Sans',Arial
 .liberar:disabled{opacity:.5;cursor:wait}
 .editar:disabled{opacity:.5;cursor:wait}
 .botoes{display:flex;flex-direction:column;gap:6px;flex-shrink:0}
-.divulgar{display:flex;gap:6px;width:100%;margin-top:10px}
+.divulgar{display:flex;flex-wrap:wrap;gap:6px;width:100%;margin-top:10px}
+.linhaFrase{display:flex;gap:6px;width:100%}
+.campoFrase{flex:1;min-width:0;border:1.5px solid var(--line);border-radius:9px;padding:8px 10px;font-size:12.5px;font-weight:700;font-family:'Work Sans',sans-serif;text-transform:uppercase;color:var(--ink);background:#fff}
+.btnSortear{border:1.5px solid var(--line);background:#fff;border-radius:9px;padding:0 10px;font-size:15px;cursor:pointer}
 .btnArte,.btnLegenda{flex:1;border-radius:9px;padding:9px 10px;font-size:12.5px;font-weight:700;cursor:pointer;font-family:'Work Sans',sans-serif;white-space:nowrap}
 .btnArte{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;border:0}
 .btnLegenda{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
@@ -255,8 +258,12 @@ function render(){
           <button class="remover" type="button">🗑️ Remover</button>
         </div>
         ${semDados ? "" : `<div class="divulgar">
+          <div class="linhaFrase">
+            <input type="text" class="campoFrase" title="Frase de efeito do topo da mensagem (dá pra editar)" value="${escapeHtml(FarejadinhosDivulgacao.fraseDeEfeito(o))}">
+            <button class="btnSortear" type="button" title="Sortear outra frase">🎲</button>
+          </div>
           <button class="btnArte" type="button">📱 Arte do story</button>
-          <button class="btnLegenda" type="button">📋 Copiar legenda</button>
+          <button class="btnLegenda" type="button">📲 Copiar p/ WhatsApp</button>
         </div>`}
         <div class="painelEdicao">
           <label>Produto</label>
@@ -309,8 +316,13 @@ function render(){
         item.querySelector(".btnArte").addEventListener("click", function(){
           baixarArte(o, imagemSrc, this);
         });
+        let sorteio = 0;
+        item.querySelector(".btnSortear").addEventListener("click", function(){
+          sorteio++;
+          item.querySelector(".campoFrase").value = FarejadinhosDivulgacao.fraseDeEfeito(o, sorteio);
+        });
         item.querySelector(".btnLegenda").addEventListener("click", function(){
-          copiarLegendaOferta(o, this);
+          copiarLegendaOferta(o, this, item.querySelector(".campoFrase").value);
         });
       }
 
@@ -394,9 +406,14 @@ async function baixarArte(oferta, imagemSrc, botao){
   }
 }
 
-async function copiarLegendaOferta(oferta, botao){
+async function copiarLegendaOferta(oferta, botao, chamada){
 
   const texto = FarejadinhosDivulgacao.legenda({
+    chamada: chamada,
+    slug: oferta.slug,
+    precoAVista: oferta.precoAVista,
+    precoAPrazo: oferta.precoAPrazo,
+    parcelas: oferta.parcelas,
     produto: oferta.produto,
     preco: oferta.preco,
     precoAntigo: oferta.precoAntigo,
@@ -412,7 +429,7 @@ async function copiarLegendaOferta(oferta, botao){
     avisarNoBotao(botao, "✅ Copiada!");
   }catch(e){
     // sem permissão de área de transferência: mostra o texto pra copiar à mão
-    window.prompt("Copie a legenda:", texto);
+    window.prompt("Copie a mensagem:", texto);
     botao.disabled = false;
   }
 }

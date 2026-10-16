@@ -525,7 +525,7 @@ Senha
 
 <label>
 Chamada
-<span class="optional">(opcional — linha do topo da legenda, ex.: "PARA OS TIKTOKERS")</span>
+<span class="optional">(opcional — frase de efeito do topo da mensagem; vazio = a Yang escolhe uma sozinha)</span>
 </label>
 
 <input
@@ -712,7 +712,7 @@ Processando...
 <div class="legendaBox">
 
 <div class="legendaDica">
-📲 <b>Pra postar no WhatsApp</b> (foto grande + legenda) — essa é só a foto crua do produto, sem nada desenhado em cima. Baixe e anexe no WhatsApp, colando esta legenda como texto da foto:
+📲 <b>Pra postar no WhatsApp</b> (foto grande + mensagem) — essa é só a foto crua do produto, sem nada desenhado em cima. Baixe e anexe no WhatsApp, colando esta legenda como texto da foto:
 </div>
 
 <a id="baixarImagem" class="baixarImagemLink" href="#" download>
@@ -726,7 +726,7 @@ Processando...
     id="btnCopiarLegenda"
     onclick="copiarLegenda()"
 >
-📋 Copiar legenda
+📲 Copiar p/ WhatsApp
 </button>
 
 </div>
@@ -1359,6 +1359,8 @@ function montarLegenda(){
         precoAntigo: document.getElementById("precoAntigo").value.trim(),
         cupom: document.getElementById("cupom").value.trim(),
         categoria: document.getElementById("categoria").value,
+        precoAVista: document.getElementById("precoAVista").value.trim(),
+        precoAPrazo: document.getElementById("precoAPrazo").value.trim(),
         link: document.getElementById("link").value.trim()
     });
 }
