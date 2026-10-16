@@ -281,68 +281,68 @@
   // Linha do topo da legenda, no estilo "CABELIN LIMPIN E BEM CUIDADO".
   // Primeiro tenta pelo nome do produto (mais certeiro), depois pela
   // categoria, e por fim cai nas genéricas.
+  // Tom: descreve o produto em uso, do jeito que a gente fala no dia a dia.
+  // Nada de "corre", "preço baixo", "não deixa passar" (cara de propaganda).
   const FRASES_PALAVRA = [
     [/shampoo|condicionador|\bcabelos?\b|capilar|escova de cabelo|secador de cabelo|chapinha|prancha alisadora/i,
-      ["CABELIN LIMPIN E BEM CUIDADO", "CABELO DE COMERCIAL", "FIOS AGRADECEM", "SALÃO EM CASA"]],
+      ["CABELIN LIMPIN E BEM CUIDADO", "CABELO SEDOSO O DIA TODO", "FIOS ALINHADINHOS"]],
     [/\bpotes?\b|organizador|dispenser|porta.?(tempero|mantimento|biscoito)/i,
-      ["DESPENSA DE CINEMA", "COZINHA ORGANIZADA É OUTRA VIDA", "TUDO NO SEU LUGAR", "ORGANIZAÇÃO QUE DÁ GOSTO"]],
+      ["DESPENSA ORGANIZADINHA", "TUDO NO SEU LUGARZINHO", "GELADEIRA ARRUMADINHA"]],
     [/air ?fryer|fritadeira/i,
-      ["CROCANTE SEM ÓLEO", "A AIRFRYER MANDOU LEMBRANÇAS"]],
+      ["SEQUINHO E CROCANTE", "BATATINHA SEM ÓLEO"]],
     [/\bcaf[eé]\b|cafeteira|\bc[aá]psulas?\b|moedor de caf/i,
-      ["CAFEZIN TÁ SERVIDO", "BOM DIA SÓ DEPOIS DO CAFÉ", "PRA QUEM VIVE À BASE DE CAFÉ"]],
+      ["CAFEZINHO PASSADO NA HORA", "CHEIRINHO DE CAFÉ NA CASA"]],
     [/\bfones?\b|headphone|earbud|caixa de som|\bjbl\b/i,
-      ["SOM NA CAIXA", "PRA OUVIR NO TALO", "SEU PODCAST AGRADECE"]],
+      ["MÚSICA NO OUVIDO O DIA TODO", "SOM LIMPINHO"]],
     [/carregador|cabo usb|power ?bank|bateria port/i,
-      ["NUNCA MAIS COM 1%", "BATERIA PRA DAR E VENDER"]],
+      ["CELULAR SEMPRE CARREGADINHO", "BATERIA PRO DIA INTEIRO"]],
     [/compressor|\bpneus?\b|\bcarros?\b|\bmotos?\b|automotiv/i,
-      ["SALVA-VIDAS DO PORTA-MALAS", "PRA NUNCA FICAR NA MÃO"]],
+      ["PNEU CALIBRADO SEM SAIR DE CASA", "PRA DEIXAR NO PORTA-MALAS"]],
     [/^(?!.*(escova|limpeza|forma de gelo)).*(garrafa|squeeze|copo t[eé]rmic|stanley)/i,
-      ["HIDRATAÇÃO EM DIA", "GELADINHO O DIA INTEIRO"]],
-    [/almofada|capa de almofada|manta|tapete|cortina/i,
-      ["CASA COM CARA DE CASA", "SALA DE REVISTA"]],
+      ["ÁGUA GELADINHA O DIA TODO", "GELADINHO ATÉ O FIM DO DIA"]],
+    [/almofada|\bmantas?\b|cobertor|tapete|cortina|toalhas? de banho|toalhas? banho/i,
+      ["CASA QUENTINHA E ACONCHEGANTE", "CANTINHO ACONCHEGANTE", "SOFÁ MAIS GOSTOSO"]],
     [/\bespelho/i,
-      ["SE OLHAR NUNCA FOI TÃO BOM", "REFLEXO DE MILIONÁRIO"]],
+      ["ESPELHO PRA FOTO DO LOOK", "AQUELE ESPELHO DE PINTEREST"]],
     [/limpeza|limpador|\bmop\b|tira manchas|percarbonato|desentupidor|limpa vidros/i,
-      ["FAXINA SEM SOFRIMENTO", "LIMPEZA NO MODO FÁCIL"]],
+      ["CASA LIMPINHA E CHEIROSA", "FAXINA RAPIDINHA", "BRILHANDO DE LIMPO"]],
     [/\bta[cç]as?\b|jogo de copos|jogo americano|sousplat|pratos|faqueiro|talheres/i,
-      ["MESA POSTA DE RESPEITO", "RECEBER BEM É OUTRA COISA"]],
+      ["MESA POSTA CAPRICHADA", "PRA RECEBER AS VISITAS"]],
     [/\bmala\b|viagem|pochete/i,
-      ["PRONTO PRA VIAJAR", "PÉ NA ESTRADA"]],
+      ["MALA PRONTA PRA VIAGEM", "PRA VIAJAR TRANQUILO"]],
     [/guarda.?chuva/i,
-      ["CHUVA? QUE CHUVA?", "SALVA-VIDAS DO DIA A DIA"]],
+      ["SEQUINHO NA CHUVA", "PRA CHUVA NÃO TE PEGAR"]],
     [/natal|papai noel|\bpisca.?pisca/i,
-      ["O NATAL CHEGOU MAIS CEDO", "HO HO HO DE PREÇO BAIXO", "CLIMA DE NATAL ATIVADO"]],
+      ["CASA NO CLIMA DE NATAL", "ÁRVORE CAPRICHADA ESSE ANO", "NATAL CHEGANDO AÍ"]],
     [/piscina|boia|inflável|inflavel/i,
-      ["VERÃO CHEGANDO", "BORA PRA ÁGUA"]],
-    [/s[ée]rum|hidratante|protetor solar|skincare|creme facial/i,
-      ["PELE DE PÊSSEGO", "SKINCARE EM DIA"]],
-    [/\bra[cç][aã]o\b|\bcoleira|\bcaminha pet|\barranhador|\bmordedor|comedouro|bebedouro/i,
-      ["PRO SEU AU AU", "A YANG APROVOU", "MIMO PRO BICHINHO"]]
+      ["PISCINA LIMPINHA PRO VERÃO", "ÁGUA CRISTALINA"]],
+    [/s[ée]rum|hidratante|protetor solar|skincare|creme facial|facial/i,
+      ["PELE LISINHA E HIDRATADA", "ROSTINHO HIDRATADO", "SKINCARE EM DIA"]],
+    [/\bra[cç][aã]o\b|\bcoleira|\bcaminha pet|\barranhador|\bmordedor|comedouro|bebedouro|\bpet\b/i,
+      ["PRO SEU AU AU", "MIMO PRO BICHINHO", "PET FELIZ EM CASA"]]
   ];
 
   const FRASES_CATEGORIA = {
-    "Casa": ["CASA COM CARA DE CASA", "SEU CANTINHO MERECE", "DÁ UM UP NA CASA"],
-    "Café": ["CAFEZIN TÁ SERVIDO", "BOM DIA SÓ DEPOIS DO CAFÉ"],
-    "Academia": ["SHAPE INEXPLICÁVEL VEM AÍ", "TREINO PAGO, CORPO PAGO", "BORA PRO TREINO"],
-    "Eletrônicos": ["TECNOLOGIA SEM CHORAR NO PREÇO", "UPGRADE LIBERADO"],
-    "Beleza": ["AUTOESTIMA EM DIA", "PODEROSA E ECONÔMICA", "SE CUIDAR CABE NO BOLSO"],
-    "Moda": ["LOOK DO DIA GARANTIDO", "ESTILO SEM GASTAR MUITO"],
-    "Pet": ["PRO SEU AU AU", "A YANG APROVOU", "MIMO PRO BICHINHO"],
-    "Cozinha": ["CHEF EM CASA", "PRA COZINHAR COM GOSTO", "ACHADINHO DE COZINHA"],
-    "Utilidades": ["MÃO NA RODA", "SALVA-VIDAS DO DIA A DIA", "TODO MUNDO PRECISA DE UM"],
-    "Natal": ["O NATAL CHEGOU MAIS CEDO", "CLIMA DE NATAL ATIVADO"],
-    "Skincare": ["PELE DE PÊSSEGO", "SKINCARE EM DIA"],
-    "Piscina": ["VERÃO CHEGANDO", "BORA PRA ÁGUA"],
-    "Eletrodomésticos": ["TRABALHO DE CASA MAIS LEVE", "MÃO NA RODA"]
+    "Casa": ["CASA AJEITADINHA", "CANTINHO DO JEITO QUE VOCÊ GOSTA", "CASA MAIS GOSTOSA DE FICAR"],
+    "Café": ["CAFEZINHO PASSADO NA HORA", "CHEIRINHO DE CAFÉ NA CASA"],
+    "Academia": ["BORA PRO TREINO", "TREINO EM DIA", "FOCO NO SHAPE"],
+    "Eletrônicos": ["TECNOLOGIA NO DIA A DIA", "PRA FACILITAR A ROTINA"],
+    "Beleza": ["AUTOCUIDADO EM DIA", "CUIDADO QUE DÁ GOSTO"],
+    "Moda": ["LOOK CAPRICHADO", "PRA SAIR ARRUMADINHO"],
+    "Pet": ["PRO SEU AU AU", "MIMO PRO BICHINHO", "PET FELIZ EM CASA"],
+    "Cozinha": ["COZINHA PRÁTICA", "PRA COZINHAR SEM STRESS", "COZINHA AJEITADINHA"],
+    "Utilidades": ["FACILITA A VIDA", "AQUELE QUE SEMPRE FAZ FALTA", "PRA TER SEMPRE EM CASA"],
+    "Natal": ["CASA NO CLIMA DE NATAL", "NATAL CHEGANDO AÍ"],
+    "Skincare": ["PELE LISINHA E HIDRATADA", "SKINCARE EM DIA"],
+    "Piscina": ["PISCINA LIMPINHA PRO VERÃO", "ÁGUA CRISTALINA"],
+    "Eletrodomésticos": ["MENOS TRABALHO NA COZINHA", "FACILITA A ROTINA"]
   };
 
   const FRASES_GERAIS = [
-    "A YANG FAREJOU ESSA",
     "ACHADINHO DO DIA",
-    "CORRE QUE TÁ BARATO",
-    "PREÇO DE ARRASAR",
-    "OLHA ESSE PREÇO",
-    "NÃO DEIXA PASSAR"
+    "A YANG FAREJOU ESSE",
+    "PRA FACILITAR A VIDA",
+    "ACHADINHO PRA CASA"
   ];
 
   function hash(texto){
