@@ -30,18 +30,28 @@ html,body{ width:1080px; height:1920px; overflow:hidden; background:var(--red); 
 @keyframes descer{ from{ transform:translateY(-160px); opacity:0; } to{ transform:none; opacity:1; } }
 
 /* ---------- cena 1: Yang entra e fala ---------- */
-.yang{ position:absolute; width:620px; left:230px; top:760px; transform-origin:50% 100%;
-  filter:drop-shadow(0 26px 30px rgba(60,0,0,.45));
+/* Yang padrão: polaroide na abertura, depois ícone redondo no canto do produto */
+.yang{ position:absolute; left:220px; top:700px; width:640px; background:#fff; padding:22px 22px 0;
+  border-radius:8px; box-shadow:0 30px 60px rgba(60,0,0,.45);
   animation:
     yangEntra .8s cubic-bezier(.2,1.5,.4,1) .3s both,
-    yangCanto .7s cubic-bezier(.6,0,.3,1) 2.9s forwards,
-    yangBalanca 1.6s ease-in-out 3.6s infinite; }
+    yangSai .55s cubic-bezier(.6,0,.4,1) 2.9s forwards; }
+.yang img{ display:block; width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:4px; }
+.yang figcaption{ font-family:"Baloo"; font-weight:800; font-size:48px; color:var(--ink); text-align:center; padding:14px 0 20px; }
+.yang::before{ content:""; position:absolute; top:-26px; left:50%; width:190px; height:56px; transform:translateX(-50%) rotate(-3deg);
+  background:rgba(247,148,29,.7); }
+@keyframes yangEntra{ from{ transform:translateY(1000px) rotate(-12deg) scale(.7); } to{ transform:rotate(4deg); } }
+@keyframes yangSai{ to{ transform:translate(380px,-560px) rotate(12deg) scale(.2); opacity:0; } }
+
+.yang-icone{ position:absolute; left:800px; top:180px; width:230px; height:230px; border-radius:50%;
+  border:10px solid #fff; box-shadow:0 14px 30px rgba(60,0,0,.4); overflow:hidden; background:#fff;
+  animation:pop .45s cubic-bezier(.2,1.6,.4,1) 3.35s both, iconeBalanca 1.6s ease-in-out 3.9s infinite; }
+.yang-icone img{ width:100%; height:100%; display:block; }
+@keyframes iconeBalanca{ 0%,100%{ transform:rotate(-4deg); } 50%{ transform:rotate(5deg) translateY(-8px); } }
 .yang-sobe{ position:absolute; inset:0; animation:abrirEspaco .5s ease-in-out 9.1s both; }
 @keyframes yangEntra{ from{ transform:translateY(900px) scale(.6); } to{ transform:none; } }
 @keyframes yangCanto{ to{ transform:translate(330px,-1050px) scale(.36) rotate(8deg); } }
-@keyframes yangBalanca{
-  0%,100%{ transform:translate(330px,-1050px) scale(.36) rotate(8deg); }
-  50%{ transform:translate(330px,-1062px) scale(.36) rotate(4deg); } }
+
 
 .balao{ position:absolute; background:#fff; border-radius:44px; padding:34px 46px;
   font-family:"Baloo"; font-weight:800; color:var(--ink); line-height:1.05; text-align:center;
@@ -51,7 +61,7 @@ html,body{ width:1080px; height:1920px; overflow:hidden; background:var(--red); 
   animation:pop .5s cubic-bezier(.2,1.6,.4,1) .9s both, sumir .3s ease-in 2.75s forwards; }
 .b1::after{ left:calc(50% - 28px); bottom:-24px; }
 .b1 small{ display:block; font-size:44px; color:var(--red-dark); margin-top:8px; }
-.b2{ left:330px; top:300px; font-size:52px; padding:24px 34px;
+.b2{ left:300px; top:240px; font-size:52px; padding:24px 34px;
   animation:pop .45s cubic-bezier(.2,1.6,.4,1) 6.9s both, sumir .3s ease-in 9.1s forwards; }
 .b2::after{ right:-18px; top:30px; }
 @keyframes pop{ from{ transform:scale(0); opacity:0; } to{ transform:none; opacity:1; } }
@@ -147,7 +157,8 @@ html,body{ width:1080px; height:1920px; overflow:hidden; background:var(--red); 
   <div class="brilho" style="--x:-200px;--y:200px;animation-delay:5.85s"></div>
 
   <div class="yang-sobe">
-    <img class="yang" src="../../assets/yang-ilustrada.png" alt="">
+    <figure class="yang"><img src="../../assets/yang-padrao.jpg" alt=""><figcaption>aprovado pela Yang 🐾</figcaption></figure>
+    <div class="yang-icone"><img src="../../assets/yang-padrao-redonda.png" alt=""></div>
     <div class="balao b2" data-campo="b2">Cabe no bolso! 💸</div>
   </div>
   <div class="balao b1"><span data-campo="b1">Olha o que eu farejei!</span><small>corre ver 🐾</small></div>
