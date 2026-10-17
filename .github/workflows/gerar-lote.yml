@@ -31,6 +31,10 @@ jobs:
             gh workflow run stories-do-dia.yml --ref main
             Write-Host "Pedido de stories enviado pro workflow 'Stories do dia'."
           }
+          if ($texto -match '"acao"\s*:\s*"conferir-precos"') {
+            gh workflow run conferir-precos.yml --ref main
+            Write-Host "Pedido de conferencia de precos enviado pro workflow 'Conferir precos'."
+          }
 
       - name: Gerar ofertas do lote
         shell: pwsh

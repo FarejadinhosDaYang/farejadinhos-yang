@@ -46,6 +46,7 @@ $Agora = [DateTimeOffset]::UtcNow
 # seguram categoria sem fila também entram; o resto já saiu do site)
 $Alvo = @($Catalogo | Where-Object {
     $_ -and $_.slug -and $_.link -and ([string]$_.link -match '^https?://') -and (
+        (([string]$_.categoria).Normalize([Text.NormalizationForm]::FormD) -replace '\p{Mn}', '').ToLowerInvariant() -match 'videos' -or
         -not (ParaDataUtc ($(if ($_.liberacao) { $_.liberacao } else { $_.data }))) -or
         ($Agora - (ParaDataUtc ($(if ($_.liberacao) { $_.liberacao } else { $_.data })))).TotalDays -le 7
     )
@@ -54,6 +55,7 @@ $Alvo = @($Catalogo | Where-Object {
 Write-Host "Conferindo o preco de $($Alvo.Count) oferta(s)..."
 
 $Mudancas = @()
+$Relatorio = [ordered]@{ mudaram = @(); semPreco = @(); erros = @() }
 $SemPreco = 0
 $Iguais = 0
 $Erros = 0
@@ -70,12 +72,14 @@ foreach ($O in $Alvo) {
             $SemPreco++
             $Motivo = if ($Resp.tentativas) { ($Resp.tentativas -join " | ") } else { "" }
             Write-Host "  sem preco: $($O.slug) $Motivo"
+            $Relatorio.semPreco += [ordered]@{ slug = [string]$O.slug; produto = [string]$O.produto; link = [string]$O.link; motivo = $Motivo }
         }
         elseif ($NAtual -and [Math]::Abs($NNovo - $NAtual) -lt 0.01) {
             $Iguais++
         }
         else {
             Write-Host "  MUDOU: $($O.slug): $($O.preco) -> $Novo"
+            $Relatorio.mudaram += [ordered]@{ slug = [string]$O.slug; produto = [string]$O.produto; de = [string]$O.preco; para = $Novo }
             $Mudancas += [ordered]@{
                 acao        = "precos"
                 slug        = [string]$O.slug
@@ -92,12 +96,27 @@ foreach ($O in $Alvo) {
             exit 1
         }
         Write-Host "  erro: $($O.slug): $Msg"
+        $Relatorio.erros += [ordered]@{ slug = [string]$O.slug; produto = [string]$O.produto; link = [string]$O.link; motivo = $Msg }
     }
     Start-Sleep -Milliseconds 400   # sem pressa, pra loja não bloquear
 }
 
 Write-Host ""
 Write-Host "Resumo: $($Mudancas.Count) mudaram, $Iguais iguais, $SemPreco sem preco, $Erros erro(s)."
+
+# Relatório pro painel (precos/ultima-conferencia.json)
+$PastaRel = Join-Path $Site "precos"
+New-Item -ItemType Directory -Force -Path $PastaRel | Out-Null
+$Rel = [ordered]@{
+    quando   = $Agora.UtcDateTime.ToString("yyyy-MM-ddTHH:mm:ssZ", [Globalization.CultureInfo]::InvariantCulture)
+    origem   = if ($env:GITHUB_EVENT_NAME) { $env:GITHUB_EVENT_NAME } else { "local" }
+    total    = $Alvo.Count
+    iguais   = $Iguais
+    mudaram  = @($Relatorio.mudaram)
+    semPreco = @($Relatorio.semPreco)
+    erros    = @($Relatorio.erros)
+}
+[System.IO.File]::WriteAllText((Join-Path $PastaRel "ultima-conferencia.json"), ($Rel | ConvertTo-Json -Depth 5), (New-Object System.Text.UTF8Encoding($false)))
 
 if ($Mudancas.Count -eq 0) { exit 0 }
 

@@ -37,13 +37,21 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add ofertas ofertas.json
+          # relatório: sempre que o botão pedir, ou quando algum preço mudou
+          $mudouOferta = git status --porcelain ofertas ofertas.json
+          if ($env:GITHUB_EVENT_NAME -eq "workflow_dispatch" -or -not [string]::IsNullOrWhiteSpace($mudouOferta)) {
+            git add precos
+          }
 
-          $temAlteracoes = git status --porcelain
+          $temAlteracoes = git diff --cached --name-only
 
           if ([string]::IsNullOrWhiteSpace($temAlteracoes)) {
             Write-Host "Nenhum preco mudou."
           } else {
             git commit -m "Precos conferidos automaticamente"
+            # descarta o que não entrou no commit (ex.: relatório da rodada de hora em hora)
+            git checkout -- .
+            git clean -fdq precos
             for ($i = 0; $i -lt 3; $i++) {
               git pull --rebase
               git push

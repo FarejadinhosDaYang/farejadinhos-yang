@@ -31,6 +31,17 @@ body{margin:0;padding:20px;background:var(--cream);font-family:'Work Sans',Arial
 .senhaBox label{display:block;font-weight:700;margin-bottom:8px;font-size:14px}
 .senhaBox input{width:100%;padding:11px;border:1.5px solid var(--line);border-radius:9px;font-size:15px;outline:none;font-family:'Work Sans',sans-serif;background:#fff;color:var(--ink)}
 .senhaBox input:focus{border-color:var(--red)}
+.precosBox{background:var(--cream-2);border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:18px;box-shadow:0 6px 20px rgba(43,27,18,.08)}
+#btnPrecos{width:100%;padding:12px;border:0;border-radius:10px;background:var(--orange);color:var(--ink);font:800 15px 'Baloo 2','Work Sans',sans-serif;cursor:pointer}
+#btnPrecos:disabled{opacity:.6;cursor:wait}
+.precosStatus{margin-top:8px;font-size:13.5px;line-height:1.45}
+.precosStatus.erro{color:var(--red-dark);font-weight:700}
+.precosRelatorio{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.5}
+.precosRelatorio b{color:var(--ink)}
+.precosRelatorio details{margin-top:6px}
+.precosRelatorio summary{cursor:pointer;font-weight:700;color:var(--red-dark)}
+.precosRelatorio li{margin:3px 0}
+.precosRelatorio a{color:var(--red-dark)}
 .lista{display:flex;flex-direction:column;gap:12px}
 .item{background:var(--cream-2);border:1.5px solid var(--line);border-radius:16px;padding:14px;box-shadow:0 6px 18px rgba(43,27,18,.08);display:flex;gap:12px;align-items:center}
 .item img{width:64px;height:64px;border-radius:10px;object-fit:cover;background:#f0e6d6;flex-shrink:0}
@@ -97,6 +108,12 @@ body{margin:0;padding:20px;background:var(--cream);font-family:'Work Sans',Arial
 <input type="password" id="senha" placeholder="Senha do painel">
 </div>
 
+<div class="precosBox">
+<button type="button" id="btnPrecos">🔄 Conferir todos os preços agora</button>
+<div class="precosStatus" id="precosStatus"></div>
+<div class="precosRelatorio" id="precosRelatorio"></div>
+</div>
+
 <div class="statusGeral" id="statusGeral"></div>
 
 <div class="lista" id="lista"></div>
@@ -155,6 +172,80 @@ function formatarDataHora(iso){
   if(isNaN(d)) return "";
   return d.toLocaleString("pt-BR", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
 }
+
+// ===== Conferir todos os preços agora =====
+// Pede pro Worker (rota /lote, igual ao "Gerar stories agora") e o
+// GitHub roda o "Conferir precos": busca o preço atual de cada link
+// e, se mudou, já atualiza a oferta. O resultado fica em
+// precos/ultima-conferencia.json e aparece aqui embaixo do botão.
+async function lerRelatorioPrecos(){
+  try{
+    const r = await fetch("../precos/ultima-conferencia.json?t=" + Date.now(), { cache: "no-store" });
+    return r.ok ? await r.json() : null;
+  }catch(e){ return null; }
+}
+
+function mostrarRelatorioPrecos(rel){
+  const box = document.getElementById("precosRelatorio");
+  if(!rel){ box.innerHTML = "Ainda não teve nenhuma conferência pelo botão."; return; }
+  const quando = new Date(rel.quando).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" });
+  const mud = rel.mudaram || [], sem = rel.semPreco || [], err = rel.erros || [];
+  const item = x => `<li><a href="../ofertas/${encodeURIComponent(x.slug)}/" target="_blank">${escapeHtml(x.produto || x.slug)}</a>` +
+    (x.de ? `: ${escapeHtml(x.de)} → <b>${escapeHtml(x.para)}</b>` : "") +
+    (x.link ? ` · <a href="${escapeHtml(x.link)}" target="_blank" rel="noopener">abrir na loja ↗</a>` : "") + `</li>`;
+  box.innerHTML =
+    `Última conferência: <b>${quando}</b> · ${rel.total} oferta(s): ` +
+    `<b>${mud.length}</b> mudaram, ${rel.iguais} iguais, <b>${sem.length}</b> sem preço, ${err.length} erro(s).` +
+    (mud.length ? `<details open><summary>💸 Preços que mudaram (já atualizados)</summary><ul>${mud.map(item).join("")}</ul></details>` : "") +
+    (sem.length ? `<details><summary>⚠️ Não consegui ler o preço (${sem.length}) — confira na mão</summary><ul>${sem.map(item).join("")}</ul></details>` : "") +
+    (err.length ? `<details><summary>❌ Deram erro (${err.length})</summary><ul>${err.map(item).join("")}</ul></details>` : "");
+}
+
+lerRelatorioPrecos().then(mostrarRelatorioPrecos);
+try{ const campoSenha = document.getElementById("senha"); if(!campoSenha.value) campoSenha.value = localStorage.getItem("farejadinhos_admin_senha") || ""; }catch(e){}
+
+document.getElementById("btnPrecos").addEventListener("click", async function(){
+  const senha = document.getElementById("senha").value.trim();
+  const status = document.getElementById("precosStatus");
+  const btn = this;
+  if(!senha){ status.className = "precosStatus erro"; status.textContent = "Digite a senha do painel aqui em cima."; return; }
+  btn.disabled = true; btn.textContent = "Enviando...";
+  const antes = (await lerRelatorioPrecos() || {}).quando || "";
+  try{
+    const dados = new FormData();
+    dados.append("senha", senha);
+    dados.append("itens", JSON.stringify([{ acao: "conferir-precos" }]));
+    const r = await fetch(WORKER_URL + "/lote", { method: "POST", body: dados });
+    const texto = await r.text();
+    if(r.status === 401) throw new Error("Senha incorreta.");
+    if(!r.ok) throw new Error(texto);
+    try{ localStorage.setItem("farejadinhos_admin_senha", senha); }catch(e){}
+    btn.textContent = "⏳ Conferindo...";
+    const inicio = Date.now();
+    const esperar = () => {
+      const min = Math.floor((Date.now() - inicio) / 60000);
+      status.className = "precosStatus";
+      status.textContent = "⏳ A Yang está abrindo cada link e conferindo o preço — leva uns 5 a 10 minutos. Pode deixar a página aberta, ela atualiza sozinha." + (min ? ` (${min} min)` : "");
+      setTimeout(async () => {
+        const rel = await lerRelatorioPrecos();
+        if(rel && rel.quando && rel.quando !== antes){
+          status.textContent = "✅ Conferência pronta!" + ((rel.mudaram || []).length ? " Os preços novos já estão no site." : "");
+          btn.disabled = false; btn.textContent = "🔄 Conferir todos os preços agora";
+          mostrarRelatorioPrecos(rel);
+          if((rel.mudaram || []).length) carregar();
+        } else if(Date.now() - inicio > 25 * 60000){
+          status.className = "precosStatus erro";
+          status.textContent = "Demorou mais que o normal. Confira em GitHub → Actions se o 'Conferir precos' deu erro.";
+          btn.disabled = false; btn.textContent = "🔄 Conferir todos os preços agora";
+        } else esperar();
+      }, 30000);
+    };
+    esperar();
+  }catch(erro){
+    status.className = "precosStatus erro"; status.textContent = "❌ " + erro.message;
+    btn.disabled = false; btn.textContent = "🔄 Conferir todos os preços agora";
+  }
+});
 
 async function carregar(){
 
