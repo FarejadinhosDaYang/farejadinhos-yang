@@ -65,7 +65,7 @@ foreach ($O in $Alvo) {
         $Form = @{ senha = $Senha; link = [string]$O.link }
         # Mesmo "endereço de origem" que o painel manda (o Worker confere)
         $Cab = @{ Origin = "https://farejadinhosdayang.com.br"; Referer = "https://farejadinhosdayang.com.br/painel/lote.html" }
-        $Resp = Invoke-RestMethod -Uri "$WORKER_URL/produto" -Method Post -Form $Form -Headers $Cab -TimeoutSec 40
+        $Resp = Invoke-RestMethod -Uri "$WORKER_URL/produto" -Method Post -Body $Form -ContentType "application/x-www-form-urlencoded; charset=utf-8" -Headers $Cab -TimeoutSec 40
         $Novo = if ($Resp.preco) { [string]$Resp.preco } else { "" }
         $NNovo = NumeroBR $Novo
         $NAtual = NumeroBR ([string]$O.preco)
