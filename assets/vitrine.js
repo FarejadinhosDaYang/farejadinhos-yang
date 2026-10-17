@@ -29,8 +29,9 @@
  *    site e do menu, e a vitrine fica com as outras categorias.
  *
  * 8. Categorias PERMANENTES (ex.: Vídeos — produtos que têm vídeo
- *    postado na página) nunca expiram: depois de liberadas ficam no
- *    site pra sempre, e a limpeza automática não apaga.
+ *    postado na página) aparecem NA HORA (mesmo agendadas na fila do
+ *    lote) e nunca expiram: ficam no site pra sempre, e a limpeza
+ *    automática não apaga.
  *
  * Se mudar os números aqui, mude também no gerador/limpar-ofertas.ps1
  * e no gerador/gerar-lote.ps1.
@@ -97,9 +98,10 @@
 
     const todasValidas = (Array.isArray(todas) ? todas : [todas]).filter(o => o && o.slug && !foraDeEpoca(o, agora));
 
-    // Permanentes liberadas: sempre no ar, fora das regras de validade
-    const permanentes = todasValidas.filter(o => ehPermanente(o) && idadeHoras(o, agora) >= 0);
-    const validas = todasValidas.filter(o => !ehPermanente(o) || idadeHoras(o, agora) < 0);
+    // Permanentes (ex.: Vídeos): sempre no ar, na hora, sem esperar a
+    // fila e fora das regras de validade
+    const permanentes = todasValidas.filter(o => ehPermanente(o));
+    const validas = todasValidas.filter(o => !ehPermanente(o));
 
     const liberadas = validas.filter(o => idadeHoras(o, agora) >= 0);
 
@@ -174,6 +176,7 @@
     agora = agora || new Date();
     const h = idadeHoras(oferta, agora);
     if(foraDeEpoca(oferta, agora)) return "foraDeEpoca";
+    if(selecao.permanentes && selecao.permanentes.has(oferta)) return "permanente";
     if(selecao.adiantadas && selecao.adiantadas.has(oferta)) return "adiantada";
     if(selecao.permanentes && selecao.permanentes.has(oferta)) return "permanente";
     if(h < 0) return "agendada";
