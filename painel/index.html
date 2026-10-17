@@ -626,8 +626,12 @@ Categoria
 <option value="Skincare">🧴 Skincare</option>
 <option value="Piscina">🏊 Piscina</option>
 <option value="Eletrodomésticos">🧺 Eletrodomésticos</option>
-<option value="Vídeos">🎬 Vídeos (fica sempre no site)</option>
 </select>
+
+<label class="checkboxLabel">
+<input type="checkbox" id="temVideo">
+🎬 Também em Vídeos (fica sempre no site)
+</label>
 
 <label class="checkboxLabel">
 <input type="checkbox" id="destaque">
@@ -1432,8 +1436,11 @@ formulario.addEventListener(
         const senha =
             document.getElementById("senha").value;
 
-        const categoria =
+        const categoriaBase =
             document.getElementById("categoria").value;
+        const categoria = document.getElementById("temVideo").checked
+            ? (categoriaBase ? categoriaBase + ", Vídeos" : "Vídeos")
+            : categoriaBase;
 
         const destaque =
             document.getElementById("destaque").checked;

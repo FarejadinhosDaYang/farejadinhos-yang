@@ -120,8 +120,10 @@ foreach ($Oferta in $Ofertas) {
 
     # Categorias permanentes (ex.: "Videos") nunca expiram.
     # Mesma lista de PERMANENTES em assets/vitrine.js.
-    $CatNorm = ([string]$Oferta.categoria).Trim().Normalize([Text.NormalizationForm]::FormD) -replace '\p{Mn}', ''
-    if ($CatNorm.ToLowerInvariant() -in @("videos")) {
+    # (pode vir junto com a principal: "Cozinha, Videos")
+    $CatNorm = ([string]$Oferta.categoria).Normalize([Text.NormalizationForm]::FormD) -replace '\p{Mn}', ''
+    $Partes = @($CatNorm.ToLowerInvariant().Split(',') | ForEach-Object { $_.Trim() })
+    if ($Partes -contains "videos") {
         $Mantidas += $Oferta
         continue
     }

@@ -83,7 +83,10 @@ window.FAREJA_ICONES_CAT = {
                 var todas = Array.isArray(d) ? d : [d];
                 var visiveis = window.FarejadinhosVitrine ? window.FarejadinhosVitrine.selecionar(todas, new Date()).visiveis : todas;
                 var cont = {};
-                visiveis.forEach(function (o) { var c = (o && o.categoria || "").trim(); if (c) cont[c] = (cont[c] || 0) + 1; });
+                visiveis.forEach(function (o) {
+                    var cats = window.FarejadinhosVitrine && window.FarejadinhosVitrine.categoriasDe ? window.FarejadinhosVitrine.categoriasDe(o) : [(o && o.categoria || "").trim()];
+                    cats.forEach(function (c) { if (c) cont[c] = (cont[c] || 0) + 1; });
+                });
                 return Object.keys(cont).sort(function (a, b) { return a.localeCompare(b, "pt-BR"); }).map(function (c) {
                     var ic = window.FAREJA_ICONES_CAT[c] || { icone: "🐾", cor: "#8A7563" };
                     return { nome: c, icone: ic.icone, cor: ic.cor, n: cont[c], total: visiveis.length };

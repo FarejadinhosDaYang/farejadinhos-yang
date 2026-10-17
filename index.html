@@ -1383,9 +1383,9 @@ function montarPrateleiras(){
 
     const porCategoria = {};
     ofertas.forEach(o => {
-        const c = (o.categoria || "").trim();
-        if(!c) return;
-        (porCategoria[c] = porCategoria[c] || []).push(o);
+        FarejadinhosVitrine.categoriasDe(o).forEach(c => {
+            (porCategoria[c] = porCategoria[c] || []).push(o);
+        });
     });
 
     // Só categorias com pelo menos 2 ofertas; as maiores primeiro
@@ -1444,7 +1444,7 @@ function montarCategorias(){
     const container = document.getElementById("categoriasRow");
 
     const categorias = [...new Set(
-        ofertas.map(o => (o.categoria || "").trim()).filter(c => c !== "")
+        ofertas.flatMap(o => FarejadinhosVitrine.categoriasDe(o)).filter(c => c !== "")
     )].sort();
 
     if(categorias.length === 0){
@@ -1521,7 +1521,7 @@ function aplicarFiltros(){
         let bateFiltro = true;
 
         if(filtroAtivo.tipo === "categoria"){
-            bateFiltro = (o.categoria || "") === filtroAtivo.valor;
+            bateFiltro = FarejadinhosVitrine.categoriasDe(o).includes(filtroAtivo.valor);
         }
 
         const bateLoja = !lojaAtiva || lojaDe(o) === lojaAtiva;

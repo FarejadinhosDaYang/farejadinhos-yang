@@ -151,6 +151,7 @@
         extra.innerHTML =
             '<div class="adm-dica">✏️ Clique no nome, no preço, no preço antigo ou no cupom pra trocar. Deixe o preço antigo ou o cupom vazio pra tirar.</div>' +
             '<label>Categoria<select data-cat></select></label>' +
+            '<label class="adm-linha"><input type="checkbox" data-video> 🎬 Também em Vídeos (fica sempre no site)</label>' +
             '<label>Link da oferta (afiliado)<input type="text" data-link></label>' +
             '<label class="adm-linha"><input type="checkbox" data-dest> ⭐ Destacar na página inicial</label>';
         var btnLoja = card.querySelector("a.btn");
@@ -158,12 +159,18 @@
         extra.querySelector("[data-link]").value = oferta.link || "";
         extra.querySelector("[data-dest]").checked = !!oferta.destaque;
 
+        // "Cozinha, Vídeos" -> principal "Cozinha" + caixinha de Vídeos marcada
+        var partesCat = String(oferta.categoriaCompleta || oferta.categoria || "").split(",").map(function (c) { return c.trim(); }).filter(Boolean);
+        var ehVideo = function (c) { return c.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase() === "videos"; };
+        var catPrincipal = partesCat.filter(function (c) { return !ehVideo(c); })[0] || "";
+        extra.querySelector("[data-video]").checked = partesCat.some(ehVideo);
+
         carregarCategorias().then(function (lista) {
             var sel = extra.querySelector("[data-cat]");
-            lista = lista.slice();
-            if (oferta.categoria && lista.indexOf(oferta.categoria) < 0) lista.unshift(oferta.categoria);
+            lista = lista.filter(function (c) { return !ehVideo(c); });
+            if (catPrincipal && lista.indexOf(catPrincipal) < 0) lista.unshift(catPrincipal);
             sel.innerHTML = '<option value="">Sem categoria</option>' + lista.map(function (c) {
-                return '<option' + (c === oferta.categoria ? " selected" : "") + ">" + esc(c) + "</option>";
+                return '<option' + (c === catPrincipal ? " selected" : "") + ">" + esc(c) + "</option>";
             }).join("");
         });
 
@@ -183,7 +190,9 @@
         dados.append("preco", preco);
         dados.append("precoAntigo", textoDe(card.querySelector(".old")));
         dados.append("cupom", textoDe(card.querySelector(".adm-cupom")).toUpperCase());
-        dados.append("categoria", card.querySelector("[data-cat]").value);
+        var catSel = card.querySelector("[data-cat]").value;
+        var comVideo = card.querySelector("[data-video]").checked;
+        dados.append("categoria", comVideo ? (catSel ? catSel + ", Vídeos" : "Vídeos") : catSel);
         dados.append("precoAVista", oferta.precoAVista ? preco : "");
         dados.append("precoAPrazo", oferta.precoAPrazo || "");
         dados.append("link", card.querySelector("[data-link]").value.trim());

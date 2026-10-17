@@ -57,8 +57,43 @@
   // Mesma lista em gerador/limpar-ofertas.ps1.
   const PERMANENTES = ["videos"];
 
+  // "Vídeos" é uma categoria A MAIS: a oferta guarda as duas no campo
+  // categoria, separadas por vírgula ("Cozinha, Vídeos"). Ao carregar,
+  // normalizar() deixa em o.categoria só a principal ("Cozinha") e marca
+  // o.temVideo = true — assim o resto do site continua igual.
+  const TAG_VIDEO = "Vídeos";
+
+  function normalizar(o){
+    if(!o || o._catNorm) return o;
+    const partes = String(o.categoria || "").split(",").map(s => s.trim()).filter(Boolean);
+    const video = partes.some(p => chaveCategoria(p) === "videos");
+    const outras = partes.filter(p => chaveCategoria(p) !== "videos");
+    o.categoriaCompleta = o.categoria || "";
+    o.temVideo = video;
+    o.categoria = outras[0] || (video ? TAG_VIDEO : "");
+    Object.defineProperty(o, "_catNorm", { value: true, enumerable: false });
+    return o;
+  }
+
+  // Todas as categorias em que a oferta aparece (ex.: ["Cozinha", "Vídeos"])
+  function categoriasDe(o){
+    normalizar(o);
+    const lista = o.categoria ? [o.categoria] : [];
+    if(o.temVideo && !lista.includes(TAG_VIDEO)) lista.push(TAG_VIDEO);
+    return lista;
+  }
+
+  // Monta o valor salvo: ("Cozinha", true) -> "Cozinha, Vídeos"
+  function juntarCategoria(principal, video){
+    principal = String(principal || "").trim();
+    if(chaveCategoria(principal) === "videos") principal = "";
+    if(!video) return principal;
+    return principal ? principal + ", " + TAG_VIDEO : TAG_VIDEO;
+  }
+
   function ehPermanente(oferta){
-    return PERMANENTES.includes(chaveCategoria(oferta && oferta.categoria));
+    normalizar(oferta);
+    return !!(oferta && (oferta.temVideo || PERMANENTES.includes(chaveCategoria(oferta.categoria))));
   }
 
   // Categorias que nunca entram no Top 3 / pódio do dia (nem nos stories)
@@ -96,7 +131,7 @@
 
     agora = agora || new Date();
 
-    const todasValidas = (Array.isArray(todas) ? todas : [todas]).filter(o => o && o.slug && !foraDeEpoca(o, agora));
+    const todasValidas = (Array.isArray(todas) ? todas : [todas]).filter(o => o && o.slug).map(normalizar).filter(o => !foraDeEpoca(o, agora));
 
     // Permanentes (ex.: Vídeos): sempre no ar, na hora, sem esperar a
     // fila e fora das regras de validade
@@ -175,6 +210,7 @@
   function status(oferta, selecao, agora){
     agora = agora || new Date();
     const h = idadeHoras(oferta, agora);
+    normalizar(oferta);
     if(foraDeEpoca(oferta, agora)) return "foraDeEpoca";
     if(selecao.permanentes && selecao.permanentes.has(oferta)) return "permanente";
     if(selecao.adiantadas && selecao.adiantadas.has(oferta)) return "adiantada";
@@ -188,7 +224,7 @@
 
   window.FarejadinhosVitrine = {
     MINIMO_VITRINE, HORAS_FRESCA, HORAS_MAXIMA, META_CATEGORIA, MINIMO_CATEGORIA, TEMPORADAS,
-    inicio, idadeHoras, selecionar, status, foraDeEpoca, podeIrProPodio, FORA_DO_PODIO, ehPermanente, PERMANENTES
+    inicio, idadeHoras, selecionar, status, foraDeEpoca, podeIrProPodio, FORA_DO_PODIO, ehPermanente, PERMANENTES, normalizar, categoriasDe, juntarCategoria, TAG_VIDEO
   };
 
 })();

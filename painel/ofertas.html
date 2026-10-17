@@ -223,9 +223,9 @@ function render(){
                 ? `<span class="badge badgeExpirada">⏸️ Fora do ar · reserva (volta se faltar oferta)</span>`
                 : `<span class="badge badgeExpirada">⚪ Expirada (mais de 3 dias)</span>`;
 
-      const categoriaBadge = o.categoria
+      const categoriaBadge = (o.categoria && o.categoria !== "Vídeos"
         ? `<span class="badge badgeCategoria">${escapeHtml(o.categoria)}</span>`
-        : "";
+        : "") + (o.temVideo ? `<span class="badge badgeCategoria">🎬 Vídeos</span>` : "");
 
       const destaqueBadge = o.destaque
         ? `<span class="badge badgeDestaque">⭐ Destaque</span>`
@@ -278,9 +278,12 @@ function render(){
           <input type="text" class="campoCupom" value="${escapeHtml(o.cupom || "")}" placeholder="Ex.: YANG10">
           <label>Categoria</label>
           <select class="campoCategoria">
-            <option value="" ${!o.categoria ? "selected" : ""}>Sem categoria</option>
+            <option value="" ${!o.categoria || o.categoria === "Vídeos" ? "selected" : ""}>Sem categoria</option>
             ${opcoesCategoria}
           </select>
+          <div class="linhaCheckbox">
+            <label><input type="checkbox" class="campoVideo" ${o.temVideo ? "checked" : ""}> 🎬 Também em Vídeos (fica sempre no site)</label>
+          </div>
           <label>Preço à vista <span style="font-weight:normal;color:var(--muted)">(calculadora)</span></label>
           <input type="text" class="campoPrecoAVista" value="${escapeHtml(o.precoAVista || "")}">
           <label>Preço a prazo <span style="font-weight:normal;color:var(--muted)">(calculadora)</span></label>
@@ -569,7 +572,10 @@ async function salvarEdicao(oferta, item, botao){
   dados.append("preco", preco);
   dados.append("precoAntigo", item.querySelector(".campoPrecoAntigo").value.trim());
   dados.append("cupom", item.querySelector(".campoCupom").value.trim());
-  dados.append("categoria", item.querySelector(".campoCategoria").value);
+  dados.append("categoria", FarejadinhosVitrine.juntarCategoria(
+    item.querySelector(".campoCategoria").value,
+    item.querySelector(".campoVideo").checked
+  ));
   dados.append("precoAVista", item.querySelector(".campoPrecoAVista").value.trim());
   dados.append("precoAPrazo", item.querySelector(".campoPrecoAPrazo").value.trim());
   dados.append("link", item.querySelector(".campoLink").value.trim());
