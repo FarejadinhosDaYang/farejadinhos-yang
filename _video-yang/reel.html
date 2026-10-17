@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: "Baloo 2"; src: url("fonts/Baloo2.ttf"); font-weight: 400 800; }
+  @font-face { font-family: "Work Sans"; src: url("fonts/WorkSans.ttf"); font-weight: 100 900; }
+  @font-face { font-family: "Caveat"; src: url("fonts/Caveat.ttf"); font-weight: 400 700; }
+  :root {
+    --red: #E5232E; --red-dark: #C21A24; --orange: #F7941D;
+    --cream: #FDF3E3; --cream-2: #FFFAF1; --ink: #2B1B12; --muted: #8A7563; --line: #F0DFC4;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--cream); }
+  body { font-family: "Baloo 2", sans-serif; color: var(--ink); }
+  .stage { position: absolute; inset: 0; overflow: hidden; }
+  .scene { position: absolute; inset: 0; will-change: opacity, transform; }
+  .abs { position: absolute; will-change: transform, opacity; }
+
+  /* fundos */
+  .bg-hot { background: radial-gradient(circle at 50% 38%, #FF6A2B 0%, var(--red) 55%, var(--red-dark) 100%); }
+  .bg-cream { background: var(--cream); }
+  .paws { position: absolute; inset: -200px; opacity: .10; font-size: 64px; line-height: 150px;
+          letter-spacing: 90px; word-break: break-all; transform: rotate(-14deg); color: #000; }
+  .bg-hot .paws { opacity: .16; filter: brightness(10); }
+
+  /* textos */
+  .hook { left: 80px; right: 80px; top: 170px; text-align: center; color: #fff;
+          font-weight: 800; font-size: 118px; line-height: .98; text-shadow: 0 8px 0 rgba(0,0,0,.18); }
+  .hook small { display: block; font-family: "Caveat"; font-weight: 700; font-size: 84px; color: #FFE3B0; margin-bottom: 18px; text-shadow: none; }
+  .bubble { background: #fff; color: var(--ink); border-radius: 46px; padding: 30px 44px;
+            font-weight: 700; font-size: 58px; line-height: 1.08; box-shadow: 0 14px 0 rgba(0,0,0,.10); }
+  .bubble::after { content: ""; position: absolute; width: 56px; height: 56px; background: inherit; border-radius: 6px; }
+  .bubble.tail-left::after { left: 70px; bottom: -22px; transform: rotate(45deg); }
+  .bubble.tail-down::after { left: 50%; margin-left: -28px; bottom: -22px; transform: rotate(45deg); }
+
+  .card { left: 110px; top: 190px; width: 860px; background: #fff; border-radius: 56px; padding: 30px;
+          box-shadow: 0 30px 70px rgba(43,27,18,.16), 0 0 0 4px var(--line); }
+  .card img { width: 800px; height: 800px; object-fit: cover; border-radius: 36px; display: block; }
+  .chip { display: inline-block; background: var(--orange); color: #fff; font-weight: 800; font-size: 40px;
+          padding: 6px 30px; border-radius: 999px; margin: 26px 0 0 6px; }
+  .name { font-family: "Baloo 2"; font-weight: 700; font-size: 66px; line-height: 1.02; padding: 6px 8px 8px; }
+
+  .price-wrap { left: 0; right: 0; top: 1060px; text-align: center; }
+  .so { font-family: "Caveat"; font-weight: 700; font-size: 110px; color: var(--red); line-height: 1; }
+  .price { display: inline-block; font-weight: 800; color: #fff; background: var(--red); line-height: 1;
+           font-size: 230px; padding: 30px 60px 10px; border-radius: 60px; box-shadow: 0 18px 0 var(--red-dark); }
+  .price .cur { font-size: 100px; vertical-align: 82px; margin-right: 14px; }
+  .price .cents { font-size: 110px; vertical-align: 92px; }
+
+  .cta-title { left: 80px; right: 80px; top: 820px; text-align: center; color: #fff; font-weight: 800; font-size: 124px; line-height: 1; text-shadow: 0 8px 0 rgba(0,0,0,.18); }
+  .url { left: 90px; right: 90px; top: 1110px; text-align: center; background: #fff; color: var(--red);
+         font-weight: 800; font-size: 66px; border-radius: 999px; padding: 26px 20px 18px; box-shadow: 0 14px 0 rgba(0,0,0,.14); }
+  .handle { left: 0; right: 0; top: 1300px; text-align: center; color: #FFE3B0; font-family: "Work Sans"; font-weight: 600; font-size: 48px; }
+  .badge { left: 390px; top: 420px; width: 300px; height: 300px; }
+</style>
+</head>
+<body>
+<div class="stage" id="stage">
+
+  <!-- CENA 1: gancho -->
+  <div class="scene bg-hot" id="s1">
+    <div class="paws" id="paws1"></div>
+    <div class="abs hook" id="hook"><small id="hookSmall"></small><span id="hookText"></span></div>
+    <img class="abs" id="yang1" src="yang.png" style="left:190px; top:760px; width:700px; transform-origin:50% 100%;">
+  </div>
+
+  <!-- CENA 2: produto + fala -->
+  <div class="scene bg-cream" id="s2">
+    <div class="paws" id="paws2"></div>
+    <div class="abs card" id="card">
+      <img id="foto">
+      <div class="chip" id="chip"></div>
+      <div class="name" id="nome"></div>
+    </div>
+    <div class="abs bubble tail-left" id="bubble2" style="left:400px; top:1440px; width:600px; transform-origin: 0% 100%;"></div>
+    <img class="abs" id="yang2" src="yang.png" style="left:40px; top:1500px; width:380px; transform-origin:50% 100%;">
+  </div>
+
+  <!-- CENA 3: preço -->
+  <div class="scene bg-cream" id="s3">
+    <div class="paws" id="paws3"></div>
+    <div class="abs card" id="card3" style="transform-origin: 50% 0%;">
+      <img id="foto3">
+    </div>
+    <div class="abs price-wrap" id="priceWrap">
+      <div class="so" id="so">tudo isso por só</div>
+      <div class="price" id="price"></div>
+    </div>
+    <img class="abs" id="yang3" src="yang.png" style="left:700px; top:1480px; width:340px; transform-origin:50% 100%;">
+  </div>
+
+  <!-- CENA 4: chamada -->
+  <div class="scene bg-hot" id="s4">
+    <div class="paws" id="paws4"></div>
+    <img class="abs badge" id="badge" src="badge.png">
+    <div class="abs cta-title" id="cta"></div>
+    <div class="abs url" id="url"></div>
+    <div class="abs handle" id="handle"></div>
+    <img class="abs" id="yang4" src="yang.png" style="left:60px; top:1430px; width:420px; transform-origin:50% 100%;">
+    <div class="abs bubble tail-left" id="bubble4" style="left:420px; top:1500px; width:560px; transform-origin: 0% 100%;"></div>
+  </div>
+</div>
+
+<script>
+// ===== DADOS DA OFERTA (é isso que muda de um vídeo pro outro) =====
+const OFERTA = window.OFERTA || {
+  gancho: "ACHEI UMA LIXEIRA QUE ABRE SOZINHA 😱",
+  ganchoTopo: "a Yang farejou…",
+  fala: "é só passar a mão que ela abre! 🖐️",
+  produto: "Lixeira Inteligente Automática 16L Sensor",
+  categoria: "Eletrônicos",
+  preco: "R$ 66,00",
+  foto: "produto.webp",
+  chamada: "O LINK TÁ NOS STORIES 🐾",
+  falaFinal: "corre que oferta boa some rapidinho!",
+  site: "farejadinhosdayang.com.br",
+  arroba: "@farejadinhosdayang",
+};
+const FPS = 30;
+// cenas: [início, fim] em segundos
+const S = { s1: [0, 2.6], s2: [2.6, 6.8], s3: [6.8, 10.0], s4: [10.0, 13.0] };
+window.DURACAO = 13.0;
+
+// ===== preencher =====
+const $ = id => document.getElementById(id);
+$("hookText").textContent = OFERTA.gancho;
+$("hookSmall").textContent = OFERTA.ganchoTopo;
+$("foto").src = OFERTA.foto; $("foto3").src = OFERTA.foto;
+$("chip").textContent = OFERTA.categoria;
+$("nome").textContent = OFERTA.produto;
+$("bubble2").textContent = OFERTA.fala;
+$("bubble4").textContent = OFERTA.falaFinal;
+$("cta").textContent = OFERTA.chamada;
+$("url").textContent = OFERTA.site;
+$("handle").textContent = OFERTA.arroba;
+(() => { // preço: "R$ 66,00" -> R$ | 66 | ,00
+  const m = OFERTA.preco.replace(/^R\$\s*/, "").split(",");
+  $("price").innerHTML = `<span class="cur">R$</span>${m[0]}<span class="cents">,${m[1] || "00"}</span>`;
+})();
+document.querySelectorAll(".paws").forEach(p => p.textContent = "🐾".repeat(260));
+
+// ===== animação =====
+const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+const lerp = (a, b, t) => a + (b - a) * t;
+const ease = t => 1 - Math.pow(1 - clamp(t, 0, 1), 3);
+// mola: 0 -> 1 com um pouquinho de passada
+const spring = (t, k = 1) => t <= 0 ? 0 : 1 - Math.exp(-7 * t * k) * Math.cos(13 * t * k);
+const set = (id, o) => { const e = $(id); for (const k in o) e.style[k] = o[k]; };
+
+function renderFrame(f) {
+  const t = f / FPS;
+  for (const id in S) {
+    const [a, b] = S[id];
+    const local = t - a;
+    // transição: entra deslizando de baixo nos 0.25s iniciais (exceto a 1ª)
+    const inT = id === "s1" ? 1 : ease(local / 0.25);
+    const visible = t >= a - 0.001 && t < b + 0.25;
+    set(id, { opacity: visible ? 1 : 0, transform: `translateY(${(1 - inT) * 1920}px)`, zIndex: Object.keys(S).indexOf(id) });
+  }
+  // fundo de patinhas andando devagar
+  document.querySelectorAll(".paws").forEach(p => p.style.transform = `rotate(-14deg) translateY(${-(t * 40) % 150}px)`);
+
+  // --- cena 1
+  { const l = t - S.s1[0];
+    const sh = spring(l - 0.05);
+    set("hook", { transform: `scale(${lerp(0.4, 1, sh)})`, opacity: clamp(l / 0.15, 0, 1) });
+    const sy = spring(l - 0.35, 0.9);
+    const hop = Math.abs(Math.sin(l * 6)) * 30 * clamp(l - 0.8, 0, 1); // pulinhos
+    set("yang1", { transform: `translateY(${(1 - sy) * 900 - hop}px) rotate(${Math.sin(l * 6) * 4}deg)` });
+  }
+  // --- cena 2
+  { const l = t - S.s2[0];
+    const sc = spring(l - 0.15, 0.9);
+    set("card", { transform: `translateY(${(1 - sc) * 300}px) scale(${lerp(0.85, 1, sc)})`, opacity: clamp((l - 0.1) / 0.2, 0, 1) });
+    const sb = spring(l - 0.9);
+    set("bubble2", { transform: `scale(${clamp(sb, 0, 1.2)})`, opacity: l > 0.9 ? 1 : 0 });
+    // "falando": balança e estica enquanto o balão está aberto
+    const talk = l > 0.9 ? Math.sin(l * 22) : 0;
+    const sy = spring(l - 0.5);
+    set("yang2", { transform: `translateY(${(1 - sy) * 500}px) rotate(${talk * 3}deg) scaleY(${1 + talk * 0.03})` });
+  }
+  // --- cena 3
+  { const l = t - S.s3[0];
+    set("card3", { transform: `scale(${lerp(1, 0.8, ease(l / 0.4))})` });
+    set("so", { opacity: clamp((l - 0.3) / 0.2, 0, 1), transform: `translateY(${(1 - ease((l - 0.3) / 0.3)) * 40}px)` });
+    // preço "carimba": vem grande e bate
+    const sp = spring(l - 0.75, 1.1);
+    const shake = l > 0.75 && l < 1.1 ? Math.sin(l * 90) * 10 * (1.1 - l) * 3 : 0;
+    set("price", { transform: `scale(${l < 0.75 ? 0 : lerp(2.4, 1, sp)}) rotate(${-3 + shake}deg)`, opacity: l < 0.75 ? 0 : 1 });
+    const jump = l > 1.0 ? Math.abs(Math.sin((l - 1.0) * 7)) * 60 : 0;
+    const sy = spring(l - 0.9);
+    set("yang3", { transform: `translateY(${(1 - sy) * 500 - jump}px) rotate(${Math.sin(l * 7) * 6}deg)` });
+  }
+  // --- cena 4
+  { const l = t - S.s4[0];
+    set("badge", { transform: `scale(${spring(l - 0.15)}) rotate(${(1 - ease(l / 0.5)) * -90}deg)` });
+    set("cta", { transform: `scale(${spring(l - 0.4)})` });
+    set("url", { transform: `translateY(${(1 - spring(l - 0.7)) * 400}px)`, opacity: clamp((l - 0.7) / 0.15, 0, 1) });
+    set("handle", { opacity: clamp((l - 1.0) / 0.3, 0, 1) });
+    const sb = spring(l - 1.3);
+    set("bubble4", { transform: `scale(${clamp(sb, 0, 1.2)})`, opacity: l > 1.3 ? 1 : 0 });
+    const talk = l > 1.3 ? Math.sin(l * 22) : 0;
+    set("yang4", { transform: `translateY(${(1 - spring(l - 0.9)) * 600}px) rotate(${Math.sin(l * 5) * 7 + talk * 2}deg)` });
+  }
+}
+window.renderFrame = renderFrame;
+renderFrame(0);
+</script>
+</body>
+</html>

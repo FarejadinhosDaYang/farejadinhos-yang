@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: "Baloo 2"; src: url("fonts/Baloo2.ttf"); font-weight: 400 800; }
+  @font-face { font-family: "Work Sans"; src: url("fonts/WorkSans.ttf"); font-weight: 100 900; }
+  @font-face { font-family: "Caveat"; src: url("fonts/Caveat.ttf"); font-weight: 400 700; }
+  :root { --red:#E5232E; --red-dark:#C21A24; --orange:#F7941D; --cream:#FDF3E3; --ink:#2B1B12; --line:#F0DFC4; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--cream); }
+  body { font-family: "Baloo 2", sans-serif; color: var(--ink); }
+  .abs { position: absolute; will-change: transform, opacity; }
+  .paws { position: absolute; inset: -200px; opacity: .09; font-size: 64px; line-height: 150px;
+          letter-spacing: 90px; word-break: break-all; transform: rotate(-14deg); }
+  .glow { left: 90px; top: 960px; width: 900px; height: 900px; border-radius: 50%;
+          background: radial-gradient(circle, rgba(247,148,29,.45) 0%, rgba(247,148,29,0) 65%); }
+
+  /* narradora */
+  #yang { left: 140px; top: 1050px; width: 800px; height: 962px; transform-origin: 50% 100%; }
+  #yang img { position: absolute; inset: 0; width: 100%; height: 100%; visibility: hidden; }
+
+  /* legenda */
+  #legenda { z-index: 5; left: 70px; right: 70px; top: 610px; text-align: center; font-weight: 800; font-size: 92px;
+             line-height: 1.02; color: var(--ink); text-transform: uppercase; }
+  #legenda .w { display: inline-block; margin: 0 .12em; transition: none; }
+  #legenda .w.on { color: var(--red); }
+  #legenda .w.off { opacity: 0; }
+
+  /* visuais de cada fala (topo) */
+  .vis { left: 0; right: 0; top: 110px; height: 460px; display: flex; align-items: center; justify-content: center; }
+  .badge { width: 380px; height: 380px; }
+  .fotos img { width: 300px; height: 300px; object-fit: cover; border-radius: 40px; border: 10px solid #fff;
+               box-shadow: 0 20px 40px rgba(43,27,18,.18); margin: 0 -30px; }
+  .pill { background: var(--red); color: #fff; font-weight: 800; font-size: 74px; padding: 26px 56px 16px; border-radius: 999px;
+          box-shadow: 0 14px 0 var(--red-dark); }
+  .pill small { display: block; font-family: "Caveat"; font-size: 64px; font-weight: 700; color: #FFE3B0; line-height: .8; }
+  .seguir { flex-direction: column; gap: 26px; }
+  .btn-seguir { background: linear-gradient(90deg, #F58529, #DD2A7B, #8134AF); color: #fff; font-weight: 800; font-size: 96px;
+                padding: 18px 90px 6px; border-radius: 40px; }
+  .arroba { font-family: "Work Sans"; font-weight: 700; font-size: 56px; color: var(--ink); }
+</style>
+</head>
+<body>
+  <div class="paws" id="paws"></div>
+  <div class="abs glow"></div>
+
+  <div class="abs vis" id="v0"><img class="badge" src="badge.png"></div>
+  <div class="abs vis fotos" id="v1">
+    <img id="f1"><img id="f2" style="transform: translateY(-40px)"><img id="f3">
+  </div>
+  <div class="abs vis" id="v2"><div class="pill"><small>tudo no meu site:</small><span id="site"></span></div></div>
+  <div class="abs vis seguir" id="v3"><div class="btn-seguir">SEGUIR</div><div class="arroba" id="arroba"></div></div>
+
+  <div class="abs" id="legenda"></div>
+
+  <div class="abs" id="yang">
+    <img data-k="fechada"          src="corpo/boca-fechada.png">
+    <img data-k="meio"             src="corpo/boca-meio.png">
+    <img data-k="aberta"           src="corpo/boca-aberta.png">
+    <img data-k="fechada-piscando" src="corpo/boca-fechada-piscando.png">
+    <img data-k="meio-piscando"    src="corpo/boca-meio-piscando.png">
+    <img data-k="aberta-piscando"  src="corpo/boca-aberta-piscando.png">
+  </div>
+
+<script>
+// ===== ROTEIRO: cada fala com início e fim (segundos). Se tiver áudio, ajuste os tempos pra bater com a voz. =====
+const ROTEIRO = window.ROTEIRO || {
+  falas: [
+    { de: 0.4, ate: 2.4, texto: "Oi! Eu sou a Yang 🐾" },
+    { de: 2.8, ate: 5.8, texto: "eu fico farejando as melhores ofertas da internet" },
+    { de: 6.2, ate: 8.9, texto: "e coloco tudo no meu site, todo dia" },
+    { de: 9.3, ate: 11.6, texto: "segue a página pra não perder nada!" },
+  ],
+  fotos: ["produto.webp", "produto.webp", "produto.webp"],
+  site: "farejadinhosdayang.com.br",
+  arroba: "@farejadinhosdayang",
+  duracao: 13,
+};
+const FPS = 30;
+window.DURACAO = ROTEIRO.duracao;
+const AMP = window.AMP || null; // volume da voz por quadro (0..1), vindo do áudio do ElevenLabs
+
+const $ = id => document.getElementById(id);
+$("paws").textContent = "🐾".repeat(260);
+["f1","f2","f3"].forEach((id, i) => $(id).src = ROTEIRO.fotos[i]);
+$("site").textContent = ROTEIRO.site; $("arroba").textContent = ROTEIRO.arroba;
+const imgs = Object.fromEntries([...document.querySelectorAll("#yang img")].map(i => [i.dataset.k, i]));
+
+// palavras de cada fala com tempo próprio (proporcional ao tamanho)
+ROTEIRO.falas.forEach(f => {
+  const ws = f.texto.split(/\s+/);
+  const peso = ws.map(w => Math.max(2, w.replace(/[^\p{L}\p{N}]/gu, "").length) + 1);
+  const tot = peso.reduce((a, b) => a + b, 0);
+  let t = f.de;
+  f.palavras = ws.map((w, i) => { const d = (f.ate - f.de) * peso[i] / tot; const o = { w, de: t, ate: t + d }; t += d; return o; });
+});
+
+const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+const ease = t => 1 - Math.pow(1 - clamp(t, 0, 1), 3);
+const spring = (t, k = 1) => t <= 0 ? 0 : 1 - Math.exp(-7 * t * k) * Math.cos(13 * t * k);
+
+// abertura da boca 0..1
+function boca(t, f) {
+  if (AMP) return AMP[Math.min(f, AMP.length - 1)] || 0;
+  for (const fala of ROTEIRO.falas) for (const p of fala.palavras) {
+    if (t >= p.de && t < p.ate) {
+      const sil = Math.max(1, Math.round((p.ate - p.de) / 0.17)); // ~sílabas
+      const ph = ((t - p.de) / (p.ate - p.de)) * sil % 1;
+      return Math.sin(Math.PI * ph) * 0.95;
+    }
+  }
+  return 0;
+}
+// piscadas em momentos "aleatórios" fixos (sempre iguais no render)
+const PISCADAS = [1.7, 4.6, 7.2, 8.0, 10.4, 12.3];
+const piscando = t => PISCADAS.some(p => t >= p && t < p + 0.12);
+
+function renderFrame(f) {
+  const t = f / FPS;
+  const b = boca(t, f);
+  const nivel = b < 0.22 ? "fechada" : b < 0.6 ? "meio" : "aberta";
+  const k = nivel + (piscando(t) ? "-piscando" : "");
+  for (const n in imgs) imgs[n].style.visibility = n === k ? "visible" : "hidden";
+
+  // corpo: entra, respira, e "acompanha" a fala com leve balanço
+  const entra = spring(t - 0.05, 0.9);
+  const resp = Math.sin(t * 2.4) * 0.012;
+  const fala = b * 0.025;
+  const tilt = Math.sin(t * 1.3) * 2.5 + (b > 0.6 ? Math.sin(t * 9) * 1.2 : 0);
+  $("yang").style.transform = `translateY(${(1 - entra) * 1000 - b * 10}px) rotate(${tilt}deg) scale(${1 + resp + fala}, ${1 - resp + fala * 1.4})`;
+
+  // legenda palavra por palavra
+  const atual = ROTEIRO.falas.find(x => t >= x.de - 0.15 && t < x.ate + 0.35);
+  const leg = $("legenda");
+  if (!atual) { leg.innerHTML = ""; }
+  else {
+    leg.innerHTML = atual.palavras.map(p => `<span class="w ${t < p.de ? "off" : (t < p.ate ? "on" : "")}">${p.w}</span>`).join(" ");
+    const lt = t - (atual.de - 0.15);
+    leg.style.transform = `scale(${0.85 + 0.15 * ease(lt / 0.2)})`;
+  }
+
+  // visual do topo acompanha a fala atual
+  ROTEIRO.falas.forEach((x, i) => {
+    const el = $("v" + i); if (!el) return;
+    const lt = t - (x.de - 0.2);
+    const ativo = lt >= 0 && t < (ROTEIRO.falas[i + 1] ? ROTEIRO.falas[i + 1].de - 0.2 : 99);
+    el.style.opacity = ativo ? 1 : 0;
+    el.style.transform = `scale(${ativo ? spring(lt, 1.1) : 0})`;
+  });
+  $("paws").style.transform = `rotate(-14deg) translateY(${-(t * 40) % 150}px)`;
+}
+window.renderFrame = renderFrame;
+renderFrame(0);
+</script>
+</body>
+</html>

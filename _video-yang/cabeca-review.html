@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: "Baloo 2"; src: url("fonts/Baloo2.ttf"); font-weight: 400 800; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: transparent; }
+  body { font-family: "Baloo 2", sans-serif; }
+  .abs { position: absolute; will-change: transform, opacity; }
+
+  /* cabeça da Yang espiando do canto de baixo */
+  #yang { width: 560px; height: 574px; top: 1400px; transform-origin: 50% 100%;
+          filter: drop-shadow(4px 0 0 #fff) drop-shadow(-4px 0 0 #fff) drop-shadow(0 -4px 0 #fff) drop-shadow(0 10px 22px rgba(0,0,0,.35)); }
+  #yang.esquerda { left: -30px; } #yang.direita { right: -30px; }
+  #yang img { position: absolute; inset: 0; width: 100%; height: 100%; visibility: hidden; }
+
+  /* legenda estilo review */
+  #legenda { left: 60px; right: 60px; top: 1080px; text-align: center; font-weight: 800; font-size: 82px;
+             line-height: 1.04; color: #fff; text-transform: uppercase; transform-origin: 50% 100%;
+             -webkit-text-stroke: 14px #1a0f0a; paint-order: stroke fill; text-shadow: 0 8px 14px rgba(0,0,0,.35); }
+  #legenda .w { display: inline-block; margin: 0 .12em; }
+  #legenda .w.on { color: #FFD23F; }
+  #legenda .w.off { visibility: hidden; }
+  /* selo de chamada (ex.: COMENTA QUERO) */
+  #selo { left: 0; right: 0; top: 230px; text-align: center; opacity: 0; }
+  #selo span { display: inline-block; background: #E5232E; color: #fff; font-weight: 800; font-size: 92px; line-height: 1;
+               padding: 30px 60px 18px; border-radius: 999px; box-shadow: 0 14px 0 #C21A24, 0 20px 40px rgba(0,0,0,.35);
+               border: 6px solid #fff; }
+</style>
+</head>
+<body>
+  <div class="abs" id="legenda"></div>
+  <div class="abs" id="selo"><span id="seloTxt"></span></div>
+  <div class="abs" id="yang">
+    <img data-k="fechada"          src="cabeca/fechada.png">
+    <img data-k="meio"             src="cabeca/meio.png">
+    <img data-k="aberta"           src="cabeca/aberta.png">
+    <img data-k="fechada-piscando" src="cabeca/fechada-piscando.png">
+    <img data-k="meio-piscando"    src="cabeca/meio-piscando.png">
+    <img data-k="aberta-piscando"  src="cabeca/aberta-piscando.png">
+  </div>
+
+<script>
+// ===== ROTEIRO (o que a Yang fala e quando). Com o áudio do ElevenLabs, a boca segue a voz. =====
+const ROTEIRO = window.ROTEIRO || {
+  lado: "esquerda",
+  falas: [
+    { de: 0.6, ate: 2.7, texto: "gente, olha essa escova elétrica 😱" },
+    { de: 3.1, ate: 6.3, texto: "ela gira sozinha e limpa box, azulejo e rejunte" },
+    { de: 6.7, ate: 8.9, texto: "vem com 9 pontas diferentes" },
+    { de: 9.3, ate: 11.7, texto: "tá R$ 73,90, link nos stories! 🐾" },
+  ],
+  duracao: 12.6,
+};
+const FPS = 30;
+window.DURACAO = ROTEIRO.duracao;
+const AMP = window.AMP || null;
+
+const $ = id => document.getElementById(id);
+$("yang").classList.add(ROTEIRO.lado);
+const imgs = Object.fromEntries([...document.querySelectorAll("#yang img")].map(i => [i.dataset.k, i]));
+
+ROTEIRO.falas.forEach(f => {
+  const ws = f.texto.split(/\s+/);
+  const peso = ws.map(w => Math.max(2, w.replace(/[^\p{L}\p{N}]/gu, "").length) + 1);
+  const tot = peso.reduce((a, b) => a + b, 0);
+  let t = f.de;
+  f.palavras = ws.map((w, i) => { const d = (f.ate - f.de) * peso[i] / tot; const o = { w, de: t, ate: t + d }; t += d; return o; });
+});
+
+const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+const easeIO = t => { t = clamp(t, 0, 1); return t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; };
+
+// boca: sílabas num ritmo natural (~4 por segundo), alternando aberta / meio
+function boca(t, f) {
+  if (AMP) return AMP[Math.min(f, AMP.length - 1)] || 0;
+  for (const fala of ROTEIRO.falas) {
+    if (t < fala.de || t >= fala.ate) continue;
+    const sil = Math.floor((t - fala.de) / 0.24);
+    const ph = ((t - fala.de) / 0.24) % 1;
+    const forca = [0.9, 0.55, 0.8, 0.45, 0.7][sil % 5];       // varia a abertura de sílaba pra sílaba
+    return ph < 0.7 ? forca : 0;                                 // boca fecha no fim de cada sílaba
+  }
+  return 0;
+}
+const PISCADAS = [2.0, 5.1, 8.3, 10.9];
+const piscando = t => PISCADAS.some(p => t >= p && t < p + 0.13);
+
+function renderFrame(f) {
+  const t = f / FPS;
+  const b = boca(t, f);
+  const k = (b < 0.3 ? "fechada" : b < 0.65 ? "meio" : "aberta") + (piscando(t) ? "-piscando" : "");
+  for (const n in imgs) imgs[n].style.visibility = n === k ? "visible" : "hidden";
+
+  // movimento CALMO: sobe espiando, balança devagar, desce no fim
+  const sobe = easeIO(t / 0.6), desce = easeIO((t - (window.DURACAO - 0.6)) / 0.6);
+  const lado = ROTEIRO.lado === "esquerda" ? 1 : -1;
+  const balanco = Math.sin(t * 1.1) * 2.2;                    // inclina a cabeça devagar
+  const flutua = Math.sin(t * 1.7) * 5;                       // sobe e desce bem pouquinho
+  $("yang").style.transform = `translateY(${(1 - sobe) * 620 + desce * 620 + flutua}px) rotate(${lado * 7 + balanco}deg)`;
+
+  const atual = ROTEIRO.falas.find(x => t >= x.de - 0.15 && t < x.ate + 0.35);
+  const leg = $("legenda");
+  if (!atual) leg.innerHTML = "";
+  else leg.innerHTML = atual.palavras.map(p => `<span class="w ${t < p.de ? "off" : (t < p.ate ? "on" : "")}">${p.w}</span>`).join(" ");
+}
+const _rf = renderFrame;
+renderFrame = function (f) {
+  _rf(f);
+  const sl = ROTEIRO.selo; if (!sl) return;
+  const t = f / FPS, l = t - sl.de;
+  const sp = l <= 0 ? 0 : 1 - Math.exp(-7 * l) * Math.cos(13 * l);
+  const pulso = l > 0.6 ? 1 + Math.sin((l - 0.6) * 6) * 0.04 : 1;
+  $("seloTxt").textContent = sl.texto;
+  $("selo").style.opacity = l > 0 ? 1 : 0;
+  $("selo").style.transform = `scale(${sp * pulso}) rotate(-3deg)`;
+};
+window.renderFrame = renderFrame;
+renderFrame(0);
+</script>
+</body>
+</html>
