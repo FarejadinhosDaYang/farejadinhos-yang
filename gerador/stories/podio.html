@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="UTF-8">
+<!--
+  Imagem animada de pódio (story, ~6 s): 1º, 2º ou 3º lugar do dia.
+  Preenchida por window.DADOS (posicao, imagem, nome, detalhe, preco, de, off, cupom, categoria, corCategoria).
+  Gerada por gerar_stories.py.
+-->
+<style>
+@font-face{ font-family:"Baloo"; src:url(fonts/Baloo2.ttf); font-weight:400 800; }
+@font-face{ font-family:"Work"; src:url(fonts/WorkSans.ttf); font-weight:100 900; }
+:root{
+  --red:#E5232E; --red-dark:#C21A24; --ink:#2B1B12; --yellow:#FFD34D;
+  /* metal (trocado pela posição) */
+  --m1:#FFE58A; --m2:#F2B82E; --m3:#B9801A; --mt:#5A3B00;
+}
+body.p2{ --m1:#F4F6F8; --m2:#C3CAD2; --m3:#87919C; --mt:#2F3740; }
+body.p3{ --m1:#F6C79A; --m2:#D98A4E; --m3:#9A5626; --mt:#4A2410; }
+*{ box-sizing:border-box; margin:0; }
+html,body{ width:1080px; height:1920px; overflow:hidden; background:var(--red); }
+.palco{ position:relative; width:1080px; height:1920px; overflow:hidden; font-family:"Work",sans-serif; color:var(--ink);
+  background:radial-gradient(circle at 50% 40%, #F24A33 0%, var(--red) 45%, #9E1018 100%); }
+.raios{ position:absolute; left:50%; top:46%; width:2600px; height:2600px; margin:-1300px 0 0 -1300px; border-radius:50%; opacity:.12;
+  background:repeating-conic-gradient(var(--m1) 0 7deg, transparent 7deg 20deg); animation:girar 6s linear both; }
+@keyframes girar{ to{ transform:rotate(40deg); } }
+.patas{ position:absolute; inset:-200px; opacity:.10;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 40 40'%3E%3Cg fill='%23fff'%3E%3Cellipse cx='20' cy='27' rx='10' ry='8.5'/%3E%3Cellipse cx='8.5' cy='15' rx='4.2' ry='5.2'/%3E%3Cellipse cx='16' cy='9' rx='4.2' ry='5.4'/%3E%3Cellipse cx='24.5' cy='9' rx='4.2' ry='5.4'/%3E%3Cellipse cx='31.5' cy='15' rx='4.2' ry='5.2'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:180px 180px; transform:rotate(-14deg); }
+
+@keyframes pop{ from{ transform:scale(0); opacity:0; } to{ transform:none; opacity:1; } }
+@keyframes subir{ from{ transform:translateY(80px); opacity:0; } to{ transform:none; opacity:1; } }
+
+/* ---- topo: medalha + faixa ---- */
+.medalha{ position:absolute; left:50%; top:70px; width:250px; height:250px; margin-left:-125px; border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, var(--m1), var(--m2) 55%, var(--m3)); border:10px solid var(--m1);
+  box-shadow:0 0 0 8px rgba(0,0,0,.08), 0 20px 40px rgba(60,0,0,.45);
+  display:flex; align-items:center; justify-content:center; font-family:"Baloo"; font-weight:800; font-size:150px; color:var(--mt);
+  overflow:hidden; z-index:3; animation:medalhaEntra .7s cubic-bezier(.2,1.7,.4,1) .15s both, balanca 3s ease-in-out 1s infinite; }
+.medalha sup{ font-size:64px; margin-top:-50px; }
+.medalha::after{ content:""; position:absolute; top:-40%; left:-90%; width:60%; height:180%; transform:rotate(25deg);
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.85), transparent); animation:brilho 2.2s ease-in-out 1.2s infinite; }
+@keyframes brilho{ 0%{ left:-90%; } 45%,100%{ left:140%; } }
+@keyframes medalhaEntra{ from{ transform:translateY(-500px) rotate(-30deg); } to{ transform:none; } }
+@keyframes balanca{ 0%,100%{ transform:rotate(-5deg); } 50%{ transform:rotate(5deg); } }
+.fita{ position:absolute; top:-40px; width:110px; height:200px; z-index:2; background:var(--red-dark); border:6px solid var(--yellow); }
+.fita.e{ left:390px; transform:rotate(18deg); animation:subir .4s ease-out .05s both; }
+.fita.d{ left:580px; transform:rotate(-18deg); animation:subir .4s ease-out .05s both; }
+
+.faixa{ position:absolute; left:50%; top:345px; transform:translateX(-50%) rotate(-2deg); white-space:nowrap;
+  background:linear-gradient(180deg, var(--m1), var(--m2)); color:var(--mt); font-family:"Baloo"; font-weight:800; font-size:78px;
+  padding:10px 50px; border-radius:20px; box-shadow:0 12px 0 rgba(0,0,0,.18); animation:faixaIn .5s cubic-bezier(.2,1.6,.4,1) .55s both; }
+@keyframes faixaIn{ from{ transform:translateX(-50%) scale(0) rotate(-12deg); } to{ transform:translateX(-50%) rotate(-2deg); } }
+
+/* ---- produto em cima do degrau ---- */
+.produto{ position:absolute; left:200px; top:500px; width:680px; height:680px; background:#fff; border-radius:50px; padding:24px;
+  box-shadow:0 30px 60px rgba(60,0,0,.45); z-index:2;
+  animation:cai .75s cubic-bezier(.3,1.5,.5,1) .8s both, flutua 2.4s ease-in-out 1.7s infinite; }
+.produto img{ width:100%; height:100%; object-fit:cover; border-radius:30px; display:block; }
+@keyframes cai{ from{ transform:translateY(-1500px) rotate(-8deg); } to{ transform:none; } }
+@keyframes flutua{ 0%,100%{ transform:translateY(0) rotate(-1deg); } 50%{ transform:translateY(-16px) rotate(1deg); } }
+.off{ position:absolute; right:-36px; top:-36px; width:190px; height:190px; border-radius:50%; background:var(--yellow); color:var(--red-dark);
+  font-family:"Baloo"; font-weight:800; font-size:62px; display:flex; align-items:center; justify-content:center; transform:rotate(12deg);
+  box-shadow:0 10px 24px rgba(60,0,0,.35); animation:pop .45s cubic-bezier(.2,1.8,.4,1) 1.6s both; }
+
+.degrau{ position:absolute; left:140px; right:140px; top:1120px; height:330px; z-index:1;
+  background:linear-gradient(180deg, var(--m1) 0%, var(--m2) 45%, var(--m3) 100%); border-radius:24px 24px 0 0;
+  box-shadow:inset 0 10px 0 rgba(255,255,255,.35), 0 26px 40px rgba(60,0,0,.35);
+  display:flex; align-items:flex-end; justify-content:center; padding-bottom:10px;
+  font-family:"Baloo"; font-weight:800; font-size:230px; line-height:1; color:var(--mt); text-shadow:0 4px 0 rgba(255,255,255,.35);
+  animation:degrauSobe .55s cubic-bezier(.2,1.3,.4,1) .45s both; }
+@keyframes degrauSobe{ from{ transform:translateY(700px); } to{ transform:none; } }
+
+/* ---- informações ---- */
+.info{ position:absolute; left:80px; right:80px; top:1480px; color:#fff; animation:subir .5s ease-out 1.5s both; }
+.cat{ display:inline-block; font-family:"Baloo"; font-weight:800; font-size:36px; padding:6px 24px; border-radius:999px; color:#fff; background:#555; }
+.nome{ font-family:"Baloo"; font-weight:800; font-size:64px; line-height:1.02; margin-top:12px; text-shadow:0 6px 18px rgba(60,0,0,.35); }
+.precos{ position:absolute; right:70px; top:1690px; background:#fff; border-radius:34px; padding:16px 36px 20px; text-align:right;
+  box-shadow:0 18px 40px rgba(60,0,0,.4); transform:rotate(-3deg); animation:carimbo .5s cubic-bezier(.2,1.8,.4,1) 2.0s both; }
+.precos .de{ display:block; font-size:34px; font-weight:700; color:#8A7563; text-decoration:line-through; }
+.precos b{ display:block; font-family:"Baloo"; font-weight:800; font-size:104px; line-height:.95; color:var(--red-dark); }
+@keyframes carimbo{ from{ transform:scale(2.4) rotate(8deg); opacity:0; } to{ transform:rotate(-3deg); opacity:1; } }
+.cupom{ position:absolute; left:250px; top:1730px; background:#fff6e9; border:5px dashed #F7941D; border-radius:24px; padding:10px 22px;
+  font-family:"Baloo"; font-weight:800; transform:rotate(2deg); box-shadow:0 12px 26px rgba(60,0,0,.3); animation:pop .4s cubic-bezier(.2,1.6,.4,1) 2.4s both; }
+.cupom small{ display:block; font-size:26px; color:#B26200; }
+.cupom b{ display:block; font-size:44px; line-height:1; }
+
+.yang{ position:absolute; left:50px; top:1690px; width:180px; height:180px; border-radius:50%; border:9px solid #fff; overflow:hidden;
+  box-shadow:0 12px 26px rgba(60,0,0,.4); animation:pop .45s cubic-bezier(.2,1.6,.4,1) 1.9s both, balanca 2.6s ease-in-out 2.4s infinite; }
+.yang img{ width:100%; height:100%; display:block; }
+.link{ position:absolute; left:0; right:0; bottom:22px; text-align:center; white-space:nowrap; color:#FFE2C2; font-weight:700; font-size:34px;
+  animation:subir .4s ease-out 2.6s both; }
+
+/* ---- brilhinhos ---- */
+.est{ position:absolute; color:var(--m1); font-size:70px; opacity:0; z-index:4; text-shadow:0 0 18px rgba(255,255,255,.8); }
+@keyframes piscar{ 0%,100%{ opacity:0; transform:scale(.3) rotate(0); } 50%{ opacity:1; transform:scale(1) rotate(90deg); } }
+.conf{ position:absolute; top:-60px; width:20px; height:30px; border-radius:4px; }
+@keyframes cair{ from{ transform:translate(0,0) rotate(0); } to{ transform:translate(var(--dx),2100px) rotate(var(--r)); } }
+[hidden]{ display:none !important; }
+</style></head>
+<body>
+<div class="palco">
+  <div class="raios"></div>
+  <div class="patas"></div>
+  <div id="confete"></div>
+
+  <div class="fita e"></div><div class="fita d"></div>
+  <div class="medalha"><span data-c="num">1</span><sup>º</sup></div>
+  <div class="faixa" data-c="faixa">LUGAR DO DIA</div>
+
+  <div class="degrau" data-c="degrau">1</div>
+  <div class="produto"><img data-c="img" src="" alt=""><div class="off" data-c="off" hidden></div></div>
+
+  <div class="info"><span class="cat" data-c="cat"></span><div class="nome" data-c="nome"></div></div>
+  <div class="yang"><img src="../../assets/yang-padrao-redonda.png" alt=""></div>
+  <div class="cupom" data-c="cupomBox" hidden><small>🏷️ cupom</small><b data-c="cupom"></b></div>
+  <div class="precos"><span class="de" data-c="de" hidden></span><b data-c="preco"></b></div>
+  <div class="link">🔗 link no story · Farejadinhos da Yang 🐾</div>
+
+  <div class="est" style="left:120px;top:560px;animation:piscar 1.6s ease-in-out 1.4s infinite">✦</div>
+  <div class="est" style="left:880px;top:760px;animation:piscar 1.6s ease-in-out 2.0s infinite">✦</div>
+  <div class="est" style="left:150px;top:1100px;animation:piscar 1.6s ease-in-out 2.6s infinite">✦</div>
+  <div class="est" style="left:860px;top:230px;animation:piscar 1.6s ease-in-out 1.8s infinite">✦</div>
+</div>
+<script>
+(function(){
+  var D = window.DADOS || {}; var p = D.posicao || 1;
+  document.body.className = "p" + p;
+  function c(n){ return document.querySelector('[data-c="'+n+'"]'); }
+  c("num").textContent = p; c("degrau").textContent = p;
+  c("faixa").textContent = "LUGAR DO DIA";
+  if (D.imagem) c("img").src = D.imagem;
+  c("nome").textContent = D.nome || "";
+  c("cat").textContent = D.categoria || ""; if (D.corCategoria) c("cat").style.background = D.corCategoria;
+  c("preco").textContent = D.preco || "";
+  if (D.de){ c("de").textContent = "de " + D.de; c("de").hidden = false; }
+  if (D.off){ c("off").textContent = "-" + D.off + "%"; c("off").hidden = false; }
+  if (D.cupom){ c("cupom").textContent = D.cupom; c("cupomBox").hidden = false; }
+  var nome = c("nome"), t = 64; while (nome.scrollHeight > 140 && t > 42){ t -= 4; nome.style.fontSize = t + "px"; }
+  // confete só no 1º lugar (cores da marca)
+  if (p === 1){
+    var s = 3; function r(){ s = (s * 9301 + 49297) % 233280; return s / 233280; }
+    var cores = ["#FFD34D","#ffffff","#F7941D","#FFE58A"], h = "";
+    for (var i = 0; i < 60; i++){
+      h += '<div class="conf" style="left:' + Math.round(r()*1080) + 'px;background:' + cores[i%4] + ';--dx:' + Math.round((r()-.5)*300) +
+        'px;--r:' + Math.round(r()*900) + 'deg;animation:cair ' + (3 + r()*2).toFixed(2) + 's linear ' + (0.9 + r()*4.5).toFixed(2) + 's both"></div>';
+    }
+    document.getElementById("confete").innerHTML = h;
+  }
+})();
+</script>
+</body></html>

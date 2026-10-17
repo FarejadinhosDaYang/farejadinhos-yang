@@ -120,13 +120,34 @@ def trilha(tem_off, tem_cupom):
     faixa = np.tanh(faixa * 1.2) * 0.8      # limita picos
     return faixa
 
+DUR_PODIO = 6.0
+
+def trilha_podio(tem_off, tem_cupom, posicao):
+    faixa = np.zeros(int(SR * (DUR_PODIO + 1)))
+    def pos(t, som, vol=1.0):
+        i = int(SR * t); faixa[i:i + len(som)] += vol * som[:len(faixa) - i]
+    pos(0.10, whoosh(0.4, False), .45)                  # medalha desce
+    pos(0.70, pop(500, 1200), .8)                       # medalha encaixa
+    pos(0.45, whoosh(0.45, True), .45)                  # degrau sobe
+    pos(0.60, pop(), .6)                                # faixa
+    pos(0.80, whoosh(0.5, False), .5)                   # produto cai
+    pos(1.42, carimbo(), .55)                           # produto pousa no degrau
+    if tem_off: pos(1.62, pop(600, 1300), .7)
+    pos(1.55, tique(), .8)
+    pos(2.02, carimbo(), .9); pos(2.12, brilho(), .8)   # preço
+    if tem_cupom: pos(2.42, pop(600, 1300), .7)
+    pos(2.65, plim(), .5 if posicao > 1 else .7)
+    faixa = faixa[: int(SR * DUR_PODIO)]
+    return np.tanh(faixa * 1.2) * 0.8
+
 def salvar_wav(sinal, caminho):
     dados = (np.clip(sinal, -1, 1) * 32767).astype(np.int16)
     with wave.open(caminho, "wb") as w:
         w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes(dados.tobytes())
 
 # ---------------- render ----------------
-def render(html, pasta_frames):
+def render(html, pasta_frames, dur=None):
+    dur = dur or DUR
     from playwright.sync_api import sync_playwright
     os.makedirs(pasta_frames, exist_ok=True)
     with sync_playwright() as p:
@@ -134,13 +155,15 @@ def render(html, pasta_frames):
         pg.goto("file://" + html); pg.wait_for_load_state("networkidle")
         pg.evaluate("document.fonts.ready"); pg.wait_for_timeout(300)
         pg.evaluate("document.getAnimations().forEach(a=>a.pause())")
-        for i in range(int(FPS * DUR)):
+        for i in range(int(FPS * dur)):
             pg.evaluate(f"document.getAnimations().forEach(a=>a.currentTime={i * 1000 / FPS})")
             pg.screenshot(path=f"{pasta_frames}/f{i:04d}.jpg", type="jpeg", quality=92)
         b.close()
 
 top = json.loads(subprocess.check_output(["node", os.path.join(AQUI, "top3.js"), SITE]))
 modelo = open(os.path.join(AQUI, "modelo.html"), encoding="utf-8").read()
+modelo_podio = open(os.path.join(AQUI, "podio.html"), encoding="utf-8").read()
+SO_PODIO = os.environ.get("FAREJA_SO_PODIO") == "1"   # teste rápido: só as imagens de pódio
 manifesto = []
 
 for i, o in enumerate(top):
@@ -168,6 +191,34 @@ for i, o in enumerate(top):
         modelo.replace("</head>", "<script>window.DADOS=" + json.dumps(dados, ensure_ascii=False) + ";</script></head>", 1))
     frames = os.path.join(AQUI, f"frames-{i + 1}")
     shutil.rmtree(frames, ignore_errors=True)
+
+    # ---- imagem animada de pódio (6 s) ----
+    dados_p = {"posicao": i + 1, "imagem": dados["imagem"], "nome": nome, "preco": o["preco"],
+               "de": dados["de"], "off": dados["off"], "cupom": dados["cupom"],
+               "categoria": dados["categoria"], "corCategoria": cor}
+    html_p = os.path.join(AQUI, f"podio-{i + 1}.html")
+    open(html_p, "w", encoding="utf-8").write(
+        modelo_podio.replace("</head>", "<script>window.DADOS=" + json.dumps(dados_p, ensure_ascii=False) + ";</script></head>", 1))
+    frames_p = frames + "-podio"
+    shutil.rmtree(frames_p, ignore_errors=True)
+    render(html_p, frames_p, DUR_PODIO)
+    wav_p = os.path.join(AQUI, f"som-podio-{i + 1}.wav")
+    salvar_wav(trilha_podio(bool(dados["off"]), bool(dados["cupom"]), i + 1), wav_p)
+    saida_p = os.path.join(SAIDA, f"podio{i + 1}.mp4")
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(FPS), "-i", f"{frames_p}/f%04d.jpg",
+                    "-i", wav_p, "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "20", "-preset", "medium",
+                    "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", saida_p], check=True)
+    shutil.rmtree(frames_p, ignore_errors=True)
+    print("OK:", saida_p)
+
+    item = {"arquivo": f"top{i + 1}.mp4", "podio": f"podio{i + 1}.mp4", "posicao": i + 1, "produto": o["produto"],
+            "nome": nome, "preco": o["preco"], "cupom": o.get("cupom") or "",
+            "slug": o["slug"], "pagina": o.get("url") or "", "link": o.get("link") or ""}
+    if SO_PODIO:
+        item["arquivo"] = ""
+        manifesto.append(item)
+        continue
+
     render(html, frames)
     wav = os.path.join(AQUI, f"som-{i + 1}.wav")
     salvar_wav(trilha(bool(dados["off"]), bool(dados["cupom"])), wav)
@@ -176,9 +227,7 @@ for i, o in enumerate(top):
                     "-i", wav, "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "20", "-preset", "medium",
                     "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", saida], check=True)
     print("OK:", saida, "|", nome, "|", det)
-    manifesto.append({"arquivo": f"top{i + 1}.mp4", "posicao": i + 1, "produto": o["produto"],
-                      "nome": nome, "preco": o["preco"], "cupom": o.get("cupom") or "",
-                      "slug": o["slug"], "pagina": o.get("url") or "", "link": o.get("link") or ""})
+    manifesto.append(item)
     # limpa os quadros (ocupam espaço)
     shutil.rmtree(frames, ignore_errors=True)
 
