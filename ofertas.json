@@ -2278,22 +2278,6 @@
     "parcelas": 3
   },
   {
-    "produto": "Kit Chave Catraca Soquete 46 Peças Indufer",
-    "preco": "R$ 28,99",
-    "precoAntigo": "",
-    "cupom": "FULL1510",
-    "categoria": "Utilidades",
-    "destaque": false,
-    "imagem": "307142c1-3579-4379-9026-a757dec72f39.webp",
-    "link": "https://meli.la/2H9VVJf",
-    "url": "https://farejadinhosdayang.com.br/ofertas/kit-chave-catraca-soquete-46-pecas-indufer/",
-    "slug": "kit-chave-catraca-soquete-46-pecas-indufer",
-    "data": "2026-10-15T22:42:11Z",
-    "precoAVista": "",
-    "precoAPrazo": "",
-    "liberacao": "2026-10-18T11:00:00Z"
-  },
-  {
     "produto": "Kit 6 Pote Vidro Porta Temperos Hermético Cozinha",
     "preco": "R$ 40,89",
     "precoAntigo": "",
@@ -2552,5 +2536,21 @@
     "precoAPrazo": "108,56",
     "liberacao": "2026-10-23T22:12:00Z",
     "parcelas": 4
+  },
+  {
+    "produto": "Kit Chave Catraca Soquete 46 Peças Indufer",
+    "preco": "R$ 28,99",
+    "precoAntigo": "",
+    "cupom": "FULL1510",
+    "categoria": "Vídeos",
+    "destaque": false,
+    "imagem": "307142c1-3579-4379-9026-a757dec72f39.webp",
+    "link": "https://meli.la/2H9VVJf",
+    "url": "https://farejadinhosdayang.com.br/ofertas/kit-chave-catraca-soquete-46-pecas-indufer/",
+    "slug": "kit-chave-catraca-soquete-46-pecas-indufer",
+    "data": "2026-10-15T22:42:11Z",
+    "precoAVista": "",
+    "precoAPrazo": "",
+    "liberacao": "2026-10-18T11:00:00Z"
   }
 ]
