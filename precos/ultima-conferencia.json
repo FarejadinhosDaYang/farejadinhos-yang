@@ -1,1366 +1,1115 @@
 {
-  "quando": "2026-10-17T23:08:30Z",
+  "quando": "2026-10-17T23:11:30Z",
   "origem": "workflow_dispatch",
   "total": 226,
-  "iguais": 0,
-  "mudaram": [],
-  "semPreco": [],
-  "erros": [
+  "iguais": 42,
+  "mudaram": [
+    {
+      "slug": "galinha-frango-de-borracha-brinquedo-mordedor-pet",
+      "produto": "Galinha Frango De Borracha Brinquedo Mordedor Pet",
+      "de": "R$ 20,52",
+      "para": "20,14"
+    },
+    {
+      "slug": "kit-2-pochete-academia-esportiva-fitness-corrida",
+      "produto": "Kit 2 Pochete Academia Esportiva Fitness Corrida",
+      "de": "R$ 26,68",
+      "para": "27,55"
+    },
+    {
+      "slug": "kit-2-fita-teste-piscina-cloro-ph-alcalinidade",
+      "produto": "Kit 2 Fita Teste Piscina Cloro/ph/alcalinidade",
+      "de": "R$ 46,71",
+      "para": "44,11"
+    },
+    {
+      "slug": "super-clarificante-para-piscina-power-gel",
+      "produto": "Super Clarificante para Piscina Power Gel",
+      "de": "R$ 29,94",
+      "para": "33,80"
+    },
+    {
+      "slug": "aspirador-manual-piscina-herbinject-azul",
+      "produto": "Aspirador Manual Piscina Herbinject Azul",
+      "de": "R$ 42,01",
+      "para": "35,80"
+    },
+    {
+      "slug": "varal-de-chao-grande-de-roupas-3-andares-dobravel",
+      "produto": "Varal De Chão Grande De Roupas 3 Andares Dobrável",
+      "de": "R$ 67,03",
+      "para": "78,80"
+    },
+    {
+      "slug": "liquidificador-turbo-power-mondial-550w-l-99-fb",
+      "produto": "Liquidificador Turbo Power Mondial 550W - L-99 FB",
+      "de": "R$ 88,37",
+      "para": "87,46"
+    },
+    {
+      "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
+      "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
+      "de": "R$ 68,66",
+      "para": "61,75"
+    },
+    {
+      "slug": "balanca-digital-bioimpedancia-profissional-smart",
+      "produto": "Balança Digital Bioimpedância Profissional smart",
+      "de": "R$ 32,90",
+      "para": "28,95"
+    },
+    {
+      "slug": "chaleira-eletrica-atacama-1-8l-unitermi",
+      "produto": "Chaleira Eletrica Atacama 1,8l - Unitermi",
+      "de": "R$ 38,63",
+      "para": "47,43"
+    },
+    {
+      "slug": "frigideira-ceramica-antiaderente-inducao-azul",
+      "produto": "Frigideira Cerâmica Antiaderente Indução Azul",
+      "de": "R$ 39,99",
+      "para": "41,99"
+    },
+    {
+      "slug": "dispenser-porta-detergente-3-em-1-em-aco-inox",
+      "produto": "Dispenser Porta Detergente 3 em 1 em Aço Inox",
+      "de": "R$ 31,90",
+      "para": "32,90"
+    },
+    {
+      "slug": "faqueiro-tramontina-buzios-em-aco-inox-com-detalhe",
+      "produto": "Faqueiro Tramontina Búzios Em Aço Inox Com Detalhe",
+      "de": "R$ 61,73",
+      "para": "62,25"
+    },
+    {
+      "slug": "fritadeira-sem-oleo-air-fryer-4l-mondial-1500w",
+      "produto": "Fritadeira sem óleo air fryer 4L Mondial 1500W",
+      "de": "R$ 249,90",
+      "para": "254,14"
+    }
+  ],
+  "semPreco": [
     {
       "slug": "meia-de-natal-lb-letras-em-malha-letras-de-natal-meias-de",
       "produto": "Meia de Natal LB Letras em Malha Árvore Bolsa",
       "link": "https://s.shopee.com.br/6q1SLMSmj8",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "natal-estoque-de-natal-saco-de-presente-de-natal-natal",
       "produto": "Natal estoque saco de presente pequeno pingente",
       "link": "https://s.shopee.com.br/6fi293TQ47",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "estilo-classico-numero-de-natal-decoracao-pao-de-gengibre",
       "produto": "Estilo Clássico Número de Natal Decoração Pão",
       "link": "https://s.shopee.com.br/9APN7eJtzc",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "novo-estilo-estrela-reunindo-pingente-de-arvore-de-natal",
       "produto": "Estrela reunindo pingente de árvore de natal",
       "link": "https://s.shopee.com.br/905wvLKXKb",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "enfeites-de-natal-enfeites-de-natal-pequena-casa-luminosa",
       "produto": "Enfeites de natal pequena casa luminosa presentes",
       "link": "https://s.shopee.com.br/8pmWj2LAfa",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "decoracoes-de-natal-decoracoes-de-natal-porta-de-natal",
       "produto": "Decorações de natal porta pendurado papai noel",
       "link": "https://s.shopee.com.br/8fT6WjLo0Z",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "topo-de-bolo-natalino-enfeite-de-natal-enfeite-feliz-natal",
       "produto": "Topo de Bolo Natalino Enfeite de Natal Feliz",
       "link": "https://s.shopee.com.br/8V9gKQMRLY",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "2-pcs-bolas-de-natal-ornamentos-de-natal-rena-design",
       "produto": "2 Pçs Bolas De Natal Ornamentos Rena Design",
       "link": "https://s.shopee.com.br/8KqG87N4gX",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "card-natal-lacreme-mimo-natal-chocolate-lembrancinha-natal",
       "produto": "Card Natal Lacreme Mimo Chocolate Lembrancinha Tag",
       "link": "https://s.shopee.com.br/80DPjVOLMV",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "enfeite-de-natal-feliz-natal-31cm-dourado-e-vermelho-de",
       "produto": "Enfeite de Natal Feliz Dourado E Vermelho Natalino",
       "link": "https://s.shopee.com.br/AUuki6EpI0",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "luzes-de-velas-de-natal-led-luminosas-decoracoes-para",
       "produto": "Luzes de velas de Natal LED luminosas decorações",
       "link": "https://s.shopee.com.br/AKbKVnFScz",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "enfeites-de-natal-natal-decoracao-casa-pingentes-de-natal",
       "produto": "Enfeites de natal decoração casa Pingentes Elk",
       "link": "https://s.shopee.com.br/AAHuJUG5xy",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "presepio-de-natal-em-mdf-20cm-x-13cm-lembrancinha-de-natal",
       "produto": "Presépio de Natal em MDF Lembrancinha",
       "link": "https://s.shopee.com.br/9zyU7BGjIx",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "bolas-de-natal-decorativa-enfeite-para-arvore-natal-bolinha",
       "produto": "Bolas de Natal Decorativa Enfeite para Arvore",
       "link": "https://s.shopee.com.br/9pf3usHMdw",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-bola-de-natal-enfeite-para-arvore-de-natal-decoracao",
       "produto": "Kit Bola De Natal Enfeite Para Arvore Decoração",
       "link": "https://s.shopee.com.br/9fLdiZHzyv",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "12-bola-para-arvore-de-natal-bolinha-3cm-de-natal-enfeite",
       "produto": "12 bola para árvore de natal Bolinha Enfeite",
       "link": "https://s.shopee.com.br/9V2DWGIdJu",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-de-enfeite-natal-coracao-tamanho-4cm-com-8-unidades",
       "produto": "Kit de enfeite natal coração tamanho",
       "link": "https://s.shopee.com.br/9KinJxJGet",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "globo-de-neve-de-natal-papai-noel-decoracao-de-natal",
       "produto": "Globo de Neve de Natal Papai Noel",
       "link": "https://s.shopee.com.br/1BN5awoMEK",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-bola-de-natal-enfeite-para-arvore-de-natal-decoracao-2",
       "produto": "Kit Bola De Natal Enfeite Para Arvore Decoração",
       "link": "https://s.shopee.com.br/113fOdozZJ",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "anjo-menina-pingente-enfeites-de-natal-enfeites-de-arvore",
       "produto": "Anjo menina pingente enfeites de natal de árvore",
       "link": "https://s.shopee.com.br/qkFCKpcuI",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "30-x-esfera-de-natal-6-5cm-bola-de-natal-bola-natal",
       "produto": "30 x esfera de natal bola acrílica enfeite",
       "link": "https://s.shopee.com.br/gQp01qGFH",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "enfeites-de-natal-pingentes-de-arvore-de-natal-transparente",
       "produto": "Enfeites de natal pingentes de árvore transparente",
       "link": "https://s.shopee.com.br/W7OniqtaG",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "12-bolinhas-de-natal-brilho-glitter-4-5-6-7cm-bola-de-natal",
       "produto": "12 Bolinhas de Natal Brilho Glitter Bola Decoração",
       "link": "https://s.shopee.com.br/LnybPrWvF",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "aplique-para-bento-cake-feliz-natal-dourado-i-kit-4",
       "produto": "Aplique Para Bentô Cake",
       "link": "https://s.shopee.com.br/BUYP6sAGE",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-12-decoracao-natal-enfeites-de-natal-pendente-enfeite",
       "produto": "Kit 12 Decoração natal enfeites Pendente Árvore",
       "link": "https://s.shopee.com.br/1B8CnsnbD",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "bola-de-natal-personalizada-com-foto-kit-bolinha-para",
       "produto": "Bola de Natal personalizada com foto",
       "link": "https://s.shopee.com.br/2VsTBOjHWi",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "ornamentos-de-natal-boneco-de-natal-boneco-de-papai-noel",
       "produto": "Ornamentos De Natal Boneco De Papai Noel De Neve",
       "link": "https://s.shopee.com.br/2LZ2z5jurh",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "bolas-de-natal-decoracao-enfeite-natalino-bolinhas-de-natal",
       "produto": "Bolas de Natal Decoração Enfeite Natalino Bolinhas",
       "link": "https://s.shopee.com.br/2BFcmmkYCg",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-10-tag-feliz-natal-arvore-natal-boneco-de-neve-bola",
       "produto": "Kit 10 Tag Feliz Natal Árvore Boneco de Neve",
       "link": "https://s.shopee.com.br/20wCaTlBXf",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "arvore-de-natal-90-cm-80galhos-arvore-natal-economica",
       "produto": "Arvore De Natal 80Galhos Economica Pinheiro branca",
       "link": "https://s.shopee.com.br/1qcmOAlose",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "arvore-de-natal-de-240-cm-150-180-210-arvore-de-natal-de",
       "produto": "Árvore de Natal de luxo, decoração para festa",
       "link": "https://s.shopee.com.br/1gJMBrmSDd",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "arvore-de-natal-premium-super-cheia-grande-luxo-decoracao",
       "produto": "Árvore de Natal Premium Super Cheia Grande Luxo",
       "link": "https://s.shopee.com.br/1VzvzYn5Yc",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "globo-de-neve-de-natal-papai-noel-15-cm-decoracao-de-natal",
       "produto": "Globo de Neve de Natal Papai Noel",
       "link": "https://s.shopee.com.br/1LgVnFnitb",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "pingente-de-arvore-de-natal-floco-de-neve-de-natal-elk",
       "produto": "Pingente de árvore de Natal Floco de neve Elk",
       "link": "https://s.shopee.com.br/3qNqlqeCp6",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "estoque-pronto-decoracoes-de-natal-pingentes-sacos-com",
       "produto": "Decorações de Natal Pingentes Sacos de árvore",
       "link": "https://s.shopee.com.br/3LRaAvg6q3",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "estilo-arvore-de-natal-decoracao-arvore-de-natal-ornamentos",
       "produto": "Estilo Árvore de Natal Decoração Ornamentos",
       "link": "https://s.shopee.com.br/3B89ycgkB2",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "44-pecas-3cm-6cm-decoracao-de-natal-enfeite-para-arvore-de",
       "produto": "44 peças, decoração de Natal, enfeite para árvore",
       "link": "https://s.shopee.com.br/30ojmJhNW1",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-8-bolas-de-natal-3d-ho-ho-ho-decoracao-de-natal-enfeite",
       "produto": "Kit 8 Bolas de Natal 3D “Ho Ho Ho”- decoração",
       "link": "https://s.shopee.com.br/2qVJa0i0r0",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "novo-anjo-de-natal-feltro-menina-natal-menina-boneca",
       "produto": "Anjo de natal feltro menina boneca enfeites",
       "link": "https://s.shopee.com.br/2gBtNhieBz",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "saco-secador-para-pet-secagem-rapida-15-30min-pelos-secos",
       "produto": "Saco Secador para Pet Secagem Rápida 15-30min",
       "link": "https://s.shopee.com.br/5q8vAguAPd",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "secador-esterelizador-de-tenis-eletrico-seca-tenis-sapatos",
       "produto": "Secador Esterelizador de Tenis Elétrico Seca",
       "link": "https://s.shopee.com.br/50ZoB9xL6X",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "comedouro-e-bebedouro-automatico-para-gatos-e-caes-premium",
       "produto": "Comedouro e Bebedouro Automático para Gatos e Cães",
       "link": "https://s.shopee.com.br/4fwxmXybmV",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "cafe-filtro-coador-inox-reutilizavel-naoprecisa-de-papel",
       "produto": "Cafe Filtro Coador Inox Reutilizavel Naoprecisa",
       "link": "https://s.shopee.com.br/4LK7NvzsST",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "presepio-de-natal-manjedoura-decoracao-enfeite-natalino-mdf",
       "produto": "Presépio De Natal Manjedoura Decoração Enfeite",
       "link": "https://s.shopee.com.br/4B0hBd0VnS",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "jogo-mesa-completa-12-pecas-6-pratos-6-tacas-200ml-vidro",
       "produto": "Jogo Mesa Completa 12 Peças 6 Pratos + 6 Taças",
       "link": "https://s.shopee.com.br/3qNqn11mTQ",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "6-jogo-americano-juta-vermelho-impermeavel-limpa-facil-pvc",
       "produto": "6 Jogo Americano Juta Vermelho",
       "link": "https://s.shopee.com.br/3Vl0OP339O",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "saco-para-lavar-tenis-na-maquina-bolsa-protetora-de-sapatos",
       "produto": "Saco para Lavar Tênis na Máquina Bolsa Protetora",
       "link": "https://s.shopee.com.br/3LRaC63gUN",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "potes-multiuso-hermeticos-geladeira-460ml-950ml-porta",
       "produto": "Potes Multiuso Herméticos Geladeira 460ml/950ml",
       "link": "https://s.shopee.com.br/3B89zn4JpM",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-suporte-para-tampa-de-panela-4-unidades-organizador",
       "produto": "Kit Suporte para Tampa de Panela 4 Unidades",
       "link": "https://s.shopee.com.br/2qVJbB5aVK",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "ramekin-coracao-150ml-canelado-molho-doce-petisco-festa",
       "produto": "Ramekin Coração 150ml Canelado Molho Doce Petisco",
       "link": "https://s.shopee.com.br/2LZ30G7UWH",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "caneca-misturadora-automatica-eletrica-usb-bateria",
       "produto": "Caneca Misturadora Automática Elétrica USB Bateria",
       "link": "https://s.shopee.com.br/20wCbe8lCF",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-10-marmitas-potes-800ml-travas-laterais-hermeticas",
       "produto": "Kit 10 Marmitas Potes 800ml Travas Laterais",
       "link": "https://s.shopee.com.br/1gJMD2A1sD",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-4-ou-6-jogos-americanos-redondos-para-mesa-sousplat",
       "produto": "Kit 4 ou 6 Jogos Americanos Redondos para Mesa",
       "link": "https://s.shopee.com.br/1Vzw0jAfDC",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "frigideira-antiaderente-nao-usa-oleo-ceramica-vanilla-cream",
       "produto": "Frigideira Antiaderente Não Usa Óleo Cerâmica",
       "link": "https://s.shopee.com.br/1LgVoQBIYB",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "arvore-natal-verde-150cm-220-galhos-decoracao-natalina",
       "produto": "Árvore Natal Verde 220 Galhos Decoração Natalina",
       "link": "https://s.shopee.com.br/1BN5c7BvtA",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "tabua-de-corte-304-aco-inoxidavel-antibacteriana-a-prova-de",
       "produto": "Tábua De Corte 304 Aço Inoxidável Antibacteriana",
       "link": "https://s.shopee.com.br/113fPoCZE9",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "bolsa-de-cosmeticos-a-prova-d-agua-portatil-multifuncional",
       "produto": "Bolsa De Cosméticos À Prova D'água Portátil",
       "link": "https://s.shopee.com.br/qkFDVDCZ8",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "escova-de-limpeza-9-em-1-eletrica-giratoria-com-cabo",
       "produto": "Escova De Limpeza 9 Em 1 Elétrica Giratória",
       "link": "https://s.shopee.com.br/W7OotETF6",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "1-2-3-cesto-organizador-cozinha-geladeira-armario",
       "produto": "1/2/3 Cesto Organizador Cozinha Geladeira Armário",
       "link": "https://s.shopee.com.br/LnycaF6a5",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "organizador-de-geladeira-para-temperos-2-3l-linha-clear",
       "produto": "Organizador de Geladeira para Temperos 2,3L",
       "link": "https://s.shopee.com.br/BUYQHFjv4",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "percarbonato-100-puro-tira-manchas-roupas-brancas-e",
       "produto": "Percarbonato 100% Puro Tira Manchas Roupas Brancas",
       "link": "https://s.shopee.com.br/AUukjGcOx6",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "espelho-corpo-inteiro-40cm-x-110cm-grande-de-chao-portal",
       "produto": "Espelho Corpo Inteiro Grande De Chão Portal",
       "link": "https://s.shopee.com.br/AKbKWxd2I5",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "descascador-eletrico-de-alho-e-uva-em-aco-inox-automatico",
       "produto": "Descascador Elétrico De Alho E Uva Em Aço Inox",
       "link": "https://s.shopee.com.br/AAHuKedfd4",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "jogo-de-copos-6-pecas-de-vidro-cameratta-canelado-420ml",
       "produto": "Jogo De Copos 6 Peças De Vidro Cameratta Canelado",
       "link": "https://s.shopee.com.br/9zyU8LeIy3",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "celimax-the-vita-a-retinal-shot-tightening-booster-15ml",
       "produto": "Celimax The Vita A Retinal Shot Tightening Booster",
       "link": "https://s.shopee.com.br/9fLdjjfZe1",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "fatiador-profissional-multifuncional-16-em-1-de-aco",
       "produto": "Fatiador Profissional",
       "link": "https://s.shopee.com.br/9V2DXQgCz0",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "05-potes-de-vidro-hermetico-transparente-tampa-bambu-porta",
       "produto": "05 Potes de Vidro Hermético Transparente Tampa",
       "link": "https://s.shopee.com.br/9KinL7gqJz",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "varal-de-chao-roupa-calcinha-grade-3-andares-dobravel",
       "produto": "Varal De Chão Roupa Calcinha Grade 3 Andares",
       "link": "https://s.shopee.com.br/9APN8ohTey",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "dispensers-lavanderia-1-5l-e-2-3l-amaciante-sabao-em-po",
       "produto": "Dispensers Lavanderia 1,5L e 2",
       "link": "https://s.shopee.com.br/8pmWkCikKw",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "suporte-organizador-de-banheiro-multifuncional-papel",
       "produto": "Suporte Organizador de Banheiro",
       "link": "https://s.shopee.com.br/8fT6XtjNfv",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-facial-kokeshi-completo-3-passos-hidratacao-e-colageno",
       "produto": "Kit Facial Kokeshi Completo 3 Passos Hidratação",
       "link": "https://s.shopee.com.br/8V9gLak10u",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "escova-de-silicone-2-em-1-para-vaso-sanitario-base-de",
       "produto": "Escova de Silicone 2 em 1 para Vaso Sanitário",
       "link": "https://s.shopee.com.br/8KqG9HkeLt",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-potes-hermeticos-porta-mantimentos-acrilico-empilhaveis",
       "produto": "Kit Potes Herméticos Porta Mantimentos Acrílico",
       "link": "https://s.shopee.com.br/8AWpwylHgs",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-limpador-pastilha-de-maquina-de-lavar-roupa-comprimido",
       "produto": "Kit Limpador Pastilha de máquina de lavar roupa",
       "link": "https://s.shopee.com.br/80DPkflv1r",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-lavabo-pet-ambar-difusor-de-varetas-e-saboneteira-luxo",
       "produto": "Kit Lavabo Pet Ambar Difusor de Varetas",
       "link": "https://s.shopee.com.br/7ptzYMmYMq",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-2-unidades-abajur-la-finesse-cupula-luminaria-para",
       "produto": "Kit 2 unidades Abajur La Finesse Cupula",
       "link": "https://s.shopee.com.br/7faZM3nBhp",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "jogo-de-tacas-de-vidro-diamond-cristal-325ml-6-pecas",
       "produto": "Jogo De Taças De Vidro Diamond Cristal 325ml",
       "link": "https://s.shopee.com.br/7VH99knp2o",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "cetaphil-locao-hidratante-galderma-para-pele-normal-a-seca",
       "produto": "Cetaphil Loção Hidratante Galderma para Pele",
       "link": "https://s.shopee.com.br/7KxixRoSNn",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "cesto-de-roupa-suja-bambu-com-tampa-e-alcas-50-litros",
       "produto": "Cesto de Roupa Suja Bambu Com Tampa e Alças",
       "link": "https://s.shopee.com.br/7AeIl8p5im",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "organizador-de-talheres-gaveta-bambu-extensivel-7-divisorias",
       "produto": "Organizador De Talheres Gaveta Bambu Extensível",
       "link": "https://s.shopee.com.br/6q1SMWqMOk",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-4-toalhas-banho-felpudas-ultra-macias-100-algodao-puro",
       "produto": "Kit 4 Toalhas Banho Felpudas Ultra Macias",
       "link": "https://s.shopee.com.br/6fi2ADqzjj",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "escorredor-de-louca-decoteam-2-andares-aco-de-carbono",
       "produto": "Escorredor de Louça Decoteam 2 Andares Aço",
       "link": "https://s.shopee.com.br/6VObxurd4i",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "organizadores-de-geladeira-de-acrilico-com-tampa-drenagem-2",
       "produto": "Organizadores de Geladeira de Acrílico com Tampa",
       "link": "https://s.shopee.com.br/6AllZIstkg",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "escova-eletrica-de-limpeza-5-em-1-sem-fio-recarregavel",
       "produto": "Escova Elétrica de Limpeza 5 em 1 Sem Fio",
       "link": "https://s.shopee.com.br/60SLMztX5f",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "fatiador-ralador-16-em-1-profissional-de-cozinha-em-aco",
       "produto": "Fatiador Ralador 16 em 1 Profissional de Cozinha",
       "link": "https://s.shopee.com.br/5q8vAguAQe",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "spray-borrifador-de-azeite-pulverizador-automatico-para",
       "produto": "Spray Borrifador de Azeite Pulverizador automático",
       "link": "https://s.shopee.com.br/5fpUyNunld",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "mop-c-cabo-de-140-cm-2-refis-rodinhas-e-cesto-em-inox-balde",
       "produto": "Mop com cabo + 2 Refis",
       "link": "https://s.shopee.com.br/5VW4m4vR6c",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "hidratante-creme-facial-pele-de-porcelana-kokeshi-30g",
       "produto": "Hidratante Creme Facial Pele De Porcelana Kokeshi",
       "link": "https://s.shopee.com.br/5LCeZlw4Rb",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "manta-cobertor-casal-queen-mantinha-inverno-microfibra",
       "produto": "Manta Cobertor Casal Queen Mantinha Inverno",
       "link": "https://s.shopee.com.br/4fwxmXybnU",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "desentupidor-alta-pressao-tipo-bomba-de-succao-borracha",
       "produto": "Desentupidor Alta Pressão Tipo Bomba De Sucção",
       "link": "https://s.shopee.com.br/4qGNyqxySX",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "toalha-de-mesa-decoracao-natal-para-mesa-6-lugares-2-metros",
       "produto": "Toalha De Mesa Decoração Natal 6 Lugares 2 Metros",
       "link": "https://s.shopee.com.br/7faZKtPc2D",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "kit-2-faixa-de-cabelo-toalha-para-make-skincare",
-      "produto": "Kit 2 Faixa De Cabelo Toalha Para Make Skincare",
-      "link": "https://meli.la/1fvLLw3",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "extrator-de-cravos-e-espinhas-kit-cureta-aco-inox",
-      "produto": "Extrator De Cravos E Espinhas Kit Cureta Aço Inox",
-      "link": "https://meli.la/2PbJUan",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "kit-3-urinol-feminino-silicone-reutilizavel-xixi",
-      "produto": "Kit 3 Urinol Feminino Silicone Reutilizavel Xixi",
-      "link": "https://meli.la/2q3YYkk",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "afiador-e-amolador-de-facas-e-tesouras",
-      "produto": "Afiador E Amolador De Facas E Tesouras",
-      "link": "https://meli.la/2rGVNph",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "corda-sisal-700m-fio-barbante-artesanato-fino",
-      "produto": "Corda Sisal 700m Fio Barbante Artesanato Fino",
-      "link": "https://meli.la/1TNqp9Y",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "2-infusor-cha-filtro-frutas-aco-inox-coador",
-      "produto": "2 Infusor Chá Filtro Frutas Aço Inox Coador",
-      "link": "https://meli.la/1YbShXc",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "conjunto-3-potes-hermetico-redondo-tampa",
-      "produto": "Conjunto 3 Potes Hermético Redondo Tampa",
-      "link": "https://meli.la/2QJyq9E",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "tapete-pelucia-antiderrapante-decoracao-felpudo",
-      "produto": "Tapete Pelúcia Antiderrapante Decoração Felpudo",
-      "link": "https://meli.la/33ow5kg",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "kit-3-escovas-silicone-multiuso-limpeza-garrafa",
-      "produto": "Kit 3 Escovas Silicone Multiuso Limpeza Garrafa",
-      "link": "https://meli.la/31ra7aV",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "kit-2-esponja-faixa-lavar-esfregar-esfoliar-costas",
-      "produto": "Kit 2 Esponja Faixa Lavar Esfregar Esfoliar Costas",
-      "link": "https://meli.la/2ZwHbjs",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "tela-mosquiteiro-protetora-alimentos-bolos-paes",
-      "produto": "Tela Mosquiteiro Protetora Alimentos Bolos Pães",
-      "link": "https://meli.la/21CLmUx",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "rolo-facial-de-gelo-silicone-massageador",
-      "produto": "Rolo Facial De Gelo Silicone Massageador",
-      "link": "https://meli.la/2D6mAjD",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "kit-3-escova-multiuso-silicone-lavar-garrafa",
-      "produto": "Kit 3 Escova Multiuso Silicone Lavar Garrafa",
-      "link": "https://meli.la/1MChPED",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "colher-dosadora-infantil-rosa-alimentacao-bebe",
-      "produto": "Colher Dosadora Infantil Rosa Alimentação Bebê",
-      "link": "https://meli.la/1RYew71",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "tapete-pelucia-antiderrapante-decoracao-felpudo-2",
-      "produto": "Tapete Pelúcia Antiderrapante Decoração Felpudo",
-      "link": "https://meli.la/1gNRJ3s",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "agulhas-acupuntura-complementar-descartaveis",
-      "produto": "Agulhas Acupuntura Complementar Descartáveis",
-      "link": "https://meli.la/1Pz9hRx",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "tapete-pelucia-antiderrapante-decoracao-felpudo-3",
-      "produto": "Tapete Pelúcia Antiderrapante Decoração Felpudo",
-      "link": "https://meli.la/1gNRJ3s",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "galinha-frango-de-borracha-brinquedo-mordedor-pet",
-      "produto": "Galinha Frango De Borracha Brinquedo Mordedor Pet",
-      "link": "https://meli.la/1Q2n8Lz",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "kit-2-pochete-academia-esportiva-fitness-corrida",
-      "produto": "Kit 2 Pochete Academia Esportiva Fitness Corrida",
-      "link": "https://meli.la/1F9H6Ev",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "pochete-doleira-porta-dolar-notas-viagem-antifurto",
-      "produto": "Pochete Doleira Porta Dolar Notas Viagem Antifurto",
-      "link": "https://meli.la/2inLH93",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "generica-gancho-organizador-de-pia-porta-esponja",
-      "produto": "Genérica Gancho Organizador De Pia Porta Esponja",
-      "link": "https://meli.la/2XYg8aa",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "garrafa-forma-de-gelo-2-em-1-portatil-silicone",
-      "produto": "Garrafa Forma De Gelo 2 Em 1 Portátil Silicone",
-      "link": "https://meli.la/2J1vgiU",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "armadilha-para-moscas-e-mosquito-usb-reservatorio",
-      "produto": "Armadilha Para Moscas e Mosquito USB Reservatório",
-      "link": "https://meli.la/2Qha12q",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "kit-4-rodinhas-rodizio-adesiva-esfera-giratorias",
-      "produto": "Kit 4 Rodinhas Rodízio Adesiva Esfera Giratórias",
-      "link": "https://meli.la/1xwmAe5",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "kit-3-escovas-silicone-multiuso-limpeza-garrafa-2",
-      "produto": "Kit 3 Escovas Silicone Multiuso Limpeza Garrafa",
-      "link": "https://meli.la/31ra7aV",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "kit-2-fita-teste-piscina-cloro-ph-alcalinidade",
-      "produto": "Kit 2 Fita Teste Piscina Cloro/ph/alcalinidade",
-      "link": "https://meli.la/2S99bBL",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "fita-teste-piscina-cloro-ph-alcalinidade",
-      "produto": "Fita Teste Piscina Cloro, Ph, Alcalinidade",
-      "link": "https://meli.la/1cz3jyg",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "clorador-flutuante-para-piscina-suporte",
-      "produto": "Clorador Flutuante Para Piscina Suporte",
-      "link": "https://meli.la/1sXfTPE",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "kit-limpeza-e-manutencao-de-piscina-completo",
-      "produto": "Kit Limpeza E Manutenção De Piscina Completo",
-      "link": "https://meli.la/1V3wJNN",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "super-clarificante-para-piscina-power-gel",
-      "produto": "Super Clarificante para Piscina Power Gel",
-      "link": "https://meli.la/1XihfEF",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "peneira-metalica-com-engate-rapido-limpeza",
-      "produto": "Peneira Metálica com Engate Rápido Limpeza",
-      "link": "https://meli.la/18aGM39",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "escova-curva-piscina-engate-rapido-limpeza-fundo",
-      "produto": "Escova Curva Piscina Engate Rápido Limpeza Fundo",
-      "link": "https://meli.la/2mdGHHt",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "aspirador-manual-piscina-herbinject-azul",
-      "produto": "Aspirador Manual Piscina Herbinject Azul",
-      "link": "https://meli.la/1t2eJpi",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "camera-lampada-de-seguranca-wifi-ip-app-yoosee",
-      "produto": "Câmera Lâmpada De Segurança Wifi Ip App Yoosee",
-      "link": "https://meli.la/2iXrat7",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "batedeira-pratica-mondial-preto-400w-b-44-b",
-      "produto": "Batedeira Prática Mondial Preto 400W B-44-B",
-      "link": "https://meli.la/226QikP",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "varal-de-chao-grande-de-roupas-3-andares-dobravel",
-      "produto": "Varal De Chão Grande De Roupas 3 Andares Dobrável",
-      "link": "https://meli.la/1pf442p",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "lixeira-inteligente-automatica-16l-sensor",
-      "produto": "Lixeira Inteligente Automática 16L Sensor",
-      "link": "https://meli.la/26PApug",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "cafeteira-eletrica-electrolux-inox-filtro",
-      "produto": "Cafeteira elétrica Electrolux inox filtro",
-      "link": "https://meli.la/29ujPPx",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "liquidificador-turbo-power-mondial-550w-l-99-fb",
-      "produto": "Liquidificador Turbo Power Mondial 550W - L-99 FB",
-      "link": "https://meli.la/14T75vD",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "kit-6-pote-vidro-porta-temperos-hermetico-cozinha",
-      "produto": "Kit 6 Pote Vidro Porta Temperos Hermético Cozinha",
-      "link": "https://meli.la/1AZiFBo",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
-      "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-      "link": "https://meli.la/13W5J3f",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "jogo-6-tacas-de-vidro-diamond-340-ml-com-pe",
-      "produto": "Jogo 6 Taças De Vidro Diamond 340 ml Com Pé",
-      "link": "https://meli.la/2C4sKqP",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "mini-ventilador-soprador-ar-potente-turbo",
-      "produto": "Mini Ventilador Soprador Ar Potente Turbo",
-      "link": "https://meli.la/1CfAJsf",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "balanca-digital-bioimpedancia-profissional-smart",
-      "produto": "Balança Digital Bioimpedância Profissional smart",
-      "link": "https://meli.la/1atS9mZ",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "chaleira-eletrica-atacama-1-8l-unitermi",
-      "produto": "Chaleira Eletrica Atacama 1,8l - Unitermi",
-      "link": "https://meli.la/1xVXe3H",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "marmita-eletrica-preta-bivolt-portatil-domestica",
-      "produto": "Marmita Elétrica Preta Bivolt Portátil Doméstica",
-      "link": "https://meli.la/1o7bDku",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "frigideira-ceramica-antiaderente-inducao-azul",
-      "produto": "Frigideira Cerâmica Antiaderente Indução Azul",
-      "link": "https://meli.la/22dAZA3",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "dispenser-porta-detergente-3-em-1-em-aco-inox",
-      "produto": "Dispenser Porta Detergente 3 em 1 em Aço Inox",
-      "link": "https://meli.la/2y5Mydj",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "faqueiro-tramontina-buzios-em-aco-inox-com-detalhe",
-      "produto": "Faqueiro Tramontina Búzios Em Aço Inox Com Detalhe",
-      "link": "https://meli.la/1JL5xHL",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "kit-6-potes-640ml-vidro-hermetico-4-travas-marmita",
-      "produto": "Kit 6 Potes 640ml Vidro Hermético 4 Travas Marmita",
-      "link": "https://meli.la/2ZYErBi",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "copo-termica-600ml-inox-anti-vazamento",
-      "produto": "Copo Térmica 600ml Inox Anti-vazamento",
-      "link": "https://meli.la/2bcwgy1",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "fritadeira-sem-oleo-air-fryer-4l-mondial-1500w",
-      "produto": "Fritadeira sem óleo air fryer 4L Mondial 1500W",
-      "link": "https://meli.la/1yN5tg8",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "maquina-de-donuts-eletrica-besmart-para-mini",
-      "produto": "Máquina de Donuts Elétrica BeSmart para Mini",
-      "link": "https://meli.la/1YYFLA2",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "dispenser-giratorio-organizador-alimentos",
-      "produto": "Dispenser Giratorio Organizador Alimentos",
-      "link": "https://meli.la/14uSu5a",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "kit-chave-catraca-soquete-46-pecas-indufer",
-      "produto": "Kit Chave Catraca Soquete 46 Peças Indufer",
-      "link": "https://meli.la/2H9VVJf",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
-    },
-    {
-      "slug": "mini-compressor-de-ar-portatil-carro-moto",
-      "produto": "Mini Compressor De Ar Portátil Carro Moto",
-      "link": "https://meli.la/1gkSYH1",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "fatiador-de-cozinha-multifuncional-profissional-em-aco",
       "produto": "Fatiador de cozinha multifuncional profissional",
       "link": "https://s.shopee.com.br/1qcmPL9OXE",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "pecas-suporte-de-canto-e-reta-porta-shampoo",
       "produto": "Peças Suporte de Canto e Reta Porta Shampoo",
       "link": "https://s.shopee.com.br/4LKE54YwhA",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "porta-frios-duplo-preto-para-presunto-e-queijo",
       "produto": "Porta Frios Duplo Preto para Presunto e Queijo",
       "link": "https://s.shopee.com.br/4VdeHNYJMD",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "suporte-organizador-de-metal-rack-de-parede",
       "produto": "Suporte Organizador De Metal Rack De Parede",
       "link": "https://s.shopee.com.br/40hNgSaDN8",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "porta-ovos-4-andares-rolante-em-plastico",
       "produto": "Porta Ovos 4 Andares Rolante em Plástico",
       "link": "https://s.shopee.com.br/4B0nslZa2B",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "necessaire-organizador-cosmetico-maquiagem",
       "produto": "Necessaire Organizador Cosmético Maquiagem",
       "link": "https://s.shopee.com.br/113m6wldSa",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-10pcs-clipes-de-cabide-antiderrapante",
       "produto": "Kit 10pçs Clipes De Cabide Antiderrapante",
       "link": "https://s.shopee.com.br/1BNCJFl07d",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "necessaire-bolsa-de-maquiagem-em-couro",
       "produto": "Necessaire Bolsa De Maquiagem Em Couro",
       "link": "https://s.shopee.com.br/gQviKmu8Y",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-saco-a-vacuo-com-ou-sem-bomba-manual",
       "produto": "KIT Saco a Vácuo com ou sem Bomba Manual",
       "link": "https://s.shopee.com.br/qkLudmGnb",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "carrinho-organizador-movel-facil-montar-4-andares",
       "produto": "Carrinho Organizador Móvel Facil Montar 4 andares",
       "link": "https://s.shopee.com.br/Lo5JioAoW",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-7-saquinhos-maternidade-organizador-mala-bebe",
       "produto": "Kit 7 Saquinhos Maternidade Organizador Mala Bebê",
       "link": "https://s.shopee.com.br/W7VW1nXTZ",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "cabides-com-5-camadas-organizador-de-blusas",
       "produto": "Cabides Com 5 Camadas Organizador De Blusas",
       "link": "https://s.shopee.com.br/1BEv6pRUU",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-de-suportes-porta-shampoo-organizador-de-metal",
       "produto": "Kit De Suportes Porta Shampoo Organizador De Metal",
       "link": "https://s.shopee.com.br/BUf7Poo9X",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "organizador-prateleira-diamante-acrilico-porta",
       "produto": "Organizador Prateleira Diamante Acrílico Porta",
       "link": "https://s.shopee.com.br/2LZ9hOgYky",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "estante-6-ou-5-prateleiras-cozinha-de-aco",
       "produto": "Estante 6 OU 5 Prateleiras Cozinha de Aço",
       "link": "https://s.shopee.com.br/2VsZthfvQ1",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "organizador-movel-com-4-prateleiras-para-diversos",
       "produto": "Organizador Móvel Com 4 Prateleiras Para Diversos",
       "link": "https://s.shopee.com.br/20wJImhpQw",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "suporte-de-shampoo-preto-organizador-prateleira",
       "produto": "Suporte De Shampoo Preto Organizador Prateleira",
       "link": "https://s.shopee.com.br/2BFjV5hC5z",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "prateleira-organizadora-para-banheiro",
       "produto": "Prateleira Organizadora Para Banheiro",
       "link": "https://s.shopee.com.br/1gJSuAj66u",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-saco-a-vacuo-grande-organizador-edredom",
       "produto": "Kit Saco A Vácuo Grande Organizador Edredom",
       "link": "https://s.shopee.com.br/1qct6TiSlx",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "organizador-de-cosmetico-maquiagem-acrilico",
       "produto": "Organizador De Cosmético Maquiagem Acrílico",
       "link": "https://s.shopee.com.br/1LgcVYkMms",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "36-etiquetas-adesivas-temperos-condimentos",
       "produto": "36 Etiquetas Adesivas Temperos Condimentos",
       "link": "https://s.shopee.com.br/1W02hrjjRv",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-10-pote-vidro-hermetico-marmita-640ml",
       "produto": "Kit 10 Pote Vidro Hermético Marmita 640ml",
       "link": "https://s.shopee.com.br/8pmdRLHoZM",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "escorredor-de-loucas-rack-aco-carbono-organizador",
       "produto": "Escorredor de Louças Rack Aço Carbono Organizador",
       "link": "https://s.shopee.com.br/8fTDF2IRuL",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "cesto-de-roupa-suja-bambu-dobravel-organizador-72l",
       "produto": "Cesto De Roupa Suja Bambu Dobravel Organizador 72L",
       "link": "https://s.shopee.com.br/9APTpxGXtS",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-grampos-e-presilhas-automotivas-com-100-pecas",
       "produto": "Kit Grampos e Presilhas Automotivas com 100 Peças",
       "link": "https://s.shopee.com.br/9063deHBER",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "organizador-de-cosmetico-maquiagem-acrilico-2",
       "produto": "Organizador De Cosmético Maquiagem Acrílico",
       "link": "https://s.shopee.com.br/8AWwe7KLvI",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "organizador-de-sacolas-dispenser-organizadora",
       "produto": "Organizador de Sacolas Dispenser Organizadora",
       "link": "https://s.shopee.com.br/80DWRoKzGH",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "cesto-de-roupa-grande-caixa-dobravel-pararoupas",
       "produto": "Cesto de Roupa Grande Caixa Dobravel ParaRoupas",
       "link": "https://s.shopee.com.br/8V9n2jJ5FO",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-com-7-saco-envelope-impermeavel-com-ziper",
       "produto": "Kit com 7 Saco Envelope Impermeável com Zíper",
       "link": "https://s.shopee.com.br/8KqMqQJiaN",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-com-ate-100-cabides-infantis-coloridos-bebe",
       "produto": "Kit com Até 100 Cabides Infantis Coloridos Bebê",
       "link": "https://s.shopee.com.br/AAI11nCjrk",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "suporte-de-shampoo-preto-organizador-prateleira-2",
       "produto": "Suporte De Shampoo Preto Organizador Prateleira",
       "link": "https://s.shopee.com.br/9zyapUDNCj",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "cesto-de-roupa-de-bambu-dobravel-organizador",
       "produto": "Cesto De Roupa de Bambu Dobravel Organizador",
       "link": "https://s.shopee.com.br/AUurQPBTBq",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "sapateira-multiuso-para-calcados-9-3-andares",
       "produto": "￼Sapateira Multiuso Para Calçados 9-3 Andares",
       "link": "https://s.shopee.com.br/AKbRE6C6Wp",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "cabide-acrilico-kit-para-roupas-transparente",
       "produto": "Cabide Acrílico Kit Para Roupas Transparente",
       "link": "https://s.shopee.com.br/9V2KEZFHDg",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "organizador-de-cosmeticos-multiuso-porta-algodao",
       "produto": "Organizador De Cosméticos Multiuso Porta Algodão",
       "link": "https://s.shopee.com.br/9Kiu2GFuYf",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "estante-prateleira-modular-multiuso-organizadora",
       "produto": "Estante Prateleira Modular Multiuso Organizadora",
       "link": "https://s.shopee.com.br/9pfAdBE0Xm",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "escorredor-de-louca-duplo-para-cozinha-organizador",
       "produto": "Escorredor De Louça Duplo Para Cozinha Organizador",
       "link": "https://s.shopee.com.br/9fLkQsEdsl",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-10-pote-vidro-hermetico-marmita-370ml",
       "produto": "Kit 10 Pote Vidro Hermético Marmita 370ml",
       "link": "https://s.shopee.com.br/6AlsGRRxz6",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "prateleira-para-banheiro-de-metal-adesiva",
       "produto": "Prateleira para Banheiro de Metal Adesiva",
       "link": "https://s.shopee.com.br/60SS48SbK5",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "necessaire-bolsa-masculino-feminina-de-viagem",
       "produto": "Necessaire Bolsa masculino feminina de Viagem",
       "link": "https://s.shopee.com.br/6VOif3QhJC",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "prateleira-organizador-2-andares-banheiro",
       "produto": "Prateleira Organizador 2 Andares Banheiro",
       "link": "https://s.shopee.com.br/6L5ISkRKeB",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "caixa-organizadora-com-30-potinhos-organizador",
       "produto": "Caixa Organizadora com 30 potinhos. Organizador",
       "link": "https://s.shopee.com.br/5VWBTDUVL2",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "suporte-prateleira-porta-shampoo-organizador",
       "produto": "Suporte Prateleira Porta Shampoo Organizador",
       "link": "https://s.shopee.com.br/5LClGuV8g1",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "porta-maquiagem-organizador-de-cosmeticos-perfume",
       "produto": "Porta Maquiagem Organizador De Cosméticos Perfume",
       "link": "https://s.shopee.com.br/5q91rpTEf8",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "expositor-de-perfumes-cosmeticos-3-andares",
       "produto": "Expositor de Perfumes Cosméticos 3 Andares",
       "link": "https://s.shopee.com.br/5fpbfWTs07",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-5-suporte-organizador-de-vassoura-rodo-mop",
       "produto": "Kit 5 Suporte Organizador de Vassoura Rodo Mop",
       "link": "https://s.shopee.com.br/7VHFqtMtHU",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "necessaire-organizadora-bolsa-portatil-celular",
       "produto": "Necessaire organizadora bolsa portatil celular",
       "link": "https://s.shopee.com.br/7KxpeaNWcT",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "pote-porta-temperos-condimentos-com-4-conchas",
       "produto": "Pote Porta Temperos Condimentos com 4 conchas.",
       "link": "https://s.shopee.com.br/7pu6FVLcba",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "porta-maquiagem-organizador-de-cosmeticos",
       "produto": "Porta Maquiagem Organizador de Cosméticos",
       "link": "https://s.shopee.com.br/7fag3CMFwZ",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-com-2-mesas-de-cabeceira-max-com-porta-celular",
       "produto": "Kit com 2 Mesas de Cabeceira MAX com porta celular",
       "link": "https://s.shopee.com.br/6q1Z3fPQdQ",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "necessaire-de-viagem-grande-capacidade-organizacao",
       "produto": "Necessaire de Viagem Grande Capacidade Organização",
       "link": "https://s.shopee.com.br/6fi8rMQ3yP",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "expositor-para-50-carrinhos-hot-weels-prateleira",
       "produto": "Expositor para 50 carrinhos Hot Weels Prateleira",
       "link": "https://s.shopee.com.br/7AePSHO9xW",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "porta-maquiagem-organizador-de-cosmeticos-perfume-2",
       "produto": "Porta Maquiagem Organizador De Cosméticos Perfume",
       "link": "https://s.shopee.com.br/70KzFyOnIV",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "porta-papel-higienico-suporte-chao-banheiro",
       "produto": "Porta Papel Higiênico Suporte Chão Banheiro",
       "link": "https://s.shopee.com.br/3Vl75Xc7Oq",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "suporte-de-shampoo-organizador-metal-prateleiras",
       "produto": "Suporte De Shampoo Organizador Metal Prateleiras",
       "link": "https://s.shopee.com.br/3LRgtEckjp",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "balcao-para-cooktop-4-ou-5-bocas-cozinha-moderna",
       "produto": "Balcão para Cooktop 4 ou 5 Bocas Cozinha Moderna",
       "link": "https://s.shopee.com.br/3qNxU9aqiw",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-com-2-sapateiras-5-nichos-para-organizacao",
       "produto": "Kit Com 2 Sapateiras 5 Nichos Para Organização",
       "link": "https://s.shopee.com.br/3g4XHqbU3v",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-6-saquinhos-maternidade-com-ziper-e-tag",
       "produto": "Kit 6 Saquinhos Maternidade com Zíper e Tag",
       "link": "https://s.shopee.com.br/2qVQIJeekm",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "necessaire-organizador-cosmetico-maquiagem-2",
       "produto": "Necessaire Organizador Cosmético Maquiagem",
       "link": "https://s.shopee.com.br/2gC060fI5l",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-marmita-pote-350ml-500ml-com-tampa-freezer",
       "produto": "Kit Marmita Pote 350ml 500ml com Tampa Freezer",
       "link": "https://s.shopee.com.br/3B8GgvdO4s",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-ganchos-adesivos-parede-universais-autocolante",
       "produto": "Kit Ganchos Adesivos Parede Universais Autocolante",
       "link": "https://s.shopee.com.br/30oqUce1Pr",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "suporte-plastico-com-adesivo-decoracao-para-sala",
       "produto": "Suporte Plástico Com Adesivo Decoração Para Sala",
       "link": "https://s.shopee.com.br/4qGUfzX2hE",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "porta-caneta-organizador-de-metal-para-mesa",
       "produto": "Porta Caneta Organizador De Metal Para Mesa",
       "link": "https://s.shopee.com.br/4fx4TgXg2D",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "armario-banheiro-espelheira-com-espelho-e-porta",
       "produto": "Armário Banheiro Espelheira Com Espelho E Porta",
       "link": "https://s.shopee.com.br/5AtL4bVm1K",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "carrinho-organizador-multiuso-com-rodinhas",
       "produto": "Carrinho Organizador Multiuso Com Rodinhas",
       "link": "https://s.shopee.com.br/50ZusIWPMJ",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "expositor-organizador-de-perfumes-e-maquiagens",
       "produto": "Expositor Organizador de Perfumes e Maquiagens",
       "link": "https://s.shopee.com.br/4B0nslZa3A",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "rotacao-organizador-portatil-360-de-mesa",
       "produto": "Rotação Organizador Portátil 360º De Mesa",
       "link": "https://s.shopee.com.br/40hNgSaDO9",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "roupeiro-cesto-roupa-suja-72l-rattan-gigante",
       "produto": "Roupeiro Cesto Roupa Suja 72L Rattan Gigante",
       "link": "https://s.shopee.com.br/4VdeHNYJNG",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "cesto-de-roupa-suja-bambu-72l-dobravel-organizador",
       "produto": "Cesto De Roupa Suja Bambu 72L Dobravel Organizador",
       "link": "https://s.shopee.com.br/4LKE54YwiF",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-potes-hermeticos-organizador-de-mantimentos",
       "produto": "Kit Potes Herméticos Organizador de Mantimentos",
       "link": "https://s.shopee.com.br/qkLudmGoa",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "suporte-de-shampoo-organizador-prateleiras",
       "produto": "Suporte De Shampoo Organizador Prateleiras",
       "link": "https://s.shopee.com.br/gQviKmu9Z",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "escorredor-de-loucas-rack-aco-carbono-organizador-2",
       "produto": "Escorredor de Louças Rack Aço Carbono Organizador",
       "link": "https://s.shopee.com.br/1BNCJFl08g",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "saco-a-vacuo-com-ou-sem-bomba-organizacao",
       "produto": "Saco a Vacuo COM ou SEM Bomba Organização",
       "link": "https://s.shopee.com.br/113m6wldTf",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "kit-2-prateleiras-reto-adesivo-premium-suporte",
       "produto": "Kit 2 Prateleiras Reto Adesivo Premium Suporte",
       "link": "https://s.shopee.com.br/BUf7PooAW",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "organizador-algodao-e-cotonetes-acrilico-kit",
       "produto": "Organizador Algodão E Cotonetes Acrílico Kit",
       "link": "https://s.shopee.com.br/1BEv6pRVV",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "porta-ovos-4-andares-rolante-em-plastico-2",
       "produto": "Porta Ovos 4 Andares Rolante em Plástico",
       "link": "https://s.shopee.com.br/W7VW1nXUc",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "porta-ovos-geladeira-plastico-rolante-4-andares",
       "produto": "Porta Ovos Geladeira Plástico Rolante 4 Andares",
       "link": "https://s.shopee.com.br/Lo5JioApb",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "porta-temperos-9-potes-giratorio-preto-organizador",
       "produto": "Porta Temperos 9 Potes Giratório Preto Organizador",
       "link": "https://s.shopee.com.br/2BFjV5hC6y",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
       "slug": "suporte-de-lamina-de-barbear-adesivo-moderno",
       "produto": "Suporte de Lâmina de Barbear Adesivo Moderno",
       "link": "https://s.shopee.com.br/20wJImhpRx",
-      "motivo": "Response status code does not indicate success: 500 (Internal Server Error). :: Erro no Worker: Content-Disposition header in FormData part is missing a name."
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     }
-  ]
+  ],
+  "erros": []
 }
