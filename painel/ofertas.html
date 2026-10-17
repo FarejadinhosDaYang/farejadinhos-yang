@@ -207,6 +207,8 @@ function render(){
 
       const statusBadge = semDados
         ? `<span class="badge badgeExpirada">⚠️ Sem dados</span>`
+        : situacao === "permanente"
+          ? `<span class="badge badgeAtiva">🎬 No ar sempre · categoria permanente (não expira)</span>`
         : situacao === "adiantada"
           ? `<span class="badge badgeAtiva">⚡ No ar antes da hora · completando a categoria (mín. ${FarejadinhosVitrine.MINIMO_CATEGORIA})</span>`
         : situacao === "foraDeEpoca"

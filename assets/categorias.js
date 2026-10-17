@@ -144,6 +144,10 @@
       "rack", "escrivaninha", "espelho", "fechadura", "campainha",
       "pano de chao", "balde", "dispenser", "cabideiro", "guarda roupa"
     ]
+    ,
+    // Produtos que ganharam vídeo na página. Sem palavras-chave de
+    // propósito: nunca é sugerida sozinha, só escolhendo à mão.
+    "Vídeos": []
   };
 
   // Sem categoria clara: vai pra Utilidades (a categoria "Outros" não existe mais)

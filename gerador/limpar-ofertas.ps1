@@ -118,6 +118,14 @@ foreach ($Oferta in $Ofertas) {
         continue
     }
 
+    # Categorias permanentes (ex.: "Videos") nunca expiram.
+    # Mesma lista de PERMANENTES em assets/vitrine.js.
+    $CatNorm = ([string]$Oferta.categoria).Trim().Normalize([Text.NormalizationForm]::FormD) -replace '\p{Mn}', ''
+    if ($CatNorm.ToLowerInvariant() -in @("videos")) {
+        $Mantidas += $Oferta
+        continue
+    }
+
     $DataOferta = $Inicio
 
     $Horas = ($Agora - $DataOferta).TotalHours

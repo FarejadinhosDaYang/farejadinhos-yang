@@ -28,6 +28,10 @@
  *    delas (TEMPORADAS, abaixo, repete todo ano). Fora dele somem do
  *    site e do menu, e a vitrine fica com as outras categorias.
  *
+ * 8. Categorias PERMANENTES (ex.: Vídeos — produtos que têm vídeo
+ *    postado na página) nunca expiram: depois de liberadas ficam no
+ *    site pra sempre, e a limpeza automática não apaga.
+ *
  * Se mudar os números aqui, mude também no gerador/limpar-ofertas.ps1
  * e no gerador/gerar-lote.ps1.
  * ========================================== */
@@ -47,6 +51,14 @@
   const TEMPORADAS = {
     "natal": { inicio: "09-01", fim: "12-25" }
   };
+
+  // Categorias que nunca expiram (nome sem acento, minúsculo).
+  // Mesma lista em gerador/limpar-ofertas.ps1.
+  const PERMANENTES = ["videos"];
+
+  function ehPermanente(oferta){
+    return PERMANENTES.includes(chaveCategoria(oferta && oferta.categoria));
+  }
 
   // Categorias que nunca entram no Top 3 / pódio do dia (nem nos stories)
   const FORA_DO_PODIO = ["piscina"];
@@ -83,7 +95,11 @@
 
     agora = agora || new Date();
 
-    const validas = (Array.isArray(todas) ? todas : [todas]).filter(o => o && o.slug && !foraDeEpoca(o, agora));
+    const todasValidas = (Array.isArray(todas) ? todas : [todas]).filter(o => o && o.slug && !foraDeEpoca(o, agora));
+
+    // Permanentes liberadas: sempre no ar, fora das regras de validade
+    const permanentes = todasValidas.filter(o => ehPermanente(o) && idadeHoras(o, agora) >= 0);
+    const validas = todasValidas.filter(o => !ehPermanente(o) || idadeHoras(o, agora) < 0);
 
     const liberadas = validas.filter(o => idadeHoras(o, agora) >= 0);
 
@@ -115,7 +131,7 @@
     let reserva = Array.from(escolhidas);
 
     if(frescas.length + reserva.length < MINIMO_VITRINE){
-      reserva = liberadas
+      liberadas
         .filter(o => {
           const h = idadeHoras(o, agora);
           return h > HORAS_FRESCA && h <= HORAS_MAXIMA && !escolhidas.has(o);
@@ -131,7 +147,7 @@
     frescas.concat(reserva).forEach(o => { noAr[categoria(o)] = 1 + (noAr[categoria(o)] || 0); });
     const adiantadas = [];
     const agendadasPorCat = {};
-    validas.filter(o => idadeHoras(o, agora) < 0).forEach(o => {
+    validas.filter(o => idadeHoras(o, agora) < 0 && !ehPermanente(o)).forEach(o => {
       (agendadasPorCat[categoria(o)] = agendadasPorCat[categoria(o)] || []).push(o);
     });
     Object.keys(agendadasPorCat).forEach(cat => {
@@ -144,7 +160,8 @@
     });
 
     return {
-      visiveis: frescas.concat(reserva, adiantadas),
+      visiveis: frescas.concat(reserva, adiantadas, permanentes),
+      permanentes: new Set(permanentes),
       frescas: new Set(frescas),
       reserva: new Set(reserva),
       adiantadas: new Set(adiantadas)
@@ -158,6 +175,7 @@
     const h = idadeHoras(oferta, agora);
     if(foraDeEpoca(oferta, agora)) return "foraDeEpoca";
     if(selecao.adiantadas && selecao.adiantadas.has(oferta)) return "adiantada";
+    if(selecao.permanentes && selecao.permanentes.has(oferta)) return "permanente";
     if(h < 0) return "agendada";
     if(selecao.frescas.has(oferta)) return "fresca";
     if(selecao.reserva.has(oferta)) return "reserva";
@@ -167,7 +185,7 @@
 
   window.FarejadinhosVitrine = {
     MINIMO_VITRINE, HORAS_FRESCA, HORAS_MAXIMA, META_CATEGORIA, MINIMO_CATEGORIA, TEMPORADAS,
-    inicio, idadeHoras, selecionar, status, foraDeEpoca, podeIrProPodio, FORA_DO_PODIO
+    inicio, idadeHoras, selecionar, status, foraDeEpoca, podeIrProPodio, FORA_DO_PODIO, ehPermanente, PERMANENTES
   };
 
 })();
