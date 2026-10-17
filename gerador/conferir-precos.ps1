@@ -63,7 +63,9 @@ $Erros = 0
 foreach ($O in $Alvo) {
     try {
         $Form = @{ senha = $Senha; link = [string]$O.link }
-        $Resp = Invoke-RestMethod -Uri "$WORKER_URL/produto" -Method Post -Form $Form -TimeoutSec 40
+        # Mesmo "endereço de origem" que o painel manda (o Worker confere)
+        $Cab = @{ Origin = "https://farejadinhosdayang.com.br"; Referer = "https://farejadinhosdayang.com.br/painel/lote.html" }
+        $Resp = Invoke-RestMethod -Uri "$WORKER_URL/produto" -Method Post -Form $Form -Headers $Cab -TimeoutSec 40
         $Novo = if ($Resp.preco) { [string]$Resp.preco } else { "" }
         $NNovo = NumeroBR $Novo
         $NAtual = NumeroBR ([string]$O.preco)
@@ -91,6 +93,10 @@ foreach ($O in $Alvo) {
     catch {
         $Erros++
         $Msg = $_.Exception.Message
+        if ($_.ErrorDetails -and $_.ErrorDetails.Message) {
+            $Det = [string]$_.ErrorDetails.Message
+            $Msg = "$Msg :: " + $Det.Substring(0, [Math]::Min(300, $Det.Length))
+        }
         if ($Msg -match '401') {
             Write-Warning "Senha recusada pelo Worker: confira o segredo PAINEL_SENHA no GitHub."
             exit 1
