@@ -161,3 +161,37 @@ window.FAREJA_ICONES_CAT = {
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", montarLateral);
     else montarLateral();
 })();
+
+/* ===== CONTADOR DE VISITAS =====
+ * Avisa o Worker "farejadinhos-contador" a cada página aberta.
+ * Nada pessoal: só uma marquinha anônima neste aparelho pra saber se é
+ * a primeira vez (pessoa nova), a primeira hoje e uma visita nova
+ * (sessão nova = a pessoa fechou e voltou). Não conta você: quem tem a
+ * senha do painel salva no navegador, ou está no /painel, fica de fora.
+ * Código do Worker: cloudflare/contador-worker.js
+ */
+(function () {
+    var CONTADOR_URL = "https://farejadinhos-contador.bernard-shimizu.workers.dev";
+    try {
+        if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) return;
+        if (/\/painel\//.test(location.pathname) || /[?&]admin\b/.test(location.search)) return;
+        if (localStorage.getItem("farejadinhos_admin_senha")) return;
+        if (navigator.webdriver) return;
+    } catch (e) { return; }
+
+    var d = { pagina: location.pathname };
+    var hoje = new Date(Date.now() - 3 * 3600 * 1000).toISOString().slice(0, 10);
+    try {
+        if (!localStorage.getItem("fareja_visitante")) { localStorage.setItem("fareja_visitante", "1"); d.novaPessoa = 1; }
+        if (localStorage.getItem("fareja_ultimo_dia") !== hoje) { localStorage.setItem("fareja_ultimo_dia", hoje); d.novaHoje = 1; }
+        if (!sessionStorage.getItem("fareja_sessao")) { sessionStorage.setItem("fareja_sessao", "1"); d.novaVisita = 1; }
+    } catch (e) { d.novaVisita = 1; }
+
+    try {
+        // text/plain: não precisa de "pré-consulta" do navegador
+        fetch(CONTADOR_URL + "/visita", {
+            method: "POST", body: JSON.stringify(d), keepalive: true,
+            headers: { "Content-Type": "text/plain" }
+        }).catch(function () {});
+    } catch (e) {}
+})();
