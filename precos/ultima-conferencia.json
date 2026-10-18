@@ -1,5 +1,5 @@
 {
-  "quando": "2026-10-18T20:38:35Z",
+  "quando": "2026-10-18T23:09:07Z",
   "origem": "schedule",
   "total": 223,
   "iguais": 65,
@@ -7,32 +7,26 @@
     {
       "slug": "colher-dosadora-infantil-rosa-alimentacao-bebe",
       "produto": "Colher Dosadora Infantil Rosa Alimentação Bebê",
-      "de": "R$ 20,23",
-      "para": "19,50"
-    },
-    {
-      "slug": "galinha-frango-de-borracha-brinquedo-mordedor-pet",
-      "produto": "Galinha Frango De Borracha Brinquedo Mordedor Pet",
-      "de": "R$ 20,14",
-      "para": "20,52"
-    },
-    {
-      "slug": "super-clarificante-para-piscina-power-gel",
-      "produto": "Super Clarificante para Piscina Power Gel",
-      "de": "R$ 33,80",
-      "para": "32,79"
+      "de": "R$ 19,50",
+      "para": "20,23"
     },
     {
       "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
       "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 5.149,00",
-      "para": "5065,61"
+      "de": "R$ 5.065,61",
+      "para": "5149,00"
     },
     {
       "slug": "celular-samsung-galaxy-s26-fe-128gb-8gb-ram-tela",
       "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
-      "de": "R$ 3.999,00",
-      "para": "5499,00"
+      "de": "R$ 5.499,00",
+      "para": "3999,00"
+    },
+    {
+      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera-2",
+      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
+      "de": "R$ 5.332,00",
+      "para": "5065,61"
     },
     {
       "slug": "iphone-18-pro-max-256gb-preto-somente-esim",
@@ -951,6 +945,14 @@
   ],
   "erros": [],
   "suspeitos": [
+    {
+      "slug": "aspirador-manual-piscina-herbinject-azul",
+      "produto": "Aspirador Manual Piscina Herbinject Azul",
+      "link": "https://meli.la/1t2eJpi",
+      "atual": "R$ 35,80",
+      "lido": "92,82",
+      "referencia": "R$ 42,01"
+    },
     {
       "slug": "iphone-18-pro-256gb-preto-somente-esim",
       "produto": "iPhone 18 Pro 256GB Preto (somente eSIM)",

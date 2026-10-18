@@ -1434,7 +1434,7 @@
   },
   {
     "produto": "Colher Dosadora Infantil Rosa Alimentação Bebê",
-    "preco": "R$ 19,50",
+    "preco": "R$ 20,23",
     "precoAntigo": "",
     "cupom": "SAUDE1810",
     "categoria": "Casa",
@@ -1447,7 +1447,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-22T14:44:00Z",
-    "precoConferido": "2026-10-18T20:42:31Z"
+    "precoConferido": "2026-10-18T23:13:44Z"
   },
   {
     "produto": "Tapete Pelúcia Antiderrapante Decoração Felpudo",
@@ -3464,7 +3464,7 @@
   },
   {
     "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-    "preco": "R$ 5.065,61",
+    "preco": "R$ 5.149,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -3474,15 +3474,15 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera/",
     "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "R$ 5.065,61",
+    "precoAVista": "R$ 5.149,00",
     "precoAPrazo": "5066,16",
     "liberacao": "2026-10-19T11:56:00Z",
     "parcelas": 12,
-    "precoConferido": "2026-10-18T20:42:31Z"
+    "precoConferido": "2026-10-18T23:13:44Z"
   },
   {
     "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
-    "preco": "R$ 5.499,00",
+    "preco": "R$ 3.999,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -3492,15 +3492,15 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-fe-128gb-8gb-ram-tela/",
     "slug": "celular-samsung-galaxy-s26-fe-128gb-8gb-ram-tela",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "R$ 5.499,00",
+    "precoAVista": "R$ 3.999,00",
     "precoAPrazo": "3999,00",
     "liberacao": "2026-10-19T19:24:00Z",
     "parcelas": 12,
-    "precoConferido": "2026-10-18T20:42:31Z"
+    "precoConferido": "2026-10-18T23:13:44Z"
   },
   {
     "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-    "preco": "R$ 5.332,00",
+    "preco": "R$ 5.065,61",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -3510,11 +3510,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera-2/",
     "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera-2",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "R$ 5.332,00",
+    "precoAVista": "R$ 5.065,61",
     "precoAPrazo": "5065,61",
     "liberacao": "2026-10-20T11:56:00Z",
     "parcelas": 12,
-    "precoConferido": "2026-10-18T17:25:42Z"
+    "precoConferido": "2026-10-18T23:13:44Z"
   },
   {
     "produto": "Celular Samsung Galaxy S26 Ultra 5G 256GB 12GB RAM",
@@ -3671,7 +3671,7 @@
   },
   {
     "produto": "iPhone 18 Pro Max 256GB Preto (somente eSIM)",
-    "preco": "R$ 10.289,00",
+    "preco": "R$ 5.238,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -3681,9 +3681,10 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/iphone-18-pro-max-256gb-preto-somente-esim/",
     "slug": "iphone-18-pro-max-256gb-preto-somente-esim",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "10289,00",
+    "precoAVista": "R$ 5.238,00",
     "precoAPrazo": "14490,00",
     "liberacao": "2026-10-27T18:28:00Z",
-    "parcelas": 10
+    "parcelas": 10,
+    "precoConferido": "2026-10-18T23:13:44Z"
   }
 ]
