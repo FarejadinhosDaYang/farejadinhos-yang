@@ -2161,7 +2161,7 @@
     "data": "2026-10-15T22:42:12Z",
     "precoAVista": "R$ 290,02",
     "precoAPrazo": "283,08",
-    "liberacao": "2026-10-17T21:16:00Z",
+    "liberacao": "2026-10-18T15:34:59Z",
     "parcelas": 6,
     "precoConferido": "2026-10-18T04:31:10Z"
   },
@@ -3717,7 +3717,7 @@
     "data": "2026-10-18T15:34:31Z",
     "precoAVista": "209,00",
     "precoAPrazo": "298,98",
-    "liberacao": "2026-10-18T20:38:30Z",
+    "liberacao": "2026-10-18T15:34:59Z",
     "parcelas": 6
   },
   {
@@ -3751,7 +3751,7 @@
     "data": "2026-10-18T15:34:31Z",
     "precoAVista": "299,00",
     "precoAPrazo": "319,92",
-    "liberacao": "2026-10-21T17:32:00Z",
+    "liberacao": "2026-10-18T15:34:59Z",
     "parcelas": 6
   },
   {
@@ -3768,6 +3768,6 @@
     "data": "2026-10-18T15:34:32Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-21T23:08:00Z"
+    "liberacao": "2026-10-18T15:34:59Z"
   }
 ]
