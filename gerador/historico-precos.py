@@ -69,16 +69,19 @@ for pid, p in P.items():
 # ---------- commits novos que mexeram no ofertas.json ----------
 intervalo = f"{hist['ultimoCommit']}..HEAD" if hist.get("ultimoCommit") else "HEAD"
 try:
-    linhas = git("log", "--reverse", "--format=%H %cI", intervalo, "--", "ofertas.json").split("\n")
+    linhas = git("log", "--reverse", "--format=%H %cI %s", intervalo, "--", "ofertas.json").split("\n")
 except subprocess.CalledProcessError:
     # commit antigo sumiu (história reescrita): refaz tudo
     hist = {"versao": 1, "atualizado": None, "ultimoCommit": None, "produtos": {}}
     P, por_link, por_nome = hist["produtos"], {}, {}
-    linhas = git("log", "--reverse", "--format=%H %cI", "HEAD", "--", "ofertas.json").split("\n")
-commits = [l.split() for l in linhas if l.strip()]
+    linhas = git("log", "--reverse", "--format=%H %cI %s", "HEAD", "--", "ofertas.json").split("\n")
+commits = [l.split(" ", 2) + [""] * (3 - len(l.split(" ", 2))) for l in linhas if l.strip()]
 
 ultimo_lido = None
-for sha, quando in commits:
+for sha, quando, assunto in commits:
+    # "a" = preço lido sozinho pela conferência automática; "m" = preço posto por você
+    # (oferta nova, edição, lote/CSV). O "m" vira a referência do produto.
+    origem = "a" if assunto.startswith("Precos conferidos") else "m"
     try:
         ofertas = json.loads(git("show", f"{sha}:ofertas.json"))
     except Exception:
@@ -111,9 +114,10 @@ for sha, quando in commits:
         p["slug"] = o.get("slug") or p.get("slug", "")
         p["imagem"] = o.get("imagem") or p.get("imagem", "")
         p["categoria"] = o.get("categoria") or p.get("categoria", "")
-        brutos = p.setdefault("brutos", list(p["pontos"]))
+        brutos = p.setdefault("brutos", [pt[:2] + ["m"] for pt in p["pontos"]])
         if not brutos or abs(brutos[-1][1] - preco) >= 0.01:
-            brutos.append([t, preco])
+            brutos.append([t, preco, origem])
+            if origem == "m": p["referencia"] = [t, preco]
         p["ultimo"] = t
         vistos.add(pid)
     for pid, p in P.items():
@@ -125,24 +129,28 @@ if ultimo_lido is None and not REFAZER:
     sys.exit(0)
 
 # leituras estranhas: a conferência automática às vezes pega o preço de outra variação/kit
-# (ex.: R$ 35 -> R$ 338 -> R$ 35). Com 3+ leituras, o que for mais que o dobro ou menos que
-# a metade da mediana vai pra "suspeitos" e não entra no gráfico nem no mínimo/máximo.
+# (ex.: R$ 35 -> R$ 338 -> R$ 35). Leitura AUTOMÁTICA mais que o dobro ou menos da metade
+# do último preço posto por você vai pra "suspeitos" e não entra no gráfico nem no
+# mínimo/máximo. Preço posto por você (oferta nova, edição, lote) nunca é barrado.
 def limpar(p):
-    brutos = p.get("brutos") or p["pontos"]
+    brutos = [pt if len(pt) > 2 else pt[:2] + ["m"] for pt in (p.get("brutos") or [x[:2] + ["m"] for x in p["pontos"]])]
     p["brutos"] = brutos
-    vals = sorted(v for _, v in brutos)
-    if len(vals) >= 3:
-        med = vals[len(vals) // 2] if len(vals) % 2 else (vals[len(vals) // 2 - 1] + vals[len(vals) // 2]) / 2
-        bons = [pt for pt in brutos if med / 2 <= pt[1] <= med * 2]
-        p["suspeitos"] = [pt for pt in brutos if not (med / 2 <= pt[1] <= med * 2)]
-    else:
-        bons, p["suspeitos"] = list(brutos), []
+    ref, bons, susp = None, [], []
+    for t, v, o in brutos:
+        if o == "m" or ref is None:
+            ref = v; bons.append([t, v])
+        elif v > ref * 2 or v < ref / 2:
+            susp.append([t, v])
+        else:
+            bons.append([t, v])
     limpos = []
     for pt in bons:
         if not limpos or abs(limpos[-1][1] - pt[1]) >= 0.01: limpos.append(pt)
-    p["pontos"] = limpos or brutos[-1:]
-    if not p["suspeitos"]: del p["suspeitos"]
-    if p["brutos"] == p["pontos"]: del p["brutos"]
+    p["pontos"] = limpos
+    if susp: p["suspeitos"] = susp
+    else: p.pop("suspeitos", None)
+    ultimo_m = [pt for pt in brutos if pt[2] == "m"]
+    p["referencia"] = (ultimo_m[-1] if ultimo_m else brutos[0])[:2]
 
 # resumo pronto pra usar no site
 for p in P.values():

@@ -41,20 +41,19 @@ function NumeroBR([string]$V) {
 
 $Catalogo = @((Get-Content -LiteralPath $OfertasJsonPath -Raw -Encoding UTF8) | ConvertFrom-Json)
 
-# Preço de referência de cada link: a mediana do histórico de preços (sem as
-# leituras estranhas). Serve pra barrar leitura absurda da loja (ex.: outra
-# variação/kit: R$ 35 -> R$ 338) antes de ela mudar o preço do site.
+# Preço de referência de cada link: o último preço posto POR VOCÊ (oferta nova,
+# edição ou lote), guardado no histórico de preços. Serve pra barrar leitura
+# absurda da loja (ex.: outra variação/kit: R$ 35 -> R$ 338) antes de ela mudar
+# o preço do site — e nunca desfazer uma correção feita na mão.
 $Referencia = @{}
 $HistPath = Join-Path $Site "historico-precos.json"
 if (Test-Path -LiteralPath $HistPath) {
     try {
         $Hist = (Get-Content -LiteralPath $HistPath -Raw -Encoding UTF8) | ConvertFrom-Json
         foreach ($Prop in $Hist.produtos.PSObject.Properties) {
-            $Vals = @($Prop.Value.pontos | ForEach-Object { [decimal]$_[1] } | Sort-Object)
-            if ($Vals.Count -eq 0) { continue }
-            $Meio = [int][Math]::Floor($Vals.Count / 2)
-            $Med = if ($Vals.Count % 2) { $Vals[$Meio] } else { ($Vals[$Meio - 1] + $Vals[$Meio]) / 2 }
-            foreach ($L in @($Prop.Value.links)) { $Referencia[[string]$L] = $Med }
+            $R = $Prop.Value.referencia
+            if (-not $R -or $R.Count -lt 2) { continue }
+            foreach ($L in @($Prop.Value.links)) { $Referencia[[string]$L] = [decimal]$R[1] }
         }
     } catch { Write-Warning "Nao consegui ler o historico de precos: $($_.Exception.Message)" }
 }
