@@ -1,0 +1,49 @@
+name: Historico de precos
+
+# Atualiza o historico-precos.json sempre que o ofertas.json muda:
+# logo depois de gerar oferta / lote / conferir preços / limpar, e de 3 em 3 horas
+# (garantia, caso algum gatilho falhe). Só este workflow mexe no histórico,
+# então ele nunca briga com os outros na hora de salvar.
+on:
+  workflow_run:
+    workflows: ["Gerar oferta", "Gerar lote de ofertas", "Conferir precos", "Limpar ofertas expiradas", "Limpar cupons do dia anterior"]
+    types: [completed]
+  schedule:
+    - cron: "41 */3 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: historico-precos
+  cancel-in-progress: false
+
+jobs:
+  historico:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Baixar repositorio (com historico)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Atualizar historico de precos
+        run: python3 gerador/historico-precos.py
+
+      - name: Salvar no GitHub
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add historico-precos.json
+          if git diff --cached --quiet; then
+            echo "Historico sem novidades."
+            exit 0
+          fi
+          git commit -m "Historico de precos atualizado"
+          for i in 1 2 3; do
+            git pull --rebase && git push && exit 0
+            sleep 10
+          done
+          exit 1

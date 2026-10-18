@@ -17,6 +17,15 @@
     css.href = base + "assets/relacionados.css";
     document.head.appendChild(css);
 
+    // Histórico de preço (gráfico abaixo do botão) — carregado daqui pra valer
+    // em todas as páginas de oferta, inclusive as já geradas.
+    if (!window.FarejadinhosHistorico && !document.querySelector('script[src*="historico.js"]')) {
+        var hs = document.createElement("script");
+        hs.src = base + "assets/historico.js";
+        hs.setAttribute("data-base", base);
+        document.head.appendChild(hs);
+    }
+
     function slugAtual() {
         var partes = location.pathname.split("/").filter(Boolean);
         var i = partes.lastIndexOf("ofertas");

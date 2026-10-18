@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Histórico de preços | Painel Farejadinhos</title>
+<link rel="icon" href="../assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+    --red:#E5232E; --red-dark:#C21A24; --orange:#F7941D; --cream:#FDF3E3; --cream-2:#FFFAF1;
+    --ink:#2B1B12; --muted:#8A7563; --line:#F0DFC4; --verde:#1D6B33; --verde-bg:#E6F4EA;
+}
+*{box-sizing:border-box}
+body{margin:0;padding:20px 16px 48px;background:var(--cream);font-family:'Work Sans',Arial,sans-serif;color:var(--ink)}
+.container{max-width:1000px;margin:auto}
+.voltar{display:inline-block;margin-bottom:16px;color:var(--red-dark);font-weight:700;text-decoration:none;font-size:14px}
+h1{font-family:'Baloo 2',sans-serif;color:var(--red-dark);font-size:26px;margin:0 0 4px}
+.sub{color:var(--muted);font-size:14px;line-height:1.5;margin:0 0 18px}
+
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:16px}
+.tile{background:var(--cream-2);border:1.5px solid var(--line);border-radius:16px;padding:12px 14px;text-align:left;cursor:pointer;font:inherit;color:inherit}
+.tile:hover{border-color:var(--orange)}
+.tile.ativo{border-color:var(--red);box-shadow:0 0 0 2px rgba(229,35,46,.12)}
+.tile .rot{font-size:13px;color:var(--muted)}
+.tile .val{font:800 28px 'Baloo 2',sans-serif;line-height:1.1;margin-top:2px}
+
+.filtros{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px}
+.filtros input[type=search]{flex:1 1 220px;padding:11px 12px;border:1.5px solid var(--line);border-radius:10px;font:500 15px 'Work Sans',Arial,sans-serif;background:#fff}
+.filtros select{padding:10px;border:1.5px solid var(--line);border-radius:10px;font:500 14px 'Work Sans',Arial,sans-serif;background:#fff;color:var(--ink)}
+.contagem{font-size:13px;color:var(--muted);margin:0 0 10px}
+
+.lista{display:grid;gap:10px}
+.item{background:var(--cream-2);border:1.5px solid var(--line);border-radius:16px;overflow:hidden}
+.linha{display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center;padding:10px 12px;cursor:pointer;width:100%;background:none;border:0;text-align:left;font:inherit;color:inherit}
+.linha img{width:56px;height:56px;border-radius:10px;object-fit:contain;background:#fff;border:1px solid var(--line)}
+.nome{font-weight:600;font-size:14px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.meta{display:flex;flex-wrap:wrap;gap:4px 8px;margin-top:4px;font-size:12px;color:var(--muted);align-items:center}
+.chip{display:inline-block;padding:1px 8px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:11.5px;color:var(--ink)}
+.chip.fora{color:var(--muted)}
+.chip.bom{background:var(--verde-bg);border-color:var(--verde-bg);color:var(--verde);font-weight:600}
+.chip.aviso{background:#FFF1DE;border-color:#FFE0B8;color:#8A4B00;font-weight:600}
+.dir{text-align:right;min-width:96px}
+.atual{font:800 19px 'Baloo 2',sans-serif;color:var(--red-dark);line-height:1.1}
+.var{font-size:12px;margin-top:2px;color:var(--muted)}
+.var b{color:var(--ink)}
+.mini{display:block;margin-top:4px;margin-left:auto}
+.mini path{fill:none;stroke:var(--red);stroke-width:1.6}
+.det{padding:4px 14px 14px;border-top:1px solid var(--line);background:#fff}
+.det[hidden]{display:none}
+.det .resumo{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--muted);margin:10px 0 4px}
+.det .resumo b{color:var(--ink)}
+.det .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.det .links a{font-size:13px;font-weight:700;color:var(--red-dark);text-decoration:none;border:1.5px solid var(--line);border-radius:10px;padding:7px 10px;background:var(--cream-2)}
+.estranhas{margin-top:10px;padding:10px 12px;border-radius:12px;background:#FFF6E9;border:1.5px solid #FFE0B8;font-size:13px;line-height:1.5}
+.estranhas ul{margin:6px 0 0;padding-left:18px}
+.mais[hidden]{display:none}
+.mais{display:block;margin:14px auto 0;border:1.5px solid var(--red);background:#fff;color:var(--red-dark);border-radius:12px;padding:11px 18px;font:700 14px 'Work Sans',Arial,sans-serif;cursor:pointer}
+.dica{margin-top:22px;padding:14px 16px;border:1.5px dashed var(--line);border-radius:14px;font-size:13.5px;line-height:1.6;background:var(--cream-2)}
+.vazio{padding:30px;text-align:center;color:var(--muted)}
+@media (max-width:520px){ .linha{grid-template-columns:48px 1fr auto;gap:10px} .linha img{width:48px;height:48px} .mini{display:none} }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a class="voltar" href="index.html">← Voltar pro painel</a>
+
+<h1>📈 Histórico de preços</h1>
+<p class="sub" id="quando">Carregando…</p>
+
+<div class="tiles" id="tiles"></div>
+
+<div class="filtros">
+    <input type="search" id="busca" placeholder="Buscar produto…" aria-label="Buscar produto">
+    <select id="fNoAr" aria-label="Quais produtos">
+        <option value="todos">Todos os produtos</option>
+        <option value="noar">Só os que estão no ar</option>
+        <option value="fora">Só os que já saíram</option>
+    </select>
+    <select id="fOrdem" aria-label="Ordem">
+        <option value="recente">Mudou de preço mais recente</option>
+        <option value="queda">Maior queda de preço</option>
+        <option value="alta">Maior alta de preço</option>
+        <option value="nome">Nome (A–Z)</option>
+    </select>
+</div>
+<p class="contagem" id="contagem"></p>
+
+<div class="lista" id="lista"></div>
+<button class="mais" id="mais" hidden>Mostrar mais</button>
+
+<div class="dica">
+<b>De onde vêm esses preços:</b> cada vez que uma oferta é criada, editada, importada em lote ou que a conferência automática
+(de hora em hora) acha um preço diferente na loja, o preço entra aqui. O histórico é atualizado sozinho logo depois.<br>
+<b>⚠️ Leituras estranhas:</b> quando a conferência automática traz um preço muito fora do normal (mais que o dobro ou menos da metade
+do preço de sempre), ele fica separado e não entra no gráfico nem no "menor preço" que o visitante vê. Normalmente é a loja mostrando
+outra variação ou kit — vale abrir a oferta e conferir se o preço do site está certo.<br>
+Na página de cada oferta, o visitante vê o selo e o gráfico (ex.: "🐾 Menor preço que a Yang já farejou!").
+</div>
+
+</div>
+
+<script src="../assets/historico.js" data-base="../" data-modo="painel"></script>
+<script>
+const H = window.FarejadinhosHistorico;
+const POR_PAGINA = 40;
+let todos = [], filtroTile = "", mostrando = POR_PAGINA;
+
+function el(tag, cls, txt){ const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
+function semAcento(t){ return String(t || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); }
+function variacao(p){ const a = p.pontos[0][1], b = p.atual; return a ? (b - a) / a * 100 : 0; }
+function noMenor(p){ return p.pontos.length > 1 && p.atual <= p.min + 0.005; }
+function ultimaMudanca(p){ return p.pontos[p.pontos.length - 1][0]; }
+
+function mini(p){
+    const W = 90, Hh = 26, pts = p.pontos;
+    if (pts.length < 2) return null;
+    const t0 = Date.parse(pts[0][0]), t1 = Math.max(Date.parse(p.noAr ? new Date().toISOString() : p.ultimo), Date.parse(pts[pts.length-1][0]) + 1);
+    const lo = p.min, hi = p.max === p.min ? p.min + 1 : p.max;
+    const X = t => 2 + (t - t0) / (t1 - t0) * (W - 4), Y = v => 3 + (1 - (v - lo) / (hi - lo)) * (Hh - 6);
+    let d = "";
+    pts.forEach((pt, i) => { const x = X(Date.parse(pt[0])), y = Y(pt[1]); d += i ? ` H${x} V${y}` : `M${x},${y}`; });
+    d += ` H${X(t1)}`;
+    const s = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    s.setAttribute("width", W); s.setAttribute("height", Hh); s.setAttribute("class", "mini"); s.setAttribute("aria-hidden", "true");
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path"); path.setAttribute("d", d); s.appendChild(path);
+    return s;
+}
+
+function item(p){
+    const box = el("div", "item");
+    const linha = el("button", "linha"); linha.type = "button"; linha.setAttribute("aria-expanded", "false");
+    const img = el("img"); img.src = "../assets/" + encodeURIComponent(p.imagem || ""); img.alt = ""; img.loading = "lazy";
+    img.onerror = () => { img.src = "../placeholder.svg"; };
+    linha.appendChild(img);
+
+    const meio = el("div");
+    meio.appendChild(el("div", "nome", p.nome || p.nomeCompleto));
+    const meta = el("div", "meta");
+    if (p.loja) meta.appendChild(el("span", "chip", p.loja));
+    meta.appendChild(el("span", "chip" + (p.noAr ? "" : " fora"), p.noAr ? "no ar" : "saiu do site"));
+    if (noMenor(p)) meta.appendChild(el("span", "chip bom", "🐾 no menor preço"));
+    if (p.suspeitos) meta.appendChild(el("span", "chip aviso", "⚠️ " + p.suspeitos.length + " leitura(s) estranha(s)"));
+    meta.appendChild(el("span", null, p.pontos.length > 1 ? (p.pontos.length - 1) + " mudança(s) · última " + H.data(ultimaMudanca(p)) : "sem mudança desde " + H.data(p.pontos[0][0])));
+    meio.appendChild(meta);
+    linha.appendChild(meio);
+
+    const dir = el("div", "dir");
+    dir.appendChild(el("div", "atual", H.moeda(p.atual)));
+    if (p.pontos.length > 1) {
+        const v = variacao(p), vd = el("div", "var");
+        const seta = v < -0.05 ? "▼ " : v > 0.05 ? "▲ " : "";
+        vd.appendChild(document.createTextNode(seta));
+        vd.appendChild(el("b", null, (v > 0 ? "+" : "") + v.toFixed(0).replace("-0", "0") + "%"));
+        vd.appendChild(document.createTextNode(" desde " + H.data(p.pontos[0][0])));
+        dir.appendChild(vd);
+        const m = mini(p); if (m) dir.appendChild(m);
+    }
+    linha.appendChild(dir);
+    box.appendChild(linha);
+
+    const det = el("div", "det"); det.hidden = true;
+    box.appendChild(det);
+    linha.addEventListener("click", () => {
+        const abrir = det.hidden;
+        det.hidden = !abrir; linha.setAttribute("aria-expanded", String(abrir));
+        if (abrir && !det.childNodes.length) detalhes(det, p);
+    });
+    return box;
+}
+
+function detalhes(det, p){
+    const r = el("div", "resumo");
+    [["Atual", H.moeda(p.atual)], ["Menor", H.moeda(p.min)], ["Maior", H.moeda(p.max)],
+     ["Acompanhado desde", H.data(p.pontos[0][0], true)], ["Visto no site até", p.noAr ? "agora" : H.data(p.ultimo, true)]]
+        .forEach(([a, b]) => { const s = el("span", null, a + " "); s.appendChild(el("b", null, b)); r.appendChild(s); });
+    det.appendChild(r);
+    const g = el("div"); det.appendChild(g);
+    H.grafico(g, p.pontos, { ate: p.noAr ? new Date().toISOString() : p.ultimo, altura: 150 });
+    if (p.pontos.length > 1) det.appendChild(H.tabela(p.pontos));
+    if (p.suspeitos) {
+        const e = el("div", "estranhas");
+        e.appendChild(el("b", null, "⚠️ Leituras estranhas (fora do gráfico)"));
+        e.appendChild(document.createTextNode(" — a conferência automática trouxe esses preços, muito diferentes do normal:"));
+        const ul = el("ul");
+        p.suspeitos.forEach(s => ul.appendChild(el("li", null, H.dataHora(s[0]) + " → " + H.moeda(s[1]))));
+        e.appendChild(ul);
+        det.appendChild(e);
+    }
+    const ln = el("div", "links");
+    if (p.slug) { const a = el("a", null, "Abrir a oferta no site"); a.href = "../ofertas/" + encodeURIComponent(p.slug) + "/"; a.target = "_blank"; ln.appendChild(a); }
+    if (p.links && p.links.length) { const a = el("a", null, "Abrir na loja"); a.href = p.links[p.links.length - 1]; a.target = "_blank"; a.rel = "noopener nofollow"; ln.appendChild(a); }
+    det.appendChild(ln);
+}
+
+function tiles(){
+    const t = document.getElementById("tiles"); t.innerHTML = "";
+    const defs = [
+        ["", "Produtos acompanhados", todos.length],
+        ["mudou", "Mudaram de preço", todos.filter(p => p.pontos.length > 1).length],
+        ["menor", "No ar no menor preço", todos.filter(p => p.noAr && noMenor(p)).length],
+        ["estranho", "⚠️ Com leitura estranha", todos.filter(p => p.suspeitos).length],
+    ];
+    defs.forEach(([k, rot, val]) => {
+        const b = el("button", "tile" + (filtroTile === k ? " ativo" : "")); b.type = "button";
+        b.setAttribute("aria-pressed", String(filtroTile === k));
+        b.appendChild(el("div", "rot", rot)); b.appendChild(el("div", "val", String(val)));
+        b.addEventListener("click", () => { filtroTile = filtroTile === k ? "" : k; mostrando = POR_PAGINA; tiles(); listar(); });
+        t.appendChild(b);
+    });
+}
+
+function listar(){
+    const q = semAcento(document.getElementById("busca").value).trim();
+    const fNoAr = document.getElementById("fNoAr").value, ordem = document.getElementById("fOrdem").value;
+    let l = todos.filter(p => {
+        if (q && !semAcento(p.nome + " " + p.nomeCompleto + " " + (p.categoria || "")).includes(q)) return false;
+        if (fNoAr === "noar" && !p.noAr) return false;
+        if (fNoAr === "fora" && p.noAr) return false;
+        if (filtroTile === "mudou" && p.pontos.length < 2) return false;
+        if (filtroTile === "menor" && !(p.noAr && noMenor(p))) return false;
+        if (filtroTile === "estranho" && !p.suspeitos) return false;
+        return true;
+    });
+    const cmp = {
+        recente: (a, b) => ultimaMudanca(b).localeCompare(ultimaMudanca(a)) || (b.ultimo || "").localeCompare(a.ultimo || ""),
+        queda: (a, b) => variacao(a) - variacao(b),
+        alta: (a, b) => variacao(b) - variacao(a),
+        nome: (a, b) => (a.nome || "").localeCompare(b.nome || "", "pt-BR"),
+    }[ordem];
+    l.sort(cmp);
+    const lista = document.getElementById("lista"); lista.innerHTML = "";
+    document.getElementById("contagem").textContent = l.length + " produto(s)";
+    if (!l.length) lista.appendChild(el("div", "vazio", "Nenhum produto com esse filtro."));
+    l.slice(0, mostrando).forEach(p => lista.appendChild(item(p)));
+    const mais = document.getElementById("mais");
+    mais.hidden = l.length <= mostrando;
+    mais.textContent = "Mostrar mais (" + (l.length - mostrando) + ")";
+}
+
+document.getElementById("mais").addEventListener("click", () => { mostrando += POR_PAGINA; listar(); });
+["busca", "fNoAr", "fOrdem"].forEach(id => document.getElementById(id).addEventListener("input", () => { mostrando = POR_PAGINA; listar(); }));
+
+H.carregar().then(h => {
+    todos = Object.values(h.produtos || {}).filter(p => p.pontos && p.pontos.length);
+    document.getElementById("quando").textContent =
+        "Atualizado em " + H.dataHora(h.atualizado) + " · acompanhando desde " +
+        H.data(todos.reduce((m, p) => p.pontos[0][0] < m ? p.pontos[0][0] : m, h.atualizado), true);
+    tiles(); listar();
+}).catch(() => {
+    document.getElementById("quando").textContent = "Ainda não há histórico de preços (o arquivo é criado na primeira atualização automática).";
+});
+</script>
+</body>
+</html>

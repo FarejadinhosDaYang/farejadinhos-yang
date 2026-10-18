@@ -1,0 +1,61 @@
+/* Farejadinhos da Yang — Histórico de preços (página da oferta e painel) */
+.hp-caixa{
+    margin:18px 0 6px;
+    padding:14px 14px 10px;
+    border:1.5px solid var(--line,#F0DFC4);
+    border-radius:16px;
+    background:#fff;
+}
+.hp-topo h2{
+    margin:0 0 8px;
+    font:700 16px 'Baloo 2',sans-serif;
+    color:var(--ink,#2B1B12);
+}
+.hp-frase{margin:0 0 4px;font-size:14px;line-height:1.5;color:var(--ink,#2B1B12)}
+.hp-selo{
+    display:inline-block;
+    margin:0 0 8px;
+    padding:6px 12px;
+    border-radius:999px;
+    font:700 14px 'Work Sans',Arial,sans-serif;
+    line-height:1.3;
+}
+.hp-bom{background:#E6F4EA;color:#1D6B33}
+.hp-baixou{background:#E6F4EA;color:#1D6B33}
+.hp-neutro{background:var(--cream,#FDF3E3);color:var(--ink,#2B1B12)}
+.hp-info{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13px;color:var(--muted,#8A7563);margin-bottom:4px}
+.hp-info span:first-child{color:var(--ink,#2B1B12);font-weight:600}
+
+.hp-graf{position:relative;width:100%;margin:2px 0}
+.hp-graf svg{display:block;width:100%;height:auto;overflow:visible;touch-action:pan-y}
+.hp-graf svg:focus,.hp-graf rect:focus{outline:none}
+.hp-graf rect:focus-visible{outline:2px solid var(--orange,#F7941D);outline-offset:2px}
+.hp-grade{stroke:#F0E6D6;stroke-width:1}
+.hp-eixo{font:500 11px 'Work Sans',Arial,sans-serif;fill:var(--muted,#8A7563)}
+.hp-linha{fill:none;stroke:var(--red,#E5232E);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.hp-area{fill:var(--red,#E5232E);opacity:.08}
+.hp-ponto{fill:var(--red,#E5232E);stroke:#fff;stroke-width:2}
+.hp-fim{fill:var(--red-dark,#C21A24)}
+.hp-mira{stroke:var(--ink,#2B1B12);stroke-width:1;opacity:.35}
+.hp-foco{fill:none;stroke:var(--red-dark,#C21A24);stroke-width:2}
+.hp-dica{
+    position:absolute;
+    transform:translate(-50%,-100%);
+    background:var(--ink,#2B1B12);
+    color:#fff;
+    padding:6px 10px;
+    border-radius:10px;
+    font:500 12px 'Work Sans',Arial,sans-serif;
+    white-space:nowrap;
+    pointer-events:none;
+    box-shadow:0 6px 16px rgba(43,27,18,.25);
+    display:flex;flex-direction:column;align-items:center;gap:1px;
+}
+.hp-dica b{font:800 15px 'Baloo 2',sans-serif}
+.hp-dica[hidden]{display:none}
+
+.hp-tabela{margin:6px 0 2px;font-size:13px}
+.hp-tabela summary{cursor:pointer;color:var(--red-dark,#C21A24);font-weight:600}
+.hp-tabela ul{list-style:none;margin:8px 0 0;padding:0}
+.hp-tabela li{display:flex;justify-content:space-between;padding:5px 2px;border-top:1px solid #F5ECDD}
+.hp-nota{margin:6px 0 0;font-size:11.5px;color:var(--muted,#8A7563)}
