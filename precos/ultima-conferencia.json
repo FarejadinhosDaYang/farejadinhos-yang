@@ -1,29 +1,23 @@
 {
-  "quando": "2026-10-18T00:01:18Z",
+  "quando": "2026-10-18T04:27:31Z",
   "origem": "schedule",
-  "total": 226,
-  "iguais": 55,
+  "total": 217,
+  "iguais": 54,
   "mudaram": [
     {
       "slug": "aspirador-manual-piscina-herbinject-azul",
       "produto": "Aspirador Manual Piscina Herbinject Azul",
-      "de": "R$ 35,80",
-      "para": "92,82"
+      "de": "R$ 92,82",
+      "para": "338,95"
+    },
+    {
+      "slug": "fritadeira-sem-oleo-air-fryer-4l-mondial-1500w",
+      "produto": "Fritadeira sem óleo air fryer 4L Mondial 1500W",
+      "de": "R$ 254,14",
+      "para": "290,02"
     }
   ],
   "semPreco": [
-    {
-      "slug": "meia-de-natal-lb-letras-em-malha-letras-de-natal-meias-de",
-      "produto": "Meia de Natal LB Letras em Malha Árvore Bolsa",
-      "link": "https://s.shopee.com.br/6q1SLMSmj8",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
-      "slug": "natal-estoque-de-natal-saco-de-presente-de-natal-natal",
-      "produto": "Natal estoque saco de presente pequeno pingente",
-      "link": "https://s.shopee.com.br/6fi293TQ47",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
     {
       "slug": "estilo-classico-numero-de-natal-decoracao-pao-de-gengibre",
       "produto": "Estilo Clássico Número de Natal Decoração Pão",
@@ -253,12 +247,6 @@
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
-      "slug": "secador-esterelizador-de-tenis-eletrico-seca-tenis-sapatos",
-      "produto": "Secador Esterelizador de Tenis Elétrico Seca",
-      "link": "https://s.shopee.com.br/50ZoB9xL6X",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
       "slug": "comedouro-e-bebedouro-automatico-para-gatos-e-caes-premium",
       "produto": "Comedouro e Bebedouro Automático para Gatos e Cães",
       "link": "https://s.shopee.com.br/4fwxmXybmV",
@@ -277,21 +265,9 @@
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
-      "slug": "jogo-mesa-completa-12-pecas-6-pratos-6-tacas-200ml-vidro",
-      "produto": "Jogo Mesa Completa 12 Peças 6 Pratos + 6 Taças",
-      "link": "https://s.shopee.com.br/3qNqn11mTQ",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
       "slug": "6-jogo-americano-juta-vermelho-impermeavel-limpa-facil-pvc",
       "produto": "6 Jogo Americano Juta Vermelho",
       "link": "https://s.shopee.com.br/3Vl0OP339O",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
-      "slug": "saco-para-lavar-tenis-na-maquina-bolsa-protetora-de-sapatos",
-      "produto": "Saco para Lavar Tênis na Máquina Bolsa Protetora",
-      "link": "https://s.shopee.com.br/3LRaC63gUN",
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
@@ -325,12 +301,6 @@
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
-      "slug": "kit-4-ou-6-jogos-americanos-redondos-para-mesa-sousplat",
-      "produto": "Kit 4 ou 6 Jogos Americanos Redondos para Mesa",
-      "link": "https://s.shopee.com.br/1Vzw0jAfDC",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
       "slug": "frigideira-antiaderente-nao-usa-oleo-ceramica-vanilla-cream",
       "produto": "Frigideira Antiaderente Não Usa Óleo Cerâmica",
       "link": "https://s.shopee.com.br/1LgVoQBIYB",
@@ -349,12 +319,6 @@
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
-      "slug": "bolsa-de-cosmeticos-a-prova-d-agua-portatil-multifuncional",
-      "produto": "Bolsa De Cosméticos À Prova D'água Portátil",
-      "link": "https://s.shopee.com.br/qkFDVDCZ8",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
       "slug": "escova-de-limpeza-9-em-1-eletrica-giratoria-com-cabo",
       "produto": "Escova De Limpeza 9 Em 1 Elétrica Giratória",
       "link": "https://s.shopee.com.br/W7OotETF6",
@@ -370,12 +334,6 @@
       "slug": "organizador-de-geladeira-para-temperos-2-3l-linha-clear",
       "produto": "Organizador de Geladeira para Temperos 2,3L",
       "link": "https://s.shopee.com.br/BUYQHFjv4",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
-      "slug": "percarbonato-100-puro-tira-manchas-roupas-brancas-e",
-      "produto": "Percarbonato 100% Puro Tira Manchas Roupas Brancas",
-      "link": "https://s.shopee.com.br/AUukjGcOx6",
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
@@ -472,12 +430,6 @@
       "slug": "jogo-de-tacas-de-vidro-diamond-cristal-325ml-6-pecas",
       "produto": "Jogo De Taças De Vidro Diamond Cristal 325ml",
       "link": "https://s.shopee.com.br/7VH99knp2o",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
-      "slug": "cetaphil-locao-hidratante-galderma-para-pele-normal-a-seca",
-      "produto": "Cetaphil Loção Hidratante Galderma para Pele",
-      "link": "https://s.shopee.com.br/7KxixRoSNn",
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
