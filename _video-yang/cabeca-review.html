@@ -59,6 +59,9 @@ const AMP = window.AMP || null;
 
 const $ = id => document.getElementById(id);
 $("yang").classList.add(ROTEIRO.lado);
+// posições opcionais (ex.: tutorial com celular no meio: legenda no topo)
+if (ROTEIRO.legenda_top != null) $("legenda").style.top = ROTEIRO.legenda_top + "px";
+if (ROTEIRO.selo && ROTEIRO.selo.top != null) $("selo").style.top = ROTEIRO.selo.top + "px";
 const imgs = Object.fromEntries([...document.querySelectorAll("#yang img")].map(i => [i.dataset.k, i]));
 
 ROTEIRO.falas.forEach(f => {
