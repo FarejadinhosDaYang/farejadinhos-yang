@@ -58,6 +58,11 @@ do `reel.html`), `--previa` (só 8 quadros PNG pra conferir). Sem `--audio`, a b
 
 ## Regras de conteúdo (decididas com o dono da página)
 
+- **Sempre identificar como publicidade** (Conar, desde 01/06/2026: post com link de afiliado é publicidade).
+  Os modelos `cabeca-review.html` e `reel.html` já colocam o selo fixo **"publi · link de afiliado"** no alto do
+  vídeo — não tirar. Na legenda do post, a 1ª linha termina com **"(publi)"** e no fim vai
+  **"📢 publi · este post tem link de afiliado: você paga o mesmo preço e a Yang ganha uma pequena comissão."**
+
 - **Nunca falar preço** no vídeo nem na legenda — o post fica pra sempre e o preço muda. Usar: "o preço tá
   baixinho lá no site", "corre no site que tá com desconto", "a Yang farejou o menor preço".
 - **Chamada:** "comenta QUERO que eu te mando o link!" (gera alcance; a DM leva direto à página da oferta) +

@@ -162,6 +162,10 @@
     ctx.font = "800 46px 'Baloo 2', Arial, sans-serif";
     ctx.textBaseline = "alphabetic";
     ctx.fillText("Farejadinhos da Yang", 240, 162);
+    // Aviso de publicidade (Conar: post com link de afiliado é publicidade)
+    ctx.font = "700 28px 'Work Sans', Arial, sans-serif";
+    ctx.fillStyle = "rgba(255,255,255,.9)";
+    ctx.fillText("publi · link de afiliado", 242, 206);
 
     /* Cartão central */
     const cardX = 60, cardY = 320, cardW = W - 120, cardH = 1290;
