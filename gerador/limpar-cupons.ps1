@@ -27,6 +27,23 @@ foreach ($O in $Catalogo) {
 }
 
 Write-Host "Ofertas com cupom antigo: $($Itens.Count)"
+
+# Paginas de ofertas que ja sairam do catalogo (o link continua abrindo):
+# tira o quadrinho de cupom delas tambem
+$NoCatalogo = @{}
+foreach ($It in $Itens) { $NoCatalogo[$It.slug] = $true }
+$Pastas = Join-Path $Site "ofertas"
+foreach ($Pagina in @(Get-ChildItem -LiteralPath $Pastas -Filter "index.html" -Recurse -File)) {
+    $SlugPag = Split-Path -Leaf (Split-Path -Parent $Pagina.FullName)
+    if ($NoCatalogo.ContainsKey($SlugPag)) { continue }
+    $Html = [System.IO.File]::ReadAllText($Pagina.FullName, [System.Text.Encoding]::UTF8)
+    if ($Html -match '<div class="coupon">') {
+        $Html = [regex]::Replace($Html, '<div class="coupon">.*?</div>', '', 1)
+        [System.IO.File]::WriteAllText($Pagina.FullName, $Html, (New-Object System.Text.UTF8Encoding($false)))
+        Write-Host "Cupom tirado da pagina antiga: $SlugPag"
+    }
+}
+
 if ($Itens.Count -eq 0) { exit 0 }
 
 $Temp = Join-Path ([System.IO.Path]::GetTempPath()) "cupons-$([guid]::NewGuid()).json"
