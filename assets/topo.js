@@ -24,7 +24,8 @@ window.FAREJA_ICONES_CAT = {
     "Natal": { icone: "🎄", cor: "#1E7B3C" },
     "Skincare": { icone: "🧴", cor: "#D0688A" },
     "Piscina": { icone: "🏊", cor: "#1E88C7" },
-    "Vídeos": { icone: "🎬", cor: "#7B3FA0" }
+    "Vídeos": { icone: "🎬", cor: "#7B3FA0" },
+    "Celulares": { icone: "📱", cor: "#3949AB" }
 };
 
 (function () {

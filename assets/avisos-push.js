@@ -11,7 +11,7 @@
     var PUSH_URL = "https://farejadinhos-push.bernard-shimizu.workers.dev";
     var script = document.currentScript;
     var base = script ? script.src.replace(/assets\/avisos-push\.js.*$/, "") : "/";
-    var CATEGORIAS = ["Eletrônicos", "Eletrodomésticos", "Cozinha", "Casa", "Utilidades", "Beleza", "Skincare", "Moda", "Pet", "Academia", "Café", "Piscina", "Natal", "Vídeos"];
+    var CATEGORIAS = ["Celulares", "Eletrônicos", "Eletrodomésticos", "Cozinha", "Casa", "Utilidades", "Beleza", "Skincare", "Moda", "Pet", "Academia", "Café", "Piscina", "Natal", "Vídeos"];
 
     var suporta = "serviceWorker" in navigator && "PushManager" in window && "Notification" in window;
     var ehIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);

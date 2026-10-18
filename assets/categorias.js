@@ -87,16 +87,23 @@
       "maquininha de cortar cabelo", "cortador de cabelo", "body splash", "colonia",
       "creme dental", "escova de dente eletrica", "oleo capilar", "mascara capilar"
     ],
+    "Celulares": [
+      "celular", "celulares", "smartphone", "iphone", "galaxy", "redmi", "poco x", "poco m",
+      "moto g", "moto e", "motorola edge", "realme", "celular samsung", "celular xiaomi",
+      "celular motorola", "capinha", "capa celular", "capa de celular", "capa para celular",
+      "pelicula", "pelicula de vidro", "pelicula 3d", "suporte para celular", "suporte de celular",
+      "carregador de celular"
+    ],
     "Eletrônicos": [
-      "fone", "headset", "headphone", "earbuds", "celular", "smartphone", "iphone",
-      "galaxy", "xiaomi", "redmi", "carregador", "cabo usb", "usb c", "power bank",
+      "fone", "headset", "headphone", "earbuds", "iphone",
+      "xiaomi", "carregador", "cabo usb", "usb c", "power bank",
       "notebook", "laptop", "computador", "monitor", "teclado", "mouse", "ssd",
       "hd externo", "pendrive", "pen drive", "cartao de memoria", "smartwatch",
       "relogio inteligente", "smartband", "tablet", "ipad", "kindle", "smart tv",
       "televisao", "caixa de som", "bluetooth", "alexa", "echo dot", "camera",
       "webcam", "roteador", "repetidor wifi", "console", "playstation", "xbox",
       "nintendo", "controle", "joystick", "impressora", "projetor", "microfone",
-      "ring light", "suporte para celular", "pelicula", "capinha", "gamer",
+      "ring light", "gamer",
       "placa de video", "processador intel", "ryzen", "memoria ram", "chromecast",
       "fire tv", "tv box", "lampada inteligente", "tomada inteligente"
     ],
@@ -132,6 +139,7 @@
       "capa de chuva", "saco a vacuo", "etiquetadora", "relogio de parede", "despertador"
     ],
     "Casa": [
+      "mesa de cabeceira", "criado mudo", "porta celular",
       "casa", "maquina de lavar", "limpa maquina", "limpador de maquina", "comprimido efervescente",
       "varal", "varal de roupa", "varal de chao", "varal dobravel", "varal de piso", "lavanderia", "tira manchas", "pastilha de limpeza", "limpador", "organizador", "cabide", "tapete", "cortina", "persiana",
       "travesseiro", "lencol", "edredom", "cobertor", "manta", "toalha", "almofada",
