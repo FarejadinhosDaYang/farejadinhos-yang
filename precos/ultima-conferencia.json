@@ -1,26 +1,26 @@
 {
-  "quando": "2026-10-18T13:59:34Z",
-  "origem": "schedule",
+  "quando": "2026-10-18T14:12:36Z",
+  "origem": "workflow_dispatch",
   "total": 217,
   "iguais": 53,
   "mudaram": [
     {
       "slug": "kit-2-faixa-de-cabelo-toalha-para-make-skincare",
       "produto": "Kit 2 Faixa De Cabelo Toalha Para Make Skincare",
-      "de": "R$ 26,90",
-      "para": "27,55"
+      "de": "R$ 27,55",
+      "para": "26,90"
+    },
+    {
+      "slug": "colher-dosadora-infantil-rosa-alimentacao-bebe",
+      "produto": "Colher Dosadora Infantil Rosa Alimentação Bebê",
+      "de": "R$ 20,23",
+      "para": "19,50"
     },
     {
       "slug": "aspirador-manual-piscina-herbinject-azul",
       "produto": "Aspirador Manual Piscina Herbinject Azul",
-      "de": "R$ 35,80",
-      "para": "338,95"
-    },
-    {
-      "slug": "liquidificador-turbo-power-mondial-550w-l-99-fb",
-      "produto": "Liquidificador Turbo Power Mondial 550W - L-99 FB",
-      "de": "R$ 87,46",
-      "para": "87,48"
+      "de": "R$ 338,95",
+      "para": "35,80"
     }
   ],
   "semPreco": [
