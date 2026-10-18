@@ -1,41 +1,71 @@
 {
-  "quando": "2026-10-18T14:12:36Z",
+  "quando": "2026-10-18T15:20:10Z",
   "origem": "workflow_dispatch",
-  "total": 217,
-  "iguais": 53,
+  "total": 224,
+  "iguais": 57,
   "mudaram": [
     {
       "slug": "kit-2-faixa-de-cabelo-toalha-para-make-skincare",
       "produto": "Kit 2 Faixa De Cabelo Toalha Para Make Skincare",
+      "de": "R$ 26,90",
+      "para": "27,55"
+    },
+    {
+      "slug": "tapete-pelucia-antiderrapante-decoracao-felpudo-2",
+      "produto": "Tapete Pelúcia Antiderrapante Decoração Felpudo",
+      "de": "R$ 39,90",
+      "para": "64,19"
+    },
+    {
+      "slug": "kit-2-pochete-academia-esportiva-fitness-corrida",
+      "produto": "Kit 2 Pochete Academia Esportiva Fitness Corrida",
       "de": "R$ 27,55",
-      "para": "26,90"
+      "para": "26,68"
     },
     {
-      "slug": "colher-dosadora-infantil-rosa-alimentacao-bebe",
-      "produto": "Colher Dosadora Infantil Rosa Alimentação Bebê",
-      "de": "R$ 20,23",
-      "para": "19,50"
+      "slug": "liquidificador-turbo-power-mondial-550w-l-99-fb",
+      "produto": "Liquidificador Turbo Power Mondial 550W - L-99 FB",
+      "de": "R$ 87,48",
+      "para": "94,06"
     },
     {
-      "slug": "aspirador-manual-piscina-herbinject-azul",
-      "produto": "Aspirador Manual Piscina Herbinject Azul",
-      "de": "R$ 338,95",
-      "para": "35,80"
+      "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
+      "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
+      "de": "R$ 61,75",
+      "para": "59,73"
+    },
+    {
+      "slug": "mini-compressor-de-ar-portatil-carro-moto",
+      "produto": "Mini Compressor De Ar Portátil Carro Moto",
+      "de": "R$ 55,48",
+      "para": "52,71"
+    },
+    {
+      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
+      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
+      "de": "R$ 5.065,61",
+      "para": "5149,00"
+    },
+    {
+      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera-2",
+      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
+      "de": "R$ 5.332,00",
+      "para": "5065,61"
+    },
+    {
+      "slug": "celular-samsung-galaxy-s26-ultra-5g-256gb-12gb-ram",
+      "produto": "Celular Samsung Galaxy S26 Ultra 5G 256GB 12GB RAM",
+      "de": "R$ 7.498,89",
+      "para": "7274,00"
+    },
+    {
+      "slug": "iphone-18-pro-max-256gb-preto-somente-esim",
+      "produto": "iPhone 18 Pro Max 256GB Preto (somente eSIM)",
+      "de": "R$ 10.289,00",
+      "para": "4889,00"
     }
   ],
   "semPreco": [
-    {
-      "slug": "estilo-classico-numero-de-natal-decoracao-pao-de-gengibre",
-      "produto": "Estilo Clássico Número de Natal Decoração Pão",
-      "link": "https://s.shopee.com.br/9APN7eJtzc",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
-      "slug": "novo-estilo-estrela-reunindo-pingente-de-arvore-de-natal",
-      "produto": "Estrela reunindo pingente de árvore de natal",
-      "link": "https://s.shopee.com.br/905wvLKXKb",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
     {
       "slug": "enfeites-de-natal-enfeites-de-natal-pequena-casa-luminosa",
       "produto": "Enfeites de natal pequena casa luminosa presentes",
@@ -277,18 +307,6 @@
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
-      "slug": "potes-multiuso-hermeticos-geladeira-460ml-950ml-porta",
-      "produto": "Potes Multiuso Herméticos Geladeira 460ml/950ml",
-      "link": "https://s.shopee.com.br/3B89zn4JpM",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
-      "slug": "kit-suporte-para-tampa-de-panela-4-unidades-organizador",
-      "produto": "Kit Suporte para Tampa de Panela 4 Unidades",
-      "link": "https://s.shopee.com.br/2qVJbB5aVK",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
       "slug": "ramekin-coracao-150ml-canelado-molho-doce-petisco-festa",
       "produto": "Ramekin Coração 150ml Canelado Molho Doce Petisco",
       "link": "https://s.shopee.com.br/2LZ30G7UWH",
@@ -322,12 +340,6 @@
       "slug": "tabua-de-corte-304-aco-inoxidavel-antibacteriana-a-prova-de",
       "produto": "Tábua De Corte 304 Aço Inoxidável Antibacteriana",
       "link": "https://s.shopee.com.br/113fPoCZE9",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
-      "slug": "escova-de-limpeza-9-em-1-eletrica-giratoria-com-cabo",
-      "produto": "Escova De Limpeza 9 Em 1 Elétrica Giratória",
-      "link": "https://s.shopee.com.br/W7OotETF6",
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
@@ -991,5 +1003,15 @@
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     }
   ],
-  "erros": []
+  "erros": [],
+  "suspeitos": [
+    {
+      "slug": "aspirador-manual-piscina-herbinject-azul",
+      "produto": "Aspirador Manual Piscina Herbinject Azul",
+      "link": "https://meli.la/1t2eJpi",
+      "atual": "R$ 35,80",
+      "lido": "338,95",
+      "referencia": "R$ 38,91"
+    }
+  ]
 }

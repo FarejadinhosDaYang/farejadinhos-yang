@@ -1309,7 +1309,7 @@
   },
   {
     "produto": "Kit 2 Faixa De Cabelo Toalha Para Make Skincare",
-    "preco": "R$ 26,90",
+    "preco": "R$ 27,55",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Skincare",
@@ -1322,7 +1322,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-16T00:12:07Z",
-    "precoConferido": "2026-10-18T14:16:16Z"
+    "precoConferido": "2026-10-18T15:24:38Z"
   },
   {
     "produto": "Extrator De Cravos E Espinhas Kit Cureta Aço Inox",
@@ -1536,7 +1536,7 @@
   },
   {
     "produto": "Tapete Pelúcia Antiderrapante Decoração Felpudo",
-    "preco": "R$ 39,90",
+    "preco": "R$ 64,19",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Casa",
@@ -1548,7 +1548,8 @@
     "data": "2026-10-15T22:42:09Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-22T13:48:00Z"
+    "liberacao": "2026-10-22T13:48:00Z",
+    "precoConferido": "2026-10-18T15:24:38Z"
   },
   {
     "produto": "Agulhas Acupuntura Complementar Descartáveis",
@@ -1601,7 +1602,7 @@
   },
   {
     "produto": "Kit 2 Pochete Academia Esportiva Fitness Corrida",
-    "preco": "R$ 27,55",
+    "preco": "R$ 26,68",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Academia",
@@ -1614,7 +1615,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-16T00:42:07Z",
-    "precoConferido": "2026-10-17T23:15:22Z"
+    "precoConferido": "2026-10-18T15:24:38Z"
   },
   {
     "produto": "Pochete Doleira Porta Dolar Notas Viagem Antifurto",
@@ -1930,7 +1931,7 @@
   },
   {
     "produto": "Liquidificador Turbo Power Mondial 550W - L-99 FB",
-    "preco": "R$ 87,48",
+    "preco": "R$ 94,06",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -1940,11 +1941,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/liquidificador-turbo-power-mondial-550w-l-99-fb/",
     "slug": "liquidificador-turbo-power-mondial-550w-l-99-fb",
     "data": "2026-10-15T22:42:11Z",
-    "precoAVista": "R$ 87,48",
+    "precoAVista": "R$ 94,06",
     "precoAPrazo": "83,16",
     "liberacao": "2026-10-17T11:56:00Z",
     "parcelas": 3,
-    "precoConferido": "2026-10-18T14:03:30Z"
+    "precoConferido": "2026-10-18T15:24:38Z"
   },
   {
     "produto": "Kit 6 Pote Vidro Porta Temperos Hermético Cozinha",
@@ -1964,7 +1965,7 @@
   },
   {
     "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-    "preco": "R$ 61,75",
+    "preco": "R$ 59,73",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -1977,7 +1978,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-25T23:08:00Z",
-    "precoConferido": "2026-10-17T23:15:22Z"
+    "precoConferido": "2026-10-18T15:24:38Z"
   },
   {
     "produto": "Jogo 6 Taças De Vidro Diamond 340 ml Com Pé",
@@ -2215,7 +2216,7 @@
   },
   {
     "produto": "Mini Compressor De Ar Portátil Carro Moto",
-    "preco": "R$ 55,48",
+    "preco": "R$ 52,71",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Utilidades, Vídeos",
@@ -2227,7 +2228,8 @@
     "data": "2026-10-15T22:42:12Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-18T17:46:04Z"
+    "liberacao": "2026-10-18T17:46:04Z",
+    "precoConferido": "2026-10-18T15:24:38Z"
   },
   {
     "produto": "Fatiador de cozinha multifuncional profissional",
@@ -3546,7 +3548,7 @@
   },
   {
     "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-    "preco": "R$ 5.065,61",
+    "preco": "R$ 5.149,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -3556,10 +3558,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera/",
     "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "5065,61",
+    "precoAVista": "R$ 5.149,00",
     "precoAPrazo": "5066,16",
     "liberacao": "2026-10-19T12:52:00Z",
-    "parcelas": 12
+    "parcelas": 12,
+    "precoConferido": "2026-10-18T15:24:38Z"
   },
   {
     "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
@@ -3580,7 +3583,7 @@
   },
   {
     "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-    "preco": "R$ 5.332,00",
+    "preco": "R$ 5.065,61",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -3590,14 +3593,15 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera-2/",
     "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera-2",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "5332,00",
+    "precoAVista": "R$ 5.065,61",
     "precoAPrazo": "5065,61",
     "liberacao": "2026-10-20T12:52:00Z",
-    "parcelas": 12
+    "parcelas": 12,
+    "precoConferido": "2026-10-18T15:24:38Z"
   },
   {
     "produto": "Celular Samsung Galaxy S26 Ultra 5G 256GB 12GB RAM",
-    "preco": "R$ 7.498,89",
+    "preco": "R$ 7.274,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -3607,10 +3611,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-ultra-5g-256gb-12gb-ram/",
     "slug": "celular-samsung-galaxy-s26-ultra-5g-256gb-12gb-ram",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "7498,89",
+    "precoAVista": "R$ 7.274,00",
     "precoAPrazo": "7274,00",
     "liberacao": "2026-10-20T19:24:00Z",
-    "parcelas": 12
+    "parcelas": 12,
+    "precoConferido": "2026-10-18T15:24:38Z"
   },
   {
     "produto": "iPhone 17 256 GB - Sálvia (Novo com caixa aberta)",
@@ -3682,7 +3687,7 @@
   },
   {
     "produto": "iPhone 18 Pro Max 256GB Preto (somente eSIM)",
-    "preco": "R$ 10.289,00",
+    "preco": "R$ 4.889,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -3692,9 +3697,10 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/iphone-18-pro-max-256gb-preto-somente-esim/",
     "slug": "iphone-18-pro-max-256gb-preto-somente-esim",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "10289,00",
+    "precoAVista": "R$ 4.889,00",
     "precoAPrazo": "14490,00",
     "liberacao": "2026-10-27T15:40:00Z",
-    "parcelas": 10
+    "parcelas": 10,
+    "precoConferido": "2026-10-18T15:24:38Z"
   }
 ]
