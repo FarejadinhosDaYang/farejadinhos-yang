@@ -1,92 +1,14 @@
 {
-  "quando": "2026-10-17T23:11:30Z",
-  "origem": "workflow_dispatch",
+  "quando": "2026-10-18T00:01:18Z",
+  "origem": "schedule",
   "total": 226,
-  "iguais": 42,
+  "iguais": 55,
   "mudaram": [
-    {
-      "slug": "galinha-frango-de-borracha-brinquedo-mordedor-pet",
-      "produto": "Galinha Frango De Borracha Brinquedo Mordedor Pet",
-      "de": "R$ 20,52",
-      "para": "20,14"
-    },
-    {
-      "slug": "kit-2-pochete-academia-esportiva-fitness-corrida",
-      "produto": "Kit 2 Pochete Academia Esportiva Fitness Corrida",
-      "de": "R$ 26,68",
-      "para": "27,55"
-    },
-    {
-      "slug": "kit-2-fita-teste-piscina-cloro-ph-alcalinidade",
-      "produto": "Kit 2 Fita Teste Piscina Cloro/ph/alcalinidade",
-      "de": "R$ 46,71",
-      "para": "44,11"
-    },
-    {
-      "slug": "super-clarificante-para-piscina-power-gel",
-      "produto": "Super Clarificante para Piscina Power Gel",
-      "de": "R$ 29,94",
-      "para": "33,80"
-    },
     {
       "slug": "aspirador-manual-piscina-herbinject-azul",
       "produto": "Aspirador Manual Piscina Herbinject Azul",
-      "de": "R$ 42,01",
-      "para": "35,80"
-    },
-    {
-      "slug": "varal-de-chao-grande-de-roupas-3-andares-dobravel",
-      "produto": "Varal De Chão Grande De Roupas 3 Andares Dobrável",
-      "de": "R$ 67,03",
-      "para": "78,80"
-    },
-    {
-      "slug": "liquidificador-turbo-power-mondial-550w-l-99-fb",
-      "produto": "Liquidificador Turbo Power Mondial 550W - L-99 FB",
-      "de": "R$ 88,37",
-      "para": "87,46"
-    },
-    {
-      "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
-      "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-      "de": "R$ 68,66",
-      "para": "61,75"
-    },
-    {
-      "slug": "balanca-digital-bioimpedancia-profissional-smart",
-      "produto": "Balança Digital Bioimpedância Profissional smart",
-      "de": "R$ 32,90",
-      "para": "28,95"
-    },
-    {
-      "slug": "chaleira-eletrica-atacama-1-8l-unitermi",
-      "produto": "Chaleira Eletrica Atacama 1,8l - Unitermi",
-      "de": "R$ 38,63",
-      "para": "47,43"
-    },
-    {
-      "slug": "frigideira-ceramica-antiaderente-inducao-azul",
-      "produto": "Frigideira Cerâmica Antiaderente Indução Azul",
-      "de": "R$ 39,99",
-      "para": "41,99"
-    },
-    {
-      "slug": "dispenser-porta-detergente-3-em-1-em-aco-inox",
-      "produto": "Dispenser Porta Detergente 3 em 1 em Aço Inox",
-      "de": "R$ 31,90",
-      "para": "32,90"
-    },
-    {
-      "slug": "faqueiro-tramontina-buzios-em-aco-inox-com-detalhe",
-      "produto": "Faqueiro Tramontina Búzios Em Aço Inox Com Detalhe",
-      "de": "R$ 61,73",
-      "para": "62,25"
-    },
-    {
-      "slug": "fritadeira-sem-oleo-air-fryer-4l-mondial-1500w",
-      "produto": "Fritadeira sem óleo air fryer 4L Mondial 1500W",
-      "de": "R$ 249,90",
-      "para": "254,14"
+      "de": "R$ 35,80",
+      "para": "92,82"
     }
   ],
   "semPreco": [
