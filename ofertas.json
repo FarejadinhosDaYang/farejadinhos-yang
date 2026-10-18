@@ -3603,24 +3603,6 @@
     "parcelas": 10
   },
   {
-    "produto": "iPhone 18 Pro Max 256GB Preto (somente eSIM)",
-    "preco": "R$ 5.238,00",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Celulares",
-    "destaque": false,
-    "imagem": "29f4ccf6-ad97-444b-a16a-5f0136785566.webp",
-    "link": "https://meli.la/2fXqW9L",
-    "url": "https://farejadinhosdayang.com.br/ofertas/iphone-18-pro-max-256gb-preto-somente-esim/",
-    "slug": "iphone-18-pro-max-256gb-preto-somente-esim",
-    "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "R$ 5.238,00",
-    "precoAPrazo": "14490,00",
-    "liberacao": "2026-10-27T18:28:00Z",
-    "parcelas": 10,
-    "precoConferido": "2026-10-18T20:42:31Z"
-  },
-  {
     "produto": "Fritadeira Elétrica Air Fryer Wap Wafg2s 5 Litros",
     "preco": "R$ 209,00",
     "precoAntigo": "",
@@ -3686,5 +3668,22 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-18T15:34:59Z"
+  },
+  {
+    "produto": "iPhone 18 Pro Max 256GB Preto (somente eSIM)",
+    "preco": "R$ 10.289,00",
+    "precoAntigo": "",
+    "cupom": "",
+    "categoria": "Celulares",
+    "destaque": false,
+    "imagem": "29f4ccf6-ad97-444b-a16a-5f0136785566.webp",
+    "link": "https://meli.la/2fXqW9L",
+    "url": "https://farejadinhosdayang.com.br/ofertas/iphone-18-pro-max-256gb-preto-somente-esim/",
+    "slug": "iphone-18-pro-max-256gb-preto-somente-esim",
+    "data": "2026-10-18T15:10:05Z",
+    "precoAVista": "10289,00",
+    "precoAPrazo": "14490,00",
+    "liberacao": "2026-10-27T18:28:00Z",
+    "parcelas": 10
   }
 ]
