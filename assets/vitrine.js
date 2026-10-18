@@ -28,7 +28,7 @@
  *    delas (TEMPORADAS, abaixo, repete todo ano). Fora dele somem do
  *    site e do menu, e a vitrine fica com as outras categorias.
  *
- * 8. Categorias PERMANENTES (ex.: Vídeos — produtos que têm vídeo
+ * 8. Categorias PERMANENTES (Vídeos e Celulares — produtos que têm vídeo
  *    postado na página) aparecem NA HORA (mesmo agendadas na fila do
  *    lote) e nunca expiram: ficam no site pra sempre, e a limpeza
  *    automática não apaga.
@@ -55,7 +55,7 @@
 
   // Categorias que nunca expiram (nome sem acento, minúsculo).
   // Mesma lista em gerador/limpar-ofertas.ps1.
-  const PERMANENTES = ["videos"];
+  const PERMANENTES = ["videos", "celulares"];
 
   // "Vídeos" é uma categoria A MAIS: a oferta guarda as duas no campo
   // categoria, separadas por vírgula ("Cozinha, Vídeos"). Ao carregar,

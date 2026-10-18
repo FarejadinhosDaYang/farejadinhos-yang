@@ -123,7 +123,7 @@ foreach ($Oferta in $Ofertas) {
     # (pode vir junto com a principal: "Cozinha, Videos")
     $CatNorm = ([string]$Oferta.categoria).Normalize([Text.NormalizationForm]::FormD) -replace '\p{Mn}', ''
     $Partes = @($CatNorm.ToLowerInvariant().Split(',') | ForEach-Object { $_.Trim() })
-    if ($Partes -contains "videos") {
+    if ($Partes -contains "videos" -or $Partes -contains "celulares") {
         $Mantidas += $Oferta
         continue
     }
