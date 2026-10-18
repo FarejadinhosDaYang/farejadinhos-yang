@@ -1,0 +1,49 @@
+name: Limpar cupons do dia anterior
+
+on:
+  schedule:
+    # 03:07 UTC = 00:07 em Brasilia (logo depois de virar o dia)
+    - cron: "7 3 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: limpar-cupons
+  cancel-in-progress: false
+
+jobs:
+  limpar:
+    runs-on: windows-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Baixar repositorio
+        uses: actions/checkout@v4
+
+      - name: Tirar os cupons antigos
+        shell: pwsh
+        run: |
+          .\gerador\limpar-cupons.ps1
+
+      - name: Salvar no GitHub
+        shell: pwsh
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add ofertas ofertas.json
+          $temAlteracoes = git diff --cached --name-only
+
+          if ([string]::IsNullOrWhiteSpace($temAlteracoes)) {
+            Write-Host "Nenhum cupom pra tirar."
+          } else {
+            git commit -m "Cupons do dia anterior removidos"
+            for ($i = 0; $i -lt 4; $i++) {
+              git pull --rebase
+              git push
+              if ($LASTEXITCODE -eq 0) { break }
+              Start-Sleep -Seconds (5 * ($i + 1))
+            }
+          }
