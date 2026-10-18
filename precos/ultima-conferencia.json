@@ -1,68 +1,56 @@
 {
-  "quando": "2026-10-18T15:20:10Z",
-  "origem": "workflow_dispatch",
-  "total": 224,
-  "iguais": 57,
+  "quando": "2026-10-18T17:20:52Z",
+  "origem": "schedule",
+  "total": 228,
+  "iguais": 62,
   "mudaram": [
     {
       "slug": "kit-2-faixa-de-cabelo-toalha-para-make-skincare",
       "produto": "Kit 2 Faixa De Cabelo Toalha Para Make Skincare",
-      "de": "R$ 26,90",
-      "para": "27,55"
+      "de": "R$ 27,55",
+      "para": "26,90"
+    },
+    {
+      "slug": "colher-dosadora-infantil-rosa-alimentacao-bebe",
+      "produto": "Colher Dosadora Infantil Rosa Alimentação Bebê",
+      "de": "R$ 19,50",
+      "para": "20,23"
     },
     {
       "slug": "tapete-pelucia-antiderrapante-decoracao-felpudo-2",
       "produto": "Tapete Pelúcia Antiderrapante Decoração Felpudo",
-      "de": "R$ 39,90",
-      "para": "64,19"
-    },
-    {
-      "slug": "kit-2-pochete-academia-esportiva-fitness-corrida",
-      "produto": "Kit 2 Pochete Academia Esportiva Fitness Corrida",
-      "de": "R$ 27,55",
-      "para": "26,68"
+      "de": "R$ 64,19",
+      "para": "39,90"
     },
     {
       "slug": "liquidificador-turbo-power-mondial-550w-l-99-fb",
       "produto": "Liquidificador Turbo Power Mondial 550W - L-99 FB",
-      "de": "R$ 87,48",
-      "para": "94,06"
+      "de": "R$ 94,06",
+      "para": "87,48"
     },
     {
-      "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
-      "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-      "de": "R$ 61,75",
-      "para": "59,73"
+      "slug": "dispenser-giratorio-organizador-alimentos",
+      "produto": "Dispenser Giratorio Organizador Alimentos",
+      "de": "R$ 78,99",
+      "para": "129,99"
     },
     {
-      "slug": "mini-compressor-de-ar-portatil-carro-moto",
-      "produto": "Mini Compressor De Ar Portátil Carro Moto",
-      "de": "R$ 55,48",
-      "para": "52,71"
-    },
-    {
-      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
-      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 5.065,61",
-      "para": "5149,00"
+      "slug": "celular-samsung-galaxy-s26-fe-128gb-8gb-ram-tela",
+      "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
+      "de": "R$ 5.499,00",
+      "para": "3999,00"
     },
     {
       "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera-2",
       "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 5.332,00",
-      "para": "5065,61"
+      "de": "R$ 5.065,61",
+      "para": "5332,00"
     },
     {
       "slug": "celular-samsung-galaxy-s26-ultra-5g-256gb-12gb-ram",
       "produto": "Celular Samsung Galaxy S26 Ultra 5G 256GB 12GB RAM",
-      "de": "R$ 7.498,89",
-      "para": "7274,00"
-    },
-    {
-      "slug": "iphone-18-pro-max-256gb-preto-somente-esim",
-      "produto": "iPhone 18 Pro Max 256GB Preto (somente eSIM)",
-      "de": "R$ 10.289,00",
-      "para": "4889,00"
+      "de": "R$ 7.274,00",
+      "para": "7498,89"
     }
   ],
   "semPreco": [
@@ -1011,7 +999,15 @@
       "link": "https://meli.la/1t2eJpi",
       "atual": "R$ 35,80",
       "lido": "338,95",
-      "referencia": "R$ 38,91"
+      "referencia": "R$ 42,01"
+    },
+    {
+      "slug": "iphone-18-pro-max-256gb-preto-somente-esim",
+      "produto": "iPhone 18 Pro Max 256GB Preto (somente eSIM)",
+      "link": "https://meli.la/2fXqW9L",
+      "atual": "R$ 10.289,00",
+      "lido": "4889,00",
+      "referencia": "R$ 10.289,00"
     }
   ]
 }
