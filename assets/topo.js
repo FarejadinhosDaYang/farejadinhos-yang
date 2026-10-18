@@ -195,3 +195,16 @@ window.FAREJA_ICONES_CAT = {
         }).catch(function () {});
     } catch (e) {}
 })();
+
+/* ===== AVISOS (notificações) — assets/avisos-push.js ===== */
+(function () {
+    var atual = document.currentScript;
+    var tags = document.querySelectorAll("script[src*='assets/topo.js']");
+    var eu = atual || tags[tags.length - 1];
+    var base = (eu && eu.getAttribute("data-base")) || "";
+    if (/\/painel\//.test(location.pathname)) return;
+    var s = document.createElement("script");
+    s.src = base + "assets/avisos-push.js";
+    s.defer = true;
+    document.head.appendChild(s);
+})();

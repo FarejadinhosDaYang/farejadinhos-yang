@@ -30,6 +30,7 @@
             '<details class="yang-nav-cats"><summary>🗂️ Categorias</summary><div class="yang-nav-cats-lista">Carregando…</div></details>' +
             '<a href="' + base + 'calculadora/">🧮 Vale a pena parcelar?</a>' +
             '<a href="https://www.instagram.com/farejadinhosdayang" target="_blank" rel="noopener">📸 Instagram</a>' +
+            '<a href="#avisos" data-yang-push>🔔 Avisos de ofertas</a>' +
             '<a href="' + base + 'avisos/">📜 Avisos e privacidade</a>' +
             '<div class="yang-nav-cupons">' +
             '<span>Cupons das lojas</span>' +
@@ -72,6 +73,14 @@
                     });
                 });
             });
+        });
+
+        var linkPush = el.querySelector("[data-yang-push]");
+        if (linkPush) linkPush.addEventListener("click", function (e) {
+            if (!window.farejaAbrirAvisos) return;   // sem o script, o #avisos abre a janela ao carregar
+            e.preventDefault();
+            fechar();
+            window.farejaAbrirAvisos();
         });
 
         toggle.addEventListener("click", function () {
