@@ -37,8 +37,10 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add ofertas ofertas.json
+          # lista de preços barrados (só muda quando aparece/some um suspeito)
+          git add precos/suspeitos.json
           # relatório: sempre que o botão pedir, ou quando algum preço mudou
-          $mudouOferta = git status --porcelain ofertas ofertas.json
+          $mudouOferta = git status --porcelain ofertas ofertas.json precos/suspeitos.json
           if ($env:GITHUB_EVENT_NAME -eq "workflow_dispatch" -or -not [string]::IsNullOrWhiteSpace($mudouOferta)) {
             git add precos
           }

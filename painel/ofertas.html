@@ -190,7 +190,7 @@ async function lerRelatorioPrecos(){
 
 function mostrarRelatorioPrecos(rel){
   const box = document.getElementById("precosRelatorio");
-  if(!rel){ box.innerHTML = "Ainda não teve nenhuma conferência pelo botão."; return; }
+  if(!rel){ box.innerHTML = "Ainda não teve nenhuma conferência pelo botão.<div id=\"precosBarrados\"></div>"; mostrarBarrados(); return; }
   const quando = new Date(rel.quando).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" });
   const mud = rel.mudaram || [], sem = rel.semPreco || [], err = rel.erros || [];
   const item = x => `<li><a href="../ofertas/${encodeURIComponent(x.slug)}/" target="_blank">${escapeHtml(x.produto || x.slug)}</a>` +
@@ -201,7 +201,29 @@ function mostrarRelatorioPrecos(rel){
     `<b>${mud.length}</b> mudaram, ${rel.iguais} iguais, <b>${sem.length}</b> sem preço, ${err.length} erro(s).` +
     (mud.length ? `<details open><summary>💸 Preços que mudaram (já atualizados)</summary><ul>${mud.map(item).join("")}</ul></details>` : "") +
     (sem.length ? `<details><summary>⚠️ Não consegui ler o preço (${sem.length}) — confira na mão</summary><ul>${sem.map(item).join("")}</ul></details>` : "") +
-    (err.length ? `<details><summary>❌ Deram erro (${err.length})</summary><ul>${err.map(item).join("")}</ul></details>` : "");
+    (err.length ? `<details><summary>❌ Deram erro (${err.length})</summary><ul>${err.map(item).join("")}</ul></details>` : "") +
+    `<div id="precosBarrados"></div>`;
+  mostrarBarrados();
+}
+
+// Preços que a conferência leu mas NÃO aplicou por estarem muito fora do normal
+// (mais que o dobro ou menos da metade do preço de sempre — geralmente a loja
+// mostrando outra variação/kit). Lista em precos/suspeitos.json.
+async function mostrarBarrados(){
+  const box = document.getElementById("precosBarrados");
+  if(!box) return;
+  let lista = [];
+  try{
+    const r = await fetch("../precos/suspeitos.json?t=" + Date.now(), { cache: "no-store" });
+    if(r.ok) lista = await r.json();
+  }catch(e){}
+  if(!Array.isArray(lista) || !lista.length){ box.innerHTML = ""; return; }
+  box.innerHTML = `<details open><summary>🚫 Preços barrados (${lista.length}) — muito fora do normal, o site NÃO mudou</summary><ul>` +
+    lista.map(x => `<li><a href="../ofertas/${encodeURIComponent(x.slug)}/" target="_blank">${escapeHtml(x.produto || x.slug)}</a>: ` +
+      `site ${escapeHtml(x.atual)}, a loja mostrou <b>${escapeHtml(x.lido)}</b> (normal: ${escapeHtml(x.referencia)})` +
+      (x.link ? ` · <a href="${escapeHtml(x.link)}" target="_blank" rel="noopener">abrir na loja ↗</a>` : "") +
+      `</li>`).join("") +
+    `</ul><div style="font-size:12.5px;color:var(--muted);margin-top:4px">Se o preço novo for real (ex.: acabou a promoção), edite a oferta na mão. Se não, pode ignorar — a conferência continua de olho.</div></details>`;
 }
 
 lerRelatorioPrecos().then(mostrarRelatorioPrecos);

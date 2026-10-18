@@ -40,6 +40,24 @@ function NumeroBR([string]$V) {
 }
 
 $Catalogo = @((Get-Content -LiteralPath $OfertasJsonPath -Raw -Encoding UTF8) | ConvertFrom-Json)
+
+# Preço de referência de cada link: a mediana do histórico de preços (sem as
+# leituras estranhas). Serve pra barrar leitura absurda da loja (ex.: outra
+# variação/kit: R$ 35 -> R$ 338) antes de ela mudar o preço do site.
+$Referencia = @{}
+$HistPath = Join-Path $Site "historico-precos.json"
+if (Test-Path -LiteralPath $HistPath) {
+    try {
+        $Hist = (Get-Content -LiteralPath $HistPath -Raw -Encoding UTF8) | ConvertFrom-Json
+        foreach ($Prop in $Hist.produtos.PSObject.Properties) {
+            $Vals = @($Prop.Value.pontos | ForEach-Object { [decimal]$_[1] } | Sort-Object)
+            if ($Vals.Count -eq 0) { continue }
+            $Meio = [int][Math]::Floor($Vals.Count / 2)
+            $Med = if ($Vals.Count % 2) { $Vals[$Meio] } else { ($Vals[$Meio - 1] + $Vals[$Meio]) / 2 }
+            foreach ($L in @($Prop.Value.links)) { $Referencia[[string]$L] = $Med }
+        }
+    } catch { Write-Warning "Nao consegui ler o historico de precos: $($_.Exception.Message)" }
+}
 $Agora = [DateTimeOffset]::UtcNow
 
 # Confere o que está no ar ou na fila (até 7 dias pra trás — as que
@@ -55,7 +73,7 @@ $Alvo = @($Catalogo | Where-Object {
 Write-Host "Conferindo o preco de $($Alvo.Count) oferta(s)..."
 
 $Mudancas = @()
-$Relatorio = [ordered]@{ mudaram = @(); semPreco = @(); erros = @() }
+$Relatorio = [ordered]@{ mudaram = @(); semPreco = @(); erros = @(); suspeitos = @() }
 $SemPreco = 0
 $Iguais = 0
 $Erros = 0
@@ -78,6 +96,17 @@ foreach ($O in $Alvo) {
         }
         elseif ($NAtual -and [Math]::Abs($NNovo - $NAtual) -lt 0.01) {
             $Iguais++
+        }
+        elseif (($Ref = $(if ($Referencia.ContainsKey([string]$O.link)) { $Referencia[[string]$O.link] } else { $NAtual })) -and
+                ($NNovo -gt 2 * $Ref -or $NNovo -lt $Ref / 2)) {
+            # Muito fora do normal (mais que o dobro ou menos da metade): NÃO muda o site,
+            # só avisa no painel pra conferir na mão.
+            Write-Host "  SUSPEITO (nao aplicado): $($O.slug): site $($O.preco), loja $Novo, referencia $Ref"
+            $Relatorio.suspeitos += [ordered]@{
+                slug = [string]$O.slug; produto = [string]$O.produto; link = [string]$O.link
+                atual = [string]$O.preco; lido = $Novo
+                referencia = ("R$ " + $Ref.ToString("N2", $CulturaBR))
+            }
         }
         else {
             Write-Host "  MUDOU: $($O.slug): $($O.preco) -> $Novo"
@@ -108,7 +137,7 @@ foreach ($O in $Alvo) {
 }
 
 Write-Host ""
-Write-Host "Resumo: $($Mudancas.Count) mudaram, $Iguais iguais, $SemPreco sem preco, $Erros erro(s)."
+Write-Host "Resumo: $($Mudancas.Count) mudaram, $Iguais iguais, $SemPreco sem preco, $($Relatorio.suspeitos.Count) suspeito(s) barrado(s), $Erros erro(s)."
 
 # Relatório pro painel (precos/ultima-conferencia.json)
 $PastaRel = Join-Path $Site "precos"
@@ -121,8 +150,14 @@ $Rel = [ordered]@{
     mudaram  = @($Relatorio.mudaram)
     semPreco = @($Relatorio.semPreco)
     erros    = @($Relatorio.erros)
+    suspeitos = @($Relatorio.suspeitos)
 }
 [System.IO.File]::WriteAllText((Join-Path $PastaRel "ultima-conferencia.json"), ($Rel | ConvertTo-Json -Depth 5), (New-Object System.Text.UTF8Encoding($false)))
+
+# Lista de preços barrados (sem data, pra só mudar quando a lista mudar —
+# assim o GitHub só salva quando aparece ou some um suspeito)
+$Susp = @($Relatorio.suspeitos | Sort-Object { $_.slug })
+[System.IO.File]::WriteAllText((Join-Path $PastaRel "suspeitos.json"), (ConvertTo-Json -InputObject $Susp -Depth 3), (New-Object System.Text.UTF8Encoding($false)))
 
 if ($Mudancas.Count -eq 0) { exit 0 }
 
