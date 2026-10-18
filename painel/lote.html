@@ -692,6 +692,12 @@ function mostrarCupons(){
     if(typeof itensProcessados !== "undefined" && itensProcessados.length){ montarPreview(); }
 }
 
+// Celulares não recebem cupom automático (quase nunca valem pra celular;
+// quando valer, coloque à mão na tabela ou na edição da oferta)
+function semCupomAutomatico(categoria){
+    return /celular/i.test(String(categoria || "").normalize("NFD").replace(/[\u0300-\u036f]/g, ""));
+}
+
 // Escolhe o melhor cupom pra cada produto (sem mexer nos que a pessoa escolheu à mão)
 function aplicarCupons(){
     itensProcessados.forEach(p => {
@@ -699,6 +705,7 @@ function aplicarCupons(){
         p.opcoesCupom = FarejadinhosCupons.opcoes(cuponsDia, p.item.preco, p.item.link, p.linkProduto);
         if(p.cupomManual) return;
         if(p.cupomOriginal){ p.item.cupom = p.cupomOriginal; p.cupomAuto = false; return; }
+        if(semCupomAutomatico(p.item.categoria)){ p.item.cupom = ""; p.cupomAuto = false; return; }
         p.item.cupom = p.opcoesCupom.length ? p.opcoesCupom[0].cupom.codigo : "";
         p.cupomAuto = !!p.item.cupom;
     });
@@ -729,7 +736,7 @@ async function aplicarNasPublicadas(){
             if(isFinite(inicio) && agora - inicio > 72 * 3600 * 1000) return;   // já expirou
             const atual = (o.cupom || "").trim();
             if(atual && !codigosDoDia.has(atual.toUpperCase())){ manuais++; return; }   // escolhido à mão
-            const ops = FarejadinhosCupons.opcoes(cuponsDia, o.preco, o.link, "");
+            const ops = semCupomAutomatico(o.categoria) ? [] : FarejadinhosCupons.opcoes(cuponsDia, o.preco, o.link, "");
             const melhor = ops.length ? ops[0].cupom.codigo : "";
             if(melhor) comCupom++; else semCupom++;
             if(melhor !== atual) mudancas.push({ acao: "cupons", slug: o.slug, cupom: melhor, produto: o.produto });
