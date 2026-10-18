@@ -1,0 +1,15 @@
+{
+  "name": "Farejadinhos da Yang",
+  "short_name": "Farejadinhos",
+  "description": "A Yang fareja os melhores preços da internet pra você.",
+  "lang": "pt-BR",
+  "start_url": "/?origem=app",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FDF3E3",
+  "theme_color": "#E5232E",
+  "icons": [
+    { "src": "/assets/favicon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/favicon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

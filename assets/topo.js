@@ -198,6 +198,19 @@ window.FAREJA_ICONES_CAT = {
 
 /* ===== AVISOS (notificações) — assets/avisos-push.js ===== */
 (function () {
+    // "cartão de app" (manifest): no iPhone, é o que faz o site virar app
+    // na tela de início — e só assim ele pode receber avisos
+    if (!document.querySelector("link[rel=manifest]")) {
+        var head = document.head;
+        var l = document.createElement("link"); l.rel = "manifest"; l.href = "/manifest.webmanifest"; head.appendChild(l);
+        [["apple-mobile-web-app-capable", "yes"], ["mobile-web-app-capable", "yes"], ["apple-mobile-web-app-title", "Farejadinhos"], ["theme-color", "#E5232E"]].forEach(function (m) {
+            if (document.querySelector("meta[name='" + m[0] + "']")) return;
+            var e = document.createElement("meta"); e.name = m[0]; e.content = m[1]; head.appendChild(e);
+        });
+        if (!document.querySelector("link[rel=apple-touch-icon]")) {
+            var i = document.createElement("link"); i.rel = "apple-touch-icon"; i.href = "/assets/favicon-180.png"; head.appendChild(i);
+        }
+    }
     var atual = document.currentScript;
     var tags = document.querySelectorAll("script[src*='assets/topo.js']");
     var eu = atual || tags[tags.length - 1];
