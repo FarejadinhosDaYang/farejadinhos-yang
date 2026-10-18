@@ -41,6 +41,7 @@ h1{font-family:'Baloo 2',sans-serif;color:var(--red-dark);font-size:26px;margin:
 .status.ok{display:block;color:#1d6b33}
 .status.erro{display:block;color:#a3141c}
 .status.espera{display:block;color:var(--ink)}
+.antigo{font-size:12px;color:var(--muted);text-align:center;text-decoration:underline}
 .abas{display:flex;gap:6px}
 .aba{flex:1;border:1.5px solid var(--line);background:#fff;border-radius:10px;padding:8px;font:700 13px 'Work Sans',Arial,sans-serif;cursor:pointer;color:var(--ink)}
 .aba.ativa{background:var(--ink);color:#fff;border-color:var(--ink)}
@@ -115,19 +116,15 @@ async function carregar(){
             (s.cupom ? ` (cupom ${s.cupom})` : "") + ` 🐾 Link no story!`;
         return `<div class="story">
             <div class="pos">${MEDALHAS[i] || ""} TOP ${s.posicao} do dia</div>
-            ${url && urlPodio ? `<div class="abas">
-                <button class="aba ativa" data-src="${urlPodio}?v=${v}">🏆 Pódio (6 s)</button>
-                <button class="aba" data-src="${url}?v=${v}">🎬 Vídeo (12 s)</button>
-            </div>` : ""}
             <video src="${inicial}?v=${v}" controls playsinline preload="metadata"></video>
             <div class="nome">${esc(s.produto)}</div>
             <div class="preco">${esc(s.preco)}${s.cupom ? ` <small style="font-size:13px;color:#B26200">🏷️ ${esc(s.cupom)}</small>` : ""}</div>
             <div class="botoes">
-                ${urlPodio ? `<a class="baixar" href="${urlPodio}?v=${v}">⬇️ Baixar imagem de pódio</a>` : ""}
-                ${url ? `<a class="baixar sec" href="${url}?v=${v}" style="background:#fff">⬇️ Baixar vídeo</a>` : ""}
+                ${inicial ? `<a class="baixar" href="${inicial}?v=${v}" download>⬇️ Baixar story</a>` : ""}
                 <button class="sec" data-copiar="${esc(s.pagina)}">🔗 Copiar link da oferta</button>
                 <button class="sec" data-copiar="${esc(legenda)}">📝 Copiar texto sugerido</button>
             </div>
+            ${url && urlPodio ? `<a class="antigo" href="${url}?v=${v}">versão antiga, com a Yang abrindo (12 s)</a>` : ""}
         </div>`;
     }).join("");
 
