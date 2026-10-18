@@ -51,6 +51,7 @@
         "<option value='cupons'>🏷️ Quem quer os cupons do dia</option>" +
         "<option value='todos'>Todo mundo que ativou os avisos</option></select>" +
         "<button data-enviar>📣 Enviar aviso</button><div class='pb-msg' data-msg></div>" +
+        "<button data-rodar style='background:var(--orange,#F7941D);color:var(--ink,#2B1B12)'>⚡ Rodar os avisos automáticos agora</button><div class='pb-msg' data-msg-rodar></div>" +
         "<div class='pb-obs'>Os avisos de categorias, palavras e cupons do dia saem sozinhos (das 8h às 22h, no máximo 3 por pessoa por dia). Use este só pra algo especial.</div>" +
         "</details>";
 
@@ -84,6 +85,20 @@
             q("[data-mensagem]").value = [o.preco ? "Por " + (/^R\$/.test(o.preco) ? o.preco : "R$ " + o.preco) : "", o.cupom ? "cupom " + o.cupom : ""].filter(Boolean).join(" · ") || "Toque pra ver a oferta";
             q("[data-url]").value = SITE + "/ofertas/" + encodeURIComponent(o.slug) + "/";
             q("[data-url]").dataset.imagem = o.imagem ? SITE + "/assets/" + encodeURIComponent(o.imagem) : "";
+        };
+        q("[data-rodar]").onclick = function () {
+            var btn = this, msg = q("[data-msg-rodar]");
+            var s = senha();
+            if (!s) { msg.className = "pb-msg erro"; msg.textContent = "Digite a senha do painel."; return; }
+            btn.disabled = true; btn.textContent = "Rodando...";
+            post("/rodar-agora", { senha: s }).then(function (r) {
+                msg.className = "pb-msg";
+                if (r.pulou) msg.textContent = "⏸️ Fora do horário (os avisos automáticos só saem das 8h às 22h).";
+                else if (r.iniciado) msg.textContent = "✅ Primeira rodada: as ofertas que já estavam no ar foram anotadas (sem avisar ninguém). Daqui pra frente, as novas avisam.";
+                else msg.textContent = "✅ " + (r.novas || 0) + " oferta(s) nova(s) conferida(s) · " + (r.ok || 0) + " aviso(s) enviado(s)" +
+                    (r.cupons && r.cupons.ok ? " · " + r.cupons.ok + " aviso(s) de cupom" : "") + ".";
+            }).catch(function (e) { msg.className = "pb-msg erro"; msg.textContent = "❌ " + e.message; })
+              .then(function () { btn.disabled = false; btn.textContent = "⚡ Rodar os avisos automáticos agora"; });
         };
         q("[data-enviar]").onclick = function () {
             var btn = this, msg = q("[data-msg]");
