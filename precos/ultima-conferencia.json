@@ -1,20 +1,14 @@
 {
-  "quando": "2026-10-18T04:27:31Z",
+  "quando": "2026-10-18T09:34:20Z",
   "origem": "schedule",
   "total": 217,
-  "iguais": 54,
+  "iguais": 55,
   "mudaram": [
     {
       "slug": "aspirador-manual-piscina-herbinject-azul",
       "produto": "Aspirador Manual Piscina Herbinject Azul",
-      "de": "R$ 92,82",
-      "para": "338,95"
-    },
-    {
-      "slug": "fritadeira-sem-oleo-air-fryer-4l-mondial-1500w",
-      "produto": "Fritadeira sem óleo air fryer 4L Mondial 1500W",
-      "de": "R$ 254,14",
-      "para": "290,02"
+      "de": "R$ 338,95",
+      "para": "35,80"
     }
   ],
   "semPreco": [
