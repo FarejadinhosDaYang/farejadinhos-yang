@@ -173,7 +173,7 @@
                 msg.className = "yp-msg"; msg.textContent = "✅ Pronto! A Yang vai te avisar. 🐶";
                 btn.textContent = "Salvo"; setTimeout(fechar, 1600);
             }).catch(function (e) {
-                msg.className = "yp-msg erro"; msg.textContent = e.message || "Não deu certo agora, tente de novo.";
+                msg.className = "yp-msg erro"; msg.textContent = /fetch|Failed|NetworkError|Load failed/i.test(e.message || "") ? "Os avisos ainda não estão disponíveis. Tente de novo mais tarde 🙂" : (e.message || "Não deu certo agora, tente de novo.");
                 btn.disabled = false; btn.textContent = "Ativar avisos";
             });
         };
@@ -205,6 +205,11 @@
     }
     function convidar() {
         if (!podeConvidar() || faixa || document.querySelector(".yp-fundo")) return;
+        // só convida se o serviço de avisos estiver no ar
+        fetch(PUSH_URL + "/chave").then(function (r) { if (r.ok) mostrarFaixa(); }).catch(function () {});
+    }
+    function mostrarFaixa() {
+        if (faixa || document.querySelector(".yp-fundo")) return;
         faixa = document.createElement("div");
         faixa.className = "yp-faixa";
         faixa.innerHTML = "<img src='" + base + "assets/yang-badge.png' alt=''>" +
