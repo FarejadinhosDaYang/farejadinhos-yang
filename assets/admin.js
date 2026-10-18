@@ -19,6 +19,12 @@
     var base = (script && script.getAttribute("data-base")) || "";
 
     function ler() { try { return localStorage.getItem(CHAVE) || ""; } catch (e) { return ""; } }
+    // A barra só aparece quando você LIGA o modo admin (?admin no endereço).
+    // Ter a senha salva pelo painel não basta — senão o site sempre abria
+    // em modo admin no seu navegador.
+    var CHAVE_MODO = "farejadinhos_admin_modo";
+    function modoLigado() { try { return localStorage.getItem(CHAVE_MODO) === "1"; } catch (e) { return false; } }
+    function ligarModo(v) { try { if (v) localStorage.setItem(CHAVE_MODO, "1"); else localStorage.removeItem(CHAVE_MODO); } catch (e) {} }
     function gravar(v) { try { if (v) localStorage.setItem(CHAVE, v); else localStorage.removeItem(CHAVE); } catch (e) {} }
     function esc(t) { var d = document.createElement("div"); d.textContent = t == null ? "" : String(t); return d.innerHTML; }
 
@@ -79,7 +85,7 @@
     }
 
     function sair() {
-        gravar("");
+        ligarModo(false);   // esconde a barra; a senha continua salva pro painel
         location.href = location.pathname;
     }
 
@@ -273,9 +279,11 @@
     }
 
     function iniciar() {
-        var pediu = /[?&]admin\b/.test(location.search) || location.hash === "#admin";
-        if (ler()) ligar();
-        else if (pediu) pedirSenha(ligar);
+        var pediu = /[?&]admin\b/.test(location.search) || location.hash === "#admin" || location.hash === "#editar";
+        if (pediu) {
+            ligarModo(true);
+            if (ler()) ligar(); else pedirSenha(ligar);
+        } else if (modoLigado() && ler()) ligar();
     }
 
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", iniciar);
