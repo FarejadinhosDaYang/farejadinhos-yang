@@ -1,20 +1,38 @@
 {
-  "quando": "2026-10-19T11:39:42Z",
-  "origem": "workflow_dispatch",
+  "quando": "2026-10-19T13:07:52Z",
+  "origem": "schedule",
   "total": 217,
-  "iguais": 60,
+  "iguais": 56,
   "mudaram": [
     {
-      "slug": "dispenser-giratorio-organizador-alimentos",
-      "produto": "Dispenser Giratorio Organizador Alimentos",
-      "de": "R$ 129,99",
-      "para": "78,99"
+      "slug": "kit-2-faixa-de-cabelo-toalha-para-make-skincare",
+      "produto": "Kit 2 Faixa De Cabelo Toalha Para Make Skincare",
+      "de": "R$ 26,06",
+      "para": "25,12"
     },
     {
-      "slug": "celular-samsung-galaxy-s25-fe-5g-128gb",
-      "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
-      "de": "R$ 3.099,00",
-      "para": "2998,00"
+      "slug": "tapete-pelucia-antiderrapante-decoracao-felpudo-2",
+      "produto": "Tapete Pelúcia Antiderrapante Decoração Felpudo",
+      "de": "R$ 39,90",
+      "para": "24,77"
+    },
+    {
+      "slug": "tapete-pelucia-antiderrapante-decoracao-felpudo-3",
+      "produto": "Tapete Pelúcia Antiderrapante Decoração Felpudo",
+      "de": "R$ 39,90",
+      "para": "24,77"
+    },
+    {
+      "slug": "fita-teste-piscina-cloro-ph-alcalinidade",
+      "produto": "Fita Teste Piscina Cloro, Ph, Alcalinidade",
+      "de": "R$ 34,45",
+      "para": "35,90"
+    },
+    {
+      "slug": "fritadeira-sem-oleo-air-fryer-4l-mondial-1500w",
+      "produto": "Fritadeira sem óleo air fryer 4L Mondial 1500W",
+      "de": "R$ 290,02",
+      "para": "254,14"
     }
   ],
   "semPreco": [
@@ -920,7 +938,7 @@
       "produto": "iPhone 18 Pro 256GB Preto (somente eSIM)",
       "link": "https://meli.la/18pktG2",
       "atual": "R$ 9.499,00",
-      "lido": "11772,00",
+      "lido": "11805,00",
       "referencia": "preco posto a mao em 18/10 23:09"
     },
     {
@@ -962,6 +980,14 @@
       "atual": "R$ 4.559,05",
       "lido": "5332,00",
       "referencia": "preco posto a mao em 19/10 08:26"
+    },
+    {
+      "slug": "aspirador-manual-piscina-herbinject-azul",
+      "produto": "Aspirador Manual Piscina Herbinject Azul",
+      "link": "https://meli.la/1t2eJpi",
+      "atual": "R$ 40,88",
+      "lido": "47,90",
+      "referencia": "preco posto a mao em 19/10 08:40"
     }
   ]
 }
