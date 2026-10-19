@@ -1,38 +1,20 @@
 {
-  "quando": "2026-10-19T11:27:47Z",
+  "quando": "2026-10-19T11:39:42Z",
   "origem": "workflow_dispatch",
   "total": 217,
-  "iguais": 56,
+  "iguais": 60,
   "mudaram": [
-    {
-      "slug": "copo-termica-600ml-inox-anti-vazamento",
-      "produto": "Copo Térmica 600ml Inox Anti-vazamento",
-      "de": "R$ 32,24",
-      "para": "48,99"
-    },
     {
       "slug": "dispenser-giratorio-organizador-alimentos",
       "produto": "Dispenser Giratorio Organizador Alimentos",
-      "de": "R$ 78,99",
-      "para": "129,99"
+      "de": "R$ 129,99",
+      "para": "78,99"
     },
     {
       "slug": "celular-samsung-galaxy-s25-fe-5g-128gb",
       "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
-      "de": "R$ 2.998,00",
-      "para": "3099,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
-      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 5.065,61",
-      "para": "5149,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-s26-fe-128gb-8gb-ram-tela",
-      "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
-      "de": "R$ 3.999,00",
-      "para": "5499,00"
+      "de": "R$ 3.099,00",
+      "para": "2998,00"
     }
   ],
   "semPreco": [
@@ -934,19 +916,11 @@
   "erros": [],
   "suspeitos": [
     {
-      "slug": "aspirador-manual-piscina-herbinject-azul",
-      "produto": "Aspirador Manual Piscina Herbinject Azul",
-      "link": "https://meli.la/1t2eJpi",
-      "atual": "R$ 47,90",
-      "lido": "338,95",
-      "referencia": "R$ 42,01"
-    },
-    {
       "slug": "iphone-18-pro-256gb-preto-somente-esim",
       "produto": "iPhone 18 Pro 256GB Preto (somente eSIM)",
       "link": "https://meli.la/18pktG2",
       "atual": "R$ 9.499,00",
-      "lido": "5238,00",
+      "lido": "11772,00",
       "referencia": "preco posto a mao em 18/10 23:09"
     },
     {
@@ -954,7 +928,7 @@
       "produto": "iPhone 18 Pro Max 256GB Preto (somente eSIM)",
       "link": "https://meli.la/2fXqW9L",
       "atual": "R$ 10.289,00",
-      "lido": "5238,00",
+      "lido": "13049,00",
       "referencia": "preco posto a mao em 18/10 23:09"
     },
     {
