@@ -3489,23 +3489,6 @@
     "parcelas": 10
   },
   {
-    "produto": "iPhone 17 Pro Max 256GB - Laranja-cósmico",
-    "preco": "R$ 9.719,00",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Celulares",
-    "destaque": false,
-    "imagem": "e828b664-7283-476e-9a55-b22edfce097b.webp",
-    "link": "https://meli.la/2wS1Uaq",
-    "url": "https://farejadinhosdayang.com.br/ofertas/iphone-17-pro-max-256gb-laranja-cosmico/",
-    "slug": "iphone-17-pro-max-256gb-laranja-cosmico",
-    "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "9719,00",
-    "precoAPrazo": "10790,00",
-    "liberacao": "2026-10-21T22:12:00Z",
-    "parcelas": 10
-  },
-  {
     "produto": "Fritadeira Elétrica Air Fryer Wap Wafg2s 5 Litros",
     "preco": "R$ 209,00",
     "precoAntigo": "",
@@ -3609,5 +3592,23 @@
     "precoConferido": "2026-10-18T23:13:44Z",
     "precoManual": "2026-10-19T02:09:51Z",
     "precoTravado": true
+  },
+  {
+    "produto": "iPhone 17 Pro Max 256GB - Laranja-cósmico",
+    "preco": "R$ 8.199,00",
+    "precoAntigo": "",
+    "cupom": "",
+    "categoria": "Celulares",
+    "destaque": false,
+    "imagem": "e828b664-7283-476e-9a55-b22edfce097b.webp",
+    "link": "https://meli.la/2wS1Uaq",
+    "url": "https://farejadinhosdayang.com.br/ofertas/iphone-17-pro-max-256gb-laranja-cosmico/",
+    "slug": "iphone-17-pro-max-256gb-laranja-cosmico",
+    "data": "2026-10-18T15:10:05Z",
+    "precoAVista": "8199,00",
+    "precoAPrazo": "10790,00",
+    "liberacao": "2026-10-21T22:12:00Z",
+    "precoManual": "2026-10-19T11:22:11Z",
+    "parcelas": 10
   }
 ]
