@@ -1,10 +1,34 @@
 {
-  "gerado": "2026-10-18T14:14:25Z",
+  "gerado": "2026-10-19T17:17:36Z",
   "itens": [
     {
       "arquivo": "top1.mp4",
       "podio": "podio1.mp4",
       "posicao": 1,
+      "produto": "iPhone 17 Pro Max 256GB - Laranja-cósmico",
+      "nome": "iPhone 17 Pro Max 256GB",
+      "preco": "R$ 8.199,00",
+      "cupom": "",
+      "slug": "iphone-17-pro-max-256gb-laranja-cosmico",
+      "pagina": "https://farejadinhosdayang.com.br/ofertas/iphone-17-pro-max-256gb-laranja-cosmico/",
+      "link": "https://meli.la/2wS1Uaq"
+    },
+    {
+      "arquivo": "top2.mp4",
+      "podio": "podio2.mp4",
+      "posicao": 2,
+      "produto": "iPhone 17 Pro 256GB - Laranja-cósmico",
+      "nome": "iPhone 17 Pro 256GB",
+      "preco": "R$ 7.799,00",
+      "cupom": "",
+      "slug": "iphone-17-pro-256gb-laranja-cosmico",
+      "pagina": "https://farejadinhosdayang.com.br/ofertas/iphone-17-pro-256gb-laranja-cosmico/",
+      "link": "https://meli.la/2tshrR8"
+    },
+    {
+      "arquivo": "top3.mp4",
+      "podio": "podio3.mp4",
+      "posicao": 3,
       "produto": "Necessaire Organizador Cosmético Maquiagem",
       "nome": "Necessaire Organizador Cosmético",
       "preco": "R$ 15,50",
@@ -12,30 +36,6 @@
       "slug": "necessaire-organizador-cosmetico-maquiagem-2",
       "pagina": "https://farejadinhosdayang.com.br/ofertas/necessaire-organizador-cosmetico-maquiagem-2/",
       "link": "https://s.shopee.com.br/2gC060fI5l"
-    },
-    {
-      "arquivo": "top2.mp4",
-      "podio": "podio2.mp4",
-      "posicao": 2,
-      "produto": "Porta Maquiagem Organizador De Cosméticos Perfume",
-      "nome": "Porta Maquiagem Organizador",
-      "preco": "R$ 29,89",
-      "cupom": "",
-      "slug": "porta-maquiagem-organizador-de-cosmeticos-perfume-2",
-      "pagina": "https://farejadinhosdayang.com.br/ofertas/porta-maquiagem-organizador-de-cosmeticos-perfume-2/",
-      "link": "https://s.shopee.com.br/70KzFyOnIV"
-    },
-    {
-      "arquivo": "top3.mp4",
-      "podio": "podio3.mp4",
-      "posicao": 3,
-      "produto": "Expositor de Perfumes Cosméticos 3 Andares",
-      "nome": "Expositor de Perfumes Cosméticos 3",
-      "preco": "R$ 30,99",
-      "cupom": "",
-      "slug": "expositor-de-perfumes-cosmeticos-3-andares",
-      "pagina": "https://farejadinhosdayang.com.br/ofertas/expositor-de-perfumes-cosmeticos-3-andares/",
-      "link": "https://s.shopee.com.br/5fpbfWTs07"
     }
   ]
 }
