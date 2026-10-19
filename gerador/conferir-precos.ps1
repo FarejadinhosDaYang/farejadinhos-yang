@@ -96,8 +96,11 @@ foreach ($O in $Alvo) {
         elseif ($NAtual -and [Math]::Abs($NNovo - $NAtual) -lt 0.01) {
             $Iguais++
         }
-        elseif ($O.PSObject.Properties["precoManual"] -and (ParaDataUtc $O.precoManual) -and
-                ($Agora - (ParaDataUtc $O.precoManual)).TotalDays -le 7) {
+        elseif (($O.PSObject.Properties["precoTravado"] -and $O.precoTravado -eq $true) -or
+                ($O.PSObject.Properties["precoManual"] -and (ParaDataUtc $O.precoManual) -and
+                ($Agora - (ParaDataUtc $O.precoManual)).TotalDays -le 7)) {
+            # Preco travado (a leitura automatica erra nesse anuncio) ou posto a mao
+            # ha menos de 7 dias: NAO muda o site, so avisa no painel
             # Preco posto a mao ha menos de 7 dias: NAO muda o site, so avisa no painel
             Write-Host "  MANUAL (nao aplicado): $($O.slug): site $($O.preco), loja $Novo"
             $Relatorio.suspeitos += [ordered]@{
