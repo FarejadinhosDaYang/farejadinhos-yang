@@ -1,38 +1,26 @@
 {
-  "quando": "2026-10-18T23:09:07Z",
-  "origem": "schedule",
+  "quando": "2026-10-19T01:02:18Z",
+  "origem": "workflow_dispatch",
   "total": 223,
-  "iguais": 65,
+  "iguais": 66,
   "mudaram": [
     {
-      "slug": "colher-dosadora-infantil-rosa-alimentacao-bebe",
-      "produto": "Colher Dosadora Infantil Rosa Alimentação Bebê",
-      "de": "R$ 19,50",
-      "para": "20,23"
+      "slug": "dispenser-giratorio-organizador-alimentos",
+      "produto": "Dispenser Giratorio Organizador Alimentos",
+      "de": "R$ 129,99",
+      "para": "78,99"
     },
     {
       "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
       "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 5.065,61",
-      "para": "5149,00"
+      "de": "R$ 5.149,00",
+      "para": "5065,61"
     },
     {
       "slug": "celular-samsung-galaxy-s26-fe-128gb-8gb-ram-tela",
       "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
-      "de": "R$ 5.499,00",
-      "para": "3999,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera-2",
-      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 5.332,00",
-      "para": "5065,61"
-    },
-    {
-      "slug": "iphone-18-pro-max-256gb-preto-somente-esim",
-      "produto": "iPhone 18 Pro Max 256GB Preto (somente eSIM)",
-      "de": "R$ 10.289,00",
-      "para": "5238,00"
+      "de": "R$ 3.999,00",
+      "para": "5499,00"
     }
   ],
   "semPreco": [
@@ -960,6 +948,14 @@
       "atual": "R$ 4.889,00",
       "lido": "12098,00",
       "referencia": "R$ 4.889,00"
+    },
+    {
+      "slug": "iphone-18-pro-max-256gb-preto-somente-esim",
+      "produto": "iPhone 18 Pro Max 256GB Preto (somente eSIM)",
+      "link": "https://meli.la/2fXqW9L",
+      "atual": "R$ 10.289,00",
+      "lido": "5238,00",
+      "referencia": "preco posto a mao em 18/10 22:01"
     }
   ]
 }
