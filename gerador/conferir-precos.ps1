@@ -96,6 +96,16 @@ foreach ($O in $Alvo) {
         elseif ($NAtual -and [Math]::Abs($NNovo - $NAtual) -lt 0.01) {
             $Iguais++
         }
+        elseif ($O.PSObject.Properties["precoManual"] -and (ParaDataUtc $O.precoManual) -and
+                ($Agora - (ParaDataUtc $O.precoManual)).TotalDays -le 7) {
+            # Preco posto a mao ha menos de 7 dias: NAO muda o site, so avisa no painel
+            Write-Host "  MANUAL (nao aplicado): $($O.slug): site $($O.preco), loja $Novo"
+            $Relatorio.suspeitos += [ordered]@{
+                slug = [string]$O.slug; produto = [string]$O.produto; link = [string]$O.link
+                atual = [string]$O.preco; lido = $Novo
+                referencia = "preco posto a mao em " + (ParaDataUtc $O.precoManual).ToOffset([TimeSpan]::FromHours(-3)).ToString("dd/MM HH:mm")
+            }
+        }
         elseif (($Ref = $(if ($Referencia.ContainsKey([string]$O.link)) { $Referencia[[string]$O.link] } else { $NAtual })) -and
                 ($NNovo -gt 2 * $Ref -or $NNovo -lt $Ref / 2)) {
             # Muito fora do normal (mais que o dobro ou menos da metade): NÃO muda o site,

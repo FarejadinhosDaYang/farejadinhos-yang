@@ -329,6 +329,12 @@ if ($Liberacao.Trim() -ne "") {
     $NovaEntrada.liberacao = $Liberacao.Trim()
 }
 
+# Edicao feita a mao (painel/admin): a conferencia automatica de precos
+# respeita esse preco por 7 dias (ver gerador/conferir-precos.ps1)
+if ($UsaImagemExistente) {
+    $NovaEntrada.precoManual = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
+}
+
 # Só guarda parcelas quando a oferta tem preço a prazo
 if ($ParcelasFinal -and $PrecoAPrazoJs -ne "") {
     $NovaEntrada.parcelas = $ParcelasFinal
