@@ -1,38 +1,80 @@
 {
-  "quando": "2026-10-19T13:07:52Z",
+  "quando": "2026-10-19T19:19:20Z",
   "origem": "schedule",
-  "total": 217,
-  "iguais": 56,
+  "total": 215,
+  "iguais": 46,
   "mudaram": [
     {
-      "slug": "kit-2-faixa-de-cabelo-toalha-para-make-skincare",
-      "produto": "Kit 2 Faixa De Cabelo Toalha Para Make Skincare",
-      "de": "R$ 26,06",
-      "para": "25,12"
-    },
-    {
-      "slug": "tapete-pelucia-antiderrapante-decoracao-felpudo-2",
-      "produto": "Tapete Pelúcia Antiderrapante Decoração Felpudo",
-      "de": "R$ 39,90",
-      "para": "24,77"
-    },
-    {
-      "slug": "tapete-pelucia-antiderrapante-decoracao-felpudo-3",
-      "produto": "Tapete Pelúcia Antiderrapante Decoração Felpudo",
-      "de": "R$ 39,90",
-      "para": "24,77"
-    },
-    {
-      "slug": "fita-teste-piscina-cloro-ph-alcalinidade",
-      "produto": "Fita Teste Piscina Cloro, Ph, Alcalinidade",
-      "de": "R$ 34,45",
+      "slug": "kit-2-pochete-academia-esportiva-fitness-corrida",
+      "produto": "Kit 2 Pochete Academia Esportiva Fitness Corrida",
+      "de": "R$ 26,68",
       "para": "35,90"
     },
     {
-      "slug": "fritadeira-sem-oleo-air-fryer-4l-mondial-1500w",
-      "produto": "Fritadeira sem óleo air fryer 4L Mondial 1500W",
-      "de": "R$ 290,02",
-      "para": "254,14"
+      "slug": "super-clarificante-para-piscina-power-gel",
+      "produto": "Super Clarificante para Piscina Power Gel",
+      "de": "R$ 29,94",
+      "para": "31,81"
+    },
+    {
+      "slug": "escova-curva-piscina-engate-rapido-limpeza-fundo",
+      "produto": "Escova Curva Piscina Engate Rápido Limpeza Fundo",
+      "de": "R$ 32,45",
+      "para": "35,90"
+    },
+    {
+      "slug": "camera-lampada-de-seguranca-wifi-ip-app-yoosee",
+      "produto": "Câmera Lâmpada De Segurança Wifi Ip App Yoosee",
+      "de": "R$ 57,44",
+      "para": "61,75"
+    },
+    {
+      "slug": "varal-de-chao-grande-de-roupas-3-andares-dobravel",
+      "produto": "Varal De Chão Grande De Roupas 3 Andares Dobrável",
+      "de": "R$ 78,80",
+      "para": "70,56"
+    },
+    {
+      "slug": "kit-6-pote-vidro-porta-temperos-hermetico-cozinha",
+      "produto": "Kit 6 Pote Vidro Porta Temperos Hermético Cozinha",
+      "de": "R$ 40,89",
+      "para": "39,89"
+    },
+    {
+      "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
+      "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
+      "de": "R$ 59,73",
+      "para": "65,18"
+    },
+    {
+      "slug": "chaleira-eletrica-atacama-1-8l-unitermi",
+      "produto": "Chaleira Eletrica Atacama 1,8l - Unitermi",
+      "de": "R$ 47,43",
+      "para": "45,90"
+    },
+    {
+      "slug": "marmita-eletrica-preta-bivolt-portatil-domestica",
+      "produto": "Marmita Elétrica Preta Bivolt Portátil Doméstica",
+      "de": "R$ 48,40",
+      "para": "51,49"
+    },
+    {
+      "slug": "frigideira-ceramica-antiaderente-inducao-azul",
+      "produto": "Frigideira Cerâmica Antiaderente Indução Azul",
+      "de": "R$ 41,99",
+      "para": "44,99"
+    },
+    {
+      "slug": "dispenser-porta-detergente-3-em-1-em-aco-inox",
+      "produto": "Dispenser Porta Detergente 3 em 1 em Aço Inox",
+      "de": "R$ 32,90",
+      "para": "34,20"
+    },
+    {
+      "slug": "fritadeira-eletrica-afon-12l-bg-forno-oven",
+      "produto": "Fritadeira Elétrica AFON-12L-BG Forno Oven",
+      "de": "R$ 505,47",
+      "para": "514,09"
     }
   ],
   "semPreco": [
@@ -931,14 +973,21 @@
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     }
   ],
-  "erros": [],
+  "erros": [
+    {
+      "slug": "celular-samsung-galaxy-s25-fe-5g-128gb",
+      "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
+      "link": "https://meli.la/2XYYVU8",
+      "motivo": "Response status code does not indicate success: 404 (Not Found). :: \r\n{\r\n  \"sucesso\": false,\r\n  \"produto\": \"\",\r\n  \"preco\": \"\",\r\n  \"precoAntigo\": \"\",\r\n  \"imagemUrl\": \"\",\r\n  \"parcelas\": \"\",\r\n  \"precoAPrazo\": \"\",\r\n  \"semJuros\": \"\",\r\n  \"linkFinal\": \"https://www.mercadolivre.com.br/social/bernardshimizu/lists\",\r\n  \"tentativas\": [\r\n    \"pagina (facebookexternalhit): nada\""
+    }
+  ],
   "suspeitos": [
     {
       "slug": "iphone-18-pro-256gb-preto-somente-esim",
       "produto": "iPhone 18 Pro 256GB Preto (somente eSIM)",
       "link": "https://meli.la/18pktG2",
       "atual": "R$ 9.499,00",
-      "lido": "11805,00",
+      "lido": "4889,00",
       "referencia": "preco posto a mao em 18/10 23:09"
     },
     {
@@ -946,7 +995,7 @@
       "produto": "iPhone 18 Pro Max 256GB Preto (somente eSIM)",
       "link": "https://meli.la/2fXqW9L",
       "atual": "R$ 10.289,00",
-      "lido": "13049,00",
+      "lido": "4889,00",
       "referencia": "preco posto a mao em 18/10 23:09"
     },
     {
@@ -970,7 +1019,7 @@
       "produto": "Celular Samsung Galaxy S26 Ultra 5G 256GB 12GB RAM",
       "link": "https://link.amazon/B098ObooL",
       "atual": "R$ 6.546,59",
-      "lido": "7498,89",
+      "lido": "7274,00",
       "referencia": "preco posto a mao em 19/10 08:25"
     },
     {
