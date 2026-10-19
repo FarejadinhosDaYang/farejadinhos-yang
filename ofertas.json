@@ -3419,24 +3419,6 @@
     "precoConferido": "2026-10-19T06:16:53Z"
   },
   {
-    "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-    "preco": "R$ 5.332,00",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Celulares",
-    "destaque": false,
-    "imagem": "be80d970-5211-4ffe-8904-6a755e29303b.jpg",
-    "link": "https://link.amazon/B0epLOItP",
-    "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera-2/",
-    "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera-2",
-    "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "R$ 5.332,00",
-    "precoAPrazo": "5065,61",
-    "liberacao": "2026-10-20T11:56:00Z",
-    "parcelas": 12,
-    "precoConferido": "2026-10-19T01:17:58Z"
-  },
-  {
     "produto": "Fritadeira Elétrica Air Fryer Wap Wafg2s 5 Litros",
     "preco": "R$ 209,00",
     "precoAntigo": "",
@@ -3593,6 +3575,24 @@
     "precoAPrazo": "7274,00",
     "liberacao": "2026-10-20T18:28:00Z",
     "precoManual": "2026-10-19T11:25:14Z",
+    "parcelas": 12
+  },
+  {
+    "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
+    "preco": "R$ 4.559,05",
+    "precoAntigo": "",
+    "cupom": "",
+    "categoria": "Celulares",
+    "destaque": false,
+    "imagem": "be80d970-5211-4ffe-8904-6a755e29303b.jpg",
+    "link": "https://link.amazon/B0epLOItP",
+    "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera-2/",
+    "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera-2",
+    "data": "2026-10-18T15:10:05Z",
+    "precoAVista": "4559,05",
+    "precoAPrazo": "5065,61",
+    "liberacao": "2026-10-20T11:56:00Z",
+    "precoManual": "2026-10-19T11:26:05Z",
     "parcelas": 12
   }
 ]
