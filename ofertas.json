@@ -3437,24 +3437,6 @@
     "precoConferido": "2026-10-19T01:17:58Z"
   },
   {
-    "produto": "Celular Samsung Galaxy S26 Ultra 5G 256GB 12GB RAM",
-    "preco": "R$ 7.274,00",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Celulares",
-    "destaque": false,
-    "imagem": "8a3e1230-4e3e-4109-877a-8c16b096077d.jpg",
-    "link": "https://link.amazon/B098ObooL",
-    "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-ultra-5g-256gb-12gb-ram/",
-    "slug": "celular-samsung-galaxy-s26-ultra-5g-256gb-12gb-ram",
-    "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "R$ 7.274,00",
-    "precoAPrazo": "7274,00",
-    "liberacao": "2026-10-20T18:28:00Z",
-    "parcelas": 12,
-    "precoConferido": "2026-10-19T02:15:01Z"
-  },
-  {
     "produto": "Fritadeira Elétrica Air Fryer Wap Wafg2s 5 Litros",
     "preco": "R$ 209,00",
     "precoAntigo": "",
@@ -3594,5 +3576,23 @@
     "liberacao": "2026-10-21T16:36:00Z",
     "precoManual": "2026-10-19T11:23:17Z",
     "parcelas": 10
+  },
+  {
+    "produto": "Celular Samsung Galaxy S26 Ultra 5G 256GB 12GB RAM",
+    "preco": "R$ 6.546,59",
+    "precoAntigo": "",
+    "cupom": "",
+    "categoria": "Celulares",
+    "destaque": false,
+    "imagem": "8a3e1230-4e3e-4109-877a-8c16b096077d.jpg",
+    "link": "https://link.amazon/B098ObooL",
+    "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-ultra-5g-256gb-12gb-ram/",
+    "slug": "celular-samsung-galaxy-s26-ultra-5g-256gb-12gb-ram",
+    "data": "2026-10-18T15:10:05Z",
+    "precoAVista": "6546,59",
+    "precoAPrazo": "7274,00",
+    "liberacao": "2026-10-20T18:28:00Z",
+    "precoManual": "2026-10-19T11:25:14Z",
+    "parcelas": 12
   }
 ]
