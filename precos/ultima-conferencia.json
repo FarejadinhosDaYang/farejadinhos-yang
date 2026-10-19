@@ -1,26 +1,20 @@
 {
-  "quando": "2026-10-19T01:13:32Z",
-  "origem": "schedule",
+  "quando": "2026-10-19T02:10:37Z",
+  "origem": "workflow_dispatch",
   "total": 223,
-  "iguais": 66,
+  "iguais": 67,
   "mudaram": [
     {
       "slug": "tapete-pelucia-antiderrapante-decoracao-felpudo-2",
       "produto": "Tapete Pelúcia Antiderrapante Decoração Felpudo",
-      "de": "R$ 39,90",
-      "para": "64,19"
+      "de": "R$ 64,19",
+      "para": "39,90"
     },
     {
-      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
-      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 5.065,61",
-      "para": "5149,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera-2",
-      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 5.065,61",
-      "para": "5332,00"
+      "slug": "celular-samsung-galaxy-s26-ultra-5g-256gb-12gb-ram",
+      "produto": "Celular Samsung Galaxy S26 Ultra 5G 256GB 12GB RAM",
+      "de": "R$ 7.498,89",
+      "para": "7274,00"
     }
   ],
   "semPreco": [
@@ -945,9 +939,9 @@
       "slug": "iphone-18-pro-256gb-preto-somente-esim",
       "produto": "iPhone 18 Pro 256GB Preto (somente eSIM)",
       "link": "https://meli.la/18pktG2",
-      "atual": "R$ 4.889,00",
+      "atual": "R$ 9.499,00",
       "lido": "12098,00",
-      "referencia": "R$ 4.889,00"
+      "referencia": "preco posto a mao em 18/10 23:09"
     },
     {
       "slug": "iphone-18-pro-max-256gb-preto-somente-esim",
@@ -955,7 +949,7 @@
       "link": "https://meli.la/2fXqW9L",
       "atual": "R$ 10.289,00",
       "lido": "5238,00",
-      "referencia": "preco posto a mao em 18/10 22:01"
+      "referencia": "preco posto a mao em 18/10 23:09"
     }
   ]
 }
