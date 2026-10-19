@@ -1,26 +1,26 @@
 {
-  "quando": "2026-10-19T01:02:18Z",
-  "origem": "workflow_dispatch",
+  "quando": "2026-10-19T01:13:32Z",
+  "origem": "schedule",
   "total": 223,
   "iguais": 66,
   "mudaram": [
     {
-      "slug": "dispenser-giratorio-organizador-alimentos",
-      "produto": "Dispenser Giratorio Organizador Alimentos",
-      "de": "R$ 129,99",
-      "para": "78,99"
+      "slug": "tapete-pelucia-antiderrapante-decoracao-felpudo-2",
+      "produto": "Tapete Pelúcia Antiderrapante Decoração Felpudo",
+      "de": "R$ 39,90",
+      "para": "64,19"
     },
     {
       "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
       "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 5.149,00",
-      "para": "5065,61"
+      "de": "R$ 5.065,61",
+      "para": "5149,00"
     },
     {
-      "slug": "celular-samsung-galaxy-s26-fe-128gb-8gb-ram-tela",
-      "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
-      "de": "R$ 3.999,00",
-      "para": "5499,00"
+      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera-2",
+      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
+      "de": "R$ 5.065,61",
+      "para": "5332,00"
     }
   ],
   "semPreco": [
@@ -938,7 +938,7 @@
       "produto": "Aspirador Manual Piscina Herbinject Azul",
       "link": "https://meli.la/1t2eJpi",
       "atual": "R$ 35,80",
-      "lido": "92,82",
+      "lido": "338,95",
       "referencia": "R$ 42,01"
     },
     {
