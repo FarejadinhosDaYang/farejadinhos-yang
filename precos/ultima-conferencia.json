@@ -1,80 +1,68 @@
 {
-  "quando": "2026-10-19T19:19:20Z",
+  "quando": "2026-10-19T23:37:19Z",
   "origem": "schedule",
   "total": 215,
-  "iguais": 46,
+  "iguais": 49,
   "mudaram": [
     {
-      "slug": "kit-2-pochete-academia-esportiva-fitness-corrida",
-      "produto": "Kit 2 Pochete Academia Esportiva Fitness Corrida",
-      "de": "R$ 26,68",
-      "para": "35,90"
-    },
-    {
-      "slug": "super-clarificante-para-piscina-power-gel",
-      "produto": "Super Clarificante para Piscina Power Gel",
-      "de": "R$ 29,94",
-      "para": "31,81"
-    },
-    {
-      "slug": "escova-curva-piscina-engate-rapido-limpeza-fundo",
-      "produto": "Escova Curva Piscina Engate Rápido Limpeza Fundo",
-      "de": "R$ 32,45",
-      "para": "35,90"
+      "slug": "tela-mosquiteiro-protetora-alimentos-bolos-paes",
+      "produto": "Tela Mosquiteiro Protetora Alimentos Bolos Pães",
+      "de": "R$ 30,99",
+      "para": "19,65"
     },
     {
       "slug": "camera-lampada-de-seguranca-wifi-ip-app-yoosee",
       "produto": "Câmera Lâmpada De Segurança Wifi Ip App Yoosee",
-      "de": "R$ 57,44",
-      "para": "61,75"
-    },
-    {
-      "slug": "varal-de-chao-grande-de-roupas-3-andares-dobravel",
-      "produto": "Varal De Chão Grande De Roupas 3 Andares Dobrável",
-      "de": "R$ 78,80",
-      "para": "70,56"
-    },
-    {
-      "slug": "kit-6-pote-vidro-porta-temperos-hermetico-cozinha",
-      "produto": "Kit 6 Pote Vidro Porta Temperos Hermético Cozinha",
-      "de": "R$ 40,89",
-      "para": "39,89"
+      "de": "R$ 61,75",
+      "para": "57,44"
     },
     {
       "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
       "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-      "de": "R$ 59,73",
-      "para": "65,18"
+      "de": "R$ 65,18",
+      "para": "62,25"
     },
     {
       "slug": "chaleira-eletrica-atacama-1-8l-unitermi",
       "produto": "Chaleira Eletrica Atacama 1,8l - Unitermi",
-      "de": "R$ 47,43",
-      "para": "45,90"
+      "de": "R$ 45,90",
+      "para": "39,90"
     },
     {
-      "slug": "marmita-eletrica-preta-bivolt-portatil-domestica",
-      "produto": "Marmita Elétrica Preta Bivolt Portátil Doméstica",
-      "de": "R$ 48,40",
-      "para": "51,49"
+      "slug": "copo-termica-600ml-inox-anti-vazamento",
+      "produto": "Copo Térmica 600ml Inox Anti-vazamento",
+      "de": "R$ 48,99",
+      "para": "34,99"
     },
     {
-      "slug": "frigideira-ceramica-antiaderente-inducao-azul",
-      "produto": "Frigideira Cerâmica Antiaderente Indução Azul",
-      "de": "R$ 41,99",
-      "para": "44,99"
+      "slug": "kit-chave-catraca-soquete-46-pecas-indufer",
+      "produto": "Kit Chave Catraca Soquete 46 Peças Indufer",
+      "de": "R$ 28,99",
+      "para": "25,96"
     },
     {
-      "slug": "dispenser-porta-detergente-3-em-1-em-aco-inox",
-      "produto": "Dispenser Porta Detergente 3 em 1 em Aço Inox",
-      "de": "R$ 32,90",
-      "para": "34,20"
+      "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
+      "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
+      "de": "R$ 5.798,00",
+      "para": "5783,00"
     },
     {
-      "slug": "fritadeira-eletrica-afon-12l-bg-forno-oven",
-      "produto": "Fritadeira Elétrica AFON-12L-BG Forno Oven",
-      "de": "R$ 505,47",
-      "para": "514,09"
+      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
+      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
+      "de": "R$ 5.149,00",
+      "para": "5065,61"
+    },
+    {
+      "slug": "air-fryer-fritadeira-eletrica-electrolux-eaf40",
+      "produto": "Air fryer Fritadeira Elétrica Electrolux EAF40",
+      "de": "R$ 299,00",
+      "para": "302,16"
+    },
+    {
+      "slug": "s429049631-air-fryer-britania-6-5l-1700w-8-funcoes",
+      "produto": "S429049631 Air Fryer Britânia 6,5L 1700W 8 Funções",
+      "de": "R$ 296,10",
+      "para": "411,74"
     }
   ],
   "semPreco": [
@@ -973,14 +961,7 @@
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     }
   ],
-  "erros": [
-    {
-      "slug": "celular-samsung-galaxy-s25-fe-5g-128gb",
-      "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
-      "link": "https://meli.la/2XYYVU8",
-      "motivo": "Response status code does not indicate success: 404 (Not Found). :: \r\n{\r\n  \"sucesso\": false,\r\n  \"produto\": \"\",\r\n  \"preco\": \"\",\r\n  \"precoAntigo\": \"\",\r\n  \"imagemUrl\": \"\",\r\n  \"parcelas\": \"\",\r\n  \"precoAPrazo\": \"\",\r\n  \"semJuros\": \"\",\r\n  \"linkFinal\": \"https://www.mercadolivre.com.br/social/bernardshimizu/lists\",\r\n  \"tentativas\": [\r\n    \"pagina (facebookexternalhit): nada\""
-    }
-  ],
+  "erros": [],
   "suspeitos": [
     {
       "slug": "iphone-18-pro-256gb-preto-somente-esim",
@@ -1011,7 +992,7 @@
       "produto": "iPhone 17 Pro 256GB - Laranja-cósmico",
       "link": "https://meli.la/2tshrR8",
       "atual": "R$ 7.799,00",
-      "lido": "8078,00",
+      "lido": "9719,00",
       "referencia": "preco posto a mao em 19/10 08:23"
     },
     {
@@ -1019,7 +1000,7 @@
       "produto": "Celular Samsung Galaxy S26 Ultra 5G 256GB 12GB RAM",
       "link": "https://link.amazon/B098ObooL",
       "atual": "R$ 6.546,59",
-      "lido": "7274,00",
+      "lido": "7498,89",
       "referencia": "preco posto a mao em 19/10 08:25"
     },
     {
@@ -1035,7 +1016,7 @@
       "produto": "Aspirador Manual Piscina Herbinject Azul",
       "link": "https://meli.la/1t2eJpi",
       "atual": "R$ 40,88",
-      "lido": "47,90",
+      "lido": "36,65",
       "referencia": "preco posto a mao em 19/10 08:40"
     }
   ]

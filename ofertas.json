@@ -1320,7 +1320,7 @@
   },
   {
     "produto": "Tela Mosquiteiro Protetora Alimentos Bolos Pães",
-    "preco": "R$ 30,99",
+    "preco": "R$ 19,65",
     "precoAntigo": "",
     "cupom": "BOASOFERTAS",
     "categoria": "Utilidades",
@@ -1332,7 +1332,8 @@
     "data": "2026-10-15T22:42:09Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-16T19:24:00Z"
+    "liberacao": "2026-10-16T19:24:00Z",
+    "precoConferido": "2026-10-19T23:42:39Z"
   },
   {
     "produto": "Rolo Facial De Gelo Silicone Massageador",
@@ -1650,7 +1651,7 @@
   },
   {
     "produto": "Câmera Lâmpada De Segurança Wifi Ip App Yoosee",
-    "preco": "R$ 61,75",
+    "preco": "R$ 57,44",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrônicos",
@@ -1663,7 +1664,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-15T23:42:07Z",
-    "precoConferido": "2026-10-19T19:23:31Z"
+    "precoConferido": "2026-10-19T23:42:39Z"
   },
   {
     "produto": "Varal De Chão Grande De Roupas 3 Andares Dobrável",
@@ -1753,7 +1754,7 @@
   },
   {
     "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-    "preco": "R$ 65,18",
+    "preco": "R$ 62,25",
     "precoAntigo": "",
     "cupom": "BOASOFERTAS",
     "categoria": "Cozinha",
@@ -1766,7 +1767,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-26T11:56:00Z",
-    "precoConferido": "2026-10-19T19:23:31Z"
+    "precoConferido": "2026-10-19T23:42:39Z"
   },
   {
     "produto": "Jogo 6 Taças De Vidro Diamond 340 ml Com Pé",
@@ -1819,7 +1820,7 @@
   },
   {
     "produto": "Chaleira Eletrica Atacama 1,8l - Unitermi",
-    "preco": "R$ 45,90",
+    "preco": "R$ 39,90",
     "precoAntigo": "",
     "cupom": "BOASOFERTAS",
     "categoria": "Eletrodomésticos",
@@ -1832,7 +1833,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-17T16:36:00Z",
-    "precoConferido": "2026-10-19T19:23:31Z"
+    "precoConferido": "2026-10-19T23:42:39Z"
   },
   {
     "produto": "Marmita Elétrica Preta Bivolt Portátil Doméstica",
@@ -1922,7 +1923,7 @@
   },
   {
     "produto": "Copo Térmica 600ml Inox Anti-vazamento",
-    "preco": "R$ 48,99",
+    "preco": "R$ 34,99",
     "precoAntigo": "",
     "cupom": "BOASOFERTAS",
     "categoria": "Café",
@@ -1935,7 +1936,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-16T18:28:00Z",
-    "precoConferido": "2026-10-19T11:32:00Z"
+    "precoConferido": "2026-10-19T23:42:39Z"
   },
   {
     "produto": "Fritadeira sem óleo air fryer 4L Mondial 1500W",
@@ -1991,7 +1992,7 @@
   },
   {
     "produto": "Kit Chave Catraca Soquete 46 Peças Indufer",
-    "preco": "R$ 28,99",
+    "preco": "R$ 25,96",
     "precoAntigo": "",
     "cupom": "BOASOFERTAS",
     "categoria": "Utilidades, Vídeos",
@@ -2003,7 +2004,8 @@
     "data": "2026-10-15T22:42:11Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-18T00:31:23Z"
+    "liberacao": "2026-10-18T00:31:23Z",
+    "precoConferido": "2026-10-19T23:42:39Z"
   },
   {
     "produto": "Mini Compressor De Ar Portátil Carro Moto",
@@ -3323,7 +3325,7 @@
   },
   {
     "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
-    "preco": "R$ 5.798,00",
+    "preco": "R$ 5.783,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -3333,14 +3335,15 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s25-ultra-5g-256gb/",
     "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "5798,00",
+    "precoAVista": "R$ 5.783,00",
     "precoAPrazo": "6443,00",
     "liberacao": "2026-10-18T20:00:30Z",
-    "parcelas": 10
+    "parcelas": 10,
+    "precoConferido": "2026-10-19T23:42:39Z"
   },
   {
     "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-    "preco": "R$ 5.149,00",
+    "preco": "R$ 5.065,61",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -3350,11 +3353,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera/",
     "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "R$ 5.149,00",
+    "precoAVista": "R$ 5.065,61",
     "precoAPrazo": "5066,16",
     "liberacao": "2026-10-19T11:56:00Z",
     "parcelas": 12,
-    "precoConferido": "2026-10-19T11:32:00Z"
+    "precoConferido": "2026-10-19T23:42:39Z"
   },
   {
     "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
@@ -3411,7 +3414,7 @@
   },
   {
     "produto": "Air fryer Fritadeira Elétrica Electrolux EAF40",
-    "preco": "R$ 299,00",
+    "preco": "R$ 302,16",
     "precoAntigo": "",
     "cupom": "BOASOFERTAS",
     "categoria": "Eletrodomésticos",
@@ -3421,14 +3424,15 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/air-fryer-fritadeira-eletrica-electrolux-eaf40/",
     "slug": "air-fryer-fritadeira-eletrica-electrolux-eaf40",
     "data": "2026-10-18T15:34:31Z",
-    "precoAVista": "299,00",
+    "precoAVista": "R$ 302,16",
     "precoAPrazo": "319,92",
     "liberacao": "2026-10-18T15:34:59Z",
-    "parcelas": 6
+    "parcelas": 6,
+    "precoConferido": "2026-10-19T23:42:39Z"
   },
   {
     "produto": "S429049631 Air Fryer Britânia 6,5L 1700W 8 Funções",
-    "preco": "R$ 296,10",
+    "preco": "R$ 411,74",
     "precoAntigo": "",
     "cupom": "BOASOFERTAS",
     "categoria": "Eletrodomésticos",
@@ -3440,7 +3444,8 @@
     "data": "2026-10-18T15:34:32Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-18T15:34:59Z"
+    "liberacao": "2026-10-18T15:34:59Z",
+    "precoConferido": "2026-10-19T23:42:39Z"
   },
   {
     "produto": "iPhone 18 Pro 256GB Preto (somente eSIM)",
