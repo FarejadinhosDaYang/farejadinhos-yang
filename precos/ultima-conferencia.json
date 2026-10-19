@@ -1,68 +1,38 @@
 {
-  "quando": "2026-10-19T06:12:26Z",
-  "origem": "schedule",
-  "total": 218,
-  "iguais": 57,
+  "quando": "2026-10-19T11:27:47Z",
+  "origem": "workflow_dispatch",
+  "total": 217,
+  "iguais": 56,
   "mudaram": [
     {
-      "slug": "kit-2-faixa-de-cabelo-toalha-para-make-skincare",
-      "produto": "Kit 2 Faixa De Cabelo Toalha Para Make Skincare",
-      "de": "R$ 26,90",
-      "para": "26,06"
+      "slug": "copo-termica-600ml-inox-anti-vazamento",
+      "produto": "Copo Térmica 600ml Inox Anti-vazamento",
+      "de": "R$ 32,24",
+      "para": "48,99"
     },
     {
-      "slug": "rolo-facial-de-gelo-silicone-massageador",
-      "produto": "Rolo Facial De Gelo Silicone Massageador",
-      "de": "R$ 20,67",
-      "para": "20,26"
+      "slug": "dispenser-giratorio-organizador-alimentos",
+      "produto": "Dispenser Giratorio Organizador Alimentos",
+      "de": "R$ 78,99",
+      "para": "129,99"
     },
     {
-      "slug": "galinha-frango-de-borracha-brinquedo-mordedor-pet",
-      "produto": "Galinha Frango De Borracha Brinquedo Mordedor Pet",
-      "de": "R$ 20,52",
-      "para": "19,54"
-    },
-    {
-      "slug": "fita-teste-piscina-cloro-ph-alcalinidade",
-      "produto": "Fita Teste Piscina Cloro, Ph, Alcalinidade",
-      "de": "R$ 35,90",
-      "para": "34,45"
-    },
-    {
-      "slug": "clorador-flutuante-para-piscina-suporte",
-      "produto": "Clorador Flutuante Para Piscina Suporte",
-      "de": "R$ 24,81",
-      "para": "22,72"
-    },
-    {
-      "slug": "super-clarificante-para-piscina-power-gel",
-      "produto": "Super Clarificante para Piscina Power Gel",
-      "de": "R$ 32,79",
-      "para": "29,94"
-    },
-    {
-      "slug": "aspirador-manual-piscina-herbinject-azul",
-      "produto": "Aspirador Manual Piscina Herbinject Azul",
-      "de": "R$ 35,80",
-      "para": "47,90"
-    },
-    {
-      "slug": "balanca-digital-bioimpedancia-profissional-smart",
-      "produto": "Balança Digital Bioimpedância Profissional smart",
-      "de": "R$ 28,95",
-      "para": "32,90"
+      "slug": "celular-samsung-galaxy-s25-fe-5g-128gb",
+      "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
+      "de": "R$ 2.998,00",
+      "para": "3099,00"
     },
     {
       "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
       "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 5.149,00",
-      "para": "5065,61"
+      "de": "R$ 5.065,61",
+      "para": "5149,00"
     },
     {
       "slug": "celular-samsung-galaxy-s26-fe-128gb-8gb-ram-tela",
       "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
-      "de": "R$ 5.499,00",
-      "para": "3999,00"
+      "de": "R$ 3.999,00",
+      "para": "5499,00"
     }
   ],
   "semPreco": [
@@ -964,11 +934,19 @@
   "erros": [],
   "suspeitos": [
     {
+      "slug": "aspirador-manual-piscina-herbinject-azul",
+      "produto": "Aspirador Manual Piscina Herbinject Azul",
+      "link": "https://meli.la/1t2eJpi",
+      "atual": "R$ 47,90",
+      "lido": "338,95",
+      "referencia": "R$ 42,01"
+    },
+    {
       "slug": "iphone-18-pro-256gb-preto-somente-esim",
       "produto": "iPhone 18 Pro 256GB Preto (somente eSIM)",
       "link": "https://meli.la/18pktG2",
       "atual": "R$ 9.499,00",
-      "lido": "12098,00",
+      "lido": "5238,00",
       "referencia": "preco posto a mao em 18/10 23:09"
     },
     {
@@ -978,6 +956,38 @@
       "atual": "R$ 10.289,00",
       "lido": "5238,00",
       "referencia": "preco posto a mao em 18/10 23:09"
+    },
+    {
+      "slug": "iphone-17-pro-max-256gb-laranja-cosmico",
+      "produto": "iPhone 17 Pro Max 256GB - Laranja-cósmico",
+      "link": "https://meli.la/2wS1Uaq",
+      "atual": "R$ 8.199,00",
+      "lido": "9719,00",
+      "referencia": "preco posto a mao em 19/10 08:22"
+    },
+    {
+      "slug": "iphone-17-pro-256gb-laranja-cosmico",
+      "produto": "iPhone 17 Pro 256GB - Laranja-cósmico",
+      "link": "https://meli.la/2tshrR8",
+      "atual": "R$ 7.799,00",
+      "lido": "8078,00",
+      "referencia": "preco posto a mao em 19/10 08:23"
+    },
+    {
+      "slug": "celular-samsung-galaxy-s26-ultra-5g-256gb-12gb-ram",
+      "produto": "Celular Samsung Galaxy S26 Ultra 5G 256GB 12GB RAM",
+      "link": "https://link.amazon/B098ObooL",
+      "atual": "R$ 6.546,59",
+      "lido": "7498,89",
+      "referencia": "preco posto a mao em 19/10 08:25"
+    },
+    {
+      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera-2",
+      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
+      "link": "https://link.amazon/B0epLOItP",
+      "atual": "R$ 4.559,05",
+      "lido": "5332,00",
+      "referencia": "preco posto a mao em 19/10 08:26"
     }
   ]
 }
