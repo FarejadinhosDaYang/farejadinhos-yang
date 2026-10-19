@@ -1663,24 +1663,6 @@
     "liberacao": "2026-10-18T22:32:30Z"
   },
   {
-    "produto": "Aspirador Manual Piscina Herbinject Azul",
-    "preco": "R$ 47,90",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Piscina",
-    "destaque": false,
-    "imagem": "9ab7c10c-5332-46d5-b6de-7e9ac0f0314f.webp",
-    "link": "https://meli.la/1t2eJpi",
-    "url": "https://farejadinhosdayang.com.br/ofertas/aspirador-manual-piscina-herbinject-azul/",
-    "slug": "aspirador-manual-piscina-herbinject-azul",
-    "data": "2026-10-15T22:42:11Z",
-    "precoAVista": "R$ 47,90",
-    "precoAPrazo": "213,78",
-    "liberacao": "2026-10-19T15:40:00Z",
-    "parcelas": 6,
-    "precoConferido": "2026-10-19T06:16:53Z"
-  },
-  {
     "produto": "Câmera Lâmpada De Segurança Wifi Ip App Yoosee",
     "preco": "R$ 57,44",
     "precoAntigo": "",
@@ -3596,5 +3578,23 @@
     "liberacao": "2026-10-20T11:56:00Z",
     "precoManual": "2026-10-19T11:26:05Z",
     "parcelas": 12
+  },
+  {
+    "produto": "Aspirador Manual Piscina Herbinject Azul",
+    "preco": "R$ 40,88",
+    "precoAntigo": "",
+    "cupom": "",
+    "categoria": "Piscina",
+    "destaque": false,
+    "imagem": "9ab7c10c-5332-46d5-b6de-7e9ac0f0314f.webp",
+    "link": "https://meli.la/1t2eJpi",
+    "url": "https://farejadinhosdayang.com.br/ofertas/aspirador-manual-piscina-herbinject-azul/",
+    "slug": "aspirador-manual-piscina-herbinject-azul",
+    "data": "2026-10-15T22:42:11Z",
+    "precoAVista": "40,88",
+    "precoAPrazo": "213,78",
+    "liberacao": "2026-10-19T15:40:00Z",
+    "precoManual": "2026-10-19T11:40:05Z",
+    "parcelas": 6
   }
 ]
