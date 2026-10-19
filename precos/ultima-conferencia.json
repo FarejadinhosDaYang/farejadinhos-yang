@@ -1,20 +1,68 @@
 {
-  "quando": "2026-10-19T02:10:37Z",
-  "origem": "workflow_dispatch",
-  "total": 223,
-  "iguais": 67,
+  "quando": "2026-10-19T06:12:26Z",
+  "origem": "schedule",
+  "total": 218,
+  "iguais": 57,
   "mudaram": [
     {
-      "slug": "tapete-pelucia-antiderrapante-decoracao-felpudo-2",
-      "produto": "Tapete Pelúcia Antiderrapante Decoração Felpudo",
-      "de": "R$ 64,19",
-      "para": "39,90"
+      "slug": "kit-2-faixa-de-cabelo-toalha-para-make-skincare",
+      "produto": "Kit 2 Faixa De Cabelo Toalha Para Make Skincare",
+      "de": "R$ 26,90",
+      "para": "26,06"
     },
     {
-      "slug": "celular-samsung-galaxy-s26-ultra-5g-256gb-12gb-ram",
-      "produto": "Celular Samsung Galaxy S26 Ultra 5G 256GB 12GB RAM",
-      "de": "R$ 7.498,89",
-      "para": "7274,00"
+      "slug": "rolo-facial-de-gelo-silicone-massageador",
+      "produto": "Rolo Facial De Gelo Silicone Massageador",
+      "de": "R$ 20,67",
+      "para": "20,26"
+    },
+    {
+      "slug": "galinha-frango-de-borracha-brinquedo-mordedor-pet",
+      "produto": "Galinha Frango De Borracha Brinquedo Mordedor Pet",
+      "de": "R$ 20,52",
+      "para": "19,54"
+    },
+    {
+      "slug": "fita-teste-piscina-cloro-ph-alcalinidade",
+      "produto": "Fita Teste Piscina Cloro, Ph, Alcalinidade",
+      "de": "R$ 35,90",
+      "para": "34,45"
+    },
+    {
+      "slug": "clorador-flutuante-para-piscina-suporte",
+      "produto": "Clorador Flutuante Para Piscina Suporte",
+      "de": "R$ 24,81",
+      "para": "22,72"
+    },
+    {
+      "slug": "super-clarificante-para-piscina-power-gel",
+      "produto": "Super Clarificante para Piscina Power Gel",
+      "de": "R$ 32,79",
+      "para": "29,94"
+    },
+    {
+      "slug": "aspirador-manual-piscina-herbinject-azul",
+      "produto": "Aspirador Manual Piscina Herbinject Azul",
+      "de": "R$ 35,80",
+      "para": "47,90"
+    },
+    {
+      "slug": "balanca-digital-bioimpedancia-profissional-smart",
+      "produto": "Balança Digital Bioimpedância Profissional smart",
+      "de": "R$ 28,95",
+      "para": "32,90"
+    },
+    {
+      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
+      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
+      "de": "R$ 5.149,00",
+      "para": "5065,61"
+    },
+    {
+      "slug": "celular-samsung-galaxy-s26-fe-128gb-8gb-ram-tela",
+      "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
+      "de": "R$ 5.499,00",
+      "para": "3999,00"
     }
   ],
   "semPreco": [
@@ -241,12 +289,6 @@
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
-      "slug": "6-jogo-americano-juta-vermelho-impermeavel-limpa-facil-pvc",
-      "produto": "6 Jogo Americano Juta Vermelho",
-      "link": "https://s.shopee.com.br/3Vl0OP339O",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
       "slug": "ramekin-coracao-150ml-canelado-molho-doce-petisco-festa",
       "produto": "Ramekin Coração 150ml Canelado Molho Doce Petisco",
       "link": "https://s.shopee.com.br/2LZ30G7UWH",
@@ -322,12 +364,6 @@
       "slug": "varal-de-chao-roupa-calcinha-grade-3-andares-dobravel",
       "produto": "Varal De Chão Roupa Calcinha Grade 3 Andares",
       "link": "https://s.shopee.com.br/9APN8ohTey",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
-      "slug": "dispensers-lavanderia-1-5l-e-2-3l-amaciante-sabao-em-po",
-      "produto": "Dispensers Lavanderia 1,5L e 2",
-      "link": "https://s.shopee.com.br/8pmWkCikKw",
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
@@ -927,14 +963,6 @@
   ],
   "erros": [],
   "suspeitos": [
-    {
-      "slug": "aspirador-manual-piscina-herbinject-azul",
-      "produto": "Aspirador Manual Piscina Herbinject Azul",
-      "link": "https://meli.la/1t2eJpi",
-      "atual": "R$ 35,80",
-      "lido": "338,95",
-      "referencia": "R$ 42,01"
-    },
     {
       "slug": "iphone-18-pro-256gb-preto-somente-esim",
       "produto": "iPhone 18 Pro 256GB Preto (somente eSIM)",
