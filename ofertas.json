@@ -2296,22 +2296,6 @@
     "liberacao": "2026-10-24T11:00:00Z"
   },
   {
-    "produto": "Kit Saco A Vácuo Grande Organizador Edredom",
-    "preco": "R$ 19,90",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Utilidades",
-    "destaque": false,
-    "imagem": "ada2761f-be59-477b-9e38-6848ba6feca2.jpg",
-    "link": "https://s.shopee.com.br/1qct6TiSlx",
-    "url": "https://farejadinhosdayang.com.br/ofertas/kit-saco-a-vacuo-grande-organizador-edredom/",
-    "slug": "kit-saco-a-vacuo-grande-organizador-edredom",
-    "data": "2026-10-17T23:01:30Z",
-    "precoAVista": "",
-    "precoAPrazo": "",
-    "liberacao": "2026-10-19T22:12:00Z"
-  },
-  {
     "produto": "Organizador De Cosmético Maquiagem Acrílico",
     "preco": "R$ 36,90",
     "precoAntigo": "",
@@ -3574,5 +3558,22 @@
     "precoAPrazo": "",
     "liberacao": "2026-10-20T00:04:00Z",
     "precoManual": "2026-10-20T01:25:12Z"
+  },
+  {
+    "produto": "Kit Saco A Vácuo Grande Organizador Edredom",
+    "preco": "R$ 19,90",
+    "precoAntigo": "",
+    "cupom": "",
+    "categoria": "Utilidades, Vídeos",
+    "destaque": false,
+    "imagem": "ada2761f-be59-477b-9e38-6848ba6feca2.jpg",
+    "link": "https://s.shopee.com.br/1qct6TiSlx",
+    "url": "https://farejadinhosdayang.com.br/ofertas/kit-saco-a-vacuo-grande-organizador-edredom/",
+    "slug": "kit-saco-a-vacuo-grande-organizador-edredom",
+    "data": "2026-10-17T23:01:30Z",
+    "precoAVista": "",
+    "precoAPrazo": "",
+    "liberacao": "2026-10-19T22:12:00Z",
+    "precoManual": "2026-10-20T01:49:15Z"
   }
 ]
