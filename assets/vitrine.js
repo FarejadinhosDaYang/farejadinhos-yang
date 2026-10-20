@@ -97,7 +97,20 @@
   }
 
   // Categorias que nunca entram no Top 3 / pódio do dia (nem nos stories)
-  const FORA_DO_PODIO = ["piscina"];
+  const FORA_DO_PODIO = ["piscina", "celulares"];
+
+  // Data usada pra ORDENAR ("mais recente primeiro"). Oferta que aparece
+  // antes do horário marcado (Celulares, Vídeos, categoria completando o
+  // mínimo) conta pela data em que foi cadastrada — senão ficaria "nova"
+  // até o dia agendado e sempre no topo.
+  function dataOrdem(oferta, agora){
+    agora = agora || new Date();
+    const i = inicio(oferta);
+    if(!i) return 0;
+    if(i <= agora) return i.getTime();
+    const criada = new Date(oferta.data);
+    return isNaN(criada) ? agora.getTime() : Math.min(criada.getTime(), agora.getTime());
+  }
 
   function podeIrProPodio(oferta){
     return !FORA_DO_PODIO.includes(chaveCategoria(oferta && oferta.categoria));
@@ -224,7 +237,7 @@
 
   window.FarejadinhosVitrine = {
     MINIMO_VITRINE, HORAS_FRESCA, HORAS_MAXIMA, META_CATEGORIA, MINIMO_CATEGORIA, TEMPORADAS,
-    inicio, idadeHoras, selecionar, status, foraDeEpoca, podeIrProPodio, FORA_DO_PODIO, ehPermanente, PERMANENTES, normalizar, categoriasDe, juntarCategoria, TAG_VIDEO
+    inicio, idadeHoras, selecionar, status, foraDeEpoca, podeIrProPodio, FORA_DO_PODIO, dataOrdem, ehPermanente, PERMANENTES, normalizar, categoriasDe, juntarCategoria, TAG_VIDEO
   };
 
 })();

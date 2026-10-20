@@ -1256,9 +1256,8 @@ async function carregar(){
         if(!!b.destaque !== !!a.destaque) return (b.destaque ? 1 : 0) - (a.destaque ? 1 : 0);
         // ordena pelo horário em que a oferta realmente ficou visível
         // (liberacao, quando existir) em vez de quando foi criada
-        const dataA = new Date(a.liberacao || a.data);
-        const dataB = new Date(b.liberacao || b.data);
-        return dataB - dataA;
+        const agora = new Date();
+        return FarejadinhosVitrine.dataOrdem(b, agora) - FarejadinhosVitrine.dataOrdem(a, agora);
     });
 
     if(buscaInicial){

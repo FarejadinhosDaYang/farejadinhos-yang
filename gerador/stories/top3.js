@@ -4,7 +4,8 @@ require(process.argv[2] + "/assets/vitrine.js");
 const fs = require("fs");
 const todas = JSON.parse(fs.readFileSync(process.argv[2] + "/ofertas.json", "utf8").replace(/^﻿/, ""));
 let ofertas = window.FarejadinhosVitrine.selecionar(todas, new Date()).visiveis;
-ofertas.sort((a, b) => new Date(b.liberacao || b.data) - new Date(a.liberacao || a.data));
+const agora = new Date();
+ofertas.sort((a, b) => window.FarejadinhosVitrine.dataOrdem(b, agora) - window.FarejadinhosVitrine.dataOrdem(a, agora));
 const num = p => { let s = String(p || "").replace(/[^\d.,]/g, ""); if (s.includes(",")) s = s.replace(/\./g, "").replace(",", "."); return parseFloat(s) || 0; };
 const pct = o => { const a = num(o.precoAntigo), p = num(o.preco); return a > p && p > 0 ? Math.round((1 - p / a) * 100) : 0; };
 const top = ofertas.map((o, i) => ({ o, i, d: pct(o) }))
