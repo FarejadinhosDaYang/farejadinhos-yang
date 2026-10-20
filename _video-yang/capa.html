@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<style>
+  /* CAPA DO REEL (1080x1920). Tudo que importa fica no miolo 1080x1080 (y 420–1500),
+     que aparece inteiro na grade do perfil (3:4) e no feed (1:1 / 4:5). */
+  @font-face { font-family: "Baloo 2"; src: url("fonts/Baloo2.ttf"); font-weight: 400 800; }
+  @font-face { font-family: "Work Sans"; src: url("fonts/WorkSans.ttf"); font-weight: 400 800; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; }
+  body { font-family: "Baloo 2", sans-serif; position: relative; background: #C21A24; }
+  .abs { position: absolute; }
+
+  #foto { inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  /* escurece em cima e embaixo pra o texto e a Yang saltarem */
+  #sombra { inset: 0; background:
+      linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.05) 30%, rgba(0,0,0,0) 50%, rgba(0,0,0,.15) 70%, rgba(0,0,0,.55) 100%); }
+  #moldura { inset: 0; border: 22px solid #E5232E; box-shadow: inset 0 0 0 6px #fff; }
+
+  #titulo { left: 70px; right: 70px; top: 440px; text-align: center; font-weight: 800; font-size: 118px; line-height: .98;
+            color: #fff; text-transform: uppercase; -webkit-text-stroke: 18px #1a0f0a; paint-order: stroke fill;
+            text-shadow: 0 10px 18px rgba(0,0,0,.4); }
+  #titulo em { font-style: normal; color: #FFD23F; }
+
+  /* faixa com o "assunto" (ex.: ACHADINHO DA COZINHA) */
+  #faixa { left: 0; right: 0; top: 330px; text-align: center; }
+  #faixa span { display: inline-block; background: #E5232E; color: #fff; font-weight: 800; font-size: 52px; line-height: 1;
+                padding: 20px 42px 12px; border-radius: 999px; border: 6px solid #fff; transform: rotate(-3deg);
+                box-shadow: 0 10px 0 #8E0F17, 0 18px 30px rgba(0,0,0,.35); }
+
+  /* Yang inteira (sem cortar), dentro do miolo */
+  #yang { left: 30px; top: 1060px; width: 430px; transform: rotate(-6deg);
+          filter: drop-shadow(6px 0 0 #fff) drop-shadow(-6px 0 0 #fff) drop-shadow(0 6px 0 #fff) drop-shadow(0 -6px 0 #fff) drop-shadow(0 16px 26px rgba(0,0,0,.45)); }
+  #balao { left: 430px; top: 1170px; max-width: 580px; background: #fff; color: #2B1B12; font-weight: 800; font-size: 54px; line-height: 1.05;
+           padding: 26px 34px 18px; border-radius: 40px; box-shadow: 0 14px 30px rgba(0,0,0,.35); transform: rotate(2deg); }
+  #balao:before { content: ""; position: absolute; left: -26px; top: 50px; border: 18px solid transparent; border-right: 30px solid #fff; border-left: 0; }
+
+  #marca { left: 0; right: 0; bottom: 210px; text-align: center; color: #fff; font: 700 38px "Work Sans", sans-serif;
+           text-shadow: 0 3px 10px rgba(0,0,0,.6); }
+  .publi { left: 50px; top: 120px; padding: 10px 22px 8px; border-radius: 999px; background: rgba(43,27,18,.55); color: #fff;
+           font: 700 30px "Work Sans", Arial, sans-serif; line-height: 1; }
+</style>
+</head>
+<body>
+  <img class="abs" id="foto">
+  <div class="abs" id="sombra"></div>
+  <div class="abs" id="faixa"><span id="faixaTxt"></span></div>
+  <div class="abs" id="titulo"></div>
+  <img class="abs" id="yang" src="cabeca/aberta.png">
+  <div class="abs" id="balao"></div>
+  <div class="abs" id="marca">🐾 Farejadinhos da Yang</div>
+  <div class="abs publi">publi · link de afiliado</div>
+  <div class="abs" id="moldura"></div>
+<script>
+// window.CAPA = { foto, titulo ("*palavra*" fica amarela; "|" quebra linha), faixa, balao, publi (true/false) }
+const C = window.CAPA || { foto: "produto.webp", faixa: "🐾 A YANG FAREJOU", titulo: "Seu cheiro-verde|*nunca mais* murcha", balao: "Olha isso! 😱" };
+const $ = id => document.getElementById(id);
+$("foto").src = C.foto;
+$("titulo").innerHTML = C.titulo.split("|").map(l => l.replace(/\*(.+?)\*/g, "<em>$1</em>")).join("<br>");
+if (C.faixa) $("faixaTxt").textContent = C.faixa; else $("faixa").style.display = "none";
+if (C.balao) $("balao").textContent = C.balao; else $("balao").style.display = "none";
+if (C.publi === false) document.querySelector(".publi").style.display = "none";
+</script>
+</body>
+</html>

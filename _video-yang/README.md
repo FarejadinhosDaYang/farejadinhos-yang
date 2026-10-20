@@ -13,6 +13,7 @@ sincronizada com a voz do ElevenLabs, legenda palavra por palavra e o selo "💬
 | `narradora.html` | Yang de corpo inteiro (na caminha) narrando, fundo creme — bom pra vídeos de apresentação |
 | `reel.html` | Reel automático de oferta a partir de uma foto (gancho → produto → preço → chamada) |
 | `render.py` | Transforma qualquer modelo em MP4 1080×1920 30 fps (lip sync, fundo, fundo verde) |
+| `capa.html` / `capa.py` | Capa do Reel (1080×1920) com gancho grande, Yang inteira e selo publi |
 | `pausas.py` | Lê a voz do ElevenLabs + o texto e gera o `roteiro.json` com o tempo de cada frase |
 | `cabeca/` | As 6 expressões da cabeça (boca fechada/meio/aberta × olhos abertos/piscando) + imagem original |
 | `corpo/` | As 6 expressões da Yang de corpo inteiro |
@@ -51,7 +52,15 @@ Pra regerar as expressões: `opencv-python-headless` e `Pillow`.
    python3 render.py cabeca-review.html reel-produto.mp4 --fundo fundo.mp4 --audio voz.mp3 --roteiro roteiro.json
    ```
    Conferir uns quadros (`ffmpeg -ss T -i reel-produto.mp4 -frames:v 1 q.jpg`) antes de entregar.
-7. Entregar o MP4 + a legenda do post.
+7. **Capa** (o Instagram escolhe um quadro qualquer, quase sempre com a Yang cortada). Gerar a capa própria:
+   ```bash
+   python3 capa.py capa.jpg --video fonte.mp4 --t 7.2 --titulo "Seu cheiro-verde|*nunca mais* murcha" \
+       --faixa "🐾 ACHADINHO DA COZINHA" --balao "Olha isso! 😱"
+   ```
+   Gancho de até ~6 palavras em 2 linhas (`|` quebra linha, `*palavra*` fica amarela); escolher um quadro em que
+   o produto aparece inteiro e reconhecível (não close de detalhe). Tudo fica no miolo que aparece na grade do perfil.
+   No Instagram: **Editar capa → Adicionar da galeria** e escolher a imagem.
+8. Entregar o MP4 + a capa + a legenda do post.
 
 Outras opções do `render.py`: `--verde` (Yang em fundo verde pra chroma key no CapCut), `--sons` (efeitos "boing"
 do `reel.html`), `--previa` (só 8 quadros PNG pra conferir). Sem `--audio`, a boca segue o texto (ritmo simulado).
