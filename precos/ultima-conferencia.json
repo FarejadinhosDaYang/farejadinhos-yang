@@ -1,74 +1,32 @@
 {
-  "quando": "2026-10-20T04:45:26Z",
+  "quando": "2026-10-20T10:01:17Z",
   "origem": "schedule",
   "total": 212,
-  "iguais": 45,
+  "iguais": 52,
   "mudaram": [
-    {
-      "slug": "fita-teste-piscina-cloro-ph-alcalinidade",
-      "produto": "Fita Teste Piscina Cloro, Ph, Alcalinidade",
-      "de": "R$ 35,90",
-      "para": "28,00"
-    },
-    {
-      "slug": "clorador-flutuante-para-piscina-suporte",
-      "produto": "Clorador Flutuante Para Piscina Suporte",
-      "de": "R$ 22,72",
-      "para": "19,93"
-    },
-    {
-      "slug": "super-clarificante-para-piscina-power-gel",
-      "produto": "Super Clarificante para Piscina Power Gel",
-      "de": "R$ 31,81",
-      "para": "31,49"
-    },
     {
       "slug": "peneira-metalica-com-engate-rapido-limpeza",
       "produto": "Peneira Metálica com Engate Rápido Limpeza",
-      "de": "R$ 35,90",
-      "para": "55,19"
-    },
-    {
-      "slug": "escova-curva-piscina-engate-rapido-limpeza-fundo",
-      "produto": "Escova Curva Piscina Engate Rápido Limpeza Fundo",
-      "de": "R$ 35,90",
-      "para": "27,00"
-    },
-    {
-      "slug": "liquidificador-turbo-power-mondial-550w-l-99-fb",
-      "produto": "Liquidificador Turbo Power Mondial 550W - L-99 FB",
-      "de": "R$ 87,48",
-      "para": "87,46"
-    },
-    {
-      "slug": "chaleira-eletrica-atacama-1-8l-unitermi",
-      "produto": "Chaleira Eletrica Atacama 1,8l - Unitermi",
-      "de": "R$ 39,90",
-      "para": "40,64"
+      "de": "R$ 55,19",
+      "para": "24,99"
     },
     {
       "slug": "kit-chave-catraca-soquete-46-pecas-indufer",
       "produto": "Kit Chave Catraca Soquete 46 Peças Indufer",
-      "de": "R$ 25,96",
-      "para": "25,63"
+      "de": "R$ 25,63",
+      "para": "25,96"
     },
     {
-      "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
-      "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
-      "de": "R$ 5.783,00",
-      "para": "5555,00"
+      "slug": "celular-samsung-galaxy-s26-fe-128gb-8gb-ram-tela",
+      "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
+      "de": "R$ 5.499,00",
+      "para": "3999,00"
     },
     {
-      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
-      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 5.065,61",
-      "para": "5149,00"
-    },
-    {
-      "slug": "air-fryer-fritadeira-eletrica-electrolux-eaf40",
-      "produto": "Air fryer Fritadeira Elétrica Electrolux EAF40",
-      "de": "R$ 302,16",
-      "para": "299,00"
+      "slug": "fritadeira-eletrica-afon-12l-bg-forno-oven",
+      "produto": "Fritadeira Elétrica AFON-12L-BG Forno Oven",
+      "de": "R$ 514,09",
+      "para": "499,30"
     }
   ],
   "semPreco": [
@@ -974,7 +932,7 @@
       "produto": "iPhone 18 Pro 256GB Preto (somente eSIM)",
       "link": "https://meli.la/18pktG2",
       "atual": "R$ 9.499,00",
-      "lido": "913,01",
+      "lido": "4889,00",
       "referencia": "preco posto a mao em 18/10 23:09"
     },
     {
@@ -990,7 +948,7 @@
       "produto": "iPhone 17 Pro Max 256GB - Laranja-cósmico",
       "link": "https://meli.la/2wS1Uaq",
       "atual": "R$ 8.199,00",
-      "lido": "788,14",
+      "lido": "9719,00",
       "referencia": "preco posto a mao em 19/10 08:22"
     },
     {
@@ -998,7 +956,7 @@
       "produto": "iPhone 17 Pro 256GB - Laranja-cósmico",
       "link": "https://meli.la/2tshrR8",
       "atual": "R$ 7.799,00",
-      "lido": "9719,00",
+      "lido": "8078,00",
       "referencia": "preco posto a mao em 19/10 08:23"
     },
     {
@@ -1022,7 +980,7 @@
       "produto": "Aspirador Manual Piscina Herbinject Azul",
       "link": "https://meli.la/1t2eJpi",
       "atual": "R$ 40,88",
-      "lido": "36,65",
+      "lido": "47,90",
       "referencia": "preco posto a mao em 19/10 08:40"
     }
   ]
