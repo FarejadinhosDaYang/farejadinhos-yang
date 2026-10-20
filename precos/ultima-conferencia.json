@@ -1,68 +1,56 @@
 {
-  "quando": "2026-10-20T15:02:57Z",
+  "quando": "2026-10-20T19:13:35Z",
   "origem": "schedule",
-  "total": 212,
-  "iguais": 46,
+  "total": 206,
+  "iguais": 45,
   "mudaram": [
     {
-      "slug": "fita-teste-piscina-cloro-ph-alcalinidade",
-      "produto": "Fita Teste Piscina Cloro, Ph, Alcalinidade",
-      "de": "R$ 28,00",
+      "slug": "peneira-metalica-com-engate-rapido-limpeza",
+      "produto": "Peneira Metálica com Engate Rápido Limpeza",
+      "de": "R$ 24,99",
       "para": "35,90"
     },
     {
-      "slug": "clorador-flutuante-para-piscina-suporte",
-      "produto": "Clorador Flutuante Para Piscina Suporte",
-      "de": "R$ 19,93",
-      "para": "22,72"
+      "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
+      "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
+      "de": "R$ 62,25",
+      "para": "58,42"
     },
     {
-      "slug": "super-clarificante-para-piscina-power-gel",
-      "produto": "Super Clarificante para Piscina Power Gel",
-      "de": "R$ 31,49",
-      "para": "31,81"
-    },
-    {
-      "slug": "escova-curva-piscina-engate-rapido-limpeza-fundo",
-      "produto": "Escova Curva Piscina Engate Rápido Limpeza Fundo",
-      "de": "R$ 27,00",
-      "para": "35,90"
-    },
-    {
-      "slug": "lixeira-inteligente-automatica-16l-sensor",
-      "produto": "Lixeira Inteligente Automática 16L Sensor",
-      "de": "R$ 66,00",
-      "para": "68,50"
-    },
-    {
-      "slug": "liquidificador-turbo-power-mondial-550w-l-99-fb",
-      "produto": "Liquidificador Turbo Power Mondial 550W - L-99 FB",
-      "de": "R$ 87,46",
-      "para": "89,90"
+      "slug": "jogo-6-tacas-de-vidro-diamond-340-ml-com-pe",
+      "produto": "Jogo 6 Taças De Vidro Diamond 340 ml Com Pé",
+      "de": "R$ 31,41",
+      "para": "32,11"
     },
     {
       "slug": "chaleira-eletrica-atacama-1-8l-unitermi",
       "produto": "Chaleira Eletrica Atacama 1,8l - Unitermi",
-      "de": "R$ 40,64",
-      "para": "41,89"
+      "de": "R$ 41,89",
+      "para": "40,64"
     },
     {
-      "slug": "kit-chave-catraca-soquete-46-pecas-indufer",
-      "produto": "Kit Chave Catraca Soquete 46 Peças Indufer",
-      "de": "R$ 25,96",
-      "para": "26,99"
+      "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
+      "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
+      "de": "R$ 5.555,00",
+      "para": "5507,00"
     },
     {
-      "slug": "fritadeira-eletrica-afon-12l-bg-forno-oven",
-      "produto": "Fritadeira Elétrica AFON-12L-BG Forno Oven",
-      "de": "R$ 499,30",
-      "para": "514,09"
+      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
+      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
+      "de": "R$ 5.149,00",
+      "para": "5065,61"
+    },
+    {
+      "slug": "air-fryer-fritadeira-eletrica-electrolux-eaf40",
+      "produto": "Air fryer Fritadeira Elétrica Electrolux EAF40",
+      "de": "R$ 299,00",
+      "para": "324,49"
     },
     {
       "slug": "s429049631-air-fryer-britania-6-5l-1700w-8-funcoes",
       "produto": "S429049631 Air Fryer Britânia 6,5L 1700W 8 Funções",
-      "de": "R$ 411,74",
-      "para": "441,05"
+      "de": "R$ 441,05",
+      "para": "459,00"
     }
   ],
   "semPreco": [
@@ -265,24 +253,6 @@
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
-      "slug": "saco-secador-para-pet-secagem-rapida-15-30min-pelos-secos",
-      "produto": "Saco Secador para Pet Secagem Rápida 15-30min",
-      "link": "https://s.shopee.com.br/5q8vAguAPd",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
-      "slug": "comedouro-e-bebedouro-automatico-para-gatos-e-caes-premium",
-      "produto": "Comedouro e Bebedouro Automático para Gatos e Cães",
-      "link": "https://s.shopee.com.br/4fwxmXybmV",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
-      "slug": "cafe-filtro-coador-inox-reutilizavel-naoprecisa-de-papel",
-      "produto": "Cafe Filtro Coador Inox Reutilizavel Naoprecisa",
-      "link": "https://s.shopee.com.br/4LK7NvzsST",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
       "slug": "presepio-de-natal-manjedoura-decoracao-enfeite-natalino-mdf",
       "produto": "Presépio De Natal Manjedoura Decoração Enfeite",
       "link": "https://s.shopee.com.br/4B0hBd0VnS",
@@ -358,12 +328,6 @@
       "slug": "varal-de-chao-roupa-calcinha-grade-3-andares-dobravel",
       "produto": "Varal De Chão Roupa Calcinha Grade 3 Andares",
       "link": "https://s.shopee.com.br/9APN8ohTey",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
-      "slug": "suporte-organizador-de-banheiro-multifuncional-papel",
-      "produto": "Suporte Organizador de Banheiro",
-      "link": "https://s.shopee.com.br/8fT6XtjNfv",
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
@@ -963,6 +927,14 @@
   ],
   "erros": [],
   "suspeitos": [
+    {
+      "slug": "kit-limpeza-e-manutencao-de-piscina-completo",
+      "produto": "Kit Limpeza E Manutenção De Piscina Completo",
+      "link": "https://meli.la/1V3wJNN",
+      "atual": "R$ 109,90",
+      "lido": "33,21",
+      "referencia": "R$ 109,90"
+    },
     {
       "slug": "iphone-18-pro-256gb-preto-somente-esim",
       "produto": "iPhone 18 Pro 256GB Preto (somente eSIM)",
