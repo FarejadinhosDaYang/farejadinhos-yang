@@ -1,56 +1,26 @@
 {
-  "quando": "2026-10-20T19:13:35Z",
+  "quando": "2026-10-20T22:17:37Z",
   "origem": "schedule",
-  "total": 206,
-  "iguais": 45,
+  "total": 201,
+  "iguais": 48,
   "mudaram": [
-    {
-      "slug": "peneira-metalica-com-engate-rapido-limpeza",
-      "produto": "Peneira Metálica com Engate Rápido Limpeza",
-      "de": "R$ 24,99",
-      "para": "35,90"
-    },
     {
       "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
       "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-      "de": "R$ 62,25",
-      "para": "58,42"
+      "de": "R$ 58,42",
+      "para": "58,01"
     },
     {
-      "slug": "jogo-6-tacas-de-vidro-diamond-340-ml-com-pe",
-      "produto": "Jogo 6 Taças De Vidro Diamond 340 ml Com Pé",
-      "de": "R$ 31,41",
-      "para": "32,11"
-    },
-    {
-      "slug": "chaleira-eletrica-atacama-1-8l-unitermi",
-      "produto": "Chaleira Eletrica Atacama 1,8l - Unitermi",
-      "de": "R$ 41,89",
-      "para": "40,64"
-    },
-    {
-      "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
-      "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
-      "de": "R$ 5.555,00",
-      "para": "5507,00"
+      "slug": "copo-termica-600ml-inox-anti-vazamento",
+      "produto": "Copo Térmica 600ml Inox Anti-vazamento",
+      "de": "R$ 34,99",
+      "para": "50,07"
     },
     {
       "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
       "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 5.149,00",
-      "para": "5065,61"
-    },
-    {
-      "slug": "air-fryer-fritadeira-eletrica-electrolux-eaf40",
-      "produto": "Air fryer Fritadeira Elétrica Electrolux EAF40",
-      "de": "R$ 299,00",
-      "para": "324,49"
-    },
-    {
-      "slug": "s429049631-air-fryer-britania-6-5l-1700w-8-funcoes",
-      "produto": "S429049631 Air Fryer Britânia 6,5L 1700W 8 Funções",
-      "de": "R$ 441,05",
-      "para": "459,00"
+      "de": "R$ 5.065,61",
+      "para": "3839,10"
     }
   ],
   "semPreco": [
@@ -265,12 +235,6 @@
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
-      "slug": "kit-10-marmitas-potes-800ml-travas-laterais-hermeticas",
-      "produto": "Kit 10 Marmitas Potes 800ml Travas Laterais",
-      "link": "https://s.shopee.com.br/1gJMD2A1sD",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
       "slug": "frigideira-antiaderente-nao-usa-oleo-ceramica-vanilla-cream",
       "produto": "Frigideira Antiaderente Não Usa Óleo Cerâmica",
       "link": "https://s.shopee.com.br/1LgVoQBIYB",
@@ -328,18 +292,6 @@
       "slug": "varal-de-chao-roupa-calcinha-grade-3-andares-dobravel",
       "produto": "Varal De Chão Roupa Calcinha Grade 3 Andares",
       "link": "https://s.shopee.com.br/9APN8ohTey",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
-      "slug": "kit-facial-kokeshi-completo-3-passos-hidratacao-e-colageno",
-      "produto": "Kit Facial Kokeshi Completo 3 Passos Hidratação",
-      "link": "https://s.shopee.com.br/8V9gLak10u",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
-      "slug": "escova-de-silicone-2-em-1-para-vaso-sanitario-base-de",
-      "produto": "Escova de Silicone 2 em 1 para Vaso Sanitário",
-      "link": "https://s.shopee.com.br/8KqG9HkeLt",
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
