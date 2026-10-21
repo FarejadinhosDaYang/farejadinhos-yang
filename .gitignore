@@ -3,3 +3,4 @@ gerador/stories/img-*.jpg
 gerador/stories/som-*.wav
 gerador/stories/frames-*/
 gerador/stories/podio-*.html
+gerador/stories/*-gerado.html

@@ -3,7 +3,7 @@ Gera os 3 stories do TOP 3 do dia (mesmo pódio da página inicial),
 com animação da Yang + efeitos sonoros sintetizados (sem direito autoral).
 
 uso: python3 gerador/stories/gerar_stories.py <pasta-do-site> <pasta-de-saida>
-Gera top1.mp4, top2.mp4, top3.mp4 e stories.json (dados de cada um) na pasta de saída.
+Gera podio-top3.mp4 (story único com os 3), podio1-3.mp4, top1-3.mp4 e stories.json (dados de cada um) na pasta de saída.
 Roda sozinho todo dia pelo .github/workflows/stories-do-dia.yml.
 """
 import json, os, re, shutil, subprocess, sys, wave
@@ -140,6 +140,27 @@ def trilha_podio(tem_off, tem_cupom, posicao):
     faixa = faixa[: int(SR * DUR_PODIO)]
     return np.tanh(faixa * 1.2) * 0.8
 
+DUR_TOP3 = 8.0
+
+def trilha_top3():
+    """Story único do TOP 3: degraus sobem, 3º → 2º → 1º caem no pódio, coroa e confete."""
+    faixa = np.zeros(int(SR * (DUR_TOP3 + 1)))
+    def pos(t, som, vol=1.0):
+        i = int(SR * t); faixa[i:i + len(som)] += vol * som[:len(faixa) - i]
+    pos(0.10, whoosh(0.45, False), .45)                 # título desce
+    pos(0.35, whoosh(0.5, True), .5)                    # degraus sobem
+    pos(0.55, pop(300, 700, .12), .6)                   # Yang
+    for t0, v in ((1.0, .7), (1.9, .8), (2.9, .95)):    # 3º, 2º, 1º caem
+        pos(t0 - 0.05, whoosh(0.4, False), .45)
+        pos(t0 + 0.42, carimbo(), v)
+        pos(t0 + 0.35 + 0.05, tique(), .8)
+    pos(1.40, brilho(), .45); pos(2.30, brilho(), .55); pos(3.30, brilho(), .8)   # preços
+    pos(3.55, pop(500, 1200), .8)                       # coroa
+    pos(3.65, plim(), .75)
+    pos(4.20, whoosh(0.4, True), .35)                   # chamada
+    faixa = faixa[: int(SR * DUR_TOP3)]
+    return np.tanh(faixa * 1.2) * 0.8
+
 def salvar_wav(sinal, caminho):
     dados = (np.clip(sinal, -1, 1) * 32767).astype(np.int16)
     with wave.open(caminho, "wb") as w:
@@ -231,6 +252,30 @@ for i, o in enumerate(top):
     # limpa os quadros (ocupam espaço)
     shutil.rmtree(frames, ignore_errors=True)
 
+# ---- story único com o TOP 3 no pódio (8 s) ----
 import datetime
-json.dump({"gerado": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "itens": manifesto},
+podio_top3 = ""
+if len(manifesto) == 3:
+    agora_br = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=3)
+    DIAS = ["segunda", "terça", "quarta", "quinta", "sexta", "sábado", "domingo"]
+    dados3 = {"data": f"{DIAS[agora_br.weekday()]}, {agora_br:%d/%m} · farejados pela Yang",
+              "itens": [{"posicao": i + 1, "imagem": "img-%d.jpg" % (i + 1), "nome": manifesto[i]["nome"],
+                         "preco": manifesto[i]["preco"], "off": top[i].get("desconto") or 0} for i in range(3)]}
+    modelo3 = open(os.path.join(AQUI, "top3-unico.html"), encoding="utf-8").read()
+    html3 = os.path.join(AQUI, "top3-unico-gerado.html")
+    open(html3, "w", encoding="utf-8").write(
+        modelo3.replace("</head>", "<script>window.DADOS=" + json.dumps(dados3, ensure_ascii=False) + ";</script></head>", 1))
+    frames3 = os.path.join(AQUI, "frames-top3")
+    shutil.rmtree(frames3, ignore_errors=True)
+    render(html3, frames3, DUR_TOP3)
+    wav3 = os.path.join(AQUI, "som-top3.wav")
+    salvar_wav(trilha_top3(), wav3)
+    podio_top3 = "podio-top3.mp4"
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(FPS), "-i", f"{frames3}/f%04d.jpg",
+                    "-i", wav3, "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "20", "-preset", "medium",
+                    "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", os.path.join(SAIDA, podio_top3)], check=True)
+    shutil.rmtree(frames3, ignore_errors=True)
+    print("OK:", podio_top3)
+
+json.dump({"gerado": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "podioTop3": podio_top3, "itens": manifesto},
           open(os.path.join(SAIDA, "stories.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=2)

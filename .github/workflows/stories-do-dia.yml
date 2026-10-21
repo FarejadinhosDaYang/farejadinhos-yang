@@ -47,7 +47,7 @@ jobs:
             gh release create stories-do-dia --title "Stories do dia" \
               --notes "Videos do TOP 3 do dia, gerados sozinhos toda manha. Baixe pelo painel: painel/stories.html" \
               --latest=false
-          gh release upload stories-do-dia saida-stories/top1.mp4 saida-stories/top2.mp4 saida-stories/top3.mp4 saida-stories/podio1.mp4 saida-stories/podio2.mp4 saida-stories/podio3.mp4 --clobber
+          gh release upload stories-do-dia saida-stories/podio-top3.mp4 saida-stories/top1.mp4 saida-stories/top2.mp4 saida-stories/top3.mp4 saida-stories/podio1.mp4 saida-stories/podio2.mp4 saida-stories/podio3.mp4 --clobber
 
       - name: Salvar a lista do dia no site
         run: |

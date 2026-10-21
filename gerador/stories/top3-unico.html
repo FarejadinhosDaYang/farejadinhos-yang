@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="UTF-8">
+<!--
+  Story único do TOP 3 do dia (~8 s): os três produtos entram no pódio, 3º → 2º → 1º.
+  Preenchido por window.DADOS = { data: "quarta, 21/10", itens: [ {posicao, imagem, nome, preco, off}, ... ] }.
+  Gerado por gerar_stories.py (sai como podio-top3.mp4; o preenchido vira top3-unico-gerado.html).
+-->
+<style>
+@font-face{ font-family:"Baloo"; src:url(fonts/Baloo2.ttf); font-weight:400 800; }
+@font-face{ font-family:"Work"; src:url(fonts/WorkSans.ttf); font-weight:100 900; }
+:root{ --red:#E5232E; --red-dark:#C21A24; --ink:#2B1B12; --yellow:#FFD34D; }
+*{ box-sizing:border-box; margin:0; }
+html,body{ width:1080px; height:1920px; overflow:hidden; background:var(--red); }
+.palco{ position:relative; width:1080px; height:1920px; overflow:hidden; font-family:"Work",sans-serif; color:var(--ink);
+  background:radial-gradient(circle at 50% 45%, #F24A33 0%, var(--red) 45%, #9E1018 100%); }
+.raios{ position:absolute; left:50%; top:52%; width:2600px; height:2600px; margin:-1300px 0 0 -1300px; border-radius:50%; opacity:.12;
+  background:repeating-conic-gradient(#FFE58A 0 7deg, transparent 7deg 20deg); animation:girar 8s linear both; }
+@keyframes girar{ to{ transform:rotate(50deg); } }
+.patas{ position:absolute; inset:-200px; opacity:.10;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 40 40'%3E%3Cg fill='%23fff'%3E%3Cellipse cx='20' cy='27' rx='10' ry='8.5'/%3E%3Cellipse cx='8.5' cy='15' rx='4.2' ry='5.2'/%3E%3Cellipse cx='16' cy='9' rx='4.2' ry='5.4'/%3E%3Cellipse cx='24.5' cy='9' rx='4.2' ry='5.4'/%3E%3Cellipse cx='31.5' cy='15' rx='4.2' ry='5.2'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:180px 180px; transform:rotate(-14deg); }
+@keyframes pop{ from{ transform:scale(0); opacity:0; } to{ transform:none; opacity:1; } }
+@keyframes subir{ from{ transform:translateY(80px); opacity:0; } to{ transform:none; opacity:1; } }
+@keyframes balanca{ 0%,100%{ transform:rotate(-4deg); } 50%{ transform:rotate(4deg); } }
+
+/* ---- título ---- */
+.titulo{ position:absolute; left:0; right:0; top:250px; text-align:center; animation:tituloIn .6s cubic-bezier(.2,1.6,.4,1) .1s both; }
+.titulo b{ display:inline-block; font-family:"Baloo"; font-weight:800; font-size:150px; line-height:.9; color:#fff;
+  text-shadow:0 10px 0 rgba(120,0,0,.35), 0 18px 40px rgba(60,0,0,.4); }
+.titulo b em{ font-style:normal; color:var(--yellow); }
+.titulo span{ display:block; margin-top:14px; font-family:"Baloo"; font-weight:700; font-size:46px; color:#FFE2C2; }
+@keyframes tituloIn{ from{ transform:translateY(-500px) rotate(-6deg); } to{ transform:none; } }
+.yang{ position:absolute; left:50%; top:90px; width:150px; height:150px; margin-left:-75px; border-radius:50%; border:8px solid #fff; overflow:hidden;
+  box-shadow:0 12px 26px rgba(60,0,0,.4); animation:pop .45s cubic-bezier(.2,1.6,.4,1) .5s both, balanca 2.6s ease-in-out 1s infinite; }
+.yang img{ width:100%; height:100%; display:block; }
+
+/* ---- degraus (2º | 1º | 3º) ---- */
+.degrau{ position:absolute; bottom:300px; width:340px; border-radius:26px 26px 0 0; z-index:1;
+  box-shadow:inset 0 10px 0 rgba(255,255,255,.35), 0 26px 40px rgba(60,0,0,.35);
+  display:flex; flex-direction:column; align-items:center; padding:68px 18px 0; text-align:center;
+  animation:degrauSobe .6s cubic-bezier(.2,1.3,.4,1) both; }
+.degrau .nome{ font-family:"Baloo"; font-weight:800; font-size:34px; line-height:1.02; max-height:72px; overflow:hidden; color:var(--mt);
+  opacity:0; animation:subir .4s ease-out both; }
+.degrau .num{ font-family:"Baloo"; font-weight:800; font-size:200px; line-height:1; color:var(--mt); text-shadow:0 4px 0 rgba(255,255,255,.35); margin-top:auto; }
+@keyframes degrauSobe{ from{ transform:translateY(900px); } to{ transform:none; } }
+.d1{ left:370px; height:640px; --mt:#5A3B00; background:linear-gradient(180deg,#FFE58A 0%,#F2B82E 45%,#B9801A 100%); animation-delay:.45s; z-index:2; }
+.d2{ left:30px;  height:480px; --mt:#2F3740; background:linear-gradient(180deg,#F4F6F8 0%,#C3CAD2 45%,#87919C 100%); animation-delay:.3s; }
+.d3{ left:710px; height:380px; --mt:#4A2410; background:linear-gradient(180deg,#F6C79A 0%,#D98A4E 45%,#9A5626 100%); animation-delay:.6s; }
+.d1 .num{ font-size:250px; }
+.degrau .num{ margin-bottom:-10px; }
+
+/* ---- produtos caindo em cima de cada degrau ---- */
+.card{ position:absolute; width:320px; height:320px; background:#fff; border-radius:40px; padding:14px; z-index:3;
+  box-shadow:0 26px 50px rgba(60,0,0,.45); animation:cai .7s cubic-bezier(.3,1.5,.5,1) both, flutua 2.4s ease-in-out infinite; }
+.card img{ width:100%; height:100%; object-fit:cover; border-radius:28px; display:block; }
+@keyframes cai{ from{ transform:translateY(-1700px) rotate(-10deg); } to{ transform:none; } }
+@keyframes flutua{ 0%,100%{ transform:translateY(0) rotate(-1deg); } 50%{ transform:translateY(-12px) rotate(1deg); } }
+.preco{ position:absolute; left:50%; bottom:-46px; transform:translateX(-50%) rotate(-3deg); white-space:nowrap; background:#fff; color:var(--red-dark);
+  font-family:"Baloo"; font-weight:800; font-size:60px; line-height:1; padding:16px 26px 8px; border-radius:24px; border:5px solid var(--red-dark);
+  box-shadow:0 12px 26px rgba(60,0,0,.35); animation:carimbo .45s cubic-bezier(.2,1.8,.4,1) both; }
+@keyframes carimbo{ from{ transform:translateX(-50%) scale(2.4) rotate(8deg); opacity:0; } to{ transform:translateX(-50%) rotate(-3deg); opacity:1; } }
+.off{ position:absolute; right:-26px; top:-26px; width:120px; height:120px; border-radius:50%; background:var(--yellow); color:var(--red-dark);
+  font-family:"Baloo"; font-weight:800; font-size:40px; display:flex; align-items:center; justify-content:center; transform:rotate(12deg);
+  box-shadow:0 8px 18px rgba(60,0,0,.35); animation:pop .4s cubic-bezier(.2,1.8,.4,1) both; }
+.c1{ left:380px; top:652px; }   /* em cima do degrau 1 (topo 980) */
+.c2{ left:40px;  top:812px; }   /* degrau 2 (topo 1140) */
+.c3{ left:720px; top:912px; }   /* degrau 3 (topo 1240) */
+.c1{ width:320px; }
+.coroa{ position:absolute; left:50%; top:505px; margin-left:-75px; width:150px; text-align:center; font-size:130px; line-height:1; z-index:4;
+  filter:drop-shadow(0 10px 14px rgba(60,0,0,.45)); animation:coroaIn .55s cubic-bezier(.2,1.8,.4,1) 3.55s both, balanca 2s ease-in-out 4.2s infinite; }
+@keyframes coroaIn{ from{ transform:translateY(-300px) scale(.3) rotate(-40deg); opacity:0; } to{ transform:none; opacity:1; } }
+
+.link{ position:absolute; left:0; right:0; bottom:150px; text-align:center; white-space:nowrap; color:#fff; font-family:"Baloo"; font-weight:800; font-size:46px;
+  animation:subir .4s ease-out 4.2s both; }
+.link small{ display:block; font-family:"Work"; font-weight:700; font-size:28px; color:#FFE2C2; margin-top:2px; }
+
+.est{ position:absolute; color:#FFE58A; font-size:70px; opacity:0; z-index:5; text-shadow:0 0 18px rgba(255,255,255,.8); }
+@keyframes piscar{ 0%,100%{ opacity:0; transform:scale(.3) rotate(0); } 50%{ opacity:1; transform:scale(1) rotate(90deg); } }
+.conf{ position:absolute; top:-60px; width:20px; height:30px; border-radius:4px; z-index:6; }
+@keyframes cair{ from{ transform:translate(0,0) rotate(0); } to{ transform:translate(var(--dx),2100px) rotate(var(--r)); } }
+[hidden]{ display:none !important; }
+.publi{position:absolute;z-index:50;top:40px;left:40px;padding:10px 22px 8px;border-radius:999px;background:rgba(43,27,18,.55);color:#fff;font:700 30px "Work Sans","Work",Arial,sans-serif;letter-spacing:.3px;line-height:1}
+</style></head>
+<body>
+<div class="palco">
+  <div class="publi">publi · link de afiliado</div>
+  <div class="raios"></div>
+  <div class="patas"></div>
+  <div class="yang"><img src="../../assets/yang-padrao-redonda.png" alt=""></div>
+  <div class="titulo"><b>TOP <em>3</em> DO DIA</b><span data-c="data"></span></div>
+
+  <div class="degrau d2"><div class="nome" data-c="n2" style="animation-delay:2.3s"></div><div class="num">2</div></div>
+  <div class="degrau d1"><div class="nome" data-c="n1" style="animation-delay:3.3s"></div><div class="num">1</div></div>
+  <div class="degrau d3"><div class="nome" data-c="n3" style="animation-delay:1.4s"></div><div class="num">3</div></div>
+
+  <!-- ordem de entrada: 3º (1.0 s), 2º (1.9 s), 1º (2.9 s) -->
+  <div class="card c3" style="animation-delay:1.0s, 1.7s"><img data-c="i3"><div class="off" data-c="o3" hidden style="animation-delay:1.5s"></div><div class="preco" data-c="p3" style="animation-delay:1.35s"></div></div>
+  <div class="card c2" style="animation-delay:1.9s, 2.6s"><img data-c="i2"><div class="off" data-c="o2" hidden style="animation-delay:2.4s"></div><div class="preco" data-c="p2" style="animation-delay:2.25s"></div></div>
+  <div class="card c1" style="animation-delay:2.9s, 3.6s"><img data-c="i1"><div class="off" data-c="o1" hidden style="animation-delay:3.4s"></div><div class="preco" data-c="p1" style="animation-delay:3.25s"></div></div>
+  <div class="coroa">👑</div>
+
+  <div class="link">🔗 confere no link do story!<small>farejadinhosdayang.com.br 🐾</small></div>
+  <div id="confete"></div>
+
+  <div class="est" style="left:110px;top:640px;animation:piscar 1.6s ease-in-out 3.6s infinite">✦</div>
+  <div class="est" style="left:900px;top:700px;animation:piscar 1.6s ease-in-out 4.1s infinite">✦</div>
+  <div class="est" style="left:820px;top:220px;animation:piscar 1.6s ease-in-out 1.2s infinite">✦</div>
+  <div class="est" style="left:170px;top:300px;animation:piscar 1.6s ease-in-out 2.0s infinite">✦</div>
+</div>
+<script>
+(function(){
+  var D = window.DADOS || { itens: [] };
+  function c(n){ return document.querySelector('[data-c="'+n+'"]'); }
+  c("data").textContent = D.data || "farejados pela Yang";
+  (D.itens || []).forEach(function(o){
+    var p = o.posicao;
+    c("i" + p).src = o.imagem || "";
+    c("p" + p).textContent = o.preco || "";
+    c("n" + p).textContent = o.nome || "";
+    if (o.off){ c("o" + p).textContent = "-" + o.off + "%"; c("o" + p).hidden = false; }
+    // preço comprido: diminui a letra pra caber na largura do card
+    var pr = c("p" + p), t = 60; while (pr.offsetWidth > 330 && t > 36){ t -= 4; pr.style.fontSize = t + "px"; }
+  });
+  // confete quando o 1º lugar pousa
+  var s = 3; function r(){ s = (s * 9301 + 49297) % 233280; return s / 233280; }
+  var cores = ["#FFD34D","#ffffff","#F7941D","#FFE58A"], h = "";
+  for (var i = 0; i < 70; i++){
+    h += '<div class="conf" style="left:' + Math.round(r()*1080) + 'px;background:' + cores[i%4] + ';--dx:' + Math.round((r()-.5)*300) +
+      'px;--r:' + Math.round(r()*900) + 'deg;animation:cair ' + (3 + r()*2).toFixed(2) + 's linear ' + (3.4 + r()*3.5).toFixed(2) + 's both"></div>';
+  }
+  document.getElementById("confete").innerHTML = h;
+})();
+</script>
+</body></html>
