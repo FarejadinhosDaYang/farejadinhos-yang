@@ -1,35 +1,41 @@
 {
-  "quando": "2026-10-21T13:45:02Z",
+  "quando": "2026-10-21T18:36:06Z",
   "origem": "schedule",
-  "total": 198,
-  "iguais": 48,
+  "total": 196,
+  "iguais": 51,
   "mudaram": [
+    {
+      "slug": "super-clarificante-para-piscina-power-gel",
+      "produto": "Super Clarificante para Piscina Power Gel",
+      "de": "R$ 31,81",
+      "para": "31,49"
+    },
+    {
+      "slug": "escova-curva-piscina-engate-rapido-limpeza-fundo",
+      "produto": "Escova Curva Piscina Engate Rápido Limpeza Fundo",
+      "de": "R$ 35,90",
+      "para": "27,00"
+    },
     {
       "slug": "fritadeira-sem-oleo-air-fryer-4l-mondial-1500w",
       "produto": "Fritadeira sem óleo air fryer 4L Mondial 1500W",
-      "de": "R$ 254,14",
-      "para": "269,09"
+      "de": "R$ 269,09",
+      "para": "249,00"
     },
     {
-      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
-      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 5.065,61",
-      "para": "3839,10"
+      "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
+      "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
+      "de": "R$ 5.351,00",
+      "para": "5356,00"
     },
     {
       "slug": "air-fryer-fritadeira-eletrica-electrolux-eaf40",
       "produto": "Air fryer Fritadeira Elétrica Electrolux EAF40",
-      "de": "R$ 299,00",
-      "para": "324,47"
+      "de": "R$ 324,47",
+      "para": "335,97"
     }
   ],
   "semPreco": [
-    {
-      "slug": "2-pcs-bolas-de-natal-ornamentos-de-natal-rena-design",
-      "produto": "2 Pçs Bolas De Natal Ornamentos Rena Design",
-      "link": "https://s.shopee.com.br/8KqG87N4gX",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
     {
       "slug": "card-natal-lacreme-mimo-natal-chocolate-lembrancinha-natal",
       "produto": "Card Natal Lacreme Mimo Chocolate Lembrancinha Tag",
@@ -139,24 +145,6 @@
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
-      "slug": "ornamentos-de-natal-boneco-de-natal-boneco-de-papai-noel",
-      "produto": "Ornamentos De Natal Boneco De Papai Noel De Neve",
-      "link": "https://s.shopee.com.br/2LZ2z5jurh",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
-      "slug": "bolas-de-natal-decoracao-enfeite-natalino-bolinhas-de-natal",
-      "produto": "Bolas de Natal Decoração Enfeite Natalino Bolinhas",
-      "link": "https://s.shopee.com.br/2BFcmmkYCg",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
-      "slug": "kit-10-tag-feliz-natal-arvore-natal-boneco-de-neve-bola",
-      "produto": "Kit 10 Tag Feliz Natal Árvore Boneco de Neve",
-      "link": "https://s.shopee.com.br/20wCaTlBXf",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
       "slug": "arvore-de-natal-90-cm-80galhos-arvore-natal-economica",
       "produto": "Arvore De Natal 80Galhos Economica Pinheiro branca",
       "link": "https://s.shopee.com.br/1qcmOAlose",
@@ -226,12 +214,6 @@
       "slug": "ramekin-coracao-150ml-canelado-molho-doce-petisco-festa",
       "produto": "Ramekin Coração 150ml Canelado Molho Doce Petisco",
       "link": "https://s.shopee.com.br/2LZ30G7UWH",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
-      "slug": "frigideira-antiaderente-nao-usa-oleo-ceramica-vanilla-cream",
-      "produto": "Frigideira Antiaderente Não Usa Óleo Cerâmica",
-      "link": "https://s.shopee.com.br/1LgVoQBIYB",
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
@@ -367,12 +349,6 @@
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
-      "slug": "hidratante-creme-facial-pele-de-porcelana-kokeshi-30g",
-      "produto": "Hidratante Creme Facial Pele De Porcelana Kokeshi",
-      "link": "https://s.shopee.com.br/5LCeZlw4Rb",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
       "slug": "manta-cobertor-casal-queen-mantinha-inverno-microfibra",
       "produto": "Manta Cobertor Casal Queen Mantinha Inverno",
       "link": "https://s.shopee.com.br/4fwxmXybnU",
@@ -391,12 +367,6 @@
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
-      "slug": "pecas-suporte-de-canto-e-reta-porta-shampoo",
-      "produto": "Peças Suporte de Canto e Reta Porta Shampoo",
-      "link": "https://s.shopee.com.br/4LKE54YwhA",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
       "slug": "porta-frios-duplo-preto-para-presunto-e-queijo",
       "produto": "Porta Frios Duplo Preto para Presunto e Queijo",
       "link": "https://s.shopee.com.br/4VdeHNYJMD",
@@ -412,12 +382,6 @@
       "slug": "kit-10pcs-clipes-de-cabide-antiderrapante",
       "produto": "Kit 10pçs Clipes De Cabide Antiderrapante",
       "link": "https://s.shopee.com.br/1BNCJFl07d",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
-      "slug": "necessaire-bolsa-de-maquiagem-em-couro",
-      "produto": "Necessaire Bolsa De Maquiagem Em Couro",
-      "link": "https://s.shopee.com.br/gQviKmu8Y",
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
@@ -886,6 +850,14 @@
       "referencia": "preco posto a mao em 18/10 23:09"
     },
     {
+      "slug": "iphone-17-pro-max-256gb-laranja-cosmico",
+      "produto": "iPhone 17 Pro Max 256GB - Laranja-cósmico",
+      "link": "https://meli.la/2wS1Uaq",
+      "atual": "R$ 8.199,00",
+      "lido": "9719,00",
+      "referencia": "preco posto a mao em 19/10 08:22"
+    },
+    {
       "slug": "iphone-17-pro-256gb-laranja-cosmico",
       "produto": "iPhone 17 Pro 256GB - Laranja-cósmico",
       "link": "https://meli.la/2tshrR8",
@@ -906,7 +878,7 @@
       "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
       "link": "https://link.amazon/B0epLOItP",
       "atual": "R$ 4.559,05",
-      "lido": "5065,61",
+      "lido": "4630,00",
       "referencia": "preco posto a mao em 19/10 08:26"
     },
     {
@@ -922,7 +894,7 @@
       "produto": "Air Fryer Britânia 6,5L 1700W 8 Funções",
       "link": "https://meli.la/2mjJVf6",
       "atual": "R$ 459,00",
-      "lido": "319,90",
+      "lido": "355,62",
       "referencia": "preco posto a mao em 21/10 10:12"
     }
   ]
