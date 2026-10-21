@@ -3132,23 +3132,6 @@
     "precoConferido": "2026-10-21T07:39:00Z"
   },
   {
-    "produto": "S429049631 Air Fryer Britânia 6,5L 1700W 8 Funções",
-    "preco": "R$ 459,00",
-    "precoAntigo": "",
-    "cupom": "CORREQUETEM",
-    "categoria": "Eletrodomésticos",
-    "destaque": false,
-    "imagem": "ace888dc-8a50-47d2-9dbb-dcdc4d4b3c07.webp",
-    "link": "https://meli.la/2EjR1qJ",
-    "url": "https://farejadinhosdayang.com.br/ofertas/s429049631-air-fryer-britania-6-5l-1700w-8-funcoes/",
-    "slug": "s429049631-air-fryer-britania-6-5l-1700w-8-funcoes",
-    "data": "2026-10-18T15:34:32Z",
-    "precoAVista": "",
-    "precoAPrazo": "",
-    "liberacao": "2026-10-18T15:34:59Z",
-    "precoConferido": "2026-10-20T19:17:55Z"
-  },
-  {
     "produto": "iPhone 18 Pro 256GB Preto (somente eSIM)",
     "preco": "R$ 9.499,00",
     "precoAntigo": "",
@@ -3376,5 +3359,22 @@
     "data": "2026-10-21T12:30:05Z",
     "precoAVista": "2948,00",
     "precoAPrazo": "3276,00"
+  },
+  {
+    "produto": "Air Fryer Britânia 6,5L 1700W 8 Funções",
+    "preco": "R$ 459,00",
+    "precoAntigo": "",
+    "cupom": "CORREQUETEM",
+    "categoria": "Eletrodomésticos",
+    "destaque": false,
+    "imagem": "ace888dc-8a50-47d2-9dbb-dcdc4d4b3c07.webp",
+    "link": "https://meli.la/2mjJVf6",
+    "url": "https://farejadinhosdayang.com.br/ofertas/s429049631-air-fryer-britania-6-5l-1700w-8-funcoes/",
+    "slug": "s429049631-air-fryer-britania-6-5l-1700w-8-funcoes",
+    "data": "2026-10-18T15:34:32Z",
+    "precoAVista": "",
+    "precoAPrazo": "",
+    "liberacao": "2026-10-18T15:34:59Z",
+    "precoManual": "2026-10-21T13:12:10Z"
   }
 ]
