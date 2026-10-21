@@ -1,26 +1,26 @@
 {
-  "quando": "2026-10-20T22:17:37Z",
+  "quando": "2026-10-21T01:32:59Z",
   "origem": "schedule",
-  "total": 201,
+  "total": 200,
   "iguais": 48,
   "mudaram": [
     {
-      "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
-      "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-      "de": "R$ 58,42",
-      "para": "58,01"
+      "slug": "dispenser-porta-detergente-3-em-1-em-aco-inox",
+      "produto": "Dispenser Porta Detergente 3 em 1 em Aço Inox",
+      "de": "R$ 34,20",
+      "para": "34,90"
     },
     {
       "slug": "copo-termica-600ml-inox-anti-vazamento",
       "produto": "Copo Térmica 600ml Inox Anti-vazamento",
-      "de": "R$ 34,99",
-      "para": "50,07"
+      "de": "R$ 50,07",
+      "para": "48,99"
     },
     {
       "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
       "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 5.065,61",
-      "para": "3839,10"
+      "de": "R$ 3.839,10",
+      "para": "5065,61"
     }
   ],
   "semPreco": [
@@ -268,12 +268,6 @@
       "slug": "jogo-de-copos-6-pecas-de-vidro-cameratta-canelado-420ml",
       "produto": "Jogo De Copos 6 Peças De Vidro Cameratta Canelado",
       "link": "https://s.shopee.com.br/9zyU8LeIy3",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
-      "slug": "celimax-the-vita-a-retinal-shot-tightening-booster-15ml",
-      "produto": "Celimax The Vita A Retinal Shot Tightening Booster",
-      "link": "https://s.shopee.com.br/9fLdjjfZe1",
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
