@@ -1,47 +1,47 @@
 {
-  "quando": "2026-10-21T18:36:06Z",
+  "quando": "2026-10-21T22:18:35Z",
   "origem": "schedule",
-  "total": 196,
-  "iguais": 51,
+  "total": 193,
+  "iguais": 50,
   "mudaram": [
     {
-      "slug": "super-clarificante-para-piscina-power-gel",
-      "produto": "Super Clarificante para Piscina Power Gel",
-      "de": "R$ 31,81",
-      "para": "31,49"
+      "slug": "varal-de-chao-grande-de-roupas-3-andares-dobravel",
+      "produto": "Varal De Chão Grande De Roupas 3 Andares Dobrável",
+      "de": "R$ 70,56",
+      "para": "67,03"
     },
     {
-      "slug": "escova-curva-piscina-engate-rapido-limpeza-fundo",
-      "produto": "Escova Curva Piscina Engate Rápido Limpeza Fundo",
-      "de": "R$ 35,90",
-      "para": "27,00"
+      "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
+      "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
+      "de": "R$ 58,42",
+      "para": "62,00"
     },
     {
-      "slug": "fritadeira-sem-oleo-air-fryer-4l-mondial-1500w",
-      "produto": "Fritadeira sem óleo air fryer 4L Mondial 1500W",
-      "de": "R$ 269,09",
-      "para": "249,00"
+      "slug": "balanca-digital-bioimpedancia-profissional-smart",
+      "produto": "Balança Digital Bioimpedância Profissional smart",
+      "de": "R$ 32,90",
+      "para": "28,95"
     },
     {
-      "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
-      "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
-      "de": "R$ 5.351,00",
-      "para": "5356,00"
+      "slug": "dispenser-porta-detergente-3-em-1-em-aco-inox",
+      "produto": "Dispenser Porta Detergente 3 em 1 em Aço Inox",
+      "de": "R$ 34,90",
+      "para": "35,90"
     },
     {
-      "slug": "air-fryer-fritadeira-eletrica-electrolux-eaf40",
-      "produto": "Air fryer Fritadeira Elétrica Electrolux EAF40",
-      "de": "R$ 324,47",
-      "para": "335,97"
+      "slug": "faqueiro-tramontina-buzios-em-aco-inox-com-detalhe",
+      "produto": "Faqueiro Tramontina Búzios Em Aço Inox Com Detalhe",
+      "de": "R$ 62,25",
+      "para": "62,00"
+    },
+    {
+      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
+      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
+      "de": "R$ 3.839,10",
+      "para": "5065,61"
     }
   ],
   "semPreco": [
-    {
-      "slug": "card-natal-lacreme-mimo-natal-chocolate-lembrancinha-natal",
-      "produto": "Card Natal Lacreme Mimo Chocolate Lembrancinha Tag",
-      "link": "https://s.shopee.com.br/80DPjVOLMV",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
     {
       "slug": "enfeite-de-natal-feliz-natal-31cm-dourado-e-vermelho-de",
       "produto": "Enfeite de Natal Feliz Dourado E Vermelho Natalino",
@@ -277,12 +277,6 @@
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
-      "slug": "kit-lavabo-pet-ambar-difusor-de-varetas-e-saboneteira-luxo",
-      "produto": "Kit Lavabo Pet Ambar Difusor de Varetas",
-      "link": "https://s.shopee.com.br/7ptzYMmYMq",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
       "slug": "kit-2-unidades-abajur-la-finesse-cupula-luminaria-para",
       "produto": "Kit 2 unidades Abajur La Finesse Cupula",
       "link": "https://s.shopee.com.br/7faZM3nBhp",
@@ -364,12 +358,6 @@
       "slug": "fatiador-de-cozinha-multifuncional-profissional-em-aco",
       "produto": "Fatiador de cozinha multifuncional profissional",
       "link": "https://s.shopee.com.br/1qcmPL9OXE",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
-      "slug": "porta-frios-duplo-preto-para-presunto-e-queijo",
-      "produto": "Porta Frios Duplo Preto para Presunto e Queijo",
-      "link": "https://s.shopee.com.br/4VdeHNYJMD",
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
