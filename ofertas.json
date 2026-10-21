@@ -3132,24 +3132,6 @@
     "parcelas": 6
   },
   {
-    "produto": "Fritadeira Elétrica AFON-12L-BG Forno Oven",
-    "preco": "R$ 514,09",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Eletrodomésticos",
-    "destaque": false,
-    "imagem": "c7af3360-e4e1-48fc-806b-2909bb81a77d.webp",
-    "link": "https://meli.la/2fPSJSc",
-    "url": "https://farejadinhosdayang.com.br/ofertas/fritadeira-eletrica-afon-12l-bg-forno-oven/",
-    "slug": "fritadeira-eletrica-afon-12l-bg-forno-oven",
-    "data": "2026-10-18T15:34:31Z",
-    "precoAVista": "R$ 514,09",
-    "precoAPrazo": "521,10",
-    "liberacao": "2026-10-21T11:56:00Z",
-    "parcelas": 10,
-    "precoConferido": "2026-10-20T15:07:49Z"
-  },
-  {
     "produto": "Air fryer Fritadeira Elétrica Electrolux EAF40",
     "preco": "R$ 299,00",
     "precoAntigo": "",
@@ -3379,5 +3361,23 @@
     "precoAPrazo": "",
     "liberacao": "2026-10-20T19:24:00Z",
     "precoManual": "2026-10-20T01:57:55Z"
+  },
+  {
+    "produto": "Fritadeira Elétrica Mondial - Forno Oven",
+    "preco": "R$ 514,09",
+    "precoAntigo": "",
+    "cupom": "",
+    "categoria": "Eletrodomésticos",
+    "destaque": false,
+    "imagem": "c7af3360-e4e1-48fc-806b-2909bb81a77d.webp",
+    "link": "https://meli.la/2fPSJSc",
+    "url": "https://farejadinhosdayang.com.br/ofertas/fritadeira-eletrica-afon-12l-bg-forno-oven/",
+    "slug": "fritadeira-eletrica-afon-12l-bg-forno-oven",
+    "data": "2026-10-18T15:34:31Z",
+    "precoAVista": "514,09",
+    "precoAPrazo": "521,10",
+    "liberacao": "2026-10-21T11:56:00Z",
+    "precoManual": "2026-10-21T12:21:18Z",
+    "parcelas": 10
   }
 ]
