@@ -1,53 +1,47 @@
 {
-  "quando": "2026-10-22T13:45:18Z",
+  "quando": "2026-10-22T18:31:02Z",
   "origem": "schedule",
-  "total": 191,
+  "total": 190,
   "iguais": 49,
   "mudaram": [
     {
-      "slug": "marmita-eletrica-preta-bivolt-portatil-domestica",
-      "produto": "Marmita Elétrica Preta Bivolt Portátil Doméstica",
-      "de": "R$ 51,49",
-      "para": "49,99"
+      "slug": "extrator-de-cravos-e-espinhas-kit-cureta-aco-inox",
+      "produto": "Extrator De Cravos E Espinhas Kit Cureta Aço Inox",
+      "de": "R$ 21,60",
+      "para": "22,55"
     },
     {
-      "slug": "fritadeira-sem-oleo-air-fryer-4l-mondial-1500w",
-      "produto": "Fritadeira sem óleo air fryer 4L Mondial 1500W",
-      "de": "R$ 236,55",
-      "para": "249,00"
+      "slug": "kit-2-pochete-academia-esportiva-fitness-corrida",
+      "produto": "Kit 2 Pochete Academia Esportiva Fitness Corrida",
+      "de": "R$ 35,90",
+      "para": "28,48"
     },
     {
-      "slug": "samsung-galaxy-s25-5g-256gb-12gb-camera-tripla",
-      "produto": "Samsung Galaxy S25 5G, 256GB, 12GB, Câmera Tripla",
-      "de": "R$ 3.689,00",
-      "para": "3898,00"
+      "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
+      "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
+      "de": "R$ 58,42",
+      "para": "55,68"
+    },
+    {
+      "slug": "faqueiro-tramontina-buzios-em-aco-inox-com-detalhe",
+      "produto": "Faqueiro Tramontina Búzios Em Aço Inox Com Detalhe",
+      "de": "R$ 62,00",
+      "para": "62,25"
     },
     {
       "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
       "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
-      "de": "R$ 5.356,00",
-      "para": "5455,00"
+      "de": "R$ 5.455,00",
+      "para": "5509,00"
     },
     {
-      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
-      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 5.065,61",
-      "para": "3839,10"
-    },
-    {
-      "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-8gb-ram",
-      "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb, 8gb Ram,",
-      "de": "R$ 2.948,00",
-      "para": "2998,00"
+      "slug": "creatina-monohidratada-100g-growth-supplements",
+      "produto": "Creatina Monohidratada 100g Growth Supplements",
+      "de": "R$ 62,48",
+      "para": "64,81"
     }
   ],
   "semPreco": [
-    {
-      "slug": "enfeite-de-natal-feliz-natal-31cm-dourado-e-vermelho-de",
-      "produto": "Enfeite de Natal Feliz Dourado E Vermelho Natalino",
-      "link": "https://s.shopee.com.br/AUuki6EpI0",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
     {
       "slug": "luzes-de-velas-de-natal-led-luminosas-decoracoes-para",
       "produto": "Luzes de velas de Natal LED luminosas decorações",
@@ -822,7 +816,7 @@
       "produto": "iPhone 18 Pro Max 256GB Preto (somente eSIM)",
       "link": "https://meli.la/2fXqW9L",
       "atual": "R$ 10.289,00",
-      "lido": "10532,00",
+      "lido": "13049,00",
       "referencia": "preco posto a mao em 18/10 23:09"
     },
     {
@@ -846,7 +840,7 @@
       "produto": "Celular Samsung Galaxy S26 Ultra 5G 256GB 12GB RAM",
       "link": "https://link.amazon/B098ObooL",
       "atual": "R$ 6.546,59",
-      "lido": "7274,00",
+      "lido": "7124,05",
       "referencia": "preco posto a mao em 19/10 08:25"
     },
     {
@@ -878,7 +872,7 @@
       "produto": "Air Fryer Britânia 6,5L 1700W 8 Funções",
       "link": "https://meli.la/2mjJVf6",
       "atual": "R$ 459,00",
-      "lido": "314,10",
+      "lido": "312,33",
       "referencia": "preco posto a mao em 21/10 10:12"
     }
   ],
