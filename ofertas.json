@@ -1638,24 +1638,6 @@
     "liberacao": "2026-10-18T16:12:30Z"
   },
   {
-    "produto": "Dispenser Giratorio Organizador Alimentos",
-    "preco": "R$ 78,99",
-    "precoAntigo": "",
-    "cupom": "CORREQUETEM",
-    "categoria": "Cozinha",
-    "destaque": false,
-    "imagem": "26eb140d-ed4d-40a7-b45c-67f5da3b2ab5.webp",
-    "link": "https://meli.la/14uSu5a",
-    "url": "https://farejadinhosdayang.com.br/ofertas/dispenser-giratorio-organizador-alimentos/",
-    "slug": "dispenser-giratorio-organizador-alimentos",
-    "data": "2026-10-15T22:42:12Z",
-    "precoAVista": "R$ 78,99",
-    "precoAPrazo": "108,56",
-    "liberacao": "2026-10-27T22:00:00Z",
-    "parcelas": 4,
-    "precoConferido": "2026-10-19T11:48:17Z"
-  },
-  {
     "produto": "Kit Chave Catraca Soquete 46 Peças Indufer",
     "preco": "R$ 26,99",
     "precoAntigo": "",
@@ -3306,5 +3288,23 @@
     "precoAPrazo": "",
     "liberacao": "2026-10-23T23:00:00Z",
     "precoManual": "2026-10-22T02:22:17Z"
+  },
+  {
+    "produto": "Dispenser Giratorio Organizador Alimentos",
+    "preco": "R$ 78,99",
+    "precoAntigo": "",
+    "cupom": "CORREQUETEM",
+    "categoria": "Cozinha, Vídeos",
+    "destaque": false,
+    "imagem": "26eb140d-ed4d-40a7-b45c-67f5da3b2ab5.webp",
+    "link": "https://meli.la/14uSu5a",
+    "url": "https://farejadinhosdayang.com.br/ofertas/dispenser-giratorio-organizador-alimentos/",
+    "slug": "dispenser-giratorio-organizador-alimentos",
+    "data": "2026-10-15T22:42:12Z",
+    "precoAVista": "78,99",
+    "precoAPrazo": "108,56",
+    "liberacao": "2026-10-27T22:00:00Z",
+    "precoManual": "2026-10-22T02:25:22Z",
+    "parcelas": 4
   }
 ]
