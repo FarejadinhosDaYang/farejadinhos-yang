@@ -1,146 +1,32 @@
 {
-  "quando": "2026-10-22T20:03:09Z",
-  "origem": "workflow_dispatch",
-  "total": 190,
-  "iguais": 155,
+  "quando": "2026-10-22T22:17:45Z",
+  "origem": "schedule",
+  "total": 187,
+  "iguais": 170,
   "mudaram": [
     {
-      "slug": "bolas-de-natal-decorativa-enfeite-para-arvore-natal-bolinha",
-      "produto": "Bolas de Natal Decorativa Enfeite para Arvore",
-      "de": "R$ 10,90",
-      "para": "R$ 12,90"
+      "slug": "super-clarificante-para-piscina-power-gel",
+      "produto": "Super Clarificante para Piscina Power Gel",
+      "de": "R$ 31,81",
+      "para": "37,42"
     },
     {
-      "slug": "kit-bola-de-natal-enfeite-para-arvore-de-natal-decoracao-2",
-      "produto": "Kit Bola De Natal Enfeite Para Arvore Decoração",
-      "de": "R$ 25,90",
-      "para": "R$ 27,99"
+      "slug": "camera-lampada-de-seguranca-wifi-ip-app-yoosee",
+      "produto": "Câmera Lâmpada De Segurança Wifi Ip App Yoosee",
+      "de": "R$ 83,69",
+      "para": "53,99"
     },
     {
-      "slug": "arvore-de-natal-premium-super-cheia-grande-luxo-decoracao",
-      "produto": "Árvore de Natal Premium Super Cheia Grande Luxo",
-      "de": "R$ 59,99",
-      "para": "R$ 53,99"
+      "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
+      "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
+      "de": "R$ 55,68",
+      "para": "58,01"
     },
     {
-      "slug": "globo-de-neve-de-natal-papai-noel-15-cm-decoracao-de-natal",
-      "produto": "Globo de Neve de Natal Papai Noel",
-      "de": "R$ 13,05",
-      "para": "R$ 14,50"
-    },
-    {
-      "slug": "descascador-eletrico-de-alho-e-uva-em-aco-inox-automatico",
-      "produto": "Descascador Elétrico De Alho E Uva Em Aço Inox",
-      "de": "R$ 59,98",
-      "para": "R$ 59,99"
-    },
-    {
-      "slug": "jogo-de-copos-6-pecas-de-vidro-cameratta-canelado-420ml",
-      "produto": "Jogo De Copos 6 Peças De Vidro Cameratta Canelado",
-      "de": "R$ 37,90",
-      "para": "R$ 38,90"
-    },
-    {
-      "slug": "kit-potes-hermeticos-porta-mantimentos-acrilico-empilhaveis",
-      "produto": "Kit Potes Herméticos Porta Mantimentos Acrílico",
-      "de": "R$ 49,90",
-      "para": "R$ 42,14"
-    },
-    {
-      "slug": "cesto-de-roupa-suja-bambu-com-tampa-e-alcas-50-litros",
-      "produto": "Cesto de Roupa Suja Bambu Com Tampa e Alças",
-      "de": "R$ 59,90",
-      "para": "R$ 53,15"
-    },
-    {
-      "slug": "fatiador-ralador-16-em-1-profissional-de-cozinha-em-aco",
-      "produto": "Fatiador Ralador 16 em 1 Profissional de Cozinha",
-      "de": "R$ 35,99",
-      "para": "R$ 35,98"
-    },
-    {
-      "slug": "kit-10pcs-clipes-de-cabide-antiderrapante",
-      "produto": "Kit 10pçs Clipes De Cabide Antiderrapante",
-      "de": "R$ 9,99",
-      "para": "R$ 10,99"
-    },
-    {
-      "slug": "kit-de-suportes-porta-shampoo-organizador-de-metal",
-      "produto": "Kit De Suportes Porta Shampoo Organizador De Metal",
-      "de": "R$ 14,00",
-      "para": "R$ 20,98"
-    },
-    {
-      "slug": "organizador-prateleira-diamante-acrilico-porta",
-      "produto": "Organizador Prateleira Diamante Acrílico Porta",
-      "de": "R$ 23,99",
-      "para": "R$ 22,99"
-    },
-    {
-      "slug": "estante-6-ou-5-prateleiras-cozinha-de-aco",
-      "produto": "Estante 6 OU 5 Prateleiras Cozinha de Aço",
-      "de": "R$ 69,00",
-      "para": "R$ 72,99"
-    },
-    {
-      "slug": "suporte-de-shampoo-preto-organizador-prateleira-2",
-      "produto": "Suporte De Shampoo Preto Organizador Prateleira",
-      "de": "R$ 13,99",
-      "para": "R$ 12,99"
-    },
-    {
-      "slug": "cesto-de-roupa-de-bambu-dobravel-organizador",
-      "produto": "Cesto De Roupa de Bambu Dobravel Organizador",
-      "de": "R$ 52,32",
-      "para": "R$ 56,26"
-    },
-    {
-      "slug": "escorredor-de-louca-duplo-para-cozinha-organizador",
-      "produto": "Escorredor De Louça Duplo Para Cozinha Organizador",
-      "de": "R$ 25,00",
-      "para": "R$ 25,90"
-    },
-    {
-      "slug": "expositor-de-perfumes-cosmeticos-3-andares",
-      "produto": "Expositor de Perfumes Cosméticos 3 Andares",
-      "de": "R$ 30,99",
-      "para": "R$ 29,99"
-    },
-    {
-      "slug": "kit-com-2-sapateiras-5-nichos-para-organizacao",
-      "produto": "Kit Com 2 Sapateiras 5 Nichos Para Organização",
-      "de": "R$ 39,87",
-      "para": "R$ 39,83"
-    },
-    {
-      "slug": "necessaire-organizador-cosmetico-maquiagem-2",
-      "produto": "Necessaire Organizador Cosmético Maquiagem",
-      "de": "R$ 15,50",
-      "para": "R$ 16,50"
-    },
-    {
-      "slug": "armario-banheiro-espelheira-com-espelho-e-porta",
-      "produto": "Armário Banheiro Espelheira Com Espelho E Porta",
-      "de": "R$ 95,00",
-      "para": "R$ 99,99"
-    },
-    {
-      "slug": "escorredor-de-loucas-rack-aco-carbono-organizador-2",
-      "produto": "Escorredor de Louças Rack Aço Carbono Organizador",
-      "de": "R$ 92,00",
-      "para": "R$ 91,90"
-    },
-    {
-      "slug": "porta-temperos-9-potes-giratorio-preto-organizador",
-      "produto": "Porta Temperos 9 Potes Giratório Preto Organizador",
-      "de": "R$ 35,99",
-      "para": "R$ 41,99"
-    },
-    {
-      "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
-      "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
-      "de": "R$ 5.798,00",
-      "para": "3898,00"
+      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
+      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
+      "de": "R$ 3.839,10",
+      "para": "5065,61"
     }
   ],
   "semPreco": [],
@@ -241,14 +127,22 @@
       "atual": "R$ 459,00",
       "lido": "312,33",
       "referencia": "preco posto a mao em 21/10 10:12"
+    },
+    {
+      "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
+      "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
+      "link": "https://meli.la/2LUJ4yy",
+      "atual": "R$ 3.898,00",
+      "lido": "5798,00",
+      "referencia": "preco posto a mao em 22/10 17:24"
     }
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-22T20:03:10Z",
+      "quando": "2026-10-22T22:17:49Z",
       "teste": false,
-      "links": 131,
-      "ok": 131,
+      "links": 128,
+      "ok": 128,
       "erros": 0
     }
   },
