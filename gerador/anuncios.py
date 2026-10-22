@@ -1,8 +1,11 @@
 """Lote do painel: adiciona/remove "outros anúncios" de uma oferta.
 
 Uso: python gerador/anuncios.py entrada/lote-XXXX.json
-Itens do lote: {"acao": "anuncios", "op": "adicionar"|"remover",
-                "slug": "...", "link": "https://...", "loja": "...", "preco": "..."}
+Itens do lote: {"acao": "anuncios", "op": "adicionar"|"remover"|"editar",
+                "slug": "...", "link": "https://...", "loja": "...", "preco": "...",
+                "variacao": "Azul", "cor": "#hex", "imagem": "https://foto..."}
+"editar" muda variação/cor/foto de um anúncio; com o link principal da
+oferta, muda a variação do anúncio principal (campos variacao/cor da oferta).
 Anúncio posto à mão vale direto (o Alexandre conferiu o preço) por 7 dias;
 depois disso a conferência automática (conferir-anuncios.py) assume.
 """
@@ -31,7 +34,24 @@ def main(arquivo):
             continue
         lista = [a for a in (o.get("anuncios") or []) if isinstance(a, dict)]
         sem_este = [a for a in lista if a.get("link") != link]
-        if it.get("op") == "remover":
+        extras = {k: str(it.get(k) or "").strip() for k in ("variacao", "cor", "imagem") if k in it}
+        if extras.get("imagem") and not extras["imagem"].lower().startswith(("http://", "https://")):
+            extras["imagem"] = ""
+        if it.get("op") == "editar":
+            alvo = o if link == o.get("link") else next((a for a in lista if a.get("link") == link), None)
+            if alvo is None:
+                print(f"  ignorado (anúncio não encontrado): {o['slug']} {link}")
+                continue
+            for k, v in extras.items():
+                if alvo is o and k == "imagem":
+                    continue  # foto do principal é a da própria oferta
+                if v:
+                    alvo[k] = v
+                else:
+                    alvo.pop(k, None)
+            print(f"  editado em {o['slug']}: {link} {extras}")
+            mudou = True
+        elif it.get("op") == "remover":
             if len(sem_este) != len(lista):
                 print(f"  removido de {o['slug']}: {link}")
                 mudou = True
@@ -45,6 +65,7 @@ def main(arquivo):
             novo = {"link": link, "loja": str(it.get("loja") or "").strip() or loja_de(link),
                     "preco": preco_br(n) if n else "", "conferido": agora,
                     "manual": agora if n else "", "confirmado": bool(n)}
+            novo.update({k: v for k, v in extras.items() if v})
             lista = sem_este + [novo]
             print(f"  adicionado em {o['slug']}: {novo['loja']} {novo['preco']}")
             mudou = True

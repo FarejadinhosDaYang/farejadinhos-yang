@@ -532,6 +532,9 @@ h1,h2,h3,.brand{
     margin-bottom:9px;
 }
 
+.oferta-card .cardCores{position:absolute;left:8px;bottom:8px;display:flex;gap:4px;background:rgba(255,255,255,.9);border-radius:999px;padding:4px 6px}
+.oferta-card .cardCores span{width:13px;height:13px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.2)}
+.oferta-card .aPartir{font-size:11px;font-weight:600;color:#8A7563}
 .oferta-card .maisLojas{font-size:11.5px;font-weight:700;color:#1F7A44;margin-top:2px}
 .oferta-card .cupom{
     font-size:11px;
@@ -1629,7 +1632,8 @@ function cardHtml(o){
         <article class="oferta-card">
             <a class="card-link" href="${paginaOferta}">
                 <div class="img-wrap">
-                    <img src="assets/${encodeURIComponent(o.imagem)}" alt="${escapeHtml(o.produto)}" loading="lazy">
+                    <img src="${o.imagemUrl ? escapeHtml(o.imagemUrl) : "assets/" + encodeURIComponent(o.imagem)}" alt="${escapeHtml(o.produto)}" loading="lazy">
+                    ${o.variacoes ? `<div class="cardCores">${o.variacoes.slice(0, 5).map(v => v.cor ? `<span style="background:${escapeHtml(v.cor)}" title="${escapeHtml(v.nome)}"></span>` : "").join("")}</div>` : ""}
                     ${badgeCanto}
                     ${badgeDesconto}
                 </div>
@@ -1637,8 +1641,9 @@ function cardHtml(o){
                     ${categoriaHtml}
                     <h3>${escapeHtml(o.produto)}</h3>
                     ${oldHtml}
-                    <div class="preco">${escapeHtml(o.preco)}</div>
-                    ${o.totalAnuncios > 1 ? `<div class="maisLojas">🏪 menor preço entre ${o.totalAnuncios} anúncios</div>` : ""}
+                    <div class="preco">${o.aPartirDe ? `<small class="aPartir">a partir de</small> ` : ""}${escapeHtml(o.preco)}</div>
+                    ${o.variacoes ? `<div class="maisLojas">🎨 ${o.variacoes.length} opções · menor preço ${/\d/.test(o.variacaoMelhor || "") ? "na versão" : "na cor"} ${escapeHtml(o.variacaoMelhor || "")}</div>`
+                      : o.totalAnuncios > 1 ? `<div class="maisLojas">🏪 menor preço entre ${o.totalAnuncios} anúncios</div>` : ""}
                     ${cupomHtml}
                 </div>
             </a>

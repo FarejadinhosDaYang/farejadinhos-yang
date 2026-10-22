@@ -145,3 +145,18 @@
 .anc-quando{grid-area:quando;font-size:11.5px;color:#8A7563}
 .anc-ver{grid-area:ver;font-weight:800;font-size:13px;color:#C21A24;white-space:nowrap}
 .anc-obs{font-size:11.5px;color:#8A7563;margin-top:2px}
+
+/* ---------- Variações (bolinhas de cor ao lado da foto) ---------- */
+.var-moldura{position:relative}
+.var-moldura img.product{transition:opacity .25s}
+.var-moldura img.product.trocando{opacity:.35}
+.var-trilho{position:absolute;top:10px;right:10px;display:flex;flex-direction:column;gap:9px;padding:8px 6px;background:rgba(255,255,255,.92);border:1px solid #F0DFC4;border-radius:999px;box-shadow:0 4px 14px rgba(43,27,18,.12);max-height:calc(100% - 20px);overflow-y:auto}
+.var-bolinha{width:34px;height:34px;border-radius:50%;border:2px solid transparent;background:#fff;padding:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .15s,border-color .15s}
+.var-bolinha:hover{transform:scale(1.08)}
+.var-bolinha.ativa{border-color:#E5232E;box-shadow:0 0 0 2px #fff,0 0 0 4px rgba(229,35,46,.25)}
+.var-cor{display:block;width:100%;height:100%;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.18)}
+.var-bolinha.texto{width:auto;min-width:34px;border-radius:999px;padding:0 6px;border-color:#F0DFC4}
+.var-bolinha.texto.ativa{border-color:#E5232E}
+.var-txt{font:800 11px 'Work Sans',Arial,sans-serif;color:#2B1B12;white-space:nowrap}
+.var-rotulo{font-family:'Work Sans',Arial,sans-serif;font-size:14px;color:#5C4636;margin:2px 0 -2px}
+.var-mais-barata{display:inline-block;margin-left:6px;background:#E6F6EC;color:#1F7A44;font-weight:700;font-size:11.5px;border-radius:999px;padding:1px 8px}

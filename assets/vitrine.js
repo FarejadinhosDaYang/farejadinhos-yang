@@ -151,7 +151,8 @@
       principal: true, link: oferta.link, preco: oferta.preco, valor: pPrincipal,
       loja: lojaDe(oferta.link).nome, lojaId: lojaDe(oferta.link).id,
       conferido: oferta.precoConferido || oferta.precoManual || oferta.data || "",
-      confiavel: pPrincipal > 0, motivo: ""
+      confiavel: pPrincipal > 0, motivo: "",
+      variacao: String(oferta.variacao || "").trim(), cor: oferta.cor || "", imagem: ""
     }];
     (Array.isArray(oferta.anuncios) ? oferta.anuncios : []).forEach(a => {
       if(!a || !/^https?:\/\//i.test(a.link || "")) return;
@@ -170,7 +171,9 @@
       lista.push({
         principal: false, link: a.link, preco: a.preco, valor,
         loja: a.loja || lj.nome, lojaId: lj.id, conferido: a.conferido || "",
-        confiavel: !motivo, motivo
+        confiavel: !motivo, motivo,
+        variacao: String(a.variacao || "").trim(), cor: a.cor || "",
+        imagem: /^https?:\/\//i.test(a.imagem || "") ? a.imagem : ""
       });
     });
     return lista.sort((x, y) => (y.confiavel - x.confiavel) || ((x.valor || Infinity) - (y.valor || Infinity)));
@@ -180,6 +183,56 @@
   function melhorAnuncio(oferta, agora){
     const l = anunciosDe(oferta, agora);
     return l.find(a => a.confiavel) || l.find(a => a.principal);
+  }
+
+  // ---------- Variações (cor, tamanho...) ----------
+  // Cada anúncio pode ter "variacao" (ex.: "Preto", "Azul", "512GB") e,
+  // opcional, "cor" (#hex) e "imagem" (foto daquela cor). Anúncios da
+  // mesma variação competem entre si pelo menor preço; variações
+  // diferentes viram bolinhas na página do produto.
+  const CORES = [
+    [/laranja.?c[oó]smic/, "#E8742A"], [/tit[aâ]nio.?natural|natural/, "#B9B2A6"], [/tit[aâ]nio.?(preto|negro)|grafite|space|meia.?noite|midnight/, "#2F3133"],
+    [/tit[aâ]nio.?branco|estelar|starlight/, "#ECE7DF"], [/tit[aâ]nio.?deserto|deserto/, "#C9A887"], [/tit[aâ]nio/, "#A8A39A"],
+    [/azul.?(marinho|escuro|profundo)|navy/, "#1F2F5C"], [/azul.?(claro|beb[eê]|c[eé]u)/, "#9CC8F0"], [/azul|blue/, "#2563EB"],
+    [/verde.?(menta|claro|[aá]gua)/, "#9EDBC4"], [/verde|green/, "#1F8A4C"], [/roxo|lil[aá]s|lavanda|purple|violeta/, "#8E6CC9"],
+    [/rosa|pink/, "#F2A7C3"], [/vermelh|red|vinho|bord[oô]/, "#D02A2F"], [/laranja|orange/, "#F28C28"], [/amarel|yellow/, "#F7D23E"],
+    [/dourad|gold|ouro/, "#D4AF37"], [/prata|silver|prateado/, "#C7CBD1"], [/cinza|gray|grey/, "#8C9096"], [/bege|creme|nude|areia/, "#E3D3B5"],
+    [/marrom|caf[eé]|chocolate|brown/, "#7A4E2D"], [/branc|white/, "#F7F7F7"], [/pret|black|negro/, "#151515"], [/inox|a[cç]o/, "#BFC3C7"]
+  ];
+  function corDe(nome, cor){
+    if(/^#[0-9a-f]{3,8}$/i.test(String(cor || "").trim())) return String(cor).trim();
+    const n = String(nome || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    for(const [re, hex] of CORES){
+      const r = new RegExp(re.source.normalize("NFD").replace(/[\u0300-\u036f]/g, ""));
+      if(r.test(n)) return hex;
+    }
+    return "";
+  }
+  const chaveVar = v => String(v || "").trim().toLowerCase();
+
+  // [{ nome, cor, imagem, melhor, lista, confiavel }], mais barata primeiro.
+  // Só faz sentido com 2+ variações; com 0/1 devolve [].
+  function variacoesDe(oferta, agora){
+    const l = anunciosDe(oferta, agora);
+    const principal = l.find(a => a.principal);
+    // anúncio sem variação herda a do principal (mesmo produto)
+    l.forEach(a => { if(!a.variacao) a.variacao = principal.variacao; });
+    const grupos = {};
+    l.forEach(a => {
+      const k = chaveVar(a.variacao);
+      (grupos[k] = grupos[k] || { nome: a.variacao, cor: "", imagem: "", lista: [] }).lista.push(a);
+    });
+    const vs = Object.values(grupos).filter(g => g.nome);
+    if(vs.length < 2) return [];
+    vs.forEach(g => {
+      g.melhor = g.lista.find(a => a.confiavel) || g.lista[0];
+      g.confiavel = !!g.lista.find(a => a.confiavel);
+      g.cor = corDe(g.nome, (g.lista.find(a => a.cor) || {}).cor);
+      const comFoto = g.lista.find(a => a.principal) && !g.lista.some(a => a.imagem) ? null : g.lista.find(a => a.imagem);
+      g.imagem = comFoto ? comFoto.imagem : (g.lista.some(a => a.principal) ? "principal" : "");
+      g.temPrincipal = g.lista.some(a => a.principal);
+    });
+    return vs.sort((x, y) => (y.confiavel - x.confiavel) || ((x.melhor.valor || Infinity) - (y.melhor.valor || Infinity)));
   }
 
   // Cópia da oferta pra MOSTRAR no site (card/página): preço e link do
@@ -197,6 +250,14 @@
     }
     copia.totalAnuncios = l.filter(a => a.confiavel).length;
     copia.lojaMelhor = m.loja;
+    const vs = variacoesDe(oferta, agora);
+    if(vs.length > 1){
+      copia.variacoes = vs.map(v => ({ nome: v.nome, cor: v.cor }));
+      copia.variacaoMelhor = m.variacao || (vs.find(v => v.lista.includes(m)) || {}).nome || "";
+      copia.aPartirDe = vs.some(v => v.confiavel && v.melhor.valor > m.valor + 0.009);
+      // a foto do card acompanha a variação mais barata, se ela tiver foto própria
+      if(m.imagem) copia.imagemUrl = m.imagem;
+    }
     return copia;
   }
 
@@ -325,7 +386,7 @@
 
   window.FarejadinhosVitrine = {
     MINIMO_VITRINE, HORAS_FRESCA, HORAS_MAXIMA, META_CATEGORIA, MINIMO_CATEGORIA, TEMPORADAS,
-    inicio, idadeHoras, selecionar, status, foraDeEpoca, podeIrProPodio, FORA_DO_PODIO, dataOrdem, anunciosDe, melhorAnuncio, comMelhorAnuncio, lojaDe, numeroPreco, ehPermanente, PERMANENTES, normalizar, categoriasDe, juntarCategoria, TAG_VIDEO
+    inicio, idadeHoras, selecionar, status, foraDeEpoca, podeIrProPodio, FORA_DO_PODIO, dataOrdem, anunciosDe, melhorAnuncio, comMelhorAnuncio, lojaDe, numeroPreco, variacoesDe, corDe, ehPermanente, PERMANENTES, normalizar, categoriasDe, juntarCategoria, TAG_VIDEO
   };
 
 })();

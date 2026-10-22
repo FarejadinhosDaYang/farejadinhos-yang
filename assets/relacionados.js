@@ -63,7 +63,7 @@
         var pct = desconto(o);
         var lj = loja(o.link);
         return '<a class="rel-card" href="' + base + "ofertas/" + encodeURIComponent(o.slug) + '/">' +
-            '<div class="rel-img"><img src="' + base + "assets/" + encodeURIComponent(o.imagem || "") + '" alt="" loading="lazy">' +
+            '<div class="rel-img"><img src="' + (o.imagemUrl ? esc(o.imagemUrl) : base + "assets/" + encodeURIComponent(o.imagem || "")) + '" alt="" loading="lazy">' +
             (pct >= 5 ? '<span class="rel-off">-' + pct + "%</span>" : "") + "</div>" +
             '<div class="rel-info">' +
             (lj ? '<span class="rel-loja ' + lj[0] + '">' + lj[1] + "</span>" : "") +
@@ -84,44 +84,112 @@
         return dias === 1 ? "ontem" : "há " + dias + " dias";
     }
 
-    // "Este produto em outras lojas": quando a oferta tem mais de um anúncio,
-    // o preço/botão do topo passam a ser do MENOR preço confiável, e a
-    // lista completa aparece embaixo do botão.
+    function reais(v) {
+        return "R$ " + v.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    // "Este produto em outros anúncios" + variações (cores):
+    // - o preço/botão do topo são do MENOR preço confiável;
+    // - com 2+ variações, aparecem bolinhas ao lado da foto; tocar numa
+    //   cor troca foto, preço, botão e a lista de lojas daquela cor.
     function montarAnuncios(atual) {
         var V = window.FarejadinhosVitrine;
         if (!atual || !V || !V.anunciosDe) return;
-        var lista = V.anunciosDe(atual, new Date());
-        if (lista.length < 2) return;
-        var melhor = lista.filter(function (a) { return a.confiavel; })[0] || lista[0];
+        var todos = V.anunciosDe(atual, new Date());
+        if (todos.length < 2) return;
+        var vars = V.variacoesDe ? V.variacoesDe(atual, new Date()) : [];
+
         var btn = document.querySelector(".card a.btn, a.btn");
         var preco = document.querySelector(".price");
-        if (!melhor.principal) {
-            var copia = V.comMelhorAnuncio(atual, new Date());
-            if (preco) preco.textContent = copia.preco;
-            if (btn) btn.href = melhor.link;
-            var old = document.querySelector(".old");
-            if (old) old.style.display = "none";
-        }
-        var confiaveis = lista.filter(function (a) { return a.confiavel; });
-        var sec = document.createElement("div");
-        sec.className = "anc-box";
-        sec.innerHTML =
-            (confiaveis.length > 1 ? '<div class="anc-selo">🏆 Menor preço entre ' + confiaveis.length + " anúncios" +
-                (melhor.loja ? " · " + esc(melhor.loja) : "") + "</div>" : "") +
-            '<div class="anc-titulo">🏪 Este produto em outros anúncios</div>' +
-            lista.map(function (a) {
-                var m = a === melhor;
-                var preco = a.valor ? "R$ " + a.valor.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : "—";
-                var quando = haQuanto(a.conferido);
-                return '<a class="anc-item' + (m ? " melhor" : "") + (a.confiavel ? "" : " duvida") + '" href="' + esc(a.link) + '" target="_blank" rel="nofollow sponsored noopener">' +
-                    '<span class="anc-loja ' + esc(a.lojaId) + '">' + esc(a.loja) + "</span>" +
-                    '<span class="anc-preco">' + (a.confiavel ? preco : "preço a conferir") + "</span>" +
-                    '<span class="anc-quando">' + (m ? "✅ mais barato" : a.confiavel ? (quando ? "conferido " + quando : "") : "abrir pra ver") + "</span>" +
-                    '<span class="anc-ver">Ver ↗</span></a>';
-            }).join("") +
-            '<div class="anc-obs">Preços conferidos automaticamente; podem mudar na loja. Vale sempre o preço de lá.</div>';
+        var old = document.querySelector(".old");
+        var foto = document.querySelector("img.product");
+        var fotoPrincipal = foto ? foto.getAttribute("src") : "";
+        var precoPrincipalTxt = preco ? preco.textContent.trim() : "";
+
+        var box = document.createElement("div");
+        box.className = "anc-box";
         var depois = btn || preco;
-        if (depois && depois.parentNode) depois.parentNode.insertBefore(sec, depois.nextSibling);
+        if (depois && depois.parentNode) depois.parentNode.insertBefore(box, depois.nextSibling);
+
+        var rotulo = null;
+        if (vars.length > 1 && preco) {
+            rotulo = document.createElement("div");
+            rotulo.className = "var-rotulo";
+            preco.parentNode.insertBefore(rotulo, preco);
+        }
+
+        function mostrarLista(lista, nomeVar) {
+            var melhor = lista.filter(function (a) { return a.confiavel; })[0] || lista[0];
+            var confiaveis = lista.filter(function (a) { return a.confiavel; });
+            // topo: preço, botão, "de R$"
+            if (preco) preco.textContent = melhor.principal ? precoPrincipalTxt : (melhor.valor ? reais(melhor.valor) : "Preço a conferir");
+            if (btn) btn.href = melhor.link;
+            if (old) old.style.display = melhor.principal ? "" : "none";
+            box.innerHTML =
+                (confiaveis.length > 1 ? '<div class="anc-selo">🏆 Menor preço entre ' + confiaveis.length + " anúncios" +
+                    (nomeVar ? " de " + esc(nomeVar) : "") + " · " + esc(melhor.loja) + "</div>" : "") +
+                (lista.length > 1 ? '<div class="anc-titulo">🏪 ' + (nomeVar ? esc(nomeVar) + " em outros anúncios" : "Este produto em outros anúncios") + "</div>" +
+                lista.map(function (a) {
+                    var m = a === melhor;
+                    var quando = haQuanto(a.conferido);
+                    return '<a class="anc-item' + (m ? " melhor" : "") + (a.confiavel ? "" : " duvida") + '" href="' + esc(a.link) + '" target="_blank" rel="nofollow sponsored noopener">' +
+                        '<span class="anc-loja ' + esc(a.lojaId) + '">' + esc(a.loja) + "</span>" +
+                        '<span class="anc-preco">' + (a.confiavel ? reais(a.valor) : "preço a conferir") + "</span>" +
+                        '<span class="anc-quando">' + (m ? "✅ mais barato" : a.confiavel ? (quando ? "conferido " + quando : "") : "abrir pra ver") + "</span>" +
+                        '<span class="anc-ver">Ver ↗</span></a>';
+                }).join("") +
+                '<div class="anc-obs">Preços conferidos automaticamente; podem mudar na loja. Vale sempre o preço de lá.</div>' : "");
+        }
+
+        if (vars.length < 2) { mostrarLista(todos, ""); return; }
+
+        // bolinhas ao lado da foto
+        var trilho = document.createElement("div");
+        trilho.className = "var-trilho";
+        trilho.setAttribute("role", "radiogroup");
+        trilho.setAttribute("aria-label", "Escolher cor");
+        if (foto) {
+            var moldura = document.createElement("div");
+            moldura.className = "var-moldura";
+            foto.parentNode.insertBefore(moldura, foto);
+            moldura.appendChild(foto);
+            moldura.appendChild(trilho);
+        } else if (preco) preco.parentNode.insertBefore(trilho, preco);
+
+        function escolher(i) {
+            var v = vars[i];
+            Array.prototype.forEach.call(trilho.children, function (b, k) {
+                b.classList.toggle("ativa", k === i);
+                b.setAttribute("aria-checked", k === i ? "true" : "false");
+            });
+            if (foto) {
+                var nova = v.imagem && v.imagem !== "principal" ? v.imagem : fotoPrincipal;
+                if (foto.getAttribute("src") !== nova) {
+                    foto.classList.add("trocando");
+                    foto.onload = function () { foto.classList.remove("trocando"); };
+                    foto.src = nova;
+                    setTimeout(function () { foto.classList.remove("trocando"); }, 600);
+                }
+            }
+            if (rotulo) rotulo.innerHTML = "Cor: <b>" + esc(v.nome) + "</b>" +
+                (i === 0 && v.confiavel ? ' <span class="var-mais-barata">a mais barata agora</span>' : "");
+            mostrarLista(v.lista, v.nome);
+        }
+
+        vars.forEach(function (v, i) {
+            var b = document.createElement("button");
+            b.type = "button";
+            b.className = "var-bolinha" + (v.cor ? "" : " texto");
+            b.setAttribute("role", "radio");
+            b.title = v.nome + (v.confiavel ? " · " + reais(v.melhor.valor) : " · preço a conferir");
+            b.setAttribute("aria-label", b.title);
+            b.innerHTML = v.cor
+                ? '<span class="var-cor" style="background:' + esc(v.cor) + '"></span>'
+                : '<span class="var-txt">' + esc(v.nome.slice(0, 6)) + "</span>";
+            b.onclick = function () { escolher(i); };
+            trilho.appendChild(b);
+        });
+        escolher(0);
     }
 
     function montar(todas) {

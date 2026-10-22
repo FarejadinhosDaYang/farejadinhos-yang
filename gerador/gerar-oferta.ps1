@@ -302,6 +302,7 @@ $EraTravado = @($Catalogo | Where-Object { $_ -and $_.slug -eq $Slug -and $_.PSO
 
 # Outros anuncios do mesmo produto (comparador): mantem numa edicao
 $AnunciosAnteriores = @($Catalogo | Where-Object { $_ -and $_.slug -eq $Slug -and $_.PSObject.Properties["anuncios"] } | Select-Object -First 1 | ForEach-Object { @($_.anuncios) })
+$VariacaoAnterior = $Catalogo | Where-Object { $_ -and $_.slug -eq $Slug -and $_.PSObject.Properties["variacao"] } | Select-Object -First 1
 
 # Remove uma entrada antiga com o mesmo slug (regeneracao) e
 # qualquer lixo/objeto vazio que tenha sobrado no arquivo.
@@ -342,6 +343,10 @@ if ($UsaImagemExistente) {
 }
 if ($EraTravado) { $NovaEntrada.precoTravado = $true }
 if ($AnunciosAnteriores.Count -gt 0) { $NovaEntrada.anuncios = @($AnunciosAnteriores) }
+if ($VariacaoAnterior) {
+    $NovaEntrada.variacao = [string]$VariacaoAnterior.variacao
+    if ($VariacaoAnterior.PSObject.Properties["cor"] -and $VariacaoAnterior.cor) { $NovaEntrada.cor = [string]$VariacaoAnterior.cor }
+}
 
 # Só guarda parcelas quando a oferta tem preço a prazo
 if ($ParcelasFinal -and $PrecoAPrazoJs -ne "") {
