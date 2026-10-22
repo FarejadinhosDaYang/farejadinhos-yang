@@ -1,44 +1,20 @@
 {
-  "quando": "2026-10-22T18:31:02Z",
-  "origem": "schedule",
+  "quando": "2026-10-22T19:44:24Z",
+  "origem": "workflow_dispatch",
   "total": 190,
-  "iguais": 49,
+  "iguais": 53,
   "mudaram": [
     {
-      "slug": "extrator-de-cravos-e-espinhas-kit-cureta-aco-inox",
-      "produto": "Extrator De Cravos E Espinhas Kit Cureta Aço Inox",
-      "de": "R$ 21,60",
-      "para": "22,55"
-    },
-    {
-      "slug": "kit-2-pochete-academia-esportiva-fitness-corrida",
-      "produto": "Kit 2 Pochete Academia Esportiva Fitness Corrida",
-      "de": "R$ 35,90",
-      "para": "28,48"
-    },
-    {
-      "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
-      "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-      "de": "R$ 58,42",
-      "para": "55,68"
-    },
-    {
-      "slug": "faqueiro-tramontina-buzios-em-aco-inox-com-detalhe",
-      "produto": "Faqueiro Tramontina Búzios Em Aço Inox Com Detalhe",
-      "de": "R$ 62,00",
-      "para": "62,25"
+      "slug": "camera-lampada-de-seguranca-wifi-ip-app-yoosee",
+      "produto": "Câmera Lâmpada De Segurança Wifi Ip App Yoosee",
+      "de": "R$ 57,44",
+      "para": "83,69"
     },
     {
       "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
       "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
-      "de": "R$ 5.455,00",
-      "para": "5509,00"
-    },
-    {
-      "slug": "creatina-monohidratada-100g-growth-supplements",
-      "produto": "Creatina Monohidratada 100g Growth Supplements",
-      "de": "R$ 62,48",
-      "para": "64,81"
+      "de": "R$ 5.509,00",
+      "para": "5798,00"
     }
   ],
   "semPreco": [
@@ -808,7 +784,7 @@
       "produto": "iPhone 18 Pro 256GB Preto (somente eSIM)",
       "link": "https://meli.la/18pktG2",
       "atual": "R$ 9.499,00",
-      "lido": "12098,00",
+      "lido": "12048,00",
       "referencia": "preco posto a mao em 18/10 23:09"
     },
     {
@@ -840,7 +816,7 @@
       "produto": "Celular Samsung Galaxy S26 Ultra 5G 256GB 12GB RAM",
       "link": "https://link.amazon/B098ObooL",
       "atual": "R$ 6.546,59",
-      "lido": "7124,05",
+      "lido": "7274,00",
       "referencia": "preco posto a mao em 19/10 08:25"
     },
     {
@@ -876,6 +852,14 @@
       "referencia": "preco posto a mao em 21/10 10:12"
     }
   ],
+  "shopee": {
+    "status": {
+      "quando": "2026-10-22T19:44:26Z",
+      "teste": true,
+      "erro": "segredos SHOPEE_APP_ID / SHOPEE_SECRET não configurados no GitHub"
+    },
+    "amostra": []
+  },
   "anuncios": {
     "conferidos": 0,
     "iguais": 0,
