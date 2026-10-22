@@ -1,14 +1,38 @@
 {
-  "quando": "2026-10-22T01:41:43Z",
-  "origem": "workflow_dispatch",
-  "total": 193,
-  "iguais": 55,
+  "quando": "2026-10-22T07:31:28Z",
+  "origem": "schedule",
+  "total": 191,
+  "iguais": 51,
   "mudaram": [
     {
-      "slug": "camera-lampada-de-seguranca-wifi-ip-app-yoosee",
-      "produto": "Câmera Lâmpada De Segurança Wifi Ip App Yoosee",
-      "de": "R$ 56,99",
-      "para": "57,44"
+      "slug": "extrator-de-cravos-e-espinhas-kit-cureta-aco-inox",
+      "produto": "Extrator De Cravos E Espinhas Kit Cureta Aço Inox",
+      "de": "R$ 22,55",
+      "para": "21,60"
+    },
+    {
+      "slug": "super-clarificante-para-piscina-power-gel",
+      "produto": "Super Clarificante para Piscina Power Gel",
+      "de": "R$ 31,49",
+      "para": "31,81"
+    },
+    {
+      "slug": "escova-curva-piscina-engate-rapido-limpeza-fundo",
+      "produto": "Escova Curva Piscina Engate Rápido Limpeza Fundo",
+      "de": "R$ 27,00",
+      "para": "35,90"
+    },
+    {
+      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
+      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
+      "de": "R$ 3.839,10",
+      "para": "5065,61"
+    },
+    {
+      "slug": "air-fryer-fritadeira-eletrica-electrolux-eaf40",
+      "produto": "Air fryer Fritadeira Elétrica Electrolux EAF40",
+      "de": "R$ 293,55",
+      "para": "335,97"
     }
   ],
   "semPreco": [
@@ -193,12 +217,6 @@
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
-      "slug": "tabua-de-corte-304-aco-inoxidavel-antibacteriana-a-prova-de",
-      "produto": "Tábua De Corte 304 Aço Inoxidável Antibacteriana",
-      "link": "https://s.shopee.com.br/113fPoCZE9",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
       "slug": "1-2-3-cesto-organizador-cozinha-geladeira-armario",
       "produto": "1/2/3 Cesto Organizador Cozinha Geladeira Armário",
       "link": "https://s.shopee.com.br/LnycaF6a5",
@@ -244,12 +262,6 @@
       "slug": "kit-limpador-pastilha-de-maquina-de-lavar-roupa-comprimido",
       "produto": "Kit Limpador Pastilha de máquina de lavar roupa",
       "link": "https://s.shopee.com.br/80DPkflv1r",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
-      "slug": "kit-2-unidades-abajur-la-finesse-cupula-luminaria-para",
-      "produto": "Kit 2 unidades Abajur La Finesse Cupula",
-      "link": "https://s.shopee.com.br/7faZM3nBhp",
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
@@ -316,12 +328,6 @@
       "slug": "manta-cobertor-casal-queen-mantinha-inverno-microfibra",
       "produto": "Manta Cobertor Casal Queen Mantinha Inverno",
       "link": "https://s.shopee.com.br/4fwxmXybnU",
-      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
-    },
-    {
-      "slug": "desentupidor-alta-pressao-tipo-bomba-de-succao-borracha",
-      "produto": "Desentupidor Alta Pressão Tipo Bomba De Sucção",
-      "link": "https://s.shopee.com.br/4qGNyqxySX",
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     },
     {
@@ -779,6 +785,12 @@
       "produto": "Porta Ovos Geladeira Plástico Rolante 4 Andares",
       "link": "https://s.shopee.com.br/Lo5JioApb",
       "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
+    },
+    {
+      "slug": "desentupidor-alta-pressao-tipo-bomba-de-succao-borracha",
+      "produto": "Desentupidor Alta Pressão Tipo Bomba De Sucção",
+      "link": "https://s.shopee.com.br/4qGNyqxySX",
+      "motivo": "pagina (facebookexternalhit): status 403 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     }
   ],
   "erros": [],
@@ -844,7 +856,7 @@
       "produto": "Aspirador Manual Piscina Herbinject Azul",
       "link": "https://meli.la/1t2eJpi",
       "atual": "R$ 40,88",
-      "lido": "33,21",
+      "lido": "47,90",
       "referencia": "preco posto a mao em 19/10 08:40"
     },
     {
@@ -855,5 +867,14 @@
       "lido": "355,62",
       "referencia": "preco posto a mao em 21/10 10:12"
     }
-  ]
+  ],
+  "anuncios": {
+    "conferidos": 0,
+    "iguais": 0,
+    "pendentes": [],
+    "mudaram": [],
+    "barrados": [],
+    "semPreco": [],
+    "erros": []
+  }
 }
