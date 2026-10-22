@@ -1,44 +1,44 @@
 {
-  "quando": "2026-10-21T22:18:35Z",
+  "quando": "2026-10-22T01:29:12Z",
   "origem": "schedule",
   "total": 193,
   "iguais": 50,
   "mudaram": [
     {
-      "slug": "varal-de-chao-grande-de-roupas-3-andares-dobravel",
-      "produto": "Varal De Chão Grande De Roupas 3 Andares Dobrável",
-      "de": "R$ 70,56",
-      "para": "67,03"
+      "slug": "camera-lampada-de-seguranca-wifi-ip-app-yoosee",
+      "produto": "Câmera Lâmpada De Segurança Wifi Ip App Yoosee",
+      "de": "R$ 57,44",
+      "para": "56,99"
     },
     {
       "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
       "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-      "de": "R$ 58,42",
-      "para": "62,00"
+      "de": "R$ 62,00",
+      "para": "58,42"
     },
     {
-      "slug": "balanca-digital-bioimpedancia-profissional-smart",
-      "produto": "Balança Digital Bioimpedância Profissional smart",
-      "de": "R$ 32,90",
-      "para": "28,95"
-    },
-    {
-      "slug": "dispenser-porta-detergente-3-em-1-em-aco-inox",
-      "produto": "Dispenser Porta Detergente 3 em 1 em Aço Inox",
-      "de": "R$ 34,90",
-      "para": "35,90"
-    },
-    {
-      "slug": "faqueiro-tramontina-buzios-em-aco-inox-com-detalhe",
-      "produto": "Faqueiro Tramontina Búzios Em Aço Inox Com Detalhe",
-      "de": "R$ 62,25",
-      "para": "62,00"
+      "slug": "fritadeira-sem-oleo-air-fryer-4l-mondial-1500w",
+      "produto": "Fritadeira sem óleo air fryer 4L Mondial 1500W",
+      "de": "R$ 249,00",
+      "para": "236,55"
     },
     {
       "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
       "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 3.839,10",
-      "para": "5065,61"
+      "de": "R$ 5.065,61",
+      "para": "3839,10"
+    },
+    {
+      "slug": "air-fryer-fritadeira-eletrica-electrolux-eaf40",
+      "produto": "Air fryer Fritadeira Elétrica Electrolux EAF40",
+      "de": "R$ 335,97",
+      "para": "293,55"
+    },
+    {
+      "slug": "porta-ovos-organizador-duplo-32-unidades",
+      "produto": "Porta Ovos Organizador Duplo 32 Unidades",
+      "de": "R$ 25,24",
+      "para": "38,79"
     }
   ],
   "semPreco": [
@@ -866,7 +866,7 @@
       "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
       "link": "https://link.amazon/B0epLOItP",
       "atual": "R$ 4.559,05",
-      "lido": "4630,00",
+      "lido": "5065,61",
       "referencia": "preco posto a mao em 19/10 08:26"
     },
     {
