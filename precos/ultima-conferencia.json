@@ -1,38 +1,44 @@
 {
-  "quando": "2026-10-22T07:31:28Z",
+  "quando": "2026-10-22T13:45:18Z",
   "origem": "schedule",
   "total": 191,
-  "iguais": 51,
+  "iguais": 49,
   "mudaram": [
     {
-      "slug": "extrator-de-cravos-e-espinhas-kit-cureta-aco-inox",
-      "produto": "Extrator De Cravos E Espinhas Kit Cureta Aço Inox",
-      "de": "R$ 22,55",
-      "para": "21,60"
+      "slug": "marmita-eletrica-preta-bivolt-portatil-domestica",
+      "produto": "Marmita Elétrica Preta Bivolt Portátil Doméstica",
+      "de": "R$ 51,49",
+      "para": "49,99"
     },
     {
-      "slug": "super-clarificante-para-piscina-power-gel",
-      "produto": "Super Clarificante para Piscina Power Gel",
-      "de": "R$ 31,49",
-      "para": "31,81"
+      "slug": "fritadeira-sem-oleo-air-fryer-4l-mondial-1500w",
+      "produto": "Fritadeira sem óleo air fryer 4L Mondial 1500W",
+      "de": "R$ 236,55",
+      "para": "249,00"
     },
     {
-      "slug": "escova-curva-piscina-engate-rapido-limpeza-fundo",
-      "produto": "Escova Curva Piscina Engate Rápido Limpeza Fundo",
-      "de": "R$ 27,00",
-      "para": "35,90"
+      "slug": "samsung-galaxy-s25-5g-256gb-12gb-camera-tripla",
+      "produto": "Samsung Galaxy S25 5G, 256GB, 12GB, Câmera Tripla",
+      "de": "R$ 3.689,00",
+      "para": "3898,00"
+    },
+    {
+      "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
+      "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
+      "de": "R$ 5.356,00",
+      "para": "5455,00"
     },
     {
       "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
       "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 3.839,10",
-      "para": "5065,61"
+      "de": "R$ 5.065,61",
+      "para": "3839,10"
     },
     {
-      "slug": "air-fryer-fritadeira-eletrica-electrolux-eaf40",
-      "produto": "Air fryer Fritadeira Elétrica Electrolux EAF40",
-      "de": "R$ 293,55",
-      "para": "335,97"
+      "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-8gb-ram",
+      "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb, 8gb Ram,",
+      "de": "R$ 2.948,00",
+      "para": "2998,00"
     }
   ],
   "semPreco": [
@@ -816,7 +822,7 @@
       "produto": "iPhone 18 Pro Max 256GB Preto (somente eSIM)",
       "link": "https://meli.la/2fXqW9L",
       "atual": "R$ 10.289,00",
-      "lido": "13049,00",
+      "lido": "10532,00",
       "referencia": "preco posto a mao em 18/10 23:09"
     },
     {
@@ -860,11 +866,19 @@
       "referencia": "preco posto a mao em 19/10 08:40"
     },
     {
+      "slug": "fritadeira-eletrica-afon-12l-bg-forno-oven",
+      "produto": "Fritadeira Elétrica Mondial - Forno Oven",
+      "link": "https://meli.la/2fPSJSc",
+      "atual": "R$ 514,09",
+      "lido": "484,03",
+      "referencia": "preco posto a mao em 21/10 09:21"
+    },
+    {
       "slug": "s429049631-air-fryer-britania-6-5l-1700w-8-funcoes",
       "produto": "Air Fryer Britânia 6,5L 1700W 8 Funções",
       "link": "https://meli.la/2mjJVf6",
       "atual": "R$ 459,00",
-      "lido": "355,62",
+      "lido": "314,10",
       "referencia": "preco posto a mao em 21/10 10:12"
     }
   ],
