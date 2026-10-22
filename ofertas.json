@@ -2814,24 +2814,6 @@
     "precoConferido": "2026-10-22T13:49:00Z"
   },
   {
-    "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
-    "preco": "R$ 3.898,00",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Celulares",
-    "destaque": false,
-    "imagem": "825f7b73-431b-4818-94ce-6e169b47c1a4.webp",
-    "link": "https://meli.la/1nsLoRH",
-    "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s25-ultra-5g-256gb/",
-    "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
-    "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "R$ 3.898,00",
-    "precoAPrazo": "6443,00",
-    "liberacao": "2026-10-18T20:00:30Z",
-    "parcelas": 10,
-    "precoConferido": "2026-10-22T20:06:47Z"
-  },
-  {
     "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
     "preco": "R$ 3.839,10",
     "precoAntigo": "",
@@ -3281,5 +3263,23 @@
     "liberacao": "2026-10-27T22:00:00Z",
     "precoManual": "2026-10-22T02:25:22Z",
     "parcelas": 4
+  },
+  {
+    "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
+    "preco": "R$ 3.898,00",
+    "precoAntigo": "",
+    "cupom": "",
+    "categoria": "Celulares",
+    "destaque": false,
+    "imagem": "825f7b73-431b-4818-94ce-6e169b47c1a4.webp",
+    "link": "https://meli.la/2LUJ4yy",
+    "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s25-ultra-5g-256gb/",
+    "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
+    "data": "2026-10-18T15:10:05Z",
+    "precoAVista": "3898,00",
+    "precoAPrazo": "6443,00",
+    "liberacao": "2026-10-18T20:00:30Z",
+    "precoManual": "2026-10-22T20:24:30Z",
+    "parcelas": 10
   }
 ]
