@@ -17,6 +17,7 @@ import urllib.request
 from datetime import timedelta
 
 from anuncios_comum import SITE, agora_iso, data, ler, numero, preco_br, salvar
+import shopee_api
 
 WORKER_URL = "https://holy-pine-e7fc.bernard-shimizu.workers.dev"
 DIAS_MANUAL = 7
@@ -32,6 +33,18 @@ def ler_preco(senha, link):
     })
     with urllib.request.urlopen(req, timeout=40) as r:
         return numero(json.loads(r.read().decode("utf-8")).get("preco"))
+
+
+SHOPEE_CACHE = None
+
+
+def ler_shopee(link):
+    """Link da Shopee: preço pela API oficial (se as chaves existirem)."""
+    global SHOPEE_CACHE
+    if SHOPEE_CACHE is None:
+        SHOPEE_CACHE = shopee_api.ler_cache()
+    r = shopee_api.preco_do_link(link, SHOPEE_CACHE)
+    return numero(r.get("preco"))
 
 
 def main():
@@ -54,8 +67,9 @@ def main():
                 continue
             rel["conferidos"] += 1
             info = {"slug": o.get("slug"), "loja": a.get("loja"), "link": a.get("link")}
+            api = shopee_api.eh_shopee(a.get("link")) and all(shopee_api.chaves())
             try:
-                v = ler_preco(senha, a.get("link"))
+                v = ler_shopee(a.get("link")) if api else ler_preco(senha, a.get("link"))
             except Exception as e:  # noqa: BLE001
                 rel["erros"].append({**info, "erro": str(e)[:200]})
                 continue
@@ -76,7 +90,7 @@ def main():
                 a["confirmado"] = True
                 a.pop("pendente", None)
                 a.pop("pendenteEm", None)
-            elif numero(a.get("pendente")) and abs(v - numero(a.get("pendente"))) < 0.01:
+            elif api or (numero(a.get("pendente")) and abs(v - numero(a.get("pendente"))) < 0.01):
                 rel["mudaram"].append({**info, "de": a.get("preco"), "para": preco_br(v)})
                 a.update({"preco": preco_br(v), "conferido": agora, "confirmado": True, "manual": ""})
                 a.pop("pendente", None)
@@ -91,6 +105,8 @@ def main():
           f"{len(rel['barrados'])} barrados, {len(rel['semPreco'])} sem preço, {len(rel['erros'])} erros.")
     if mudou:
         salvar(catalogo)
+    if SHOPEE_CACHE is not None:
+        shopee_api.salvar_cache(SHOPEE_CACHE)
     # junta no relatório do painel
     caminho = os.path.join(SITE, "precos", "ultima-conferencia.json")
     try:

@@ -4,7 +4,12 @@ on:
   schedule:
     # de hora em hora, no minuto 17 (fora do "minuto zero", que atrasa)
     - cron: "17 * * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      teste_shopee:
+        description: "Só testar a API da Shopee (5 links, não muda preço)"
+        required: false
+        default: "false"
 
 permissions:
   contents: write
@@ -27,6 +32,9 @@ jobs:
         shell: pwsh
         env:
           PAINEL_SENHA: ${{ secrets.PAINEL_SENHA }}
+          SHOPEE_APP_ID: ${{ secrets.SHOPEE_APP_ID }}
+          SHOPEE_SECRET: ${{ secrets.SHOPEE_SECRET }}
+          SHOPEE_TESTE: ${{ inputs.teste_shopee }}
         run: |
           .\gerador\conferir-precos.ps1
 
@@ -34,6 +42,8 @@ jobs:
         shell: pwsh
         env:
           PAINEL_SENHA: ${{ secrets.PAINEL_SENHA }}
+          SHOPEE_APP_ID: ${{ secrets.SHOPEE_APP_ID }}
+          SHOPEE_SECRET: ${{ secrets.SHOPEE_SECRET }}
         run: |
           python gerador/conferir-anuncios.py
 
@@ -46,6 +56,8 @@ jobs:
           git add ofertas ofertas.json
           # lista de preços barrados (só muda quando aparece/some um suspeito)
           git add precos/suspeitos.json
+          # códigos dos produtos da Shopee (pra API não precisar abrir o link toda vez)
+          if (Test-Path precos/shopee-ids.json) { git add precos/shopee-ids.json }
           # relatório: sempre que o botão pedir, ou quando algum preço mudou
           $mudouOferta = git status --porcelain ofertas ofertas.json precos/suspeitos.json
           if ($env:GITHUB_EVENT_NAME -eq "workflow_dispatch" -or -not [string]::IsNullOrWhiteSpace($mudouOferta)) {

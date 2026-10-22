@@ -59,6 +59,26 @@ if (Test-Path -LiteralPath $HistPath) {
 }
 $Agora = [DateTimeOffset]::UtcNow
 
+# Shopee: a página bloqueia robôs, então o preço vem da API oficial de
+# afiliados (gerador/shopee_api.py, segredos SHOPEE_APP_ID/SHOPEE_SECRET).
+# Lê tudo de uma vez antes do laço; no laço, link da Shopee usa esse
+# resultado em vez do Worker. Com SHOPEE_TESTE=true só testa (relatório).
+$Shopee = @{}
+$ShopeeStatus = $null
+if ($true) {
+    $TmpShopee = Join-Path ([System.IO.Path]::GetTempPath()) "shopee-$([guid]::NewGuid()).json"
+    $ArgsPy = @((Join-Path $Gerador "shopee_api.py"), "lote", $TmpShopee)
+    if ($env:SHOPEE_TESTE -eq "true") { $ArgsPy += @("--teste", "--limite", "5") }
+    try {
+        & python @ArgsPy
+        $J = (Get-Content -LiteralPath $TmpShopee -Raw -Encoding UTF8) | ConvertFrom-Json
+        foreach ($PropS in $J.PSObject.Properties) {
+            if ($PropS.Name -eq "_status") { $ShopeeStatus = $PropS.Value } else { $Shopee[$PropS.Name] = $PropS.Value }
+        }
+    } catch { Write-Warning "API da Shopee falhou: $($_.Exception.Message)" }
+    if ($env:SHOPEE_TESTE -eq "true") { $ShopeeTeste = $Shopee; $Shopee = @{} }
+}
+
 # Confere o que está no ar ou na fila (até 7 dias pra trás — as que
 # seguram categoria sem fila também entram; o resto já saiu do site)
 $Alvo = @($Catalogo | Where-Object {
@@ -82,7 +102,16 @@ foreach ($O in $Alvo) {
         $Form = @{ senha = $Senha; link = [string]$O.link }
         # Mesmo "endereço de origem" que o painel manda (o Worker confere)
         $Cab = @{ Origin = "https://farejadinhosdayang.com.br"; Referer = "https://farejadinhosdayang.com.br/painel/lote.html" }
+        if ($Shopee.ContainsKey([string]$O.link)) {
+            $RespS = $Shopee[[string]$O.link]
+            $Resp = [pscustomobject]@{
+                preco = if ($RespS.preco) { [string]$RespS.preco } else { "" }
+                precoAntigo = ""
+                tentativas = @("API Shopee: " + $(if ($RespS.erro) { [string]$RespS.erro } else { "ok" }))
+            }
+        } else {
         $Resp = Invoke-RestMethod -Uri "$WORKER_URL/produto" -Method Post -Body $Form -ContentType "application/x-www-form-urlencoded; charset=utf-8" -Headers $Cab -TimeoutSec 40
+        }
         $Novo = if ($Resp.preco) { [string]$Resp.preco } else { "" }
         $NNovo = NumeroBR $Novo
         $NAtual = NumeroBR ([string]$O.preco)
@@ -163,6 +192,12 @@ $Rel = [ordered]@{
     semPreco = @($Relatorio.semPreco)
     erros    = @($Relatorio.erros)
     suspeitos = @($Relatorio.suspeitos)
+}
+if ($ShopeeStatus) {
+    $Rel.shopee = [ordered]@{ status = $ShopeeStatus }
+    if ($ShopeeTeste) {
+        $Rel.shopee.amostra = @($ShopeeTeste.GetEnumerator() | ForEach-Object { [ordered]@{ link = $_.Key; resultado = $_.Value } })
+    }
 }
 [System.IO.File]::WriteAllText((Join-Path $PastaRel "ultima-conferencia.json"), ($Rel | ConvertTo-Json -Depth 5), (New-Object System.Text.UTF8Encoding($false)))
 
