@@ -1,44 +1,14 @@
 {
-  "quando": "2026-10-22T01:29:12Z",
-  "origem": "schedule",
+  "quando": "2026-10-22T01:41:43Z",
+  "origem": "workflow_dispatch",
   "total": 193,
-  "iguais": 50,
+  "iguais": 55,
   "mudaram": [
     {
       "slug": "camera-lampada-de-seguranca-wifi-ip-app-yoosee",
       "produto": "Câmera Lâmpada De Segurança Wifi Ip App Yoosee",
-      "de": "R$ 57,44",
-      "para": "56,99"
-    },
-    {
-      "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
-      "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-      "de": "R$ 62,00",
-      "para": "58,42"
-    },
-    {
-      "slug": "fritadeira-sem-oleo-air-fryer-4l-mondial-1500w",
-      "produto": "Fritadeira sem óleo air fryer 4L Mondial 1500W",
-      "de": "R$ 249,00",
-      "para": "236,55"
-    },
-    {
-      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
-      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 5.065,61",
-      "para": "3839,10"
-    },
-    {
-      "slug": "air-fryer-fritadeira-eletrica-electrolux-eaf40",
-      "produto": "Air fryer Fritadeira Elétrica Electrolux EAF40",
-      "de": "R$ 335,97",
-      "para": "293,55"
-    },
-    {
-      "slug": "porta-ovos-organizador-duplo-32-unidades",
-      "produto": "Porta Ovos Organizador Duplo 32 Unidades",
-      "de": "R$ 25,24",
-      "para": "38,79"
+      "de": "R$ 56,99",
+      "para": "57,44"
     }
   ],
   "semPreco": [
@@ -874,7 +844,7 @@
       "produto": "Aspirador Manual Piscina Herbinject Azul",
       "link": "https://meli.la/1t2eJpi",
       "atual": "R$ 40,88",
-      "lido": "47,90",
+      "lido": "33,21",
       "referencia": "preco posto a mao em 19/10 08:40"
     },
     {
