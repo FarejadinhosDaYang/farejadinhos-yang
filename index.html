@@ -532,6 +532,7 @@ h1,h2,h3,.brand{
     margin-bottom:9px;
 }
 
+.oferta-card .maisLojas{font-size:11.5px;font-weight:700;color:#1F7A44;margin-top:2px}
 .oferta-card .cupom{
     font-size:11px;
     font-weight:700;
@@ -1588,6 +1589,8 @@ function render(lista){
 }
 
 function cardHtml(o){
+        // vários anúncios do mesmo produto: mostra o menor preço confiável
+        if(window.FarejadinhosVitrine && FarejadinhosVitrine.comMelhorAnuncio) o = FarejadinhosVitrine.comMelhorAnuncio(o);
 
         const precoNum = paraNumero(o.preco);
         const antigoNum = paraNumero(o.precoAntigo);
@@ -1635,6 +1638,7 @@ function cardHtml(o){
                     <h3>${escapeHtml(o.produto)}</h3>
                     ${oldHtml}
                     <div class="preco">${escapeHtml(o.preco)}</div>
+                    ${o.totalAnuncios > 1 ? `<div class="maisLojas">🏪 menor preço entre ${o.totalAnuncios} anúncios</div>` : ""}
                     ${cupomHtml}
                 </div>
             </a>

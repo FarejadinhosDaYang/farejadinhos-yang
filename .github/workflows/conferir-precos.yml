@@ -30,6 +30,13 @@ jobs:
         run: |
           .\gerador\conferir-precos.ps1
 
+      - name: Conferir os outros anuncios (comparador)
+        shell: pwsh
+        env:
+          PAINEL_SENHA: ${{ secrets.PAINEL_SENHA }}
+        run: |
+          python gerador/conferir-anuncios.py
+
       - name: Salvar no GitHub
         shell: pwsh
         run: |

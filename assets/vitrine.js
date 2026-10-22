@@ -112,6 +112,94 @@
     return isNaN(criada) ? agora.getTime() : Math.min(criada.getTime(), agora.getTime());
   }
 
+  // ================= VÁRIOS ANÚNCIOS DO MESMO PRODUTO =================
+  // A oferta pode ter "anuncios": outros links do mesmo produto (outra
+  // loja, outro vendedor) — [{ link, loja, preco, conferido, manual,
+  // confirmado }]. O preço mostrado é o MENOR preço CONFIÁVEL na hora:
+  //   - o anúncio principal (o link da oferta) sempre vale;
+  //   - um extra só vale se tem preço E (foi posto à mão há até 7 dias OU a leitura
+  //     automática deu o mesmo valor 2 vezes seguidas — "confirmado") E,
+  //     se automático, foi conferido nas últimas 48h;
+  //   - nunca vale se for menos da metade do principal (leitura absurda).
+  const HORAS_ANUNCIO_VALIDO = 48;
+
+  function numeroPreco(p){
+    let s = String(p == null ? "" : p).replace(/[^\d.,]/g, "");
+    if(!s) return 0;
+    if(s.includes(",")) s = s.replace(/\./g, "").replace(",", ".");
+    else if((s.match(/\./g) || []).length > 1 || /\.\d{3}$/.test(s)) s = s.replace(/\./g, "");
+    const n = parseFloat(s);
+    return isFinite(n) && n > 0 ? n : 0;
+  }
+
+  function lojaDe(link){
+    const l = String(link || "");
+    if(/shopee|shp\.ee/i.test(l)) return { id: "shopee", nome: "Shopee" };
+    if(/mercadoli[vb]re|meli\.la/i.test(l)) return { id: "ml", nome: "Mercado Livre" };
+    if(/amazon\.|amzn\./i.test(l)) return { id: "amazon", nome: "Amazon" };
+    if(/magazineluiza|magalu/i.test(l)) return { id: "magalu", nome: "Magalu" };
+    if(/aliexpress/i.test(l)) return { id: "ali", nome: "AliExpress" };
+    return { id: "outra", nome: "Outra loja" };
+  }
+
+  // Lista de todos os anúncios da oferta (principal primeiro), com
+  // "confiavel" e "motivo" calculados. Ordenada do mais barato pro mais caro.
+  function anunciosDe(oferta, agora){
+    agora = agora || new Date();
+    const pPrincipal = numeroPreco(oferta.preco);
+    const lista = [{
+      principal: true, link: oferta.link, preco: oferta.preco, valor: pPrincipal,
+      loja: lojaDe(oferta.link).nome, lojaId: lojaDe(oferta.link).id,
+      conferido: oferta.precoConferido || oferta.precoManual || oferta.data || "",
+      confiavel: pPrincipal > 0, motivo: ""
+    }];
+    (Array.isArray(oferta.anuncios) ? oferta.anuncios : []).forEach(a => {
+      if(!a || !/^https?:\/\//i.test(a.link || "")) return;
+      const valor = numeroPreco(a.preco);
+      const quando = new Date(a.conferido || 0);
+      const horas = isNaN(quando) ? Infinity : (agora - quando) / 3600000;
+      // posto à mão vale por 7 dias; depois disso, só a conferência automática
+      const m = new Date(a.manual || 0);
+      const manual = !!a.manual && !isNaN(m) && (agora - m) <= 7 * 24 * 3600000;
+      let motivo = "";
+      if(!valor) motivo = "sem preço";
+      else if(!manual && !a.confirmado) motivo = "a confirmar";
+      else if(!manual && horas > HORAS_ANUNCIO_VALIDO) motivo = "preço antigo";
+      else if(pPrincipal && valor < pPrincipal / 2) motivo = "preço estranho";
+      const lj = lojaDe(a.link);
+      lista.push({
+        principal: false, link: a.link, preco: a.preco, valor,
+        loja: a.loja || lj.nome, lojaId: lj.id, conferido: a.conferido || "",
+        confiavel: !motivo, motivo
+      });
+    });
+    return lista.sort((x, y) => (y.confiavel - x.confiavel) || ((x.valor || Infinity) - (y.valor || Infinity)));
+  }
+
+  // O anúncio de menor preço confiável (ou o principal, se não tiver extras)
+  function melhorAnuncio(oferta, agora){
+    const l = anunciosDe(oferta, agora);
+    return l.find(a => a.confiavel) || l.find(a => a.principal);
+  }
+
+  // Cópia da oferta pra MOSTRAR no site (card/página): preço e link do
+  // melhor anúncio + quantos anúncios tem. Não altera a oferta original.
+  function comMelhorAnuncio(oferta, agora){
+    const l = anunciosDe(oferta, agora);
+    if(l.length < 2) return oferta;
+    const m = l.find(a => a.confiavel) || l[0];
+    const copia = Object.assign({}, oferta);
+    if(!m.principal){
+      copia.preco = m.preco && /^R\$/.test(String(m.preco)) ? m.preco : "R$ " + m.valor.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      copia.link = m.link;
+      // o "de R$ X" do principal não vale pro outro anúncio
+      copia.precoAntigo = "";
+    }
+    copia.totalAnuncios = l.filter(a => a.confiavel).length;
+    copia.lojaMelhor = m.loja;
+    return copia;
+  }
+
   function podeIrProPodio(oferta){
     return !FORA_DO_PODIO.includes(chaveCategoria(oferta && oferta.categoria));
   }
@@ -237,7 +325,7 @@
 
   window.FarejadinhosVitrine = {
     MINIMO_VITRINE, HORAS_FRESCA, HORAS_MAXIMA, META_CATEGORIA, MINIMO_CATEGORIA, TEMPORADAS,
-    inicio, idadeHoras, selecionar, status, foraDeEpoca, podeIrProPodio, FORA_DO_PODIO, dataOrdem, ehPermanente, PERMANENTES, normalizar, categoriasDe, juntarCategoria, TAG_VIDEO
+    inicio, idadeHoras, selecionar, status, foraDeEpoca, podeIrProPodio, FORA_DO_PODIO, dataOrdem, anunciosDe, melhorAnuncio, comMelhorAnuncio, lojaDe, numeroPreco, ehPermanente, PERMANENTES, normalizar, categoriasDe, juntarCategoria, TAG_VIDEO
   };
 
 })();

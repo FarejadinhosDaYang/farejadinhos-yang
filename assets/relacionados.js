@@ -59,6 +59,7 @@
     }
 
     function card(o) {
+        if (window.FarejadinhosVitrine && window.FarejadinhosVitrine.comMelhorAnuncio) o = window.FarejadinhosVitrine.comMelhorAnuncio(o);
         var pct = desconto(o);
         var lj = loja(o.link);
         return '<a class="rel-card" href="' + base + "ofertas/" + encodeURIComponent(o.slug) + '/">' +
@@ -73,9 +74,60 @@
             "</div></a>";
     }
 
+    function haQuanto(iso) {
+        var d = new Date(iso);
+        if (!iso || isNaN(d)) return "";
+        var h = (Date.now() - d) / 3600000;
+        if (h < 1) return "agora há pouco";
+        if (h < 24) return "há " + Math.round(h) + "h";
+        var dias = Math.round(h / 24);
+        return dias === 1 ? "ontem" : "há " + dias + " dias";
+    }
+
+    // "Este produto em outras lojas": quando a oferta tem mais de um anúncio,
+    // o preço/botão do topo passam a ser do MENOR preço confiável, e a
+    // lista completa aparece embaixo do botão.
+    function montarAnuncios(atual) {
+        var V = window.FarejadinhosVitrine;
+        if (!atual || !V || !V.anunciosDe) return;
+        var lista = V.anunciosDe(atual, new Date());
+        if (lista.length < 2) return;
+        var melhor = lista.filter(function (a) { return a.confiavel; })[0] || lista[0];
+        var btn = document.querySelector(".card a.btn, a.btn");
+        var preco = document.querySelector(".price");
+        if (!melhor.principal) {
+            var copia = V.comMelhorAnuncio(atual, new Date());
+            if (preco) preco.textContent = copia.preco;
+            if (btn) btn.href = melhor.link;
+            var old = document.querySelector(".old");
+            if (old) old.style.display = "none";
+        }
+        var confiaveis = lista.filter(function (a) { return a.confiavel; });
+        var sec = document.createElement("div");
+        sec.className = "anc-box";
+        sec.innerHTML =
+            (confiaveis.length > 1 ? '<div class="anc-selo">🏆 Menor preço entre ' + confiaveis.length + " anúncios" +
+                (melhor.loja ? " · " + esc(melhor.loja) : "") + "</div>" : "") +
+            '<div class="anc-titulo">🏪 Este produto em outros anúncios</div>' +
+            lista.map(function (a) {
+                var m = a === melhor;
+                var preco = a.valor ? "R$ " + a.valor.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : "—";
+                var quando = haQuanto(a.conferido);
+                return '<a class="anc-item' + (m ? " melhor" : "") + (a.confiavel ? "" : " duvida") + '" href="' + esc(a.link) + '" target="_blank" rel="nofollow sponsored noopener">' +
+                    '<span class="anc-loja ' + esc(a.lojaId) + '">' + esc(a.loja) + "</span>" +
+                    '<span class="anc-preco">' + (a.confiavel ? preco : "preço a conferir") + "</span>" +
+                    '<span class="anc-quando">' + (m ? "✅ mais barato" : a.confiavel ? (quando ? "conferido " + quando : "") : "abrir pra ver") + "</span>" +
+                    '<span class="anc-ver">Ver ↗</span></a>';
+            }).join("") +
+            '<div class="anc-obs">Preços conferidos automaticamente; podem mudar na loja. Vale sempre o preço de lá.</div>';
+        var depois = btn || preco;
+        if (depois && depois.parentNode) depois.parentNode.insertBefore(sec, depois.nextSibling);
+    }
+
     function montar(todas) {
         var slug = slugAtual();
         var atual = todas.filter(function (o) { return o && o.slug === slug; })[0];
+        try { montarAnuncios(atual); } catch (e) {}
         var visiveis = window.FarejadinhosVitrine
             ? window.FarejadinhosVitrine.selecionar(todas, new Date()).visiveis
             : todas;

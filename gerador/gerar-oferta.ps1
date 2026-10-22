@@ -300,6 +300,9 @@ if ($Parcelas -match '^\s*(\d{1,2})\s*$') {
 # Preco travado (a conferencia automatica nunca mexe): mantem numa edicao
 $EraTravado = @($Catalogo | Where-Object { $_ -and $_.slug -eq $Slug -and $_.PSObject.Properties["precoTravado"] -and $_.precoTravado -eq $true }).Count -gt 0
 
+# Outros anuncios do mesmo produto (comparador): mantem numa edicao
+$AnunciosAnteriores = @($Catalogo | Where-Object { $_ -and $_.slug -eq $Slug -and $_.PSObject.Properties["anuncios"] } | Select-Object -First 1 | ForEach-Object { @($_.anuncios) })
+
 # Remove uma entrada antiga com o mesmo slug (regeneracao) e
 # qualquer lixo/objeto vazio que tenha sobrado no arquivo.
 $Catalogo = @($Catalogo | Where-Object {
@@ -338,6 +341,7 @@ if ($UsaImagemExistente) {
     $NovaEntrada.precoManual = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
 }
 if ($EraTravado) { $NovaEntrada.precoTravado = $true }
+if ($AnunciosAnteriores.Count -gt 0) { $NovaEntrada.anuncios = @($AnunciosAnteriores) }
 
 # Só guarda parcelas quando a oferta tem preço a prazo
 if ($ParcelasFinal -and $PrecoAPrazoJs -ne "") {

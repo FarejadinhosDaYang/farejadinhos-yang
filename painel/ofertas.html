@@ -86,6 +86,21 @@ body{margin:0;padding:20px;background:var(--cream);font-family:'Work Sans',Arial
 .painelEdicao .linhaCheckbox label{margin:0}
 .salvarEdicao{width:100%;border:0;border-radius:10px;padding:12px;margin-top:14px;background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;font-size:14px;font-weight:800;font-family:'Baloo 2',sans-serif;cursor:pointer}
 .salvarEdicao:disabled{opacity:.6;cursor:wait}
+.anunciosBox{margin-top:16px;padding-top:12px;border-top:1.5px dashed var(--line)}
+.anunciosBox h4{margin:0 0 4px;font:800 15px 'Baloo 2',sans-serif}
+.anunciosBox .ancObs{font-size:12px;color:var(--muted);margin-bottom:8px}
+.anunciosBox .ancLinha{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:7px 10px;margin-bottom:6px;font-size:13px}
+.anunciosBox .ancLinha.melhor{border-color:#2E9E5B;background:#F2FBF5}
+.anunciosBox .ancLinha a{color:inherit;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.anunciosBox .ancLinha b{white-space:nowrap}
+.anunciosBox .ancLinha small{color:var(--muted);white-space:nowrap}
+.anunciosBox .ancTirar{border:0;background:none;cursor:pointer;font-size:15px;padding:0 4px}
+.anunciosBox .ancNovo{display:flex;gap:6px;margin-top:8px}
+.anunciosBox .ancNovo input{flex:1;margin:0}
+.anunciosBox .ancNovo .ancPreco{flex:0 0 110px}
+.anunciosBox .ancBtn{border:0;border-radius:9px;padding:9px 12px;background:var(--orange);color:var(--ink);font-weight:800;cursor:pointer;white-space:nowrap}
+.anunciosBox .ancBtn:disabled{opacity:.6;cursor:wait}
+.anunciosBox .ancMsg{font-size:12.5px;font-weight:600;margin-top:6px}
 .vazio{text-align:center;color:var(--muted);padding:40px 0}
 .statusGeral{display:none;text-align:center;padding:10px;border-radius:10px;margin-bottom:14px;font-size:13px}
 .statusGeral.erro{display:block;background:#fff0f0;color:#b00000}
@@ -411,8 +426,10 @@ function render(){
             <label for="destaque-${escapeHtml(o.slug)}">⭐ Destacar na página principal</label>
           </div>
           <button class="salvarEdicao" type="button">💾 Salvar alterações</button>
+          <div class="anunciosBox"></div>
         </div>
       `;
+      montarAnunciosPainel(o, item.querySelector(".anunciosBox"));
 
       item.querySelector(".remover").addEventListener("click", function(){
         removerOferta(o.slug, this);
@@ -658,6 +675,97 @@ async function removerOferta(slug, botao){
     botao.disabled = false;
     botao.textContent = "🗑️ Remover";
   }
+}
+
+// ============ Outros anúncios do mesmo produto (comparador) ============
+// O site mostra sempre o MENOR preço confiável entre o link principal e
+// estes anúncios (regra em assets/vitrine.js). Adicionar/remover vai pelo
+// /lote (acao "anuncios" -> gerador/anuncios.py); o preço dos extras é
+// conferido de hora em hora (gerador/conferir-anuncios.py).
+async function pedirAnuncio(item){
+  const senha = document.getElementById("senha").value.trim();
+  if(!senha) throw new Error("Digite a senha do painel primeiro.");
+  const dados = new FormData();
+  dados.append("senha", senha);
+  dados.append("itens", JSON.stringify([Object.assign({ acao: "anuncios" }, item)]));
+  const r = await fetch(WORKER_URL + "/lote", { method: "POST", body: dados });
+  const texto = await r.text();
+  if(r.status === 401) throw new Error("Senha incorreta.");
+  if(!r.ok) throw new Error(texto);
+}
+
+function montarAnunciosPainel(o, box){
+  const V = window.FarejadinhosVitrine;
+  if(!box || !V || !V.anunciosDe) return;
+  const lista = V.anunciosDe(o, new Date());
+  const melhor = lista.find(a => a.confiavel) || lista[0];
+  const fmt = a => a.valor ? "R$ " + a.valor.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : "sem preço";
+  box.innerHTML = `
+    <h4>🏪 Outros anúncios deste produto</h4>
+    <div class="ancObs">O site mostra sempre o menor preço confiável entre todos. Preço posto aqui vale por 7 dias; depois a conferência automática assume (preço novo só vale depois de 2 leituras iguais).</div>
+    ${lista.length > 1 ? lista.map(a => `
+      <div class="ancLinha${a === melhor ? " melhor" : ""}">
+        <span>${a.principal ? "⭐" : "🏪"}</span>
+        <a href="${escapeHtml(a.link)}" target="_blank" rel="noopener">${escapeHtml(a.loja)}${a.principal ? " (principal)" : ""}</a>
+        <b>${fmt(a)}</b>
+        <small>${a === melhor ? "✅ no site" : a.confiavel ? "" : escapeHtml(a.motivo)}</small>
+        ${a.principal ? "" : `<button class="ancTirar" type="button" title="Tirar este anúncio" data-link="${escapeHtml(a.link)}">🗑️</button>`}
+      </div>`).join("") : ""}
+    <div class="ancNovo">
+      <input type="text" class="ancLink" placeholder="Colar link de outro anúncio">
+      <input type="text" class="ancPreco" placeholder="Preço">
+      <button class="ancBtn ancBuscar" type="button" title="Ler o preço do link">🔎</button>
+    </div>
+    <button class="ancBtn ancAdd" type="button" style="width:100%;margin-top:6px">➕ Adicionar anúncio</button>
+    <div class="ancMsg"></div>`;
+  const msg = box.querySelector(".ancMsg");
+  const aviso = (t, erro) => { msg.style.color = erro ? "var(--red-dark)" : "#1F7A44"; msg.textContent = t; };
+
+  box.querySelector(".ancBuscar").onclick = async function(){
+    const link = box.querySelector(".ancLink").value.trim();
+    const senha = document.getElementById("senha").value.trim();
+    if(!/^https?:\/\//i.test(link)) return aviso("Cole o link do anúncio primeiro.", true);
+    if(!senha) return aviso("Digite a senha do painel primeiro.", true);
+    this.disabled = true; aviso("Lendo o preço na loja...");
+    try{
+      const dados = new FormData(); dados.append("senha", senha); dados.append("link", link);
+      const r = await fetch(WORKER_URL + "/produto", { method: "POST", body: dados });
+      const j = await r.json().catch(() => ({}));
+      if(r.status === 401) throw new Error("Senha incorreta.");
+      if(j.preco){ box.querySelector(".ancPreco").value = j.preco; aviso("Preço lido: " + j.preco + (j.produto ? " — " + j.produto.slice(0, 60) : "") + ". Confira na loja antes de adicionar."); }
+      else aviso("Não consegui ler o preço desse link — digite à mão.", true);
+    }catch(e){ aviso("❌ " + e.message, true); }
+    this.disabled = false;
+  };
+
+  box.querySelector(".ancAdd").onclick = async function(){
+    const link = box.querySelector(".ancLink").value.trim();
+    const preco = box.querySelector(".ancPreco").value.trim();
+    if(!/^https?:\/\//i.test(link)) return aviso("Cole o link do anúncio.", true);
+    if(link === o.link) return aviso("Esse já é o link principal da oferta.", true);
+    if(!V.numeroPreco(preco)) return aviso("Coloque o preço (ou toque em 🔎 pra ler da loja).", true);
+    const principal = V.numeroPreco(o.preco);
+    const valor = V.numeroPreco(preco);
+    if(principal && (valor < principal / 2 || valor > principal * 2) &&
+       !confirm(`O preço ${preco} é muito diferente do principal (${o.preco}). É mesmo o mesmo produto?`)) return;
+    this.disabled = true; this.textContent = "Enviando...";
+    try{
+      await pedirAnuncio({ op: "adicionar", slug: o.slug, link, preco, loja: V.lojaDe(link).nome });
+      aviso("✅ Anúncio enviado! Aparece no site em 1-2 minutos.");
+      box.querySelector(".ancLink").value = ""; box.querySelector(".ancPreco").value = "";
+    }catch(e){ aviso("❌ " + e.message, true); }
+    this.disabled = false; this.textContent = "➕ Adicionar anúncio";
+  };
+
+  box.querySelectorAll(".ancTirar").forEach(b => b.onclick = async function(){
+    if(!confirm("Tirar este anúncio da oferta?")) return;
+    this.disabled = true;
+    try{
+      await pedirAnuncio({ op: "remover", slug: o.slug, link: this.dataset.link });
+      this.closest(".ancLinha").style.opacity = ".4";
+      aviso("✅ Pedido enviado — some do site em 1-2 minutos.");
+    }catch(e){ aviso("❌ " + e.message, true); this.disabled = false; }
+  });
 }
 
 async function salvarEdicao(oferta, item, botao){

@@ -36,6 +36,17 @@ jobs:
             Write-Host "Pedido de conferencia de precos enviado pro workflow 'Conferir precos'."
           }
 
+      - name: Outros anuncios de uma oferta (comparador, botao do painel)
+        shell: pwsh
+        env:
+          ARQUIVO_LOTE: ${{ inputs.arquivoLote }}
+        run: |
+          $texto = Get-Content -LiteralPath $env:ARQUIVO_LOTE -Raw -Encoding UTF8
+          if ($texto -match '"acao"\s*:\s*"anuncios"') {
+            python gerador/anuncios.py $env:ARQUIVO_LOTE
+            if ($LASTEXITCODE -ne 0) { exit 1 }
+          }
+
       - name: Gerar ofertas do lote
         shell: pwsh
         env:
