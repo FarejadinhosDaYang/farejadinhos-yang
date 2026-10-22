@@ -37,9 +37,10 @@ html,body{ width:1080px; height:1920px; overflow:hidden; background:var(--red); 
 /* ---- degraus (2º | 1º | 3º) ---- */
 .degrau{ position:absolute; bottom:300px; width:340px; border-radius:26px 26px 0 0; z-index:1;
   box-shadow:inset 0 10px 0 rgba(255,255,255,.35), 0 26px 40px rgba(60,0,0,.35);
-  display:flex; flex-direction:column; align-items:center; padding:68px 18px 0; text-align:center;
+  display:flex; flex-direction:column; align-items:center; padding:76px 14px 0; text-align:center;
   animation:degrauSobe .6s cubic-bezier(.2,1.3,.4,1) both; }
-.degrau .nome{ font-family:"Baloo"; font-weight:800; font-size:34px; line-height:1.02; max-height:72px; overflow:hidden; color:var(--mt);
+.degrau .nome{ font-family:"Baloo"; font-weight:800; font-size:44px; line-height:1.0; color:#fff; width:100%;
+  background:rgba(43,27,18,.72); border-radius:18px; padding:12px 10px 6px; box-shadow:0 6px 14px rgba(0,0,0,.25);
   opacity:0; animation:subir .4s ease-out both; }
 .degrau .num{ font-family:"Baloo"; font-weight:800; font-size:200px; line-height:1; color:var(--mt); text-shadow:0 4px 0 rgba(255,255,255,.35); margin-top:auto; }
 @keyframes degrauSobe{ from{ transform:translateY(900px); } to{ transform:none; } }
@@ -76,7 +77,7 @@ html,body{ width:1080px; height:1920px; overflow:hidden; background:var(--red); 
 
 .est{ position:absolute; color:#FFE58A; font-size:70px; opacity:0; z-index:5; text-shadow:0 0 18px rgba(255,255,255,.8); }
 @keyframes piscar{ 0%,100%{ opacity:0; transform:scale(.3) rotate(0); } 50%{ opacity:1; transform:scale(1) rotate(90deg); } }
-.conf{ position:absolute; top:-60px; width:20px; height:30px; border-radius:4px; z-index:6; }
+.conf{ position:absolute; top:-60px; width:20px; height:30px; border-radius:4px; z-index:0; }
 @keyframes cair{ from{ transform:translate(0,0) rotate(0); } to{ transform:translate(var(--dx),2100px) rotate(var(--r)); } }
 [hidden]{ display:none !important; }
 .publi{position:absolute;z-index:50;top:40px;left:40px;padding:10px 22px 8px;border-radius:999px;background:rgba(43,27,18,.55);color:#fff;font:700 30px "Work Sans","Work",Arial,sans-serif;letter-spacing:.3px;line-height:1}
@@ -99,8 +100,8 @@ html,body{ width:1080px; height:1920px; overflow:hidden; background:var(--red); 
   <div class="card c1" style="animation-delay:2.9s, 3.6s"><img data-c="i1"><div class="off" data-c="o1" hidden style="animation-delay:3.4s"></div><div class="preco" data-c="p1" style="animation-delay:3.25s"></div></div>
   <div class="coroa">👑</div>
 
-  <div class="link">🔗 confere no link do story!<small>farejadinhosdayang.com.br 🐾</small></div>
   <div id="confete"></div>
+  <div class="link">🔗 confere no link do story!<small>farejadinhosdayang.com.br 🐾</small></div>
 
   <div class="est" style="left:110px;top:640px;animation:piscar 1.6s ease-in-out 3.6s infinite">✦</div>
   <div class="est" style="left:900px;top:700px;animation:piscar 1.6s ease-in-out 4.1s infinite">✦</div>
@@ -119,6 +120,7 @@ html,body{ width:1080px; height:1920px; overflow:hidden; background:var(--red); 
     c("n" + p).textContent = o.nome || "";
     if (o.off){ c("o" + p).textContent = "-" + o.off + "%"; c("o" + p).hidden = false; }
     // preço comprido: diminui a letra pra caber na largura do card
+    var nm = c("n" + p), tn = 44; while (nm.scrollHeight > 2 * tn * 1.0 + 22 && tn > 30){ tn -= 2; nm.style.fontSize = tn + "px"; }
     var pr = c("p" + p), t = 60; while (pr.offsetWidth > 330 && t > 36){ t -= 4; pr.style.fontSize = t + "px"; }
   });
   // confete quando o 1º lugar pousa

@@ -40,7 +40,7 @@ def nome_curto(nome, limite=38):
     # não termina em "para", "de", "com"...
     PEQ = {"para","pra","de","do","da","dos","das","com","e","em","no","na","a","o","ao","por","sem"}
     ps = saida.split(" ")
-    while len(ps) > 2 and ps[-1].lower() in PEQ: ps.pop()
+    while len(ps) > 2 and (ps[-1].lower() in PEQ or ps[-1].isdigit()): ps.pop()   # nem em número solto ("Leds 8")
     saida = " ".join(ps)
     resto = nome[len(saida):].strip(" -–|,")
     det, d = "", resto.split(" ")
@@ -259,7 +259,7 @@ if len(manifesto) == 3:
     agora_br = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=3)
     DIAS = ["segunda", "terça", "quarta", "quinta", "sexta", "sábado", "domingo"]
     dados3 = {"data": f"{DIAS[agora_br.weekday()]}, {agora_br:%d/%m} · farejados pela Yang",
-              "itens": [{"posicao": i + 1, "imagem": "img-%d.jpg" % (i + 1), "nome": manifesto[i]["nome"],
+              "itens": [{"posicao": i + 1, "imagem": "img-%d.jpg" % (i + 1), "nome": nome_curto(top[i]["produto"], 24)[0],
                          "preco": manifesto[i]["preco"], "off": top[i].get("desconto") or 0} for i in range(3)]}
     modelo3 = open(os.path.join(AQUI, "top3-unico.html"), encoding="utf-8").read()
     html3 = os.path.join(AQUI, "top3-unico-gerado.html")
