@@ -1,62 +1,50 @@
 {
-  "quando": "2026-10-23T18:18:20Z",
+  "quando": "2026-10-23T22:07:19Z",
   "origem": "schedule",
-  "total": 188,
+  "total": 185,
   "iguais": 167,
   "mudaram": [
     {
-      "slug": "kit-bola-de-natal-enfeite-para-arvore-de-natal-decoracao-2",
-      "produto": "Kit Bola De Natal Enfeite Para Arvore Decoração",
-      "de": "R$ 27,99",
-      "para": "R$ 28,99"
-    },
-    {
-      "slug": "super-clarificante-para-piscina-power-gel",
-      "produto": "Super Clarificante para Piscina Power Gel",
-      "de": "R$ 31,49",
-      "para": "37,42"
-    },
-    {
-      "slug": "escova-curva-piscina-engate-rapido-limpeza-fundo",
-      "produto": "Escova Curva Piscina Engate Rápido Limpeza Fundo",
-      "de": "R$ 35,90",
-      "para": "27,00"
-    },
-    {
       "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
       "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-      "de": "R$ 57,75",
-      "para": "57,49"
+      "de": "R$ 57,49",
+      "para": "64,28"
     },
     {
-      "slug": "prateleira-organizador-2-andares-banheiro",
-      "produto": "Prateleira Organizador 2 Andares Banheiro",
-      "de": "R$ 24,99",
-      "para": "R$ 25,99"
+      "slug": "samsung-galaxy-s25-5g-256gb-12gb-camera-tripla",
+      "produto": "Samsung Galaxy S25 5G, 256GB, 12GB, Câmera Tripla",
+      "de": "R$ 3.898,00",
+      "para": "3859,00"
     },
     {
-      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
-      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 5.065,61",
-      "para": "3839,10"
+      "slug": "air-fryer-fritadeira-eletrica-electrolux-eaf40",
+      "produto": "Air fryer Fritadeira Elétrica Electrolux EAF40",
+      "de": "R$ 299,00",
+      "para": "335,97"
+    },
+    {
+      "slug": "creatina-monohidratada-100g-growth-supplements",
+      "produto": "Creatina Monohidratada 100g Growth Supplements",
+      "de": "R$ 62,48",
+      "para": "32,90"
     },
     {
       "slug": "samsung-galaxy-s25-43-5g-256gb-12gb",
       "produto": "Samsung Galaxy S25&#43; 5g, 256gb, 12gb",
-      "de": "R$ 4.399,00",
-      "para": "3898,00"
+      "de": "R$ 3.898,00",
+      "para": "4399,00"
     },
     {
       "slug": "celular-samsung-galaxy-a57-256gb-cinza",
       "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 2.160,00",
-      "para": "2369,00"
+      "de": "R$ 2.369,00",
+      "para": "2124,00"
     },
     {
       "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
       "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 2.160,00",
-      "para": "2369,00"
+      "de": "R$ 2.369,00",
+      "para": "2124,00"
     }
   ],
   "semPreco": [],
@@ -115,7 +103,7 @@
       "produto": "Aspirador Manual Piscina Herbinject Azul",
       "link": "https://meli.la/1t2eJpi",
       "atual": "R$ 40,88",
-      "lido": "67,12",
+      "lido": "384,31",
       "referencia": "preco posto a mao em 19/10 08:40"
     },
     {
@@ -149,22 +137,14 @@
       "atual": "R$ 459,00",
       "lido": "329,00",
       "referencia": "preco posto a mao em 21/10 10:12"
-    },
-    {
-      "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
-      "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
-      "link": "https://meli.la/2LUJ4yy",
-      "atual": "R$ 3.898,00",
-      "lido": "5798,00",
-      "referencia": "preco posto a mao em 22/10 17:24"
     }
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-23T18:18:22Z",
+      "quando": "2026-10-23T22:07:21Z",
       "teste": false,
-      "links": 125,
-      "ok": 125,
+      "links": 124,
+      "ok": 124,
       "erros": 0
     }
   },
