@@ -105,7 +105,7 @@
   },
   {
     "produto": "Kit Bola De Natal Enfeite Para Arvore Decoração",
-    "preco": "R$ 27,99",
+    "preco": "R$ 28,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -119,7 +119,7 @@
     "precoAPrazo": "",
     "liberacao": "2026-10-22T16:36:00Z",
     "produtoOriginal": "Kit Bola De Natal Enfeite Para Arvore De Natal Decoração Led Pisca Pisca Enfeite De Natal",
-    "precoConferido": "2026-10-22T20:06:47Z"
+    "precoConferido": "2026-10-23T18:21:40Z"
   },
   {
     "produto": "Anjo menina pingente enfeites de natal de árvore",
@@ -1177,7 +1177,7 @@
   },
   {
     "produto": "Super Clarificante para Piscina Power Gel",
-    "preco": "R$ 31,49",
+    "preco": "R$ 37,42",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Piscina",
@@ -1190,7 +1190,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-17T15:40:00Z",
-    "precoConferido": "2026-10-23T07:30:55Z"
+    "precoConferido": "2026-10-23T18:21:40Z"
   },
   {
     "produto": "Peneira Metálica com Engate Rápido Limpeza",
@@ -1211,7 +1211,7 @@
   },
   {
     "produto": "Escova Curva Piscina Engate Rápido Limpeza Fundo",
-    "preco": "R$ 35,90",
+    "preco": "R$ 27,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Piscina",
@@ -1224,7 +1224,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-18T22:32:30Z",
-    "precoConferido": "2026-10-22T07:35:07Z"
+    "precoConferido": "2026-10-23T18:21:40Z"
   },
   {
     "produto": "Câmera Lâmpada De Segurança Wifi Ip App Yoosee",
@@ -1297,7 +1297,7 @@
   },
   {
     "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-    "preco": "R$ 57,75",
+    "preco": "R$ 57,49",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -1310,7 +1310,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-26T20:20:00Z",
-    "precoConferido": "2026-10-23T11:23:06Z"
+    "precoConferido": "2026-10-23T18:21:40Z"
   },
   {
     "produto": "Jogo 6 Taças De Vidro Diamond 340 ml Com Pé",
@@ -2087,7 +2087,7 @@
   },
   {
     "produto": "Prateleira Organizador 2 Andares Banheiro",
-    "preco": "R$ 24,99",
+    "preco": "R$ 25,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Casa",
@@ -2099,7 +2099,8 @@
     "data": "2026-10-17T23:01:36Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-26T19:24:00Z"
+    "liberacao": "2026-10-26T19:24:00Z",
+    "precoConferido": "2026-10-23T18:21:40Z"
   },
   {
     "produto": "Caixa Organizadora com 30 potinhos. Organizador",
@@ -2720,7 +2721,7 @@
   },
   {
     "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-    "preco": "R$ 5.065,61",
+    "preco": "R$ 3.839,10",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -2730,11 +2731,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera/",
     "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "R$ 5.065,61",
+    "precoAVista": "R$ 3.839,10",
     "precoAPrazo": "5066,16",
     "liberacao": "2026-10-19T11:56:00Z",
     "parcelas": 12,
-    "precoConferido": "2026-10-23T13:26:40Z"
+    "precoConferido": "2026-10-23T18:21:40Z"
   },
   {
     "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
@@ -3224,7 +3225,7 @@
   },
   {
     "produto": "Samsung Galaxy S25&#43; 5g, 256gb, 12gb",
-    "preco": "R$ 4.399,00",
+    "preco": "R$ 3.898,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -3234,10 +3235,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/samsung-galaxy-s25-43-5g-256gb-12gb/",
     "slug": "samsung-galaxy-s25-43-5g-256gb-12gb",
     "data": "2026-10-23T00:12:13Z",
-    "precoAVista": "4399,00",
+    "precoAVista": "R$ 3.898,00",
     "precoAPrazo": "4332,00",
     "liberacao": "2026-10-23T11:00:00Z",
-    "parcelas": 10
+    "parcelas": 10,
+    "precoConferido": "2026-10-23T18:21:40Z"
   },
   {
     "produto": "Celular Samsung Galaxy S25&#43; 5g, 512gb",
@@ -3312,7 +3314,7 @@
   },
   {
     "produto": "Celular Samsung Galaxy A57 256gb cinza",
-    "preco": "R$ 2.160,00",
+    "preco": "R$ 2.369,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -3322,15 +3324,15 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-a57-256gb-cinza/",
     "slug": "celular-samsung-galaxy-a57-256gb-cinza",
     "data": "2026-10-23T00:12:14Z",
-    "precoAVista": "R$ 2.160,00",
+    "precoAVista": "R$ 2.369,00",
     "precoAPrazo": "2399,00",
     "liberacao": "2026-10-24T00:04:00Z",
     "parcelas": 10,
-    "precoConferido": "2026-10-23T07:30:55Z"
+    "precoConferido": "2026-10-23T18:21:40Z"
   },
   {
     "produto": "Celular Samsung Galaxy A57 256gb cinza",
-    "preco": "R$ 2.160,00",
+    "preco": "R$ 2.369,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -3340,11 +3342,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-a57-256gb-cinza-2/",
     "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
     "data": "2026-10-23T00:12:14Z",
-    "precoAVista": "R$ 2.160,00",
+    "precoAVista": "R$ 2.369,00",
     "precoAPrazo": "2399,00",
     "liberacao": "2026-10-24T13:48:00Z",
     "parcelas": 10,
-    "precoConferido": "2026-10-23T07:30:55Z"
+    "precoConferido": "2026-10-23T18:21:40Z"
   },
   {
     "produto": "Celular Samsung Galaxy A37 5G 128GB",
