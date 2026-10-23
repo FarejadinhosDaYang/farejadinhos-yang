@@ -1,32 +1,38 @@
 {
-  "quando": "2026-10-22T22:17:45Z",
+  "quando": "2026-10-23T01:28:39Z",
   "origem": "schedule",
-  "total": 187,
-  "iguais": 170,
+  "total": 197,
+  "iguais": 178,
   "mudaram": [
     {
-      "slug": "super-clarificante-para-piscina-power-gel",
-      "produto": "Super Clarificante para Piscina Power Gel",
-      "de": "R$ 31,81",
-      "para": "37,42"
-    },
-    {
-      "slug": "camera-lampada-de-seguranca-wifi-ip-app-yoosee",
-      "produto": "Câmera Lâmpada De Segurança Wifi Ip App Yoosee",
-      "de": "R$ 83,69",
-      "para": "53,99"
+      "slug": "generica-gancho-organizador-de-pia-porta-esponja",
+      "produto": "Genérica Gancho Organizador De Pia Porta Esponja",
+      "de": "R$ 19,58",
+      "para": "18,00"
     },
     {
       "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
       "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-      "de": "R$ 55,68",
-      "para": "58,01"
+      "de": "R$ 58,01",
+      "para": "56,74"
+    },
+    {
+      "slug": "fritadeira-sem-oleo-air-fryer-4l-mondial-1500w",
+      "produto": "Fritadeira sem óleo air fryer 4L Mondial 1500W",
+      "de": "R$ 249,00",
+      "para": "236,55"
     },
     {
       "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
       "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 3.839,10",
-      "para": "5065,61"
+      "de": "R$ 5.065,61",
+      "para": "3839,10"
+    },
+    {
+      "slug": "air-fryer-fritadeira-eletrica-electrolux-eaf40",
+      "produto": "Air fryer Fritadeira Elétrica Electrolux EAF40",
+      "de": "R$ 335,97",
+      "para": "337,90"
     }
   ],
   "semPreco": [],
@@ -45,7 +51,7 @@
       "produto": "iPhone 18 Pro 256GB Preto (somente eSIM)",
       "link": "https://meli.la/18pktG2",
       "atual": "R$ 9.499,00",
-      "lido": "12048,00",
+      "lido": "8078,00",
       "referencia": "preco posto a mao em 18/10 23:09"
     },
     {
@@ -85,7 +91,7 @@
       "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
       "link": "https://link.amazon/B0epLOItP",
       "atual": "R$ 4.559,05",
-      "lido": "4630,00",
+      "lido": "5065,61",
       "referencia": "preco posto a mao em 19/10 08:26"
     },
     {
@@ -93,7 +99,7 @@
       "produto": "Aspirador Manual Piscina Herbinject Azul",
       "link": "https://meli.la/1t2eJpi",
       "atual": "R$ 40,88",
-      "lido": "47,90",
+      "lido": "33,21",
       "referencia": "preco posto a mao em 19/10 08:40"
     },
     {
@@ -135,11 +141,19 @@
       "atual": "R$ 3.898,00",
       "lido": "5798,00",
       "referencia": "preco posto a mao em 22/10 17:24"
+    },
+    {
+      "slug": "celular-samsung-galaxy-a37-5g-128gb-3",
+      "produto": "Celular Samsung Galaxy A37 5g 128gb",
+      "link": "https://meli.la/17xzqfE",
+      "atual": "R$ 1.829,00",
+      "lido": "836,91",
+      "referencia": "R$ 1.829,00"
     }
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-22T22:17:49Z",
+      "quando": "2026-10-23T01:28:41Z",
       "teste": false,
       "links": 128,
       "ok": 128,
