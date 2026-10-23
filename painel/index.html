@@ -445,6 +445,16 @@ Gerador de ofertas
 <script src="../assets/vitrine.js"></script>
 <script src="../assets/push-painel.js"></script>
 
+<div id="shopeeLinksBox"></div>
+<script src="../assets/shopee-painel.js"></script>
+<script>
+// colou um link comum da Shopee no campo "Link"? troca pelo de afiliado
+document.addEventListener("DOMContentLoaded", function(){
+  var campo = document.getElementById("link");
+  if(campo && window.FarejadinhosShopee) campo.addEventListener("change", function(){ FarejadinhosShopee.afiliarCampo(campo); });
+});
+</script>
+
 <label>
 Senha
 </label>
@@ -923,6 +933,8 @@ async function extrairDados(){
         if(abaAtual === "link"){
             const linkColado = document.getElementById("linkExtrair").value.trim();
             document.getElementById("link").value = resultado.linkAfiliado || linkColado;
+            // link comum da Shopee -> vira o seu link de afiliado
+            if(window.FarejadinhosShopee) FarejadinhosShopee.afiliarCampo(document.getElementById("link"));
         }
 
         if(abaAtual === "texto" && resultado.link){

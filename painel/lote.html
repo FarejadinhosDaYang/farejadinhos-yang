@@ -13,6 +13,7 @@
 <script src="../assets/categorias.js"></script>
 <script src="../assets/cupons.js"></script>
 <script src="../assets/nomes.js"></script>
+<script src="../assets/shopee-painel.js"></script>
 <style>
 
 :root{
@@ -513,6 +514,30 @@ async function buscarFotosAutomaticas(){
             const p = fila.shift();
             const item = p.item;
             const precisaProduto = !item.produto || !item.preco;
+            // Shopee: dados pela API oficial (na hora) — se falhar, cai no caminho antigo
+            const linkShopee = p.linkProduto || item.link;
+            if(window.FarejadinhosShopee && FarejadinhosShopee.ehShopee(linkShopee)){
+                try{
+                    const j = await FarejadinhosShopee.produto(linkShopee);
+                    if(j.produto && !item.produto){ p.nomeOriginal = j.produto; item.produto = FarejadinhosNomes.encurtar(j.produto); }
+                    if(j.preco && !item.preco) item.preco = j.preco;
+                    if(j.precoAntigo && !item.precoAntigo) item.precoAntigo = j.precoAntigo;
+                    if(j.imagemUrl && !item.imagemUrl) item.imagemUrl = j.imagemUrl;
+                    if(j.afiliado && !FarejadinhosShopee.ehAfiliado(item.link)) item.link = j.afiliado;
+                    if(item.produto && !item.categoria){
+                        item.categoria = FarejadinhosCategorias.sugerir(p.nomeOriginal || item.produto);
+                        p.categoriaSugerida = true;
+                    }
+                }catch(e){
+                    if(/Senha/.test(e.message)) senhaErrada = true;
+                    p.motivo = "API Shopee: " + e.message;
+                }
+                if(item.produto && item.preco && item.imagemUrl){
+                    completos++; feitos++;
+                    atualizarStatus(); validarItens(); atualizarLinhaFoto(p); atualizarResumo();
+                    continue;
+                }
+            }
             try{
                 const dados = new FormData();
                 dados.append("senha", senha);
@@ -1160,6 +1185,27 @@ async function enviarLote(){
 
     btnEnviar.disabled = true;
     btnEnviar.textContent = "Enviando...";
+
+    // link comum da Shopee -> vira o seu link de afiliado antes de publicar
+    if(window.FarejadinhosShopee){
+        const comuns = paraEnviar.map(i => i.link).filter(l => FarejadinhosShopee.ehShopee(l) && !FarejadinhosShopee.ehAfiliado(l));
+        if(comuns.length){
+            btnEnviar.textContent = "Gerando links de afiliado...";
+            try{
+                const mapa = await FarejadinhosShopee.afiliar(comuns);
+                paraEnviar.forEach(i => { if(mapa[i.link]) i.link = mapa[i.link]; });
+                const faltou = comuns.filter(l => !mapa[l]).length;
+                if(faltou && !confirm(`${faltou} link(s) da Shopee não viraram link de afiliado (ficariam sem comissão). Enviar mesmo assim?`)){
+                    btnEnviar.disabled = false; btnEnviar.textContent = "🚀 Enviar lote"; return;
+                }
+            }catch(e){
+                if(!confirm("Não consegui gerar os links de afiliado da Shopee (" + e.message + "). Enviar com os links comuns (sem comissão)?")){
+                    btnEnviar.disabled = false; btnEnviar.textContent = "🚀 Enviar lote"; return;
+                }
+            }
+            btnEnviar.textContent = "Enviando...";
+        }
+    }
 
     // A calculadora precisa dos dois preços: se tem preço a prazo,
     // o "à vista" é o próprio preço da oferta. Sem a prazo, não manda nada.
