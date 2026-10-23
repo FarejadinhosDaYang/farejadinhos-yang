@@ -1,134 +1,38 @@
 {
-  "quando": "2026-10-23T07:27:52Z",
-  "origem": "schedule",
-  "total": 196,
-  "iguais": 163,
+  "quando": "2026-10-23T11:19:44Z",
+  "origem": "workflow_dispatch",
+  "total": 195,
+  "iguais": 178,
   "mudaram": [
-    {
-      "slug": "globo-de-neve-de-natal-papai-noel-decoracao-de-natal",
-      "produto": "Globo de Neve de Natal Papai Noel",
-      "de": "R$ 31,90",
-      "para": "R$ 39,87"
-    },
-    {
-      "slug": "arvore-de-natal-de-240-cm-150-180-210-arvore-de-natal-de",
-      "produto": "Árvore de Natal de luxo, decoração para festa",
-      "de": "R$ 129,00",
-      "para": "R$ 128,90"
-    },
-    {
-      "slug": "jogo-de-tacas-de-vidro-diamond-cristal-325ml-6-pecas",
-      "produto": "Jogo De Taças De Vidro Diamond Cristal 325ml",
-      "de": "R$ 36,99",
-      "para": "R$ 35,99"
-    },
-    {
-      "slug": "super-clarificante-para-piscina-power-gel",
-      "produto": "Super Clarificante para Piscina Power Gel",
-      "de": "R$ 37,42",
-      "para": "31,49"
-    },
     {
       "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
       "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-      "de": "R$ 56,74",
-      "para": "57,49"
-    },
-    {
-      "slug": "copo-termica-600ml-inox-anti-vazamento",
-      "produto": "Copo Térmica 600ml Inox Anti-vazamento",
-      "de": "R$ 48,99",
-      "para": "34,99"
+      "de": "R$ 57,49",
+      "para": "57,75"
     },
     {
       "slug": "fritadeira-sem-oleo-air-fryer-4l-mondial-1500w",
       "produto": "Fritadeira sem óleo air fryer 4L Mondial 1500W",
-      "de": "R$ 236,55",
-      "para": "228,95"
+      "de": "R$ 228,95",
+      "para": "165,00"
     },
     {
-      "slug": "kit-de-suportes-porta-shampoo-organizador-de-metal",
-      "produto": "Kit De Suportes Porta Shampoo Organizador De Metal",
-      "de": "R$ 20,98",
-      "para": "R$ 14,00"
+      "slug": "caixa-organizadora-com-30-potinhos-organizador",
+      "produto": "Caixa Organizadora com 30 potinhos. Organizador",
+      "de": "R$ 33,89",
+      "para": "R$ 34,79"
     },
     {
-      "slug": "estante-6-ou-5-prateleiras-cozinha-de-aco",
-      "produto": "Estante 6 OU 5 Prateleiras Cozinha de Aço",
-      "de": "R$ 72,99",
-      "para": "R$ 69,00"
-    },
-    {
-      "slug": "kit-com-ate-100-cabides-infantis-coloridos-bebe",
-      "produto": "Kit com Até 100 Cabides Infantis Coloridos Bebê",
-      "de": "R$ 11,87",
-      "para": "R$ 11,37"
-    },
-    {
-      "slug": "cesto-de-roupa-de-bambu-dobravel-organizador",
-      "produto": "Cesto De Roupa de Bambu Dobravel Organizador",
-      "de": "R$ 56,26",
-      "para": "R$ 55,96"
-    },
-    {
-      "slug": "porta-temperos-9-potes-giratorio-preto-organizador",
-      "produto": "Porta Temperos 9 Potes Giratório Preto Organizador",
-      "de": "R$ 41,99",
-      "para": "R$ 35,99"
-    },
-    {
-      "slug": "air-fryer-fritadeira-eletrica-electrolux-eaf40",
-      "produto": "Air fryer Fritadeira Elétrica Electrolux EAF40",
-      "de": "R$ 337,90",
-      "para": "299,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-2",
-      "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
-      "de": "R$ 2.948,00",
-      "para": "2906,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-s25-43-5g-512gb",
-      "produto": "Celular Samsung Galaxy S25&#43; 5g, 512gb",
-      "de": "R$ 2.434,00",
-      "para": "2518,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-s25-43-5g-512gb-2",
-      "produto": "Celular Samsung Galaxy S25&#43; 5g, 512gb",
-      "de": "R$ 2.434,00",
-      "para": "2518,00"
+      "slug": "creatina-monohidratada-100g-growth-supplements",
+      "produto": "Creatina Monohidratada 100g Growth Supplements",
+      "de": "R$ 64,81",
+      "para": "62,48"
     },
     {
       "slug": "celular-samsung-galaxy-s26-5g-512gb",
       "produto": "Celular Samsung Galaxy S26 5G, 512GB",
-      "de": "R$ 5.798,00",
-      "para": "5411,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-a57-256gb-cinza",
-      "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 2.159,00",
-      "para": "2160,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
-      "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 2.159,00",
-      "para": "2160,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-a37-5g-128gb",
-      "produto": "Celular Samsung Galaxy A37 5G 128GB",
-      "de": "R$ 1.799,00",
-      "para": "1424,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-a37-5g-128gb-3",
-      "produto": "Celular Samsung Galaxy A37 5g 128gb",
-      "de": "R$ 1.829,00",
-      "para": "1799,00"
+      "de": "R$ 5.411,00",
+      "para": "5798,00"
     }
   ],
   "semPreco": [],
@@ -233,7 +137,7 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-23T07:27:53Z",
+      "quando": "2026-10-23T11:19:46Z",
       "teste": false,
       "links": 127,
       "ok": 127,
