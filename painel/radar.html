@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Radar da Yang | Painel Farejadinhos</title>
+<link rel="icon" href="../assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+    --red:#E5232E; --red-dark:#C21A24; --orange:#F7941D; --cream:#FDF3E3; --cream-2:#FFFAF1;
+    --ink:#2B1B12; --muted:#8A7563; --line:#F0DFC4; --verde:#1D6B33; --verde-bg:#E6F4EA;
+}
+*{box-sizing:border-box}
+body{margin:0;padding:20px 16px 120px;background:var(--cream);font-family:'Work Sans',Arial,sans-serif;color:var(--ink)}
+.container{max-width:1100px;margin:auto}
+.voltar{display:inline-block;margin-bottom:16px;color:var(--red-dark);font-weight:700;text-decoration:none;font-size:14px}
+h1{font-family:'Baloo 2',sans-serif;color:var(--red-dark);font-size:26px;margin:0 0 4px}
+.sub{color:var(--muted);font-size:14px;line-height:1.5;margin:0 0 14px}
+.aviso{padding:10px 14px;border-radius:12px;background:#FFF6E9;border:1.5px solid #FFE0B8;font-size:13.5px;line-height:1.5;margin-bottom:14px}
+
+.cats{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin-bottom:10px;scrollbar-width:thin}
+.cat{flex:none;border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:7px 13px;font:600 13px 'Work Sans',Arial,sans-serif;cursor:pointer;color:var(--ink)}
+.cat.ativa{background:var(--ink);border-color:var(--ink);color:#fff}
+.cat small{opacity:.65;font-weight:500}
+.filtros{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+.filtros input[type=search]{flex:1 1 200px;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;font:500 15px 'Work Sans',Arial,sans-serif;background:#fff}
+.filtros select{padding:9px;border:1.5px solid var(--line);border-radius:10px;font:500 14px 'Work Sans',Arial,sans-serif;background:#fff;color:var(--ink)}
+.filtros label{font-size:13.5px;display:flex;align-items:center;gap:5px;cursor:pointer}
+.contagem{font-size:13px;color:var(--muted);margin:0 0 10px}
+
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.card{background:var(--cream-2);border:1.5px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+.card.sel{border-color:var(--red);box-shadow:0 0 0 2px rgba(229,35,46,.15)}
+.foto{position:relative;background:#fff;aspect-ratio:1/1}
+.foto img{width:100%;height:100%;object-fit:contain;display:block}
+.marcar{position:absolute;top:8px;left:8px;width:30px;height:30px;border-radius:8px;border:2px solid #fff;background:rgba(43,27,18,.35);display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;font-weight:800;font-size:18px}
+.card.sel .marcar{background:var(--red)}
+.off{position:absolute;top:8px;right:8px;background:var(--red);color:#fff;font:800 13px 'Baloo 2',sans-serif;padding:2px 8px;border-radius:999px}
+.fogo{position:absolute;bottom:8px;left:8px;background:var(--ink);color:#fff;font:700 12.5px 'Work Sans',Arial,sans-serif;padding:3px 9px;border-radius:999px}
+.fogo.novo{background:var(--orange)}
+.info{padding:10px 12px 12px;display:flex;flex-direction:column;gap:6px;flex:1}
+.nome{font-weight:600;font-size:13.5px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.preco{font:800 19px 'Baloo 2',sans-serif;color:var(--red-dark);line-height:1}
+.preco small{font:500 12px 'Work Sans',Arial,sans-serif;color:var(--muted)}
+.dados{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:12px;color:var(--muted)}
+.dados b{color:var(--ink)}
+.acoes{display:flex;gap:6px;align-items:center;margin-top:auto}
+.acoes select{flex:1;min-width:0;padding:6px;border:1.5px solid var(--line);border-radius:8px;font:500 12.5px 'Work Sans',Arial,sans-serif;background:#fff;color:var(--ink)}
+.acoes a,.acoes button{border:1.5px solid var(--line);background:#fff;border-radius:8px;padding:6px 8px;font:600 12px 'Work Sans',Arial,sans-serif;color:var(--ink);text-decoration:none;cursor:pointer;white-space:nowrap}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:1px 7px;border-radius:999px;background:var(--verde-bg);color:var(--verde)}
+.card.nosite{opacity:.55}
+.mais{display:block;margin:16px auto 0;border:1.5px solid var(--red);background:#fff;color:var(--red-dark);border-radius:12px;padding:11px 18px;font:700 14px 'Work Sans',Arial,sans-serif;cursor:pointer}
+.mais[hidden]{display:none}
+.vazio{padding:30px;text-align:center;color:var(--muted)}
+
+.barra{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1.5px solid var(--line);box-shadow:0 -8px 24px rgba(43,27,18,.1);padding:12px 16px;display:none}
+.barra.on{display:block}
+.barra .in{max-width:1100px;margin:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.barra b{font-family:'Baloo 2',sans-serif;font-size:17px}
+.barra input{flex:0 1 190px;padding:10px;border:1.5px solid var(--line);border-radius:10px;font:500 14px 'Work Sans',Arial,sans-serif}
+.barra .subir{border:0;border-radius:12px;padding:12px 18px;font:800 15px 'Baloo 2',sans-serif;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--red),var(--red-dark))}
+.barra .subir:disabled{opacity:.6;cursor:wait}
+.barra .limpar{border:0;background:none;color:var(--muted);font:600 13px 'Work Sans',Arial,sans-serif;cursor:pointer;text-decoration:underline}
+.status{flex:1 1 100%;font-size:13.5px}
+.status.ok{color:var(--verde)} .status.erro{color:#a3141c}
+.dica{margin-top:22px;padding:14px 16px;border:1.5px dashed var(--line);border-radius:14px;font-size:13.5px;line-height:1.6;background:var(--cream-2)}
+</style>
+</head>
+<body>
+<div class="container">
+
+<a class="voltar" href="index.html">← Voltar pro painel</a>
+<h1>🔎 Radar da Yang</h1>
+<p class="sub" id="quando">Carregando…</p>
+<div class="aviso" id="aviso" hidden></div>
+
+<div class="cats" id="cats"></div>
+<div class="filtros">
+    <input type="search" id="busca" placeholder="Buscar no radar…" aria-label="Buscar no radar">
+    <select id="ordem" aria-label="Ordem">
+        <option value="alta">🔥 Em alta (vendendo mais rápido)</option>
+        <option value="vendidos">Mais vendidos de todos os tempos</option>
+        <option value="comissao">Maior comissão</option>
+        <option value="desconto">Maior desconto</option>
+        <option value="novos">Novos no radar</option>
+    </select>
+    <label><input type="checkbox" id="esconderSite" checked> esconder os que já estão no site</label>
+    <label><input type="checkbox" id="verIgnorados"> ver ignorados</label>
+</div>
+<p class="contagem" id="contagem"></p>
+
+<div class="grade" id="grade"></div>
+<button class="mais" id="mais" hidden>Mostrar mais</button>
+
+<div class="dica">
+<b>Como funciona:</b> todo dia às 6h43 a Yang pesquisa na Shopee (pela API oficial de afiliados) os <b>mais vendidos</b> das categorias do site
+e anota quantas vendas cada produto tem. Comparando um dia com o outro, ela calcula quantos <b>vendem por dia</b> — 🔥 é o ritmo de agora,
+que mostra o que está viralizando (e não só o que vende há anos).<br>
+<b>Pra subir:</b> marque os produtos (quadradinho na foto), confira a categoria de cada um, digite a senha e clique em <b>🚀 Subir no site</b>.
+Eles entram pelo mesmo caminho do lote: link de afiliado, foto, página, fila de horários e histórico de preço. O nome é encurtado sozinho.<br>
+<b>As palavras pesquisadas</b> ficam em <code>radar/config.json</code> no GitHub (dá pra acrescentar, tirar ou bloquear palavras).
+</div>
+</div>
+
+<div class="barra" id="barra"><div class="in">
+    <b id="selCont">0 selecionados</b>
+    <input type="password" id="senha" placeholder="Senha do painel" autocomplete="current-password">
+    <button class="subir" id="btnSubir" type="button">🚀 Subir no site</button>
+    <button class="limpar" id="btnLimpar" type="button">limpar seleção</button>
+    <div class="status" id="status"></div>
+</div></div>
+
+<script src="../assets/nomes.js"></script>
+<script src="../assets/categorias.js"></script>
+<script>
+const WORKER_URL = "https://holy-pine-e7fc.bernard-shimizu.workers.dev";
+const POR_PAGINA = 60;
+const CATS = (window.FarejadinhosCategorias && FarejadinhosCategorias.LISTA || []).filter(c => c !== "Vídeos");
+let todos = [], catAtiva = "", mostrando = POR_PAGINA;
+const sel = new Map();     // id -> categoria escolhida
+
+function guardado(k, padrao){ try{ return JSON.parse(localStorage.getItem(k)) || padrao; }catch(e){ return padrao; } }
+function guardar(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+let ignorados = new Set(guardado("radar_ignorados", []));
+let enviados = new Set(guardado("radar_enviados", []));
+
+function el(tag, cls, txt){ const e = document.createElement(tag); if(cls) e.className = cls; if(txt != null) e.textContent = txt; return e; }
+function semAcento(t){ return String(t || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); }
+function moeda(v){ return Number(v).toLocaleString("pt-BR", { style: "currency", currency: "BRL" }); }
+function mil(n){ return n >= 1000 ? (n / 1000).toLocaleString("pt-BR", { maximumFractionDigits: n >= 10000 ? 0 : 1 }) + " mil" : String(n); }
+function dataHora(iso){ return new Date(iso).toLocaleString("pt-BR", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" }); }
+
+function visiveis(){
+    const q = semAcento(document.getElementById("busca").value).trim();
+    const esconderSite = document.getElementById("esconderSite").checked;
+    const verIgn = document.getElementById("verIgnorados").checked;
+    let l = todos.filter(p => {
+        if(catAtiva && !p.categorias.includes(catAtiva)) return false;
+        if(esconderSite && (p.noSite || enviados.has(p.id))) return false;
+        if(verIgn ? !ignorados.has(p.id) : ignorados.has(p.id)) return false;
+        if(q && !semAcento(p.nome + " " + (p.palavras || []).join(" ")).includes(q)) return false;
+        return true;
+    });
+    const ordem = document.getElementById("ordem").value;
+    const cmp = {
+        alta: (a, b) => b.pontos - a.pontos,
+        vendidos: (a, b) => (b.vendasTotal || 0) - (a.vendasTotal || 0),
+        comissao: (a, b) => b.comissao - a.comissao || b.pontos - a.pontos,
+        desconto: (a, b) => b.desconto - a.desconto || b.pontos - a.pontos,
+        novos: (a, b) => b.primeiro.localeCompare(a.primeiro) || b.pontos - a.pontos,
+    }[ordem];
+    return l.sort(cmp);
+}
+
+function card(p){
+    const c = el("div", "card" + (sel.has(p.id) ? " sel" : "") + (p.noSite || enviados.has(p.id) ? " nosite" : ""));
+    const foto = el("div", "foto");
+    const img = el("img"); img.src = p.imagem; img.alt = ""; img.loading = "lazy"; img.referrerPolicy = "no-referrer";
+    foto.appendChild(img);
+    const m = el("button", "marcar", sel.has(p.id) ? "✓" : ""); m.type = "button"; m.title = "Selecionar pra subir";
+    m.setAttribute("aria-pressed", String(sel.has(p.id)));
+    m.addEventListener("click", () => alternar(p, c, m));
+    foto.appendChild(m);
+    if(p.desconto >= 5) foto.appendChild(el("span", "off", "-" + p.desconto + "%"));
+    if(p.porDia != null && p.porDia > 0) foto.appendChild(el("span", "fogo", "🔥 +" + mil(Math.round(p.porDia)) + " vendidos/dia"));
+    else if(p.novo) foto.appendChild(el("span", "fogo novo", "✨ novo no radar"));
+    c.appendChild(foto);
+
+    const info = el("div", "info");
+    info.appendChild(el("div", "nome", p.nome));
+    const pr = el("div", "preco", moeda(p.preco));
+    if(p.precoMax > p.preco * 1.01){ pr.appendChild(el("small", null, " até " + moeda(p.precoMax))); }
+    info.appendChild(pr);
+    const d = el("div", "dados");
+    const add = (rot, val) => { const s = el("span", null, rot + " "); s.appendChild(el("b", null, val)); d.appendChild(s); };
+    if(p.nota) add("⭐", String(p.nota).replace(".", ","));
+    if(p.vendasTotal != null) add("vendidos", mil(p.vendasTotal));
+    add("comissão", String(p.comissao).replace(".", ",") + "%");
+    if(p.porDiaSemana != null) add("média 7 dias", "+" + mil(Math.round(p.porDiaSemana)) + "/dia");
+    info.appendChild(d);
+    if(p.noSite) info.appendChild(el("span", "tag", "✓ já está no site"));
+    else if(enviados.has(p.id)) info.appendChild(el("span", "tag", "🚀 enviado"));
+
+    const ac = el("div", "acoes");
+    const s = el("select"); s.setAttribute("aria-label", "Categoria no site");
+    CATS.forEach(cat => { const o = el("option", null, cat); o.value = cat; s.appendChild(o); });
+    s.value = sel.get(p.id) || p.categorias[0];
+    s.addEventListener("change", () => { if(sel.has(p.id)) sel.set(p.id, s.value); });
+    c._cat = s;
+    ac.appendChild(s);
+    const ver = el("a", null, "Ver ↗"); ver.href = p.linkProduto || p.link; ver.target = "_blank"; ver.rel = "noopener"; ac.appendChild(ver);
+    const ig = el("button", null, ignorados.has(p.id) ? "↩︎" : "🙈"); ig.type = "button";
+    ig.title = ignorados.has(p.id) ? "Voltar pro radar" : "Ignorar (some do radar)";
+    ig.addEventListener("click", () => {
+        if(ignorados.has(p.id)) ignorados.delete(p.id); else { ignorados.add(p.id); sel.delete(p.id); }
+        guardar("radar_ignorados", [...ignorados]); render(); barra();
+    });
+    ac.appendChild(ig);
+    info.appendChild(ac);
+    c.appendChild(info);
+    return c;
+}
+
+function alternar(p, c, m){
+    if(sel.has(p.id)) sel.delete(p.id); else sel.set(p.id, c._cat.value);
+    c.classList.toggle("sel", sel.has(p.id)); m.textContent = sel.has(p.id) ? "✓" : "";
+    m.setAttribute("aria-pressed", String(sel.has(p.id)));
+    barra();
+}
+
+function barra(){
+    const n = sel.size;
+    document.getElementById("barra").classList.toggle("on", n > 0);
+    document.getElementById("selCont").textContent = n + (n === 1 ? " selecionado" : " selecionados");
+}
+
+function cats(){
+    const box = document.getElementById("cats"); box.innerHTML = "";
+    const base = todos.filter(p => !ignorados.has(p.id) && !(document.getElementById("esconderSite").checked && (p.noSite || enviados.has(p.id))));
+    [["", "Todas", base.length]].concat(CATS.map(c => [c, c, base.filter(p => p.categorias.includes(c)).length]))
+        .filter(x => x[2] > 0 || x[0] === "")
+        .forEach(([k, rot, n]) => {
+            const b = el("button", "cat" + (catAtiva === k ? " ativa" : ""), rot + " "); b.type = "button";
+            b.appendChild(el("small", null, String(n)));
+            b.addEventListener("click", () => { catAtiva = k; mostrando = POR_PAGINA; cats(); render(); });
+            box.appendChild(b);
+        });
+}
+
+function render(){
+    const l = visiveis();
+    const g = document.getElementById("grade"); g.innerHTML = "";
+    document.getElementById("contagem").textContent = l.length + " produto(s)";
+    if(!l.length) g.appendChild(el("div", "vazio", "Nada por aqui com esse filtro."));
+    l.slice(0, mostrando).forEach(p => g.appendChild(card(p)));
+    const mais = document.getElementById("mais");
+    mais.hidden = l.length <= mostrando; mais.textContent = "Mostrar mais (" + Math.max(0, l.length - mostrando) + ")";
+}
+
+document.getElementById("mais").addEventListener("click", () => { mostrando += POR_PAGINA; render(); });
+["busca", "ordem"].forEach(id => document.getElementById(id).addEventListener("input", () => { mostrando = POR_PAGINA; render(); }));
+["esconderSite", "verIgnorados"].forEach(id => document.getElementById(id).addEventListener("change", () => { mostrando = POR_PAGINA; cats(); render(); }));
+document.getElementById("btnLimpar").addEventListener("click", () => { sel.clear(); render(); barra(); });
+try{ const s = document.getElementById("senha"); s.value = localStorage.getItem("farejadinhos_admin_senha") || ""; }catch(e){}
+
+document.getElementById("btnSubir").addEventListener("click", async function(){
+    const btn = this, st = document.getElementById("status");
+    const senha = document.getElementById("senha").value.trim();
+    if(!senha){ st.className = "status erro"; st.textContent = "Digite a senha do painel."; return; }
+    const lista = todos.filter(p => sel.has(p.id));
+    if(!lista.length) return;
+    if(!confirm(`Subir ${lista.length} produto(s) pro site?\nEles entram na fila de horários, igual ao lote.`)) return;
+    const itens = lista.map(p => ({
+        produto: window.FarejadinhosNomes ? FarejadinhosNomes.encurtar(p.nome) : p.nome,
+        produtoOriginal: p.nome,
+        preco: moeda(p.preco).replace(/ /g, " "),
+        precoAntigo: "", cupom: "",
+        categoria: sel.get(p.id) || p.categorias[0],
+        destaque: false,
+        link: p.link, linkProduto: p.linkProduto,
+        imagemUrl: p.imagem,
+        precoAVista: "", precoAPrazo: "", parcelas: "",
+        agendaInicio: "", agendaPorDia: "0"
+    }));
+    btn.disabled = true; btn.textContent = "Enviando…";
+    try{
+        const dados = new FormData();
+        dados.append("senha", senha);
+        dados.append("itens", JSON.stringify(itens));
+        const r = await fetch(WORKER_URL + "/lote", { method: "POST", body: dados });
+        const texto = await r.text();
+        if(r.status === 401) throw new Error("Senha incorreta.");
+        if(!r.ok) throw new Error(texto);
+        try{ localStorage.setItem("farejadinhos_admin_senha", senha); }catch(e){}
+        lista.forEach(p => enviados.add(p.id)); guardar("radar_enviados", [...enviados]);
+        sel.clear();
+        st.className = "status ok";
+        st.textContent = "✅ Enviado! Em uns minutos eles aparecem em Ofertas ativas (e entram na fila de horários).";
+        cats(); render();
+        setTimeout(barra, 6000);
+    }catch(e){
+        st.className = "status erro"; st.textContent = "❌ " + e.message;
+    }
+    btn.disabled = false; btn.textContent = "🚀 Subir no site";
+});
+
+fetch("../radar/radar.json?t=" + Date.now(), { cache: "no-store" })
+    .then(r => { if(!r.ok) throw new Error(r.status); return r.json(); })
+    .then(h => {
+        todos = Object.entries(h.produtos || {}).map(([id, p]) => Object.assign({ id }, p));
+        const rodadas = (h.rodadas || []).length;
+        document.getElementById("quando").textContent = "Última pesquisa: " + dataHora(h.atualizado) + " · " +
+            todos.length + " produtos no radar · " + (h.pesquisas || 0) + " pesquisas na Shopee";
+        if(rodadas < 2){
+            const a = document.getElementById("aviso"); a.hidden = false;
+            a.innerHTML = "🐾 <b>Primeiro dia do radar:</b> por enquanto a ordem \"Em alta\" usa o total de vendas. A partir da pesquisa de amanhã aparece o 🔥 <b>ritmo</b> (vendidos por dia) — que é o que mostra o que está viralizando agora.";
+        }
+        cats(); render();
+    })
+    .catch(() => { document.getElementById("quando").textContent = "O radar ainda não rodou (o arquivo aparece depois da primeira pesquisa)."; });
+</script>
+</body>
+</html>
