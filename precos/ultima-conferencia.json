@@ -1,38 +1,20 @@
 {
-  "quando": "2026-10-24T18:06:35Z",
+  "quando": "2026-10-24T20:45:15Z",
   "origem": "schedule",
-  "total": 177,
-  "iguais": 158,
+  "total": 171,
+  "iguais": 155,
   "mudaram": [
     {
-      "slug": "fritadeira-sem-oleo-air-fryer-4l-mondial-1500w",
-      "produto": "Fritadeira sem óleo air fryer 4L Mondial 1500W",
-      "de": "R$ 298,99",
-      "para": "278,06"
+      "slug": "colher-dosadora-infantil-rosa-alimentacao-bebe",
+      "produto": "Colher Dosadora Infantil Rosa Alimentação Bebê",
+      "de": "R$ 20,23",
+      "para": "29,89"
     },
     {
-      "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-2",
-      "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
-      "de": "R$ 3.067,00",
-      "para": "2975,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-a57-256gb-cinza",
-      "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 2.258,00",
-      "para": "2398,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
-      "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 2.258,00",
-      "para": "2398,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-a37-5g-128gb",
+      "slug": "celular-samsung-galaxy-a37-5g-128gb-4",
       "produto": "Celular Samsung Galaxy A37 5G 128GB",
-      "de": "R$ 1.589,00",
-      "para": "1747,00"
+      "de": "R$ 1.619,00",
+      "para": "1424,00"
     }
   ],
   "semPreco": [],
@@ -83,7 +65,7 @@
       "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
       "link": "https://link.amazon/B0epLOItP",
       "atual": "R$ 4.559,05",
-      "lido": "5332,22",
+      "lido": "5065,61",
       "referencia": "preco posto a mao em 19/10 08:26"
     },
     {
@@ -153,10 +135,10 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-24T18:06:36Z",
+      "quando": "2026-10-24T20:45:17Z",
       "teste": false,
-      "links": 120,
-      "ok": 120,
+      "links": 117,
+      "ok": 117,
       "erros": 0
     }
   },

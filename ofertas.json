@@ -854,7 +854,7 @@
   },
   {
     "produto": "Colher Dosadora Infantil Rosa Alimentação Bebê",
-    "preco": "R$ 20,23",
+    "preco": "R$ 29,89",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Casa",
@@ -867,7 +867,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-22T14:44:00Z",
-    "precoConferido": "2026-10-18T23:13:44Z"
+    "precoConferido": "2026-10-24T20:48:05Z"
   },
   {
     "produto": "Tapete Pelúcia Antiderrapante Decoração Felpudo",
@@ -3239,7 +3239,7 @@
   },
   {
     "produto": "Celular Samsung Galaxy A37 5G 128GB",
-    "preco": "R$ 1.619,00",
+    "preco": "R$ 1.424,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -3249,9 +3249,10 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-a37-5g-128gb-4/",
     "slug": "celular-samsung-galaxy-a37-5g-128gb-4",
     "data": "2026-10-23T00:12:15Z",
-    "precoAVista": "1619,00",
+    "precoAVista": "R$ 1.424,00",
     "precoAPrazo": "1799,00",
     "liberacao": "2026-10-28T23:08:00Z",
-    "parcelas": 10
+    "parcelas": 10,
+    "precoConferido": "2026-10-24T20:48:05Z"
   }
 ]
