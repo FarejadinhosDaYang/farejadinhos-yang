@@ -144,11 +144,16 @@ def main():
             nodes = buscar(palavra, 3, campos)
         except RuntimeError as e:
             print("Com todos os campos deu erro:", e)
+            with open(os.path.join(PASTA, "teste-api.json"), "w", encoding="utf-8") as f:
+                json.dump({"erroComTodosCampos": str(e)}, f, ensure_ascii=False)
             campos = [c for c in campos if c not in ("sales", "ratingStar", "shopName")]
             nodes = buscar(palavra, 3, campos)
         print(f"Teste '{palavra}': {len(nodes)} produto(s)")
         for n in nodes:
             print(json.dumps(n, ensure_ascii=False)[:600])
+        # guarda o resultado (o log do GitHub nem sempre dá pra ler de fora)
+        with open(os.path.join(PASTA, "teste-api.json"), "w", encoding="utf-8") as f:
+            json.dump({"quando": iso(agora()), "palavra": palavra, "campos": campos, "nodes": nodes}, f, ensure_ascii=False, indent=1)
         return 0
 
     hist = {"produtos": {}}

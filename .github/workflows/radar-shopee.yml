@@ -40,11 +40,10 @@ jobs:
           fi
 
       - name: Salvar no GitHub
-        if: ${{ inputs.teste != true }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add radar/radar.json
+          git add radar/radar.json radar/teste-api.json 2>/dev/null || true
           if git diff --cached --quiet; then echo "Nada novo."; exit 0; fi
           git commit -m "Radar da Yang atualizado"
           for i in 1 2 3; do
