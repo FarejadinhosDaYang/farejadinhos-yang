@@ -1,19 +1,37 @@
 {
-  "quando": "2026-10-24T20:45:15Z",
+  "quando": "2026-10-24T23:10:11Z",
   "origem": "schedule",
   "total": 171,
-  "iguais": 155,
+  "iguais": 153,
   "mudaram": [
     {
-      "slug": "colher-dosadora-infantil-rosa-alimentacao-bebe",
-      "produto": "Colher Dosadora Infantil Rosa Alimentação Bebê",
-      "de": "R$ 20,23",
-      "para": "29,89"
+      "slug": "porta-ovos-organizador-duplo-32-unidades",
+      "produto": "Porta Ovos Organizador Duplo 32 Unidades",
+      "de": "R$ 38,79",
+      "para": "32,93"
     },
     {
-      "slug": "celular-samsung-galaxy-a37-5g-128gb-4",
-      "produto": "Celular Samsung Galaxy A37 5G 128GB",
-      "de": "R$ 1.619,00",
+      "slug": "samsung-galaxy-s25-43-5g-256gb-12gb",
+      "produto": "Samsung Galaxy S25&#43; 5g, 256gb, 12gb",
+      "de": "R$ 3.898,00",
+      "para": "3999,00"
+    },
+    {
+      "slug": "celular-samsung-galaxy-a57-256gb-cinza",
+      "produto": "Celular Samsung Galaxy A57 256gb cinza",
+      "de": "R$ 2.398,00",
+      "para": "2279,00"
+    },
+    {
+      "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
+      "produto": "Celular Samsung Galaxy A57 256gb cinza",
+      "de": "R$ 2.398,00",
+      "para": "2279,00"
+    },
+    {
+      "slug": "celular-samsung-galaxy-a37-5g-128gb-3",
+      "produto": "Celular Samsung Galaxy A37 5g 128gb",
+      "de": "R$ 1.799,00",
       "para": "1424,00"
     }
   ],
@@ -123,19 +141,11 @@
       "atual": "R$ 3.898,00",
       "lido": "5429,00",
       "referencia": "preco posto a mao em 22/10 17:24"
-    },
-    {
-      "slug": "samsung-galaxy-s25-43-5g-256gb-12gb",
-      "produto": "Samsung Galaxy S25&#43; 5g, 256gb, 12gb",
-      "link": "https://meli.la/1xaZ7ij",
-      "atual": "R$ 3.898,00",
-      "lido": "1994,00",
-      "referencia": "R$ 4.399,00"
     }
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-24T20:45:17Z",
+      "quando": "2026-10-24T23:10:13Z",
       "teste": false,
       "links": 117,
       "ok": 117,
