@@ -1,45 +1,49 @@
 {
-  "quando": "2026-10-24T10:54:35Z",
+  "quando": "2026-10-24T14:30:05Z",
   "origem": "schedule",
-  "total": 180,
-  "iguais": 162,
+  "total": 179,
+  "iguais": 159,
   "mudaram": [
     {
-      "slug": "arvore-de-natal-de-240-cm-150-180-210-arvore-de-natal-de",
-      "produto": "Árvore de Natal de luxo, decoração para festa",
-      "de": "R$ 129,00",
-      "para": "R$ 239,00"
+      "slug": "descascador-eletrico-de-alho-e-uva-em-aco-inox-automatico",
+      "produto": "Descascador Elétrico De Alho E Uva Em Aço Inox",
+      "de": "R$ 59,99",
+      "para": "R$ 59,98"
     },
     {
       "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
       "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-      "de": "R$ 57,75",
-      "para": "55,71"
+      "de": "R$ 55,71",
+      "para": "56,95"
+    },
+    {
+      "slug": "faqueiro-tramontina-buzios-em-aco-inox-com-detalhe",
+      "produto": "Faqueiro Tramontina Búzios Em Aço Inox Com Detalhe",
+      "de": "R$ 64,28",
+      "para": "62,25"
+    },
+    {
+      "slug": "fritadeira-sem-oleo-air-fryer-4l-mondial-1500w",
+      "produto": "Fritadeira sem óleo air fryer 4L Mondial 1500W",
+      "de": "R$ 165,00",
+      "para": "298,99"
     },
     {
       "slug": "celular-samsung-galaxy-a57-256gb-cinza",
       "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 2.398,00",
-      "para": "2132,00"
+      "de": "R$ 2.132,00",
+      "para": "2258,00"
     },
     {
       "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
       "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 2.398,00",
-      "para": "2132,00"
+      "de": "R$ 2.132,00",
+      "para": "2258,00"
     }
   ],
   "semPreco": [],
   "erros": [],
   "suspeitos": [
-    {
-      "slug": "kit-limpeza-e-manutencao-de-piscina-completo",
-      "produto": "Kit Limpeza E Manutenção De Piscina Completo",
-      "link": "https://meli.la/1V3wJNN",
-      "atual": "R$ 63,50",
-      "lido": "33,48",
-      "referencia": "R$ 109,90"
-    },
     {
       "slug": "iphone-18-pro-256gb-preto-somente-esim",
       "produto": "iPhone 18 Pro 256GB Preto (somente eSIM)",
@@ -93,7 +97,7 @@
       "produto": "Aspirador Manual Piscina Herbinject Azul",
       "link": "https://meli.la/1t2eJpi",
       "atual": "R$ 40,88",
-      "lido": "33,48",
+      "lido": "98,42",
       "referencia": "preco posto a mao em 19/10 08:40"
     },
     {
@@ -133,7 +137,7 @@
       "produto": "Air Fryer Britânia 6,5L 1700W 8 Funções",
       "link": "https://meli.la/2mjJVf6",
       "atual": "R$ 459,00",
-      "lido": "329,00",
+      "lido": "303,05",
       "referencia": "preco posto a mao em 21/10 10:12"
     },
     {
@@ -143,11 +147,19 @@
       "atual": "R$ 3.898,00",
       "lido": "5429,00",
       "referencia": "preco posto a mao em 22/10 17:24"
+    },
+    {
+      "slug": "samsung-galaxy-s25-43-5g-256gb-12gb",
+      "produto": "Samsung Galaxy S25&#43; 5g, 256gb, 12gb",
+      "link": "https://meli.la/1xaZ7ij",
+      "atual": "R$ 3.898,00",
+      "lido": "1994,00",
+      "referencia": "R$ 4.399,00"
     }
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-24T10:54:37Z",
+      "quando": "2026-10-24T14:30:06Z",
       "teste": false,
       "links": 121,
       "ok": 121,
