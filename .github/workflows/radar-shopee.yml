@@ -8,7 +8,12 @@ on:
   workflow_dispatch:
     inputs:
       teste:
-        description: "Só testar a API (não grava nada)"
+        description: "Só testar a API da Shopee (não grava o radar)"
+        required: false
+        type: boolean
+        default: false
+      teste_ml:
+        description: "Só testar a API do Mercado Livre (grava radar/teste-ml.json)"
         required: false
         type: boolean
         default: false
@@ -28,7 +33,15 @@ jobs:
       - name: Baixar repositorio
         uses: actions/checkout@v4
 
+      - name: Testar API do Mercado Livre
+        if: ${{ inputs.teste_ml == true }}
+        env:
+          ML_CLIENT_ID: ${{ secrets.ML_CLIENT_ID }}
+          ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
+        run: python3 gerador/ml_api.py teste
+
       - name: Pesquisar mais vendidos na Shopee
+        if: ${{ inputs.teste_ml != true }}
         env:
           SHOPEE_APP_ID: ${{ secrets.SHOPEE_APP_ID }}
           SHOPEE_SECRET: ${{ secrets.SHOPEE_SECRET }}
@@ -43,7 +56,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for f in radar/radar.json radar/teste-api.json; do if [ -f "$f" ]; then git add "$f"; fi; done
+          for f in radar/radar.json radar/teste-api.json radar/teste-ml.json; do if [ -f "$f" ]; then git add "$f"; fi; done
           if git diff --cached --quiet; then echo "Nada novo."; exit 0; fi
           git commit -m "Radar da Yang atualizado"
           for i in 1 2 3; do
