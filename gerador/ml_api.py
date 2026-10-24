@@ -123,6 +123,16 @@ def teste():
                 elif isinstance(j, list):
                     j = j[:n]
                 return {"status": st, "resposta": j}
+            saida["variacoes"] = {
+                "categorias_sem_token": resumo(*get("/sites/MLB/categories", com_token=False), n=3),
+                "users_me": resumo(*get("/users/me"), n=3),
+                "item_sem_token": resumo(*get("/items/MLB4161617218", com_token=False), n=3),
+                "item_com_token": resumo(*get("/items/MLB4161617218"), n=3),
+                "produto_sem_token": resumo(*get("/products/MLB19941202", com_token=False), n=3),
+                "highlights_sem_token": resumo(*get("/highlights/MLB/category/MLB1574", com_token=False), n=3),
+                "busca_sem_token": resumo(*get("/sites/MLB/search?q=air%20fryer&limit=1", com_token=False), n=1),
+                "categoria_MLB1574": resumo(*get("/categories/MLB1574"), n=3),
+            }
             saida["categorias"] = resumo(*get("/sites/MLB/categories"), n=40)
             saida["tendencias"] = resumo(*get("/trends/MLB"), n=10)
             saida["maisVendidos_MLB1574_casa"] = resumo(*get("/highlights/MLB/category/MLB1574"), n=5)
