@@ -56,7 +56,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for f in radar/radar.json radar/teste-api.json radar/teste-ml.json; do if [ -f "$f" ]; then git add "$f"; fi; done
+          for f in radar/radar.json; do if [ -f "$f" ]; then git add "$f"; fi; done
           if git diff --cached --quiet; then echo "Nada novo."; exit 0; fi
           git commit -m "Radar da Yang atualizado"
           for i in 1 2 3; do

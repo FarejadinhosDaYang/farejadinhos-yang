@@ -125,7 +125,7 @@ def teste():
                 return {"status": st, "resposta": j}
             saida["variacoes"] = {
                 "categorias_sem_token": resumo(*get("/sites/MLB/categories", com_token=False), n=3),
-                "users_me": resumo(*get("/users/me"), n=3),
+                "users_me": (lambda st, j: {"status": st, "resposta": {"id": "ok" if isinstance(j, dict) and j.get("id") else None}})(*get("/users/me")),
                 "item_sem_token": resumo(*get("/items/MLB4161617218", com_token=False), n=3),
                 "item_com_token": resumo(*get("/items/MLB4161617218"), n=3),
                 "produto_sem_token": resumo(*get("/products/MLB19941202", com_token=False), n=3),
@@ -165,7 +165,7 @@ def teste():
     os.makedirs(os.path.join(SITE, "radar"), exist_ok=True)
     with open(os.path.join(SITE, "radar", "teste-ml.json"), "w", encoding="utf-8") as f:
         json.dump(saida, f, ensure_ascii=False, indent=1, default=str)
-    print(json.dumps(saida, ensure_ascii=False, default=str)[:3000])
+    print("teste gravado em radar/teste-ml.json")
 
 
 if __name__ == "__main__":

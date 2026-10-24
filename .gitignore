@@ -6,3 +6,5 @@ gerador/stories/podio-*.html
 gerador/stories/*-gerado.html
 __pycache__/
 *.pyc
+radar/teste-ml.json
+radar/teste-api.json
