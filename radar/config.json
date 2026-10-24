@@ -1,0 +1,28 @@
+{
+  "_como_usar": "Palavras que o radar pesquisa na Shopee (mais vendidos) pra cada categoria do site. Pode acrescentar ou tirar palavras à vontade. 'bloquear' = produtos com essas palavras no nome nunca entram. 'notaMinima' = nota mínima na Shopee. 'porBusca' = quantos produtos pegar em cada pesquisa.",
+  "porBusca": 30,
+  "notaMinima": 4.5,
+  "precoMinimo": 10,
+  "precoMaximo": 600,
+  "bloquear": [
+    "agulha", "seringa", "remedio", "medicamento", "suplemento", "anabolizante", "emagrecedor",
+    "vape", "cigarro", "pod descartavel", "narguile", "arma", "faca tatica", "canivete", "soco ingles",
+    "spray de pimenta", "taser", "eroti", "sex", "lingerie", "vibrador", "replica", "falsificad",
+    "bebida alcoolica", "cerveja", "vodka", "whisky", "anticoncepcional", "teste de gravidez"
+  ],
+  "categorias": {
+    "Casa": ["organizador casa", "decoracao casa", "luminaria led", "tapete", "cortina"],
+    "Cozinha": ["utensilios cozinha", "organizador cozinha", "pote hermetico", "acessorios cozinha", "panela"],
+    "Utilidades": ["utilidades domesticas", "limpeza casa", "gadget casa", "lavanderia organizador"],
+    "Eletrodomésticos": ["air fryer", "liquidificador", "aspirador de po", "cafeteira eletrica", "mini processador"],
+    "Eletrônicos": ["fone bluetooth", "smartwatch", "caixa de som bluetooth", "carregador portatil", "camera wifi"],
+    "Beleza": ["maquiagem", "secador de cabelo", "escova alisadora", "perfume", "unhas"],
+    "Skincare": ["skincare", "serum facial", "protetor solar facial", "hidratante facial"],
+    "Pet": ["pet cachorro", "brinquedo cachorro", "gato acessorios", "cama pet"],
+    "Academia": ["academia fitness", "garrafa academia", "elastico exercicio", "tapete yoga"],
+    "Moda": ["bolsa feminina", "tenis feminino", "camiseta masculina", "oculos de sol"],
+    "Café": ["cafe", "caneca termica", "moedor de cafe", "garrafa termica"],
+    "Natal": ["natal decoracao", "arvore de natal", "pisca pisca", "enfeite natal"],
+    "Celulares": ["capinha celular", "pelicula celular", "suporte celular", "carregador turbo"]
+  }
+}

@@ -1,0 +1,54 @@
+name: Radar da Yang
+
+# Todo dia de manhã pesquisa os mais vendidos da Shopee (API de afiliados) e
+# atualiza radar/radar.json, que aparece no painel em "🔎 Radar da Yang".
+on:
+  schedule:
+    - cron: "43 9 * * *"     # 06:43 em Brasília
+  workflow_dispatch:
+    inputs:
+      teste:
+        description: "Só testar a API (não grava nada)"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: radar-shopee
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Baixar repositorio
+        uses: actions/checkout@v4
+
+      - name: Pesquisar mais vendidos na Shopee
+        env:
+          SHOPEE_APP_ID: ${{ secrets.SHOPEE_APP_ID }}
+          SHOPEE_SECRET: ${{ secrets.SHOPEE_SECRET }}
+        run: |
+          if [ "${{ inputs.teste }}" = "true" ]; then
+            python3 gerador/radar_shopee.py --teste
+          else
+            python3 gerador/radar_shopee.py
+          fi
+
+      - name: Salvar no GitHub
+        if: ${{ inputs.teste != true }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add radar/radar.json
+          if git diff --cached --quiet; then echo "Nada novo."; exit 0; fi
+          git commit -m "Radar da Yang atualizado"
+          for i in 1 2 3; do
+            git pull --rebase && git push && exit 0
+            sleep 10
+          done
+          exit 1
