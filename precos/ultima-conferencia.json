@@ -1,122 +1,32 @@
 {
-  "quando": "2026-10-24T05:48:52Z",
+  "quando": "2026-10-24T10:54:35Z",
   "origem": "schedule",
   "total": 180,
-  "iguais": 147,
+  "iguais": 162,
   "mudaram": [
     {
       "slug": "arvore-de-natal-de-240-cm-150-180-210-arvore-de-natal-de",
       "produto": "Árvore de Natal de luxo, decoração para festa",
-      "de": "R$ 128,90",
-      "para": "R$ 129,00"
-    },
-    {
-      "slug": "jogo-de-tacas-de-vidro-diamond-cristal-325ml-6-pecas",
-      "produto": "Jogo De Taças De Vidro Diamond Cristal 325ml",
-      "de": "R$ 35,99",
-      "para": "R$ 36,99"
-    },
-    {
-      "slug": "generica-gancho-organizador-de-pia-porta-esponja",
-      "produto": "Genérica Gancho Organizador De Pia Porta Esponja",
-      "de": "R$ 18,00",
-      "para": "19,78"
-    },
-    {
-      "slug": "super-clarificante-para-piscina-power-gel",
-      "produto": "Super Clarificante para Piscina Power Gel",
-      "de": "R$ 37,42",
-      "para": "31,49"
+      "de": "R$ 129,00",
+      "para": "R$ 239,00"
     },
     {
       "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
       "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-      "de": "R$ 64,28",
-      "para": "57,75"
-    },
-    {
-      "slug": "suporte-de-shampoo-preto-organizador-prateleira",
-      "produto": "Suporte De Shampoo Preto Organizador Prateleira",
-      "de": "R$ 15,80",
-      "para": "R$ 22,90"
-    },
-    {
-      "slug": "kit-10-pote-vidro-hermetico-marmita-640ml",
-      "produto": "Kit 10 Pote Vidro Hermético Marmita 640ml",
-      "de": "R$ 99,90",
-      "para": "R$ 99,89"
-    },
-    {
-      "slug": "cesto-de-roupa-suja-bambu-dobravel-organizador-72l",
-      "produto": "Cesto De Roupa Suja Bambu Dobravel Organizador 72L",
-      "de": "R$ 64,98",
-      "para": "R$ 61,99"
-    },
-    {
-      "slug": "cesto-de-roupa-de-bambu-dobravel-organizador",
-      "produto": "Cesto De Roupa de Bambu Dobravel Organizador",
-      "de": "R$ 55,96",
-      "para": "R$ 53,99"
-    },
-    {
-      "slug": "escorredor-de-loucas-rack-aco-carbono-organizador-2",
-      "produto": "Escorredor de Louças Rack Aço Carbono Organizador",
-      "de": "R$ 91,90",
-      "para": "R$ 92,00"
-    },
-    {
-      "slug": "kit-2-prateleiras-reto-adesivo-premium-suporte",
-      "produto": "Kit 2 Prateleiras Reto Adesivo Premium Suporte",
-      "de": "R$ 44,90",
-      "para": "R$ 45,95"
-    },
-    {
-      "slug": "samsung-galaxy-s25-5g-256gb-12gb-camera-tripla",
-      "produto": "Samsung Galaxy S25 5G, 256GB, 12GB, Câmera Tripla",
-      "de": "R$ 3.859,00",
-      "para": "3858,00"
-    },
-    {
-      "slug": "fritadeira-eletrica-air-fryer-wap-wafg2s-5-litros",
-      "produto": "Fritadeira Elétrica Air Fryer Wap Wafg2s 5 Litros",
-      "de": "R$ 165,00",
-      "para": "209,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-2",
-      "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
-      "de": "R$ 2.906,00",
-      "para": "3067,00"
-    },
-    {
-      "slug": "samsung-galaxy-s25-43-5g-256gb-12gb",
-      "produto": "Samsung Galaxy S25&#43; 5g, 256gb, 12gb",
-      "de": "R$ 4.399,00",
-      "para": "3898,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-s26-5g-512gb",
-      "produto": "Celular Samsung Galaxy S26 5G, 512GB",
-      "de": "R$ 5.714,00",
-      "para": "5798,00"
+      "de": "R$ 57,75",
+      "para": "55,71"
     },
     {
       "slug": "celular-samsung-galaxy-a57-256gb-cinza",
       "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 2.369,00",
-      "para": "2398,00"
+      "de": "R$ 2.398,00",
+      "para": "2132,00"
     },
     {
       "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
       "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 2.369,00",
-      "para": "2398,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-a37-5g-128gb",
-      "produto": "Celular Samsung Galaxy A37 5G 128GB",
-      "de": "R$ 1.599,00",
-      "para": "1589,00"
+      "de": "R$ 2.398,00",
+      "para": "2132,00"
     }
   ],
   "semPreco": [],
@@ -175,7 +85,7 @@
       "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
       "link": "https://link.amazon/B0epLOItP",
       "atual": "R$ 4.559,05",
-      "lido": "5332,22",
+      "lido": "5065,61",
       "referencia": "preco posto a mao em 19/10 08:26"
     },
     {
@@ -237,7 +147,7 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-24T05:48:55Z",
+      "quando": "2026-10-24T10:54:37Z",
       "teste": false,
       "links": 121,
       "ok": 121,
