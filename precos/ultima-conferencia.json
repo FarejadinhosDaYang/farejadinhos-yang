@@ -1,55 +1,51 @@
 {
-  "quando": "2026-10-23T22:07:19Z",
+  "quando": "2026-10-24T00:39:09Z",
   "origem": "schedule",
-  "total": 185,
-  "iguais": 167,
+  "total": 183,
+  "iguais": 165,
   "mudaram": [
     {
-      "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
-      "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-      "de": "R$ 57,49",
-      "para": "64,28"
+      "slug": "kit-10-pote-vidro-hermetico-marmita-370ml",
+      "produto": "Kit 10 Pote Vidro Hermético Marmita 370ml",
+      "de": "R$ 79,90",
+      "para": "R$ 69,90"
     },
     {
-      "slug": "samsung-galaxy-s25-5g-256gb-12gb-camera-tripla",
-      "produto": "Samsung Galaxy S25 5G, 256GB, 12GB, Câmera Tripla",
-      "de": "R$ 3.898,00",
-      "para": "3859,00"
-    },
-    {
-      "slug": "air-fryer-fritadeira-eletrica-electrolux-eaf40",
-      "produto": "Air fryer Fritadeira Elétrica Electrolux EAF40",
-      "de": "R$ 299,00",
-      "para": "335,97"
-    },
-    {
-      "slug": "creatina-monohidratada-100g-growth-supplements",
-      "produto": "Creatina Monohidratada 100g Growth Supplements",
-      "de": "R$ 62,48",
-      "para": "32,90"
-    },
-    {
-      "slug": "samsung-galaxy-s25-43-5g-256gb-12gb",
-      "produto": "Samsung Galaxy S25&#43; 5g, 256gb, 12gb",
-      "de": "R$ 3.898,00",
-      "para": "4399,00"
+      "slug": "fritadeira-eletrica-air-fryer-wap-wafg2s-5-litros",
+      "produto": "Fritadeira Elétrica Air Fryer Wap Wafg2s 5 Litros",
+      "de": "R$ 209,00",
+      "para": "165,00"
     },
     {
       "slug": "celular-samsung-galaxy-a57-256gb-cinza",
       "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 2.369,00",
-      "para": "2124,00"
+      "de": "R$ 2.124,00",
+      "para": "2369,00"
     },
     {
       "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
       "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 2.369,00",
-      "para": "2124,00"
+      "de": "R$ 2.124,00",
+      "para": "2369,00"
+    },
+    {
+      "slug": "celular-samsung-galaxy-a37-5g-128gb",
+      "produto": "Celular Samsung Galaxy A37 5G 128GB",
+      "de": "R$ 1.424,00",
+      "para": "1599,00"
     }
   ],
   "semPreco": [],
   "erros": [],
   "suspeitos": [
+    {
+      "slug": "kit-limpeza-e-manutencao-de-piscina-completo",
+      "produto": "Kit Limpeza E Manutenção De Piscina Completo",
+      "link": "https://meli.la/1V3wJNN",
+      "atual": "R$ 63,50",
+      "lido": "33,48",
+      "referencia": "R$ 109,90"
+    },
     {
       "slug": "iphone-18-pro-256gb-preto-somente-esim",
       "produto": "iPhone 18 Pro 256GB Preto (somente eSIM)",
@@ -63,7 +59,7 @@
       "produto": "iPhone 18 Pro Max 256GB Preto (somente eSIM)",
       "link": "https://meli.la/2fXqW9L",
       "atual": "R$ 10.289,00",
-      "lido": "13049,00",
+      "lido": "9719,00",
       "referencia": "preco posto a mao em 18/10 23:09"
     },
     {
@@ -87,7 +83,7 @@
       "produto": "Celular Samsung Galaxy S26 Ultra 5G 256GB 12GB RAM",
       "link": "https://link.amazon/B098ObooL",
       "atual": "R$ 6.546,59",
-      "lido": "7274,00",
+      "lido": "7124,05",
       "referencia": "preco posto a mao em 19/10 08:25"
     },
     {
@@ -103,7 +99,7 @@
       "produto": "Aspirador Manual Piscina Herbinject Azul",
       "link": "https://meli.la/1t2eJpi",
       "atual": "R$ 40,88",
-      "lido": "384,31",
+      "lido": "33,48",
       "referencia": "preco posto a mao em 19/10 08:40"
     },
     {
@@ -137,11 +133,19 @@
       "atual": "R$ 459,00",
       "lido": "329,00",
       "referencia": "preco posto a mao em 21/10 10:12"
+    },
+    {
+      "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
+      "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
+      "link": "https://meli.la/2LUJ4yy",
+      "atual": "R$ 3.898,00",
+      "lido": "5429,00",
+      "referencia": "preco posto a mao em 22/10 17:24"
     }
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-23T22:07:21Z",
+      "quando": "2026-10-24T00:39:11Z",
       "teste": false,
       "links": 124,
       "ok": 124,

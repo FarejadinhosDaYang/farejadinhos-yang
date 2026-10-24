@@ -2022,7 +2022,7 @@
   },
   {
     "produto": "Kit 10 Pote Vidro Hermético Marmita 370ml",
-    "preco": "R$ 79,90",
+    "preco": "R$ 69,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -2034,7 +2034,8 @@
     "data": "2026-10-17T23:01:35Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-29T11:00:00Z"
+    "liberacao": "2026-10-29T11:00:00Z",
+    "precoConferido": "2026-10-24T00:42:21Z"
   },
   {
     "produto": "Prateleira para Banheiro de Metal Adesiva",
@@ -2740,7 +2741,7 @@
   },
   {
     "produto": "Fritadeira Elétrica Air Fryer Wap Wafg2s 5 Litros",
-    "preco": "R$ 209,00",
+    "preco": "R$ 165,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -2750,10 +2751,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/fritadeira-eletrica-air-fryer-wap-wafg2s-5-litros/",
     "slug": "fritadeira-eletrica-air-fryer-wap-wafg2s-5-litros",
     "data": "2026-10-18T15:34:31Z",
-    "precoAVista": "209,00",
+    "precoAVista": "R$ 165,00",
     "precoAPrazo": "298,98",
     "liberacao": "2026-10-18T15:34:59Z",
-    "parcelas": 6
+    "parcelas": 6,
+    "precoConferido": "2026-10-24T00:42:21Z"
   },
   {
     "produto": "Air fryer Fritadeira Elétrica Electrolux EAF40",
@@ -3297,7 +3299,7 @@
   },
   {
     "produto": "Celular Samsung Galaxy A57 256gb cinza",
-    "preco": "R$ 2.124,00",
+    "preco": "R$ 2.369,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -3307,15 +3309,15 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-a57-256gb-cinza/",
     "slug": "celular-samsung-galaxy-a57-256gb-cinza",
     "data": "2026-10-23T00:12:14Z",
-    "precoAVista": "R$ 2.124,00",
+    "precoAVista": "R$ 2.369,00",
     "precoAPrazo": "2399,00",
     "liberacao": "2026-10-24T00:04:00Z",
     "parcelas": 10,
-    "precoConferido": "2026-10-23T22:10:34Z"
+    "precoConferido": "2026-10-24T00:42:21Z"
   },
   {
     "produto": "Celular Samsung Galaxy A57 256gb cinza",
-    "preco": "R$ 2.124,00",
+    "preco": "R$ 2.369,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -3325,15 +3327,15 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-a57-256gb-cinza-2/",
     "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
     "data": "2026-10-23T00:12:14Z",
-    "precoAVista": "R$ 2.124,00",
+    "precoAVista": "R$ 2.369,00",
     "precoAPrazo": "2399,00",
     "liberacao": "2026-10-24T13:48:00Z",
     "parcelas": 10,
-    "precoConferido": "2026-10-23T22:10:34Z"
+    "precoConferido": "2026-10-24T00:42:21Z"
   },
   {
     "produto": "Celular Samsung Galaxy A37 5G 128GB",
-    "preco": "R$ 1.424,00",
+    "preco": "R$ 1.599,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -3343,11 +3345,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-a37-5g-128gb/",
     "slug": "celular-samsung-galaxy-a37-5g-128gb",
     "data": "2026-10-23T00:12:15Z",
-    "precoAVista": "R$ 1.424,00",
+    "precoAVista": "R$ 1.599,00",
     "precoAPrazo": "1999,00",
     "liberacao": "2026-10-24T17:32:00Z",
     "parcelas": 10,
-    "precoConferido": "2026-10-23T07:30:55Z"
+    "precoConferido": "2026-10-24T00:42:21Z"
   },
   {
     "produto": "Celular Samsung Galaxy A37 5G 128GB",
