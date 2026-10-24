@@ -1,0 +1,130 @@
+{
+ "quando": "2026-10-24T20:06:24Z",
+ "token": "ok",
+ "categorias": {
+  "status": 403,
+  "resposta": {
+   "code": "PA_UNAUTHORIZED_RESULT_FROM_POLICIES",
+   "status": 403,
+   "blocked_by": "PolicyAgent",
+   "message": "At least one policy returned UNAUTHORIZED."
+  }
+ },
+ "tendencias": {
+  "status": 403,
+  "resposta": {
+   "status": 403,
+   "message": "At least one policy returned UNAUTHORIZED.",
+   "blocked_by": "PolicyAgent",
+   "code": "PA_UNAUTHORIZED_RESULT_FROM_POLICIES"
+  }
+ },
+ "maisVendidos_MLB1574_casa": {
+  "status": 403,
+  "resposta": {
+   "blocked_by": "PolicyAgent",
+   "code": "PA_UNAUTHORIZED_RESULT_FROM_POLICIES",
+   "message": "At least one policy returned UNAUTHORIZED.",
+   "status": 403
+  }
+ },
+ "busca": {
+  "status": 403,
+  "resposta": {
+   "message": "At least one policy returned UNAUTHORIZED.",
+   "blocked_by": "PolicyAgent",
+   "code": "PA_UNAUTHORIZED_RESULT_FROM_POLICIES",
+   "status": 403
+  }
+ },
+ "links": [
+  {
+   "link": "https://meli.la/1fvLLw3",
+   "resolvido": [
+    "produto",
+    "MLB2067777919"
+   ],
+   "produto": {
+    "status": 403,
+    "nome": null,
+    "buy_box": null,
+    "erro": {
+     "blocked_by": "PolicyAgent",
+     "code": "PA_UNAUTHORIZED_RESULT_FROM_POLICIES",
+     "message": "At least one policy returned UNAUTHORIZED.",
+     "status": 403
+    }
+   },
+   "produto_itens": {
+    "status": 403,
+    "resposta": []
+   }
+  },
+  {
+   "link": "https://meli.la/2PbJUan",
+   "resolvido": [
+    "produto",
+    "MLB19941202"
+   ],
+   "produto": {
+    "status": 403,
+    "nome": null,
+    "buy_box": null,
+    "erro": {
+     "blocked_by": "PolicyAgent",
+     "code": "PA_UNAUTHORIZED_RESULT_FROM_POLICIES",
+     "message": "At least one policy returned UNAUTHORIZED.",
+     "status": 403
+    }
+   },
+   "produto_itens": {
+    "status": 403,
+    "resposta": []
+   }
+  },
+  {
+   "link": "https://meli.la/2rGVNph",
+   "resolvido": [
+    "produto",
+    "MLB66267765"
+   ],
+   "produto": {
+    "status": 403,
+    "nome": null,
+    "buy_box": null,
+    "erro": {
+     "blocked_by": "PolicyAgent",
+     "code": "PA_UNAUTHORIZED_RESULT_FROM_POLICIES",
+     "message": "At least one policy returned UNAUTHORIZED.",
+     "status": 403
+    }
+   },
+   "produto_itens": {
+    "status": 403,
+    "resposta": []
+   }
+  },
+  {
+   "link": "https://meli.la/1YbShXc",
+   "resolvido": [
+    "produto",
+    "MLB43874778"
+   ],
+   "produto": {
+    "status": 403,
+    "nome": null,
+    "buy_box": null,
+    "erro": {
+     "blocked_by": "PolicyAgent",
+     "code": "PA_UNAUTHORIZED_RESULT_FROM_POLICIES",
+     "message": "At least one policy returned UNAUTHORIZED.",
+     "status": 403
+    }
+   },
+   "produto_itens": {
+    "status": 403,
+    "resposta": []
+   }
+  }
+ ]
+}
