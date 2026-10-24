@@ -17,6 +17,11 @@ on:
         required: false
         type: boolean
         default: false
+      codigo_ml:
+        description: "Código do 'Autorizar' do Mercado Livre (TG-...) pra testar com login"
+        required: false
+        type: string
+        default: ""
 
 permissions:
   contents: write
@@ -40,8 +45,16 @@ jobs:
           ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
         run: python3 gerador/ml_api.py teste
 
+      - name: Testar Mercado Livre com login (codigo do Autorizar)
+        if: ${{ inputs.codigo_ml != '' }}
+        env:
+          ML_CLIENT_ID: ${{ secrets.ML_CLIENT_ID }}
+          ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
+          CODIGO_ML: ${{ inputs.codigo_ml }}
+        run: python3 gerador/ml_api.py login "$CODIGO_ML"
+
       - name: Pesquisar mais vendidos na Shopee
-        if: ${{ inputs.teste_ml != true }}
+        if: ${{ inputs.teste_ml != true && inputs.codigo_ml == '' }}
         env:
           SHOPEE_APP_ID: ${{ secrets.SHOPEE_APP_ID }}
           SHOPEE_SECRET: ${{ secrets.SHOPEE_SECRET }}
@@ -56,7 +69,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for f in radar/radar.json; do if [ -f "$f" ]; then git add "$f"; fi; done
+          for f in radar/radar.json radar/ml-status.json; do if [ -f "$f" ]; then git add "$f"; fi; done
           if git diff --cached --quiet; then echo "Nada novo."; exit 0; fi
           git commit -m "Radar da Yang atualizado"
           for i in 1 2 3; do

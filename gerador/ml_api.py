@@ -28,6 +28,23 @@ def chaves():
     return os.environ.get("ML_CLIENT_ID", "").strip(), os.environ.get("ML_CLIENT_SECRET", "").strip()
 
 
+REDIRECT = "https://farejadinhosdayang.com.br/"
+
+
+def token_do_codigo(codigo):
+    """Troca o código de autorização (login da conta) por um token de usuário."""
+    cid, sec = chaves()
+    corpo = urllib.parse.urlencode({"grant_type": "authorization_code", "client_id": cid, "client_secret": sec,
+                                    "code": codigo.strip(), "redirect_uri": REDIRECT}).encode()
+    req = urllib.request.Request(API + "/oauth/token", data=corpo, method="POST", headers={
+        "Content-Type": "application/x-www-form-urlencoded", "Accept": "application/json"})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        j = json.loads(r.read().decode())
+    _token["valor"] = j["access_token"]
+    _token["ate"] = time.time() + int(j.get("expires_in", 21600))
+    return j
+
+
 def token():
     if _token["valor"] and time.time() < _token["ate"] - 60:
         return _token["valor"]
@@ -168,6 +185,48 @@ def teste():
     print("teste gravado em radar/teste-ml.json")
 
 
+def teste_login(codigo):
+    """Testa as mesmas rotas com o token de USUÁRIO (depois do 'Autorizar').
+    Grava só status e dados públicos de produto em radar/ml-status.json."""
+    r = {"quando": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "modo": "login"}
+    try:
+        j = token_do_codigo(codigo)
+        r["token"] = "ok"
+        r["temRefreshToken"] = bool(j.get("refresh_token"))
+        r["escopos"] = j.get("scope", "")
+    except urllib.error.HTTPError as e:
+        r["token"] = f"erro {e.code}: {e.read().decode('utf-8', 'ignore')[:200]}"
+    except Exception as e:  # noqa: BLE001
+        r["token"] = f"erro: {str(e)[:200]}"
+    if r["token"] == "ok":
+        rotas = {
+            "categorias": "/sites/MLB/categories",
+            "tendencias": "/trends/MLB",
+            "maisVendidos_casa": "/highlights/MLB/category/MLB1574",
+            "busca": "/sites/MLB/search?q=air%20fryer&limit=2",
+            "produto_MLB19941202": "/products/MLB19941202",
+            "produto_itens_MLB19941202": "/products/MLB19941202/items?limit=1",
+            "item_MLB4161617218": "/items/MLB4161617218",
+        }
+        r["rotas"] = {}
+        for nome, caminho in rotas.items():
+            st, j = get(caminho)
+            amostra = None
+            if st == 200 and isinstance(j, dict):
+                amostra = {k: j.get(k) for k in ("name", "title", "price", "buy_box_winner") if k in j}
+                if "content" in j: amostra = {"content": (j.get("content") or [])[:3]}
+                if "results" in j: amostra = {"results": [{k: x.get(k) for k in ("id", "title", "price", "item_id", "catalog_product_id")} for x in (j.get("results") or [])[:2]]}
+            elif st == 200 and isinstance(j, list):
+                amostra = j[:3]
+            r["rotas"][nome] = {"status": st, "amostra": amostra,
+                                "erro": (j.get("code") or j.get("message")) if st != 200 and isinstance(j, dict) else None}
+    with open(os.path.join(SITE, "radar", "ml-status.json"), "w", encoding="utf-8") as f:
+        json.dump(r, f, ensure_ascii=False, indent=1, default=str)
+    print("resultado gravado em radar/ml-status.json")
+
+
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "teste":
         teste()
+    if len(sys.argv) > 2 and sys.argv[1] == "login":
+        teste_login(sys.argv[2])
