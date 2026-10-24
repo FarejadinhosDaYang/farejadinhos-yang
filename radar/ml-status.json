@@ -1,0 +1,44 @@
+{
+ "quando": "2026-10-24T20:30:58Z",
+ "modo": "login",
+ "token": "ok",
+ "temRefreshToken": false,
+ "escopos": "read urn:global:admin:info:/read-only urn:global:admin:info:/read-write urn:global:admin:oauth:/read-only urn:global:admin:oauth:/read-write urn:global:admin:users:/read-only urn:global:admin:users:/read-write urn:ml:mktp:ads:/read-only write",
+ "rotas": {
+  "categorias": {
+   "status": 403,
+   "amostra": null,
+   "erro": "PA_UNAUTHORIZED_RESULT_FROM_POLICIES"
+  },
+  "tendencias": {
+   "status": 403,
+   "amostra": null,
+   "erro": "PA_UNAUTHORIZED_RESULT_FROM_POLICIES"
+  },
+  "maisVendidos_casa": {
+   "status": 403,
+   "amostra": null,
+   "erro": "PA_UNAUTHORIZED_RESULT_FROM_POLICIES"
+  },
+  "busca": {
+   "status": 403,
+   "amostra": null,
+   "erro": "PA_UNAUTHORIZED_RESULT_FROM_POLICIES"
+  },
+  "produto_MLB19941202": {
+   "status": 403,
+   "amostra": null,
+   "erro": "PA_UNAUTHORIZED_RESULT_FROM_POLICIES"
+  },
+  "produto_itens_MLB19941202": {
+   "status": 403,
+   "amostra": null,
+   "erro": "PA_UNAUTHORIZED_RESULT_FROM_POLICIES"
+  },
+  "item_MLB4161617218": {
+   "status": 403,
+   "amostra": null,
+   "erro": "PA_UNAUTHORIZED_RESULT_FROM_POLICIES"
+  }
+ }
+}
