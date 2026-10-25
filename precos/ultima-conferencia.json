@@ -1,44 +1,104 @@
 {
-  "quando": "2026-10-25T01:07:55Z",
+  "quando": "2026-10-25T06:04:40Z",
   "origem": "schedule",
-  "total": 169,
-  "iguais": 150,
+  "total": 164,
+  "iguais": 135,
   "mudaram": [
+    {
+      "slug": "spray-borrifador-de-azeite-pulverizador-automatico-para",
+      "produto": "Spray Borrifador de Azeite Pulverizador automático",
+      "de": "R$ 14,98",
+      "para": "R$ 19,90"
+    },
+    {
+      "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
+      "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
+      "de": "R$ 56,95",
+      "para": "57,49"
+    },
+    {
+      "slug": "kit-saco-a-vacuo-com-ou-sem-bomba-manual",
+      "produto": "KIT Saco a Vácuo com ou sem Bomba Manual",
+      "de": "R$ 16,58",
+      "para": "R$ 16,59"
+    },
+    {
+      "slug": "suporte-de-shampoo-preto-organizador-prateleira",
+      "produto": "Suporte De Shampoo Preto Organizador Prateleira",
+      "de": "R$ 22,90",
+      "para": "R$ 15,80"
+    },
+    {
+      "slug": "suporte-de-shampoo-preto-organizador-prateleira-2",
+      "produto": "Suporte De Shampoo Preto Organizador Prateleira",
+      "de": "R$ 12,99",
+      "para": "R$ 13,69"
+    },
     {
       "slug": "cesto-de-roupa-de-bambu-dobravel-organizador",
       "produto": "Cesto De Roupa de Bambu Dobravel Organizador",
-      "de": "R$ 53,99",
-      "para": "R$ 55,96"
+      "de": "R$ 55,96",
+      "para": "R$ 53,99"
+    },
+    {
+      "slug": "sapateira-multiuso-para-calcados-9-3-andares",
+      "produto": "￼Sapateira Multiuso Para Calçados 9-3 Andares",
+      "de": "R$ 46,99",
+      "para": "R$ 70,00"
+    },
+    {
+      "slug": "pote-porta-temperos-condimentos-com-4-conchas",
+      "produto": "Pote Porta Temperos Condimentos com 4 conchas.",
+      "de": "R$ 14,22",
+      "para": "R$ 15,98"
+    },
+    {
+      "slug": "escorredor-de-loucas-rack-aco-carbono-organizador-2",
+      "produto": "Escorredor de Louças Rack Aço Carbono Organizador",
+      "de": "R$ 92,00",
+      "para": "R$ 91,90"
+    },
+    {
+      "slug": "kit-2-prateleiras-reto-adesivo-premium-suporte",
+      "produto": "Kit 2 Prateleiras Reto Adesivo Premium Suporte",
+      "de": "R$ 45,95",
+      "para": "R$ 46,45"
     },
     {
       "slug": "air-fryer-fritadeira-eletrica-electrolux-eaf40",
       "produto": "Air fryer Fritadeira Elétrica Electrolux EAF40",
-      "de": "R$ 335,97",
-      "para": "337,90"
+      "de": "R$ 337,90",
+      "para": "335,97"
+    },
+    {
+      "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-2",
+      "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
+      "de": "R$ 2.975,00",
+      "para": "2879,00"
+    },
+    {
+      "slug": "celular-samsung-galaxy-s26-5g-512gb",
+      "produto": "Celular Samsung Galaxy S26 5G, 512GB",
+      "de": "R$ 5.798,00",
+      "para": "5395,00"
     },
     {
       "slug": "celular-samsung-galaxy-a57-256gb-cinza",
       "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 2.279,00",
-      "para": "2398,00"
+      "de": "R$ 2.398,00",
+      "para": "2258,00"
     },
     {
       "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
       "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 2.279,00",
-      "para": "2398,00"
+      "de": "R$ 2.398,00",
+      "para": "2258,00"
     },
     {
       "slug": "celular-samsung-galaxy-a37-5g-128gb",
       "produto": "Celular Samsung Galaxy A37 5G 128GB",
-      "de": "R$ 1.747,00",
-      "para": "1589,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-a37-5g-128gb-3",
-      "produto": "Celular Samsung Galaxy A37 5g 128gb",
-      "de": "R$ 1.424,00",
-      "para": "1799,00"
+      "de": "R$ 1.589,00",
+      "para": "1747,00"
     }
   ],
   "semPreco": [],
@@ -89,7 +149,7 @@
       "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
       "link": "https://link.amazon/B0epLOItP",
       "atual": "R$ 4.559,05",
-      "lido": "5065,61",
+      "lido": "5332,00",
       "referencia": "preco posto a mao em 19/10 08:26"
     },
     {
@@ -137,7 +197,7 @@
       "produto": "Air Fryer Britânia 6,5L 1700W 8 Funções",
       "link": "https://meli.la/2mjJVf6",
       "atual": "R$ 459,00",
-      "lido": "303,05",
+      "lido": "329,00",
       "referencia": "preco posto a mao em 21/10 10:12"
     },
     {
@@ -145,16 +205,16 @@
       "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
       "link": "https://meli.la/2LUJ4yy",
       "atual": "R$ 3.898,00",
-      "lido": "5429,00",
+      "lido": "5309,00",
       "referencia": "preco posto a mao em 22/10 17:24"
     }
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-25T01:07:57Z",
+      "quando": "2026-10-25T06:04:42Z",
       "teste": false,
-      "links": 117,
-      "ok": 117,
+      "links": 114,
+      "ok": 114,
       "erros": 0
     }
   },
