@@ -1,106 +1,9 @@
 {
-  "quando": "2026-10-25T06:04:40Z",
+  "quando": "2026-10-25T11:21:14Z",
   "origem": "schedule",
   "total": 164,
-  "iguais": 135,
-  "mudaram": [
-    {
-      "slug": "spray-borrifador-de-azeite-pulverizador-automatico-para",
-      "produto": "Spray Borrifador de Azeite Pulverizador automático",
-      "de": "R$ 14,98",
-      "para": "R$ 19,90"
-    },
-    {
-      "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
-      "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-      "de": "R$ 56,95",
-      "para": "57,49"
-    },
-    {
-      "slug": "kit-saco-a-vacuo-com-ou-sem-bomba-manual",
-      "produto": "KIT Saco a Vácuo com ou sem Bomba Manual",
-      "de": "R$ 16,58",
-      "para": "R$ 16,59"
-    },
-    {
-      "slug": "suporte-de-shampoo-preto-organizador-prateleira",
-      "produto": "Suporte De Shampoo Preto Organizador Prateleira",
-      "de": "R$ 22,90",
-      "para": "R$ 15,80"
-    },
-    {
-      "slug": "suporte-de-shampoo-preto-organizador-prateleira-2",
-      "produto": "Suporte De Shampoo Preto Organizador Prateleira",
-      "de": "R$ 12,99",
-      "para": "R$ 13,69"
-    },
-    {
-      "slug": "cesto-de-roupa-de-bambu-dobravel-organizador",
-      "produto": "Cesto De Roupa de Bambu Dobravel Organizador",
-      "de": "R$ 55,96",
-      "para": "R$ 53,99"
-    },
-    {
-      "slug": "sapateira-multiuso-para-calcados-9-3-andares",
-      "produto": "￼Sapateira Multiuso Para Calçados 9-3 Andares",
-      "de": "R$ 46,99",
-      "para": "R$ 70,00"
-    },
-    {
-      "slug": "pote-porta-temperos-condimentos-com-4-conchas",
-      "produto": "Pote Porta Temperos Condimentos com 4 conchas.",
-      "de": "R$ 14,22",
-      "para": "R$ 15,98"
-    },
-    {
-      "slug": "escorredor-de-loucas-rack-aco-carbono-organizador-2",
-      "produto": "Escorredor de Louças Rack Aço Carbono Organizador",
-      "de": "R$ 92,00",
-      "para": "R$ 91,90"
-    },
-    {
-      "slug": "kit-2-prateleiras-reto-adesivo-premium-suporte",
-      "produto": "Kit 2 Prateleiras Reto Adesivo Premium Suporte",
-      "de": "R$ 45,95",
-      "para": "R$ 46,45"
-    },
-    {
-      "slug": "air-fryer-fritadeira-eletrica-electrolux-eaf40",
-      "produto": "Air fryer Fritadeira Elétrica Electrolux EAF40",
-      "de": "R$ 337,90",
-      "para": "335,97"
-    },
-    {
-      "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-2",
-      "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
-      "de": "R$ 2.975,00",
-      "para": "2879,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-s26-5g-512gb",
-      "produto": "Celular Samsung Galaxy S26 5G, 512GB",
-      "de": "R$ 5.798,00",
-      "para": "5395,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-a57-256gb-cinza",
-      "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 2.398,00",
-      "para": "2258,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
-      "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 2.398,00",
-      "para": "2258,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-a37-5g-128gb",
-      "produto": "Celular Samsung Galaxy A37 5G 128GB",
-      "de": "R$ 1.589,00",
-      "para": "1747,00"
-    }
-  ],
+  "iguais": 151,
+  "mudaram": [],
   "semPreco": [],
   "erros": [],
   "suspeitos": [
@@ -149,7 +52,7 @@
       "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
       "link": "https://link.amazon/B0epLOItP",
       "atual": "R$ 4.559,05",
-      "lido": "5332,00",
+      "lido": "5065,61",
       "referencia": "preco posto a mao em 19/10 08:26"
     },
     {
@@ -157,7 +60,7 @@
       "produto": "Aspirador Manual Piscina Herbinject Azul",
       "link": "https://meli.la/1t2eJpi",
       "atual": "R$ 40,88",
-      "lido": "33,21",
+      "lido": "332,29",
       "referencia": "preco posto a mao em 19/10 08:40"
     },
     {
@@ -211,7 +114,7 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-25T06:04:42Z",
+      "quando": "2026-10-25T11:21:16Z",
       "teste": false,
       "links": 114,
       "ok": 114,
