@@ -1,38 +1,32 @@
 {
-  "quando": "2026-10-25T16:12:34Z",
+  "quando": "2026-10-25T19:01:41Z",
   "origem": "schedule",
-  "total": 153,
+  "total": 152,
   "iguais": 136,
   "mudaram": [
     {
-      "slug": "varal-de-chao-grande-de-roupas-3-andares-dobravel",
-      "produto": "Varal De Chão Grande De Roupas 3 Andares Dobrável",
-      "de": "R$ 70,56",
-      "para": "67,03"
+      "slug": "kit-6-potes-640ml-vidro-hermetico-4-travas-marmita",
+      "produto": "Kit 6 Potes 640ml Vidro Hermético 4 Travas Marmita",
+      "de": "R$ 58,70",
+      "para": "59,70"
     },
     {
       "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
       "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 3.839,10",
-      "para": "5171,00"
+      "de": "R$ 5.171,00",
+      "para": "3839,10"
     },
     {
-      "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-2",
+      "slug": "celular-samsung-galaxy-s25-fe-5g-128gb",
       "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
-      "de": "R$ 2.879,00",
-      "para": "3067,00"
+      "de": "R$ 2.998,00",
+      "para": "3332,00"
     },
     {
       "slug": "samsung-galaxy-s25-43-5g-256gb-12gb",
       "produto": "Samsung Galaxy S25&#43; 5g, 256gb, 12gb",
-      "de": "R$ 3.999,00",
-      "para": "3849,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-a37-5g-128gb-4",
-      "produto": "Celular Samsung Galaxy A37 5G 128GB",
-      "de": "R$ 1.424,00",
-      "para": "1619,00"
+      "de": "R$ 3.849,00",
+      "para": "3999,00"
     }
   ],
   "semPreco": [],
@@ -75,7 +69,7 @@
       "produto": "Celular Samsung Galaxy S26 Ultra 5G 256GB 12GB RAM",
       "link": "https://link.amazon/B098ObooL",
       "atual": "R$ 6.546,59",
-      "lido": "7124,05",
+      "lido": "7274,00",
       "referencia": "preco posto a mao em 19/10 08:25"
     },
     {
@@ -83,7 +77,7 @@
       "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
       "link": "https://link.amazon/B0epLOItP",
       "atual": "R$ 4.559,05",
-      "lido": "5332,22",
+      "lido": "5065,61",
       "referencia": "preco posto a mao em 19/10 08:26"
     },
     {
@@ -137,7 +131,7 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-25T16:12:35Z",
+      "quando": "2026-10-25T19:01:43Z",
       "teste": false,
       "links": 111,
       "ok": 111,

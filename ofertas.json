@@ -1160,7 +1160,7 @@
   },
   {
     "produto": "Kit 6 Potes 640ml Vidro Hermético 4 Travas Marmita",
-    "preco": "R$ 58,70",
+    "preco": "R$ 59,70",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -1172,7 +1172,8 @@
     "data": "2026-10-15T22:42:12Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-28T11:56:00Z"
+    "liberacao": "2026-10-28T11:56:00Z",
+    "precoConferido": "2026-10-25T19:04:13Z"
   },
   {
     "produto": "Copo Térmica 600ml Inox Anti-vazamento",
@@ -2455,7 +2456,7 @@
   },
   {
     "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-    "preco": "R$ 5.171,00",
+    "preco": "R$ 3.839,10",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -2465,11 +2466,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera/",
     "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "R$ 5.171,00",
+    "precoAVista": "R$ 3.839,10",
     "precoAPrazo": "5066,16",
     "liberacao": "2026-10-19T11:56:00Z",
     "parcelas": 12,
-    "precoConferido": "2026-10-25T16:15:18Z"
+    "precoConferido": "2026-10-25T19:04:13Z"
   },
   {
     "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
@@ -2860,7 +2861,7 @@
   },
   {
     "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
-    "preco": "R$ 2.998,00",
+    "preco": "R$ 3.332,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -2870,10 +2871,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s25-fe-5g-128gb/",
     "slug": "celular-samsung-galaxy-s25-fe-5g-128gb",
     "data": "2026-10-23T00:12:13Z",
-    "precoAVista": "2998,00",
+    "precoAVista": "R$ 3.332,00",
     "precoAPrazo": "3332,00",
     "liberacao": "2026-10-23T00:04:00Z",
-    "parcelas": 10
+    "parcelas": 10,
+    "precoConferido": "2026-10-25T19:04:13Z"
   },
   {
     "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
@@ -2895,7 +2897,7 @@
   },
   {
     "produto": "Samsung Galaxy S25&#43; 5g, 256gb, 12gb",
-    "preco": "R$ 3.849,00",
+    "preco": "R$ 3.999,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -2905,11 +2907,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/samsung-galaxy-s25-43-5g-256gb-12gb/",
     "slug": "samsung-galaxy-s25-43-5g-256gb-12gb",
     "data": "2026-10-23T00:12:13Z",
-    "precoAVista": "R$ 3.849,00",
+    "precoAVista": "R$ 3.999,00",
     "precoAPrazo": "4332,00",
     "liberacao": "2026-10-23T11:00:00Z",
     "parcelas": 10,
-    "precoConferido": "2026-10-25T16:15:18Z"
+    "precoConferido": "2026-10-25T19:04:13Z"
   },
   {
     "produto": "Celular Samsung Galaxy S25&#43; 5g, 512gb",
