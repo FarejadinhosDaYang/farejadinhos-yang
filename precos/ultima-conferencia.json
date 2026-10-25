@@ -1,38 +1,44 @@
 {
-  "quando": "2026-10-24T23:10:11Z",
+  "quando": "2026-10-25T01:07:55Z",
   "origem": "schedule",
-  "total": 171,
-  "iguais": 153,
+  "total": 169,
+  "iguais": 150,
   "mudaram": [
     {
-      "slug": "porta-ovos-organizador-duplo-32-unidades",
-      "produto": "Porta Ovos Organizador Duplo 32 Unidades",
-      "de": "R$ 38,79",
-      "para": "32,93"
+      "slug": "cesto-de-roupa-de-bambu-dobravel-organizador",
+      "produto": "Cesto De Roupa de Bambu Dobravel Organizador",
+      "de": "R$ 53,99",
+      "para": "R$ 55,96"
     },
     {
-      "slug": "samsung-galaxy-s25-43-5g-256gb-12gb",
-      "produto": "Samsung Galaxy S25&#43; 5g, 256gb, 12gb",
-      "de": "R$ 3.898,00",
-      "para": "3999,00"
+      "slug": "air-fryer-fritadeira-eletrica-electrolux-eaf40",
+      "produto": "Air fryer Fritadeira Elétrica Electrolux EAF40",
+      "de": "R$ 335,97",
+      "para": "337,90"
     },
     {
       "slug": "celular-samsung-galaxy-a57-256gb-cinza",
       "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 2.398,00",
-      "para": "2279,00"
+      "de": "R$ 2.279,00",
+      "para": "2398,00"
     },
     {
       "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
       "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 2.398,00",
-      "para": "2279,00"
+      "de": "R$ 2.279,00",
+      "para": "2398,00"
+    },
+    {
+      "slug": "celular-samsung-galaxy-a37-5g-128gb",
+      "produto": "Celular Samsung Galaxy A37 5G 128GB",
+      "de": "R$ 1.747,00",
+      "para": "1589,00"
     },
     {
       "slug": "celular-samsung-galaxy-a37-5g-128gb-3",
       "produto": "Celular Samsung Galaxy A37 5g 128gb",
-      "de": "R$ 1.799,00",
-      "para": "1424,00"
+      "de": "R$ 1.424,00",
+      "para": "1799,00"
     }
   ],
   "semPreco": [],
@@ -67,7 +73,7 @@
       "produto": "iPhone 17 Pro 256GB - Laranja-cósmico",
       "link": "https://meli.la/2tshrR8",
       "atual": "R$ 7.799,00",
-      "lido": "8078,00",
+      "lido": "7999,00",
       "referencia": "preco posto a mao em 19/10 08:23"
     },
     {
@@ -145,7 +151,7 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-24T23:10:13Z",
+      "quando": "2026-10-25T01:07:57Z",
       "teste": false,
       "links": 117,
       "ok": 117,
