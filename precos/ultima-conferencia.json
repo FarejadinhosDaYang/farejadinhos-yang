@@ -1,32 +1,26 @@
 {
-  "quando": "2026-10-25T19:01:41Z",
+  "quando": "2026-10-25T21:45:01Z",
   "origem": "schedule",
-  "total": 152,
-  "iguais": 136,
+  "total": 146,
+  "iguais": 131,
   "mudaram": [
     {
-      "slug": "kit-6-potes-640ml-vidro-hermetico-4-travas-marmita",
-      "produto": "Kit 6 Potes 640ml Vidro Hermético 4 Travas Marmita",
-      "de": "R$ 58,70",
-      "para": "59,70"
+      "slug": "kit-10-pote-vidro-hermetico-marmita-640ml",
+      "produto": "Kit 10 Pote Vidro Hermético Marmita 640ml",
+      "de": "R$ 99,89",
+      "para": "R$ 99,90"
     },
     {
-      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
-      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 5.171,00",
-      "para": "3839,10"
+      "slug": "cesto-de-roupa-de-bambu-dobravel-organizador",
+      "produto": "Cesto De Roupa de Bambu Dobravel Organizador",
+      "de": "R$ 53,99",
+      "para": "R$ 55,96"
     },
     {
       "slug": "celular-samsung-galaxy-s25-fe-5g-128gb",
       "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
-      "de": "R$ 2.998,00",
-      "para": "3332,00"
-    },
-    {
-      "slug": "samsung-galaxy-s25-43-5g-256gb-12gb",
-      "produto": "Samsung Galaxy S25&#43; 5g, 256gb, 12gb",
-      "de": "R$ 3.849,00",
-      "para": "3999,00"
+      "de": "R$ 3.332,00",
+      "para": "2998,00"
     }
   ],
   "semPreco": [],
@@ -85,7 +79,7 @@
       "produto": "Aspirador Manual Piscina Herbinject Azul",
       "link": "https://meli.la/1t2eJpi",
       "atual": "R$ 40,88",
-      "lido": "36,65",
+      "lido": "332,29",
       "referencia": "preco posto a mao em 19/10 08:40"
     },
     {
@@ -131,10 +125,10 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-25T19:01:43Z",
+      "quando": "2026-10-25T21:45:02Z",
       "teste": false,
-      "links": 111,
-      "ok": 111,
+      "links": 107,
+      "ok": 107,
       "erros": 0
     }
   },
