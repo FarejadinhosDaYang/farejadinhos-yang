@@ -1,104 +1,110 @@
 {
-  "quando": "2026-10-26T12:55:28Z",
+  "quando": "2026-10-26T19:16:12Z",
   "origem": "schedule",
-  "total": 162,
-  "iguais": 140,
+  "total": 164,
+  "iguais": 141,
   "mudaram": [
     {
-      "slug": "kit-6-potes-640ml-vidro-hermetico-4-travas-marmita",
-      "produto": "Kit 6 Potes 640ml Vidro Hermético 4 Travas Marmita",
-      "de": "R$ 58,70",
-      "para": "59,70"
+      "slug": "varal-de-chao-grande-de-roupas-3-andares-dobravel",
+      "produto": "Varal De Chão Grande De Roupas 3 Andares Dobrável",
+      "de": "R$ 67,03",
+      "para": "74,86"
     },
     {
-      "slug": "pote-porta-temperos-condimentos-com-4-conchas",
-      "produto": "Pote Porta Temperos Condimentos com 4 conchas.",
-      "de": "R$ 15,98",
-      "para": "R$ 15,66"
+      "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
+      "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
+      "de": "R$ 57,49",
+      "para": "62,25"
     },
     {
-      "slug": "necessaire-organizador-cosmetico-maquiagem-2",
-      "produto": "Necessaire Organizador Cosmético Maquiagem",
-      "de": "R$ 16,50",
-      "para": "R$ 15,50"
+      "slug": "marmita-eletrica-preta-bivolt-portatil-domestica",
+      "produto": "Marmita Elétrica Preta Bivolt Portátil Doméstica",
+      "de": "R$ 49,99",
+      "para": "43,49"
     },
     {
-      "slug": "saco-a-vacuo-com-ou-sem-bomba-organizacao",
-      "produto": "Saco a Vacuo COM ou SEM Bomba Organização",
-      "de": "R$ 19,90",
-      "para": "R$ 16,50"
+      "slug": "mini-compressor-de-ar-portatil-carro-moto",
+      "produto": "Mini Compressor De Ar Portátil Carro Moto",
+      "de": "R$ 55,48",
+      "para": "52,71"
     },
     {
-      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
-      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 3.839,10",
-      "para": "5014,00"
-    },
-    {
-      "slug": "iphone-17-pro-max-256gb-laranja-cosmico",
-      "produto": "iPhone 17 Pro Max 256GB - Laranja-cósmico",
-      "de": "R$ 8.199,00",
-      "para": "9719,00"
-    },
-    {
-      "slug": "iphone-17-pro-256gb-laranja-cosmico",
-      "produto": "iPhone 17 Pro 256GB - Laranja-cósmico",
-      "de": "R$ 7.799,00",
-      "para": "7999,00"
+      "slug": "samsung-galaxy-s25-5g-256gb-12gb-camera-tripla",
+      "produto": "Samsung Galaxy S25 5G, 256GB, 12GB, Câmera Tripla",
+      "de": "R$ 3.858,00",
+      "para": "3589,00"
     },
     {
       "slug": "celular-samsung-galaxy-s26-ultra-5g-256gb-12gb-ram",
       "produto": "Celular Samsung Galaxy S26 Ultra 5G 256GB 12GB RAM",
-      "de": "R$ 6.546,59",
-      "para": "7124,05"
+      "de": "R$ 7.124,05",
+      "para": "7274,00"
     },
     {
-      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera-2",
-      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 4.559,05",
-      "para": "5065,61"
-    },
-    {
-      "slug": "aspirador-manual-piscina-herbinject-azul",
-      "produto": "Aspirador Manual Piscina Herbinject Azul",
-      "de": "R$ 40,88",
-      "para": "34,20"
+      "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-8gb-ram",
+      "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb, 8gb Ram,",
+      "de": "R$ 2.879,00",
+      "para": "2998,00"
     },
     {
       "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-2",
       "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
-      "de": "R$ 2.841,00",
-      "para": "3039,00"
+      "de": "R$ 3.039,00",
+      "para": "2879,00"
+    },
+    {
+      "slug": "samsung-galaxy-s25-43-5g-256gb-12gb",
+      "produto": "Samsung Galaxy S25&#43; 5g, 256gb, 12gb",
+      "de": "R$ 3.999,00",
+      "para": "3605,00"
+    },
+    {
+      "slug": "celular-samsung-galaxy-s25-43-5g-512gb",
+      "produto": "Celular Samsung Galaxy S25&#43; 5g, 512gb",
+      "de": "R$ 2.518,00",
+      "para": "3882,00"
+    },
+    {
+      "slug": "celular-samsung-galaxy-a57-256gb-cinza",
+      "produto": "Celular Samsung Galaxy A57 256gb cinza",
+      "de": "R$ 2.258,00",
+      "para": "1899,00"
+    },
+    {
+      "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
+      "produto": "Celular Samsung Galaxy A57 256gb cinza",
+      "de": "R$ 2.258,00",
+      "para": "1899,00"
+    },
+    {
+      "slug": "celular-samsung-galaxy-a37-5g-128gb",
+      "produto": "Celular Samsung Galaxy A37 5G 128GB",
+      "de": "R$ 1.590,00",
+      "para": "1569,00"
+    },
+    {
+      "slug": "celular-samsung-galaxy-a37-5g-128gb-2",
+      "produto": "Celular Samsung Galaxy A37 5G 128GB",
+      "de": "R$ 1.619,00",
+      "para": "1799,00"
+    },
+    {
+      "slug": "celular-samsung-galaxy-a37-5g-128gb-4",
+      "produto": "Celular Samsung Galaxy A37 5G 128GB",
+      "de": "R$ 1.619,00",
+      "para": "1799,00"
     },
     {
       "slug": "kit-3-necessaire-bolsa-portatil-transparente",
       "produto": "KIT 3 Necessaire Bolsa Portátil Transparente",
-      "de": "R$ 24,99",
-      "para": "R$ 17,49"
-    },
-    {
-      "slug": "cozedor-de-ovos-eletrico-110v",
-      "produto": "Cozedor de Ovos Elétrico 110V",
-      "de": "R$ 28,18",
-      "para": "R$ 28,48"
-    },
-    {
-      "slug": "luminaria-de-mesa-candeiro-dumbbell-touch",
-      "produto": "Luminária de Mesa Candeiro Dumbbell Touch",
-      "de": "R$ 37,90",
-      "para": "R$ 34,99"
-    },
-    {
-      "slug": "suporte-para-celular-automotivo-carro-vacuo-forte",
-      "produto": "Suporte Para Celular Automotivo Carro Vácuo Forte",
-      "de": "R$ 14,95",
-      "para": "R$ 24,90"
+      "de": "R$ 17,49",
+      "para": "R$ 17,99"
     },
     {
       "slug": "kit-maquina-para-tosar-pet-tesoura-pente",
       "produto": "Kit Máquina Para Tosar Pet + Tesoura + Pente",
-      "de": "R$ 30,26",
-      "para": "R$ 28,13"
+      "de": "R$ 28,13",
+      "para": "R$ 30,28"
     }
   ],
   "semPreco": [],
@@ -109,7 +115,7 @@
       "produto": "iPhone 18 Pro 256GB Preto (somente eSIM)",
       "link": "https://meli.la/18pktG2",
       "atual": "R$ 9.499,00",
-      "lido": "8078,00",
+      "lido": "5287,00",
       "referencia": "preco posto a mao em 18/10 23:09"
     },
     {
@@ -149,16 +155,16 @@
       "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
       "link": "https://meli.la/2LUJ4yy",
       "atual": "R$ 3.898,00",
-      "lido": "5429,00",
+      "lido": "3661,00",
       "referencia": "preco posto a mao em 22/10 17:24"
     }
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-26T12:55:30Z",
+      "quando": "2026-10-26T19:16:14Z",
       "teste": false,
-      "links": 126,
-      "ok": 126,
+      "links": 130,
+      "ok": 130,
       "erros": 0
     }
   },
