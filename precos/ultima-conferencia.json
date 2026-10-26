@@ -1,14 +1,68 @@
 {
-  "quando": "2026-10-26T00:19:38Z",
+  "quando": "2026-10-26T06:09:19Z",
   "origem": "schedule",
-  "total": 143,
-  "iguais": 130,
+  "total": 139,
+  "iguais": 118,
   "mudaram": [
+    {
+      "slug": "spray-borrifador-de-azeite-pulverizador-automatico-para",
+      "produto": "Spray Borrifador de Azeite Pulverizador automático",
+      "de": "R$ 19,90",
+      "para": "R$ 14,98"
+    },
+    {
+      "slug": "kit-6-potes-640ml-vidro-hermetico-4-travas-marmita",
+      "produto": "Kit 6 Potes 640ml Vidro Hermético 4 Travas Marmita",
+      "de": "R$ 59,70",
+      "para": "58,70"
+    },
+    {
+      "slug": "suporte-de-shampoo-preto-organizador-prateleira-2",
+      "produto": "Suporte De Shampoo Preto Organizador Prateleira",
+      "de": "R$ 13,69",
+      "para": "R$ 12,99"
+    },
+    {
+      "slug": "cesto-de-roupa-de-bambu-dobravel-organizador",
+      "produto": "Cesto De Roupa de Bambu Dobravel Organizador",
+      "de": "R$ 55,96",
+      "para": "R$ 53,99"
+    },
+    {
+      "slug": "kit-2-prateleiras-reto-adesivo-premium-suporte",
+      "produto": "Kit 2 Prateleiras Reto Adesivo Premium Suporte",
+      "de": "R$ 46,45",
+      "para": "R$ 46,95"
+    },
     {
       "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-8gb-ram",
       "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb, 8gb Ram,",
-      "de": "R$ 2.998,00",
-      "para": "2906,00"
+      "de": "R$ 2.906,00",
+      "para": "2879,00"
+    },
+    {
+      "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-2",
+      "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
+      "de": "R$ 3.067,00",
+      "para": "2841,00"
+    },
+    {
+      "slug": "celular-samsung-galaxy-s26-5g-512gb",
+      "produto": "Celular Samsung Galaxy S26 5G, 512GB",
+      "de": "R$ 5.395,00",
+      "para": "5714,00"
+    },
+    {
+      "slug": "celular-samsung-galaxy-a37-5g-128gb",
+      "produto": "Celular Samsung Galaxy A37 5G 128GB",
+      "de": "R$ 1.747,00",
+      "para": "1590,00"
+    },
+    {
+      "slug": "celular-samsung-galaxy-a37-5g-128gb-2",
+      "produto": "Celular Samsung Galaxy A37 5G 128GB",
+      "de": "R$ 1.798,00",
+      "para": "1619,00"
     }
   ],
   "semPreco": [],
@@ -67,7 +121,7 @@
       "produto": "Aspirador Manual Piscina Herbinject Azul",
       "link": "https://meli.la/1t2eJpi",
       "atual": "R$ 40,88",
-      "lido": "332,29",
+      "lido": "34,20",
       "referencia": "preco posto a mao em 19/10 08:40"
     },
     {
@@ -95,14 +149,6 @@
       "referencia": "preco posto a mao em 19/10 22:55"
     },
     {
-      "slug": "fritadeira-eletrica-afon-12l-bg-forno-oven",
-      "produto": "Fritadeira Elétrica Mondial - Forno Oven",
-      "link": "https://meli.la/2fPSJSc",
-      "atual": "R$ 514,09",
-      "lido": "506,73",
-      "referencia": "preco posto a mao em 21/10 09:21"
-    },
-    {
       "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
       "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
       "link": "https://meli.la/2LUJ4yy",
@@ -113,10 +159,10 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-26T00:19:39Z",
+      "quando": "2026-10-26T06:09:21Z",
       "teste": false,
-      "links": 107,
-      "ok": 107,
+      "links": 104,
+      "ok": 104,
       "erros": 0
     }
   },
