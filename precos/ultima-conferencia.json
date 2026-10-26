@@ -1,26 +1,14 @@
 {
-  "quando": "2026-10-25T21:45:01Z",
+  "quando": "2026-10-26T00:19:38Z",
   "origem": "schedule",
-  "total": 146,
-  "iguais": 131,
+  "total": 143,
+  "iguais": 130,
   "mudaram": [
     {
-      "slug": "kit-10-pote-vidro-hermetico-marmita-640ml",
-      "produto": "Kit 10 Pote Vidro Hermético Marmita 640ml",
-      "de": "R$ 99,89",
-      "para": "R$ 99,90"
-    },
-    {
-      "slug": "cesto-de-roupa-de-bambu-dobravel-organizador",
-      "produto": "Cesto De Roupa de Bambu Dobravel Organizador",
-      "de": "R$ 53,99",
-      "para": "R$ 55,96"
-    },
-    {
-      "slug": "celular-samsung-galaxy-s25-fe-5g-128gb",
-      "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
-      "de": "R$ 3.332,00",
-      "para": "2998,00"
+      "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-8gb-ram",
+      "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb, 8gb Ram,",
+      "de": "R$ 2.998,00",
+      "para": "2906,00"
     }
   ],
   "semPreco": [],
@@ -125,7 +113,7 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-25T21:45:02Z",
+      "quando": "2026-10-26T00:19:39Z",
       "teste": false,
       "links": 107,
       "ok": 107,
