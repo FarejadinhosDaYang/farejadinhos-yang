@@ -1,68 +1,104 @@
 {
-  "quando": "2026-10-26T06:09:19Z",
+  "quando": "2026-10-26T12:55:28Z",
   "origem": "schedule",
-  "total": 139,
-  "iguais": 118,
+  "total": 162,
+  "iguais": 140,
   "mudaram": [
-    {
-      "slug": "spray-borrifador-de-azeite-pulverizador-automatico-para",
-      "produto": "Spray Borrifador de Azeite Pulverizador automático",
-      "de": "R$ 19,90",
-      "para": "R$ 14,98"
-    },
     {
       "slug": "kit-6-potes-640ml-vidro-hermetico-4-travas-marmita",
       "produto": "Kit 6 Potes 640ml Vidro Hermético 4 Travas Marmita",
-      "de": "R$ 59,70",
-      "para": "58,70"
+      "de": "R$ 58,70",
+      "para": "59,70"
     },
     {
-      "slug": "suporte-de-shampoo-preto-organizador-prateleira-2",
-      "produto": "Suporte De Shampoo Preto Organizador Prateleira",
-      "de": "R$ 13,69",
-      "para": "R$ 12,99"
+      "slug": "pote-porta-temperos-condimentos-com-4-conchas",
+      "produto": "Pote Porta Temperos Condimentos com 4 conchas.",
+      "de": "R$ 15,98",
+      "para": "R$ 15,66"
     },
     {
-      "slug": "cesto-de-roupa-de-bambu-dobravel-organizador",
-      "produto": "Cesto De Roupa de Bambu Dobravel Organizador",
-      "de": "R$ 55,96",
-      "para": "R$ 53,99"
+      "slug": "necessaire-organizador-cosmetico-maquiagem-2",
+      "produto": "Necessaire Organizador Cosmético Maquiagem",
+      "de": "R$ 16,50",
+      "para": "R$ 15,50"
     },
     {
-      "slug": "kit-2-prateleiras-reto-adesivo-premium-suporte",
-      "produto": "Kit 2 Prateleiras Reto Adesivo Premium Suporte",
-      "de": "R$ 46,45",
-      "para": "R$ 46,95"
+      "slug": "saco-a-vacuo-com-ou-sem-bomba-organizacao",
+      "produto": "Saco a Vacuo COM ou SEM Bomba Organização",
+      "de": "R$ 19,90",
+      "para": "R$ 16,50"
     },
     {
-      "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-8gb-ram",
-      "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb, 8gb Ram,",
-      "de": "R$ 2.906,00",
-      "para": "2879,00"
+      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
+      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
+      "de": "R$ 3.839,10",
+      "para": "5014,00"
+    },
+    {
+      "slug": "iphone-17-pro-max-256gb-laranja-cosmico",
+      "produto": "iPhone 17 Pro Max 256GB - Laranja-cósmico",
+      "de": "R$ 8.199,00",
+      "para": "9719,00"
+    },
+    {
+      "slug": "iphone-17-pro-256gb-laranja-cosmico",
+      "produto": "iPhone 17 Pro 256GB - Laranja-cósmico",
+      "de": "R$ 7.799,00",
+      "para": "7999,00"
+    },
+    {
+      "slug": "celular-samsung-galaxy-s26-ultra-5g-256gb-12gb-ram",
+      "produto": "Celular Samsung Galaxy S26 Ultra 5G 256GB 12GB RAM",
+      "de": "R$ 6.546,59",
+      "para": "7124,05"
+    },
+    {
+      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera-2",
+      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
+      "de": "R$ 4.559,05",
+      "para": "5065,61"
+    },
+    {
+      "slug": "aspirador-manual-piscina-herbinject-azul",
+      "produto": "Aspirador Manual Piscina Herbinject Azul",
+      "de": "R$ 40,88",
+      "para": "34,20"
     },
     {
       "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-2",
       "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
-      "de": "R$ 3.067,00",
-      "para": "2841,00"
+      "de": "R$ 2.841,00",
+      "para": "3039,00"
     },
     {
-      "slug": "celular-samsung-galaxy-s26-5g-512gb",
-      "produto": "Celular Samsung Galaxy S26 5G, 512GB",
-      "de": "R$ 5.395,00",
-      "para": "5714,00"
+      "slug": "kit-3-necessaire-bolsa-portatil-transparente",
+      "produto": "KIT 3 Necessaire Bolsa Portátil Transparente",
+      "de": "R$ 24,99",
+      "para": "R$ 17,49"
     },
     {
-      "slug": "celular-samsung-galaxy-a37-5g-128gb",
-      "produto": "Celular Samsung Galaxy A37 5G 128GB",
-      "de": "R$ 1.747,00",
-      "para": "1590,00"
+      "slug": "cozedor-de-ovos-eletrico-110v",
+      "produto": "Cozedor de Ovos Elétrico 110V",
+      "de": "R$ 28,18",
+      "para": "R$ 28,48"
     },
     {
-      "slug": "celular-samsung-galaxy-a37-5g-128gb-2",
-      "produto": "Celular Samsung Galaxy A37 5G 128GB",
-      "de": "R$ 1.798,00",
-      "para": "1619,00"
+      "slug": "luminaria-de-mesa-candeiro-dumbbell-touch",
+      "produto": "Luminária de Mesa Candeiro Dumbbell Touch",
+      "de": "R$ 37,90",
+      "para": "R$ 34,99"
+    },
+    {
+      "slug": "suporte-para-celular-automotivo-carro-vacuo-forte",
+      "produto": "Suporte Para Celular Automotivo Carro Vácuo Forte",
+      "de": "R$ 14,95",
+      "para": "R$ 24,90"
+    },
+    {
+      "slug": "kit-maquina-para-tosar-pet-tesoura-pente",
+      "produto": "Kit Máquina Para Tosar Pet + Tesoura + Pente",
+      "de": "R$ 30,26",
+      "para": "R$ 28,13"
     }
   ],
   "semPreco": [],
@@ -83,46 +119,6 @@
       "atual": "R$ 10.289,00",
       "lido": "13049,00",
       "referencia": "preco posto a mao em 18/10 23:09"
-    },
-    {
-      "slug": "iphone-17-pro-max-256gb-laranja-cosmico",
-      "produto": "iPhone 17 Pro Max 256GB - Laranja-cósmico",
-      "link": "https://meli.la/2wS1Uaq",
-      "atual": "R$ 8.199,00",
-      "lido": "9719,00",
-      "referencia": "preco posto a mao em 19/10 08:22"
-    },
-    {
-      "slug": "iphone-17-pro-256gb-laranja-cosmico",
-      "produto": "iPhone 17 Pro 256GB - Laranja-cósmico",
-      "link": "https://meli.la/2tshrR8",
-      "atual": "R$ 7.799,00",
-      "lido": "7999,00",
-      "referencia": "preco posto a mao em 19/10 08:23"
-    },
-    {
-      "slug": "celular-samsung-galaxy-s26-ultra-5g-256gb-12gb-ram",
-      "produto": "Celular Samsung Galaxy S26 Ultra 5G 256GB 12GB RAM",
-      "link": "https://link.amazon/B098ObooL",
-      "atual": "R$ 6.546,59",
-      "lido": "7274,00",
-      "referencia": "preco posto a mao em 19/10 08:25"
-    },
-    {
-      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera-2",
-      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "link": "https://link.amazon/B0epLOItP",
-      "atual": "R$ 4.559,05",
-      "lido": "5065,61",
-      "referencia": "preco posto a mao em 19/10 08:26"
-    },
-    {
-      "slug": "aspirador-manual-piscina-herbinject-azul",
-      "produto": "Aspirador Manual Piscina Herbinject Azul",
-      "link": "https://meli.la/1t2eJpi",
-      "atual": "R$ 40,88",
-      "lido": "34,20",
-      "referencia": "preco posto a mao em 19/10 08:40"
     },
     {
       "slug": "organizador-de-geladeira-para-temperos-2-3l-linha-clear",
@@ -159,10 +155,10 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-26T06:09:21Z",
+      "quando": "2026-10-26T12:55:30Z",
       "teste": false,
-      "links": 104,
-      "ok": 104,
+      "links": 126,
+      "ok": 126,
       "erros": 0
     }
   },

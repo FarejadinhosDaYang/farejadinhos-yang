@@ -990,7 +990,7 @@
   },
   {
     "produto": "Kit 6 Potes 640ml Vidro Hermético 4 Travas Marmita",
-    "preco": "R$ 58,70",
+    "preco": "R$ 59,70",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -1003,7 +1003,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-28T00:31:02Z",
-    "precoConferido": "2026-10-26T06:11:49Z"
+    "precoConferido": "2026-10-26T12:58:35Z"
   },
   {
     "produto": "Kit Chave Catraca Soquete 46 Peças Indufer",
@@ -1649,7 +1649,7 @@
   },
   {
     "produto": "Pote Porta Temperos Condimentos com 4 conchas.",
-    "preco": "R$ 15,98",
+    "preco": "R$ 15,66",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -1662,7 +1662,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-29T13:20:00Z",
-    "precoConferido": "2026-10-25T06:07:21Z"
+    "precoConferido": "2026-10-26T12:58:35Z"
   },
   {
     "produto": "Porta Maquiagem Organizador de Cosméticos",
@@ -1811,7 +1811,7 @@
   },
   {
     "produto": "Necessaire Organizador Cosmético Maquiagem",
-    "preco": "R$ 16,50",
+    "preco": "R$ 15,50",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Beleza",
@@ -1824,7 +1824,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-21T12:52:00Z",
-    "precoConferido": "2026-10-22T20:06:47Z"
+    "precoConferido": "2026-10-26T12:58:35Z"
   },
   {
     "produto": "Kit Ganchos Adesivos Parede Universais Autocolante",
@@ -2022,7 +2022,7 @@
   },
   {
     "produto": "Saco a Vacuo COM ou SEM Bomba Organização",
-    "preco": "R$ 19,90",
+    "preco": "R$ 16,50",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Casa",
@@ -2034,7 +2034,8 @@
     "data": "2026-10-17T23:01:45Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-29T19:10:00Z"
+    "liberacao": "2026-10-29T19:10:00Z",
+    "precoConferido": "2026-10-26T12:58:35Z"
   },
   {
     "produto": "Kit 2 Prateleiras Reto Adesivo Premium Suporte",
@@ -2122,7 +2123,7 @@
   },
   {
     "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-    "preco": "R$ 3.839,10",
+    "preco": "R$ 5.014,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -2132,11 +2133,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera/",
     "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "R$ 3.839,10",
+    "precoAVista": "R$ 5.014,00",
     "precoAPrazo": "5066,16",
     "liberacao": "2026-10-19T11:56:00Z",
     "parcelas": 12,
-    "precoConferido": "2026-10-25T19:04:13Z"
+    "precoConferido": "2026-10-26T12:58:35Z"
   },
   {
     "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
@@ -2196,7 +2197,7 @@
   },
   {
     "produto": "iPhone 17 Pro Max 256GB - Laranja-cósmico",
-    "preco": "R$ 8.199,00",
+    "preco": "R$ 9.719,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -2206,15 +2207,16 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/iphone-17-pro-max-256gb-laranja-cosmico/",
     "slug": "iphone-17-pro-max-256gb-laranja-cosmico",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "8199,00",
+    "precoAVista": "R$ 9.719,00",
     "precoAPrazo": "10790,00",
     "liberacao": "2026-10-21T20:42:04Z",
     "precoManual": "2026-10-19T11:22:11Z",
-    "parcelas": 10
+    "parcelas": 10,
+    "precoConferido": "2026-10-26T12:58:35Z"
   },
   {
     "produto": "iPhone 17 Pro 256GB - Laranja-cósmico",
-    "preco": "R$ 7.799,00",
+    "preco": "R$ 7.999,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -2224,15 +2226,16 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/iphone-17-pro-256gb-laranja-cosmico/",
     "slug": "iphone-17-pro-256gb-laranja-cosmico",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "7799,00",
+    "precoAVista": "R$ 7.999,00",
     "precoAPrazo": "8975,70",
     "liberacao": "2026-10-21T17:02:04Z",
     "precoManual": "2026-10-19T11:23:17Z",
-    "parcelas": 10
+    "parcelas": 10,
+    "precoConferido": "2026-10-26T12:58:35Z"
   },
   {
     "produto": "Celular Samsung Galaxy S26 Ultra 5G 256GB 12GB RAM",
-    "preco": "R$ 6.546,59",
+    "preco": "R$ 7.124,05",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -2242,15 +2245,16 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-ultra-5g-256gb-12gb-ram/",
     "slug": "celular-samsung-galaxy-s26-ultra-5g-256gb-12gb-ram",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "6546,59",
+    "precoAVista": "R$ 7.124,05",
     "precoAPrazo": "7274,00",
     "liberacao": "2026-10-20T18:28:00Z",
     "precoManual": "2026-10-19T11:25:14Z",
-    "parcelas": 12
+    "parcelas": 12,
+    "precoConferido": "2026-10-26T12:58:35Z"
   },
   {
     "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-    "preco": "R$ 4.559,05",
+    "preco": "R$ 5.065,61",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -2260,15 +2264,16 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera-2/",
     "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera-2",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "4559,05",
+    "precoAVista": "R$ 5.065,61",
     "precoAPrazo": "5065,61",
     "liberacao": "2026-10-20T11:56:00Z",
     "precoManual": "2026-10-19T11:26:05Z",
-    "parcelas": 12
+    "parcelas": 12,
+    "precoConferido": "2026-10-26T12:58:35Z"
   },
   {
     "produto": "Aspirador Manual Piscina Herbinject Azul",
-    "preco": "R$ 40,88",
+    "preco": "R$ 34,20",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Piscina",
@@ -2278,11 +2283,12 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/aspirador-manual-piscina-herbinject-azul/",
     "slug": "aspirador-manual-piscina-herbinject-azul",
     "data": "2026-10-15T22:42:11Z",
-    "precoAVista": "40,88",
+    "precoAVista": "R$ 34,20",
     "precoAPrazo": "213,78",
     "liberacao": "2026-10-19T15:40:00Z",
     "precoManual": "2026-10-19T11:40:05Z",
-    "parcelas": 6
+    "parcelas": 6,
+    "precoConferido": "2026-10-26T12:58:35Z"
   },
   {
     "produto": "Organizador de Geladeira para Temperos 2,3L",
@@ -2474,7 +2480,7 @@
   },
   {
     "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
-    "preco": "R$ 2.841,00",
+    "preco": "R$ 3.039,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -2484,11 +2490,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s25-fe-5g-128gb-2/",
     "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-2",
     "data": "2026-10-23T00:12:13Z",
-    "precoAVista": "R$ 2.841,00",
+    "precoAVista": "R$ 3.039,00",
     "precoAPrazo": "3276,00",
     "liberacao": "2026-10-23T00:42:12Z",
     "parcelas": 10,
-    "precoConferido": "2026-10-26T06:11:49Z"
+    "precoConferido": "2026-10-26T12:58:35Z"
   },
   {
     "produto": "Samsung Galaxy S25&#43; 5g, 256gb, 12gb",
@@ -2801,7 +2807,7 @@
   },
   {
     "produto": "KIT 3 Necessaire Bolsa Portátil Transparente",
-    "preco": "R$ 24,99",
+    "preco": "R$ 17,49",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Beleza",
@@ -2813,7 +2819,8 @@
     "data": "2026-10-26T11:59:30Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-26T14:11:52Z"
+    "liberacao": "2026-10-26T14:11:52Z",
+    "precoConferido": "2026-10-26T12:58:35Z"
   },
   {
     "produto": "Ventilador de Teto com Luz Silencioso Controle",
@@ -2865,7 +2872,7 @@
   },
   {
     "produto": "Cozedor de Ovos Elétrico 110V",
-    "preco": "R$ 28,18",
+    "preco": "R$ 28,48",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -2877,7 +2884,8 @@
     "data": "2026-10-26T11:59:32Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-27T13:53:47Z"
+    "liberacao": "2026-10-27T13:53:47Z",
+    "precoConferido": "2026-10-26T12:58:35Z"
   },
   {
     "produto": "Mini Aspirador De Pó 3 em 1 a Vacuo Usb Portátil",
@@ -3009,7 +3017,7 @@
   },
   {
     "produto": "Luminária de Mesa Candeiro Dumbbell Touch",
-    "preco": "R$ 37,90",
+    "preco": "R$ 34,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Casa",
@@ -3021,7 +3029,8 @@
     "data": "2026-10-26T12:12:06Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-27T14:51:43Z"
+    "liberacao": "2026-10-27T14:51:43Z",
+    "precoConferido": "2026-10-26T12:58:35Z"
   },
   {
     "produto": "Rodinho de Pia Mini Mop Portátil com Esponja",
@@ -3057,7 +3066,7 @@
   },
   {
     "produto": "Suporte Para Celular Automotivo Carro Vácuo Forte",
-    "preco": "R$ 14,95",
+    "preco": "R$ 24,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Utilidades",
@@ -3069,7 +3078,8 @@
     "data": "2026-10-26T12:15:49Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-26T20:18:12Z"
+    "liberacao": "2026-10-26T20:18:12Z",
+    "precoConferido": "2026-10-26T12:58:35Z"
   },
   {
     "produto": "Suporte Celular Rotativo Magnético 360° Carro Casa",
@@ -3089,7 +3099,7 @@
   },
   {
     "produto": "Kit Máquina Para Tosar Pet + Tesoura + Pente",
-    "preco": "R$ 30,26",
+    "preco": "R$ 28,13",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Pet",
@@ -3101,7 +3111,8 @@
     "data": "2026-10-26T12:19:10Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-26T11:59:25Z"
+    "liberacao": "2026-10-26T11:59:25Z",
+    "precoConferido": "2026-10-26T12:58:35Z"
   },
   {
     "produto": "Arranhador Adesivo Premium: Sofá, Cama e Móveis",
