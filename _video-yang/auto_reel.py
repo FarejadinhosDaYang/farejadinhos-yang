@@ -198,7 +198,9 @@ def juntar_pedacos(video, pedacos, dur, saida):
     entradas, filt = [], []
     for i, (a, b, v) in enumerate(pedacos):
         entradas += ["-ss", f"{a:.3f}", "-t", f"{b - a:.3f}", "-i", video]
-        filt.append(f"[{i}:v]{FILL},setpts=(PTS-STARTPTS)/{v:.4f},fps={FPS}[v{i}]")
+        d = (b - a) / v                            # duração exata do pedaço no reel (sem isso o atraso vai somando)
+        filt.append(f"[{i}:v]{FILL},setpts=(PTS-STARTPTS)/{v:.4f},fps={FPS},"
+                    f"tpad=stop_mode=clone:stop_duration=1,trim=duration={d:.4f},setpts=PTS-STARTPTS[v{i}]")
     filt.append("".join(f"[v{i}]" for i in range(len(pedacos))) +
                 f"concat=n={len(pedacos)}:v=1:a=0,tpad=stop_mode=clone:stop_duration=3[out]")
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", *entradas, "-filter_complex", ";".join(filt), "-map", "[out]",
