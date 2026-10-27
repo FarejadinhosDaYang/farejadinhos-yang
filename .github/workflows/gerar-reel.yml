@@ -1,0 +1,100 @@
+name: Gerar reel
+
+# Disparado pelo painel (painel/reels.html → Worker farejadinhos-reels).
+# Pega o vídeo, a voz e o pedido na release "reels-entrada", monta o Reel da Yang com
+# _video-yang/auto_reel.py, publica na release "reels-prontos", põe a oferta em Vídeos
+# e registra em reels/lista.json (a página do painel mostra a lista com botão de baixar).
+
+on:
+  workflow_dispatch:
+    inputs:
+      id:
+        description: "id do pedido (vem do Worker)"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gerar-reel-${{ github.event.inputs.id }}
+  cancel-in-progress: false
+
+jobs:
+  reel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+      ID: ${{ github.event.inputs.id }}
+
+    steps:
+      - name: Baixar repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar ferramentas (video, emoji, navegador)
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q ffmpeg fonts-noto-color-emoji
+          python3 -m pip install --quiet playwright numpy pillow
+          python3 -m playwright install --with-deps chromium
+
+      - name: Baixar os arquivos enviados
+        run: |
+          mkdir -p entrada-reel
+          gh release download reels-entrada -p "${ID}-*" -D entrada-reel
+          ls -la entrada-reel
+
+      - name: Montar o reel e a capa
+        run: |
+          python3 _video-yang/auto_reel.py "entrada-reel/${ID}-pedido.json" saida-reel
+
+      - name: Publicar (release reels-prontos)
+        run: |
+          gh release view reels-prontos >/dev/null 2>&1 || \
+            gh release create reels-prontos --title "Reels prontos" \
+              --notes "Reels montados sozinhos pelo painel (painel/reels.html)." --prerelease
+          gh release upload reels-prontos "saida-reel/${ID}-reel.mp4" "saida-reel/${ID}-capa.jpg" --clobber
+
+      - name: Registrar na lista, oferta em Videos
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json, os, subprocess, datetime
+          pid = os.environ["ID"]
+          try: pedido = json.load(open(f"entrada-reel/{pid}-pedido.json", encoding="utf-8"))
+          except Exception: pedido = {}
+          ok = os.path.exists(f"saida-reel/{pid}-reel.mp4") and os.path.exists(f"saida-reel/{pid}-capa.jpg")
+          log = ""
+          try: log = open(f"saida-reel/{pid}-log.txt", encoding="utf-8").read()
+          except Exception: pass
+          slug = (pedido.get("slug") or "").strip()
+          video_msg = ""
+          if ok and slug:
+              r = subprocess.run(["python3", "_video-yang/marcar-video.py", slug], capture_output=True, text=True)
+              video_msg = (r.stdout or r.stderr).strip()
+          os.makedirs("reels", exist_ok=True)
+          try: lista = json.load(open("reels/lista.json", encoding="utf-8"))
+          except Exception: lista = []
+          lista = [x for x in lista if x.get("id") != pid]
+          lista.insert(0, {"id": pid, "status": "pronto" if ok else "erro",
+                           "quando": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                           "produto": pedido.get("produto", ""), "slug": slug,
+                           "reel": f"{pid}-reel.mp4" if ok else "", "capa": f"{pid}-capa.jpg" if ok else "",
+                           "log": log[-3000:], "categoria": video_msg})
+          json.dump(lista[:40], open("reels/lista.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reels/lista.json ofertas.json
+          git commit -m "Reel montado pelo painel: ${ID}" || exit 0
+          for i in 1 2 3 4; do
+            git pull --rebase && git push && break
+            sleep $((5 * i))
+          done
+
+      - name: Apagar os arquivos recebidos (não pesar a release)
+        if: always()
+        run: |
+          for f in $(gh release view reels-entrada --json assets -q ".assets[].name" | grep "^${ID}-" || true); do
+            gh release delete-asset reels-entrada "$f" -y || true
+          done

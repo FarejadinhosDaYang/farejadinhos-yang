@@ -13,6 +13,7 @@ sincronizada com a voz do ElevenLabs, legenda palavra por palavra e o selo "💬
 | `narradora.html` | Yang de corpo inteiro (na caminha) narrando, fundo creme — bom pra vídeos de apresentação |
 | `reel.html` | Reel automático de oferta a partir de uma foto (gancho → produto → preço → chamada) |
 | `render.py` | Transforma qualquer modelo em MP4 1080×1920 30 fps (lip sync, fundo, fundo verde) |
+| `auto_reel.py` | Monta o Reel sozinho (vídeo + voz + texto) — usado pela página do painel "Gerar reel" |
 | `marcar-video.py` | Põe a oferta do Reel na categoria Vídeos (não sai mais do ar) |
 | `capa.html` / `capa.py` | Capa do Reel (1080×1920) com gancho grande, Yang inteira e selo publi |
 | `pausas.py` | Lê a voz do ElevenLabs + o texto e gera o `roteiro.json` com o tempo de cada frase |
@@ -23,6 +24,15 @@ sincronizada com a voz do ElevenLabs, legenda palavra por palavra e o selo "💬
 
 Precisa de: `python3`, `ffmpeg`, `numpy`, `playwright` com Chromium (já vêm no ambiente do Claude).
 Pra regerar as expressões: `opencv-python-headless` e `Pillow`.
+
+## Reel automático (painel → "🎞️ Gerar reel da Yang")
+
+O usuário sobe o vídeo, o MP3 e o texto narrado em `painel/reels.html` → Worker `farejadinhos-reels`
+(`cloudflare/reel-worker.js`) guarda na release `reels-entrada` e dispara `gerar-reel.yml` → `auto_reel.py` monta
+(frases pelas reticências, tempos por programação dinâmica nas pausas, fundo com pedaço de cada cena, capa) →
+release `reels-prontos` + `reels/lista.json` + oferta em Vídeos. Teste local:
+`python3 auto_reel.py pedido.json saida/` (formato do pedido no topo do arquivo).
+Os cortes escolhidos à mão (passo a passo abaixo) continuam valendo pros vídeos difíceis.
 
 ## Passo a passo de um Reel de review
 

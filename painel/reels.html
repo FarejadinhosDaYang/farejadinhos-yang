@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerar reel | Painel Farejadinhos</title>
+<link rel="icon" href="../assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{ --red:#E5232E; --red-dark:#C21A24; --orange:#F7941D; --cream:#FDF3E3; --cream-2:#FFFAF1; --ink:#2B1B12; --muted:#8A7563; --line:#F0DFC4; }
+*{box-sizing:border-box}
+body{margin:0;padding:20px 16px 40px;background:var(--cream);font-family:'Work Sans',Arial,sans-serif;color:var(--ink)}
+.container{max-width:860px;margin:auto}
+.voltar{display:inline-block;margin-bottom:16px;color:var(--red-dark);font-weight:700;text-decoration:none;font-size:14px}
+h1{font-family:'Baloo 2',sans-serif;color:var(--red-dark);font-size:26px;margin:0 0 4px}
+h2{font-family:'Baloo 2',sans-serif;color:var(--red-dark);font-size:20px;margin:26px 0 10px}
+.sub{color:var(--muted);font-size:14px;line-height:1.5;margin:0 0 18px}
+.caixa{background:var(--cream-2);border:1.5px solid var(--line);border-radius:18px;padding:16px;display:grid;gap:14px}
+label{display:grid;gap:6px;font-weight:700;font-size:14px}
+label small{font-weight:500;color:var(--muted);font-size:12.5px;line-height:1.45}
+input,select,textarea{width:100%;padding:11px 12px;border:1.5px solid var(--line);border-radius:10px;font:500 15px 'Work Sans',Arial,sans-serif;background:#fff;color:var(--ink)}
+textarea{min-height:120px;resize:vertical;line-height:1.45}
+.dupla{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:560px){.dupla{grid-template-columns:1fr}}
+details{border:1.5px dashed var(--line);border-radius:12px;padding:10px 12px;background:#fff}
+summary{cursor:pointer;font-weight:700;font-size:14px}
+details .dupla{margin-top:10px}
+button{border:0;border-radius:12px;padding:14px 18px;font:800 16px 'Baloo 2',sans-serif;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--red),var(--red-dark))}
+button:disabled{opacity:.6;cursor:wait}
+.barra{height:10px;border-radius:99px;background:var(--line);overflow:hidden;display:none}
+.barra i{display:block;height:100%;width:0;background:var(--red);transition:width .2s}
+.status{font-size:14px;line-height:1.5;display:none}
+.status.ok{display:block;color:#1d6b33}.status.erro{display:block;color:#a3141c}.status.espera{display:block}
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.reel{background:var(--cream-2);border:1.5px solid var(--line);border-radius:18px;padding:12px;display:grid;gap:8px;align-content:start}
+.reel video{width:100%;aspect-ratio:9/16;border-radius:12px;background:#2B1B12}
+.reel .nome{font-weight:700;font-size:14px;line-height:1.35}
+.reel .quando{font-size:12px;color:var(--muted)}
+.reel a.b{display:block;text-align:center;border-radius:10px;padding:10px;font:700 14px 'Work Sans',Arial,sans-serif;text-decoration:none}
+.b1{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff}
+.b2{background:#fff;color:var(--red-dark);border:1.5px solid var(--red)}
+.reel pre{white-space:pre-wrap;font-size:11.5px;background:#fff;border-radius:8px;padding:8px;margin:6px 0 0;max-height:220px;overflow:auto}
+.erroTag{color:#a3141c;font-weight:700;font-size:13px}
+.dica{margin-top:18px;padding:14px 16px;border:1.5px dashed var(--line);border-radius:14px;font-size:13.5px;line-height:1.6;background:var(--cream-2)}
+</style>
+</head>
+<body>
+<div class="container">
+<a class="voltar" href="index.html">← Voltar pro painel</a>
+<h1>🎬 Gerar reel da Yang</h1>
+<p class="sub">Sobe o vídeo do produto, a voz do ElevenLabs e o texto que você colou lá. O GitHub monta sozinho o reel (Yang narrando, legenda, selo publi), a capa e já põe a oferta na categoria Vídeos. Leva uns 5 a 8 minutos.</p>
+
+<form class="caixa" id="form">
+  <label>Senha do painel <input type="password" id="senha" autocomplete="current-password" required></label>
+
+  <label>Produto
+    <input id="busca" placeholder="Digite pra procurar (ex.: aspirador)…" autocomplete="off">
+    <select id="produto"><option value="">— escolha o produto (opcional) —</option></select>
+    <small>Com o produto escolhido, a oferta vai pra categoria Vídeos e não sai mais do ar.</small>
+  </label>
+
+  <div class="dupla">
+    <label>🎞️ Vídeo do produto <input type="file" id="video" accept="video/*" required></label>
+    <label>🎙️ Voz do ElevenLabs (MP3) <input type="file" id="voz" accept="audio/*,.mp3" required></label>
+  </div>
+
+  <label>Texto da narração
+    <textarea id="texto" required placeholder='Cole aqui exatamente o texto que você colou no ElevenLabs, com as reticências (…). Ex.: Sabe aquela sujeira do trilho… Esse mini aspirador resolve! … comenta "quero" que eu te mando o link!'></textarea>
+    <small>As legendas saem deste texto, frase por frase (as reticências separam as frases). Se tiver "comenta quero", o selo 💬 COMENTA QUERO aparece nessa hora.</small>
+  </label>
+
+  <label>Título da capa
+    <input id="titulo" placeholder="Ex.: A sujeira que|*ninguém alcança*">
+    <small>Até umas 6 palavras. <b>|</b> quebra a linha e <b>*palavra*</b> fica amarela. Vazio = usa a primeira frase.</small>
+  </label>
+  <div class="dupla">
+    <label>Faixa da capa
+      <select id="faixa">
+        <option>🐾 A YANG FAREJOU</option><option>🐾 ACHADINHO DA COZINHA</option><option>🐾 ACHADINHO DA LIMPEZA</option>
+        <option>🐾 ACHADINHO DE CASA</option><option>🐾 ACHADINHO PET</option><option>🐾 ACHADINHO DE BELEZA</option>
+        <option>🐾 ACHADINHO DE VIAGEM</option><option>🐾 ACHADINHO DO CARRO</option>
+      </select>
+    </label>
+    <label>Balãozinho da Yang na capa <input id="balao" placeholder="Ex.: Olha isso! 😱"></label>
+  </div>
+
+  <details>
+    <summary>⚙️ Ajustes do vídeo (opcional)</summary>
+    <div class="dupla">
+      <label>Usar o vídeo a partir do segundo <input id="de" type="number" min="0" step="0.1" placeholder="0">
+        <small>Pula o começo (ex.: texto escrito por cima).</small></label>
+      <label>…até o segundo <input id="ate" type="number" min="0" step="0.1" placeholder="fim">
+        <small>Corta o fim (ex.: "paguei R$ 39,90", logo de marca).</small></label>
+      <label>Segundo do vídeo pra foto da capa <input id="capa_t" type="number" min="0" step="0.1" placeholder="automático">
+        <small>Um momento em que o produto aparece inteiro.</small></label>
+    </div>
+  </details>
+
+  <button type="submit" id="btn">🎬 Montar reel</button>
+  <div class="barra" id="barra"><i></i></div>
+  <div class="status" id="status"></div>
+</form>
+
+<h2>Reels montados</h2>
+<div class="grade" id="lista"><p class="sub">Carregando…</p></div>
+
+<div class="dica">
+<b>Como postar:</b> baixe o reel e a capa. No Instagram, em <b>Editar capa → Adicionar da galeria</b>, escolha a capa. A legenda do post continua sendo a que o Claude escreve junto com o roteiro.<br>
+<b>Quando chamar o Claude em vez de usar aqui:</b> vídeo com preço ou texto escrito no meio, logo de marca, ou quando quiser cortes escolhidos a dedo cena por cena.
+</div>
+</div>
+
+<script>
+// endereço do Worker farejadinhos-reels (cloudflare/reel-worker.js)
+const REELS_WORKER = "https://farejadinhos-reels.bernard-shimizu.workers.dev";
+const PRONTOS = "https://github.com/FarejadinhosDaYang/farejadinhos-yang/releases/download/reels-prontos/";
+const $ = id => document.getElementById(id);
+function esc(t){ const d = document.createElement("div"); d.textContent = t == null ? "" : String(t); return d.innerHTML; }
+
+try{ $("senha").value = localStorage.getItem("farejadinhos_admin_senha") || ""; }catch(e){}
+
+// ---- produtos (ofertas.json) ----
+let ofertas = [];
+fetch("../ofertas.json?t=" + Date.now(), { cache: "no-store" }).then(r => r.json()).then(d => {
+  ofertas = d.filter(o => o && o.slug && o.produto)
+    .sort((a, b) => String(b.liberacao || b.data || "").localeCompare(String(a.liberacao || a.data || "")));
+  preencher("");
+}).catch(() => {});
+function preencher(filtro){
+  const f = filtro.normalize("NFD").replace(/\p{Mn}/gu, "").toLowerCase();
+  const sel = $("produto"), atual = sel.value;
+  const itens = ofertas.filter(o => !f || (o.produto + " " + o.slug).normalize("NFD").replace(/\p{Mn}/gu, "").toLowerCase().includes(f)).slice(0, 80);
+  sel.innerHTML = '<option value="">— escolha o produto (opcional) —</option>' + itens.map(o => {
+    const quando = o.liberacao ? new Date(o.liberacao).toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" }) : "";
+    const video = /v[ií]deos/i.test(o.categoria || "") ? " 🎬" : "";
+    return `<option value="${esc(o.slug)}">${esc(o.produto)}${quando ? " · " + quando : ""}${video}</option>`;
+  }).join("");
+  if (itens.some(o => o.slug === atual)) sel.value = atual;
+  else if (f && itens.length) sel.value = itens[0].slug;
+}
+$("busca").addEventListener("input", e => preencher(e.target.value));
+
+// ---- enviar ----
+let esperando = "";
+$("form").addEventListener("submit", e => {
+  e.preventDefault();
+  const senha = $("senha").value.trim(), video = $("video").files[0], voz = $("voz").files[0], texto = $("texto").value.trim();
+  const st = $("status"), btn = $("btn"), barra = $("barra");
+  if (!senha || !video || !voz || !texto){ st.className = "status erro"; st.textContent = "Preencha a senha, o vídeo, a voz e o texto."; return; }
+  if (video.size > 95e6){ st.className = "status erro"; st.textContent = "O vídeo passa de 95 MB — corte ou comprima antes."; return; }
+  const sel = $("produto"), slug = sel.value, produto = slug ? sel.options[sel.selectedIndex].text.split(" · ")[0] : "";
+  const num = id => { const v = $(id).value.trim(); return v === "" ? "" : Number(v); };
+  const pedido = { produto, slug, texto, titulo: $("titulo").value.trim(), faixa: $("faixa").value, balao: $("balao").value.trim(),
+                   de: num("de"), ate: num("ate"), capa_t: num("capa_t") };
+  const dados = new FormData();
+  dados.append("senha", senha); dados.append("pedido", JSON.stringify(pedido));
+  dados.append("video", video); dados.append("voz", voz);
+
+  btn.disabled = true; btn.textContent = "Enviando…"; barra.style.display = "block"; barra.firstElementChild.style.width = "0";
+  st.className = "status espera"; st.textContent = "Enviando os arquivos…";
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", REELS_WORKER + "/reel");
+  xhr.upload.onprogress = ev => { if (ev.lengthComputable) barra.firstElementChild.style.width = Math.round(100 * ev.loaded / ev.total) + "%"; };
+  xhr.onload = () => {
+    let r = {}; try{ r = JSON.parse(xhr.responseText); }catch(e){}
+    if (xhr.status === 200 && r.ok){
+      try{ localStorage.setItem("farejadinhos_admin_senha", senha); }catch(e){}
+      esperando = r.id; btn.textContent = "⏳ Montando…";
+      st.className = "status espera";
+      st.textContent = "✅ Arquivos recebidos! A Yang está montando o reel (uns 5 a 8 minutos). Pode deixar esta página aberta — ela avisa quando ficar pronto.";
+      acompanhar(Date.now());
+    } else {
+      st.className = "status erro"; st.textContent = "❌ " + (r.erro || ("erro " + xhr.status));
+      btn.disabled = false; btn.textContent = "🎬 Montar reel"; barra.style.display = "none";
+    }
+  };
+  xhr.onerror = () => { st.className = "status erro"; st.textContent = "❌ Não consegui falar com o Worker de reels (ele já foi instalado?)."; btn.disabled = false; btn.textContent = "🎬 Montar reel"; };
+  xhr.send(dados);
+});
+
+function acompanhar(inicio){
+  setTimeout(async () => {
+    const lista = await carregar();
+    const item = lista.find(x => x.id === esperando);
+    const st = $("status"), btn = $("btn");
+    if (item){
+      st.className = "status " + (item.status === "pronto" ? "ok" : "erro");
+      st.textContent = item.status === "pronto" ? "✅ Reel pronto! Está logo aí embaixo." : "❌ Deu erro ao montar — veja o detalhe na lista aí embaixo.";
+      btn.disabled = false; btn.textContent = "🎬 Montar reel"; $("barra").style.display = "none"; esperando = "";
+    } else if (Date.now() - inicio > 25 * 60e3){
+      st.className = "status erro"; st.textContent = "Demorou mais que o normal. Confira em GitHub → Actions → Gerar reel.";
+      btn.disabled = false; btn.textContent = "🎬 Montar reel";
+    } else acompanhar(inicio);
+  }, 30000);
+}
+
+// ---- lista ----
+async function carregar(){
+  let lista = [];
+  try{ const r = await fetch("../reels/lista.json?t=" + Date.now(), { cache: "no-store" }); if (r.ok) lista = await r.json(); }catch(e){}
+  $("lista").innerHTML = lista.length ? lista.map(x => {
+    const quando = new Date(x.quando).toLocaleString("pt-BR", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
+    const v = encodeURIComponent(x.quando);
+    if (x.status !== "pronto") return `<div class="reel"><div class="nome">${esc(x.produto || x.id)}</div><div class="quando">${quando}</div>
+      <div class="erroTag">❌ não montou</div><details><summary>detalhe</summary><pre>${esc(x.log || "sem detalhe — veja em GitHub → Actions")}</pre></details></div>`;
+    return `<div class="reel">
+      <video src="${PRONTOS + x.reel}?v=${v}" controls playsinline preload="metadata" poster="${PRONTOS + x.capa}?v=${v}"></video>
+      <div class="nome">${esc(x.produto || "Reel")}</div><div class="quando">${quando}${x.categoria ? " · 🎬 em Vídeos" : ""}</div>
+      <a class="b b1" href="${PRONTOS + x.reel}?v=${v}" download>⬇️ Baixar reel</a>
+      <a class="b b2" href="${PRONTOS + x.capa}?v=${v}" download>🖼️ Baixar capa</a>
+      <details><summary style="font-size:12.5px">ver como ficaram as legendas</summary><pre>${esc(x.log || "")}</pre></details>
+    </div>`;
+  }).join("") : '<p class="sub">Nenhum reel montado por aqui ainda.</p>';
+  return lista;
+}
+carregar();
+</script>
+</body>
+</html>
