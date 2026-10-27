@@ -1,77 +1,120 @@
 {
-  "quando": "2026-10-26T23:08:44Z",
+  "quando": "2026-10-27T02:03:08Z",
   "origem": "schedule",
   "total": 156,
-  "iguais": 138,
+  "iguais": 135,
   "mudaram": [
-    {
-      "slug": "descascador-eletrico-de-alho-e-uva-em-aco-inox-automatico",
-      "produto": "Descascador Elétrico De Alho E Uva Em Aço Inox",
-      "de": "R$ 59,98",
-      "para": "R$ 59,99"
-    },
     {
       "slug": "generica-gancho-organizador-de-pia-porta-esponja",
       "produto": "Genérica Gancho Organizador De Pia Porta Esponja",
-      "de": "R$ 19,78",
-      "para": "19,90"
+      "de": "R$ 19,90",
+      "para": "19,78"
     },
     {
       "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
       "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-      "de": "R$ 62,25",
-      "para": "60,90"
+      "de": "R$ 60,90",
+      "para": "62,25"
     },
     {
-      "slug": "cesto-de-roupa-de-bambu-dobravel-organizador",
-      "produto": "Cesto De Roupa de Bambu Dobravel Organizador",
-      "de": "R$ 53,99",
-      "para": "R$ 55,96"
+      "slug": "kit-6-potes-640ml-vidro-hermetico-4-travas-marmita",
+      "produto": "Kit 6 Potes 640ml Vidro Hermético 4 Travas Marmita",
+      "de": "R$ 59,70",
+      "para": "58,70"
     },
     {
       "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
       "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 5.014,00",
-      "para": "5065,61"
+      "de": "R$ 5.065,61",
+      "para": "3839,10"
+    },
+    {
+      "slug": "organizador-de-geladeira-para-temperos-2-3l-linha-clear",
+      "produto": "Organizador de Geladeira para Temperos 2,3L",
+      "de": "R$ 25,02",
+      "para": "R$ 37,90"
+    },
+    {
+      "slug": "kit-saco-a-vacuo-grande-organizador-edredom",
+      "produto": "Kit Saco A Vácuo Grande Organizador Edredom",
+      "de": "R$ 19,90",
+      "para": "R$ 16,45"
+    },
+    {
+      "slug": "porta-ovos-4-andares-rolante-em-plastico",
+      "produto": "Porta Ovos 4 Andares Rolante em Plástico",
+      "de": "R$ 13,38",
+      "para": "R$ 12,99"
     },
     {
       "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-2",
       "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
-      "de": "R$ 2.879,00",
-      "para": "2841,00"
+      "de": "R$ 2.841,00",
+      "para": "3165,00"
     },
     {
       "slug": "samsung-galaxy-s25-43-5g-256gb-12gb",
       "produto": "Samsung Galaxy S25&#43; 5g, 256gb, 12gb",
-      "de": "R$ 3.605,00",
-      "para": "2518,00"
+      "de": "R$ 2.518,00",
+      "para": "3898,00"
+    },
+    {
+      "slug": "celular-samsung-galaxy-s25-43-5g-512gb",
+      "produto": "Celular Samsung Galaxy S25&#43; 5g, 512gb",
+      "de": "R$ 3.882,00",
+      "para": "3898,00"
     },
     {
       "slug": "celular-samsung-galaxy-s25-43-5g-512gb-2",
       "produto": "Celular Samsung Galaxy S25&#43; 5g, 512gb",
-      "de": "R$ 2.518,00",
-      "para": "3882,00"
+      "de": "R$ 3.882,00",
+      "para": "3898,00"
     },
     {
       "slug": "celular-samsung-galaxy-a57-256gb-cinza",
       "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 1.899,00",
-      "para": "1980,00"
+      "de": "R$ 1.980,00",
+      "para": "1899,00"
     },
     {
       "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
       "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 1.899,00",
-      "para": "1980,00"
+      "de": "R$ 1.980,00",
+      "para": "1899,00"
     },
     {
       "slug": "celular-samsung-galaxy-a37-5g-128gb",
       "produto": "Celular Samsung Galaxy A37 5G 128GB",
-      "de": "R$ 1.569,00",
-      "para": "1393,00"
+      "de": "R$ 1.393,00",
+      "para": "1899,00"
+    },
+    {
+      "slug": "kit-3-necessaire-bolsa-portatil-transparente",
+      "produto": "KIT 3 Necessaire Bolsa Portátil Transparente",
+      "de": "R$ 17,99",
+      "para": "R$ 17,49"
+    },
+    {
+      "slug": "icoffee-moedor-de-cafe-com-manivela-manual",
+      "produto": "ICoffee Moedor de Café com Manivela Manual",
+      "de": "R$ 134,99",
+      "para": "R$ 149,99"
+    },
+    {
+      "slug": "kit-maquina-para-tosar-pet-tesoura-pente",
+      "produto": "Kit Máquina Para Tosar Pet + Tesoura + Pente",
+      "de": "R$ 30,28",
+      "para": "R$ 34,99"
     }
   ],
-  "semPreco": [],
+  "semPreco": [
+    {
+      "slug": "escorredor-de-loucas-rack-aco-carbono-organizador",
+      "produto": "Escorredor de Louças Rack Aço Carbono Organizador",
+      "link": "https://s.shopee.com.br/8fTDF2IRuL",
+      "motivo": "API Shopee: a API não achou esse produto (pode ter saído do ar ou do programa de afiliados)"
+    }
+  ],
   "erros": [],
   "suspeitos": [
     {
@@ -79,7 +122,7 @@
       "produto": "iPhone 18 Pro 256GB Preto (somente eSIM)",
       "link": "https://meli.la/18pktG2",
       "atual": "R$ 9.499,00",
-      "lido": "5287,00",
+      "lido": "10013,00",
       "referencia": "preco posto a mao em 18/10 23:09"
     },
     {
@@ -97,47 +140,15 @@
       "atual": "R$ 7.999,00",
       "lido": "698,40",
       "referencia": "R$ 7.799,00"
-    },
-    {
-      "slug": "organizador-de-geladeira-para-temperos-2-3l-linha-clear",
-      "produto": "Organizador de Geladeira para Temperos 2,3L",
-      "link": "https://s.shopee.com.br/BUYQHFjv4",
-      "atual": "R$ 25,02",
-      "lido": "R$ 37,90",
-      "referencia": "preco posto a mao em 19/10 22:25"
-    },
-    {
-      "slug": "kit-saco-a-vacuo-grande-organizador-edredom",
-      "produto": "Kit Saco A Vácuo Grande Organizador Edredom",
-      "link": "https://s.shopee.com.br/1qct6TiSlx",
-      "atual": "R$ 19,90",
-      "lido": "R$ 16,45",
-      "referencia": "preco posto a mao em 19/10 22:49"
-    },
-    {
-      "slug": "porta-ovos-4-andares-rolante-em-plastico",
-      "produto": "Porta Ovos 4 Andares Rolante em Plástico",
-      "link": "https://s.shopee.com.br/4B0nslZa2B",
-      "atual": "R$ 13,38",
-      "lido": "R$ 12,99",
-      "referencia": "preco posto a mao em 19/10 22:55"
-    },
-    {
-      "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
-      "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
-      "link": "https://meli.la/2LUJ4yy",
-      "atual": "R$ 3.898,00",
-      "lido": "5444,00",
-      "referencia": "preco posto a mao em 22/10 17:24"
     }
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-26T23:08:47Z",
+      "quando": "2026-10-27T02:03:09Z",
       "teste": false,
       "links": 122,
-      "ok": 122,
-      "erros": 0
+      "ok": 121,
+      "erros": 1
     }
   },
   "anuncios": {
