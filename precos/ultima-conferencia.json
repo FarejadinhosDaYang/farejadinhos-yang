@@ -1,74 +1,50 @@
 {
-  "quando": "2026-10-27T14:27:44Z",
-  "origem": "schedule",
+  "quando": "2026-10-27T16:40:47Z",
+  "origem": "workflow_dispatch",
   "total": 152,
-  "iguais": 133,
+  "iguais": 137,
   "mudaram": [
-    {
-      "slug": "generica-gancho-organizador-de-pia-porta-esponja",
-      "produto": "Genérica Gancho Organizador De Pia Porta Esponja",
-      "de": "R$ 19,78",
-      "para": "19,90"
-    },
-    {
-      "slug": "kit-6-potes-640ml-vidro-hermetico-4-travas-marmita",
-      "produto": "Kit 6 Potes 640ml Vidro Hermético 4 Travas Marmita",
-      "de": "R$ 58,70",
-      "para": "59,70"
-    },
-    {
-      "slug": "kit-com-2-sapateiras-5-nichos-para-organizacao",
-      "produto": "Kit Com 2 Sapateiras 5 Nichos Para Organização",
-      "de": "R$ 39,83",
-      "para": "R$ 39,75"
-    },
     {
       "slug": "celular-samsung-galaxy-s26-fe-128gb-8gb-ram-tela",
       "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
-      "de": "R$ 3.999,00",
-      "para": "3998,97"
+      "de": "R$ 3.998,97",
+      "para": "3999,00"
     },
     {
       "slug": "iphone-17-pro-256gb-laranja-cosmico",
       "produto": "iPhone 17 Pro 256GB - Laranja-cósmico",
-      "de": "R$ 7.999,00",
-      "para": "8099,00"
+      "de": "R$ 8.099,00",
+      "para": "8540,00"
     },
     {
       "slug": "celular-samsung-galaxy-s26-ultra-5g-256gb-12gb-ram",
       "produto": "Celular Samsung Galaxy S26 Ultra 5G 256GB 12GB RAM",
-      "de": "R$ 7.124,05",
-      "para": "7274,00"
+      "de": "R$ 7.274,00",
+      "para": "7124,05"
+    },
+    {
+      "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-2",
+      "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
+      "de": "R$ 3.165,00",
+      "para": "2998,00"
     },
     {
       "slug": "celular-samsung-galaxy-a57-256gb-cinza",
       "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 1.899,00",
-      "para": "1889,00"
+      "de": "R$ 1.889,00",
+      "para": "1980,00"
     },
     {
       "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
       "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 1.899,00",
-      "para": "1889,00"
+      "de": "R$ 1.889,00",
+      "para": "1899,00"
     },
     {
       "slug": "celular-samsung-galaxy-a37-5g-128gb",
       "produto": "Celular Samsung Galaxy A37 5G 128GB",
-      "de": "R$ 1.393,00",
-      "para": "1331,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-a37-5g-128gb-3",
-      "produto": "Celular Samsung Galaxy A37 5g 128gb",
-      "de": "R$ 1.699,00",
-      "para": "1799,00"
-    },
-    {
-      "slug": "garrafa-coqueteleira-com-reparticao-e-porta",
-      "produto": "Garrafa Coqueteleira com Repartição e Porta",
-      "de": "R$ 19,90",
-      "para": "R$ 23,90"
+      "de": "R$ 1.331,00",
+      "para": "1899,00"
     }
   ],
   "semPreco": [],
@@ -102,7 +78,7 @@
       "produto": "iPhone 18 Pro 256GB Preto (somente eSIM)",
       "link": "https://meli.la/18pktG2",
       "atual": "R$ 9.499,00",
-      "lido": "8078,00",
+      "lido": "10799,00",
       "referencia": "preco posto a mao em 18/10 23:09"
     },
     {
@@ -140,7 +116,7 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-27T14:27:45Z",
+      "quando": "2026-10-27T16:40:48Z",
       "teste": false,
       "links": 119,
       "ok": 119,
