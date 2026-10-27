@@ -11,6 +11,8 @@
  */
 (function () {
     var URL_SHOPEE = "https://farejadinhos-shopee.bernard-shimizu.workers.dev";
+    var URL_PAINEL = "https://holy-pine-e7fc.bernard-shimizu.workers.dev"; // rota /lote (fila do site)
+    var POR_DIA = "25"; // mesma regra do lote: entra na fila, no máximo 25 por dia
 
     function senha() {
         var c = document.getElementById("senha");
@@ -84,7 +86,11 @@
         "#shopeeLinksBox .sl-item small{display:block;color:var(--muted,#8A7563);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}" +
         "#shopeeLinksBox .sl-item .sl-txt{flex:1;min-width:0}" +
         "#shopeeLinksBox .sl-copiar{border:0;border-radius:8px;padding:7px 10px;background:var(--orange,#F7941D);font-weight:800;cursor:pointer;white-space:nowrap}" +
-        "#shopeeLinksBox .sl-item.erro{color:var(--red-dark,#C21A24)}";
+        "#shopeeLinksBox .sl-item.erro{color:var(--red-dark,#C21A24)}" +
+        "#shopeeLinksBox .sl-postar{background:#fff;border:1.5px solid #EE4D2D;color:#C2381F}" +
+        "#shopeeLinksBox .sl-item button{width:auto!important;margin:0!important;padding:7px 10px!important;font:800 13px 'Work Sans',sans-serif!important;box-shadow:none!important;border-radius:8px!important;flex:0 0 auto}" +
+        "#shopeeLinksBox .sl-postar:disabled{opacity:.75;cursor:default}" +
+        "#shopeeLinksBox .sl-item{flex-wrap:wrap}#shopeeLinksBox .sl-item .sl-txt{flex:1 1 100%!important;display:block}#shopeeLinksBox .sl-item code{display:block}";
     document.head.appendChild(css);
 
     function esc(t) { var d = document.createElement("div"); d.textContent = t == null ? "" : String(t); return d.innerHTML; }
@@ -96,10 +102,53 @@
 
     box.innerHTML =
         "<h3>🔗 Gerar link de afiliado da Shopee</h3>" +
-        "<div class='sl-obs'>Cole um ou vários links comuns da Shopee (produto ou loja), um por linha. Sai o seu link de afiliado, pronto pra copiar.</div>" +
+        "<div class='sl-obs'>Cole um ou vários links comuns da Shopee (produto ou loja), um por linha. Sai o seu link de afiliado, pronto pra copiar — e, se quiser, toque em 📌 pra colocar o produto na fila do site.</div>" +
         "<textarea data-links placeholder='https://shopee.com.br/...'></textarea>" +
         "<button class='sl-btn' data-gerar>🔗 Gerar links de afiliado</button>" +
         "<div class='sl-msg' data-msg></div><div data-lista></div>";
+
+    // ---------- "📌 Postar no site": o link convertido entra na fila ----------
+    var catalogo = null;
+    function lerCatalogo() {
+        if (catalogo) return Promise.resolve(catalogo);
+        return fetch("../ofertas.json?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.json(); })
+            .then(function (d) { catalogo = Array.isArray(d) ? d : []; return catalogo; }).catch(function () { return []; });
+    }
+    function normal(t) { return String(t || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, " ").trim(); }
+
+    function postarNoSite(r, botao) {
+        var volta = function (t) { botao.disabled = false; botao.textContent = t || "📌 Postar no site"; };
+        botao.disabled = true; botao.textContent = "Farejando...";
+        Promise.all([produto(r.link), lerCatalogo()]).then(function (x) {
+            var p = x[0], todas = x[1];
+            if (!p.produto || !p.preco || !p.imagemUrl) throw new Error("a Shopee não mandou nome, preço ou foto desse produto");
+            var nome = window.FarejadinhosNomes ? FarejadinhosNomes.encurtar(p.produto) : p.produto;
+            var repetida = todas.filter(function (o) {
+                return o && (o.link === r.afiliado || (normal(o.produto) && normal(o.produto) === normal(nome)));
+            })[0];
+            if (repetida) { volta("✅ Já está no site"); botao.disabled = true; return; }
+            var categoria = window.FarejadinhosCategorias ? (FarejadinhosCategorias.sugerir(p.produto) || "") : "";
+            if (!confirm("Colocar na fila do site?\n\n" + nome + "\n" + p.preco + (p.precoAntigo ? " (de " + p.precoAntigo + ")" : "") +
+                "\nCategoria: " + (categoria || "sem categoria") + (p.comissao ? "\nSua comissão: " + p.comissao : "") +
+                "\n\nEntra na fila como um item do lote (dá pra editar depois no painel de ofertas).")) { volta(); return; }
+            botao.textContent = "Enviando...";
+            var dados = new FormData();
+            dados.append("senha", senha());
+            dados.append("itens", JSON.stringify([{
+                produto: nome, preco: p.preco, precoAntigo: p.precoAntigo || "", cupom: "", categoria: categoria,
+                destaque: false, link: r.afiliado, imagemUrl: p.imagemUrl,
+                agendaInicio: "", agendaPorDia: POR_DIA
+            }]));
+            return fetch(URL_PAINEL + "/lote", { method: "POST", body: dados }).then(function (resp) {
+                return resp.text().then(function (t) {
+                    if (resp.status === 401) throw new Error("Senha do painel recusada.");
+                    if (!resp.ok) throw new Error(t || "erro " + resp.status);
+                    todas.push({ produto: nome, link: r.afiliado });
+                    volta("✅ Na fila"); botao.disabled = true;
+                });
+            });
+        }).catch(function (e) { alert("Não deu pra postar: " + e.message); volta(); });
+    }
 
     var q = function (s) { return box.querySelector(s); };
     q("[data-gerar]").onclick = function () {
@@ -114,10 +163,12 @@
             msg.textContent = "✅ " + ok.length + " de " + res.length + " link(s) gerado(s)." + (links.length > 30 ? " (Só os 30 primeiros — gere o resto depois.)" : "");
             lista.innerHTML = res.map(function (r, i) {
                 return r.afiliado
-                    ? "<div class='sl-item'><div class='sl-txt'><code>" + esc(r.afiliado) + "</code><small>" + esc(r.link) + "</small></div><button class='sl-copiar' data-i='" + i + "'>📋 Copiar</button></div>"
+                    ? "<div class='sl-item'><div class='sl-txt'><code>" + esc(r.afiliado) + "</code><small>" + esc(r.link) + "</small></div><button class='sl-copiar' data-i='" + i + "'>📋 Copiar</button>" +
+                      "<button class='sl-copiar sl-postar' data-p='" + i + "' title='Colocar este produto na fila do site'>📌 Postar no site</button></div>"
                     : "<div class='sl-item erro'><div class='sl-txt'>❌ " + esc(r.erro) + "<small>" + esc(r.link) + "</small></div></div>";
             }).join("") + (ok.length > 1 ? "<button class='sl-btn' data-todos style='background:var(--orange,#F7941D);color:var(--ink,#2B1B12)'>📋 Copiar todos</button>" : "");
-            lista.querySelectorAll(".sl-copiar").forEach(function (b) { b.onclick = function () { copiar(res[+b.dataset.i].afiliado, b); }; });
+            lista.querySelectorAll(".sl-copiar[data-i]").forEach(function (b) { b.onclick = function () { copiar(res[+b.dataset.i].afiliado, b); }; });
+            lista.querySelectorAll(".sl-postar").forEach(function (b) { b.onclick = function () { postarNoSite(res[+b.dataset.p], b); }; });
             var todos = lista.querySelector("[data-todos]");
             if (todos) todos.onclick = function () { copiar(ok.map(function (r) { return r.afiliado; }).join("\n"), todos); };
         }).catch(function (e) { msg.className = "sl-msg erro"; msg.textContent = "❌ " + e.message; })

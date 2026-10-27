@@ -210,9 +210,12 @@ button:disabled{opacity:.55;cursor:wait}
 <select id="agendaPorDia" onchange="atualizarAgenda()">
 <option value="0">O máximo que couber</option>
 <option value="10">10 por dia</option>
-<option value="15" selected>15 por dia</option>
+<option value="15">15 por dia</option>
 <option value="20">20 por dia</option>
-<option value="25">25 por dia</option>
+<option value="25" selected>25 por dia</option>
+<option value="30">30 por dia</option>
+<option value="40">40 por dia</option>
+<option value="50">50 por dia</option>
 </select>
 </div>
 </div>
@@ -1142,7 +1145,7 @@ function atualizarAgenda(){
             " produtos</b> duram uns <b>" + dias + " dia" + (dias > 1 ? "s" : "") + "</b>." +
             (a.quando === "hoje" ? "<br>Se o site estiver com menos de 15 no ar, parte entra na hora pra completar." : "");
     } else {
-        el.innerHTML = "Começa <b>" + quandoTxt + "</b> e solta o máximo que couber por dia (1 a cada 30 min, das 8h às 22h); o que sobrar passa pro dia seguinte.";
+        el.innerHTML = "Começa <b>" + quandoTxt + "</b> e solta o máximo que couber por dia (até 1 a cada 15 min, das 8h às 22h); o que sobrar passa pro dia seguinte.";
     }
 }
 document.addEventListener("DOMContentLoaded", atualizarAgenda);

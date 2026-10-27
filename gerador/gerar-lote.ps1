@@ -256,7 +256,7 @@ function SlugUnico([string]$Base) {
 # 2. O resto vai sendo liberado aos poucos, SÓ dentro da janela
 #    das 8h às 22h (horário de Brasília), em intervalos iguais que
 #    ocupam o que sobra da janela de hoje. Se não couber (intervalo
-#    mínimo de 30 min), continua no dia seguinte a partir das 8h.
+#    mínimo de 15 min), continua no dia seguinte a partir das 8h.
 #
 # "No ar" segue a mesma regra do site (assets/vitrine.js): liberada
 # há até 24h, ou até 72h se precisar completar o mínimo.
@@ -269,7 +269,7 @@ $HORAS_MAXIMA = 72
 $FUSO_BRASILIA = [TimeSpan]::FromHours(-3)   # o Brasil não tem mais horário de verão
 $JANELA_INICIO = 8
 $JANELA_FIM = 22
-$INTERVALO_MINIMO_MIN = 30
+$INTERVALO_MINIMO_MIN = 15
 
 function ParaDataUtc($Valor) {
     if ($null -eq $Valor -or [string]::IsNullOrWhiteSpace([string]$Valor)) { return $null }
