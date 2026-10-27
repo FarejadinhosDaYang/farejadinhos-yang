@@ -2299,24 +2299,6 @@
   },
   {
     "produto": "Celular Samsung Galaxy A37 5G 128GB",
-    "preco": "R$ 1.899,00",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Celulares",
-    "destaque": false,
-    "imagem": "34376bc0-2af2-48f2-94b4-c40bf9456bc6.jpg",
-    "link": "https://meli.la/1rCMkSR",
-    "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-a37-5g-128gb/",
-    "slug": "celular-samsung-galaxy-a37-5g-128gb",
-    "data": "2026-10-23T00:12:15Z",
-    "precoAVista": "R$ 1.899,00",
-    "precoAPrazo": "1999,00",
-    "liberacao": "2026-10-24T17:32:00Z",
-    "parcelas": 10,
-    "precoConferido": "2026-10-27T16:43:37Z"
-  },
-  {
-    "produto": "Celular Samsung Galaxy A37 5G 128GB",
     "preco": "R$ 1.799,00",
     "precoAntigo": "",
     "cupom": "",
@@ -2367,7 +2349,17 @@
     "precoAPrazo": "1799,00",
     "liberacao": "2026-10-26T20:28:37Z",
     "parcelas": 10,
-    "precoConferido": "2026-10-26T19:19:06Z"
+    "precoConferido": "2026-10-26T19:19:06Z",
+    "anuncios": [
+      {
+        "link": "https://meli.la/1rCMkSR",
+        "loja": "Mercado Livre",
+        "preco": "R$ 1.899,00",
+        "conferido": "2026-10-27T16:43:37Z",
+        "manual": "2026-10-27T17:43:21Z",
+        "confirmado": true
+      }
+    ]
   },
   {
     "produto": "Moedor Multifuncional de Café 110V com Design",
