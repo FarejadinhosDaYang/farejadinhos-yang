@@ -13,6 +13,7 @@ sincronizada com a voz do ElevenLabs, legenda palavra por palavra e o selo "💬
 | `narradora.html` | Yang de corpo inteiro (na caminha) narrando, fundo creme — bom pra vídeos de apresentação |
 | `reel.html` | Reel automático de oferta a partir de uma foto (gancho → produto → preço → chamada) |
 | `render.py` | Transforma qualquer modelo em MP4 1080×1920 30 fps (lip sync, fundo, fundo verde) |
+| `marcar-video.py` | Põe a oferta do Reel na categoria Vídeos (não sai mais do ar) |
 | `capa.html` / `capa.py` | Capa do Reel (1080×1920) com gancho grande, Yang inteira e selo publi |
 | `pausas.py` | Lê a voz do ElevenLabs + o texto e gera o `roteiro.json` com o tempo de cada frase |
 | `cabeca/` | As 6 expressões da cabeça (boca fechada/meio/aberta × olhos abertos/piscando) + imagem original |
@@ -60,7 +61,12 @@ Pra regerar as expressões: `opencv-python-headless` e `Pillow`.
    Gancho de até ~6 palavras em 2 linhas (`|` quebra linha, `*palavra*` fica amarela); escolher um quadro em que
    o produto aparece inteiro e reconhecível (não close de detalhe). Tudo fica no miolo que aparece na grade do perfil.
    No Instagram: **Editar capa → Adicionar da galeria** e escolher a imagem.
-8. Entregar o MP4 + a capa + a legenda do post.
+8. **Oferta vira permanente:** todo produto que ganha Reel vai pra categoria **Vídeos** (não expira em 3 dias,
+   já que o post fica no perfil pra sempre). Fazer isso assim que o reel ficar pronto:
+   ```bash
+   python3 _video-yang/marcar-video.py <slug ou pedaço do nome>   # depois commit + push
+   ```
+9. Entregar o MP4 + a capa + a legenda do post.
 
 Outras opções do `render.py`: `--verde` (Yang em fundo verde pra chroma key no CapCut), `--sons` (efeitos "boing"
 do `reel.html`), `--previa` (só 8 quadros PNG pra conferir). Sem `--audio`, a boca segue o texto (ritmo simulado).
