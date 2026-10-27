@@ -36,54 +36,51 @@ jobs:
             Write-Host "Pedido de conferencia de precos enviado pro workflow 'Conferir precos'."
           }
 
-      - name: Outros anuncios de uma oferta (comparador, botao do painel)
+      # Processa e salva numa tacada só. Se outro lote salvou no meio do
+      # caminho (vários pedidos do painel ao mesmo tempo), descarta, pega a
+      # versão mais nova do site e processa de novo — nada se perde.
+      - name: Processar o lote e salvar no GitHub
         shell: pwsh
         env:
           ARQUIVO_LOTE: ${{ inputs.arquivoLote }}
         run: |
-          $texto = Get-Content -LiteralPath $env:ARQUIVO_LOTE -Raw -Encoding UTF8
-          if ($texto -match '"acao"\s*:\s*"anuncios"') {
-            python gerador/anuncios.py $env:ARQUIVO_LOTE
-            if ($LASTEXITCODE -ne 0) { exit 1 }
+          $Arq = $env:ARQUIVO_LOTE
+          $Copia = Join-Path $env:RUNNER_TEMP "lote-original.json"
+          Copy-Item -LiteralPath $Arq -Destination $Copia -Force
+
+          function Processar {
+            if (-not (Test-Path -LiteralPath $Arq)) { Copy-Item -LiteralPath $Copia -Destination $Arq -Force }
+            $texto = Get-Content -LiteralPath $Arq -Raw -Encoding UTF8
+            if ($texto -match '"acao"\s*:\s*"anuncios"') {
+              python gerador/anuncios.py $Arq
+              if ($LASTEXITCODE -ne 0) { throw "anuncios.py falhou" }
+            }
+            if ($texto -match '"acao"\s*:\s*"cupons-site"') {
+              python gerador/cupons_site.py $Arq
+              if ($LASTEXITCODE -ne 0) { throw "cupons_site.py falhou" }
+            }
+            & .\gerador\gerar-lote.ps1 -ArquivoLote $Arq
           }
 
-      - name: Cupons do site (area "Cupons de hoje", painel/cupons.html)
-        shell: pwsh
-        env:
-          ARQUIVO_LOTE: ${{ inputs.arquivoLote }}
-        run: |
-          $texto = Get-Content -LiteralPath $env:ARQUIVO_LOTE -Raw -Encoding UTF8
-          if ($texto -match '"acao"\s*:\s*"cupons-site"') {
-            python gerador/cupons_site.py $env:ARQUIVO_LOTE
-            if ($LASTEXITCODE -ne 0) { exit 1 }
-          }
-
-      - name: Gerar ofertas do lote
-        shell: pwsh
-        env:
-          ARQUIVO_LOTE: ${{ inputs.arquivoLote }}
-        run: |
-          .\gerador\gerar-lote.ps1 -ArquivoLote $env:ARQUIVO_LOTE
-
-      - name: Salvar no GitHub
-        shell: pwsh
-        run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add assets ofertas entrada ofertas.json
-          if (Test-Path cupons.json) { git add cupons.json }
-
-          $temAlteracoes = git status --porcelain
-
-          if ([string]::IsNullOrWhiteSpace($temAlteracoes)) {
-            Write-Host "Nada para commitar."
-          } else {
-            git commit -m "Lote de ofertas importado"
-            for ($i = 0; $i -lt 4; $i++) {
-              git pull --rebase
-              git push
-              if ($LASTEXITCODE -eq 0) { break }
-              Start-Sleep -Seconds (5 * ($i + 1))
+          $Salvou = $false
+          for ($t = 1; $t -le 6; $t++) {
+            Write-Host "== tentativa $t =="
+            Processar
+            git add assets ofertas entrada ofertas.json
+            if (Test-Path cupons.json) { git add cupons.json }
+            if ([string]::IsNullOrWhiteSpace((git status --porcelain assets ofertas entrada ofertas.json cupons.json))) {
+              Write-Host "Nada para commitar."; $Salvou = $true; break
             }
+            git commit -q -m "Lote de ofertas importado"
+            git push -q origin HEAD:main
+            if ($LASTEXITCODE -eq 0) { $Salvou = $true; break }
+            Write-Host "Outro lote salvou antes; refazendo em cima da versao nova..."
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            git clean -fdq assets ofertas entrada
+            Start-Sleep -Seconds (Get-Random -Minimum 4 -Maximum 15)
           }
+          if (-not $Salvou) { throw "Nao consegui salvar o lote depois de 6 tentativas." }

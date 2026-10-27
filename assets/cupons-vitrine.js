@@ -38,8 +38,8 @@
         ".cup-valor{font:800 24px 'Baloo 2',Arial,sans-serif;line-height:1;color:#C21A24}" +
         ".cup-regra{font-size:12.5px;color:#5C4636;line-height:1.35}" +
         ".cup-obs{font-size:11.5px;color:#8A7563}" +
-        ".cup-codigo{display:flex;align-items:center;gap:6px;margin-top:auto}" +
-        ".cup-codigo code{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;background:#FFF6E9;border:1.5px dashed #F7941D;border-radius:9px;padding:7px 8px;font:800 14px ui-monospace,Menlo,monospace;letter-spacing:.5px;text-align:center}" +
+        ".cup-codigo{display:flex;flex-direction:column;align-items:stretch;gap:6px;margin-top:auto}" +
+        ".cup-codigo code{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;background:#FFF6E9;border:1.5px dashed #F7941D;border-radius:9px;padding:7px 8px;font:800 15px ui-monospace,Menlo,monospace;letter-spacing:.5px;text-align:center;flex:none}" +
         ".cup-copiar{border:0;border-radius:9px;padding:8px 10px;background:#E5232E;color:#fff;font:800 13px 'Work Sans',Arial,sans-serif;cursor:pointer;white-space:nowrap}" +
         ".cup-ir{display:block;text-align:center;font-size:12.5px;font-weight:700;color:#C21A24;text-decoration:none;padding:2px 0 0}" +
         ".cup-resgatar{margin-top:auto;display:block;text-align:center;border-radius:9px;padding:9px;font:800 13.5px 'Work Sans',Arial,sans-serif;text-decoration:none}" +
@@ -88,7 +88,7 @@
         if (c.tipo === "%") return c.valor + "% OFF";
         if (c.tipo === "R$") return dinheiro(c.valor) + " OFF";
         if (c.tipo === "frete") return "Frete grátis";
-        return "Cupom";
+        return c.codigo ? "Cupom de desconto" : "Cupons pra resgatar";
     }
     function regraTxt(c) {
         var p = [];
@@ -193,9 +193,49 @@
 
     window.FarejadinhosCuponsVitrine = { carregar: carregar, naOferta: naOferta, cartao: cartao, ligarCopiar: ligarCopiar };
 
+    // Botões/links "🏷️ Cupons de hoje" (menu de cima e menu lateral):
+    // a faixa só aparece depois que os cupons carregam e some quando a
+    // vitrine está filtrada — então o clique é tratado aqui.
+    function irParaCupons(e) {
+        if (e) e.preventDefault();
+        var fechar = document.querySelector(".yang-nav-close");
+        if (fechar && document.querySelector(".yang-nav-open")) fechar.click();
+        var secao = document.getElementById("cuponsSecao");
+        var filtrada = /[?&](q|categoria|loja)=/.test(location.search);
+        if (!secao || filtrada) { location.href = base + "index.html#cuponsSecao"; return; }
+        carregar().then(function (d) {
+            if (!(d.cupons || []).length) { avisoSemCupons(); return; }
+            setTimeout(function () {
+                if (secao.offsetParent === null) { location.href = base + "index.html#cuponsSecao"; return; }
+                secao.scrollIntoView({ behavior: "smooth", block: "start" });
+                if (history.replaceState) history.replaceState(null, "", location.pathname + location.search + "#cuponsSecao");
+            }, 60);
+        });
+    }
+    function avisoSemCupons() {
+        var a = document.createElement("div");
+        a.textContent = "🏷️ Ainda não tem cupons hoje — volte mais tarde!";
+        a.style.cssText = "position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#2B1B12;color:#fff;padding:12px 16px;border-radius:12px;font:600 14px 'Work Sans',Arial,sans-serif;z-index:9999;box-shadow:0 8px 24px rgba(0,0,0,.25);max-width:90vw;text-align:center";
+        document.body.appendChild(a);
+        setTimeout(function () { a.remove(); }, 3500);
+    }
+    document.addEventListener("click", function (e) {
+        var a = e.target.closest && e.target.closest('a[href$="#cuponsSecao"]');
+        if (a) irParaCupons(e);
+    });
+
     function iniciar() {
         var secao = document.getElementById("cuponsSecao");
-        if (secao) naHome(secao);
+        if (secao) {
+            naHome(secao);
+            // chegou de outra página pelo link "Cupons de hoje": rola quando a faixa aparecer
+            if (location.hash === "#cuponsSecao") {
+                carregar().then(function (d) {
+                    if (!(d.cupons || []).length) { avisoSemCupons(); return; }
+                    setTimeout(function () { secao.scrollIntoView({ behavior: "smooth", block: "start" }); }, 150);
+                });
+            }
+        }
     }
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", iniciar);
     else iniciar();
