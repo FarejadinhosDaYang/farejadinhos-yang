@@ -250,7 +250,7 @@ def legenda_post(frases, oferta):
     limpa = lambda t: re.sub(r"\s*…\s*$", "", t).strip()
     gancho = limpa(frases[0])
     if not re.search(r"[!?]$", gancho): gancho = gancho.rstrip(".") 
-    fim_re = re.compile(r"pre[cç]o|no site|coment|link", re.I)
+    fim_re = re.compile(r"pre[cç]o|no site|coment|link|na bio|farejadinhos", re.I)
     meio = [f for f in frases[1:] if not fim_re.search(f)]
     corpo = " ".join(meio)
     corpo = re.sub(r"…\s+(?=[a-záéíóúâêôãõç])", ", ", corpo)      # "…" seguido de minúscula vira vírgula
