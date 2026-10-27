@@ -1,96 +1,77 @@
 {
-  "quando": "2026-10-27T07:48:13Z",
+  "quando": "2026-10-27T14:27:44Z",
   "origem": "schedule",
-  "total": 154,
+  "total": 152,
   "iguais": 133,
   "mudaram": [
     {
-      "slug": "arvore-de-natal-de-240-cm-150-180-210-arvore-de-natal-de",
-      "produto": "Árvore de Natal de luxo, decoração para festa",
-      "de": "R$ 239,00",
-      "para": "R$ 128,90"
+      "slug": "generica-gancho-organizador-de-pia-porta-esponja",
+      "produto": "Genérica Gancho Organizador De Pia Porta Esponja",
+      "de": "R$ 19,78",
+      "para": "19,90"
     },
     {
-      "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
-      "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-      "de": "R$ 62,25",
-      "para": "56,58"
+      "slug": "kit-6-potes-640ml-vidro-hermetico-4-travas-marmita",
+      "produto": "Kit 6 Potes 640ml Vidro Hermético 4 Travas Marmita",
+      "de": "R$ 58,70",
+      "para": "59,70"
     },
     {
-      "slug": "estante-6-ou-5-prateleiras-cozinha-de-aco",
-      "produto": "Estante 6 OU 5 Prateleiras Cozinha de Aço",
-      "de": "R$ 69,00",
-      "para": "R$ 72,99"
+      "slug": "kit-com-2-sapateiras-5-nichos-para-organizacao",
+      "produto": "Kit Com 2 Sapateiras 5 Nichos Para Organização",
+      "de": "R$ 39,83",
+      "para": "R$ 39,75"
     },
     {
-      "slug": "kit-10-pote-vidro-hermetico-marmita-640ml",
-      "produto": "Kit 10 Pote Vidro Hermético Marmita 640ml",
-      "de": "R$ 99,90",
-      "para": "R$ 99,89"
+      "slug": "celular-samsung-galaxy-s26-fe-128gb-8gb-ram-tela",
+      "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
+      "de": "R$ 3.999,00",
+      "para": "3998,97"
     },
     {
-      "slug": "cesto-de-roupa-de-bambu-dobravel-organizador",
-      "produto": "Cesto De Roupa de Bambu Dobravel Organizador",
-      "de": "R$ 55,96",
-      "para": "R$ 53,99"
-    },
-    {
-      "slug": "pote-porta-temperos-condimentos-com-4-conchas",
-      "produto": "Pote Porta Temperos Condimentos com 4 conchas.",
-      "de": "R$ 15,66",
-      "para": "R$ 14,22"
-    },
-    {
-      "slug": "kit-2-prateleiras-reto-adesivo-premium-suporte",
-      "produto": "Kit 2 Prateleiras Reto Adesivo Premium Suporte",
-      "de": "R$ 46,95",
-      "para": "R$ 47,47"
+      "slug": "iphone-17-pro-256gb-laranja-cosmico",
+      "produto": "iPhone 17 Pro 256GB - Laranja-cósmico",
+      "de": "R$ 7.999,00",
+      "para": "8099,00"
     },
     {
       "slug": "celular-samsung-galaxy-s26-ultra-5g-256gb-12gb-ram",
       "produto": "Celular Samsung Galaxy S26 Ultra 5G 256GB 12GB RAM",
-      "de": "R$ 7.274,00",
-      "para": "7124,05"
+      "de": "R$ 7.124,05",
+      "para": "7274,00"
     },
     {
-      "slug": "samsung-galaxy-s25-43-5g-256gb-12gb",
-      "produto": "Samsung Galaxy S25&#43; 5g, 256gb, 12gb",
-      "de": "R$ 3.898,00",
-      "para": "4299,00"
+      "slug": "celular-samsung-galaxy-a57-256gb-cinza",
+      "produto": "Celular Samsung Galaxy A57 256gb cinza",
+      "de": "R$ 1.899,00",
+      "para": "1889,00"
+    },
+    {
+      "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
+      "produto": "Celular Samsung Galaxy A57 256gb cinza",
+      "de": "R$ 1.899,00",
+      "para": "1889,00"
     },
     {
       "slug": "celular-samsung-galaxy-a37-5g-128gb",
       "produto": "Celular Samsung Galaxy A37 5G 128GB",
-      "de": "R$ 1.899,00",
-      "para": "1393,00"
+      "de": "R$ 1.393,00",
+      "para": "1331,00"
     },
     {
       "slug": "celular-samsung-galaxy-a37-5g-128gb-3",
       "produto": "Celular Samsung Galaxy A37 5g 128gb",
-      "de": "R$ 1.799,00",
-      "para": "1699,00"
+      "de": "R$ 1.699,00",
+      "para": "1799,00"
     },
     {
-      "slug": "rodinho-de-pia-mini-mop-portatil-com-esponja",
-      "produto": "Rodinho de Pia Mini Mop Portátil com Esponja",
-      "de": "R$ 19,99",
-      "para": "R$ 19,79"
-    },
-    {
-      "slug": "kit-maquina-para-tosar-pet-tesoura-pente",
-      "produto": "Kit Máquina Para Tosar Pet + Tesoura + Pente",
-      "de": "R$ 34,99",
-      "para": "R$ 28,13"
+      "slug": "garrafa-coqueteleira-com-reparticao-e-porta",
+      "produto": "Garrafa Coqueteleira com Repartição e Porta",
+      "de": "R$ 19,90",
+      "para": "R$ 23,90"
     }
   ],
-  "semPreco": [
-    {
-      "slug": "escorredor-de-loucas-rack-aco-carbono-organizador",
-      "produto": "Escorredor de Louças Rack Aço Carbono Organizador",
-      "link": "https://s.shopee.com.br/8fTDF2IRuL",
-      "motivo": "API Shopee: a API não achou esse produto (pode ter saído do ar ou do programa de afiliados)"
-    }
-  ],
+  "semPreco": [],
   "erros": [
     {
       "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-8gb-ram",
@@ -109,11 +90,19 @@
       "referencia": "R$ 59,98"
     },
     {
+      "slug": "escorredor-de-loucas-rack-aco-carbono-organizador",
+      "produto": "Escorredor de Louças Rack Aço Carbono Organizador",
+      "link": "https://s.shopee.com.br/8fTDF2IRuL",
+      "atual": "R$ 92,00",
+      "lido": "R$ 236,00",
+      "referencia": "R$ 92,00"
+    },
+    {
       "slug": "iphone-18-pro-256gb-preto-somente-esim",
       "produto": "iPhone 18 Pro 256GB Preto (somente eSIM)",
       "link": "https://meli.la/18pktG2",
       "atual": "R$ 9.499,00",
-      "lido": "5287,00",
+      "lido": "8078,00",
       "referencia": "preco posto a mao em 18/10 23:09"
     },
     {
@@ -129,7 +118,7 @@
       "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
       "link": "https://meli.la/2LUJ4yy",
       "atual": "R$ 3.898,00",
-      "lido": "5399,00",
+      "lido": "5444,00",
       "referencia": "preco posto a mao em 22/10 17:24"
     },
     {
@@ -151,11 +140,11 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-27T07:48:15Z",
+      "quando": "2026-10-27T14:27:45Z",
       "teste": false,
-      "links": 120,
+      "links": 119,
       "ok": 119,
-      "erros": 1
+      "erros": 0
     }
   },
   "anuncios": {
