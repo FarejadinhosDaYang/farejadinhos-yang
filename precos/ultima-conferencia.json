@@ -1,50 +1,104 @@
 {
-  "quando": "2026-10-27T16:40:47Z",
-  "origem": "workflow_dispatch",
-  "total": 152,
-  "iguais": 137,
+  "quando": "2026-10-27T20:03:58Z",
+  "origem": "schedule",
+  "total": 148,
+  "iguais": 124,
   "mudaram": [
     {
-      "slug": "celular-samsung-galaxy-s26-fe-128gb-8gb-ram-tela",
-      "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
-      "de": "R$ 3.998,97",
-      "para": "3999,00"
+      "slug": "generica-gancho-organizador-de-pia-porta-esponja",
+      "produto": "Genérica Gancho Organizador De Pia Porta Esponja",
+      "de": "R$ 19,90",
+      "para": "19,78"
     },
     {
-      "slug": "iphone-17-pro-256gb-laranja-cosmico",
-      "produto": "iPhone 17 Pro 256GB - Laranja-cósmico",
-      "de": "R$ 8.099,00",
-      "para": "8540,00"
+      "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
+      "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
+      "de": "R$ 56,58",
+      "para": "53,97"
+    },
+    {
+      "slug": "marmita-eletrica-preta-bivolt-portatil-domestica",
+      "produto": "Marmita Elétrica Preta Bivolt Portátil Doméstica",
+      "de": "R$ 43,49",
+      "para": "49,99"
+    },
+    {
+      "slug": "kit-10-pote-vidro-hermetico-marmita-640ml",
+      "produto": "Kit 10 Pote Vidro Hermético Marmita 640ml",
+      "de": "R$ 99,89",
+      "para": "R$ 99,90"
+    },
+    {
+      "slug": "cesto-de-roupa-de-bambu-dobravel-organizador",
+      "produto": "Cesto De Roupa de Bambu Dobravel Organizador",
+      "de": "R$ 53,99",
+      "para": "R$ 55,96"
+    },
+    {
+      "slug": "porta-maquiagem-organizador-de-cosmeticos",
+      "produto": "Porta Maquiagem Organizador de Cosméticos",
+      "de": "R$ 46,70",
+      "para": "R$ 47,90"
+    },
+    {
+      "slug": "organizador-algodao-e-cotonetes-acrilico-kit",
+      "produto": "Organizador Algodão E Cotonetes Acrílico Kit",
+      "de": "R$ 13,19",
+      "para": "R$ 13,20"
     },
     {
       "slug": "celular-samsung-galaxy-s26-ultra-5g-256gb-12gb-ram",
       "produto": "Celular Samsung Galaxy S26 Ultra 5G 256GB 12GB RAM",
-      "de": "R$ 7.274,00",
-      "para": "7124,05"
+      "de": "R$ 7.124,05",
+      "para": "7274,00"
+    },
+    {
+      "slug": "celular-samsung-galaxy-s25-fe-5g-128gb",
+      "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
+      "de": "R$ 2.998,00",
+      "para": "2799,00"
     },
     {
       "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-2",
       "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
-      "de": "R$ 3.165,00",
-      "para": "2998,00"
+      "de": "R$ 2.998,00",
+      "para": "3165,00"
     },
     {
       "slug": "celular-samsung-galaxy-a57-256gb-cinza",
       "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 1.889,00",
-      "para": "1980,00"
+      "de": "R$ 1.980,00",
+      "para": "1889,00"
     },
     {
       "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
       "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 1.889,00",
-      "para": "1899,00"
+      "de": "R$ 1.899,00",
+      "para": "2550,00"
     },
     {
-      "slug": "celular-samsung-galaxy-a37-5g-128gb",
+      "slug": "celular-samsung-galaxy-a37-5g-128gb-2",
       "produto": "Celular Samsung Galaxy A37 5G 128GB",
-      "de": "R$ 1.331,00",
-      "para": "1899,00"
+      "de": "R$ 1.799,00",
+      "para": "1619,00"
+    },
+    {
+      "slug": "celular-samsung-galaxy-a37-5g-128gb-4",
+      "produto": "Celular Samsung Galaxy A37 5G 128GB",
+      "de": "R$ 1.799,00",
+      "para": "1709,00"
+    },
+    {
+      "slug": "luminaria-de-mesa-candeiro-dumbbell-touch",
+      "produto": "Luminária de Mesa Candeiro Dumbbell Touch",
+      "de": "R$ 34,99",
+      "para": "R$ 37,90"
+    },
+    {
+      "slug": "rodinho-de-pia-mini-mop-portatil-com-esponja",
+      "produto": "Rodinho de Pia Mini Mop Portátil com Esponja",
+      "de": "R$ 19,79",
+      "para": "R$ 19,99"
     }
   ],
   "semPreco": [],
@@ -98,7 +152,7 @@
       "referencia": "preco posto a mao em 22/10 17:24"
     },
     {
-      "slug": "celular-samsung-galaxy-s25-43-5g-512gb",
+      "slug": "celular-samsung-galaxy-s25-43-5g-512gb-2",
       "produto": "Celular Samsung Galaxy S25&#43; 5g, 512gb",
       "link": "https://meli.la/28FNDG2",
       "atual": "R$ 3.898,00",
@@ -106,20 +160,20 @@
       "referencia": "R$ 2.518,00"
     },
     {
-      "slug": "celular-samsung-galaxy-s25-43-5g-512gb-2",
-      "produto": "Celular Samsung Galaxy S25&#43; 5g, 512gb",
+      "slug": "celular-samsung-galaxy-s25-43-5g-512gb",
+      "produto": "Celular Samsung Galaxy S25+; 5g, 512gb",
       "link": "https://meli.la/28FNDG2",
       "atual": "R$ 3.898,00",
       "lido": "5699,00",
-      "referencia": "R$ 2.518,00"
+      "referencia": "preco posto a mao em 27/10 13:50"
     }
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-27T16:40:48Z",
+      "quando": "2026-10-27T20:04:02Z",
       "teste": false,
-      "links": 119,
-      "ok": 119,
+      "links": 116,
+      "ok": 116,
       "erros": 0
     }
   },
