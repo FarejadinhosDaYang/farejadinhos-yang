@@ -2301,24 +2301,6 @@
     "cupom": "",
     "categoria": "Celulares",
     "destaque": false,
-    "imagem": "8c7e8797-8ac3-4f8f-aa78-a6e000e80ad6.jpg",
-    "link": "https://meli.la/28FNDG2",
-    "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s25-43-5g-512gb/",
-    "slug": "celular-samsung-galaxy-s25-43-5g-512gb",
-    "data": "2026-10-23T00:12:14Z",
-    "precoAVista": "R$ 3.898,00",
-    "precoAPrazo": "2705,10",
-    "liberacao": "2026-10-23T11:56:00Z",
-    "parcelas": 10,
-    "precoConferido": "2026-10-27T02:05:53Z"
-  },
-  {
-    "produto": "Celular Samsung Galaxy S25&#43; 5g, 512gb",
-    "preco": "R$ 3.898,00",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Celulares",
-    "destaque": false,
     "imagem": "da09f6ca-27c4-4c50-a05f-9d8fa8416f23.jpg",
     "link": "https://meli.la/28FNDG2",
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s25-43-5g-512gb-2/",
@@ -3024,5 +3006,23 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-27T18:34:33Z"
+  },
+  {
+    "produto": "Celular Samsung Galaxy S25+; 5g, 512gb",
+    "preco": "R$ 3.898,00",
+    "precoAntigo": "",
+    "cupom": "",
+    "categoria": "Celulares",
+    "destaque": false,
+    "imagem": "8c7e8797-8ac3-4f8f-aa78-a6e000e80ad6.jpg",
+    "link": "https://meli.la/28FNDG2",
+    "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s25-43-5g-512gb/",
+    "slug": "celular-samsung-galaxy-s25-43-5g-512gb",
+    "data": "2026-10-23T00:12:14Z",
+    "precoAVista": "3898,00",
+    "precoAPrazo": "2705,10",
+    "liberacao": "2026-10-23T11:56:00Z",
+    "precoManual": "2026-10-27T16:50:02Z",
+    "parcelas": 10
   }
 ]
