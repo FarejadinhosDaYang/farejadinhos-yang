@@ -21,18 +21,22 @@ concurrency:
 jobs:
   stories:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 40
 
     steps:
       - name: Baixar repositorio
         uses: actions/checkout@v4
 
       - name: Instalar ferramentas (video, emoji, navegador)
+        timeout-minutes: 12
         run: |
-          sudo apt-get update -q
-          sudo apt-get install -y -q ffmpeg fonts-noto-color-emoji
+          # o espelho do apt às vezes trava: tempo limite curto + novas tentativas
+          APT="-o Acquire::Retries=3 -o Acquire::http::Timeout=25 -o Acquire::https::Timeout=25"
+          sudo apt-get $APT update -q || true
+          sudo apt-get $APT install -y -q --no-install-recommends ffmpeg fonts-noto-color-emoji
           python3 -m pip install --quiet playwright numpy pillow
-          python3 -m playwright install --with-deps chromium
+          # o runner já tem as bibliotecas do Chrome; só baixa o navegador (sem --with-deps, que roda o apt de novo)
+          python3 -m playwright install chromium
 
       - name: Gerar os 3 videos
         run: |
