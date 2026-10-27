@@ -7,7 +7,7 @@ pedido.json:
   {
     "id": "20261027-1350-ab12",
     "video": "caminho/fonte.mp4",        "voz": "caminho/voz.mp3",
-    "texto": "Sabe aquela sujeira… Esse mini aspirador resolve! … comenta \"quero\" que eu te mando o link!",
+    "texto": "Sabe aquela sujeira… Esse mini aspirador resolve! … comenta \"quero\" que eu te mando o link… ou entra no farejadinhos da Yang ponto com ponto bê érre, tá na bio!",
     "slug": "mini-aspirador-...",        (opcional — a oferta vai pra categoria Vídeos)
     "titulo": "A sujeira que|*ninguém alcança*",  (capa; opcional — sem ele usa a 1ª frase)
     "faixa": "🐾 ACHADINHO DA LIMPEZA",  "balao": "Olha isso! 😱",   (capa; opcionais)
@@ -22,7 +22,9 @@ Como decide sozinho:
   de forma que a velocidade da fala fique parecida em todas e os cortes caiam nas pausas mais longas.
 - Fundo: se o vídeo for curto, passa em câmera lenta (e repete se precisar); se for comprido, mostra um
   pedaço do meio de CADA cena (todas aparecem) e acelera de leve. Sem o som original.
-- Selo "💬 COMENTA QUERO" entra junto da frase que tem "comenta"; capa com a Yang inteira e selo publi.
+- Selo "💬 COMENTA QUERO" (com "ou entra no farejadinhosdayang.com.br" embaixo) entra junto da frase que tem "comenta";
+  capa com a Yang inteira e selo publi.
+- O site falado por extenso ("farejadinhos da Yang ponto com ponto bê érre") vira "farejadinhosdayang.com.br" na legenda.
 """
 import json, math, os, re, subprocess, sys
 import numpy as np
@@ -46,6 +48,13 @@ def dividir_frases(texto):
         p = re.sub(r'["“”]([^"“”]+)["“”]', lambda m: m.group(1).upper(), p)   # "quero" → QUERO
         frases.append(p.replace('"', "").replace("“", "").replace("”", ""))
     return frases
+
+SITE = "farejadinhosdayang.com.br"
+SITE_FALADO = re.compile(r"farejadinhos\s*da\s*yang\s*(?:ponto|\.)\s*com\s*(?:ponto|\.)\s*(?:b[eê]\s*[eé]rre|br)\b", re.I)
+
+def site_escrito(t):
+    """Na legenda o site aparece escrito do jeito certo, mesmo falado por extenso no ElevenLabs."""
+    return SITE_FALADO.sub(SITE, t)
 
 def silabas(t):
     t = re.sub(r"[^a-záéíóúâêôãõàüç ]", " ", t.lower())
@@ -200,8 +209,8 @@ def legenda_post(frases, oferta):
     loja = "#achadinhosmercadolivre" if re.search(r"meli\.la|mercadolivre", oferta.get("link") or "") else "#achadinhosshopee"
     linhas = [f"{gancho} {EMOJI_CAT.get(cat, '🐾')} (publi)", ""]
     if corpo: linhas += [corpo, ""]
-    linhas += (["💬 Comenta QUERO que a Yang te manda o link", "🐾 ou pega no link da bio"] if tem_comenta
-               else ["🐾 O link tá na bio!"])
+    linhas += (["💬 Comenta QUERO que a Yang te manda o link", f"🌐 ou entra no {SITE} (link na bio)"] if tem_comenta
+               else [f"🌐 Entra no {SITE} (link na bio)!"])
     linhas += ["", "📢 publi · este post tem link de afiliado: você paga o mesmo preço e a Yang ganha uma pequena comissão.", "",
                f"{loja} {TAGS_CAT.get(cat, '#utilidades')} #achadinhos #farejadinhosdayang"]
     return "\n".join(linhas)
@@ -226,6 +235,8 @@ def main():
         sps = silabas(f["texto"]) / max(f["ate"] - f["de"], .1)
         log(f"  {f['de']:6.2f}–{f['ate']:6.2f}  {sps:4.1f} síl/s  {f['texto']}" + ("   ⚠️ conferir" if not 2.5 <= sps <= 9 else ""))
 
+    for f in falas: f["texto"] = site_escrito(f["texto"])
+
     dur = round(dur_voz + 0.6, 2)
     total = duracao(video)
     de = max(0.0, float(pedido.get("de") or 0))
@@ -236,7 +247,7 @@ def main():
 
     rot = {"lado": "esquerda", "duracao": dur, "falas": falas}
     chamada = next((f for f in falas if re.search(r"coment", f["texto"], re.I)), None)
-    if chamada: rot["selo"] = {"de": chamada["de"], "texto": "💬 COMENTA QUERO"}
+    if chamada: rot["selo"] = {"de": chamada["de"], "texto": "💬 COMENTA QUERO", "sub": f"ou entra no {SITE}"}
     rot_path = os.path.join(pasta, f"{pid}-roteiro.json")
     json.dump(rot, open(rot_path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 

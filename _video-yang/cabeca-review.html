@@ -27,13 +27,16 @@
   #selo span { display: inline-block; background: #E5232E; color: #fff; font-weight: 800; font-size: 92px; line-height: 1;
                padding: 30px 60px 18px; border-radius: 999px; box-shadow: 0 14px 0 #C21A24, 0 20px 40px rgba(0,0,0,.35);
                border: 6px solid #fff; }
+  #seloSub { margin-top: 34px; font: 800 50px "Baloo 2","Work Sans",Arial,sans-serif; color: #fff; line-height: 1.1;
+             -webkit-text-stroke: 10px #1a0f0a; paint-order: stroke fill; text-shadow: 0 6px 12px rgba(0,0,0,.35); }
+  #seloSub:empty { display: none; }
 .publi{position:absolute;z-index:50;top:150px;left:40px;padding:10px 22px 8px;border-radius:999px;background:rgba(43,27,18,.55);color:#fff;font:700 30px "Work Sans","Work",Arial,sans-serif;letter-spacing:.3px;line-height:1}
 </style>
 </head>
 <body>
   <div class="publi">publi · link de afiliado</div>
   <div class="abs" id="legenda"></div>
-  <div class="abs" id="selo"><span id="seloTxt"></span></div>
+  <div class="abs" id="selo"><span id="seloTxt"></span><div id="seloSub"></div></div>
   <div class="abs" id="yang">
     <img data-k="fechada"          src="cabeca/fechada.png">
     <img data-k="meio"             src="cabeca/meio.png">
@@ -109,7 +112,7 @@ function renderFrame(f) {
   const atual = ROTEIRO.falas.find(x => t >= x.de - 0.15 && t < x.ate + 0.35);
   const leg = $("legenda");
   if (!atual) leg.innerHTML = "";
-  else leg.innerHTML = atual.palavras.map(p => `<span class="w ${t < p.de ? "off" : (t < p.ate ? "on" : "")}">${p.w}</span>`).join(" ");
+  else leg.innerHTML = atual.palavras.map(p => `<span class="w ${t < p.de ? "off" : (t < p.ate ? "on" : "")}"${p.w.length > 15 ? ` style="font-size:${(15 / p.w.length).toFixed(2)}em"` : ""}>${p.w}</span>`).join(" ");
 }
 const _rf = renderFrame;
 renderFrame = function (f) {
@@ -119,6 +122,7 @@ renderFrame = function (f) {
   const sp = l <= 0 ? 0 : 1 - Math.exp(-7 * l) * Math.cos(13 * l);
   const pulso = l > 0.6 ? 1 + Math.sin((l - 0.6) * 6) * 0.04 : 1;
   $("seloTxt").textContent = sl.texto;
+  $("seloSub").textContent = sl.sub || "";
   $("selo").style.opacity = l > 0 ? 1 : 0;
   $("selo").style.transform = `scale(${sp * pulso}) rotate(-3deg)`;
 };
