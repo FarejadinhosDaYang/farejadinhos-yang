@@ -2216,24 +2216,6 @@
     "precoConferido": "2026-10-27T20:06:40Z"
   },
   {
-    "produto": "Celular Samsung Galaxy A37 5g 128gb",
-    "preco": "R$ 1.799,00",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Celulares",
-    "destaque": false,
-    "imagem": "af7b1fc5-53d3-4249-8def-b97677e0ad0b.jpg",
-    "link": "https://meli.la/17xzqfE",
-    "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-a37-5g-128gb-3/",
-    "slug": "celular-samsung-galaxy-a37-5g-128gb-3",
-    "data": "2026-10-23T00:12:15Z",
-    "precoAVista": "R$ 1.799,00",
-    "precoAPrazo": "2110,00",
-    "liberacao": "2026-10-26T17:18:40Z",
-    "parcelas": 10,
-    "precoConferido": "2026-10-27T14:30:25Z"
-  },
-  {
     "produto": "Celular Samsung Galaxy A37 5G 128GB",
     "preco": "R$ 1.709,00",
     "precoAntigo": "",
@@ -2264,6 +2246,14 @@
         "preco": "R$ 1.619,00",
         "conferido": "2026-10-27T20:06:40Z",
         "manual": "2026-10-27T21:43:52Z",
+        "confirmado": true
+      },
+      {
+        "link": "https://meli.la/17xzqfE",
+        "loja": "Mercado Livre",
+        "preco": "R$ 1.799,00",
+        "conferido": "2026-10-27T14:30:25Z",
+        "manual": "2026-10-27T21:44:31Z",
         "confirmado": true
       }
     ],
