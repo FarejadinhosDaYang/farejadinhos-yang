@@ -62,7 +62,7 @@ $Itens = @($TextoLote | ConvertFrom-Json)
 
 # Modo "stories": o painel só pediu pra gerar os stories do dia (quem
 # dispara é o próprio workflow gerar-lote.yml); aqui não tem nada a fazer.
-if (($Itens.Count -gt 0) -and $Itens[0].PSObject.Properties["acao"] -and (@("stories", "conferir-precos", "anuncios") -contains [string]$Itens[0].acao)) {
+if (($Itens.Count -gt 0) -and $Itens[0].PSObject.Properties["acao"] -and (@("stories", "conferir-precos", "anuncios", "cupons-site") -contains [string]$Itens[0].acao)) {
     Write-Host "Pedido de $([string]$Itens[0].acao) (tratado pelo workflow)."
     Remove-Item -LiteralPath $CaminhoAbs -Force -ErrorAction SilentlyContinue
     exit 0

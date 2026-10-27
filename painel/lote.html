@@ -161,6 +161,7 @@ button:disabled{opacity:.55;cursor:wait}
 <div class="acoes">
 <button type="button" class="btnSecundario" onclick="lerCuponsColados()">🏷️ Ler cupons</button>
 <button type="button" class="btnSecundario" onclick="limparCupons()">🗑️ Limpar</button>
+<a href="cupons.html" class="btnSecundario" style="flex:1 1 160px;text-align:center;text-decoration:none;padding:12px;border-radius:10px">📣 Publicar cupons no site</a>
 </div>
 <div class="status" id="statusCupons"></div>
 <div class="listaCupons" id="listaCupons"></div>
@@ -670,6 +671,17 @@ function carregarCupons(){
         }
     }catch(e){}
     mostrarCupons();
+    // sem cupons colados aqui hoje? usa os que estão publicados no site (painel/cupons.html)
+    if(!cuponsDia.length){
+        fetch("../cupons.json?t=" + Date.now(), { cache: "no-store" }).then(r => r.ok ? r.json() : {}).then(d => {
+            const agora = Date.now();
+            const doSite = (d.cupons || []).filter(c => c.codigo && (!c.ate || Date.parse(c.ate) > agora) && (c.tipo === "%" || c.tipo === "R$"));
+            if(!doSite.length || cuponsDia.length) return;
+            cuponsDia = doSite.map(c => ({ codigo: c.codigo, loja: c.loja, tipo: c.tipo, valor: c.valor, minimo: c.minimo, teto: c.teto, link: c.link || "", produto: "" }));
+            document.getElementById("statusCupons").textContent = "Usando os " + cuponsDia.length + " cupom(ns) publicados no site hoje.";
+            mostrarCupons();
+        }).catch(() => {});
+    }
 }
 
 function lerCuponsColados(){

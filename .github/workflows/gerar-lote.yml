@@ -47,6 +47,17 @@ jobs:
             if ($LASTEXITCODE -ne 0) { exit 1 }
           }
 
+      - name: Cupons do site (area "Cupons de hoje", painel/cupons.html)
+        shell: pwsh
+        env:
+          ARQUIVO_LOTE: ${{ inputs.arquivoLote }}
+        run: |
+          $texto = Get-Content -LiteralPath $env:ARQUIVO_LOTE -Raw -Encoding UTF8
+          if ($texto -match '"acao"\s*:\s*"cupons-site"') {
+            python gerador/cupons_site.py $env:ARQUIVO_LOTE
+            if ($LASTEXITCODE -ne 0) { exit 1 }
+          }
+
       - name: Gerar ofertas do lote
         shell: pwsh
         env:
@@ -61,6 +72,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add assets ofertas entrada ofertas.json
+          if (Test-Path cupons.json) { git add cupons.json }
 
           $temAlteracoes = git status --porcelain
 

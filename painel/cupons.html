@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cupons do site | Painel Farejadinhos</title>
+<link rel="icon" href="../assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+    --red:#E5232E; --red-dark:#C21A24; --orange:#F7941D; --cream:#FDF3E3; --cream-2:#FFFAF1;
+    --ink:#2B1B12; --muted:#8A7563; --line:#F0DFC4; --verde:#1F7A44;
+}
+*{box-sizing:border-box}
+body{margin:0;padding:20px 16px 60px;background:var(--cream);font-family:'Work Sans',Arial,sans-serif;color:var(--ink)}
+.container{max-width:900px;margin:auto}
+.voltar{display:inline-block;margin-bottom:16px;color:var(--red-dark);font-weight:700;text-decoration:none;font-size:14px}
+h1{font-family:'Baloo 2',sans-serif;color:var(--red-dark);font-size:26px;margin:0 0 4px}
+h2{font-family:'Baloo 2',sans-serif;font-size:18px;margin:0 0 6px}
+.sub{color:var(--muted);font-size:14px;line-height:1.5;margin:0 0 18px}
+.caixa{background:var(--cream-2);border:1.5px solid var(--line);border-radius:16px;padding:14px 16px;margin-bottom:16px;box-shadow:0 6px 18px rgba(43,27,18,.06)}
+label{display:block;font-weight:700;font-size:12.5px;margin:8px 0 3px}
+input,select,textarea{width:100%;padding:9px 10px;border:1.5px solid var(--line);border-radius:9px;font:500 14px 'Work Sans',sans-serif;background:#fff;color:var(--ink)}
+textarea{min-height:130px;resize:vertical}
+.btn{border:0;border-radius:10px;padding:11px 14px;font:800 15px 'Baloo 2','Work Sans',sans-serif;cursor:pointer;background:var(--orange);color:var(--ink)}
+.btn.principal{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;width:100%;font-size:17px;padding:14px}
+.btn:disabled{opacity:.6;cursor:wait}
+.acoes{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.acoes .btn{flex:1 1 150px}
+.obs{font-size:12px;color:var(--muted);line-height:1.45}
+.status{margin-top:8px;font-weight:600;font-size:13.5px}
+.status.erro{color:var(--red-dark)}.status.ok{color:var(--verde)}
+.paginas{display:grid;gap:8px}
+.pagina{display:grid;grid-template-columns:120px 1fr auto;gap:8px;align-items:center}
+.pagina b{font-size:13px}
+.pagina .btn{padding:8px 10px;font-size:13px}
+@media(max-width:560px){.pagina{grid-template-columns:1fr auto}.pagina b{grid-column:1/-1}}
+.cupom{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:10px 12px;margin-top:10px;display:grid;grid-template-columns:236px 1fr;gap:12px}
+@media(max-width:640px){.cupom{grid-template-columns:1fr}}
+.cupom .previa .cup-card{flex-basis:auto;width:100%}
+.campos{display:grid;grid-template-columns:repeat(4,1fr);gap:0 8px}
+.campos .l2{grid-column:span 2}.campos .l4{grid-column:1/-1}
+@media(max-width:640px){.campos{grid-template-columns:repeat(2,1fr)}.campos .l4,.campos .l2{grid-column:1/-1}}
+.campos label{margin-top:6px}
+.campos input,.campos select{padding:7px 8px;font-size:13.5px}
+.tirar{margin-top:8px;background:none;border:1.5px solid var(--line);border-radius:8px;padding:6px 10px;color:var(--red-dark);font-weight:700;cursor:pointer}
+.vazio{color:var(--muted);font-size:14px;padding:10px 0}
+.contagem{font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="container">
+<a class="voltar" href="index.html">← Voltar pro painel</a>
+<h1>🏷️ Cupons do site</h1>
+<p class="sub">Cole as mensagens de cupom do jeito que vierem (WhatsApp, Telegram, site da loja). O painel arruma tudo em cartões, você confere e publica. Eles aparecem na faixa <b>"Cupons de hoje"</b> da página inicial e dentro das ofertas da mesma loja. Cada cupom some sozinho depois de <b>24h</b>.</p>
+
+<div class="caixa">
+<label for="senha" style="margin-top:0">Senha do painel</label>
+<input type="password" id="senha" placeholder="Senha do painel">
+</div>
+
+<div class="caixa">
+<h2>1. Colar cupons</h2>
+<textarea id="texto" placeholder="Ex.:&#10;🔥 15% OFF limitado a R$ 60 em compras acima de R$ 99&#10;🎟️ CUPOM: YANG15&#10;https://s.shopee.com.br/..."></textarea>
+<div class="acoes">
+<button class="btn" type="button" id="btnLer">🏷️ Ler cupons</button>
+<button class="btn" type="button" id="btnManual">➕ Cupom à mão</button>
+<button class="btn" type="button" id="btnResgate">🎟️ Cupom de resgatar (sem código)</button>
+</div>
+<div class="status" id="statusLer"></div>
+<p class="obs">O painel procura "CUPOM: CÓDIGO" ou "CÓDIGO: …" e pega a regra da linha de cima (% ou R$ OFF, mínimo, limite). Se algo vier errado, é só arrumar no cartão.</p>
+</div>
+
+<div class="caixa">
+<h2>2. Conferir e arrumar <span class="contagem" id="contagem"></span></h2>
+<div id="lista"><div class="vazio">Nenhum cupom ainda.</div></div>
+</div>
+
+<div class="caixa">
+<h2>3. Páginas de cupons das lojas</h2>
+<p class="obs" style="margin-top:0">O botão "Ir pra loja"/"Resgatar" dos cartões leva pra cá quando o cupom não tem link próprio. Na Shopee, use o seu link de afiliado (rende comissão).</p>
+<div class="paginas">
+<div class="pagina"><b>Shopee</b><input id="pgShopee" placeholder="https://s.shopee.com.br/..."><button class="btn" type="button" id="btnAfiliar" title="Trocar link comum da Shopee pelo seu de afiliado">🔗 Afiliado</button></div>
+<div class="pagina"><b>Mercado Livre</b><input id="pgML" placeholder="https://www.mercadolivre.com.br/cupons"><span></span></div>
+<div class="pagina"><b>Amazon</b><input id="pgAmazon" placeholder="https://www.amazon.com.br/..."><span></span></div>
+</div>
+</div>
+
+<button class="btn principal" type="button" id="btnPublicar">🚀 Publicar cupons no site</button>
+<div class="status" id="statusPublicar"></div>
+<p class="obs">Publicar troca a lista do site por esta (os cupons que já estavam no ar aparecem aqui quando você abre a página). Leva 1–2 minutos pra aparecer.</p>
+</div>
+
+<script src="../assets/cupons.js"></script>
+<script src="../assets/cupons-vitrine.js" data-base="../"></script>
+<script src="../assets/shopee-painel.js"></script>
+<script>
+const WORKER_URL = "https://holy-pine-e7fc.bernard-shimizu.workers.dev";
+const PADRAO_PAGINAS = {
+  "Shopee": "https://s.shopee.com.br/4VdOXKYQfW",
+  "Mercado Livre": "https://www.mercadolivre.com.br/cupons?source_page=mperfil#nav-header",
+  "Amazon": ""
+};
+const LOJAS = ["Shopee", "Mercado Livre", "Amazon"];
+let cupons = [];
+
+function esc(t){ const d = document.createElement("div"); d.textContent = t == null ? "" : String(t); return d.innerHTML; }
+function daqui24h(){ return new Date(Date.now() + 24 * 3600e3).toISOString().replace(/\.\d+Z$/, "Z"); }
+function fimDoDia(){ const d = new Date(); d.setHours(23, 59, 0, 0); return d.toISOString().replace(/\.\d+Z$/, "Z"); }
+function num(v){ return FarejadinhosCupons.numeroBR(v); }
+
+try{ document.getElementById("senha").value = localStorage.getItem("farejadinhos_admin_senha") || ""; }catch(e){}
+
+// ---------- o que já está no site ----------
+fetch("../cupons.json?t=" + Date.now(), { cache: "no-store" }).then(r => r.ok ? r.json() : {}).catch(() => ({})).then(d => {
+  const agora = Date.now();
+  cupons = (d.cupons || []).filter(c => !c.ate || Date.parse(c.ate) > agora).map(c => Object.assign({ validade: "manter" }, c));
+  const pg = Object.assign({}, PADRAO_PAGINAS, d.paginas || {});
+  document.getElementById("pgShopee").value = pg["Shopee"] || "";
+  document.getElementById("pgML").value = pg["Mercado Livre"] || "";
+  document.getElementById("pgAmazon").value = pg["Amazon"] || "";
+  render();
+});
+
+function paginas(){
+  return { "Shopee": document.getElementById("pgShopee").value.trim(), "Mercado Livre": document.getElementById("pgML").value.trim(), "Amazon": document.getElementById("pgAmazon").value.trim() };
+}
+
+// ---------- ler o texto colado ----------
+document.getElementById("btnLer").onclick = function(){
+  const campo = document.getElementById("texto"), st = document.getElementById("statusLer");
+  const lidos = FarejadinhosCupons.ler(campo.value);
+  if(!lidos.length){ st.className = "status erro"; st.textContent = "❌ Não achei nenhum cupom. O texto precisa ter algo como \"CUPOM: CODIGO\" — ou use \"➕ Cupom à mão\"."; return; }
+  let novos = 0;
+  lidos.forEach(c => {
+    if(cupons.some(x => x.codigo === c.codigo)) return;
+    cupons.push({
+      codigo: c.codigo, loja: c.loja || "", tipo: c.tipo || "", valor: c.valor || 0, minimo: c.minimo || 0, teto: c.teto || 0,
+      titulo: "", obs: c.tipo ? "" : (c.produto ? "Cupom do produto: " + c.produto : ""), link: c.link || "", validade: "24h"
+    });
+    novos++;
+  });
+  campo.value = "";
+  st.className = "status ok";
+  st.textContent = `✅ ${lidos.length} cupom(ns) lido(s)` + (novos < lidos.length ? ` (${lidos.length - novos} já estavam na lista)` : "") + ". Confira a loja de cada um abaixo.";
+  render();
+};
+document.getElementById("btnManual").onclick = () => { cupons.unshift({ codigo: "", loja: "Shopee", tipo: "%", valor: 0, minimo: 0, teto: 0, titulo: "", obs: "", link: "", validade: "24h" }); render(); };
+document.getElementById("btnResgate").onclick = () => { cupons.unshift({ codigo: "", loja: "Mercado Livre", tipo: "", valor: 0, minimo: 0, teto: 0, titulo: "Cupons pra resgatar", obs: "Toque e resgate na página da loja", link: "", validade: "24h" }); render(); };
+
+document.getElementById("btnAfiliar").onclick = async function(){
+  const campo = document.getElementById("pgShopee");
+  if(!window.FarejadinhosShopee) return;
+  this.disabled = true;
+  const ok = await FarejadinhosShopee.afiliarCampo(campo, (t, erro) => { const s = document.getElementById("statusPublicar"); s.className = "status " + (erro ? "erro" : "ok"); s.textContent = t; });
+  if(!ok && FarejadinhosShopee.ehAfiliado(campo.value)) alert("Esse já é um link de afiliado da Shopee. 👍");
+  this.disabled = false;
+};
+
+// ---------- cartões ----------
+function render(){
+  const lista = document.getElementById("lista");
+  document.getElementById("contagem").textContent = cupons.length ? `· ${cupons.length} cupom(ns)` : "";
+  if(!cupons.length){ lista.innerHTML = '<div class="vazio">Nenhum cupom ainda.</div>'; return; }
+  lista.innerHTML = cupons.map((c, i) => `
+    <div class="cupom" data-i="${i}">
+      <div class="previa"></div>
+      <div>
+        <div class="campos">
+          <div><label>Loja</label><select data-k="loja">${["", ...LOJAS].map(l => `<option value="${l}"${c.loja === l ? " selected" : ""}>${l || "loja?"}</option>`).join("")}</select></div>
+          <div><label>Código</label><input data-k="codigo" value="${esc(c.codigo)}" placeholder="sem código = resgatar"></div>
+          <div><label>Tipo</label><select data-k="tipo">
+            <option value="%"${c.tipo === "%" ? " selected" : ""}>% OFF</option>
+            <option value="R$"${c.tipo === "R$" ? " selected" : ""}>R$ OFF</option>
+            <option value="frete"${c.tipo === "frete" ? " selected" : ""}>Frete grátis</option>
+            <option value=""${!c.tipo ? " selected" : ""}>Outro</option></select></div>
+          <div><label>Valor</label><input data-k="valor" inputmode="decimal" value="${c.valor || ""}" placeholder="15"></div>
+          <div><label>Mínimo (R$)</label><input data-k="minimo" inputmode="decimal" value="${c.minimo || ""}" placeholder="—"></div>
+          <div><label>Limite (R$)</label><input data-k="teto" inputmode="decimal" value="${c.teto || ""}" placeholder="—"></div>
+          <div class="l2"><label>Título (opcional)</label><input data-k="titulo" maxlength="40" value="${esc(c.titulo)}" placeholder="automático: 15% OFF"></div>
+          <div class="l4"><label>Observação (opcional)</label><input data-k="obs" maxlength="120" value="${esc(c.obs)}" placeholder="Ex.: só na primeira compra · só eletrônicos"></div>
+          <div class="l2"><label>Link (opcional)</label><input data-k="link" value="${esc(c.link)}" placeholder="vazio = página de cupons da loja"></div>
+          <div class="l2"><label>Some</label><select data-k="validade">
+            ${c.ate && c.validade === "manter" ? `<option value="manter" selected>${esc(new Date(c.ate).toLocaleString("pt-BR", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" }))} (como está)</option>` : ""}
+            <option value="24h"${c.validade === "24h" ? " selected" : ""}>24h depois de publicar</option>
+            <option value="dia"${c.validade === "dia" ? " selected" : ""}>Hoje às 23h59</option>
+            <option value="48h"${c.validade === "48h" ? " selected" : ""}>48h depois de publicar</option></select></div>
+        </div>
+        <button class="tirar" type="button">🗑️ Tirar este cupom</button>
+      </div>
+    </div>`).join("");
+  lista.querySelectorAll(".cupom").forEach(el => {
+    const i = +el.dataset.i;
+    previa(el, cupons[i]);
+    el.querySelectorAll("[data-k]").forEach(campo => {
+      campo.addEventListener("input", () => {
+        const k = campo.dataset.k;
+        cupons[i][k] = ["valor", "minimo", "teto"].includes(k) ? num(campo.value) : (k === "codigo" ? campo.value.toUpperCase().replace(/\s+/g, "") : campo.value);
+        previa(el, cupons[i]);
+      });
+    });
+    el.querySelector(".tirar").onclick = () => { cupons.splice(i, 1); render(); };
+  });
+}
+function previa(el, c){
+  if(!window.FarejadinhosCuponsVitrine) return;
+  const p = el.querySelector(".previa");
+  p.innerHTML = FarejadinhosCuponsVitrine.cartao(paraSite(c), paginas());
+  FarejadinhosCuponsVitrine.ligarCopiar(p);
+}
+function paraSite(c){
+  const ate = c.validade === "manter" && c.ate ? c.ate : c.validade === "dia" ? fimDoDia() : c.validade === "48h" ? new Date(Date.now() + 48 * 3600e3).toISOString().replace(/\.\d+Z$/, "Z") : daqui24h();
+  return { codigo: (c.codigo || "").trim(), loja: c.loja, tipo: c.tipo, valor: c.valor, minimo: c.minimo, teto: c.teto, titulo: (c.titulo || "").trim(), obs: (c.obs || "").trim(), link: (c.link || "").trim(), ate };
+}
+document.querySelectorAll("#pgShopee,#pgML,#pgAmazon").forEach(i => i.addEventListener("change", render));
+
+// ---------- publicar ----------
+document.getElementById("btnPublicar").onclick = async function(){
+  const st = document.getElementById("statusPublicar");
+  const senha = document.getElementById("senha").value.trim();
+  if(!senha){ st.className = "status erro"; st.textContent = "Digite a senha do painel lá em cima."; return; }
+  const lista = cupons.map(paraSite).filter(c => c.codigo || c.link || c.titulo);
+  const semLoja = lista.filter(c => !c.loja).length;
+  const semValor = lista.filter(c => c.codigo && (c.tipo === "%" || c.tipo === "R$") && !c.valor && !c.titulo).length;
+  if(semLoja && !confirm(`${semLoja} cupom(ns) estão sem loja. Publicar mesmo assim?`)) return;
+  if(semValor && !confirm(`${semValor} cupom(ns) estão sem o valor do desconto. Publicar mesmo assim?`)) return;
+  if(!confirm(lista.length ? `Publicar ${lista.length} cupom(ns) no site?` : "Tirar TODOS os cupons do site?")) return;
+  this.disabled = true; this.textContent = "Publicando...";
+  try{
+    const dados = new FormData();
+    dados.append("senha", senha);
+    dados.append("itens", JSON.stringify([{ acao: "cupons-site", cupons: lista, paginas: paginas() }]));
+    const r = await fetch(WORKER_URL + "/lote", { method: "POST", body: dados });
+    const t = await r.text();
+    if(r.status === 401) throw new Error("Senha incorreta.");
+    if(!r.ok) throw new Error(t);
+    try{ localStorage.setItem("farejadinhos_admin_senha", senha); }catch(e){}
+    st.className = "status ok";
+    st.textContent = `✅ Publicado! ${lista.length} cupom(ns) aparecem no site em 1–2 minutos.`;
+  }catch(e){ st.className = "status erro"; st.textContent = "❌ " + e.message; }
+  this.disabled = false; this.textContent = "🚀 Publicar cupons no site";
+};
+</script>
+</body>
+</html>

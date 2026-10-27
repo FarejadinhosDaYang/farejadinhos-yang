@@ -196,6 +196,15 @@
         var slug = slugAtual();
         var atual = todas.filter(function (o) { return o && o.slug === slug; })[0];
         try { montarAnuncios(atual); } catch (e) {}
+        // 🏷️ cupons da loja desse produto (área de cupons do site)
+        try {
+            var depoisCupom = document.querySelector(".anc-box") || document.querySelector(".card a.btn, a.btn");
+            var cs = document.createElement("script");
+            cs.src = base + "assets/cupons-vitrine.js";
+            cs.setAttribute("data-base", base);
+            cs.onload = function () { if (window.FarejadinhosCuponsVitrine) window.FarejadinhosCuponsVitrine.naOferta(atual, depoisCupom); };
+            document.head.appendChild(cs);
+        } catch (e) {}
         var visiveis = window.FarejadinhosVitrine
             ? window.FarejadinhosVitrine.selecionar(todas, new Date()).visiveis
             : todas;
