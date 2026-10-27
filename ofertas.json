@@ -2238,7 +2238,9 @@
         "preco": "R$ 1.899,00",
         "conferido": "2026-10-27T16:43:37Z",
         "manual": "2026-10-27T17:43:21Z",
-        "confirmado": true
+        "confirmado": true,
+        "variacao": "Grafite",
+        "imagem": "https://farejadinhosdayang.com.br/assets/34376bc0-2af2-48f2-94b4-c40bf9456bc6.jpg"
       },
       {
         "link": "https://meli.la/1yNAJBz",
@@ -2246,7 +2248,9 @@
         "preco": "R$ 1.619,00",
         "conferido": "2026-10-27T20:06:40Z",
         "manual": "2026-10-27T21:43:52Z",
-        "confirmado": true
+        "confirmado": true,
+        "variacao": "Branco",
+        "imagem": "https://farejadinhosdayang.com.br/assets/a3a1f2b6-85fa-49e6-9d49-5ae37b7f4561.jpg"
       },
       {
         "link": "https://meli.la/17xzqfE",
@@ -2254,10 +2258,13 @@
         "preco": "R$ 1.799,00",
         "conferido": "2026-10-27T14:30:25Z",
         "manual": "2026-10-27T21:44:31Z",
-        "confirmado": true
+        "confirmado": true,
+        "variacao": "Lilás",
+        "imagem": "https://farejadinhosdayang.com.br/assets/af7b1fc5-53d3-4249-8def-b97677e0ad0b.jpg"
       }
     ],
-    "precoConferido": "2026-10-27T20:06:40Z"
+    "precoConferido": "2026-10-27T20:06:40Z",
+    "variacao": "Azul-marinho"
   },
   {
     "produto": "Moedor Multifuncional de Café 110V com Design",
