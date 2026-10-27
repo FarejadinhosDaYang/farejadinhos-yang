@@ -20,7 +20,8 @@ Como decide sozinho:
 - Frases: o texto é dividido nas reticências (…) e nos pontos/exclamações/interrogações.
 - Tempo de cada frase: acha os trechos de fala no áudio (pelas pausas) e distribui as frases pelos trechos
   de forma que a velocidade da fala fique parecida em todas e os cortes caiam nas pausas mais longas.
-- Fundo: se o vídeo for curto, passa em câmera lenta (e repete se precisar); se for comprido, mostra um
+- Fundo COM marcações de cena no texto ("[2.4-4.8] Na tigela…"): cada frase toca exatamente o trecho marcado
+  pra ela (é assim que o Claude manda o roteiro). Sem marcação: se o vídeo for curto, passa em câmera lenta (e repete se precisar); se for comprido, mostra um
   pedaço do meio de CADA cena (todas aparecem) e acelera de leve. Sem o som original.
 - Selo "💬 COMENTA QUERO" (com "ou entra no farejadinhosdayang.com.br" embaixo) entra junto da frase que tem "comenta";
   capa com a Yang inteira e selo publi.
@@ -55,6 +56,30 @@ SITE_FALADO = re.compile(r"farejadinhos\s*da\s*yang\s*(?:ponto|\.)\s*com\s*(?:po
 def site_escrito(t):
     """Na legenda o site aparece escrito do jeito certo, mesmo falado por extenso no ElevenLabs."""
     return SITE_FALADO.sub(SITE, t)
+
+MARCA = re.compile(r"\[\s*(\d+(?:[.,]\d+)?)\s*(?:-|–|a|até)\s*(\d+(?:[.,]\d+)?)\s*s?\s*\]", re.I)
+
+def frases_com_cenas(texto):
+    """Lê marcações de cena no texto: "[0-2.4] Sabe aquela tampa… [2.4-4.8] Na tigela de vidro…".
+    Cada marcação vale pras frases que vêm depois dela, até a próxima. Devolve (frases, cenas) —
+    cenas[i] = (de, ate) do vídeo pra frase i, ou None se o texto não tiver marcação nenhuma."""
+    marcas = list(MARCA.finditer(texto))
+    if not marcas:
+        return dividir_frases(texto), None
+    frases, cenas = [], []
+    antes = texto[:marcas[0].start()]
+    if antes.strip():                       # frase antes da 1ª marcação usa a 1ª cena
+        fr = dividir_frases(antes); frases += fr
+        cenas += [None] * len(fr)
+    for i, m in enumerate(marcas):
+        fim = marcas[i + 1].start() if i + 1 < len(marcas) else len(texto)
+        a, b = (float(x.replace(",", ".")) for x in m.groups())
+        if b < a: a, b = b, a
+        fr = dividir_frases(texto[m.end():fim])
+        frases += fr; cenas += [(a, b)] * len(fr)
+    primeira = next(c for c in cenas if c)
+    cenas = [c or primeira for c in cenas]
+    return frases, cenas
 
 def silabas(t):
     t = re.sub(r"[^a-záéíóúâêôãõàüç ]", " ", t.lower())
@@ -166,6 +191,9 @@ def montar_fundo(video, de, ate, dur, saida):
         vel = total / dur
         pedacos = [(a, b, vel) for a, b, _ in pedacos]
         log(f"fundo: vídeo de {L:.1f}s ({len(pedacos)} cenas) → um pedaço de cada cena, {total:.1f}s em velocidade {vel:.2f}")
+    juntar_pedacos(video, pedacos, dur, saida)
+
+def juntar_pedacos(video, pedacos, dur, saida):
     FILL = "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1"
     entradas, filt = [], []
     for i, (a, b, v) in enumerate(pedacos):
@@ -175,6 +203,30 @@ def montar_fundo(video, de, ate, dur, saida):
                 f"concat=n={len(pedacos)}:v=1:a=0,tpad=stop_mode=clone:stop_duration=3[out]")
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", *entradas, "-filter_complex", ";".join(filt), "-map", "[out]",
                     "-t", f"{dur:.2f}", "-an", "-c:v", "libx264", "-crf", "18", "-pix_fmt", "yuv420p", saida], check=True)
+
+def fundo_por_cenas(video, falas, cenas, total, dur, saida):
+    """Cada frase toca o trecho do vídeo marcado pra ela, do começo ao fim da frase (o corte cai na pausa)."""
+    grupos = []                                    # [(de_voz, cena)] — frases seguidas com a mesma cena viram 1 trecho
+    for f, c in zip(falas, cenas):
+        if not grupos or grupos[-1][1] != c: grupos.append([f["de"], c])
+    grupos[0][0] = 0.0
+    pedacos = []
+    for i, (ini, (a, b)) in enumerate(grupos):
+        fim = grupos[i + 1][0] if i + 1 < len(grupos) else dur
+        a, b = max(0.0, min(a, total - 0.2)), min(total, b)
+        if b - a < 0.2: b = min(total, a + 0.5)
+        d = max(fim - ini, 0.2)
+        v = (b - a) / d
+        if v > 1.8:                                # trecho comprido demais pra frase: usa só o meio dele
+            meio, tam = (a + b) / 2, 1.8 * d
+            a, b, v = meio - tam / 2, meio + tam / 2, 1.8
+        voltas = 1
+        if v < 0.33:                                # trecho curto demais: repete até não ficar lento demais
+            voltas = math.ceil(0.33 / v); v = v * voltas
+        pedacos += [(a, b, v)] * voltas
+        log(f"  cena {a:5.1f}–{b:5.1f}s do vídeo → voz {ini:5.2f}–{fim:5.2f}s (velocidade {v:.2f}" + (f", {voltas}x" if voltas > 1 else "") + ")")
+    log(f"fundo: {len(grupos)} cenas escolhidas no roteiro")
+    juntar_pedacos(video, pedacos, dur, saida)
 
 # ---------------------------------------------------------------- legenda do post (Instagram)
 EMOJI_CAT = {"cozinha": "🍳", "casa": "🏠", "utilidades": "🧰", "eletrodomesticos": "⚡", "beleza": "💄", "skincare": "🧴",
@@ -224,7 +276,7 @@ def main():
     pid = pedido.get("id") or "reel"
     video, voz = caminho(pedido["video"]), caminho(pedido["voz"])
 
-    frases = dividir_frases(pedido["texto"])
+    frases, cenas = frases_com_cenas(pedido["texto"])
     if not frases: raise SystemExit("O texto da narração está vazio.")
     x, sr = ler_audio(voz)
     dur_voz = len(x) / sr
@@ -243,7 +295,8 @@ def main():
     ate = min(total, float(pedido.get("ate") or total))
     if ate - de < 1: raise SystemExit("O trecho do vídeo escolhido é curto demais.")
     fundo = os.path.join(pasta, f"{pid}-fundo.mp4")
-    montar_fundo(video, de, ate, dur, fundo)
+    if cenas: fundo_por_cenas(video, falas, cenas, total, dur, fundo)
+    else: montar_fundo(video, de, ate, dur, fundo)
 
     rot = {"lado": "esquerda", "duracao": dur, "falas": falas}
     chamada = next((f for f in falas if re.search(r"coment", f["texto"], re.I)), None)
