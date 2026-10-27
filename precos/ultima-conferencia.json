@@ -1,110 +1,86 @@
 {
-  "quando": "2026-10-27T02:03:08Z",
+  "quando": "2026-10-27T07:48:13Z",
   "origem": "schedule",
-  "total": 156,
-  "iguais": 135,
+  "total": 154,
+  "iguais": 133,
   "mudaram": [
     {
-      "slug": "generica-gancho-organizador-de-pia-porta-esponja",
-      "produto": "Genérica Gancho Organizador De Pia Porta Esponja",
-      "de": "R$ 19,90",
-      "para": "19,78"
+      "slug": "arvore-de-natal-de-240-cm-150-180-210-arvore-de-natal-de",
+      "produto": "Árvore de Natal de luxo, decoração para festa",
+      "de": "R$ 239,00",
+      "para": "R$ 128,90"
     },
     {
       "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
       "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-      "de": "R$ 60,90",
-      "para": "62,25"
+      "de": "R$ 62,25",
+      "para": "56,58"
     },
     {
-      "slug": "kit-6-potes-640ml-vidro-hermetico-4-travas-marmita",
-      "produto": "Kit 6 Potes 640ml Vidro Hermético 4 Travas Marmita",
-      "de": "R$ 59,70",
-      "para": "58,70"
+      "slug": "estante-6-ou-5-prateleiras-cozinha-de-aco",
+      "produto": "Estante 6 OU 5 Prateleiras Cozinha de Aço",
+      "de": "R$ 69,00",
+      "para": "R$ 72,99"
     },
     {
-      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
-      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 5.065,61",
-      "para": "3839,10"
+      "slug": "kit-10-pote-vidro-hermetico-marmita-640ml",
+      "produto": "Kit 10 Pote Vidro Hermético Marmita 640ml",
+      "de": "R$ 99,90",
+      "para": "R$ 99,89"
     },
     {
-      "slug": "organizador-de-geladeira-para-temperos-2-3l-linha-clear",
-      "produto": "Organizador de Geladeira para Temperos 2,3L",
-      "de": "R$ 25,02",
-      "para": "R$ 37,90"
+      "slug": "cesto-de-roupa-de-bambu-dobravel-organizador",
+      "produto": "Cesto De Roupa de Bambu Dobravel Organizador",
+      "de": "R$ 55,96",
+      "para": "R$ 53,99"
     },
     {
-      "slug": "kit-saco-a-vacuo-grande-organizador-edredom",
-      "produto": "Kit Saco A Vácuo Grande Organizador Edredom",
-      "de": "R$ 19,90",
-      "para": "R$ 16,45"
+      "slug": "pote-porta-temperos-condimentos-com-4-conchas",
+      "produto": "Pote Porta Temperos Condimentos com 4 conchas.",
+      "de": "R$ 15,66",
+      "para": "R$ 14,22"
     },
     {
-      "slug": "porta-ovos-4-andares-rolante-em-plastico",
-      "produto": "Porta Ovos 4 Andares Rolante em Plástico",
-      "de": "R$ 13,38",
-      "para": "R$ 12,99"
+      "slug": "kit-2-prateleiras-reto-adesivo-premium-suporte",
+      "produto": "Kit 2 Prateleiras Reto Adesivo Premium Suporte",
+      "de": "R$ 46,95",
+      "para": "R$ 47,47"
     },
     {
-      "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-2",
-      "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
-      "de": "R$ 2.841,00",
-      "para": "3165,00"
+      "slug": "celular-samsung-galaxy-s26-ultra-5g-256gb-12gb-ram",
+      "produto": "Celular Samsung Galaxy S26 Ultra 5G 256GB 12GB RAM",
+      "de": "R$ 7.274,00",
+      "para": "7124,05"
     },
     {
       "slug": "samsung-galaxy-s25-43-5g-256gb-12gb",
       "produto": "Samsung Galaxy S25&#43; 5g, 256gb, 12gb",
-      "de": "R$ 2.518,00",
-      "para": "3898,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-s25-43-5g-512gb",
-      "produto": "Celular Samsung Galaxy S25&#43; 5g, 512gb",
-      "de": "R$ 3.882,00",
-      "para": "3898,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-s25-43-5g-512gb-2",
-      "produto": "Celular Samsung Galaxy S25&#43; 5g, 512gb",
-      "de": "R$ 3.882,00",
-      "para": "3898,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-a57-256gb-cinza",
-      "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 1.980,00",
-      "para": "1899,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
-      "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 1.980,00",
-      "para": "1899,00"
+      "de": "R$ 3.898,00",
+      "para": "4299,00"
     },
     {
       "slug": "celular-samsung-galaxy-a37-5g-128gb",
       "produto": "Celular Samsung Galaxy A37 5G 128GB",
-      "de": "R$ 1.393,00",
-      "para": "1899,00"
+      "de": "R$ 1.899,00",
+      "para": "1393,00"
     },
     {
-      "slug": "kit-3-necessaire-bolsa-portatil-transparente",
-      "produto": "KIT 3 Necessaire Bolsa Portátil Transparente",
-      "de": "R$ 17,99",
-      "para": "R$ 17,49"
+      "slug": "celular-samsung-galaxy-a37-5g-128gb-3",
+      "produto": "Celular Samsung Galaxy A37 5g 128gb",
+      "de": "R$ 1.799,00",
+      "para": "1699,00"
     },
     {
-      "slug": "icoffee-moedor-de-cafe-com-manivela-manual",
-      "produto": "ICoffee Moedor de Café com Manivela Manual",
-      "de": "R$ 134,99",
-      "para": "R$ 149,99"
+      "slug": "rodinho-de-pia-mini-mop-portatil-com-esponja",
+      "produto": "Rodinho de Pia Mini Mop Portátil com Esponja",
+      "de": "R$ 19,99",
+      "para": "R$ 19,79"
     },
     {
       "slug": "kit-maquina-para-tosar-pet-tesoura-pente",
       "produto": "Kit Máquina Para Tosar Pet + Tesoura + Pente",
-      "de": "R$ 30,28",
-      "para": "R$ 34,99"
+      "de": "R$ 34,99",
+      "para": "R$ 28,13"
     }
   ],
   "semPreco": [
@@ -115,14 +91,29 @@
       "motivo": "API Shopee: a API não achou esse produto (pode ter saído do ar ou do programa de afiliados)"
     }
   ],
-  "erros": [],
+  "erros": [
+    {
+      "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-8gb-ram",
+      "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb, 8gb Ram,",
+      "link": "https://meli.la/2i5YnPJ",
+      "motivo": "Response status code does not indicate success: 404 (Not Found). :: \r\n{\r\n  \"sucesso\": false,\r\n  \"produto\": \"\",\r\n  \"preco\": \"\",\r\n  \"precoAntigo\": \"\",\r\n  \"imagemUrl\": \"\",\r\n  \"parcelas\": \"\",\r\n  \"precoAPrazo\": \"\",\r\n  \"semJuros\": \"\",\r\n  \"linkFinal\": \"https://www.mercadolivre.com.br/social/bernardshimizu/lists\",\r\n  \"tentativas\": [\r\n    \"pagina (facebookexternalhit): nada\""
+    }
+  ],
   "suspeitos": [
+    {
+      "slug": "descascador-eletrico-de-alho-e-uva-em-aco-inox-automatico",
+      "produto": "Descascador Elétrico De Alho E Uva Em Aço Inox",
+      "link": "https://s.shopee.com.br/AAHuKedfd4",
+      "atual": "R$ 59,99",
+      "lido": "R$ 149,89",
+      "referencia": "R$ 59,98"
+    },
     {
       "slug": "iphone-18-pro-256gb-preto-somente-esim",
       "produto": "iPhone 18 Pro 256GB Preto (somente eSIM)",
       "link": "https://meli.la/18pktG2",
       "atual": "R$ 9.499,00",
-      "lido": "10013,00",
+      "lido": "5287,00",
       "referencia": "preco posto a mao em 18/10 23:09"
     },
     {
@@ -134,20 +125,36 @@
       "referencia": "preco posto a mao em 18/10 23:09"
     },
     {
-      "slug": "iphone-17-pro-256gb-laranja-cosmico",
-      "produto": "iPhone 17 Pro 256GB - Laranja-cósmico",
-      "link": "https://meli.la/2tshrR8",
-      "atual": "R$ 7.999,00",
-      "lido": "698,40",
-      "referencia": "R$ 7.799,00"
+      "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
+      "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
+      "link": "https://meli.la/2LUJ4yy",
+      "atual": "R$ 3.898,00",
+      "lido": "5399,00",
+      "referencia": "preco posto a mao em 22/10 17:24"
+    },
+    {
+      "slug": "celular-samsung-galaxy-s25-43-5g-512gb",
+      "produto": "Celular Samsung Galaxy S25&#43; 5g, 512gb",
+      "link": "https://meli.la/28FNDG2",
+      "atual": "R$ 3.898,00",
+      "lido": "5699,00",
+      "referencia": "R$ 2.518,00"
+    },
+    {
+      "slug": "celular-samsung-galaxy-s25-43-5g-512gb-2",
+      "produto": "Celular Samsung Galaxy S25&#43; 5g, 512gb",
+      "link": "https://meli.la/28FNDG2",
+      "atual": "R$ 3.898,00",
+      "lido": "5699,00",
+      "referencia": "R$ 2.518,00"
     }
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-27T02:03:09Z",
+      "quando": "2026-10-27T07:48:15Z",
       "teste": false,
-      "links": 122,
-      "ok": 121,
+      "links": 120,
+      "ok": 119,
       "erros": 1
     }
   },
