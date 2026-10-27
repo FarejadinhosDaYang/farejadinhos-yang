@@ -41,7 +41,8 @@ jobs:
       - name: Baixar os arquivos enviados
         run: |
           mkdir -p entrada-reel
-          gh release download reels-entrada -p "${ID}-*" -D entrada-reel
+          if [ -f "_teste-reel/${ID}-pedido.json" ]; then cp _teste-reel/${ID}-* entrada-reel/   # teste sem o Worker
+          else gh release download reels-entrada -p "${ID}-*" -D entrada-reel; fi
           ls -la entrada-reel
 
       - name: Montar o reel e a capa
@@ -95,6 +96,6 @@ jobs:
       - name: Apagar os arquivos recebidos (não pesar a release)
         if: always()
         run: |
-          for f in $(gh release view reels-entrada --json assets -q ".assets[].name" | grep "^${ID}-" || true); do
+          for f in $(gh release view reels-entrada --json assets -q ".assets[].name" 2>/dev/null | grep "^${ID}-" || true); do
             gh release delete-asset reels-entrada "$f" -y || true
           done
