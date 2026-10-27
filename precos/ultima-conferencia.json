@@ -1,104 +1,44 @@
 {
-  "quando": "2026-10-27T20:03:58Z",
+  "quando": "2026-10-27T23:45:05Z",
   "origem": "schedule",
-  "total": 148,
-  "iguais": 124,
+  "total": 142,
+  "iguais": 129,
   "mudaram": [
     {
-      "slug": "generica-gancho-organizador-de-pia-porta-esponja",
-      "produto": "Genérica Gancho Organizador De Pia Porta Esponja",
-      "de": "R$ 19,90",
-      "para": "19,78"
+      "slug": "arvore-natal-verde-150cm-220-galhos-decoracao-natalina",
+      "produto": "Árvore Natal Verde 220 Galhos Decoração Natalina",
+      "de": "R$ 64,90",
+      "para": "R$ 64,89"
     },
     {
       "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
       "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-      "de": "R$ 56,58",
-      "para": "53,97"
+      "de": "R$ 53,97",
+      "para": "65,33"
     },
     {
-      "slug": "marmita-eletrica-preta-bivolt-portatil-domestica",
-      "produto": "Marmita Elétrica Preta Bivolt Portátil Doméstica",
-      "de": "R$ 43,49",
-      "para": "49,99"
-    },
-    {
-      "slug": "kit-10-pote-vidro-hermetico-marmita-640ml",
-      "produto": "Kit 10 Pote Vidro Hermético Marmita 640ml",
-      "de": "R$ 99,89",
-      "para": "R$ 99,90"
-    },
-    {
-      "slug": "cesto-de-roupa-de-bambu-dobravel-organizador",
-      "produto": "Cesto De Roupa de Bambu Dobravel Organizador",
-      "de": "R$ 53,99",
-      "para": "R$ 55,96"
-    },
-    {
-      "slug": "porta-maquiagem-organizador-de-cosmeticos",
-      "produto": "Porta Maquiagem Organizador de Cosméticos",
-      "de": "R$ 46,70",
-      "para": "R$ 47,90"
-    },
-    {
-      "slug": "organizador-algodao-e-cotonetes-acrilico-kit",
-      "produto": "Organizador Algodão E Cotonetes Acrílico Kit",
-      "de": "R$ 13,19",
-      "para": "R$ 13,20"
-    },
-    {
-      "slug": "celular-samsung-galaxy-s26-ultra-5g-256gb-12gb-ram",
-      "produto": "Celular Samsung Galaxy S26 Ultra 5G 256GB 12GB RAM",
-      "de": "R$ 7.124,05",
-      "para": "7274,00"
+      "slug": "samsung-galaxy-s25-5g-256gb-12gb-camera-tripla",
+      "produto": "Samsung Galaxy S25 5G, 256GB, 12GB, Câmera Tripla",
+      "de": "R$ 3.589,00",
+      "para": "3772,00"
     },
     {
       "slug": "celular-samsung-galaxy-s25-fe-5g-128gb",
       "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
-      "de": "R$ 2.998,00",
-      "para": "2799,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-2",
-      "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
-      "de": "R$ 2.998,00",
-      "para": "3165,00"
+      "de": "R$ 2.799,00",
+      "para": "2998,00"
     },
     {
       "slug": "celular-samsung-galaxy-a57-256gb-cinza",
       "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 1.980,00",
-      "para": "1889,00"
+      "de": "R$ 1.889,00",
+      "para": "1899,00"
     },
     {
-      "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
-      "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 1.899,00",
-      "para": "2550,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-a37-5g-128gb-2",
-      "produto": "Celular Samsung Galaxy A37 5G 128GB",
-      "de": "R$ 1.799,00",
-      "para": "1619,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-a37-5g-128gb-4",
-      "produto": "Celular Samsung Galaxy A37 5G 128GB",
-      "de": "R$ 1.799,00",
-      "para": "1709,00"
-    },
-    {
-      "slug": "luminaria-de-mesa-candeiro-dumbbell-touch",
-      "produto": "Luminária de Mesa Candeiro Dumbbell Touch",
-      "de": "R$ 34,99",
-      "para": "R$ 37,90"
-    },
-    {
-      "slug": "rodinho-de-pia-mini-mop-portatil-com-esponja",
-      "produto": "Rodinho de Pia Mini Mop Portátil com Esponja",
-      "de": "R$ 19,79",
-      "para": "R$ 19,99"
+      "slug": "descascador-eletrico-para-descascar-uvas-frutas",
+      "produto": "Descascador Elétrico Para Descascar Uvas Frutas",
+      "de": "R$ 44,77",
+      "para": "R$ 44,98"
     }
   ],
   "semPreco": [],
@@ -112,14 +52,6 @@
   ],
   "suspeitos": [
     {
-      "slug": "descascador-eletrico-de-alho-e-uva-em-aco-inox-automatico",
-      "produto": "Descascador Elétrico De Alho E Uva Em Aço Inox",
-      "link": "https://s.shopee.com.br/AAHuKedfd4",
-      "atual": "R$ 59,99",
-      "lido": "R$ 149,89",
-      "referencia": "R$ 59,98"
-    },
-    {
       "slug": "escorredor-de-loucas-rack-aco-carbono-organizador",
       "produto": "Escorredor de Louças Rack Aço Carbono Organizador",
       "link": "https://s.shopee.com.br/8fTDF2IRuL",
@@ -132,7 +64,7 @@
       "produto": "iPhone 18 Pro 256GB Preto (somente eSIM)",
       "link": "https://meli.la/18pktG2",
       "atual": "R$ 9.499,00",
-      "lido": "10799,00",
+      "lido": "8078,00",
       "referencia": "preco posto a mao em 18/10 23:09"
     },
     {
@@ -148,7 +80,7 @@
       "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
       "link": "https://meli.la/2LUJ4yy",
       "atual": "R$ 3.898,00",
-      "lido": "5444,00",
+      "lido": "5399,00",
       "referencia": "preco posto a mao em 22/10 17:24"
     },
     {
@@ -170,10 +102,10 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-27T20:04:02Z",
+      "quando": "2026-10-27T23:45:06Z",
       "teste": false,
-      "links": 116,
-      "ok": 116,
+      "links": 114,
+      "ok": 114,
       "erros": 0
     }
   },
