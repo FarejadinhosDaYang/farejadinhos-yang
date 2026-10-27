@@ -171,12 +171,32 @@ function precoTxt(o) {
   return p ? (/^R\$/.test(p) ? p : "R$ " + p) : "";
 }
 
-// Cupons do dia: quando aparecem códigos novos nas ofertas do site,
+// Cupons do dia: quando aparecem códigos novos — nas ofertas do site ou na
+// área "🏷️ Cupons de hoje" (cupons.json, publicada pelo painel/cupons.html) —
 // quem marcou "Cupons do dia" recebe UM aviso com os códigos (1 por dia;
 // se entrarem mais cupons no mesmo dia, avisa de novo só dos novos).
+async function cuponsDaArea() {
+  try {
+    const r = await fetch(SITE + "/cupons.json?t=" + Date.now(), { cf: { cacheTtl: 0 } });
+    if (!r.ok) return [];
+    const d = await r.json();
+    const agora = Date.now();
+    return (d.cupons || []).filter(c => c && c.codigo && (!c.ate || Date.parse(c.ate) > agora));
+  } catch (e) { return []; }
+}
+function resumoCupom(c) {
+  if (c.titulo) return c.titulo;
+  if (c.tipo === "%" && c.valor) return c.valor + "% OFF";
+  if (c.tipo === "R$" && c.valor) return "R$ " + String(c.valor).replace(".", ",").replace(/,0+$/, "") + " OFF";
+  if (c.tipo === "frete") return "frete grátis";
+  return "";
+}
 async function avisarCupons(db, todas) {
   const dia = hojeBR();
-  const codigos = [...new Set(todas.map(o => String(o.cupom || "").trim().toUpperCase()).filter(Boolean))];
+  const area = await cuponsDaArea();
+  const daArea = {};
+  area.forEach(c => { daArea[String(c.codigo).toUpperCase()] = c; });
+  const codigos = [...new Set(todas.map(o => String(o.cupom || "").trim().toUpperCase()).filter(Boolean).concat(Object.keys(daArea)))];
   const row = await db.prepare("SELECT valor FROM push_config WHERE chave = 'cupons_dia'").first();
   let estado = row ? JSON.parse(row.valor) : { dia: "", enviados: [] };
   if (estado.dia !== dia) estado = { dia, enviados: [] };
@@ -187,10 +207,17 @@ async function avisarCupons(db, todas) {
   const lista = (await db.prepare("SELECT * FROM push_inscritos WHERE cupons = 1").all()).results;
   if (!lista.length) return { novos: novos.length, ok: 0 };
   const v = await chaves(db);
+  const temArea = novos.some(c => daArea[c]);
+  const destaques = novos.filter(c => daArea[c]).slice(0, 2).map(c => {
+    const x = daArea[c], r = resumoCupom(x);
+    return (x.loja ? x.loja + ": " : "") + (r ? r + " (" + c + ")" : c);
+  });
   const dados = {
     titulo: "🏷️ Cupons de hoje: " + novos.slice(0, 3).join(" · "),
-    mensagem: (novos.length > 3 ? "+" + (novos.length - 3) + " cupons · " : "") + "Use antes de virar o dia! Toque pra ver as ofertas com cupom.",
-    url: SITE + "/#tituloGrid",
+    mensagem: (destaques.length ? destaques.join(" · ") + " · " : "") +
+      (novos.length > 3 ? "+" + (novos.length - 3) + " cupons · " : "") +
+      (temArea ? "Toque pra copiar e usar!" : "Use antes de virar o dia! Toque pra ver as ofertas com cupom."),
+    url: SITE + (temArea ? "/#cuponsSecao" : "/#tituloGrid"),
   };
   return { novos: novos.length, ...(await enviarEContar(db, lista, () => dados, v, false)) };
 }
