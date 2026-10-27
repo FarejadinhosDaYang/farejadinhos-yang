@@ -167,6 +167,45 @@ def montar_fundo(video, de, ate, dur, saida):
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", *entradas, "-filter_complex", ";".join(filt), "-map", "[out]",
                     "-t", f"{dur:.2f}", "-an", "-c:v", "libx264", "-crf", "18", "-pix_fmt", "yuv420p", saida], check=True)
 
+# ---------------------------------------------------------------- legenda do post (Instagram)
+EMOJI_CAT = {"cozinha": "🍳", "casa": "🏠", "utilidades": "🧰", "eletrodomesticos": "⚡", "beleza": "💄", "skincare": "🧴",
+             "pet": "🐾", "academia": "💪", "cafe": "☕", "moda": "👗", "eletronicos": "🔌", "natal": "🎄", "piscina": "🏊"}
+TAGS_CAT = {"cozinha": "#cozinhapratica #utilidadesdecozinha", "casa": "#casaorganizada #organizacao",
+            "utilidades": "#utilidadesdomesticas #casapratica", "eletrodomesticos": "#eletrodomesticos #casapratica",
+            "beleza": "#beleza #makeup", "skincare": "#skincare #cuidadoscomapele", "pet": "#achadinhospet #pets",
+            "academia": "#academia #treino", "cafe": "#cafe #amocafe", "moda": "#moda #lookdodia",
+            "eletronicos": "#tecnologia #gadgets", "natal": "#natal #decoracaodenatal", "piscina": "#piscina #verao"}
+
+def _chave(t):
+    import unicodedata
+    return unicodedata.normalize("NFD", t or "").encode("ascii", "ignore").decode().lower().strip()
+
+def legenda_post(frases, oferta):
+    """Monta a legenda do post a partir das próprias frases da Yang (sem preço, com a identificação de publi)."""
+    cats = [_chave(c) for c in (oferta.get("categoria") or "").split(",") if _chave(c) not in ("", "videos")]
+    cat = cats[0] if cats else ""
+    limpa = lambda t: re.sub(r"\s*…\s*$", "", t).strip()
+    gancho = limpa(frases[0])
+    if not re.search(r"[!?]$", gancho): gancho = gancho.rstrip(".") 
+    fim_re = re.compile(r"pre[cç]o|no site|coment|link", re.I)
+    meio = [f for f in frases[1:] if not fim_re.search(f)]
+    corpo = " ".join(meio)
+    corpo = re.sub(r"…\s+(?=[a-záéíóúâêôãõç])", ", ", corpo)      # "…" seguido de minúscula vira vírgula
+    corpo = re.sub(r"…\s*", ". ", corpo).strip()
+    corpo = re.sub(r"\s+([,.!?])", r"\1", corpo)
+    corpo = re.sub(r", (e|ou) ", r" \1 ", corpo)                    # "…, e" fica só "… e"
+    if corpo and corpo[-1] not in ".!?": corpo += "."
+    corpo = corpo[:1].upper() + corpo[1:]
+    tem_comenta = any(re.search(r"coment", f, re.I) for f in frases)
+    loja = "#achadinhosmercadolivre" if re.search(r"meli\.la|mercadolivre", oferta.get("link") or "") else "#achadinhosshopee"
+    linhas = [f"{gancho} {EMOJI_CAT.get(cat, '🐾')} (publi)", ""]
+    if corpo: linhas += [corpo, ""]
+    linhas += (["💬 Comenta QUERO que a Yang te manda o link", "🐾 ou pega no link da bio"] if tem_comenta
+               else ["🐾 O link tá na bio!"])
+    linhas += ["", "📢 publi · este post tem link de afiliado: você paga o mesmo preço e a Yang ganha uma pequena comissão.", "",
+               f"{loja} {TAGS_CAT.get(cat, '#utilidades')} #achadinhos #farejadinhosdayang"]
+    return "\n".join(linhas)
+
 # ---------------------------------------------------------------- principal
 def main():
     pedido = json.load(open(sys.argv[1], encoding="utf-8"))
@@ -214,6 +253,15 @@ def main():
             "--titulo", titulo, "--faixa", pedido.get("faixa") or "🐾 A YANG FAREJOU"]
     if pedido.get("balao"): args += ["--balao", pedido["balao"]]
     subprocess.run(args, check=True, cwd=AQUI)
+    oferta = {}
+    try:
+        slug = (pedido.get("slug") or "").strip()
+        if slug:
+            ofertas = json.load(open(os.path.join(AQUI, "..", "ofertas.json"), encoding="utf-8"))
+            oferta = next((o for o in ofertas if o.get("slug") == slug), {})
+    except Exception:
+        pass
+    open(os.path.join(pasta, f"{pid}-legenda.txt"), "w", encoding="utf-8").write(legenda_post(frases, oferta))
     log(f"pronto: {os.path.basename(reel)} ({dur:.1f}s) e {os.path.basename(capa)}")
     open(os.path.join(pasta, f"{pid}-log.txt"), "w", encoding="utf-8").write("\n".join(LOG) + "\n")
 

@@ -108,7 +108,7 @@ button:disabled{opacity:.6;cursor:wait}
 <div class="grade" id="lista"><p class="sub">Carregando…</p></div>
 
 <div class="dica">
-<b>Como postar:</b> baixe o reel e a capa. No Instagram, em <b>Editar capa → Adicionar da galeria</b>, escolha a capa. A legenda do post continua sendo a que o Claude escreve junto com o roteiro.<br>
+<b>Como postar:</b> baixe o reel e a capa. No Instagram, em <b>Editar capa → Adicionar da galeria</b>, escolha a capa. A legenda do post sai pronta (botão "Copiar legenda do post"), montada com as próprias frases da Yang, com o "(publi)" e as hashtags da categoria.<br>
 <b>Quando chamar o Claude em vez de usar aqui:</b> vídeo com preço ou texto escrito no meio, logo de marca, ou quando quiser cortes escolhidos a dedo cena por cena.
 </div>
 </div>
@@ -211,9 +211,15 @@ async function carregar(){
       <div class="nome">${esc(x.produto || "Reel")}</div><div class="quando">${quando}${x.categoria ? " · 🎬 em Vídeos" : ""}</div>
       <a class="b b1" href="${PRONTOS + x.reel}?v=${v}" download>⬇️ Baixar reel</a>
       <a class="b b2" href="${PRONTOS + x.capa}?v=${v}" download>🖼️ Baixar capa</a>
+      ${x.legenda ? `<button type="button" class="b b2 copiaLeg" data-leg="${esc(x.legenda)}" style="font:700 14px 'Work Sans',Arial,sans-serif;padding:10px">📝 Copiar legenda do post</button>` : ""}
       <details><summary style="font-size:12.5px">ver como ficaram as legendas</summary><pre>${esc(x.log || "")}</pre></details>
     </div>`;
   }).join("") : '<p class="sub">Nenhum reel montado por aqui ainda.</p>';
+  document.querySelectorAll(".copiaLeg").forEach(b => b.addEventListener("click", async () => {
+    try{ await navigator.clipboard.writeText(b.dataset.leg); }
+    catch(e){ const t = document.createElement("textarea"); t.value = b.dataset.leg; document.body.appendChild(t); t.select(); document.execCommand("copy"); t.remove(); }
+    const antes = b.textContent; b.textContent = "✅ Legenda copiada!"; setTimeout(() => b.textContent = antes, 1800);
+  }));
   return lista;
 }
 carregar();

@@ -72,6 +72,9 @@ jobs:
           log = ""
           try: log = open(f"saida-reel/{pid}-log.txt", encoding="utf-8").read()
           except Exception: pass
+          legenda = ""
+          try: legenda = open(f"saida-reel/{pid}-legenda.txt", encoding="utf-8").read()
+          except Exception: pass
           slug = (pedido.get("slug") or "").strip()
           video_msg = ""
           if ok and slug:
@@ -85,7 +88,7 @@ jobs:
                            "quando": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
                            "produto": pedido.get("produto", ""), "slug": slug,
                            "reel": f"{pid}-reel.mp4" if ok else "", "capa": f"{pid}-capa.jpg" if ok else "",
-                           "log": log[-3000:], "categoria": video_msg})
+                           "log": log[-3000:], "legenda": legenda, "categoria": video_msg})
           json.dump(lista[:40], open("reels/lista.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
           PY
           git config user.name "github-actions[bot]"
