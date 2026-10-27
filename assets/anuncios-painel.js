@@ -44,6 +44,11 @@ css.textContent += `
 .anunciosBox .ancOpcaoTxt b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .anunciosBox .ancOpcaoTxt small{color:var(--muted)}
 .anunciosBox .ancJuntarBtn{flex:0 0 auto;padding:7px 10px!important;font-size:12.5px}`;
+css.textContent += `
+.anunciosBox .ancEdVar{display:flex;flex-wrap:wrap;gap:6px;margin:-2px 0 8px;padding:8px;background:#FFF6E9;border:1px dashed var(--line);border-radius:10px}
+.anunciosBox .ancEdVar[hidden]{display:none}
+.anunciosBox .ancEdVar .edVar,.anunciosBox .ancEdVar .edFoto{flex:1 1 180px}
+.anunciosBox .ancEdVar .edCor{flex:0 0 44px;height:38px;padding:2px}`;
 document.head.appendChild(css);
 
 // ============ Outros anúncios do mesmo produto (comparador) ============
@@ -80,8 +85,14 @@ function montarAnunciosPainel(o, box){
         <a href="${esc(a.link)}" target="_blank" rel="noopener">${esc(a.loja)}${a.principal ? " (principal)" : ""}${a.variacao ? ` · <span class="ancCor" style="--c:${esc(V.corDe(a.variacao, a.cor) || "transparent")}"></span>${esc(a.variacao)}` : ""}</a>
         <b>${fmt(a)}</b>
         <small>${a === melhor ? "✅ no site" : a.confiavel ? "" : esc(a.motivo)}</small>
-        ${a.principal ? "" : `<button class="ancTirar" type="button" title="Tirar este anúncio" data-link="${esc(a.link)}">🗑️</button>`}
-      </div>`).join("") : ""}
+        ${a.principal ? "" : `<button class="ancTirar ancEditarVar" type="button" title="Cor/versão e foto deste anúncio" data-link="${esc(a.link)}">🎨</button><button class="ancTirar" data-tirar="1" type="button" title="Tirar este anúncio" data-link="${esc(a.link)}">🗑️</button>`}
+      </div>
+      ${a.principal ? "" : `<div class="ancEdVar" data-link="${esc(a.link)}" hidden>
+        <input type="text" class="edVar" placeholder="Cor/versão (ex.: Lilás) — vazio = mesma do principal" value="${esc(a.variacao || "")}">
+        <input type="color" class="edCor" value="${esc(V.corDe(a.variacao, a.cor) || "#cccccc")}" title="Cor da bolinha">
+        <input type="text" class="edFoto" placeholder="Foto desta cor (link da imagem)" value="${esc(a.imagem || "")}">
+        <button class="ancBtn edSalvar" type="button">💾 Salvar</button>
+      </div>`}`).join("") : ""}
     <div class="ancNovo">
       <input type="text" class="ancVarPrincipal" placeholder="Cor/versão do anúncio principal (ex.: Preto)" value="${esc(o.variacao || "")}">
       <button class="ancBtn ancSalvarVar" type="button">Salvar</button>
@@ -217,7 +228,29 @@ function montarAnunciosPainel(o, box){
     this.disabled = false;
   };
 
-  box.querySelectorAll(".ancTirar").forEach(b => b.onclick = async function(){
+  // 🎨 cor/versão e foto de um anúncio que já está aqui
+  box.querySelectorAll(".ancEditarVar").forEach(b => b.onclick = function(){
+    const ed = [...box.querySelectorAll(".ancEdVar")].find(x => x.dataset.link === b.dataset.link);
+    if(ed) ed.hidden = !ed.hidden;
+  });
+  box.querySelectorAll(".ancEdVar").forEach(ed => {
+    const cor = ed.querySelector(".edCor");
+    ed.querySelector(".edVar").addEventListener("input", function(){ if(!cor.dataset.mexeu) cor.value = V.corDe(this.value) || "#cccccc"; });
+    cor.addEventListener("input", function(){ this.dataset.mexeu = "1"; });
+    ed.querySelector(".edSalvar").onclick = async function(){
+      const variacao = ed.querySelector(".edVar").value.trim();
+      this.disabled = true;
+      try{
+        await pedirAnuncio({ op: "editar", slug: o.slug, link: ed.dataset.link, variacao,
+          cor: variacao && cor.dataset.mexeu ? cor.value : "", imagem: ed.querySelector(".edFoto").value.trim() });
+        aviso("✅ Salvo! Aparece no site em 1-2 minutos." + (variacao && !o.variacao ? " Dica: preencha também a cor do anúncio principal." : ""));
+        ed.hidden = true;
+      }catch(e){ aviso("❌ " + e.message, true); }
+      this.disabled = false;
+    };
+  });
+
+  box.querySelectorAll(".ancTirar[data-tirar]").forEach(b => b.onclick = async function(){
     if(!confirm("Tirar este anúncio da oferta?")) return;
     this.disabled = true;
     try{

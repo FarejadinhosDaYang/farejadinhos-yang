@@ -143,18 +143,18 @@
 
         if (vars.length < 2) { mostrarLista(todos, ""); return; }
 
-        // bolinhas ao lado da foto
+        // opções de cor/versão em quadradinhos (foto + nome + preço), abaixo do preço
         var trilho = document.createElement("div");
-        trilho.className = "var-trilho";
+        trilho.className = "var-opcoes";
         trilho.setAttribute("role", "radiogroup");
-        trilho.setAttribute("aria-label", "Escolher cor");
-        if (foto) {
-            var moldura = document.createElement("div");
-            moldura.className = "var-moldura";
-            foto.parentNode.insertBefore(moldura, foto);
-            moldura.appendChild(foto);
-            moldura.appendChild(trilho);
-        } else if (preco) preco.parentNode.insertBefore(trilho, preco);
+        trilho.setAttribute("aria-label", "Escolher cor ou versão");
+        if (rotulo) rotulo.parentNode.removeChild(rotulo);
+        var ancora = preco || btn;
+        if (ancora && ancora.parentNode) {
+            ancora.parentNode.insertBefore(trilho, ancora.nextSibling);
+            if (rotulo) trilho.parentNode.insertBefore(rotulo, trilho);
+        }
+        var ehCor = vars.some(function (v) { return v.cor; });
 
         function escolher(i) {
             var v = vars[i];
@@ -171,7 +171,7 @@
                     setTimeout(function () { foto.classList.remove("trocando"); }, 600);
                 }
             }
-            if (rotulo) rotulo.innerHTML = "Cor: <b>" + esc(v.nome) + "</b>" +
+            if (rotulo) rotulo.innerHTML = (ehCor ? "Cor: " : "Opção: ") + "<b>" + esc(v.nome) + "</b>" +
                 (i === 0 && v.confiavel ? ' <span class="var-mais-barata">a mais barata agora</span>' : "");
             mostrarLista(v.lista, v.nome);
         }
@@ -179,13 +179,17 @@
         vars.forEach(function (v, i) {
             var b = document.createElement("button");
             b.type = "button";
-            b.className = "var-bolinha" + (v.cor ? "" : " texto");
+            b.className = "var-tile";
             b.setAttribute("role", "radio");
-            b.title = v.nome + (v.confiavel ? " · " + reais(v.melhor.valor) : " · preço a conferir");
-            b.setAttribute("aria-label", b.title);
-            b.innerHTML = v.cor
-                ? '<span class="var-cor" style="background:' + esc(v.cor) + '"></span>'
-                : '<span class="var-txt">' + esc(v.nome.slice(0, 6)) + "</span>";
+            var precoV = v.confiavel ? reais(v.melhor.valor) : "a conferir";
+            b.setAttribute("aria-label", v.nome + " · " + precoV);
+            var img = v.imagem && v.imagem !== "principal" ? v.imagem : (v.imagem === "principal" ? fotoPrincipal : "");
+            b.innerHTML =
+                '<span class="var-tile-foto">' + (img
+                    ? '<img src="' + esc(img) + '" alt="" loading="lazy">'
+                    : '<span class="var-cor" style="background:' + esc(v.cor || "#eee") + '"></span>') + "</span>" +
+                '<span class="var-tile-nome">' + (v.cor && img ? '<i style="background:' + esc(v.cor) + '"></i>' : "") + esc(v.nome) + "</span>" +
+                '<span class="var-tile-preco' + (v.confiavel ? "" : " duvida") + '">' + precoV + "</span>";
             b.onclick = function () { escolher(i); };
             trilho.appendChild(b);
         });

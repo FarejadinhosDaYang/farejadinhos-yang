@@ -53,8 +53,6 @@ def main(arquivo):
                     a["variacao"] = var
                     if it.get("cor"):
                         a["cor"] = str(it["cor"])
-                elif not a.get("variacao"):
-                    a.pop("imagem", None)  # mesmo produto: a foto é a da oferta
                 lista.append(a)
                 ja.add(a["link"])
             o["anuncios"] = lista
