@@ -43,6 +43,14 @@ body{margin:0;padding:20px;background:var(--cream);font-family:'Work Sans',Arial
 .precosRelatorio li{margin:3px 0}
 .precosRelatorio a{color:var(--red-dark)}
 .lista{display:flex;flex-direction:column;gap:12px}
+.filtros{position:sticky;top:0;z-index:5;background:var(--cream,#FFF6E9);padding:10px 0 8px;margin-bottom:6px;border-bottom:1.5px dashed var(--line)}
+.filtros input[type=search]{width:100%;box-sizing:border-box;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;font:500 14px 'Work Sans',sans-serif;background:#fff;margin:0 0 8px}
+.filtroLinha{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;margin-bottom:4px;scrollbar-width:thin}
+.chipFiltro{flex:0 0 auto;border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:6px 11px;font:700 12.5px 'Work Sans',sans-serif;color:var(--ink);cursor:pointer;white-space:nowrap}
+.chipFiltro b{font-weight:800;color:var(--muted);margin-left:3px}
+.chipFiltro.ativo{background:var(--red);border-color:var(--red);color:#fff}
+.chipFiltro.ativo b{color:#fff}
+.filtroResumo{font-size:12.5px;color:var(--muted)}
 .item{background:var(--cream-2);border:1.5px solid var(--line);border-radius:16px;padding:14px;box-shadow:0 6px 18px rgba(43,27,18,.08);display:flex;gap:12px;align-items:center}
 .item img{width:64px;height:64px;border-radius:10px;object-fit:cover;background:#f0e6d6;flex-shrink:0}
 .item .info{flex:1;min-width:0}
@@ -134,6 +142,13 @@ body{margin:0;padding:20px;background:var(--cream);font-family:'Work Sans',Arial
 </div>
 
 <div class="statusGeral" id="statusGeral"></div>
+
+<div class="filtros" id="filtros">
+  <input type="search" id="filtroBusca" placeholder="🔎 Procurar oferta pelo nome...">
+  <div class="filtroLinha" id="filtroSituacao"></div>
+  <div class="filtroLinha" id="filtroCategorias"></div>
+  <div class="filtroResumo" id="filtroResumo"></div>
+</div>
 
 <div class="lista" id="lista"></div>
 
@@ -314,6 +329,64 @@ async function carregar(){
   render();
 }
 
+// ================= Filtros: categoria, situação e busca =================
+const ICONES_CAT = { "Casa":"🏠","Café":"☕","Academia":"🏋️","Eletrônicos":"🔌","Eletrodomésticos":"🧺","Beleza":"💄","Moda":"👕","Pet":"🐾",
+  "Cozinha":"🍳","Utilidades":"🧰","Natal":"🎄","Skincare":"🧴","Piscina":"🏊","Vídeos":"🎬","Celulares":"📱" };
+const SITUACOES = [
+  ["todas", "Todas"],
+  ["noar", "🟢 No ar"],
+  ["agendada", "🕒 Na fila"],
+  ["fora", "⏸️ Fora do ar"]
+];
+let filtro = { cat: "", sit: "todas", busca: "" };
+try{ Object.assign(filtro, JSON.parse(localStorage.getItem("farejadinhos_filtro_painel") || "{}"), { busca: "" }); }catch(e){}
+
+function situacaoGrupo(o){
+  const s = FarejadinhosVitrine.status(o, selecaoVitrine, new Date());
+  if(["fresca","reserva","adiantada","permanente"].includes(s)) return "noar";
+  if(s === "agendada") return "agendada";
+  return "fora";
+}
+function semAcento(t){ return String(t || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }
+
+function montarFiltros(){
+  const contarSit = {}; const contarCat = {};
+  const daSituacao = ofertas.filter(o => filtro.sit === "todas" || situacaoGrupo(o) === filtro.sit);
+  ofertas.forEach(o => { const g = situacaoGrupo(o); contarSit[g] = (contarSit[g] || 0) + 1; });
+  daSituacao.forEach(o => {
+    const cats = FarejadinhosVitrine.categoriasDe(o);
+    (cats.length ? cats : ["Sem categoria"]).forEach(c => contarCat[c] = (contarCat[c] || 0) + 1);
+  });
+  document.getElementById("filtroSituacao").innerHTML = SITUACOES.map(([id, nome]) =>
+    `<button type="button" class="chipFiltro${filtro.sit === id ? " ativo" : ""}" data-sit="${id}">${nome}<b>${id === "todas" ? ofertas.length : (contarSit[id] || 0)}</b></button>`).join("");
+  if(filtro.cat && !contarCat[filtro.cat]) contarCat[filtro.cat] = 0;
+  const cats = Object.keys(contarCat).sort((a, b) => contarCat[b] - contarCat[a] || a.localeCompare(b));
+  document.getElementById("filtroCategorias").innerHTML =
+    `<button type="button" class="chipFiltro${!filtro.cat ? " ativo" : ""}" data-cat="">Todas as categorias<b>${daSituacao.length}</b></button>` +
+    cats.map(c => `<button type="button" class="chipFiltro${filtro.cat === c ? " ativo" : ""}" data-cat="${escapeHtml(c)}">${ICONES_CAT[c] || "🏷️"} ${escapeHtml(c)}<b>${contarCat[c]}</b></button>`).join("");
+  const ativo = document.querySelector("#filtroCategorias .chipFiltro.ativo");
+  if(ativo){ const l = ativo.parentNode; l.scrollLeft = ativo.offsetLeft - l.clientWidth / 2 + ativo.clientWidth / 2; }
+  document.querySelectorAll("#filtroSituacao .chipFiltro").forEach(b => b.onclick = () => { filtro.sit = b.dataset.sit; salvarFiltro(); render(); });
+  document.querySelectorAll("#filtroCategorias .chipFiltro").forEach(b => b.onclick = () => { filtro.cat = b.dataset.cat; salvarFiltro(); render(); });
+}
+function salvarFiltro(){ try{ localStorage.setItem("farejadinhos_filtro_painel", JSON.stringify({ cat: filtro.cat, sit: filtro.sit })); }catch(e){} }
+function passaFiltro(o){
+  if(filtro.sit !== "todas" && situacaoGrupo(o) !== filtro.sit) return false;
+  if(filtro.cat){
+    const cats = FarejadinhosVitrine.categoriasDe(o);
+    if(filtro.cat === "Sem categoria" ? cats.length : !cats.includes(filtro.cat)) return false;
+  }
+  if(filtro.busca){
+    const alvo = semAcento(o.produto + " " + (o.categoria || "") + " " + (o.cupom || ""));
+    if(!semAcento(filtro.busca).split(/\s+/).every(p => alvo.includes(p))) return false;
+  }
+  return true;
+}
+document.getElementById("filtroBusca").addEventListener("input", function(){
+  filtro.busca = this.value.trim();
+  clearTimeout(this._t); this._t = setTimeout(render, 150);
+});
+
 function render(){
 
   const lista = document.getElementById("lista");
@@ -326,9 +399,16 @@ function render(){
     return;
   }
 
-  vazio.style.display = "none";
+  montarFiltros();
+  const filtradas = ofertas.filter(passaFiltro);
+  document.getElementById("filtroResumo").textContent = filtradas.length === ofertas.length
+    ? `Mostrando todas as ${ofertas.length} ofertas.`
+    : `Mostrando ${filtradas.length} de ${ofertas.length} ofertas.`;
 
-  ofertas.forEach(o => {
+  vazio.style.display = filtradas.length ? "none" : "block";
+  vazio.textContent = filtradas.length ? "" : "Nenhuma oferta com esse filtro.";
+
+  filtradas.forEach(o => {
 
     try {
 
