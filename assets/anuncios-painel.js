@@ -1,0 +1,171 @@
+/* Farejadinhos da Yang — "🏪 Outros anúncios deste produto" (comparador)
+ * Usado no painel de ofertas (painel/ofertas.html) e no modo admin da
+ * página da oferta (assets/admin.js). Precisa do assets/vitrine.js.
+ *   FarejadinhosAnunciosPainel.montar(oferta, elemento)
+ * Adicionar/remover/editar vai pelo /lote (acao "anuncios" ->
+ * gerador/anuncios.py); o preço dos extras é conferido de hora em hora.
+ */
+(function(){
+const WORKER_URL = "https://holy-pine-e7fc.bernard-shimizu.workers.dev";
+function esc(t){ const d = document.createElement("div"); d.textContent = t == null ? "" : String(t); return d.innerHTML; }
+function senhaPainel(){
+  const c = document.getElementById("senha");
+  let v = c && c.value.trim();
+  if(!v){ try{ v = localStorage.getItem("farejadinhos_admin_senha") || ""; }catch(e){} }
+  return v || "";
+}
+const css = document.createElement("style");
+css.textContent = `.anunciosBox{margin-top:16px;padding-top:12px;border-top:1.5px dashed var(--line)}
+.anunciosBox h4{margin:0 0 4px;font:800 15px 'Baloo 2',sans-serif}
+.anunciosBox .ancObs{font-size:12px;color:var(--muted);margin-bottom:8px}
+.anunciosBox .ancLinha{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:7px 10px;margin-bottom:6px;font-size:13px}
+.anunciosBox .ancLinha.melhor{border-color:#2E9E5B;background:#F2FBF5}
+.anunciosBox .ancLinha a{color:inherit;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.anunciosBox .ancLinha b{white-space:nowrap}
+.anunciosBox .ancLinha small{color:var(--muted);white-space:nowrap}
+.anunciosBox .ancTirar{border:0;background:none;cursor:pointer;font-size:15px;padding:0 4px}
+.anunciosBox .ancNovo{display:flex;gap:6px;margin-top:8px}
+.anunciosBox .ancNovo input{flex:1;margin:0}
+.anunciosBox .ancNovo .ancPreco{flex:0 0 110px}
+.anunciosBox .ancBtn{border:0;border-radius:9px;padding:9px 12px;background:var(--orange);color:var(--ink);font-weight:800;cursor:pointer;white-space:nowrap}
+.anunciosBox .ancBtn:disabled{opacity:.6;cursor:wait}
+.anunciosBox .ancCor{display:inline-block;width:11px;height:11px;border-radius:50%;background:var(--c);box-shadow:inset 0 0 0 1px rgba(0,0,0,.25);margin-right:3px;vertical-align:-1px}
+.anunciosBox .ancMsg{font-size:12.5px;font-weight:600;margin-top:6px}
+.anunciosBox{--line:#F0DFC4;--muted:#8A7563;--orange:#F7941D;--ink:#2B1B12;--red-dark:#C21A24;color:var(--ink);font-family:'Work Sans',sans-serif;text-align:left}
+.anunciosBox input{box-sizing:border-box;padding:9px 10px;border:1.5px solid #F0DFC4;border-radius:9px;font:500 13.5px 'Work Sans',sans-serif;background:#fff;min-width:0}
+.anunciosBox .ancBtn{background:#F7941D}`;
+document.head.appendChild(css);
+
+// ============ Outros anúncios do mesmo produto (comparador) ============
+// O site mostra sempre o MENOR preço confiável entre o link principal e
+// estes anúncios (regra em assets/vitrine.js). Adicionar/remover vai pelo
+// /lote (acao "anuncios" -> gerador/anuncios.py); o preço dos extras é
+// conferido de hora em hora (gerador/conferir-anuncios.py).
+async function pedirAnuncio(item){
+  const senha = senhaPainel();
+  if(!senha) throw new Error("Digite a senha do painel primeiro.");
+  const dados = new FormData();
+  dados.append("senha", senha);
+  dados.append("itens", JSON.stringify([Object.assign({ acao: "anuncios" }, item)]));
+  const r = await fetch(WORKER_URL + "/lote", { method: "POST", body: dados });
+  const texto = await r.text();
+  if(r.status === 401) throw new Error("Senha incorreta.");
+  if(!r.ok) throw new Error(texto);
+}
+
+function montarAnunciosPainel(o, box){
+  box.classList.add("anunciosBox");
+  const V = window.FarejadinhosVitrine;
+  if(!box || !V || !V.anunciosDe) return;
+  const lista = V.anunciosDe(o, new Date());
+  const melhor = lista.find(a => a.confiavel) || lista[0];
+  const fmt = a => a.valor ? "R$ " + a.valor.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : "sem preço";
+  box.innerHTML = `
+    <h4>🏪 Outros anúncios deste produto</h4>
+    <div class="ancObs">O site mostra sempre o menor preço confiável entre todos. Preço posto aqui vale por 7 dias; depois a conferência automática assume (preço novo só vale depois de 2 leituras iguais).</div>
+    ${lista.length > 1 ? lista.map(a => `
+      <div class="ancLinha${a === melhor ? " melhor" : ""}">
+        <span>${a.principal ? "⭐" : "🏪"}</span>
+        ${a.imagem ? `<img src="${esc(a.imagem)}" alt="" style="width:26px;height:26px;object-fit:contain;border-radius:6px;background:#fff">` : ""}
+        <a href="${esc(a.link)}" target="_blank" rel="noopener">${esc(a.loja)}${a.principal ? " (principal)" : ""}${a.variacao ? ` · <span class="ancCor" style="--c:${esc(V.corDe(a.variacao, a.cor) || "transparent")}"></span>${esc(a.variacao)}` : ""}</a>
+        <b>${fmt(a)}</b>
+        <small>${a === melhor ? "✅ no site" : a.confiavel ? "" : esc(a.motivo)}</small>
+        ${a.principal ? "" : `<button class="ancTirar" type="button" title="Tirar este anúncio" data-link="${esc(a.link)}">🗑️</button>`}
+      </div>`).join("") : ""}
+    <div class="ancNovo">
+      <input type="text" class="ancVarPrincipal" placeholder="Cor/versão do anúncio principal (ex.: Preto)" value="${esc(o.variacao || "")}">
+      <button class="ancBtn ancSalvarVar" type="button">Salvar</button>
+    </div>
+    <div class="ancNovo">
+      <input type="text" class="ancLink" placeholder="Colar link de outro anúncio">
+      <input type="text" class="ancPreco" placeholder="Preço">
+      <button class="ancBtn ancBuscar" type="button" title="Ler preço e foto do link">🔎</button>
+    </div>
+    <div class="ancNovo">
+      <input type="text" class="ancVar" placeholder="Cor/versão deste anúncio (ex.: Azul) — vazio = mesma do principal">
+      <input type="color" class="ancCorHex" title="Cor da bolinha (automática pelo nome)" style="flex:0 0 44px;padding:2px;height:40px">
+    </div>
+    <div class="ancNovo">
+      <input type="text" class="ancFoto" placeholder="Foto desta cor (link da imagem, opcional — o 🔎 preenche)">
+      <img class="ancFotoPrev" alt="" style="width:40px;height:40px;object-fit:contain;border-radius:8px;background:#fff;border:1px solid var(--line);display:none">
+    </div>
+    <button class="ancBtn ancAdd" type="button" style="width:100%;margin-top:6px">➕ Adicionar anúncio</button>
+    <div class="ancMsg"></div>`;
+  const msg = box.querySelector(".ancMsg");
+  const aviso = (t, erro) => { msg.style.color = erro ? "var(--red-dark)" : "#1F7A44"; msg.textContent = t; };
+
+  box.querySelector(".ancBuscar").onclick = async function(){
+    const link = box.querySelector(".ancLink").value.trim();
+    const senha = senhaPainel();
+    if(!/^https?:\/\//i.test(link)) return aviso("Cole o link do anúncio primeiro.", true);
+    if(!senha) return aviso("Digite a senha do painel primeiro.", true);
+    this.disabled = true; aviso("Lendo o preço na loja...");
+    try{
+      const dados = new FormData(); dados.append("senha", senha); dados.append("link", link);
+      const r = await fetch(WORKER_URL + "/produto", { method: "POST", body: dados });
+      const j = await r.json().catch(() => ({}));
+      if(r.status === 401) throw new Error("Senha incorreta.");
+      if(j.imagemUrl && !box.querySelector(".ancFoto").value){ box.querySelector(".ancFoto").value = j.imagemUrl; box.querySelector(".ancFoto").dispatchEvent(new Event("input")); }
+      if(j.preco){ box.querySelector(".ancPreco").value = j.preco; aviso("Preço lido: " + j.preco + (j.produto ? " — " + j.produto.slice(0, 60) : "") + ". Confira na loja antes de adicionar."); }
+      else aviso("Não consegui ler o preço desse link — digite à mão.", true);
+    }catch(e){ aviso("❌ " + e.message, true); }
+    this.disabled = false;
+  };
+
+  box.querySelector(".ancAdd").onclick = async function(){
+    const link = box.querySelector(".ancLink").value.trim();
+    const preco = box.querySelector(".ancPreco").value.trim();
+    if(!/^https?:\/\//i.test(link)) return aviso("Cole o link do anúncio.", true);
+    if(link === o.link) return aviso("Esse já é o link principal da oferta.", true);
+    if(!V.numeroPreco(preco)) return aviso("Coloque o preço (ou toque em 🔎 pra ler da loja).", true);
+    const principal = V.numeroPreco(o.preco);
+    const valor = V.numeroPreco(preco);
+    if(principal && (valor < principal / 2 || valor > principal * 2) &&
+       !confirm(`O preço ${preco} é muito diferente do principal (${o.preco}). É mesmo o mesmo produto?`)) return;
+    this.disabled = true; this.textContent = "Enviando...";
+    try{
+      const variacao = box.querySelector(".ancVar").value.trim();
+      const corHex = box.querySelector(".ancCorHex");
+      await pedirAnuncio({ op: "adicionar", slug: o.slug, link, preco, loja: V.lojaDe(link).nome,
+        variacao, cor: variacao && corHex.dataset.mexeu ? corHex.value : "",
+        imagem: variacao ? box.querySelector(".ancFoto").value.trim() : "" });
+      aviso("✅ Anúncio enviado! Aparece no site em 1-2 minutos." + (variacao && !o.variacao ? " Dica: preencha também a cor do anúncio principal." : ""));
+      ["ancLink", "ancPreco", "ancVar", "ancFoto"].forEach(c => box.querySelector("." + c).value = "");
+      box.querySelector(".ancFotoPrev").style.display = "none"; delete corHex.dataset.mexeu;
+    }catch(e){ aviso("❌ " + e.message, true); }
+    this.disabled = false; this.textContent = "➕ Adicionar anúncio";
+  };
+
+  // cor da bolinha: automática pelo nome, a menos que você escolha
+  const corHex = box.querySelector(".ancCorHex");
+  box.querySelector(".ancVar").addEventListener("input", function(){
+    if(!corHex.dataset.mexeu) corHex.value = V.corDe(this.value) || "#cccccc";
+  });
+  corHex.addEventListener("input", function(){ this.dataset.mexeu = "1"; });
+  box.querySelector(".ancFoto").addEventListener("input", function(){
+    const prev = box.querySelector(".ancFotoPrev");
+    if(/^https?:\/\//i.test(this.value.trim())){ prev.src = this.value.trim(); prev.style.display = ""; } else prev.style.display = "none";
+  });
+  box.querySelector(".ancSalvarVar").onclick = async function(){
+    this.disabled = true;
+    try{
+      await pedirAnuncio({ op: "editar", slug: o.slug, link: o.link, variacao: box.querySelector(".ancVarPrincipal").value.trim() });
+      aviso("✅ Cor do anúncio principal salva! Aparece no site em 1-2 minutos.");
+    }catch(e){ aviso("❌ " + e.message, true); }
+    this.disabled = false;
+  };
+
+  box.querySelectorAll(".ancTirar").forEach(b => b.onclick = async function(){
+    if(!confirm("Tirar este anúncio da oferta?")) return;
+    this.disabled = true;
+    try{
+      await pedirAnuncio({ op: "remover", slug: o.slug, link: this.dataset.link });
+      this.closest(".ancLinha").style.opacity = ".4";
+      aviso("✅ Pedido enviado — some do site em 1-2 minutos.");
+    }catch(e){ aviso("❌ " + e.message, true); this.disabled = false; }
+  });
+}
+
+
+window.FarejadinhosAnunciosPainel = { montar: montarAnunciosPainel };
+})();

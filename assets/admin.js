@@ -105,6 +105,17 @@
             .then(function (d) { oferta = (Array.isArray(d) ? d : [d]).filter(function (o) { return o && o.slug === slug; })[0] || null; return oferta; });
     }
 
+    function carregarScript(caminho, global) {
+        if (window[global]) return Promise.resolve();
+        return new Promise(function (ok, erro) {
+            var s = document.createElement("script");
+            s.src = base + caminho;
+            s.onload = function () { window[global] ? ok() : erro(); };
+            s.onerror = erro;
+            document.head.appendChild(s);
+        });
+    }
+
     function carregarCategorias() {
         if (window.FarejadinhosCategorias) return Promise.resolve(window.FarejadinhosCategorias.LISTA);
         return new Promise(function (ok) {
@@ -179,6 +190,14 @@
                 return '<option' + (c === catPrincipal ? " selected" : "") + ">" + esc(c) + "</option>";
             }).join("");
         });
+
+        // 🏪 Outros anúncios / cores deste produto (mesmo editor do painel)
+        var anc = document.createElement("div");
+        extra.appendChild(anc);
+        carregarScript("assets/vitrine.js", "FarejadinhosVitrine")
+            .then(function () { return carregarScript("assets/anuncios-painel.js", "FarejadinhosAnunciosPainel"); })
+            .then(function () { window.FarejadinhosAnunciosPainel.montar(oferta, anc); })
+            .catch(function () { anc.textContent = "Não consegui carregar o editor de outros anúncios."; });
 
         montarBarra();
         (h1 || preco).focus();
