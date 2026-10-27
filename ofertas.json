@@ -712,24 +712,6 @@
     "precoConferido": "2026-10-27T20:06:40Z"
   },
   {
-    "produto": "Frigideira Cerâmica Antiaderente Indução Azul",
-    "preco": "R$ 54,99",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Cozinha",
-    "destaque": false,
-    "imagem": "59d65812-de99-43cc-9696-4be2369b53c8.webp",
-    "link": "https://meli.la/22dAZA3",
-    "url": "https://farejadinhosdayang.com.br/ofertas/frigideira-ceramica-antiaderente-inducao-azul/",
-    "slug": "frigideira-ceramica-antiaderente-inducao-azul",
-    "data": "2026-10-15T22:42:12Z",
-    "precoAVista": "R$ 54,99",
-    "precoAPrazo": "125,88",
-    "liberacao": "2026-10-27T22:42:11Z",
-    "parcelas": 4,
-    "precoConferido": "2026-10-21T07:39:00Z"
-  },
-  {
     "produto": "Dispenser Porta Detergente 3 em 1 em Aço Inox",
     "preco": "R$ 35,90",
     "precoAntigo": "",
@@ -2949,5 +2931,23 @@
     "precoAPrazo": "",
     "liberacao": "2026-10-26T18:40:04Z",
     "precoManual": "2026-10-27T17:58:26Z"
+  },
+  {
+    "produto": "Frigideira Cerâmica Antiaderente Indução Azul",
+    "preco": "R$ 54,99",
+    "precoAntigo": "",
+    "cupom": "",
+    "categoria": "Cozinha, Vídeos",
+    "destaque": false,
+    "imagem": "59d65812-de99-43cc-9696-4be2369b53c8.webp",
+    "link": "https://meli.la/22dAZA3",
+    "url": "https://farejadinhosdayang.com.br/ofertas/frigideira-ceramica-antiaderente-inducao-azul/",
+    "slug": "frigideira-ceramica-antiaderente-inducao-azul",
+    "data": "2026-10-15T22:42:12Z",
+    "precoAVista": "54,99",
+    "precoAPrazo": "125,88",
+    "liberacao": "2026-10-27T22:42:11Z",
+    "precoManual": "2026-10-27T21:32:29Z",
+    "parcelas": 4
   }
 ]
