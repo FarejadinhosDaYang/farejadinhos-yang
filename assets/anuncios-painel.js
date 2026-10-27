@@ -31,9 +31,19 @@ css.textContent = `.anunciosBox{margin-top:16px;padding-top:12px;border-top:1.5p
 .anunciosBox .ancBtn:disabled{opacity:.6;cursor:wait}
 .anunciosBox .ancCor{display:inline-block;width:11px;height:11px;border-radius:50%;background:var(--c);box-shadow:inset 0 0 0 1px rgba(0,0,0,.25);margin-right:3px;vertical-align:-1px}
 .anunciosBox .ancMsg{font-size:12.5px;font-weight:600;margin-top:6px}
-.anunciosBox{--line:#F0DFC4;--muted:#8A7563;--orange:#F7941D;--ink:#2B1B12;--red-dark:#C21A24;color:var(--ink);font-family:'Work Sans',sans-serif;text-align:left}
+.anunciosBox{min-width:0;max-width:100%;grid-column:1/-1;--line:#F0DFC4;--muted:#8A7563;--orange:#F7941D;--ink:#2B1B12;--red-dark:#C21A24;color:var(--ink);font-family:'Work Sans',sans-serif;text-align:left}
 .anunciosBox input{box-sizing:border-box;padding:9px 10px;border:1.5px solid #F0DFC4;border-radius:9px;font:500 13.5px 'Work Sans',sans-serif;background:#fff;min-width:0}
 .anunciosBox .ancBtn{background:#F7941D}`;
+css.textContent += `
+.anunciosBox .ancJuntar{margin-top:14px;padding-top:10px;border-top:1px dashed var(--line)}
+.anunciosBox .ancSub{font-size:13px;margin-bottom:6px}
+.anunciosBox .ancBuscaOferta{width:100%}
+.anunciosBox .ancOpcao{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px 8px;margin-top:6px}
+.anunciosBox .ancOpcao img{width:40px;height:40px;object-fit:contain;border-radius:6px;flex:0 0 40px}
+.anunciosBox .ancOpcaoTxt{flex:1;min-width:0;font-size:13px}
+.anunciosBox .ancOpcaoTxt b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.anunciosBox .ancOpcaoTxt small{color:var(--muted)}
+.anunciosBox .ancJuntarBtn{flex:0 0 auto;padding:7px 10px!important;font-size:12.5px}`;
 document.head.appendChild(css);
 
 // ============ Outros anúncios do mesmo produto (comparador) ============
@@ -90,8 +100,60 @@ function montarAnunciosPainel(o, box){
       <img class="ancFotoPrev" alt="" style="width:40px;height:40px;object-fit:contain;border-radius:8px;background:#fff;border:1px solid var(--line);display:none">
     </div>
     <button class="ancBtn ancAdd" type="button" style="width:100%;margin-top:6px">➕ Adicionar anúncio</button>
+    <div class="ancJuntar">
+      <div class="ancSub">…ou escolha uma oferta que <b>já está no site</b>:</div>
+      <input type="search" class="ancBuscaOferta" placeholder="🔎 Procurar oferta do site pelo nome">
+      <div class="ancResultados"></div>
+    </div>
     <div class="ancMsg"></div>`;
   const msg = box.querySelector(".ancMsg");
+
+  // ---------- escolher uma oferta que já está no site ----------
+  const jaLigados = new Set(V.anunciosDe(o, new Date()).map(a => a.link));
+  let catalogo = null;
+  const lerCatalogo = () => catalogo ? Promise.resolve(catalogo) :
+    fetch("/ofertas.json?t=" + Date.now(), { cache: "no-store" }).then(r => r.json()).then(d => (catalogo = Array.isArray(d) ? d : []))
+      .catch(() => (catalogo = []));
+  const semAcento = t => String(t || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  const resultados = box.querySelector(".ancResultados");
+  function listarParecidas(termo){
+    lerCatalogo().then(todas => {
+      const palavras = semAcento(termo).split(/\s+/).filter(p => p.length > 1);
+      // sem busca: sugere as de nome parecido com este produto
+      const base = palavras.length ? palavras : semAcento(o.produto).split(/\s+/).filter(p => p.length > 3).slice(0, 4);
+      const pontos = x => base.filter(p => semAcento(x.produto).includes(p)).length;
+      const lista = todas
+        .filter(x => x && x.slug !== o.slug && x.link && !jaLigados.has(x.link) && x.produto)
+        .map(x => [x, pontos(x)])
+        .filter(([x, n]) => palavras.length ? n === palavras.length : n >= Math.min(2, base.length))
+        .sort((a, b) => b[1] - a[1]).slice(0, 8).map(([x]) => x);
+      resultados.innerHTML = lista.length ? lista.map((x, i) => `
+        <div class="ancOpcao">
+          <img src="/assets/${encodeURIComponent(x.imagem || "")}" alt="" onerror="this.style.visibility='hidden'">
+          <div class="ancOpcaoTxt"><b>${esc(x.produto)}</b><small>${esc(x.preco || "")} · ${esc(V.lojaDe(x.link).nome)}${x.categoria ? " · " + esc(x.categoria) : ""}</small></div>
+          <button class="ancBtn ancJuntarBtn" type="button" data-i="${i}">🔗 Juntar</button>
+        </div>`).join("")
+        : `<div class="ancObs">${palavras.length ? "Nenhuma oferta do site com esse nome." : "Digite o nome pra procurar uma oferta do site."}</div>`;
+      resultados.querySelectorAll(".ancJuntarBtn").forEach(b => b.onclick = () => juntar(lista[+b.dataset.i], b));
+    });
+  }
+  async function juntar(outra, botao){
+    const variacao = prompt(`Juntar "${outra.produto}" (${outra.preco}) a este produto.\n\nÉ outra cor/versão? Escreva qual (ex.: Azul, 512GB).\nSe for o MESMO produto em outra loja/anúncio, deixe vazio.`, "");
+    if(variacao === null) return;
+    const tirar = confirm(`Tirar "${outra.produto}" da vitrine do site?\n\nOK = ela some como oferta separada e fica só como anúncio deste produto (recomendado, evita repetido).\nCancelar = continua também como oferta separada.`);
+    botao.disabled = true; botao.textContent = "Juntando...";
+    try{
+      await pedirAnuncio({ op: "juntar", slug: o.slug, de: outra.slug, variacao: variacao.trim(),
+        cor: variacao.trim() ? (V.corDe(variacao) || "") : "", tirar });
+      jaLigados.add(outra.link);
+      botao.textContent = "✅ Juntado";
+      aviso(`✅ "${outra.produto}" virou anúncio deste produto${tirar ? " e sai da vitrine" : ""}. Aparece no site em 1-2 minutos.` +
+        (variacao.trim() && !o.variacao ? " Dica: salve também a cor do anúncio principal." : ""));
+    }catch(e){ aviso("❌ " + e.message, true); botao.disabled = false; botao.textContent = "🔗 Juntar"; }
+  }
+  const busca = box.querySelector(".ancBuscaOferta");
+  busca.addEventListener("input", function(){ clearTimeout(this._t); this._t = setTimeout(() => listarParecidas(this.value), 200); });
+  busca.addEventListener("focus", function(){ if(!resultados.innerHTML) listarParecidas(this.value); }, { once: true });
   const aviso = (t, erro) => { msg.style.color = erro ? "var(--red-dark)" : "#1F7A44"; msg.textContent = t; };
 
   box.querySelector(".ancBuscar").onclick = async function(){

@@ -6,6 +6,9 @@ Itens do lote: {"acao": "anuncios", "op": "adicionar"|"remover"|"editar",
                 "variacao": "Azul", "cor": "#hex", "imagem": "https://foto..."}
 "editar" muda variação/cor/foto de um anúncio; com o link principal da
 oferta, muda a variação do anúncio principal (campos variacao/cor da oferta).
+"juntar" {"slug", "de": "<slug de outra oferta>", "variacao", "cor", "tirar": true}
+transforma uma oferta que já está no site em anúncio desta (link, preço,
+foto e os anúncios dela); com "tirar", a outra sai da lista do site.
 Anúncio posto à mão vale direto (o Alexandre conferiu o preço) por 7 dias;
 depois disso a conferência automática (conferir-anuncios.py) assume.
 """
@@ -27,6 +30,40 @@ def main(arquivo):
     por_slug = {o.get("slug"): o for o in catalogo if isinstance(o, dict)}
     mudou = False
     for it in itens:
+        if it.get("op") == "juntar":
+            o, outra = por_slug.get(it.get("slug")), por_slug.get(it.get("de"))
+            if not o or not outra or o is outra:
+                print(f"  ignorado (juntar): {it.get('slug')} <- {it.get('de')}")
+                continue
+            agora = agora_iso()
+            var = str(it.get("variacao") or "").strip()
+            lista = [a for a in (o.get("anuncios") or []) if isinstance(a, dict)]
+            ja = {a.get("link") for a in lista} | {o.get("link")}
+            foto = f"https://farejadinhosdayang.com.br/assets/{outra['imagem']}" if outra.get("imagem") else ""
+            novos = [{"link": outra.get("link"), "loja": loja_de(outra.get("link")), "preco": outra.get("preco") or "",
+                      "conferido": outra.get("precoConferido") or outra.get("data") or agora,
+                      "manual": agora, "confirmado": True, "imagem": foto}]
+            for a in outra.get("anuncios") or []:
+                if isinstance(a, dict):
+                    novos.append(dict(a, imagem=a.get("imagem") or foto))
+            for a in novos:
+                if not a.get("link") or a["link"] in ja:
+                    continue
+                if var:
+                    a["variacao"] = var
+                    if it.get("cor"):
+                        a["cor"] = str(it["cor"])
+                elif not a.get("variacao"):
+                    a.pop("imagem", None)  # mesmo produto: a foto é a da oferta
+                lista.append(a)
+                ja.add(a["link"])
+            o["anuncios"] = lista
+            if it.get("tirar"):
+                catalogo = [x for x in catalogo if x is not outra]
+                por_slug.pop(outra.get("slug"), None)
+            print(f"  juntado: {outra.get('slug')} -> {o['slug']} ({len(novos)} anúncio(s)){' e tirado do site' if it.get('tirar') else ''}")
+            mudou = True
+            continue
         o = por_slug.get(it.get("slug"))
         link = str(it.get("link") or "").strip()
         if not o or not link.lower().startswith(("http://", "https://")):
