@@ -64,6 +64,10 @@ h1{font-family:'Baloo 2',sans-serif;color:var(--red-dark);font-size:26px;margin:
 .barra input{flex:0 1 190px;padding:10px;border:1.5px solid var(--line);border-radius:10px;font:500 14px 'Work Sans',Arial,sans-serif}
 .barra .subir{border:0;border-radius:12px;padding:12px 18px;font:800 15px 'Baloo 2',sans-serif;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--red),var(--red-dark))}
 .barra .subir:disabled{opacity:.6;cursor:wait}
+.topo-lista{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.topo-lista .contagem{margin:0}
+.todos{border:1.5px solid var(--red);background:#fff;color:var(--red-dark);border-radius:10px;padding:7px 12px;font:700 13px 'Work Sans',Arial,sans-serif;cursor:pointer}
+.todos[hidden]{display:none}
 .barra .limpar{border:0;background:none;color:var(--muted);font:600 13px 'Work Sans',Arial,sans-serif;cursor:pointer;text-decoration:underline}
 .status{flex:1 1 100%;font-size:13.5px}
 .status.ok{color:var(--verde)} .status.erro{color:#a3141c}
@@ -91,7 +95,7 @@ h1{font-family:'Baloo 2',sans-serif;color:var(--red-dark);font-size:26px;margin:
     <label><input type="checkbox" id="esconderSite" checked> esconder os que já estão no site</label>
     <label><input type="checkbox" id="verIgnorados"> ver ignorados</label>
 </div>
-<p class="contagem" id="contagem"></p>
+<div class="topo-lista"><p class="contagem" id="contagem"></p><button class="todos" id="btnTodos" type="button" hidden>☑️ Selecionar todos</button></div>
 
 <div class="grade" id="grade"></div>
 <button class="mais" id="mais" hidden>Mostrar mais</button>
@@ -212,10 +216,30 @@ function alternar(p, c, m){
     barra();
 }
 
+// Seleciona (ou desmarca) TODOS os produtos do filtro atual — inclusive os que ainda não apareceram no "Mostrar mais".
+function botaoTodos(l){
+    const b = document.getElementById("btnTodos");
+    l = l || visiveis();
+    b.hidden = !l.length;
+    const tudo = l.length && l.every(p => sel.has(p.id));
+    b.textContent = tudo ? "✖ Desmarcar todos (" + l.length + ")" : "☑️ Selecionar todos (" + l.length + ")";
+    b._tudo = tudo;
+}
+document.getElementById("btnTodos").addEventListener("click", function(){
+    const l = visiveis();
+    if(this._tudo) l.forEach(p => sel.delete(p.id));
+    else {
+        if(l.length > 100 && !confirm(`Selecionar ${l.length} produtos de uma vez?`)) return;
+        l.forEach(p => { if(!sel.has(p.id)) sel.set(p.id, catAtiva || p.categorias[0]); });
+    }
+    render(); barra();
+});
+
 function barra(){
     const n = sel.size;
     document.getElementById("barra").classList.toggle("on", n > 0);
     document.getElementById("selCont").textContent = n + (n === 1 ? " selecionado" : " selecionados");
+    botaoTodos();
 }
 
 function cats(){
@@ -238,6 +262,7 @@ function render(){
     if(!l.length) g.appendChild(el("div", "vazio", "Nada por aqui com esse filtro."));
     l.slice(0, mostrando).forEach(p => g.appendChild(card(p)));
     const mais = document.getElementById("mais");
+    botaoTodos(l);
     mais.hidden = l.length <= mostrando; mais.textContent = "Mostrar mais (" + Math.max(0, l.length - mostrando) + ")";
 }
 
