@@ -1989,22 +1989,6 @@
     "precoManual": "2026-10-20T01:57:55Z"
   },
   {
-    "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb, 8gb Ram,",
-    "preco": "R$ 2.998,00",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Celulares",
-    "destaque": false,
-    "imagem": "15a584a0-7703-4c5d-9c53-fae4b51ccff1.jpg",
-    "link": "https://meli.la/2i5YnPJ",
-    "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s25-fe-5g-128gb-8gb-ram/",
-    "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-8gb-ram",
-    "data": "2026-10-21T12:30:05Z",
-    "precoAVista": "R$ 2.998,00",
-    "precoAPrazo": "3276,00",
-    "precoConferido": "2026-10-26T19:19:06Z"
-  },
-  {
     "produto": "PRÉ TREINO PROHIBIDO 180g Sabor Citrus",
     "preco": "R$ 41,88",
     "precoAntigo": "",
@@ -2107,7 +2091,19 @@
     "precoAPrazo": "3276,00",
     "liberacao": "2026-10-23T00:42:12Z",
     "parcelas": 10,
-    "precoConferido": "2026-10-27T20:06:40Z"
+    "precoConferido": "2026-10-27T20:06:40Z",
+    "anuncios": [
+      {
+        "link": "https://meli.la/2i5YnPJ",
+        "loja": "Mercado Livre",
+        "preco": "R$ 2.998,00",
+        "conferido": "2026-10-26T19:19:06Z",
+        "manual": "2026-10-28T00:17:09Z",
+        "confirmado": true,
+        "imagem": "https://farejadinhosdayang.com.br/assets/15a584a0-7703-4c5d-9c53-fae4b51ccff1.jpg",
+        "variacao": "cor"
+      }
+    ]
   },
   {
     "produto": "Celular Samsung Galaxy S25&#43; 5g, 512gb",
