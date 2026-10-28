@@ -1861,25 +1861,6 @@
     "precoConferido": "2026-10-27T16:43:37Z"
   },
   {
-    "produto": "Celular Samsung Galaxy S26 Ultra 5G 256GB 12GB RAM",
-    "preco": "R$ 7.274,00",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Celulares",
-    "destaque": false,
-    "imagem": "8a3e1230-4e3e-4109-877a-8c16b096077d.jpg",
-    "link": "https://link.amazon/B098ObooL",
-    "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-ultra-5g-256gb-12gb-ram/",
-    "slug": "celular-samsung-galaxy-s26-ultra-5g-256gb-12gb-ram",
-    "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "R$ 7.274,00",
-    "precoAPrazo": "7274,00",
-    "liberacao": "2026-10-20T18:28:00Z",
-    "precoManual": "2026-10-19T11:25:14Z",
-    "parcelas": 12,
-    "precoConferido": "2026-10-27T20:06:40Z"
-  },
-  {
     "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
     "preco": "R$ 5.065,61",
     "precoAntigo": "",
@@ -2880,6 +2861,18 @@
     "precoAPrazo": "7499,00",
     "liberacao": "2026-10-23T20:20:00Z",
     "precoManual": "2026-10-28T00:17:48Z",
-    "parcelas": 10
+    "parcelas": 10,
+    "anuncios": [
+      {
+        "link": "https://link.amazon/B098ObooL",
+        "loja": "Outra loja",
+        "preco": "R$ 7.274,00",
+        "conferido": "2026-10-27T20:06:40Z",
+        "manual": "2026-10-28T00:18:02Z",
+        "confirmado": true,
+        "imagem": "https://farejadinhosdayang.com.br/assets/8a3e1230-4e3e-4109-877a-8c16b096077d.jpg",
+        "variacao": "Cor"
+      }
+    ]
   }
 ]
