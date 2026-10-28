@@ -5085,6 +5085,7 @@
     "precoAPrazo": "249,00",
     "liberacao": "2026-10-28T15:30:03Z",
     "precoManual": "2026-10-28T17:48:52Z",
-    "parcelas": 6
+    "parcelas": 6,
+    "fixo": true
   }
 ]
