@@ -876,7 +876,8 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-28T19:21:03Z",
-    "precoConferido": "2026-10-27T20:06:40Z"
+    "precoConferido": "2026-10-27T20:06:40Z",
+    "fixo": true
   },
   {
     "produto": "Escorredor de Louças Rack Aço Carbono Organizador",
@@ -2180,7 +2181,8 @@
     "data": "2026-10-26T11:59:25Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-26T12:47:20Z"
+    "liberacao": "2026-10-26T12:47:20Z",
+    "fixo": true
   },
   {
     "produto": "Mini Umidificador Difusor Aromatizador Egg",
@@ -2196,7 +2198,8 @@
     "data": "2026-10-26T11:59:26Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-27T14:22:45Z"
+    "liberacao": "2026-10-27T14:22:45Z",
+    "fixo": true
   },
   {
     "produto": "Peças Suporte de Canto e Reta Porta Shampoo",
@@ -2260,7 +2263,8 @@
     "data": "2026-10-26T11:59:28Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-26T11:56:00Z"
+    "liberacao": "2026-10-26T11:56:00Z",
+    "fixo": true
   },
   {
     "produto": "Kit 6 Tampas Panela Silicone Universal",
@@ -2276,7 +2280,8 @@
     "data": "2026-10-26T11:59:28Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-27T11:57:55Z"
+    "liberacao": "2026-10-27T11:57:55Z",
+    "fixo": true
   },
   {
     "produto": "KIT 3 Necessaire Bolsa Portátil Transparente",
@@ -2309,7 +2314,8 @@
     "data": "2026-10-26T11:59:30Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-27T20:00:11Z"
+    "liberacao": "2026-10-27T20:00:11Z",
+    "fixo": true
   },
   {
     "produto": "Caixa Saco Organizador Cobertor Casaco Guarda",
@@ -2341,7 +2347,8 @@
     "data": "2026-10-26T11:59:32Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-27T14:51:43Z"
+    "liberacao": "2026-10-27T14:51:43Z",
+    "fixo": true
   },
   {
     "produto": "Cozedor de Ovos Elétrico 110V",
@@ -3058,7 +3065,9 @@
     "data": "2026-10-28T00:39:51Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-28T00:11:58Z"
+    "liberacao": "2026-10-28T00:11:58Z",
+    "fixo": true,
+    "anuncios": []
   },
   {
     "produto": "Principia Sérums Niacinamida + Hialurônico",
@@ -4130,23 +4139,8 @@
     "data": "2026-10-28T00:51:48Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-28T15:25:15Z"
-  },
-  {
-    "produto": "Protetor Solar Facial Hidrabene FPS 70 Toque Seco 50g",
-    "preco": "R$ 33,99",
-    "precoAntigo": "R$ 36,95",
-    "cupom": "",
-    "categoria": "Skincare",
-    "destaque": false,
-    "imagem": "c4c8821a-e0e5-42b2-993f-60ac0afdde3f.jpg",
-    "link": "https://s.shopee.com.br/1141Zg1S8V",
-    "url": "https://farejadinhosdayang.com.br/ofertas/protetor-solar-facial-hidrabene-fps-70-toque-seco-50g/",
-    "slug": "protetor-solar-facial-hidrabene-fps-70-toque-seco-50g",
-    "data": "2026-10-28T00:51:48Z",
-    "precoAVista": "",
-    "precoAPrazo": "",
-    "liberacao": "2026-10-29T16:04:00Z"
+    "liberacao": "2026-10-28T15:25:15Z",
+    "fixo": true
   },
   {
     "produto": "Organizador Móvel 4 Prateleiras com Rodinhas",
@@ -4162,6 +4156,7 @@
     "data": "2026-10-28T00:51:48Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-29T20:20:00Z"
+    "liberacao": "2026-10-29T20:20:00Z",
+    "fixo": true
   }
 ]
