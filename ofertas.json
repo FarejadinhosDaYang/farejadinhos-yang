@@ -2032,46 +2032,6 @@
     "parcelas": 10
   },
   {
-    "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
-    "preco": "R$ 3.165,00",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Celulares",
-    "destaque": false,
-    "imagem": "05361f00-8aff-4f32-894f-bed8765577fb.jpg",
-    "link": "https://meli.la/1RxB7bM",
-    "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s25-fe-5g-128gb-2/",
-    "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-2",
-    "data": "2026-10-23T00:12:13Z",
-    "precoAVista": "R$ 3.165,00",
-    "precoAPrazo": "3276,00",
-    "liberacao": "2026-10-23T00:42:12Z",
-    "parcelas": 10,
-    "precoConferido": "2026-10-27T20:06:40Z",
-    "anuncios": [
-      {
-        "link": "https://meli.la/2i5YnPJ",
-        "loja": "Mercado Livre",
-        "preco": "R$ 2.998,00",
-        "conferido": "2026-10-26T19:19:06Z",
-        "manual": "2026-10-28T00:17:09Z",
-        "confirmado": true,
-        "imagem": "https://farejadinhosdayang.com.br/assets/15a584a0-7703-4c5d-9c53-fae4b51ccff1.jpg",
-        "variacao": "cor"
-      },
-      {
-        "link": "https://meli.la/1yVXM5E",
-        "loja": "Mercado Livre",
-        "preco": "R$ 2.998,00",
-        "conferido": "2026-10-27T23:47:34Z",
-        "manual": "2026-10-28T00:17:18Z",
-        "confirmado": true,
-        "imagem": "https://farejadinhosdayang.com.br/assets/72a70978-5436-4a4b-8b8c-b289c054d4bc.jpg",
-        "variacao": "Cor"
-      }
-    ]
-  },
-  {
     "produto": "Celular Samsung Galaxy S25&#43; 5g, 512gb",
     "preco": "R$ 3.898,00",
     "precoAntigo": "",
@@ -2867,5 +2827,45 @@
         "variacao": "Cor"
       }
     ]
+  },
+  {
+    "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
+    "preco": "R$ 3.165,00",
+    "precoAntigo": "",
+    "cupom": "",
+    "categoria": "Celulares",
+    "destaque": false,
+    "imagem": "05361f00-8aff-4f32-894f-bed8765577fb.jpg",
+    "link": "https://meli.la/1RxB7bM",
+    "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s25-fe-5g-128gb-2/",
+    "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-2",
+    "data": "2026-10-23T00:12:13Z",
+    "precoAVista": "3165,00",
+    "precoAPrazo": "3276,00",
+    "liberacao": "2026-10-23T00:42:12Z",
+    "precoManual": "2026-10-28T00:20:23Z",
+    "anuncios": [
+      {
+        "link": "https://meli.la/2i5YnPJ",
+        "loja": "Mercado Livre",
+        "preco": "R$ 2.998,00",
+        "conferido": "2026-10-26T19:19:06Z",
+        "manual": "2026-10-28T00:17:09Z",
+        "confirmado": true,
+        "imagem": "https://farejadinhosdayang.com.br/assets/15a584a0-7703-4c5d-9c53-fae4b51ccff1.jpg",
+        "variacao": "cor"
+      },
+      {
+        "link": "https://meli.la/1yVXM5E",
+        "loja": "Mercado Livre",
+        "preco": "R$ 2.998,00",
+        "conferido": "2026-10-27T23:47:34Z",
+        "manual": "2026-10-28T00:17:18Z",
+        "confirmado": true,
+        "imagem": "https://farejadinhosdayang.com.br/assets/72a70978-5436-4a4b-8b8c-b289c054d4bc.jpg",
+        "variacao": "Cor"
+      }
+    ],
+    "parcelas": 10
   }
 ]
