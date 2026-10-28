@@ -1,77 +1,192 @@
 {
-  "quando": "2026-10-28T12:47:59Z",
+  "quando": "2026-10-28T18:51:04Z",
   "origem": "schedule",
-  "total": 236,
-  "iguais": 209,
+  "total": 275,
+  "iguais": 229,
   "mudaram": [
-    {
-      "slug": "arvore-natal-verde-150cm-220-galhos-decoracao-natalina",
-      "produto": "Árvore Natal Verde 220 Galhos Decoração Natalina",
-      "de": "R$ 64,89",
-      "para": "R$ 64,90"
-    },
     {
       "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
       "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-      "de": "R$ 60,75",
-      "para": "56,58"
+      "de": "R$ 56,58",
+      "para": "62,87"
     },
     {
-      "slug": "kit-6-potes-640ml-vidro-hermetico-4-travas-marmita",
-      "produto": "Kit 6 Potes 640ml Vidro Hermético 4 Travas Marmita",
-      "de": "R$ 58,70",
-      "para": "59,70"
+      "slug": "jogo-6-tacas-de-vidro-diamond-340-ml-com-pe",
+      "produto": "Jogo 6 Taças De Vidro Diamond 340 ml Com Pé",
+      "de": "R$ 30,35",
+      "para": "32,99"
     },
     {
-      "slug": "saco-a-vacuo-com-ou-sem-bomba-organizacao",
-      "produto": "Saco a Vacuo COM ou SEM Bomba Organização",
-      "de": "R$ 26,90",
-      "para": "R$ 16,50"
+      "slug": "faqueiro-tramontina-buzios-em-aco-inox-com-detalhe",
+      "produto": "Faqueiro Tramontina Búzios Em Aço Inox Com Detalhe",
+      "de": "R$ 62,25",
+      "para": "64,28"
     },
     {
-      "slug": "kit-3-necessaire-bolsa-portatil-transparente",
-      "produto": "KIT 3 Necessaire Bolsa Portátil Transparente",
-      "de": "R$ 17,09",
-      "para": "R$ 17,49"
+      "slug": "suporte-de-shampoo-preto-organizador-prateleira-2",
+      "produto": "Suporte De Shampoo Preto Organizador Prateleira",
+      "de": "R$ 12,99",
+      "para": "R$ 12,69"
     },
     {
-      "slug": "pinhas-natal-enfeite-natural-decoracao-pendente",
-      "produto": "Pinhas Natal Enfeite Natural Decoração Pendente",
-      "de": "R$ 16,99",
-      "para": "R$ 14,99"
+      "slug": "cesto-de-roupa-de-bambu-dobravel-organizador",
+      "produto": "Cesto De Roupa de Bambu Dobravel Organizador",
+      "de": "R$ 53,99",
+      "para": "R$ 61,73"
+    },
+    {
+      "slug": "ventilador-de-teto-com-luz-silencioso-controle",
+      "produto": "Ventilador de Teto com Luz Silencioso Controle",
+      "de": "R$ 54,77",
+      "para": "R$ 48,29"
+    },
+    {
+      "slug": "cozedor-de-ovos-eletrico-110v",
+      "produto": "Cozedor de Ovos Elétrico 110V",
+      "de": "R$ 28,48",
+      "para": "R$ 28,18"
+    },
+    {
+      "slug": "icoffee-moedor-de-cafe-com-manivela-manual",
+      "produto": "ICoffee Moedor de Café com Manivela Manual",
+      "de": "R$ 134,99",
+      "para": "R$ 149,99"
+    },
+    {
+      "slug": "kit-maquina-para-tosar-pet-tesoura-pente",
+      "produto": "Kit Máquina Para Tosar Pet + Tesoura + Pente",
+      "de": "R$ 30,99",
+      "para": "R$ 34,99"
+    },
+    {
+      "slug": "laco-veludo-grande-estruturado-para-arvore",
+      "produto": "Laço Veludo Grande Estruturado Para Arvore",
+      "de": "R$ 26,53",
+      "para": "R$ 27,53"
+    },
+    {
+      "slug": "arvore-de-natal-pinheiro-canadense-luxo1200-galhos",
+      "produto": "Árvore De Natal Pinheiro Canadense Luxo1200 Galhos",
+      "de": "R$ 198,00",
+      "para": "R$ 199,00"
+    },
+    {
+      "slug": "protetor-solar-facial-ps-01-fps-60-principia",
+      "produto": "Protetor Solar Facial PS-01 FPS 60 Principia",
+      "de": "R$ 29,00",
+      "para": "R$ 32,99"
+    },
+    {
+      "slug": "kit-skincare-kokeshi-cosmeticos-completo-6-itens",
+      "produto": "Kit Skincare Kokeshi Cosméticos Completo 6 Itens",
+      "de": "R$ 129,90",
+      "para": "R$ 124,90"
+    },
+    {
+      "slug": "hidratante-labial-carmed-crystal-pink-rose-gold",
+      "produto": "Hidratante Labial Carmed Crystal Pink Rose Gold",
+      "de": "R$ 10,99",
+      "para": "R$ 9,90"
+    },
+    {
+      "slug": "kits-com-50-ou-100-mascaras-facial-comprimida",
+      "produto": "Kits com 50 ou 100 Máscaras Facial Comprimida",
+      "de": "R$ 18,78",
+      "para": "R$ 18,89"
+    },
+    {
+      "slug": "principia-kit-duo-com-2-protetores-solares-faciais",
+      "produto": "Principia Kit Duo com 2 Protetores Solares Faciais",
+      "de": "R$ 86,39",
+      "para": "R$ 77,99"
+    },
+    {
+      "slug": "cesto-de-roupa-grande-30x50cm-caixa-dobravel",
+      "produto": "Cesto De Roupa Grande 30x50CM Caixa Dobrável",
+      "de": "R$ 14,59",
+      "para": "R$ 11,15"
     },
     {
       "slug": "parafusadeira-furadeira-48v-profissional",
       "produto": "Parafusadeira Furadeira 48v Profissional",
-      "de": "R$ 104,31",
-      "para": "95,92"
-    },
-    {
-      "slug": "aparelho-medidor-de-pressao-digital-de-braco-bsp11",
-      "produto": "Aparelho medidor de pressão digital de braço BSP11",
-      "de": "R$ 93,00",
-      "para": "95,85"
+      "de": "R$ 95,92",
+      "para": "104,31"
     },
     {
       "slug": "kit-3-toalhas-de-banho-gigante-luxo-grossa-atacado",
       "produto": "Kit 3 Toalhas De Banho Gigante Luxo Grossa Atacado",
-      "de": "R$ 59,92",
-      "para": "71,91"
+      "de": "R$ 71,91",
+      "para": "59,92"
     },
     {
-      "slug": "cozedor-de-ovos-eletrico-portatil-a-vapor-para-ate",
-      "produto": "Cozedor de Ovos Elétrico Portátil a Vapor para até",
-      "de": "R$ 38,00",
-      "para": "41,90"
+      "slug": "mop-giratorio-8l-rodinhas-esfregao-cesto-inox",
+      "produto": "Mop Giratório 8l Rodinhas Esfregão Cesto Inox",
+      "de": "R$ 54,57",
+      "para": "61,74"
+    },
+    {
+      "slug": "adaptador-carplay-sem-fio-para-iphone",
+      "produto": "Adaptador CarPlay Sem Fio para iPhone",
+      "de": "R$ 69,50",
+      "para": "76,50"
+    },
+    {
+      "slug": "copo-termico-gigante-1-2l-inox-com-tampa-canudo",
+      "produto": "Copo Térmico Gigante 1,2l Inox Com Tampa Canudo",
+      "de": "R$ 48,99",
+      "para": "45,07"
     },
     {
       "slug": "barra-de-proteina-integralmedica-crisp-bar-sabor",
       "produto": "Barra de Proteína Integralmédica Crisp Bar sabor",
-      "de": "R$ 82,45",
-      "para": "87,90"
+      "de": "R$ 87,90",
+      "para": "92,00"
+    },
+    {
+      "slug": "conjunto-potes-vidro-hermetico-mantimentos-marmita",
+      "produto": "Conjunto Potes Vidro Hermético Mantimentos Marmita",
+      "de": "R$ 27,89",
+      "para": "R$ 20,17"
+    },
+    {
+      "slug": "aspirador-3-em-1-de-po-usb-portatil-completo",
+      "produto": "Aspirador 3 em 1 De Pó Usb Portátil Completo",
+      "de": "R$ 18,99",
+      "para": "R$ 19,99"
+    },
+    {
+      "slug": "kit-10-ou-5-potes-vidro-hermetico-370ml-retangular",
+      "produto": "Kit 10 ou 5 Potes Vidro Hermético 370ml Retangular",
+      "de": "R$ 49,97",
+      "para": "R$ 48,90"
+    },
+    {
+      "slug": "suporte-magnetico-forte-para-telefone-carro-360",
+      "produto": "Suporte Magnético Forte Para Telefone Carro 360 °",
+      "de": "R$ 13,99",
+      "para": "R$ 15,99"
+    },
+    {
+      "slug": "basike-carregador-portatil-20000mah",
+      "produto": "BASIKE Carregador Portátil 20000mAh",
+      "de": "R$ 195,00",
+      "para": "R$ 149,99"
+    },
+    {
+      "slug": "potes-hermeticos-electrolux-de-plastico-cinza",
+      "produto": "Potes Herméticos Electrolux de Plástico Cinza",
+      "de": "R$ 84,89",
+      "para": "R$ 89,90"
     }
   ],
-  "semPreco": [],
+  "semPreco": [
+    {
+      "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
+      "produto": "Celular Samsung Galaxy A57 256gb cinza",
+      "link": "https://meli.la/1MNitr6",
+      "motivo": "pagina (facebookexternalhit): nome, foto | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
+    }
+  ],
   "erros": [],
   "suspeitos": [
     {
@@ -103,7 +218,7 @@
       "produto": "iPhone 17 Pro Max 256GB - Laranja-cósmico",
       "link": "https://meli.la/2wS1Uaq",
       "atual": "R$ 9.719,00",
-      "lido": "813,15",
+      "lido": "797,75",
       "referencia": "R$ 8.199,00"
     },
     {
@@ -119,7 +234,7 @@
       "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
       "link": "https://meli.la/2LUJ4yy",
       "atual": "R$ 3.898,00",
-      "lido": "519,02",
+      "lido": "517,97",
       "referencia": "preco posto a mao em 22/10 17:24"
     },
     {
@@ -127,7 +242,7 @@
       "produto": "Celular Samsung Galaxy S25&#43; 5g, 512gb",
       "link": "https://meli.la/28FNDG2",
       "atual": "R$ 3.898,00",
-      "lido": "547,77",
+      "lido": "451,10",
       "referencia": "R$ 2.518,00"
     },
     {
@@ -137,22 +252,6 @@
       "atual": "R$ 5.714,00",
       "lido": "542,96",
       "referencia": "R$ 5.798,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-a57-256gb-cinza",
-      "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "link": "https://meli.la/1MNitr6",
-      "atual": "R$ 1.899,00",
-      "lido": "277,63",
-      "referencia": "R$ 2.550,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
-      "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "link": "https://meli.la/1MNitr6",
-      "atual": "R$ 2.550,00",
-      "lido": "277,63",
-      "referencia": "R$ 2.550,00"
     },
     {
       "slug": "celular-samsung-galaxy-a37-5g-128gb-4",
@@ -167,7 +266,7 @@
       "produto": "Celular Samsung Galaxy S25+; 5g, 512gb",
       "link": "https://meli.la/28FNDG2",
       "atual": "R$ 3.898,00",
-      "lido": "547,77",
+      "lido": "451,10",
       "referencia": "preco posto a mao em 27/10 13:50"
     },
     {
@@ -175,7 +274,7 @@
       "produto": "Extratora e Higienizadora Portatil WAP SpotCleaner",
       "link": "https://s.shopee.com.br/qkY4t1vJm",
       "atual": "R$ 557,99",
-      "lido": "R$ 531,99",
+      "lido": "R$ 577,99",
       "referencia": "preco posto a mao em 27/10 14:58"
     },
     {
@@ -183,7 +282,7 @@
       "produto": "Samsung Galaxy S26 Ultra 5g Dual Sim Preto 256gb",
       "link": "https://meli.la/2mkji2E",
       "atual": "R$ 6.749,00",
-      "lido": "749,90",
+      "lido": "671,91",
       "referencia": "preco posto a mao em 27/10 21:17"
     },
     {
@@ -195,20 +294,36 @@
       "referencia": "preco posto a mao em 27/10 21:20"
     },
     {
+      "slug": "celular-samsung-galaxy-a57-256gb-cinza",
+      "produto": "Celular Samsung Galaxy A57 128gb cinza",
+      "link": "https://meli.la/1BRdN9x",
+      "atual": "R$ 1.583,12",
+      "lido": "199,89",
+      "referencia": "preco posto a mao em 28/10 10:13"
+    },
+    {
+      "slug": "marmita-eletrica-preta-bivolt-portatil-domestica",
+      "produto": "Marmita Elétrica Preta Bivolt Portátil Doméstica",
+      "link": "https://meli.la/1o7bDku",
+      "atual": "R$ 46,99",
+      "lido": "40,88",
+      "referencia": "preco posto a mao em 28/10 10:16"
+    },
+    {
       "slug": "fritadeira-sem-oleo-air-fryer-digital-4l-mondial",
       "produto": "Fritadeira Sem Óleo Air Fryer Digital 4L Mondial",
       "link": "https://meli.la/1eFBrXD",
       "atual": "R$ 157,56",
       "lido": "347,45",
-      "referencia": "R$ 157,56"
+      "referencia": "preco posto a mao em 28/10 14:48"
     }
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-28T12:48:01Z",
+      "quando": "2026-10-28T18:51:06Z",
       "teste": false,
-      "links": 188,
-      "ok": 188,
+      "links": 225,
+      "ok": 225,
       "erros": 0
     }
   },
