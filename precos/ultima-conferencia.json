@@ -1,231 +1,79 @@
 {
-  "quando": "2026-10-28T05:36:47Z",
+  "quando": "2026-10-28T12:47:59Z",
   "origem": "schedule",
-  "total": 238,
-  "iguais": 186,
+  "total": 236,
+  "iguais": 209,
   "mudaram": [
     {
-      "slug": "arvore-de-natal-premium-super-cheia-grande-luxo-decoracao",
-      "produto": "Árvore de Natal Premium Super Cheia Grande Luxo",
-      "de": "R$ 53,99",
-      "para": "R$ 53,96"
-    },
-    {
-      "slug": "descascador-eletrico-de-alho-e-uva-em-aco-inox-automatico",
-      "produto": "Descascador Elétrico De Alho E Uva Em Aço Inox",
-      "de": "R$ 59,99",
-      "para": "R$ 59,98"
-    },
-    {
-      "slug": "generica-gancho-organizador-de-pia-porta-esponja",
-      "produto": "Genérica Gancho Organizador De Pia Porta Esponja",
-      "de": "R$ 19,78",
-      "para": "25,99"
+      "slug": "arvore-natal-verde-150cm-220-galhos-decoracao-natalina",
+      "produto": "Árvore Natal Verde 220 Galhos Decoração Natalina",
+      "de": "R$ 64,89",
+      "para": "R$ 64,90"
     },
     {
       "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
       "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-      "de": "R$ 65,33",
-      "para": "60,75"
-    },
-    {
-      "slug": "jogo-6-tacas-de-vidro-diamond-340-ml-com-pe",
-      "produto": "Jogo 6 Taças De Vidro Diamond 340 ml Com Pé",
-      "de": "R$ 32,11",
-      "para": "30,35"
-    },
-    {
-      "slug": "marmita-eletrica-preta-bivolt-portatil-domestica",
-      "produto": "Marmita Elétrica Preta Bivolt Portátil Doméstica",
-      "de": "R$ 49,99",
-      "para": "46,99"
-    },
-    {
-      "slug": "dispenser-porta-detergente-3-em-1-em-aco-inox",
-      "produto": "Dispenser Porta Detergente 3 em 1 em Aço Inox",
-      "de": "R$ 35,90",
-      "para": "36,70"
+      "de": "R$ 60,75",
+      "para": "56,58"
     },
     {
       "slug": "kit-6-potes-640ml-vidro-hermetico-4-travas-marmita",
       "produto": "Kit 6 Potes 640ml Vidro Hermético 4 Travas Marmita",
-      "de": "R$ 59,70",
-      "para": "58,70"
-    },
-    {
-      "slug": "cesto-de-roupa-suja-bambu-dobravel-organizador-72l",
-      "produto": "Cesto De Roupa Suja Bambu Dobravel Organizador 72L",
-      "de": "R$ 61,99",
-      "para": "R$ 61,66"
-    },
-    {
-      "slug": "cesto-de-roupa-de-bambu-dobravel-organizador",
-      "produto": "Cesto De Roupa de Bambu Dobravel Organizador",
-      "de": "R$ 55,96",
-      "para": "R$ 53,99"
-    },
-    {
-      "slug": "kit-10-pote-vidro-hermetico-marmita-370ml",
-      "produto": "Kit 10 Pote Vidro Hermético Marmita 370ml",
-      "de": "R$ 69,90",
-      "para": "R$ 69,89"
-    },
-    {
-      "slug": "balcao-para-cooktop-4-ou-5-bocas-cozinha-moderna",
-      "produto": "Balcão para Cooktop 4 ou 5 Bocas Cozinha Moderna",
-      "de": "R$ 178,89",
-      "para": "R$ 176,00"
+      "de": "R$ 58,70",
+      "para": "59,70"
     },
     {
       "slug": "saco-a-vacuo-com-ou-sem-bomba-organizacao",
       "produto": "Saco a Vacuo COM ou SEM Bomba Organização",
-      "de": "R$ 16,50",
-      "para": "R$ 26,90"
-    },
-    {
-      "slug": "organizador-algodao-e-cotonetes-acrilico-kit",
-      "produto": "Organizador Algodão E Cotonetes Acrílico Kit",
-      "de": "R$ 13,20",
-      "para": "R$ 13,19"
+      "de": "R$ 26,90",
+      "para": "R$ 16,50"
     },
     {
       "slug": "kit-3-necessaire-bolsa-portatil-transparente",
       "produto": "KIT 3 Necessaire Bolsa Portátil Transparente",
-      "de": "R$ 17,49",
-      "para": "R$ 17,09"
-    },
-    {
-      "slug": "ventilador-de-teto-com-luz-silencioso-controle",
-      "produto": "Ventilador de Teto com Luz Silencioso Controle",
-      "de": "R$ 57,77",
-      "para": "R$ 54,77"
-    },
-    {
-      "slug": "kit-4-potes-hermeticos-tampa-bambu-organizador",
-      "produto": "Kit 4 Potes Herméticos Tampa Bambu Organizador",
-      "de": "R$ 39,99",
-      "para": "R$ 38,99"
-    },
-    {
-      "slug": "icoffee-moedor-de-cafe-com-manivela-manual",
-      "produto": "ICoffee Moedor de Café com Manivela Manual",
-      "de": "R$ 149,99",
-      "para": "R$ 134,99"
-    },
-    {
-      "slug": "rodinho-de-pia-mini-mop-portatil-com-esponja",
-      "produto": "Rodinho de Pia Mini Mop Portátil com Esponja",
-      "de": "R$ 19,99",
-      "para": "R$ 19,79"
-    },
-    {
-      "slug": "kit-maquina-para-tosar-pet-tesoura-pente",
-      "produto": "Kit Máquina Para Tosar Pet + Tesoura + Pente",
-      "de": "R$ 28,13",
-      "para": "R$ 30,99"
-    },
-    {
-      "slug": "descascador-eletrico-para-descascar-uvas-frutas",
-      "produto": "Descascador Elétrico Para Descascar Uvas Frutas",
-      "de": "R$ 44,98",
-      "para": "R$ 42,55"
+      "de": "R$ 17,09",
+      "para": "R$ 17,49"
     },
     {
       "slug": "pinhas-natal-enfeite-natural-decoracao-pendente",
       "produto": "Pinhas Natal Enfeite Natural Decoração Pendente",
-      "de": "R$ 14,99",
-      "para": "R$ 16,99"
+      "de": "R$ 16,99",
+      "para": "R$ 14,99"
     },
     {
-      "slug": "arvore-de-natal-pinheiro-tradicional-1-5m-1-8m",
-      "produto": "Arvore de Natal Pinheiro Tradicional 1,5m 1,8m",
-      "de": "R$ 189,99",
-      "para": "R$ 180,49"
+      "slug": "parafusadeira-furadeira-48v-profissional",
+      "produto": "Parafusadeira Furadeira 48v Profissional",
+      "de": "R$ 104,31",
+      "para": "95,92"
     },
     {
-      "slug": "protetor-solar-facial-ps-01-fps-60-principia",
-      "produto": "Protetor Solar Facial PS-01 FPS 60 Principia",
-      "de": "R$ 29,99",
-      "para": "R$ 29,00"
+      "slug": "aparelho-medidor-de-pressao-digital-de-braco-bsp11",
+      "produto": "Aparelho medidor de pressão digital de braço BSP11",
+      "de": "R$ 93,00",
+      "para": "95,85"
     },
     {
-      "slug": "protetor-solar-antissinais-dandas-fps-70-toque",
-      "produto": "Protetor Solar ANTISSINAIS Dandas Fps 70, Toque",
-      "de": "R$ 17,78",
-      "para": "R$ 17,98"
-    },
-    {
-      "slug": "numbuzin-no-9-nad-bio-lifting-essence-2types",
-      "produto": "Numbuzin No.9 NAD Bio Lifting Essence 2types",
-      "de": "R$ 92,98",
-      "para": "R$ 92,97"
-    },
-    {
-      "slug": "medicube-pdrn-pink-peptide-serum-10ml-30ml",
-      "produto": "Medicube PDRN Pink Peptide Serum 10ml 30ml",
-      "de": "R$ 45,50",
-      "para": "R$ 45,49"
-    },
-    {
-      "slug": "panos-de-chao-gigante-microfibra",
-      "produto": "Panos de Chão Gigante Microfibra",
-      "de": "R$ 29,90",
-      "para": "R$ 29,80"
-    },
-    {
-      "slug": "escorredor-de-macarrao-massas-inox-304-com-alcas",
-      "produto": "Escorredor de Macarrão Massas Inox 304 com Alças",
-      "de": "R$ 26,00",
-      "para": "20,90"
-    },
-    {
-      "slug": "mop-slim-com-balde-e-esfregao-simplo",
-      "produto": "Mop Slim Com Balde E Esfregão - Simplo",
-      "de": "R$ 65,90",
-      "para": "76,00"
+      "slug": "kit-3-toalhas-de-banho-gigante-luxo-grossa-atacado",
+      "produto": "Kit 3 Toalhas De Banho Gigante Luxo Grossa Atacado",
+      "de": "R$ 59,92",
+      "para": "71,91"
     },
     {
       "slug": "cozedor-de-ovos-eletrico-portatil-a-vapor-para-ate",
       "produto": "Cozedor de Ovos Elétrico Portátil a Vapor para até",
-      "de": "R$ 41,90",
-      "para": "38,00"
-    },
-    {
-      "slug": "jogo-6-tacas-vinho-tinto-cristal-luxo-titanium",
-      "produto": "Jogo 6 Taças Vinho Tinto Cristal Luxo Titanium",
-      "de": "R$ 76,62",
-      "para": "120,00"
-    },
-    {
-      "slug": "torneira-de-pia-gourmet-flexivel-de-parede-jato",
-      "produto": "Torneira De Pia Gourmet Flexível De Parede Jato",
-      "de": "R$ 26,99",
-      "para": "33,90"
+      "de": "R$ 38,00",
+      "para": "41,90"
     },
     {
       "slug": "barra-de-proteina-integralmedica-crisp-bar-sabor",
       "produto": "Barra de Proteína Integralmédica Crisp Bar sabor",
-      "de": "R$ 84,64",
-      "para": "82,45"
-    },
-    {
-      "slug": "faqueiro-tramontina-buzios-cem-aco-inox",
-      "produto": "Faqueiro Tramontina Búzios cem Aço Inox",
-      "de": "R$ 62,25",
-      "para": "64,40"
+      "de": "R$ 82,45",
+      "para": "87,90"
     }
   ],
   "semPreco": [],
   "erros": [],
   "suspeitos": [
-    {
-      "slug": "escorredor-de-loucas-rack-aco-carbono-organizador",
-      "produto": "Escorredor de Louças Rack Aço Carbono Organizador",
-      "link": "https://s.shopee.com.br/8fTDF2IRuL",
-      "atual": "R$ 92,00",
-      "lido": "R$ 236,00",
-      "referencia": "R$ 92,00"
-    },
     {
       "slug": "samsung-galaxy-s25-5g-256gb-12gb-camera-tripla",
       "produto": "Samsung Galaxy S25 5G, 256GB, 12GB, Câmera Tripla",
@@ -287,7 +135,7 @@
       "produto": "Celular Samsung Galaxy S26 5G, 512GB",
       "link": "https://meli.la/1WPbdmM",
       "atual": "R$ 5.714,00",
-      "lido": "571,47",
+      "lido": "542,96",
       "referencia": "R$ 5.798,00"
     },
     {
@@ -295,7 +143,7 @@
       "produto": "Celular Samsung Galaxy A57 256gb cinza",
       "link": "https://meli.la/1MNitr6",
       "atual": "R$ 1.899,00",
-      "lido": "259,99",
+      "lido": "277,63",
       "referencia": "R$ 2.550,00"
     },
     {
@@ -303,7 +151,7 @@
       "produto": "Celular Samsung Galaxy A57 256gb cinza",
       "link": "https://meli.la/1MNitr6",
       "atual": "R$ 2.550,00",
-      "lido": "259,99",
+      "lido": "277,63",
       "referencia": "R$ 2.550,00"
     },
     {
@@ -351,16 +199,16 @@
       "produto": "Fritadeira Sem Óleo Air Fryer Digital 4L Mondial",
       "link": "https://meli.la/1eFBrXD",
       "atual": "R$ 157,56",
-      "lido": "365,74",
+      "lido": "347,45",
       "referencia": "R$ 157,56"
     }
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-28T05:36:49Z",
+      "quando": "2026-10-28T12:48:01Z",
       "teste": false,
-      "links": 189,
-      "ok": 189,
+      "links": 188,
+      "ok": 188,
       "erros": 0
     }
   },

@@ -174,7 +174,7 @@
   },
   {
     "produto": "Árvore Natal Verde 220 Galhos Decoração Natalina",
-    "preco": "R$ 64,89",
+    "preco": "R$ 64,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -188,7 +188,7 @@
     "precoAPrazo": "",
     "liberacao": "2026-10-27T20:54:11Z",
     "produtoOriginal": "Árvore Natal Verde 150cm 220 Galhos Decoração Natalina Pinheiro Pinheirinho Premium",
-    "precoConferido": "2026-10-27T23:47:34Z"
+    "precoConferido": "2026-10-28T12:51:57Z"
   },
   {
     "produto": "Descascador Elétrico De Alho E Uva Em Aço Inox",
@@ -444,7 +444,7 @@
   },
   {
     "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-    "preco": "R$ 60,75",
+    "preco": "R$ 56,58",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -457,7 +457,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-27T13:24:49Z",
-    "precoConferido": "2026-10-28T05:41:33Z"
+    "precoConferido": "2026-10-28T12:51:57Z"
   },
   {
     "produto": "Jogo 6 Taças De Vidro Diamond 340 ml Com Pé",
@@ -546,7 +546,7 @@
   },
   {
     "produto": "Kit 6 Potes 640ml Vidro Hermético 4 Travas Marmita",
-    "preco": "R$ 58,70",
+    "preco": "R$ 59,70",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -559,7 +559,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-28T18:51:34Z",
-    "precoConferido": "2026-10-28T05:41:33Z"
+    "precoConferido": "2026-10-28T12:51:57Z"
   },
   {
     "produto": "Kit Chave Catraca Soquete 46 Peças Indufer",
@@ -1432,7 +1432,7 @@
   },
   {
     "produto": "Saco a Vacuo COM ou SEM Bomba Organização",
-    "preco": "R$ 26,90",
+    "preco": "R$ 16,50",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Casa",
@@ -1445,7 +1445,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-30T11:00:00Z",
-    "precoConferido": "2026-10-28T05:41:34Z"
+    "precoConferido": "2026-10-28T12:51:57Z"
   },
   {
     "produto": "Kit 2 Prateleiras Reto Adesivo Premium Suporte",
@@ -2035,7 +2035,7 @@
   },
   {
     "produto": "KIT 3 Necessaire Bolsa Portátil Transparente",
-    "preco": "R$ 17,09",
+    "preco": "R$ 17,49",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Beleza",
@@ -2048,7 +2048,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-26T14:35:50Z",
-    "precoConferido": "2026-10-28T05:41:34Z"
+    "precoConferido": "2026-10-28T12:51:57Z"
   },
   {
     "produto": "Ventilador de Teto com Luz Silencioso Controle",
@@ -2725,7 +2725,7 @@
   },
   {
     "produto": "Pinhas Natal Enfeite Natural Decoração Pendente",
-    "preco": "R$ 16,99",
+    "preco": "R$ 14,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -2738,7 +2738,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-29T15:15:00Z",
-    "precoConferido": "2026-10-28T05:41:34Z"
+    "precoConferido": "2026-10-28T12:51:57Z"
   },
   {
     "produto": "Árvore de Natal 1,20m / 1,80m / 1,50m Decoração",
@@ -3936,7 +3936,7 @@
   },
   {
     "produto": "Parafusadeira Furadeira 48v Profissional",
-    "preco": "R$ 104,31",
+    "preco": "R$ 95,92",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Casa",
@@ -3946,14 +3946,15 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/parafusadeira-furadeira-48v-profissional/",
     "slug": "parafusadeira-furadeira-48v-profissional",
     "data": "2026-10-28T00:58:09Z",
-    "precoAVista": "104,31",
+    "precoAVista": "R$ 95,92",
     "precoAPrazo": "129,00",
     "liberacao": "2026-10-30T17:48:00Z",
-    "parcelas": 4
+    "parcelas": 4,
+    "precoConferido": "2026-10-28T12:51:57Z"
   },
   {
     "produto": "Aparelho medidor de pressão digital de braço BSP11",
-    "preco": "R$ 93,00",
+    "preco": "R$ 95,85",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Utilidades",
@@ -3965,7 +3966,8 @@
     "data": "2026-10-28T00:58:09Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-28T18:22:06Z"
+    "liberacao": "2026-10-28T18:22:06Z",
+    "precoConferido": "2026-10-28T12:51:57Z"
   },
   {
     "produto": "Escorredor de Macarrão Massas Inox 304 com Alças",
@@ -3986,7 +3988,7 @@
   },
   {
     "produto": "Kit 3 Toalhas De Banho Gigante Luxo Grossa Atacado",
-    "preco": "R$ 59,92",
+    "preco": "R$ 71,91",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Casa",
@@ -3998,7 +4000,8 @@
     "data": "2026-10-28T00:58:09Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-30T19:30:00Z"
+    "liberacao": "2026-10-30T19:30:00Z",
+    "precoConferido": "2026-10-28T12:51:57Z"
   },
   {
     "produto": "Tapioqueira Polvilhador Com Peneira Dosador",
@@ -4101,7 +4104,7 @@
   },
   {
     "produto": "Cozedor de Ovos Elétrico Portátil a Vapor para até",
-    "preco": "R$ 38,00",
+    "preco": "R$ 41,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Utilidades",
@@ -4114,7 +4117,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-28T20:19:59Z",
-    "precoConferido": "2026-10-28T05:41:34Z"
+    "precoConferido": "2026-10-28T12:51:57Z"
   },
   {
     "produto": "Adaptador CarPlay Sem Fio para iPhone",
@@ -4313,7 +4316,7 @@
   },
   {
     "produto": "Barra de Proteína Integralmédica Crisp Bar sabor",
-    "preco": "R$ 82,45",
+    "preco": "R$ 87,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Academia",
@@ -4326,7 +4329,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-28T17:23:09Z",
-    "precoConferido": "2026-10-28T05:41:34Z"
+    "precoConferido": "2026-10-28T12:51:57Z"
   },
   {
     "produto": "Faqueiro Tramontina Búzios cem Aço Inox",
