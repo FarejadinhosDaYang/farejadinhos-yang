@@ -1764,7 +1764,19 @@
     "precoAPrazo": "5066,16",
     "liberacao": "2026-10-19T11:56:00Z",
     "parcelas": 12,
-    "precoConferido": "2026-10-27T02:05:52Z"
+    "precoConferido": "2026-10-27T02:05:52Z",
+    "anuncios": [
+      {
+        "link": "https://link.amazon/B0epLOItP",
+        "loja": "Outra loja",
+        "preco": "R$ 5.065,61",
+        "conferido": "2026-10-26T12:58:35Z",
+        "manual": "2026-10-28T00:19:23Z",
+        "confirmado": true,
+        "imagem": "https://farejadinhosdayang.com.br/assets/be80d970-5211-4ffe-8904-6a755e29303b.jpg",
+        "variacao": "Cor"
+      }
+    ]
   },
   {
     "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
@@ -1859,25 +1871,6 @@
     "precoManual": "2026-10-19T11:23:17Z",
     "parcelas": 10,
     "precoConferido": "2026-10-27T16:43:37Z"
-  },
-  {
-    "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-    "preco": "R$ 5.065,61",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Celulares",
-    "destaque": false,
-    "imagem": "be80d970-5211-4ffe-8904-6a755e29303b.jpg",
-    "link": "https://link.amazon/B0epLOItP",
-    "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera-2/",
-    "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera-2",
-    "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "R$ 5.065,61",
-    "precoAPrazo": "5065,61",
-    "liberacao": "2026-10-20T11:56:00Z",
-    "precoManual": "2026-10-19T11:26:05Z",
-    "parcelas": 12,
-    "precoConferido": "2026-10-26T12:58:35Z"
   },
   {
     "produto": "Aspirador Manual Piscina Herbinject Azul",
