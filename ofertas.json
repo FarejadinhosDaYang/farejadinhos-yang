@@ -4247,23 +4247,6 @@
     "liberacao": "2026-10-28T00:44:05Z"
   },
   {
-    "produto": "Fritadeira Sem Óleo Air Fryer Digital 4L Mondial",
-    "preco": "R$ 157,56",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Eletrodomésticos",
-    "destaque": false,
-    "imagem": "b5890ad1-917d-4a13-8f30-c24eaebe0842.jpg",
-    "link": "https://meli.la/1eFBrXD",
-    "url": "https://farejadinhosdayang.com.br/ofertas/fritadeira-sem-oleo-air-fryer-digital-4l-mondial/",
-    "slug": "fritadeira-sem-oleo-air-fryer-digital-4l-mondial",
-    "data": "2026-10-28T00:58:12Z",
-    "precoAVista": "157,56",
-    "precoAPrazo": "249,00",
-    "liberacao": "2026-10-28T15:30:03Z",
-    "parcelas": 6
-  },
-  {
     "produto": "Porta Ovos Gaveteiro 2 Andares Organizador",
     "preco": "R$ 39,99",
     "precoAntigo": "",
@@ -5085,5 +5068,23 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-29T12:43:09Z"
+  },
+  {
+    "produto": "Fritadeira Sem Óleo Air Fryer Digital 4L Mondial",
+    "preco": "R$ 157,56",
+    "precoAntigo": "",
+    "cupom": "",
+    "categoria": "Eletrodomésticos",
+    "destaque": false,
+    "imagem": "b5890ad1-917d-4a13-8f30-c24eaebe0842.jpg",
+    "link": "https://meli.la/1eFBrXD",
+    "url": "https://farejadinhosdayang.com.br/ofertas/fritadeira-sem-oleo-air-fryer-digital-4l-mondial/",
+    "slug": "fritadeira-sem-oleo-air-fryer-digital-4l-mondial",
+    "data": "2026-10-28T00:58:12Z",
+    "precoAVista": "157,56",
+    "precoAPrazo": "249,00",
+    "liberacao": "2026-10-28T15:30:03Z",
+    "precoManual": "2026-10-28T17:48:52Z",
+    "parcelas": 6
   }
 ]
