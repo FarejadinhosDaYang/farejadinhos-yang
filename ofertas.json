@@ -377,7 +377,7 @@
   },
   {
     "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-    "preco": "R$ 62,87",
+    "preco": "R$ 60,75",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -390,11 +390,11 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-27T13:24:49Z",
-    "precoConferido": "2026-10-28T18:55:38Z"
+    "precoConferido": "2026-10-28T23:17:07Z"
   },
   {
     "produto": "Jogo 6 Taças De Vidro Diamond 340 ml Com Pé",
-    "preco": "R$ 32,99",
+    "preco": "R$ 30,35",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -407,7 +407,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-27T20:27:11Z",
-    "precoConferido": "2026-10-28T18:55:38Z"
+    "precoConferido": "2026-10-28T23:17:07Z"
   },
   {
     "produto": "Mini Ventilador Soprador Ar Potente Turbo",
@@ -461,7 +461,7 @@
   },
   {
     "produto": "Kit 6 Potes 640ml Vidro Hermético 4 Travas Marmita",
-    "preco": "R$ 59,70",
+    "preco": "R$ 58,70",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -474,7 +474,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-28T20:36:56Z",
-    "precoConferido": "2026-10-28T12:51:57Z"
+    "precoConferido": "2026-10-28T23:17:07Z"
   },
   {
     "produto": "Kit Chave Catraca Soquete 46 Peças Indufer",
@@ -627,7 +627,7 @@
   },
   {
     "produto": "Cesto De Roupa de Bambu Dobravel Organizador",
-    "preco": "R$ 61,73",
+    "preco": "R$ 51,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Casa",
@@ -640,7 +640,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-26T00:04:00Z",
-    "precoConferido": "2026-10-28T18:55:38Z"
+    "precoConferido": "2026-10-28T23:17:07Z"
   },
   {
     "produto": "￼Sapateira Multiuso Para Calçados 9-3 Andares",
@@ -1367,7 +1367,7 @@
   },
   {
     "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-    "preco": "R$ 3.839,10",
+    "preco": "R$ 5.065,61",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -1377,11 +1377,10 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera/",
     "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "R$ 3.839,10",
+    "precoAVista": "R$ 5.065,61",
     "precoAPrazo": "5066,16",
     "liberacao": "2026-10-19T11:56:00Z",
     "parcelas": 12,
-    "precoConferido": "2026-10-27T02:05:52Z",
     "anuncios": [
       {
         "link": "https://link.amazon/B0epLOItP",
@@ -1393,7 +1392,8 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/be80d970-5211-4ffe-8904-6a755e29303b.jpg",
         "variacao": "Cor"
       }
-    ]
+    ],
+    "precoConferido": "2026-10-28T23:17:07Z"
   },
   {
     "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
@@ -1800,7 +1800,7 @@
   },
   {
     "produto": "Pisca Natal Cordão 100 Leds 10m 8 Funções Varias",
-    "preco": "R$ 16,88",
+    "preco": "R$ 30,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -1812,7 +1812,8 @@
     "data": "2026-10-26T11:59:28Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-26T18:12:56Z"
+    "liberacao": "2026-10-26T18:12:56Z",
+    "precoConferido": "2026-10-28T23:17:07Z"
   },
   {
     "produto": "Renova Granito Mármore Realça Cor Imediato Rock",
@@ -1901,7 +1902,7 @@
   },
   {
     "produto": "STARTOOLS Chaleira Jarra Elétrica 110V ou 220V 1.8",
-    "preco": "R$ 43,99",
+    "preco": "R$ 41,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -1914,7 +1915,8 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-27T14:51:43Z",
-    "fixo": true
+    "fixo": true,
+    "precoConferido": "2026-10-28T23:17:07Z"
   },
   {
     "produto": "Cozedor de Ovos Elétrico 110V",
@@ -3660,7 +3662,7 @@
   },
   {
     "produto": "Panos de Chão Gigante Microfibra",
-    "preco": "R$ 29,80",
+    "preco": "R$ 29,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Utilidades",
@@ -3673,7 +3675,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-28T15:44:39Z",
-    "precoConferido": "2026-10-28T05:41:34Z"
+    "precoConferido": "2026-10-28T23:17:07Z"
   },
   {
     "produto": "Ventilador Portátil de Mesa com Nebulização",
@@ -4125,7 +4127,7 @@
   },
   {
     "produto": "Barra de Proteína Integralmédica Crisp Bar sabor",
-    "preco": "R$ 92,00",
+    "preco": "R$ 102,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Academia",
@@ -4138,7 +4140,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-28T21:50:01Z",
-    "precoConferido": "2026-10-28T18:55:38Z"
+    "precoConferido": "2026-10-28T23:17:07Z"
   },
   {
     "produto": "Faqueiro Tramontina Búzios cem Aço Inox",
@@ -4697,7 +4699,7 @@
   },
   {
     "produto": "Jogo Completo de Utensílios de Cozinha de Silicone",
-    "preco": "R$ 28,98",
+    "preco": "R$ 28,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -4709,7 +4711,8 @@
     "data": "2026-10-28T13:48:13Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-30T21:04:12Z"
+    "liberacao": "2026-10-30T21:04:12Z",
+    "precoConferido": "2026-10-28T23:17:07Z"
   },
   {
     "produto": "Caneca Térmica Atena Bear Thermal Personalizada",
