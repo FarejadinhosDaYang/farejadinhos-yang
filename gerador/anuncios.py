@@ -6,6 +6,7 @@ Itens do lote: {"acao": "anuncios", "op": "adicionar"|"remover"|"editar",
                 "variacao": "Azul", "cor": "#hex", "imagem": "https://foto..."}
 "editar" muda variação/cor/foto de um anúncio; com o link principal da
 oferta, muda a variação do anúncio principal (campos variacao/cor da oferta).
+"fixar" {"slug", "fixo": true|false} — anúncio âncora: nunca sai do site.
 "juntar" {"slug", "de": "<slug de outra oferta>", "variacao", "cor", "tirar": true}
 transforma uma oferta que já está no site em anúncio desta (link, preço,
 foto e os anúncios dela); com "tirar", a outra sai da lista do site.
@@ -30,6 +31,18 @@ def main(arquivo):
     por_slug = {o.get("slug"): o for o in catalogo if isinstance(o, dict)}
     mudou = False
     for it in itens:
+        if it.get("op") == "fixar":
+            o = por_slug.get(it.get("slug"))
+            if not o:
+                print(f"  ignorado (fixar): {it.get('slug')}")
+                continue
+            if it.get("fixo"):
+                o["fixo"] = True
+            else:
+                o.pop("fixo", None)
+            print(f"  {'fixado' if it.get('fixo') else 'desafixado'}: {o['slug']}")
+            mudou = True
+            continue
         if it.get("op") == "juntar":
             o, outra = por_slug.get(it.get("slug")), por_slug.get(it.get("de"))
             if not o or not outra or o is outra:

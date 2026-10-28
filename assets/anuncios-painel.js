@@ -49,6 +49,10 @@ css.textContent += `
 .anunciosBox .ancEdVar[hidden]{display:none}
 .anunciosBox .ancEdVar .edVar,.anunciosBox .ancEdVar .edFoto{flex:1 1 180px}
 .anunciosBox .ancEdVar .edCor{flex:0 0 44px;height:38px;padding:2px}`;
+css.textContent += `
+.anunciosBox .ancFixo{display:block;margin:0 0 12px;padding:9px 10px;background:#FFF6E9;border:1.5px solid #F7941D;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer}
+.anunciosBox .ancFixo input{width:auto;margin:0 4px 0 0;vertical-align:-2px}
+.anunciosBox .ancFixo span{font-weight:400;color:var(--muted)}`;
 document.head.appendChild(css);
 
 // ============ Outros anúncios do mesmo produto (comparador) ============
@@ -76,6 +80,7 @@ function montarAnunciosPainel(o, box){
   const melhor = lista.find(a => a.confiavel) || lista[0];
   const fmt = a => a.valor ? "R$ " + a.valor.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : "sem preço";
   box.innerHTML = `
+    <label class="ancFixo"><input type="checkbox" class="ancFixoCheck" ${o.fixo ? "checked" : ""}> 📌 <b>Fixar no site</b> <span>— anúncio âncora: não expira e o preço continua sendo conferido</span></label>
     <h4>🏪 Outros anúncios deste produto</h4>
     <div class="ancObs">O site mostra sempre o menor preço confiável entre todos. Preço posto aqui vale por 7 dias; depois a conferência automática assume (preço novo só vale depois de 2 leituras iguais).</div>
     ${lista.length > 1 ? lista.map(a => `
@@ -229,6 +234,17 @@ function montarAnunciosPainel(o, box){
   };
 
   // 🎨 cor/versão e foto de um anúncio que já está aqui
+  box.querySelector(".ancFixoCheck").onchange = async function(){
+    const fixo = this.checked;
+    this.disabled = true;
+    try{
+      await pedirAnuncio({ op: "fixar", slug: o.slug, fixo });
+      o.fixo = fixo;
+      aviso(fixo ? "📌 Fixada! Ela não sai mais do site (aparece em 1-2 minutos)." : "Desafixada: volta a seguir a validade normal.");
+    }catch(e){ this.checked = !fixo; aviso("❌ " + e.message, true); }
+    this.disabled = false;
+  };
+
   box.querySelectorAll(".ancEditarVar").forEach(b => b.onclick = function(){
     const ed = [...box.querySelectorAll(".ancEdVar")].find(x => x.dataset.link === b.dataset.link);
     if(ed) ed.hidden = !ed.hidden;

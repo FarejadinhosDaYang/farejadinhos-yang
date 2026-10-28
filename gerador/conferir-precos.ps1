@@ -84,6 +84,7 @@ if ($true) {
 $Alvo = @($Catalogo | Where-Object {
     $_ -and $_.slug -and $_.link -and ([string]$_.link -match '^https?://') -and (
         (([string]$_.categoria).Normalize([Text.NormalizationForm]::FormD) -replace '\p{Mn}', '').ToLowerInvariant() -match 'videos|celulares' -or
+        ($_.PSObject.Properties["fixo"] -and $_.fixo -eq $true) -or
         -not (ParaDataUtc ($(if ($_.liberacao) { $_.liberacao } else { $_.data }))) -or
         ($Agora - (ParaDataUtc ($(if ($_.liberacao) { $_.liberacao } else { $_.data })))).TotalDays -le 7
     )

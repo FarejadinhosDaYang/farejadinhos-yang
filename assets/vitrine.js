@@ -93,7 +93,8 @@
 
   function ehPermanente(oferta){
     normalizar(oferta);
-    return !!(oferta && (oferta.temVideo || PERMANENTES.includes(chaveCategoria(oferta.categoria))));
+    // "fixo": anúncio âncora fixado pelo painel (📌 Fixar no site)
+    return !!(oferta && (oferta.fixo === true || oferta.temVideo || PERMANENTES.includes(chaveCategoria(oferta.categoria))));
   }
 
   // Categorias que nunca entram no Top 3 / pódio do dia (nem nos stories)
@@ -262,6 +263,8 @@
   }
 
   function podeIrProPodio(oferta){
+    // âncora fixa não disputa o pódio (senão ganhava todo dia e o Top 3 não renovava)
+    if(oferta && oferta.fixo === true) return false;
     return !FORA_DO_PODIO.includes(chaveCategoria(oferta && oferta.categoria));
   }
 

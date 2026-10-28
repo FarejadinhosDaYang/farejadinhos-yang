@@ -302,6 +302,7 @@ $EraTravado = @($Catalogo | Where-Object { $_ -and $_.slug -eq $Slug -and $_.PSO
 
 # Outros anuncios do mesmo produto (comparador): mantem numa edicao
 $AnunciosAnteriores = @($Catalogo | Where-Object { $_ -and $_.slug -eq $Slug -and $_.PSObject.Properties["anuncios"] } | Select-Object -First 1 | ForEach-Object { @($_.anuncios) })
+$EraFixo = @($Catalogo | Where-Object { $_ -and $_.slug -eq $Slug -and $_.PSObject.Properties["fixo"] -and $_.fixo -eq $true }).Count -gt 0
 $VariacaoAnterior = $Catalogo | Where-Object { $_ -and $_.slug -eq $Slug -and $_.PSObject.Properties["variacao"] } | Select-Object -First 1
 
 # Remove uma entrada antiga com o mesmo slug (regeneracao) e
@@ -342,6 +343,7 @@ if ($UsaImagemExistente) {
     $NovaEntrada.precoManual = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
 }
 if ($EraTravado) { $NovaEntrada.precoTravado = $true }
+if ($EraFixo) { $NovaEntrada.fixo = $true }
 if ($AnunciosAnteriores.Count -gt 0) { $NovaEntrada.anuncios = @($AnunciosAnteriores) }
 if ($VariacaoAnterior) {
     $NovaEntrada.variacao = [string]$VariacaoAnterior.variacao

@@ -123,7 +123,8 @@ foreach ($Oferta in $Ofertas) {
     # (pode vir junto com a principal: "Cozinha, Videos")
     $CatNorm = ([string]$Oferta.categoria).Normalize([Text.NormalizationForm]::FormD) -replace '\p{Mn}', ''
     $Partes = @($CatNorm.ToLowerInvariant().Split(',') | ForEach-Object { $_.Trim() })
-    if ($Partes -contains "videos" -or $Partes -contains "celulares") {
+    # Anúncio âncora (📌 Fixar no site) também nunca expira
+    if ($Partes -contains "videos" -or $Partes -contains "celulares" -or ($Oferta.PSObject.Properties["fixo"] -and $Oferta.fixo -eq $true)) {
         $Mantidas += $Oferta
         continue
     }
