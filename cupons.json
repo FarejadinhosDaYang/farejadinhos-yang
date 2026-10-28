@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-10-28T12:05:51Z",
+  "atualizado": "2026-10-28T12:09:22Z",
   "paginas": {
     "Shopee": "https://s.shopee.com.br/4VdOXKYQfW",
     "Mercado Livre": "https://www.mercadolivre.com.br/cupons?source_page=mperfil#nav-header"
@@ -136,6 +136,18 @@
       "obs": "",
       "link": "https://www.mercadolivre.com.br/social/olhadapromos/lists",
       "ate": "2026-10-29T12:05:23Z"
+    },
+    {
+      "codigo": "11D011400FF",
+      "loja": "Shopee",
+      "tipo": "R$",
+      "valor": 40.0,
+      "minimo": 199.0,
+      "teto": 0.0,
+      "titulo": "",
+      "obs": "",
+      "link": "https://s.shopee.com.br/1BVkVAHH2",
+      "ate": "2026-10-29T12:08:55Z"
     }
   ]
 }
