@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-10-27T21:39:45Z",
+  "atualizado": "2026-10-28T12:05:51Z",
   "paginas": {
     "Shopee": "https://s.shopee.com.br/4VdOXKYQfW",
     "Mercado Livre": "https://www.mercadolivre.com.br/cupons?source_page=mperfil#nav-header"
@@ -52,6 +52,90 @@
       "obs": "",
       "link": "https://mercadolivre.com.br/sec/2iaPXU7",
       "ate": "2026-10-28T21:35:43Z"
+    },
+    {
+      "codigo": "VALETECH",
+      "loja": "Mercado Livre",
+      "tipo": "%",
+      "valor": 10.0,
+      "minimo": 149.0,
+      "teto": 200.0,
+      "titulo": "",
+      "obs": "",
+      "link": "",
+      "ate": "2026-10-29T12:05:23Z"
+    },
+    {
+      "codigo": "OFFCONSTRUIR",
+      "loja": "Mercado Livre",
+      "tipo": "%",
+      "valor": 15.0,
+      "minimo": 79.0,
+      "teto": 60.0,
+      "titulo": "",
+      "obs": "",
+      "link": "",
+      "ate": "2026-10-29T12:05:23Z"
+    },
+    {
+      "codigo": "OFERTA",
+      "loja": "Mercado Livre",
+      "tipo": "%",
+      "valor": 10.0,
+      "minimo": 99.0,
+      "teto": 50.0,
+      "titulo": "",
+      "obs": "",
+      "link": "",
+      "ate": "2026-10-29T12:05:23Z"
+    },
+    {
+      "codigo": "ESQUENTA",
+      "loja": "Mercado Livre",
+      "tipo": "%",
+      "valor": 30.0,
+      "minimo": 1.0,
+      "teto": 500.0,
+      "titulo": "",
+      "obs": "",
+      "link": "",
+      "ate": "2026-10-29T12:05:23Z"
+    },
+    {
+      "codigo": "CLIENTEVIP",
+      "loja": "Mercado Livre",
+      "tipo": "%",
+      "valor": 30.0,
+      "minimo": 1.0,
+      "teto": 500.0,
+      "titulo": "",
+      "obs": "",
+      "link": "",
+      "ate": "2026-10-29T12:05:23Z"
+    },
+    {
+      "codigo": "ESPECIAL",
+      "loja": "Mercado Livre",
+      "tipo": "%",
+      "valor": 30.0,
+      "minimo": 1.0,
+      "teto": 500.0,
+      "titulo": "",
+      "obs": "",
+      "link": "",
+      "ate": "2026-10-29T12:05:23Z"
+    },
+    {
+      "codigo": "OFERTAESPECIAL",
+      "loja": "Mercado Livre",
+      "tipo": "%",
+      "valor": 25.0,
+      "minimo": 1.0,
+      "teto": 500.0,
+      "titulo": "",
+      "obs": "",
+      "link": "https://www.mercadolivre.com.br/social/olhadapromos/lists",
+      "ate": "2026-10-29T12:05:23Z"
     }
   ]
 }
