@@ -2110,24 +2110,6 @@
     "precoConferido": "2026-10-27T20:06:40Z"
   },
   {
-    "produto": "Samsung Galaxy S25&#43; 5g, 256gb, 12gb",
-    "preco": "R$ 4.299,00",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Celulares",
-    "destaque": false,
-    "imagem": "2dbc057b-3689-4c70-9632-2d40b4221c6c.jpg",
-    "link": "https://meli.la/1xaZ7ij",
-    "url": "https://farejadinhosdayang.com.br/ofertas/samsung-galaxy-s25-43-5g-256gb-12gb/",
-    "slug": "samsung-galaxy-s25-43-5g-256gb-12gb",
-    "data": "2026-10-23T00:12:13Z",
-    "precoAVista": "R$ 4.299,00",
-    "precoAPrazo": "4332,00",
-    "liberacao": "2026-10-23T11:00:00Z",
-    "parcelas": 10,
-    "precoConferido": "2026-10-27T07:50:45Z"
-  },
-  {
     "produto": "Celular Samsung Galaxy S25&#43; 5g, 512gb",
     "preco": "R$ 3.898,00",
     "precoAntigo": "",
@@ -2143,7 +2125,19 @@
     "precoAPrazo": "2705,10",
     "liberacao": "2026-10-23T12:52:00Z",
     "parcelas": 10,
-    "precoConferido": "2026-10-27T02:05:53Z"
+    "precoConferido": "2026-10-27T02:05:53Z",
+    "anuncios": [
+      {
+        "link": "https://meli.la/1xaZ7ij",
+        "loja": "Mercado Livre",
+        "preco": "R$ 4.299,00",
+        "conferido": "2026-10-27T07:50:45Z",
+        "manual": "2026-10-28T00:16:04Z",
+        "confirmado": true,
+        "imagem": "https://farejadinhosdayang.com.br/assets/2dbc057b-3689-4c70-9632-2d40b4221c6c.jpg",
+        "variacao": "Cor"
+      }
+    ]
   },
   {
     "produto": "Celular Samsung Galaxy S26 5G, 512GB",
