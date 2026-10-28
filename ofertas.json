@@ -1846,7 +1846,8 @@
     "precoAPrazo": "2399,00",
     "liberacao": "2026-10-24T00:04:00Z",
     "parcelas": 10,
-    "precoConferido": "2026-10-27T23:47:34Z"
+    "precoConferido": "2026-10-27T23:47:34Z",
+    "fixo": true
   },
   {
     "produto": "Celular Samsung Galaxy A57 256gb cinza",
