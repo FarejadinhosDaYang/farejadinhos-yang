@@ -62,9 +62,10 @@
             window.FarejadinhosCategoriasNoAr().then(function (cats) {
                 lista.innerHTML = cats.map(function (c) {
                     var d = document.createElement("span"); d.textContent = c.nome;
-                    return '<a href="#" data-cat="' + d.innerHTML.replace(/"/g, "&quot;") + '">' +
+                    var r = document.createElement("span"); r.textContent = c.rotulo || c.nome;
+                    return '<a href="#" data-cat="' + d.innerHTML.replace(/"/g, "&quot;") + '"' + (c.sub ? ' style="padding-left:28px"' : "") + ">" +
                         '<span class="yang-nav-cat-ic" style="background:' + c.cor + '">' + c.icone + "</span>" +
-                        d.innerHTML + " <small>" + c.n + "</small></a>";
+                        r.innerHTML + " <small>" + c.n + "</small></a>";
                 }).join("") || "Nenhuma categoria no ar.";
                 lista.querySelectorAll("a").forEach(function (a) {
                     a.addEventListener("click", function (e) {

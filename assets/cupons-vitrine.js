@@ -166,7 +166,7 @@
     }
     function naOferta(oferta, depois) {
         if (!oferta || !depois || !depois.parentNode) return;
-        if (/celular/i.test(String(oferta.categoria || "").normalize("NFD").replace(/[̀-ͯ]/g, ""))) return;
+        if (/^\s*celulares?\s*(,|$)/i.test(String(oferta.categoria || "").normalize("NFD").replace(/[̀-ͯ]/g, ""))) return;
         var loja = lojaDoLink(oferta.link);
         if (!loja) return;
         carregar().then(function (d) {

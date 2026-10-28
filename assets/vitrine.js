@@ -57,6 +57,20 @@
   // Mesma lista em gerador/limpar-ofertas.ps1.
   const PERMANENTES = ["videos", "celulares"];
 
+  // Subcategorias: aparecem DENTRO da categoria-mãe (abas da categoria,
+  // menu lateral) e o filtro da mãe mostra as filhas também.
+  // A filha segue as regras normais (expira, recebe cupom, pode ir pro pódio).
+  const SUBCATEGORIAS = { "Acessórios de Celular": { pai: "Celulares", curto: "Acessórios" } };
+  function paiDe(cat){ return (SUBCATEGORIAS[cat] || {}).pai || ""; }
+  function filhasDe(cat){ return Object.keys(SUBCATEGORIAS).filter(f => SUBCATEGORIAS[f].pai === cat); }
+  function nomeCurto(cat){ return (SUBCATEGORIAS[cat] || {}).curto || cat; }
+  // filtro "=Celulares" = só a própria categoria (sem as filhas)
+  function bateCategoria(o, filtro){
+    const cats = categoriasDe(o);
+    if(String(filtro).charAt(0) === "=") return cats.includes(filtro.slice(1));
+    return cats.includes(filtro) || cats.some(c => paiDe(c) === filtro);
+  }
+
   // "Vídeos" é uma categoria A MAIS: a oferta guarda as duas no campo
   // categoria, separadas por vírgula ("Cozinha, Vídeos"). Ao carregar,
   // normalizar() deixa em o.categoria só a principal ("Cozinha") e marca
@@ -389,7 +403,7 @@
 
   window.FarejadinhosVitrine = {
     MINIMO_VITRINE, HORAS_FRESCA, HORAS_MAXIMA, META_CATEGORIA, MINIMO_CATEGORIA, TEMPORADAS,
-    inicio, idadeHoras, selecionar, status, foraDeEpoca, podeIrProPodio, FORA_DO_PODIO, dataOrdem, anunciosDe, melhorAnuncio, comMelhorAnuncio, lojaDe, numeroPreco, variacoesDe, corDe, ehPermanente, PERMANENTES, normalizar, categoriasDe, juntarCategoria, TAG_VIDEO
+    inicio, idadeHoras, selecionar, status, foraDeEpoca, podeIrProPodio, FORA_DO_PODIO, dataOrdem, anunciosDe, melhorAnuncio, comMelhorAnuncio, lojaDe, numeroPreco, variacoesDe, corDe, ehPermanente, SUBCATEGORIAS, paiDe, filhasDe, nomeCurto, bateCategoria, PERMANENTES, normalizar, categoriasDe, juntarCategoria, TAG_VIDEO
   };
 
 })();

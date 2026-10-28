@@ -31,6 +31,17 @@ def main(arquivo):
     por_slug = {o.get("slug"): o for o in catalogo if isinstance(o, dict)}
     mudou = False
     for it in itens:
+        if it.get("op") == "categoria":
+            o = por_slug.get(it.get("slug"))
+            nova = str(it.get("categoria") or "").strip()
+            if not o or not nova:
+                print(f"  ignorado (categoria): {it.get('slug')}")
+                continue
+            video = any(p.strip().lower().startswith("v") and "deo" in p for p in str(o.get("categoria") or "").split(","))
+            o["categoria"] = nova + (", Vídeos" if video else "")
+            print(f"  categoria de {o['slug']}: {o['categoria']}")
+            mudou = True
+            continue
         if it.get("op") == "fixar":
             o = por_slug.get(it.get("slug"))
             if not o:

@@ -25,7 +25,8 @@ window.FAREJA_ICONES_CAT = {
     "Skincare": { icone: "🧴", cor: "#D0688A" },
     "Piscina": { icone: "🏊", cor: "#1E88C7" },
     "Vídeos": { icone: "🎬", cor: "#7B3FA0" },
-    "Celulares": { icone: "📱", cor: "#3949AB" }
+    "Celulares": { icone: "📱", cor: "#3949AB" },
+    "Acessórios de Celular": { icone: "🔌", cor: "#5C6BC0" }
 };
 
 (function () {
@@ -89,10 +90,21 @@ window.FAREJA_ICONES_CAT = {
                     var cats = window.FarejadinhosVitrine && window.FarejadinhosVitrine.categoriasDe ? window.FarejadinhosVitrine.categoriasDe(o) : [(o && o.categoria || "").trim()];
                     cats.forEach(function (c) { if (c) cont[c] = (cont[c] || 0) + 1; });
                 });
-                return Object.keys(cont).sort(function (a, b) { return a.localeCompare(b, "pt-BR"); }).map(function (c) {
-                    var ic = window.FAREJA_ICONES_CAT[c] || { icone: "🐾", cor: "#8A7563" };
-                    return { nome: c, icone: ic.icone, cor: ic.cor, n: cont[c], total: visiveis.length };
+                var V = window.FarejadinhosVitrine || {};
+                var pai = function (c) { return V.paiDe ? V.paiDe(c) : ""; };
+                // mães (com as filhas somadas) em ordem alfabética, cada filha logo depois da mãe
+                var maes = {};
+                Object.keys(cont).forEach(function (c) { var m = pai(c) || c; maes[m] = (maes[m] || 0) + cont[c]; });
+                var saida = [];
+                Object.keys(maes).sort(function (a, b) { return a.localeCompare(b, "pt-BR"); }).forEach(function (m) {
+                    var ic = window.FAREJA_ICONES_CAT[m] || { icone: "🐾", cor: "#8A7563" };
+                    saida.push({ nome: m, rotulo: m, icone: ic.icone, cor: ic.cor, n: maes[m], total: visiveis.length });
+                    Object.keys(cont).filter(function (f) { return pai(f) === m; }).forEach(function (f) {
+                        var icf = window.FAREJA_ICONES_CAT[f] || ic;
+                        saida.push({ nome: f, rotulo: V.nomeCurto ? V.nomeCurto(f) : f, sub: true, icone: icf.icone, cor: icf.cor, n: cont[f], total: visiveis.length });
+                    });
                 });
+                return saida;
             })
             .catch(function () { return []; });
         return promessa;
@@ -138,9 +150,9 @@ window.FAREJA_ICONES_CAT = {
                 '<a href="' + inicio + '#tituloGrid" data-cat="">' +
                 '<span class="yt-lat-ic" style="background:#E5232E">🔥</span><span class="yt-lat-nome">Todas as ofertas</span><small>' + total + "</small></a>" +
                 cats.map(function (c) {
-                    return '<a href="' + inicio + "?categoria=" + encodeURIComponent(c.nome) + '#tituloGrid" data-cat="' + esc(c.nome) + '">' +
+                    return '<a href="' + inicio + "?categoria=" + encodeURIComponent(c.nome) + '#tituloGrid" data-cat="' + esc(c.nome) + '"' + (c.sub ? ' class="yt-lat-sub"' : "") + ">" +
                         '<span class="yt-lat-ic" style="background:' + c.cor + '">' + c.icone + "</span>" +
-                        '<span class="yt-lat-nome">' + esc(c.nome) + "</span><small>" + c.n + "</small></a>";
+                        '<span class="yt-lat-nome">' + esc(c.rotulo || c.nome) + "</span><small>" + c.n + "</small></a>";
                 }).join("");
             marcar(ativa);
             lista.querySelectorAll("a").forEach(function (a) {

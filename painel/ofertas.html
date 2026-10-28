@@ -332,7 +332,7 @@ async function carregar(){
 
 // ================= Filtros: categoria, situação e busca =================
 const ICONES_CAT = { "Casa":"🏠","Café":"☕","Academia":"🏋️","Eletrônicos":"🔌","Eletrodomésticos":"🧺","Beleza":"💄","Moda":"👕","Pet":"🐾",
-  "Cozinha":"🍳","Utilidades":"🧰","Natal":"🎄","Skincare":"🧴","Piscina":"🏊","Vídeos":"🎬","Celulares":"📱" };
+  "Cozinha":"🍳","Utilidades":"🧰","Natal":"🎄","Skincare":"🧴","Piscina":"🏊","Vídeos":"🎬","Celulares":"📱","Acessórios de Celular":"🔌" };
 const SITUACOES = [
   ["todas", "Todas"],
   ["noar", "🟢 No ar"],
@@ -455,7 +455,7 @@ function render(){
       const item = document.createElement("div");
       item.className = "item";
 
-      const opcoesCategoria = ["Café","Casa","Academia","Celulares","Eletrônicos","Beleza","Moda","Pet","Cozinha","Utilidades","Natal","Skincare","Piscina","Eletrodomésticos"]
+      const opcoesCategoria = ["Café","Casa","Academia","Celulares","Acessórios de Celular","Eletrônicos","Beleza","Moda","Pet","Cozinha","Utilidades","Natal","Skincare","Piscina","Eletrodomésticos"]
         .map(c => `<option value="${c}" ${o.categoria === c ? "selected" : ""}>${c}</option>`)
         .join("");
 
