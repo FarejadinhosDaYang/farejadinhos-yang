@@ -1,50 +1,200 @@
 {
-  "quando": "2026-10-29T02:25:28Z",
+  "quando": "2026-10-29T09:53:50Z",
   "origem": "schedule",
-  "total": 271,
-  "iguais": 248,
+  "total": 268,
+  "iguais": 219,
   "mudaram": [
+    {
+      "slug": "arvore-de-natal-premium-super-cheia-grande-luxo-decoracao",
+      "produto": "Árvore de Natal Premium Super Cheia Grande Luxo",
+      "de": "R$ 53,96",
+      "para": "R$ 53,99"
+    },
+    {
+      "slug": "kit-6-pote-vidro-porta-temperos-hermetico-cozinha",
+      "produto": "Kit 6 Pote Vidro Porta Temperos Hermético Cozinha",
+      "de": "R$ 39,89",
+      "para": "74,67"
+    },
     {
       "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
       "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-      "de": "R$ 60,75",
-      "para": "62,87"
+      "de": "R$ 62,87",
+      "para": "60,75"
     },
     {
-      "slug": "jogo-6-tacas-de-vidro-diamond-340-ml-com-pe",
-      "produto": "Jogo 6 Taças De Vidro Diamond 340 ml Com Pé",
-      "de": "R$ 30,35",
-      "para": "32,99"
+      "slug": "faqueiro-tramontina-buzios-em-aco-inox-com-detalhe",
+      "produto": "Faqueiro Tramontina Búzios Em Aço Inox Com Detalhe",
+      "de": "R$ 64,28",
+      "para": "60,54"
     },
     {
       "slug": "kit-6-potes-640ml-vidro-hermetico-4-travas-marmita",
       "produto": "Kit 6 Potes 640ml Vidro Hermético 4 Travas Marmita",
-      "de": "R$ 58,70",
-      "para": "59,70"
+      "de": "R$ 59,70",
+      "para": "58,70"
+    },
+    {
+      "slug": "kit-10-pote-vidro-hermetico-marmita-370ml",
+      "produto": "Kit 10 Pote Vidro Hermético Marmita 370ml",
+      "de": "R$ 69,89",
+      "para": "R$ 69,90"
     },
     {
       "slug": "expositor-para-50-carrinhos-hot-weels-prateleira",
       "produto": "Expositor para 50 carrinhos Hot Weels Prateleira",
-      "de": "R$ 27,85",
-      "para": "R$ 27,90"
+      "de": "R$ 27,90",
+      "para": "R$ 27,85"
+    },
+    {
+      "slug": "balcao-para-cooktop-4-ou-5-bocas-cozinha-moderna",
+      "produto": "Balcão para Cooktop 4 ou 5 Bocas Cozinha Moderna",
+      "de": "R$ 176,00",
+      "para": "R$ 178,89"
+    },
+    {
+      "slug": "porta-temperos-9-potes-giratorio-preto-organizador",
+      "produto": "Porta Temperos 9 Potes Giratório Preto Organizador",
+      "de": "R$ 35,99",
+      "para": "R$ 41,99"
+    },
+    {
+      "slug": "renova-granito-marmore-realca-cor-imediato-rock",
+      "produto": "Renova Granito Mármore Realça Cor Imediato Rock",
+      "de": "R$ 23,90",
+      "para": "R$ 23,89"
     },
     {
       "slug": "caixa-saco-organizador-cobertor-casaco-guarda",
       "produto": "Caixa Saco Organizador Cobertor Casaco Guarda",
-      "de": "R$ 13,81",
-      "para": "R$ 24,99"
+      "de": "R$ 24,99",
+      "para": "R$ 13,81"
+    },
+    {
+      "slug": "kit-4-potes-hermeticos-tampa-bambu-organizador",
+      "produto": "Kit 4 Potes Herméticos Tampa Bambu Organizador",
+      "de": "R$ 38,99",
+      "para": "R$ 39,99"
+    },
+    {
+      "slug": "icoffee-moedor-de-cafe-com-manivela-manual",
+      "produto": "ICoffee Moedor de Café com Manivela Manual",
+      "de": "R$ 149,99",
+      "para": "R$ 134,99"
+    },
+    {
+      "slug": "kit-maquina-para-tosar-pet-tesoura-pente",
+      "produto": "Kit Máquina Para Tosar Pet + Tesoura + Pente",
+      "de": "R$ 34,99",
+      "para": "R$ 28,13"
+    },
+    {
+      "slug": "descascador-eletrico-para-descascar-uvas-frutas",
+      "produto": "Descascador Elétrico Para Descascar Uvas Frutas",
+      "de": "R$ 42,55",
+      "para": "R$ 44,77"
+    },
+    {
+      "slug": "arvore-de-natal-pinheiro-canadense-luxo1200-galhos",
+      "produto": "Árvore De Natal Pinheiro Canadense Luxo1200 Galhos",
+      "de": "R$ 199,00",
+      "para": "R$ 198,00"
+    },
+    {
+      "slug": "arvore-de-natal-pinheiro-tradicional-1-5m-1-8m",
+      "produto": "Arvore de Natal Pinheiro Tradicional 1,5m 1,8m",
+      "de": "R$ 180,49",
+      "para": "R$ 189,99"
+    },
+    {
+      "slug": "protetor-solar-facial-ps-01-fps-60-principia",
+      "produto": "Protetor Solar Facial PS-01 FPS 60 Principia",
+      "de": "R$ 32,99",
+      "para": "R$ 29,99"
+    },
+    {
+      "slug": "nivea-hidratante-labial-amora-shine-4-8g",
+      "produto": "NIVEA Hidratante Labial Amora Shine 4,8g",
+      "de": "R$ 25,11",
+      "para": "R$ 15,99"
+    },
+    {
+      "slug": "protetor-solar-antissinais-dandas-fps-70-toque",
+      "produto": "Protetor Solar ANTISSINAIS Dandas Fps 70, Toque",
+      "de": "R$ 17,98",
+      "para": "R$ 17,78"
+    },
+    {
+      "slug": "nivea-creme-hidratante-lata-145g",
+      "produto": "NIVEA Creme Hidratante Lata 145g",
+      "de": "R$ 39,99",
+      "para": "R$ 34,90"
     },
     {
       "slug": "serum-mix-01-reduz-poros-e-oleosidade",
       "produto": "Sérum Mix-01：Reduz poros e oleosidade",
-      "de": "R$ 34,87",
-      "para": "R$ 35,95"
+      "de": "R$ 35,95",
+      "para": "R$ 34,87"
     },
     {
-      "slug": "adaptador-carplay-sem-fio-para-iphone",
-      "produto": "Adaptador CarPlay Sem Fio para iPhone",
-      "de": "R$ 76,50",
-      "para": "64,19"
+      "slug": "principia-kit-duo-com-2-protetores-solares-faciais",
+      "produto": "Principia Kit Duo com 2 Protetores Solares Faciais",
+      "de": "R$ 77,99",
+      "para": "R$ 86,39"
+    },
+    {
+      "slug": "nivea-creme-hidratante-lata-29g",
+      "produto": "NIVEA Creme Hidratante Lata 29g",
+      "de": "R$ 19,71",
+      "para": "R$ 17,49"
+    },
+    {
+      "slug": "clareador-de-manchas-para-virilha",
+      "produto": "Clareador de Manchas para Virilha",
+      "de": "R$ 152,88",
+      "para": "R$ 149,51"
+    },
+    {
+      "slug": "panos-de-chao-gigante-microfibra",
+      "produto": "Panos de Chão Gigante Microfibra",
+      "de": "R$ 29,90",
+      "para": "R$ 29,80"
+    },
+    {
+      "slug": "mop-giratorio-8l-rodinhas-esfregao-cesto-inox",
+      "produto": "Mop Giratório 8l Rodinhas Esfregão Cesto Inox",
+      "de": "R$ 61,74",
+      "para": "50,63"
+    },
+    {
+      "slug": "kit-10-ou-5-potes-vidro-hermetico-370ml-retangular",
+      "produto": "Kit 10 ou 5 Potes Vidro Hermético 370ml Retangular",
+      "de": "R$ 48,90",
+      "para": "R$ 49,97"
+    },
+    {
+      "slug": "suporte-magnetico-forte-para-telefone-carro-360",
+      "produto": "Suporte Magnético Forte Para Telefone Carro 360 °",
+      "de": "R$ 15,99",
+      "para": "R$ 13,99"
+    },
+    {
+      "slug": "basike-carregador-portatil-20000mah",
+      "produto": "BASIKE Carregador Portátil 20000mAh",
+      "de": "R$ 149,99",
+      "para": "R$ 199,99"
+    },
+    {
+      "slug": "jogo-completo-de-utensilios-de-cozinha-de-silicone",
+      "produto": "Jogo Completo de Utensílios de Cozinha de Silicone",
+      "de": "R$ 28,99",
+      "para": "R$ 28,98"
+    },
+    {
+      "slug": "potes-hermeticos-electrolux-de-plastico-cinza",
+      "produto": "Potes Herméticos Electrolux de Plástico Cinza",
+      "de": "R$ 89,90",
+      "para": "R$ 84,89"
     }
   ],
   "semPreco": [],
@@ -139,6 +289,14 @@
       "referencia": "preco posto a mao em 27/10 13:50"
     },
     {
+      "slug": "extratora-e-higienizadora-portatil-wap-spotcleaner",
+      "produto": "Extratora e Higienizadora Portatil WAP SpotCleaner",
+      "link": "https://s.shopee.com.br/qkY4t1vJm",
+      "atual": "R$ 557,99",
+      "lido": "R$ 549,99",
+      "referencia": "preco posto a mao em 27/10 14:58"
+    },
+    {
       "slug": "samsung-galaxy-s26-ultra-5g-dual-sim-preto-256gb",
       "produto": "Samsung Galaxy S26 Ultra 5g Dual Sim Preto 256gb",
       "link": "https://meli.la/2mkji2E",
@@ -181,10 +339,10 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-29T02:25:30Z",
+      "quando": "2026-10-29T09:53:51Z",
       "teste": false,
-      "links": 222,
-      "ok": 222,
+      "links": 220,
+      "ok": 220,
       "erros": 0
     }
   },
