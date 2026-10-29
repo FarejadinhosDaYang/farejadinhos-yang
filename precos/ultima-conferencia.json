@@ -1,68 +1,50 @@
 {
-  "quando": "2026-10-28T23:12:22Z",
+  "quando": "2026-10-29T02:25:28Z",
   "origem": "schedule",
   "total": 271,
-  "iguais": 245,
+  "iguais": 248,
   "mudaram": [
     {
       "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
       "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-      "de": "R$ 62,87",
-      "para": "60,75"
+      "de": "R$ 60,75",
+      "para": "62,87"
     },
     {
       "slug": "jogo-6-tacas-de-vidro-diamond-340-ml-com-pe",
       "produto": "Jogo 6 Taças De Vidro Diamond 340 ml Com Pé",
-      "de": "R$ 32,99",
-      "para": "30,35"
+      "de": "R$ 30,35",
+      "para": "32,99"
     },
     {
       "slug": "kit-6-potes-640ml-vidro-hermetico-4-travas-marmita",
       "produto": "Kit 6 Potes 640ml Vidro Hermético 4 Travas Marmita",
-      "de": "R$ 59,70",
-      "para": "58,70"
+      "de": "R$ 58,70",
+      "para": "59,70"
     },
     {
-      "slug": "cesto-de-roupa-de-bambu-dobravel-organizador",
-      "produto": "Cesto De Roupa de Bambu Dobravel Organizador",
-      "de": "R$ 61,73",
-      "para": "R$ 51,99"
+      "slug": "expositor-para-50-carrinhos-hot-weels-prateleira",
+      "produto": "Expositor para 50 carrinhos Hot Weels Prateleira",
+      "de": "R$ 27,85",
+      "para": "R$ 27,90"
     },
     {
-      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
-      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 3.839,10",
-      "para": "5065,61"
+      "slug": "caixa-saco-organizador-cobertor-casaco-guarda",
+      "produto": "Caixa Saco Organizador Cobertor Casaco Guarda",
+      "de": "R$ 13,81",
+      "para": "R$ 24,99"
     },
     {
-      "slug": "pisca-natal-cordao-100-leds-10m-8-funcoes-varias",
-      "produto": "Pisca Natal Cordão 100 Leds 10m 8 Funções Varias",
-      "de": "R$ 16,88",
-      "para": "R$ 30,00"
+      "slug": "serum-mix-01-reduz-poros-e-oleosidade",
+      "produto": "Sérum Mix-01：Reduz poros e oleosidade",
+      "de": "R$ 34,87",
+      "para": "R$ 35,95"
     },
     {
-      "slug": "startools-chaleira-jarra-eletrica-110v-ou-220v-1-8",
-      "produto": "STARTOOLS Chaleira Jarra Elétrica 110V ou 220V 1.8",
-      "de": "R$ 43,99",
-      "para": "R$ 41,99"
-    },
-    {
-      "slug": "panos-de-chao-gigante-microfibra",
-      "produto": "Panos de Chão Gigante Microfibra",
-      "de": "R$ 29,80",
-      "para": "R$ 29,90"
-    },
-    {
-      "slug": "barra-de-proteina-integralmedica-crisp-bar-sabor",
-      "produto": "Barra de Proteína Integralmédica Crisp Bar sabor",
-      "de": "R$ 92,00",
-      "para": "102,00"
-    },
-    {
-      "slug": "jogo-completo-de-utensilios-de-cozinha-de-silicone",
-      "produto": "Jogo Completo de Utensílios de Cozinha de Silicone",
-      "de": "R$ 28,98",
-      "para": "R$ 28,99"
+      "slug": "adaptador-carplay-sem-fio-para-iphone",
+      "produto": "Adaptador CarPlay Sem Fio para iPhone",
+      "de": "R$ 76,50",
+      "para": "64,19"
     }
   ],
   "semPreco": [],
@@ -177,7 +159,7 @@
       "produto": "Celular Samsung Galaxy A57 128gb cinza",
       "link": "https://meli.la/1BRdN9x",
       "atual": "R$ 1.583,12",
-      "lido": "199,89",
+      "lido": "201,75",
       "referencia": "preco posto a mao em 28/10 10:13"
     },
     {
@@ -199,7 +181,7 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-28T23:12:24Z",
+      "quando": "2026-10-29T02:25:30Z",
       "teste": false,
       "links": 222,
       "ok": 222,
