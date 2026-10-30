@@ -4494,22 +4494,6 @@
     "liberacao": "2026-10-28T23:32:18Z"
   },
   {
-    "produto": "Saco para Lavar Tênis na Máquina Bolsa Protetora",
-    "preco": "R$ 16,99",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Utilidades",
-    "destaque": false,
-    "imagem": "ad1b3945-429c-4b73-9008-55db6dfc7ae2.jpg",
-    "link": "https://s.shopee.com.br/3B8W9d7HQO",
-    "url": "https://farejadinhosdayang.com.br/ofertas/saco-para-lavar-tenis-na-maquina-bolsa-protetora/",
-    "slug": "saco-para-lavar-tenis-na-maquina-bolsa-protetora",
-    "data": "2026-10-28T13:48:12Z",
-    "precoAVista": "",
-    "precoAPrazo": "",
-    "liberacao": "2026-10-30T00:45:17Z"
-  },
-  {
     "produto": "3L Picador De Alimentos Moedor De Carne Mixer",
     "preco": "R$ 69,00",
     "precoAntigo": "",
@@ -4804,5 +4788,22 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-30T13:56:50Z"
+  },
+  {
+    "produto": "Saco para Lavar Tênis na Máquina Bolsa Protetora",
+    "preco": "R$ 16,99",
+    "precoAntigo": "",
+    "cupom": "",
+    "categoria": "Utilidades, Vídeos",
+    "destaque": false,
+    "imagem": "ad1b3945-429c-4b73-9008-55db6dfc7ae2.jpg",
+    "link": "https://s.shopee.com.br/3B8W9d7HQO",
+    "url": "https://farejadinhosdayang.com.br/ofertas/saco-para-lavar-tenis-na-maquina-bolsa-protetora/",
+    "slug": "saco-para-lavar-tenis-na-maquina-bolsa-protetora",
+    "data": "2026-10-28T13:48:12Z",
+    "precoAVista": "",
+    "precoAPrazo": "",
+    "liberacao": "2026-10-30T00:45:17Z",
+    "precoManual": "2026-10-30T00:45:38Z"
   }
 ]
