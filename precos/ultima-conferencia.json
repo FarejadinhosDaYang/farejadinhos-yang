@@ -1,68 +1,134 @@
 {
-  "quando": "2026-10-30T01:56:37Z",
+  "quando": "2026-10-30T08:36:15Z",
   "origem": "schedule",
-  "total": 262,
-  "iguais": 236,
+  "total": 256,
+  "iguais": 219,
   "mudaram": [
     {
-      "slug": "descascador-eletrico-de-alho-e-uva-em-aco-inox-automatico",
-      "produto": "Descascador Elétrico De Alho E Uva Em Aço Inox",
-      "de": "R$ 59,98",
-      "para": "R$ 59,99"
+      "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
+      "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
+      "de": "R$ 53,57",
+      "para": "54,67"
     },
     {
-      "slug": "kit-10-pote-vidro-hermetico-marmita-640ml",
-      "produto": "Kit 10 Pote Vidro Hermético Marmita 640ml",
-      "de": "R$ 99,90",
-      "para": "R$ 54,90"
+      "slug": "kit-6-potes-640ml-vidro-hermetico-4-travas-marmita",
+      "produto": "Kit 6 Potes 640ml Vidro Hermético 4 Travas Marmita",
+      "de": "R$ 59,70",
+      "para": "58,70"
+    },
+    {
+      "slug": "escorredor-de-loucas-rack-aco-carbono-organizador-2",
+      "produto": "Escorredor de Louças Rack Aço Carbono Organizador",
+      "de": "R$ 91,90",
+      "para": "R$ 92,00"
     },
     {
       "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
       "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 5.065,61",
-      "para": "3839,10"
+      "de": "R$ 3.839,10",
+      "para": "5065,61"
     },
     {
-      "slug": "kit-3-necessaire-bolsa-portatil-transparente",
-      "produto": "KIT 3 Necessaire Bolsa Portátil Transparente",
-      "de": "R$ 17,49",
-      "para": "R$ 24,49"
+      "slug": "renova-granito-marmore-realca-cor-imediato-rock",
+      "produto": "Renova Granito Mármore Realça Cor Imediato Rock",
+      "de": "R$ 23,89",
+      "para": "R$ 39,90"
     },
     {
-      "slug": "arvore-de-natal-pinheiro-canadense-luxo1200-galhos",
-      "produto": "Árvore De Natal Pinheiro Canadense Luxo1200 Galhos",
-      "de": "R$ 198,00",
-      "para": "R$ 199,00"
+      "slug": "kit-4-potes-hermeticos-tampa-bambu-organizador",
+      "produto": "Kit 4 Potes Herméticos Tampa Bambu Organizador",
+      "de": "R$ 39,99",
+      "para": "R$ 38,99"
+    },
+    {
+      "slug": "porta-ovos-4-andares-em-plastico-para-geladeira",
+      "produto": "Porta ovos 4 andares em plastico para geladeira",
+      "de": "R$ 13,07",
+      "para": "R$ 13,05"
+    },
+    {
+      "slug": "protetor-solar-facial-l-oreal-paris-expertise",
+      "produto": "Protetor Solar Facial L'Oréal Paris Expertise",
+      "de": "R$ 46,99",
+      "para": "R$ 42,90"
+    },
+    {
+      "slug": "nivea-hidratante-labial-amora-shine-4-8g",
+      "produto": "NIVEA Hidratante Labial Amora Shine 4,8g",
+      "de": "R$ 15,99",
+      "para": "R$ 25,11"
+    },
+    {
+      "slug": "best-seruns-principia-cuidados-com-a-pele",
+      "produto": "Best Séruns Principia Cuidados com a Pele",
+      "de": "R$ 22,88",
+      "para": "R$ 29,00"
     },
     {
       "slug": "serum-mix-01-reduz-poros-e-oleosidade",
       "produto": "Sérum Mix-01：Reduz poros e oleosidade",
-      "de": "R$ 34,87",
-      "para": "R$ 37,88"
+      "de": "R$ 37,88",
+      "para": "R$ 34,87"
+    },
+    {
+      "slug": "principia-kit-completo-peles-sensiveis-com-gel",
+      "produto": "Principia Kit Completo Peles Sensíveis com Gel",
+      "de": "R$ 113,23",
+      "para": "R$ 93,99"
+    },
+    {
+      "slug": "nivea-creme-hidratante-lata-29g",
+      "produto": "NIVEA Creme Hidratante Lata 29g",
+      "de": "R$ 17,49",
+      "para": "R$ 19,71"
+    },
+    {
+      "slug": "clareador-de-manchas-para-virilha",
+      "produto": "Clareador de Manchas para Virilha",
+      "de": "R$ 152,88",
+      "para": "R$ 149,51"
+    },
+    {
+      "slug": "tapete-higienico-descartavel-para-cachorro",
+      "produto": "Tapete Higiênico Descartável para Cachorro",
+      "de": "R$ 19,98",
+      "para": "R$ 19,96"
     },
     {
       "slug": "panos-de-chao-gigante-microfibra",
       "produto": "Panos de Chão Gigante Microfibra",
-      "de": "R$ 29,80",
-      "para": "R$ 29,90"
+      "de": "R$ 29,90",
+      "para": "R$ 29,80"
     },
     {
-      "slug": "aparelho-medidor-de-pressao-digital-de-braco-bsp11",
-      "produto": "Aparelho medidor de pressão digital de braço BSP11",
-      "de": "R$ 79,05",
-      "para": "93,00"
+      "slug": "creatina-growth-supplements-monohidratada-em-po",
+      "produto": "Creatina Growth Supplements Monohidratada em pó",
+      "de": "R$ 39,90",
+      "para": "58,69"
     },
     {
       "slug": "aparador-de-pelos-super-groom-10-mondial",
       "produto": "Aparador de Pelos Super Groom 10 Mondial",
-      "de": "R$ 84,33",
-      "para": "98,80"
+      "de": "R$ 98,80",
+      "para": "104,97"
     },
     {
-      "slug": "kit-5-elastico-para-exercicios-mini-band-crossfit",
-      "produto": "Kit 5 Elástico para Exercícios Mini Band Crossfit",
-      "de": "R$ 14,98",
-      "para": "R$ 18,98"
+      "slug": "barra-de-proteina-integralmedica-crisp-bar-sabor",
+      "produto": "Barra de Proteína Integralmédica Crisp Bar sabor",
+      "de": "R$ 87,90",
+      "para": "78,30"
+    },
+    {
+      "slug": "carregador-portatil-12000mah-led-com-cabos",
+      "produto": "Carregador Portátil 12000mAh LED com Cabos",
+      "de": "R$ 55,92",
+      "para": "R$ 61,01"
+    },
+    {
+      "slug": "suporte-magnetico-forte-para-telefone-carro-360",
+      "produto": "Suporte Magnético Forte Para Telefone Carro 360 °",
+      "de": "R$ 15,99",
+      "para": "R$ 13,99"
     }
   ],
   "semPreco": [
@@ -102,7 +168,7 @@
       "produto": "iPhone 18 Pro Max 256GB Preto (somente eSIM)",
       "link": "https://meli.la/2fXqW9L",
       "atual": "R$ 10.289,00",
-      "lido": "11439,00",
+      "lido": "10900,00",
       "referencia": "preco posto a mao em 18/10 23:09"
     },
     {
@@ -134,7 +200,7 @@
       "produto": "Celular Samsung Galaxy S26 5G, 512GB",
       "link": "https://meli.la/1WPbdmM",
       "atual": "R$ 5.714,00",
-      "lido": "542,96",
+      "lido": "514,22",
       "referencia": "R$ 5.798,00"
     },
     {
@@ -150,7 +216,7 @@
       "produto": "Celular Samsung Galaxy A37 5G 128GB",
       "link": "https://meli.la/2yTLtgG",
       "atual": "R$ 1.709,00",
-      "lido": "199,90",
+      "lido": "162,43",
       "referencia": "R$ 1.619,00"
     },
     {
@@ -196,10 +262,10 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-30T01:56:38Z",
+      "quando": "2026-10-30T08:36:16Z",
       "teste": false,
-      "links": 214,
-      "ok": 213,
+      "links": 210,
+      "ok": 209,
       "erros": 1
     }
   },
