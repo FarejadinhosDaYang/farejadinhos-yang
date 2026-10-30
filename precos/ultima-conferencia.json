@@ -1,134 +1,104 @@
 {
-  "quando": "2026-10-30T08:36:15Z",
+  "quando": "2026-10-30T15:54:37Z",
   "origem": "schedule",
-  "total": 256,
-  "iguais": 219,
+  "total": 255,
+  "iguais": 222,
   "mudaram": [
     {
       "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
       "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-      "de": "R$ 53,57",
-      "para": "54,67"
+      "de": "R$ 54,67",
+      "para": "65,33"
     },
     {
       "slug": "kit-6-potes-640ml-vidro-hermetico-4-travas-marmita",
       "produto": "Kit 6 Potes 640ml Vidro Hermético 4 Travas Marmita",
-      "de": "R$ 59,70",
-      "para": "58,70"
+      "de": "R$ 58,70",
+      "para": "59,70"
     },
     {
-      "slug": "escorredor-de-loucas-rack-aco-carbono-organizador-2",
-      "produto": "Escorredor de Louças Rack Aço Carbono Organizador",
-      "de": "R$ 91,90",
-      "para": "R$ 92,00"
+      "slug": "kit-com-2-sapateiras-5-nichos-para-organizacao",
+      "produto": "Kit Com 2 Sapateiras 5 Nichos Para Organização",
+      "de": "R$ 39,75",
+      "para": "R$ 37,77"
     },
     {
       "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
       "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 3.839,10",
-      "para": "5065,61"
+      "de": "R$ 5.065,61",
+      "para": "4999,90"
     },
     {
       "slug": "renova-granito-marmore-realca-cor-imediato-rock",
       "produto": "Renova Granito Mármore Realça Cor Imediato Rock",
-      "de": "R$ 23,89",
-      "para": "R$ 39,90"
+      "de": "R$ 39,90",
+      "para": "R$ 24,90"
     },
     {
-      "slug": "kit-4-potes-hermeticos-tampa-bambu-organizador",
-      "produto": "Kit 4 Potes Herméticos Tampa Bambu Organizador",
-      "de": "R$ 39,99",
-      "para": "R$ 38,99"
-    },
-    {
-      "slug": "porta-ovos-4-andares-em-plastico-para-geladeira",
-      "produto": "Porta ovos 4 andares em plastico para geladeira",
-      "de": "R$ 13,07",
-      "para": "R$ 13,05"
-    },
-    {
-      "slug": "protetor-solar-facial-l-oreal-paris-expertise",
-      "produto": "Protetor Solar Facial L'Oréal Paris Expertise",
-      "de": "R$ 46,99",
-      "para": "R$ 42,90"
-    },
-    {
-      "slug": "nivea-hidratante-labial-amora-shine-4-8g",
-      "produto": "NIVEA Hidratante Labial Amora Shine 4,8g",
-      "de": "R$ 15,99",
-      "para": "R$ 25,11"
-    },
-    {
-      "slug": "best-seruns-principia-cuidados-com-a-pele",
-      "produto": "Best Séruns Principia Cuidados com a Pele",
-      "de": "R$ 22,88",
-      "para": "R$ 29,00"
-    },
-    {
-      "slug": "serum-mix-01-reduz-poros-e-oleosidade",
-      "produto": "Sérum Mix-01：Reduz poros e oleosidade",
-      "de": "R$ 37,88",
-      "para": "R$ 34,87"
-    },
-    {
-      "slug": "principia-kit-completo-peles-sensiveis-com-gel",
-      "produto": "Principia Kit Completo Peles Sensíveis com Gel",
-      "de": "R$ 113,23",
-      "para": "R$ 93,99"
-    },
-    {
-      "slug": "nivea-creme-hidratante-lata-29g",
-      "produto": "NIVEA Creme Hidratante Lata 29g",
-      "de": "R$ 17,49",
-      "para": "R$ 19,71"
+      "slug": "ventilador-de-teto-com-luz-silencioso-controle",
+      "produto": "Ventilador de Teto com Luz Silencioso Controle",
+      "de": "R$ 48,29",
+      "para": "R$ 57,77"
     },
     {
       "slug": "clareador-de-manchas-para-virilha",
       "produto": "Clareador de Manchas para Virilha",
-      "de": "R$ 152,88",
-      "para": "R$ 149,51"
-    },
-    {
-      "slug": "tapete-higienico-descartavel-para-cachorro",
-      "produto": "Tapete Higiênico Descartável para Cachorro",
-      "de": "R$ 19,98",
-      "para": "R$ 19,96"
-    },
-    {
-      "slug": "panos-de-chao-gigante-microfibra",
-      "produto": "Panos de Chão Gigante Microfibra",
-      "de": "R$ 29,90",
-      "para": "R$ 29,80"
+      "de": "R$ 149,51",
+      "para": "R$ 152,88"
     },
     {
       "slug": "creatina-growth-supplements-monohidratada-em-po",
       "produto": "Creatina Growth Supplements Monohidratada em pó",
-      "de": "R$ 39,90",
-      "para": "58,69"
+      "de": "R$ 58,69",
+      "para": "39,90"
+    },
+    {
+      "slug": "escorredor-de-macarrao-massas-inox-304-com-alcas",
+      "produto": "Escorredor de Macarrão Massas Inox 304 com Alças",
+      "de": "R$ 20,90",
+      "para": "21,90"
     },
     {
       "slug": "aparador-de-pelos-super-groom-10-mondial",
       "produto": "Aparador de Pelos Super Groom 10 Mondial",
-      "de": "R$ 98,80",
-      "para": "104,97"
+      "de": "R$ 104,97",
+      "para": "98,80"
+    },
+    {
+      "slug": "frigideira-antiaderente-ceramica-com-espatula",
+      "produto": "Frigideira Antiaderente Cerâmica com Espátula",
+      "de": "R$ 49,62",
+      "para": "50,54"
     },
     {
       "slug": "barra-de-proteina-integralmedica-crisp-bar-sabor",
       "produto": "Barra de Proteína Integralmédica Crisp Bar sabor",
-      "de": "R$ 87,90",
-      "para": "78,30"
-    },
-    {
-      "slug": "carregador-portatil-12000mah-led-com-cabos",
-      "produto": "Carregador Portátil 12000mAh LED com Cabos",
-      "de": "R$ 55,92",
-      "para": "R$ 61,01"
+      "de": "R$ 78,30",
+      "para": "92,15"
     },
     {
       "slug": "suporte-magnetico-forte-para-telefone-carro-360",
       "produto": "Suporte Magnético Forte Para Telefone Carro 360 °",
-      "de": "R$ 15,99",
-      "para": "R$ 13,99"
+      "de": "R$ 13,99",
+      "para": "R$ 15,99"
+    },
+    {
+      "slug": "bastao-de-selfie-telescopico-bluetooth",
+      "produto": "Bastão de selfie telescópico Bluetooth",
+      "de": "R$ 16,99",
+      "para": "R$ 15,99"
+    },
+    {
+      "slug": "basike-carregador-portatil-20000mah",
+      "produto": "BASIKE Carregador Portátil 20000mAh",
+      "de": "R$ 199,99",
+      "para": "R$ 149,99"
+    },
+    {
+      "slug": "air-fryer-electrolux-por-rita-lobo-5-6l-cinza",
+      "produto": "Air Fryer Electrolux por Rita Lobo 5,6L Cinza",
+      "de": "R$ 339,90",
+      "para": "R$ 319,90"
     }
   ],
   "semPreco": [
@@ -152,7 +122,7 @@
       "produto": "Samsung Galaxy S25 5G, 256GB, 12GB, Câmera Tripla",
       "link": "https://meli.la/25scAq6",
       "atual": "R$ 3.772,00",
-      "lido": "433,20",
+      "lido": "398,80",
       "referencia": "R$ 3.689,00"
     },
     {
@@ -180,11 +150,19 @@
       "referencia": "R$ 8.199,00"
     },
     {
+      "slug": "iphone-17-pro-256gb-laranja-cosmico",
+      "produto": "iPhone 17 Pro 256GB - Laranja-cósmico",
+      "link": "https://meli.la/2tshrR8",
+      "atual": "R$ 7.680,00",
+      "lido": "759,30",
+      "referencia": "R$ 7.799,00"
+    },
+    {
       "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
       "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
       "link": "https://meli.la/2LUJ4yy",
       "atual": "R$ 3.898,00",
-      "lido": "632,22",
+      "lido": "527,97",
       "referencia": "R$ 5.798,00"
     },
     {
@@ -248,7 +226,7 @@
       "produto": "Celular Samsung Galaxy A57 128gb cinza",
       "link": "https://meli.la/1BRdN9x",
       "atual": "R$ 1.583,12",
-      "lido": "1842,00",
+      "lido": "201,75",
       "referencia": "preco posto a mao em 28/10 10:13"
     },
     {
@@ -262,10 +240,10 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-30T08:36:16Z",
+      "quando": "2026-10-30T15:54:39Z",
       "teste": false,
-      "links": 210,
-      "ok": 209,
+      "links": 209,
+      "ok": 208,
       "erros": 1
     }
   },
