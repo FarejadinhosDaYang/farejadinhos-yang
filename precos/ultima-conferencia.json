@@ -1,92 +1,68 @@
 {
-  "quando": "2026-10-29T21:47:45Z",
+  "quando": "2026-10-30T01:56:37Z",
   "origem": "schedule",
-  "total": 268,
-  "iguais": 238,
+  "total": 262,
+  "iguais": 236,
   "mudaram": [
     {
-      "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
-      "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-      "de": "R$ 63,28",
-      "para": "53,57"
+      "slug": "descascador-eletrico-de-alho-e-uva-em-aco-inox-automatico",
+      "produto": "Descascador Elétrico De Alho E Uva Em Aço Inox",
+      "de": "R$ 59,98",
+      "para": "R$ 59,99"
     },
     {
-      "slug": "faqueiro-tramontina-buzios-em-aco-inox-com-detalhe",
-      "produto": "Faqueiro Tramontina Búzios Em Aço Inox Com Detalhe",
-      "de": "R$ 60,54",
-      "para": "64,28"
+      "slug": "kit-10-pote-vidro-hermetico-marmita-640ml",
+      "produto": "Kit 10 Pote Vidro Hermético Marmita 640ml",
+      "de": "R$ 99,90",
+      "para": "R$ 54,90"
     },
     {
-      "slug": "descascador-eletrico-para-descascar-uvas-frutas",
-      "produto": "Descascador Elétrico Para Descascar Uvas Frutas",
-      "de": "R$ 44,77",
-      "para": "R$ 46,78"
+      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
+      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
+      "de": "R$ 5.065,61",
+      "para": "3839,10"
     },
     {
-      "slug": "pinhas-natal-enfeite-natural-decoracao-pendente",
-      "produto": "Pinhas Natal Enfeite Natural Decoração Pendente",
-      "de": "R$ 16,99",
-      "para": "R$ 14,99"
+      "slug": "kit-3-necessaire-bolsa-portatil-transparente",
+      "produto": "KIT 3 Necessaire Bolsa Portátil Transparente",
+      "de": "R$ 17,49",
+      "para": "R$ 24,49"
     },
     {
-      "slug": "nivea-creme-hidratante-lata-145g",
-      "produto": "NIVEA Creme Hidratante Lata 145g",
-      "de": "R$ 34,90",
-      "para": "R$ 39,99"
+      "slug": "arvore-de-natal-pinheiro-canadense-luxo1200-galhos",
+      "produto": "Árvore De Natal Pinheiro Canadense Luxo1200 Galhos",
+      "de": "R$ 198,00",
+      "para": "R$ 199,00"
+    },
+    {
+      "slug": "serum-mix-01-reduz-poros-e-oleosidade",
+      "produto": "Sérum Mix-01：Reduz poros e oleosidade",
+      "de": "R$ 34,87",
+      "para": "R$ 37,88"
+    },
+    {
+      "slug": "panos-de-chao-gigante-microfibra",
+      "produto": "Panos de Chão Gigante Microfibra",
+      "de": "R$ 29,80",
+      "para": "R$ 29,90"
+    },
+    {
+      "slug": "aparelho-medidor-de-pressao-digital-de-braco-bsp11",
+      "produto": "Aparelho medidor de pressão digital de braço BSP11",
+      "de": "R$ 79,05",
+      "para": "93,00"
     },
     {
       "slug": "aparador-de-pelos-super-groom-10-mondial",
       "produto": "Aparador de Pelos Super Groom 10 Mondial",
-      "de": "R$ 98,80",
-      "para": "84,33"
+      "de": "R$ 84,33",
+      "para": "98,80"
     },
     {
-      "slug": "mop-giratorio-8l-rodinhas-esfregao-cesto-inox",
-      "produto": "Mop Giratório 8l Rodinhas Esfregão Cesto Inox",
-      "de": "R$ 50,63",
-      "para": "61,74"
-    },
-    {
-      "slug": "copo-termico-gigante-1-2l-inox-com-tampa-canudo",
-      "produto": "Copo Térmico Gigante 1,2l Inox Com Tampa Canudo",
-      "de": "R$ 45,07",
-      "para": "48,99"
-    },
-    {
-      "slug": "barra-de-proteina-integralmedica-crisp-bar-sabor",
-      "produto": "Barra de Proteína Integralmédica Crisp Bar sabor",
-      "de": "R$ 87,00",
-      "para": "87,90"
-    },
-    {
-      "slug": "carregador-portatil-12000mah-led-com-cabos",
-      "produto": "Carregador Portátil 12000mAh LED com Cabos",
-      "de": "R$ 61,01",
-      "para": "R$ 55,92"
-    },
-    {
-      "slug": "potes-hermeticos-electrolux-de-plastico-cinza",
-      "produto": "Potes Herméticos Electrolux de Plástico Cinza",
-      "de": "R$ 84,89",
-      "para": "R$ 89,90"
-    },
-    {
-      "slug": "air-fryer-electrolux-por-rita-lobo-5-6l-cinza",
-      "produto": "Air Fryer Electrolux por Rita Lobo 5,6L Cinza",
-      "de": "R$ 319,90",
-      "para": "R$ 339,90"
-    },
-    {
-      "slug": "cafeteira-eletrica-electrolux-30-xicaras-efficient",
-      "produto": "Cafeteira Elétrica Electrolux 30 Xícaras Efficient",
-      "de": "R$ 149,90",
-      "para": "R$ 179,90"
-    },
-    {
-      "slug": "cafeteira-eletrica-electrolux-15-xicaras-efficient",
-      "produto": "Cafeteira Elétrica Electrolux 15 Xícaras Efficient",
-      "de": "R$ 109,90",
-      "para": "R$ 149,90"
+      "slug": "kit-5-elastico-para-exercicios-mini-band-crossfit",
+      "produto": "Kit 5 Elástico para Exercícios Mini Band Crossfit",
+      "de": "R$ 14,98",
+      "para": "R$ 18,98"
     }
   ],
   "semPreco": [
@@ -220,10 +196,10 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-29T21:47:46Z",
+      "quando": "2026-10-30T01:56:38Z",
       "teste": false,
-      "links": 220,
-      "ok": 219,
+      "links": 214,
+      "ok": 213,
       "erros": 1
     }
   },

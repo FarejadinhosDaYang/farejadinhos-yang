@@ -121,7 +121,7 @@
   },
   {
     "produto": "Descascador Elétrico De Alho E Uva Em Aço Inox",
-    "preco": "R$ 59,98",
+    "preco": "R$ 59,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha, Vídeos",
@@ -135,7 +135,7 @@
     "precoAPrazo": "",
     "liberacao": "2026-10-20T16:36:00Z",
     "produtoOriginal": "Descascador Elétrico De Alho E Uva Em Aço Inox Automático Prático",
-    "precoConferido": "2026-10-28T05:41:33Z"
+    "precoConferido": "2026-10-30T02:00:52Z"
   },
   {
     "produto": "Garrafa Forma De Gelo 2 Em 1 Portátil Silicone",
@@ -523,7 +523,7 @@
   },
   {
     "produto": "Kit 10 Pote Vidro Hermético Marmita 640ml",
-    "preco": "R$ 99,90",
+    "preco": "R$ 54,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -536,8 +536,8 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-29T00:16:09Z",
-    "precoConferido": "2026-10-27T20:06:40Z",
-    "fixo": true
+    "fixo": true,
+    "precoConferido": "2026-10-30T02:00:52Z"
   },
   {
     "produto": "Organizador De Cosmético Maquiagem Acrílico",
@@ -1281,7 +1281,7 @@
   },
   {
     "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-    "preco": "R$ 5.065,61",
+    "preco": "R$ 3.839,10",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -1291,7 +1291,7 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera/",
     "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "R$ 5.065,61",
+    "precoAVista": "R$ 3.839,10",
     "precoAPrazo": "5066,16",
     "liberacao": "2026-10-19T11:56:00Z",
     "parcelas": 12,
@@ -1307,7 +1307,7 @@
         "variacao": "Cor"
       }
     ],
-    "precoConferido": "2026-10-28T23:17:07Z"
+    "precoConferido": "2026-10-30T02:00:52Z"
   },
   {
     "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
@@ -1734,7 +1734,7 @@
   },
   {
     "produto": "KIT 3 Necessaire Bolsa Portátil Transparente",
-    "preco": "R$ 17,49",
+    "preco": "R$ 24,49",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Beleza",
@@ -1747,7 +1747,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-26T14:35:50Z",
-    "precoConferido": "2026-10-28T12:51:57Z"
+    "precoConferido": "2026-10-30T02:00:52Z"
   },
   {
     "produto": "Ventilador de Teto com Luz Silencioso Controle",
@@ -2346,7 +2346,7 @@
   },
   {
     "produto": "Árvore De Natal Pinheiro Canadense Luxo1200 Galhos",
-    "preco": "R$ 198,00",
+    "preco": "R$ 199,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -2359,7 +2359,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-29T12:13:41Z",
-    "precoConferido": "2026-10-29T09:58:01Z"
+    "precoConferido": "2026-10-30T02:00:52Z"
   },
   {
     "produto": "Pinhas Natal Enfeite Natural Decoração Pendente",
@@ -2788,7 +2788,7 @@
   },
   {
     "produto": "Sérum Mix-01：Reduz poros e oleosidade",
-    "preco": "R$ 34,87",
+    "preco": "R$ 37,88",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Skincare",
@@ -2801,7 +2801,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-29T20:19:59Z",
-    "precoConferido": "2026-10-29T09:58:01Z"
+    "precoConferido": "2026-10-30T02:00:52Z"
   },
   {
     "produto": "Numbuzin No.9 NAD Bio Lifting Essence 2types",
@@ -3485,7 +3485,7 @@
   },
   {
     "produto": "Panos de Chão Gigante Microfibra",
-    "preco": "R$ 29,80",
+    "preco": "R$ 29,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Utilidades",
@@ -3498,7 +3498,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-28T15:44:39Z",
-    "precoConferido": "2026-10-29T09:58:01Z"
+    "precoConferido": "2026-10-30T02:00:52Z"
   },
   {
     "produto": "Ventilador Portátil de Mesa com Nebulização",
@@ -3603,7 +3603,7 @@
   },
   {
     "produto": "Aparelho medidor de pressão digital de braço BSP11",
-    "preco": "R$ 79,05",
+    "preco": "R$ 93,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Utilidades",
@@ -3616,7 +3616,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-28T23:17:42Z",
-    "precoConferido": "2026-10-29T16:59:20Z"
+    "precoConferido": "2026-10-30T02:00:52Z"
   },
   {
     "produto": "Escorredor de Macarrão Massas Inox 304 com Alças",
@@ -3670,7 +3670,7 @@
   },
   {
     "produto": "Aparador de Pelos Super Groom 10 Mondial",
-    "preco": "R$ 84,33",
+    "preco": "R$ 98,80",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Beleza",
@@ -3680,11 +3680,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/aparador-de-pelos-super-groom-10-mondial/",
     "slug": "aparador-de-pelos-super-groom-10-mondial",
     "data": "2026-10-28T00:58:10Z",
-    "precoAVista": "R$ 84,33",
+    "precoAVista": "R$ 98,80",
     "precoAPrazo": "127,04",
     "liberacao": "2026-10-28T00:42:19Z",
     "parcelas": 4,
-    "precoConferido": "2026-10-29T21:52:08Z"
+    "precoConferido": "2026-10-30T02:00:52Z"
   },
   {
     "produto": "Mop Giratório 8l Rodinhas Esfregão Cesto Inox",
@@ -4463,7 +4463,7 @@
   },
   {
     "produto": "Kit 5 Elástico para Exercícios Mini Band Crossfit",
-    "preco": "R$ 14,98",
+    "preco": "R$ 18,98",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Academia",
@@ -4475,7 +4475,8 @@
     "data": "2026-10-28T13:48:11Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-28T23:46:55Z"
+    "liberacao": "2026-10-28T23:46:55Z",
+    "precoConferido": "2026-10-30T02:00:52Z"
   },
   {
     "produto": "Cafeteira Portátil 3 em 1 Expresso Elétrica",
