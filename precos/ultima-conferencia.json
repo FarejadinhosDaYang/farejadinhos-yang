@@ -1,113 +1,95 @@
 {
-  "quando": "2026-10-30T15:54:37Z",
+  "quando": "2026-10-30T20:45:45Z",
   "origem": "schedule",
-  "total": 255,
-  "iguais": 222,
+  "total": 245,
+  "iguais": 214,
   "mudaram": [
-    {
-      "slug": "jogo-talheres-faqueiro-buzios-aco-inox-24-pecas",
-      "produto": "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças",
-      "de": "R$ 54,67",
-      "para": "65,33"
-    },
     {
       "slug": "kit-6-potes-640ml-vidro-hermetico-4-travas-marmita",
       "produto": "Kit 6 Potes 640ml Vidro Hermético 4 Travas Marmita",
-      "de": "R$ 58,70",
-      "para": "59,70"
+      "de": "R$ 59,70",
+      "para": "58,70"
     },
     {
-      "slug": "kit-com-2-sapateiras-5-nichos-para-organizacao",
-      "produto": "Kit Com 2 Sapateiras 5 Nichos Para Organização",
-      "de": "R$ 39,75",
-      "para": "R$ 37,77"
+      "slug": "kit-chave-catraca-soquete-46-pecas-indufer",
+      "produto": "Kit Chave Catraca Soquete 46 Peças Indufer",
+      "de": "R$ 26,99",
+      "para": "28,99"
+    },
+    {
+      "slug": "organizador-algodao-e-cotonetes-acrilico-kit",
+      "produto": "Organizador Algodão E Cotonetes Acrílico Kit",
+      "de": "R$ 13,19",
+      "para": "R$ 13,20"
     },
     {
       "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
       "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 5.065,61",
-      "para": "4999,90"
+      "de": "R$ 4.999,90",
+      "para": "5100,00"
     },
     {
-      "slug": "renova-granito-marmore-realca-cor-imediato-rock",
-      "produto": "Renova Granito Mármore Realça Cor Imediato Rock",
-      "de": "R$ 39,90",
-      "para": "R$ 24,90"
+      "slug": "mascara-cha-verde-remover-de-cravos-anti-acne",
+      "produto": "Máscara Chá Verde Remover de Cravos Anti-Acne",
+      "de": "R$ 14,33",
+      "para": "R$ 12,88"
     },
     {
-      "slug": "ventilador-de-teto-com-luz-silencioso-controle",
-      "produto": "Ventilador de Teto com Luz Silencioso Controle",
-      "de": "R$ 48,29",
-      "para": "R$ 57,77"
+      "slug": "principia-kit-peles-sensiveis-com-gel-de-limpeza",
+      "produto": "Principia Kit Peles Sensíveis com Gel de Limpeza",
+      "de": "R$ 113,23",
+      "para": "R$ 105,68"
     },
     {
-      "slug": "clareador-de-manchas-para-virilha",
-      "produto": "Clareador de Manchas para Virilha",
-      "de": "R$ 149,51",
-      "para": "R$ 152,88"
+      "slug": "principia-kit-limpa-hidrata-e-protege-com-gel",
+      "produto": "Principia Kit Limpa Hidrata e Protege com Gel",
+      "de": "R$ 117,73",
+      "para": "R$ 109,88"
     },
     {
-      "slug": "creatina-growth-supplements-monohidratada-em-po",
-      "produto": "Creatina Growth Supplements Monohidratada em pó",
-      "de": "R$ 58,69",
-      "para": "39,90"
+      "slug": "principia-kit-protetor-solar-ps-01-fps-60-ps-05",
+      "produto": "Principia Kit Protetor Solar PS-01 FPS 60 + PS-05",
+      "de": "R$ 80,99",
+      "para": "R$ 75,59"
     },
     {
-      "slug": "escorredor-de-macarrao-massas-inox-304-com-alcas",
-      "produto": "Escorredor de Macarrão Massas Inox 304 com Alças",
-      "de": "R$ 20,90",
-      "para": "21,90"
+      "slug": "principia-kit-com-2-protetores-solares-com-cor",
+      "produto": "Principia kit com 2 Protetores solares com cor",
+      "de": "R$ 86,39",
+      "para": "R$ 80,99"
     },
     {
-      "slug": "aparador-de-pelos-super-groom-10-mondial",
-      "produto": "Aparador de Pelos Super Groom 10 Mondial",
-      "de": "R$ 104,97",
-      "para": "98,80"
+      "slug": "principia-kit-duo-com-2-protetores-solares-faciais",
+      "produto": "Principia Kit Duo com 2 Protetores Solares Faciais",
+      "de": "R$ 86,39",
+      "para": "R$ 80,99"
     },
     {
-      "slug": "frigideira-antiaderente-ceramica-com-espatula",
-      "produto": "Frigideira Antiaderente Cerâmica com Espátula",
-      "de": "R$ 49,62",
-      "para": "50,54"
+      "slug": "parafusadeira-furadeira-48v-profissional",
+      "produto": "Parafusadeira Furadeira 48v Profissional",
+      "de": "R$ 104,31",
+      "para": "95,92"
+    },
+    {
+      "slug": "adaptador-carplay-sem-fio-para-iphone",
+      "produto": "Adaptador CarPlay Sem Fio para iPhone",
+      "de": "R$ 76,50",
+      "para": "64,19"
+    },
+    {
+      "slug": "mini-mixer-eletrico-recarregavel-usb-3-velocidades",
+      "produto": "Mini Mixer Elétrico Recarregável USB 3 Velocidades",
+      "de": "R$ 19,00",
+      "para": "17,48"
     },
     {
       "slug": "barra-de-proteina-integralmedica-crisp-bar-sabor",
       "produto": "Barra de Proteína Integralmédica Crisp Bar sabor",
-      "de": "R$ 78,30",
-      "para": "92,15"
-    },
-    {
-      "slug": "suporte-magnetico-forte-para-telefone-carro-360",
-      "produto": "Suporte Magnético Forte Para Telefone Carro 360 °",
-      "de": "R$ 13,99",
-      "para": "R$ 15,99"
-    },
-    {
-      "slug": "bastao-de-selfie-telescopico-bluetooth",
-      "produto": "Bastão de selfie telescópico Bluetooth",
-      "de": "R$ 16,99",
-      "para": "R$ 15,99"
-    },
-    {
-      "slug": "basike-carregador-portatil-20000mah",
-      "produto": "BASIKE Carregador Portátil 20000mAh",
-      "de": "R$ 199,99",
-      "para": "R$ 149,99"
-    },
-    {
-      "slug": "air-fryer-electrolux-por-rita-lobo-5-6l-cinza",
-      "produto": "Air Fryer Electrolux por Rita Lobo 5,6L Cinza",
-      "de": "R$ 339,90",
-      "para": "R$ 319,90"
+      "de": "R$ 92,15",
+      "para": "84,39"
     }
   ],
   "semPreco": [
-    {
-      "slug": "luminaria-de-mesa-candeiro-dumbbell-touch",
-      "produto": "Luminária de Mesa Candeiro Dumbbell Touch",
-      "link": "https://s.shopee.com.br/8fTPPGCe7E",
-      "motivo": "API Shopee: a API não achou esse produto (pode ter saído do ar ou do programa de afiliados)"
-    },
     {
       "slug": "cuscuzeiro-individual-mini-tetinha-aluminio-polido",
       "produto": "Cuscuzeiro Individual Mini Tetinha Alumínio Polido",
@@ -178,7 +160,7 @@
       "produto": "Celular Samsung Galaxy S26 5G, 512GB",
       "link": "https://meli.la/1WPbdmM",
       "atual": "R$ 5.714,00",
-      "lido": "514,22",
+      "lido": "538,25",
       "referencia": "R$ 5.798,00"
     },
     {
@@ -194,7 +176,7 @@
       "produto": "Celular Samsung Galaxy A37 5G 128GB",
       "link": "https://meli.la/2yTLtgG",
       "atual": "R$ 1.709,00",
-      "lido": "162,43",
+      "lido": "160,71",
       "referencia": "R$ 1.619,00"
     },
     {
@@ -230,6 +212,14 @@
       "referencia": "preco posto a mao em 28/10 10:13"
     },
     {
+      "slug": "marmita-eletrica-preta-bivolt-portatil-domestica",
+      "produto": "Marmita Elétrica Preta Bivolt Portátil Doméstica",
+      "link": "https://meli.la/1o7bDku",
+      "atual": "R$ 46,99",
+      "lido": "43,23",
+      "referencia": "preco posto a mao em 28/10 10:16"
+    },
+    {
       "slug": "fritadeira-sem-oleo-air-fryer-digital-4l-mondial",
       "produto": "Fritadeira Sem Óleo Air Fryer Digital 4L Mondial",
       "link": "https://meli.la/1eFBrXD",
@@ -240,11 +230,11 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-30T15:54:39Z",
+      "quando": "2026-10-30T20:45:47Z",
       "teste": false,
-      "links": 209,
-      "ok": 208,
-      "erros": 1
+      "links": 200,
+      "ok": 200,
+      "erros": 0
     }
   },
   "anuncios": {
