@@ -399,9 +399,6 @@ h1,h2,h3,.brand{
     color:#fff;
 }
 
-.categoria-btn.sub{padding:8px 14px;background:#fff;font-size:13px}
-.categoria-btn.sub.sub-ativa{background:var(--red);border-color:var(--red);color:#fff}
-
 .categoria-btn .fechar{
     opacity:.7;
     font-size:12px;
@@ -1458,10 +1455,9 @@ function montarCategorias(){
 
     const container = document.getElementById("categoriasRow");
 
-    const V = FarejadinhosVitrine;
-    const todasCats = [...new Set(ofertas.flatMap(o => V.categoriasDe(o)).filter(c => c !== ""))];
-    // subcategoria aparece dentro da mãe; se a mãe não tiver oferta, entra a mãe mesmo assim
-    const categorias = [...new Set(todasCats.map(c => V.paiDe(c) || c))].sort();
+    const categorias = [...new Set(
+        ofertas.flatMap(o => FarejadinhosVitrine.categoriasDe(o)).filter(c => c !== "")
+    )].sort();
 
     if(categorias.length === 0){
         container.innerHTML = "";
@@ -1477,41 +1473,22 @@ function montarCategorias(){
 
     if(filtroAtivo.tipo !== "todas"){
 
-        const valor = String(filtroAtivo.valor).replace(/^=/, "");
-        const mae = V.paiDe(valor) || valor;
-        const padrao = ICONES_CATEGORIA[mae];
+        const rotulo = filtroAtivo.valor;
+        const padrao = ICONES_CATEGORIA[filtroAtivo.valor];
         const icHtml = padrao
             ? `<span class="ic" style="background:${padrao.cor}">${padrao.icone}</span>`
             : "";
 
-        let html =
+        container.innerHTML =
             `<button type="button" class="categoria-btn ativa" data-limpar="1">` +
-            `${icHtml}${escapeHtml(mae)} <span class="fechar">✕</span>` +
+            `${icHtml}${escapeHtml(rotulo)} <span class="fechar">✕</span>` +
             `</button>`;
 
-        // abas da categoria: Tudo · (a própria) · filhas que têm oferta
-        const filhas = V.filhasDe(mae).filter(f => todasCats.includes(f));
-        if(filhas.length){
-            const sub = (v, nome, ic) => `<button type="button" class="categoria-btn sub${filtroAtivo.valor === v ? " sub-ativa" : ""}" data-sub="${escapeHtml(v)}">${ic ? ic + " " : ""}${escapeHtml(nome)}</button>`;
-            html += sub(mae, "Tudo", "") +
-                (todasCats.includes(mae) ? sub("=" + mae, mae === "Celulares" ? "Aparelhos" : mae, (ICONES_CATEGORIA[mae] || {}).icone) : "") +
-                filhas.map(f => sub(f, V.nomeCurto(f), (ICONES_CATEGORIA[f] || {}).icone)).join("");
-        }
-        container.innerHTML = html;
-
-        container.querySelector("[data-limpar]").addEventListener("click", function(){
+        container.querySelector(".categoria-btn").addEventListener("click", function(){
             filtroAtivo = { tipo: "todas", valor: "" };
             montarCategorias();
             aplicarFiltros();
         });
-        container.querySelectorAll("[data-sub]").forEach(b => b.addEventListener("click", function(){
-            filtroAtivo = { tipo: "categoria", valor: this.dataset.sub };
-            const url = new URL(window.location.href);
-            url.searchParams.set("categoria", this.dataset.sub);
-            history.replaceState(null, "", url);
-            montarCategorias();
-            aplicarFiltros();
-        }));
 
         return;
     }
@@ -1556,7 +1533,7 @@ function aplicarFiltros(){
         let bateFiltro = true;
 
         if(filtroAtivo.tipo === "categoria"){
-            bateFiltro = FarejadinhosVitrine.bateCategoria(o, filtroAtivo.valor);
+            bateFiltro = FarejadinhosVitrine.categoriasDe(o).includes(filtroAtivo.valor);
         }
 
         const bateLoja = !lojaAtiva || lojaDe(o) === lojaAtiva;
@@ -1570,11 +1547,7 @@ function aplicarFiltros(){
     const nomeLoja = lojaAtiva ? LOJAS.find(l => l.id === lojaAtiva).nome : "";
     let titulo = "🔥 Todas as ofertas";
     if(termo.trim()) titulo = `🔎 Resultados pra “${document.getElementById("busca").value.trim()}”`;
-    else if(filtroAtivo.tipo !== "todas"){
-        const v = String(filtroAtivo.valor).replace(/^=/, "");
-        const mae = FarejadinhosVitrine.paiDe(v);
-        titulo = mae ? `🔥 ${mae} · ${FarejadinhosVitrine.nomeCurto(v)}` : (filtroAtivo.valor.charAt(0) === "=" && v === "Celulares" ? "🔥 Celulares · Aparelhos" : `🔥 ${v}`);
-    }
+    else if(filtroAtivo.tipo !== "todas") titulo = `🔥 ${filtroAtivo.valor}`;
     else if(nomeLoja) titulo = `🔥 Ofertas ${nomeLoja}`;
     if(nomeLoja && (termo.trim() || filtroAtivo.tipo !== "todas")) titulo += ` · ${nomeLoja}`;
     document.getElementById("tituloGrid").textContent = titulo;

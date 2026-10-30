@@ -87,25 +87,16 @@
       "maquininha de cortar cabelo", "cortador de cabelo", "body splash", "colonia",
       "creme dental", "escova de dente eletrica", "oleo capilar", "mascara capilar"
     ],
-    // Subcategoria de Celulares (vem antes: no empate, acessório ganha)
-    "Acessórios de Celular": [
-      "capinha", "capa celular", "capa de celular", "capa para celular", "capa para iphone", "capa iphone",
-      "capinha iphone", "case", "magsafe", "pelicula", "pelicula de vidro", "pelicula 3d", "pelicula privacidade",
-      "suporte para celular", "suporte de celular", "suporte celular", "suporte veicular", "suporte magnetico",
-      "suporte para telefone", "carregador de celular", "carregador turbo", "carregador rapido", "fonte turbo",
-      "carregador portatil", "power bank", "powerbank", "bateria externa", "cabo usb", "cabo tipo c",
-      "cabo usb c", "cabo lightning", "cabo de carregamento", "carregador veicular", "carregador sem fio",
-      "pop socket", "popsocket", "anel para celular", "tripe para celular", "pau de selfie", "bastao de selfie",
-      "lente para celular", "adaptador tipo c", "hub usb c", "usb tipo c", "tipo c", "carregamento rapido"
-    ],
     "Celulares": [
       "celular", "celulares", "smartphone", "iphone", "galaxy", "redmi", "poco x", "poco m",
       "moto g", "moto e", "motorola edge", "realme", "celular samsung", "celular xiaomi",
-      "celular motorola"
+      "celular motorola", "capinha", "capa celular", "capa de celular", "capa para celular",
+      "pelicula", "pelicula de vidro", "pelicula 3d", "suporte para celular", "suporte de celular",
+      "carregador de celular"
     ],
     "Eletrônicos": [
       "fone", "headset", "headphone", "earbuds", "iphone",
-      "xiaomi", "carregador", "usb c",
+      "xiaomi", "carregador", "cabo usb", "usb c", "power bank",
       "notebook", "laptop", "computador", "monitor", "teclado", "mouse", "ssd",
       "hd externo", "pendrive", "pen drive", "cartao de memoria", "smartwatch",
       "relogio inteligente", "smartband", "tablet", "ipad", "kindle", "smart tv",

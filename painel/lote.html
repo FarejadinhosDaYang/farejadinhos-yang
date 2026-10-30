@@ -735,7 +735,7 @@ function mostrarCupons(){
 // Celulares não recebem cupom automático (quase nunca valem pra celular;
 // quando valer, coloque à mão na tabela ou na edição da oferta)
 function semCupomAutomatico(categoria){
-    return /^\s*celulares?\s*(,|$)/i.test(String(categoria || "").normalize("NFD").replace(/[\u0300-\u036f]/g, ""));
+    return /celular/i.test(String(categoria || "").normalize("NFD").replace(/[\u0300-\u036f]/g, ""));
 }
 
 // Escolhe o melhor cupom pra cada produto (sem mexer nos que a pessoa escolheu à mão)
