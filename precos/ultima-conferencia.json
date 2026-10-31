@@ -1,92 +1,38 @@
 {
-  "quando": "2026-10-30T20:45:45Z",
+  "quando": "2026-10-31T00:45:18Z",
   "origem": "schedule",
-  "total": 245,
-  "iguais": 214,
+  "total": 238,
+  "iguais": 216,
   "mudaram": [
-    {
-      "slug": "kit-6-potes-640ml-vidro-hermetico-4-travas-marmita",
-      "produto": "Kit 6 Potes 640ml Vidro Hermético 4 Travas Marmita",
-      "de": "R$ 59,70",
-      "para": "58,70"
-    },
-    {
-      "slug": "kit-chave-catraca-soquete-46-pecas-indufer",
-      "produto": "Kit Chave Catraca Soquete 46 Peças Indufer",
-      "de": "R$ 26,99",
-      "para": "28,99"
-    },
-    {
-      "slug": "organizador-algodao-e-cotonetes-acrilico-kit",
-      "produto": "Organizador Algodão E Cotonetes Acrílico Kit",
-      "de": "R$ 13,19",
-      "para": "R$ 13,20"
-    },
     {
       "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
       "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 4.999,90",
-      "para": "5100,00"
+      "de": "R$ 5.100,00",
+      "para": "5113,70"
     },
     {
-      "slug": "mascara-cha-verde-remover-de-cravos-anti-acne",
-      "produto": "Máscara Chá Verde Remover de Cravos Anti-Acne",
-      "de": "R$ 14,33",
-      "para": "R$ 12,88"
+      "slug": "comedouro-bebedouro-elevado-1-2-ou-3-unidades-anti",
+      "produto": "Comedouro Bebedouro Elevado 1 2 ou 3 Unidades Anti",
+      "de": "R$ 15,69",
+      "para": "R$ 15,70"
     },
     {
-      "slug": "principia-kit-peles-sensiveis-com-gel-de-limpeza",
-      "produto": "Principia Kit Peles Sensíveis com Gel de Limpeza",
-      "de": "R$ 113,23",
-      "para": "R$ 105,68"
-    },
-    {
-      "slug": "principia-kit-limpa-hidrata-e-protege-com-gel",
-      "produto": "Principia Kit Limpa Hidrata e Protege com Gel",
-      "de": "R$ 117,73",
-      "para": "R$ 109,88"
-    },
-    {
-      "slug": "principia-kit-protetor-solar-ps-01-fps-60-ps-05",
-      "produto": "Principia Kit Protetor Solar PS-01 FPS 60 + PS-05",
-      "de": "R$ 80,99",
-      "para": "R$ 75,59"
-    },
-    {
-      "slug": "principia-kit-com-2-protetores-solares-com-cor",
-      "produto": "Principia kit com 2 Protetores solares com cor",
-      "de": "R$ 86,39",
-      "para": "R$ 80,99"
-    },
-    {
-      "slug": "principia-kit-duo-com-2-protetores-solares-faciais",
-      "produto": "Principia Kit Duo com 2 Protetores Solares Faciais",
-      "de": "R$ 86,39",
-      "para": "R$ 80,99"
+      "slug": "panos-de-chao-gigante-microfibra",
+      "produto": "Panos de Chão Gigante Microfibra",
+      "de": "R$ 29,80",
+      "para": "R$ 29,90"
     },
     {
       "slug": "parafusadeira-furadeira-48v-profissional",
       "produto": "Parafusadeira Furadeira 48v Profissional",
-      "de": "R$ 104,31",
-      "para": "95,92"
+      "de": "R$ 95,92",
+      "para": "104,31"
     },
     {
       "slug": "adaptador-carplay-sem-fio-para-iphone",
       "produto": "Adaptador CarPlay Sem Fio para iPhone",
-      "de": "R$ 76,50",
-      "para": "64,19"
-    },
-    {
-      "slug": "mini-mixer-eletrico-recarregavel-usb-3-velocidades",
-      "produto": "Mini Mixer Elétrico Recarregável USB 3 Velocidades",
-      "de": "R$ 19,00",
-      "para": "17,48"
-    },
-    {
-      "slug": "barra-de-proteina-integralmedica-crisp-bar-sabor",
-      "produto": "Barra de Proteína Integralmédica Crisp Bar sabor",
-      "de": "R$ 92,15",
-      "para": "84,39"
+      "de": "R$ 64,19",
+      "para": "76,50"
     }
   ],
   "semPreco": [
@@ -176,7 +122,7 @@
       "produto": "Celular Samsung Galaxy A37 5G 128GB",
       "link": "https://meli.la/2yTLtgG",
       "atual": "R$ 1.709,00",
-      "lido": "160,71",
+      "lido": "187,10",
       "referencia": "R$ 1.619,00"
     },
     {
@@ -230,10 +176,10 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-30T20:45:47Z",
+      "quando": "2026-10-31T00:45:20Z",
       "teste": false,
-      "links": 200,
-      "ok": 200,
+      "links": 194,
+      "ok": 194,
       "erros": 0
     }
   },
