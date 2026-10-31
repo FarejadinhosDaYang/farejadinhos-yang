@@ -1,68 +1,38 @@
 {
-  "quando": "2026-10-31T18:31:52Z",
+  "quando": "2026-10-31T22:27:41Z",
   "origem": "schedule",
-  "total": 226,
-  "iguais": 199,
+  "total": 216,
+  "iguais": 194,
   "mudaram": [
     {
-      "slug": "faqueiro-tramontina-buzios-em-aco-inox-com-detalhe",
-      "produto": "Faqueiro Tramontina Búzios Em Aço Inox Com Detalhe",
-      "de": "R$ 63,73",
-      "para": "64,28"
+      "slug": "kit-3-necessaire-bolsa-portatil-transparente",
+      "produto": "KIT 3 Necessaire Bolsa Portátil Transparente",
+      "de": "R$ 17,49",
+      "para": "R$ 24,49"
     },
     {
-      "slug": "mini-umidificador-difusor-aromatizador-egg",
-      "produto": "Mini Umidificador Difusor Aromatizador Egg",
-      "de": "R$ 15,49",
-      "para": "R$ 16,99"
+      "slug": "pinhas-natal-enfeite-natural-decoracao-pendente",
+      "produto": "Pinhas Natal Enfeite Natural Decoração Pendente",
+      "de": "R$ 16,99",
+      "para": "R$ 14,99"
     },
     {
-      "slug": "clareador-de-manchas-para-virilha",
-      "produto": "Clareador de Manchas para Virilha",
-      "de": "R$ 149,51",
-      "para": "R$ 152,88"
+      "slug": "comedouro-bebedouro-elevado-1-2-ou-3-unidades-anti",
+      "produto": "Comedouro Bebedouro Elevado 1 2 ou 3 Unidades Anti",
+      "de": "R$ 15,69",
+      "para": "R$ 15,70"
     },
     {
-      "slug": "aparelho-medidor-de-pressao-digital-de-braco-bsp11",
-      "produto": "Aparelho medidor de pressão digital de braço BSP11",
-      "de": "R$ 93,00",
-      "para": "95,85"
+      "slug": "panos-de-chao-gigante-microfibra",
+      "produto": "Panos de Chão Gigante Microfibra",
+      "de": "R$ 29,80",
+      "para": "R$ 29,90"
     },
     {
-      "slug": "adaptador-carplay-sem-fio-para-iphone",
-      "produto": "Adaptador CarPlay Sem Fio para iPhone",
-      "de": "R$ 76,50",
-      "para": "64,19"
-    },
-    {
-      "slug": "aparelho-medidor-de-pressao-arterial-aferidor",
-      "produto": "Aparelho Medidor de Pressão Arterial Aferidor",
-      "de": "R$ 42,90",
-      "para": "41,90"
-    },
-    {
-      "slug": "mini-mixer-eletrico-recarregavel-usb-3-velocidades",
-      "produto": "Mini Mixer Elétrico Recarregável USB 3 Velocidades",
-      "de": "R$ 17,48",
-      "para": "19,00"
-    },
-    {
-      "slug": "barra-de-proteina-integralmedica-crisp-bar-sabor",
-      "produto": "Barra de Proteína Integralmédica Crisp Bar sabor",
-      "de": "R$ 84,39",
-      "para": "92,00"
-    },
-    {
-      "slug": "suporte-magnetico-forte-para-telefone-carro-360",
-      "produto": "Suporte Magnético Forte Para Telefone Carro 360 °",
-      "de": "R$ 13,99",
-      "para": "R$ 15,99"
-    },
-    {
-      "slug": "caneca-termica-atena-bear-thermal-personalizada",
-      "produto": "Caneca Térmica Atena Bear Thermal Personalizada",
-      "de": "R$ 59,32",
-      "para": "R$ 60,99"
+      "slug": "faqueiro-tramontina-buzios-cem-aco-inox",
+      "produto": "Faqueiro Tramontina Búzios cem Aço Inox",
+      "de": "R$ 64,40",
+      "para": "56,03"
     }
   ],
   "semPreco": [],
@@ -89,7 +59,7 @@
       "produto": "iPhone 18 Pro Max 256GB Preto (somente eSIM)",
       "link": "https://meli.la/2fXqW9L",
       "atual": "R$ 10.289,00",
-      "lido": "10900,00",
+      "lido": "10599,00",
       "referencia": "preco posto a mao em 18/10 23:09"
     },
     {
@@ -169,7 +139,7 @@
       "produto": "Samsung Galaxy S26 Ultra 5g Dual Sim Preto 256gb",
       "link": "https://meli.la/2mkji2E",
       "atual": "R$ 6.749,00",
-      "lido": "671,91",
+      "lido": "749,90",
       "referencia": "preco posto a mao em 27/10 21:17"
     },
     {
@@ -207,10 +177,10 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-31T18:31:54Z",
+      "quando": "2026-10-31T22:27:42Z",
       "teste": false,
-      "links": 185,
-      "ok": 185,
+      "links": 177,
+      "ok": 177,
       "erros": 0
     }
   },
