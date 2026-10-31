@@ -1,48 +1,131 @@
 {
-  "quando": "2026-10-31T00:45:18Z",
+  "quando": "2026-10-31T06:58:10Z",
   "origem": "schedule",
-  "total": 238,
-  "iguais": 216,
+  "total": 233,
+  "iguais": 197,
   "mudaram": [
     {
-      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
-      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 5.100,00",
-      "para": "5113,70"
+      "slug": "kit-2-prateleiras-reto-adesivo-premium-suporte",
+      "produto": "Kit 2 Prateleiras Reto Adesivo Premium Suporte",
+      "de": "R$ 47,47",
+      "para": "R$ 47,97"
+    },
+    {
+      "slug": "organizador-algodao-e-cotonetes-acrilico-kit",
+      "produto": "Organizador Algodão E Cotonetes Acrílico Kit",
+      "de": "R$ 13,20",
+      "para": "R$ 13,19"
+    },
+    {
+      "slug": "kit-3-necessaire-bolsa-portatil-transparente",
+      "produto": "KIT 3 Necessaire Bolsa Portátil Transparente",
+      "de": "R$ 24,49",
+      "para": "R$ 17,49"
+    },
+    {
+      "slug": "kit-4-potes-hermeticos-tampa-bambu-organizador",
+      "produto": "Kit 4 Potes Herméticos Tampa Bambu Organizador",
+      "de": "R$ 38,99",
+      "para": "R$ 39,99"
+    },
+    {
+      "slug": "kit-maquina-para-tosar-pet-tesoura-pente",
+      "produto": "Kit Máquina Para Tosar Pet + Tesoura + Pente",
+      "de": "R$ 28,13",
+      "para": "R$ 30,99"
+    },
+    {
+      "slug": "kit-metros-festao-de-natal-decoracao-enfeite",
+      "produto": "Kit Metros Festão de Natal Decoração Enfeite",
+      "de": "R$ 23,88",
+      "para": "R$ 23,08"
+    },
+    {
+      "slug": "arvore-de-natal-pinheiro-canadense-luxo1200-galhos",
+      "produto": "Árvore De Natal Pinheiro Canadense Luxo1200 Galhos",
+      "de": "R$ 199,00",
+      "para": "R$ 198,00"
+    },
+    {
+      "slug": "kit-2-mini-arvore-pinheiro-20cm25cm-natal-nevada",
+      "produto": "Kit 2 Mini Arvore Pinheiro -20cm25cm Natal Nevada",
+      "de": "R$ 18,98",
+      "para": "R$ 16,89"
+    },
+    {
+      "slug": "protetor-solar-facial-hidrabene-fps-70-toque-seco",
+      "produto": "Protetor Solar Facial Hidrabene FPS 70 Toque Seco",
+      "de": "R$ 33,99",
+      "para": "R$ 29,90"
+    },
+    {
+      "slug": "protetor-solar-facial-l-oreal-paris-expertise",
+      "produto": "Protetor Solar Facial L'Oréal Paris Expertise",
+      "de": "R$ 42,90",
+      "para": "R$ 46,99"
+    },
+    {
+      "slug": "protetor-solar-antissinais-dandas-fps-70-toque",
+      "produto": "Protetor Solar ANTISSINAIS Dandas Fps 70, Toque",
+      "de": "R$ 17,78",
+      "para": "R$ 17,98"
+    },
+    {
+      "slug": "nivea-creme-hidratante-lata-145g",
+      "produto": "NIVEA Creme Hidratante Lata 145g",
+      "de": "R$ 39,99",
+      "para": "R$ 52,89"
+    },
+    {
+      "slug": "best-seruns-principia-cuidados-com-a-pele",
+      "produto": "Best Séruns Principia Cuidados com a Pele",
+      "de": "R$ 29,00",
+      "para": "R$ 22,88"
+    },
+    {
+      "slug": "principia-kit-completo-peles-sensiveis-com-gel",
+      "produto": "Principia Kit Completo Peles Sensíveis com Gel",
+      "de": "R$ 93,99",
+      "para": "R$ 105,68"
+    },
+    {
+      "slug": "clareador-de-manchas-para-virilha",
+      "produto": "Clareador de Manchas para Virilha",
+      "de": "R$ 152,88",
+      "para": "R$ 149,51"
     },
     {
       "slug": "comedouro-bebedouro-elevado-1-2-ou-3-unidades-anti",
       "produto": "Comedouro Bebedouro Elevado 1 2 ou 3 Unidades Anti",
-      "de": "R$ 15,69",
-      "para": "R$ 15,70"
+      "de": "R$ 15,70",
+      "para": "R$ 15,69"
     },
     {
       "slug": "panos-de-chao-gigante-microfibra",
       "produto": "Panos de Chão Gigante Microfibra",
-      "de": "R$ 29,80",
-      "para": "R$ 29,90"
+      "de": "R$ 29,90",
+      "para": "R$ 29,80"
     },
     {
-      "slug": "parafusadeira-furadeira-48v-profissional",
-      "produto": "Parafusadeira Furadeira 48v Profissional",
-      "de": "R$ 95,92",
-      "para": "104,31"
+      "slug": "cozedor-de-ovos-eletrico-portatil-a-vapor-para-ate",
+      "produto": "Cozedor de Ovos Elétrico Portátil a Vapor para até",
+      "de": "R$ 41,90",
+      "para": "42,67"
     },
     {
-      "slug": "adaptador-carplay-sem-fio-para-iphone",
-      "produto": "Adaptador CarPlay Sem Fio para iPhone",
-      "de": "R$ 64,19",
-      "para": "76,50"
-    }
-  ],
-  "semPreco": [
+      "slug": "suporte-magnetico-forte-para-telefone-carro-360",
+      "produto": "Suporte Magnético Forte Para Telefone Carro 360 °",
+      "de": "R$ 15,99",
+      "para": "R$ 13,99"
+    },
     {
-      "slug": "cuscuzeiro-individual-mini-tetinha-aluminio-polido",
-      "produto": "Cuscuzeiro Individual Mini Tetinha Alumínio Polido",
-      "link": "https://meli.la/2PQQSzV",
-      "motivo": "pagina (facebookexternalhit): nome, foto | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
+      "slug": "kit-5-elastico-para-exercicios-mini-band-crossfit",
+      "produto": "Kit 5 Elástico para Exercícios Mini Band Crossfit",
+      "de": "R$ 18,98",
+      "para": "R$ 14,22"
     }
   ],
+  "semPreco": [],
   "erros": [],
   "suspeitos": [
     {
@@ -74,7 +157,7 @@
       "produto": "iPhone 17 Pro Max 256GB - Laranja-cósmico",
       "link": "https://meli.la/2wS1Uaq",
       "atual": "R$ 9.719,00",
-      "lido": "797,75",
+      "lido": "780,47",
       "referencia": "R$ 8.199,00"
     },
     {
@@ -106,7 +189,7 @@
       "produto": "Celular Samsung Galaxy S26 5G, 512GB",
       "link": "https://meli.la/1WPbdmM",
       "atual": "R$ 5.714,00",
-      "lido": "538,25",
+      "lido": "644,30",
       "referencia": "R$ 5.798,00"
     },
     {
@@ -122,7 +205,7 @@
       "produto": "Celular Samsung Galaxy A37 5G 128GB",
       "link": "https://meli.la/2yTLtgG",
       "atual": "R$ 1.709,00",
-      "lido": "187,10",
+      "lido": "167,20",
       "referencia": "R$ 1.619,00"
     },
     {
@@ -176,10 +259,10 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-31T00:45:20Z",
+      "quando": "2026-10-31T06:58:13Z",
       "teste": false,
-      "links": 194,
-      "ok": 194,
+      "links": 190,
+      "ok": 190,
       "erros": 0
     }
   },
