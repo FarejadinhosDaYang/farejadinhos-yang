@@ -1,44 +1,68 @@
 {
-  "quando": "2026-10-31T13:37:37Z",
+  "quando": "2026-10-31T18:31:52Z",
   "origem": "schedule",
-  "total": 231,
-  "iguais": 209,
+  "total": 226,
+  "iguais": 199,
   "mudaram": [
     {
       "slug": "faqueiro-tramontina-buzios-em-aco-inox-com-detalhe",
       "produto": "Faqueiro Tramontina Búzios Em Aço Inox Com Detalhe",
-      "de": "R$ 64,28",
-      "para": "63,73"
+      "de": "R$ 63,73",
+      "para": "64,28"
     },
     {
-      "slug": "kit-6-potes-640ml-vidro-hermetico-4-travas-marmita",
-      "produto": "Kit 6 Potes 640ml Vidro Hermético 4 Travas Marmita",
-      "de": "R$ 58,70",
-      "para": "59,70"
-    },
-    {
-      "slug": "pinhas-natal-enfeite-natural-decoracao-pendente",
-      "produto": "Pinhas Natal Enfeite Natural Decoração Pendente",
-      "de": "R$ 14,99",
+      "slug": "mini-umidificador-difusor-aromatizador-egg",
+      "produto": "Mini Umidificador Difusor Aromatizador Egg",
+      "de": "R$ 15,49",
       "para": "R$ 16,99"
     },
     {
-      "slug": "protetor-solar-facial-hidrabene-fps-70-toque-seco",
-      "produto": "Protetor Solar Facial Hidrabene FPS 70 Toque Seco",
-      "de": "R$ 29,90",
-      "para": "R$ 33,99"
+      "slug": "clareador-de-manchas-para-virilha",
+      "produto": "Clareador de Manchas para Virilha",
+      "de": "R$ 149,51",
+      "para": "R$ 152,88"
     },
     {
-      "slug": "cozedor-de-ovos-eletrico-portatil-a-vapor-para-ate",
-      "produto": "Cozedor de Ovos Elétrico Portátil a Vapor para até",
-      "de": "R$ 42,67",
+      "slug": "aparelho-medidor-de-pressao-digital-de-braco-bsp11",
+      "produto": "Aparelho medidor de pressão digital de braço BSP11",
+      "de": "R$ 93,00",
+      "para": "95,85"
+    },
+    {
+      "slug": "adaptador-carplay-sem-fio-para-iphone",
+      "produto": "Adaptador CarPlay Sem Fio para iPhone",
+      "de": "R$ 76,50",
+      "para": "64,19"
+    },
+    {
+      "slug": "aparelho-medidor-de-pressao-arterial-aferidor",
+      "produto": "Aparelho Medidor de Pressão Arterial Aferidor",
+      "de": "R$ 42,90",
       "para": "41,90"
     },
     {
-      "slug": "espuma-spray-zip-clean-300ml-limpa-a-seco-sofa",
-      "produto": "Espuma Spray Zip Clean 300ml Limpa a Seco Sofá",
-      "de": "R$ 12,31",
-      "para": "R$ 14,99"
+      "slug": "mini-mixer-eletrico-recarregavel-usb-3-velocidades",
+      "produto": "Mini Mixer Elétrico Recarregável USB 3 Velocidades",
+      "de": "R$ 17,48",
+      "para": "19,00"
+    },
+    {
+      "slug": "barra-de-proteina-integralmedica-crisp-bar-sabor",
+      "produto": "Barra de Proteína Integralmédica Crisp Bar sabor",
+      "de": "R$ 84,39",
+      "para": "92,00"
+    },
+    {
+      "slug": "suporte-magnetico-forte-para-telefone-carro-360",
+      "produto": "Suporte Magnético Forte Para Telefone Carro 360 °",
+      "de": "R$ 13,99",
+      "para": "R$ 15,99"
+    },
+    {
+      "slug": "caneca-termica-atena-bear-thermal-personalizada",
+      "produto": "Caneca Térmica Atena Bear Thermal Personalizada",
+      "de": "R$ 59,32",
+      "para": "R$ 60,99"
     }
   ],
   "semPreco": [],
@@ -121,8 +145,16 @@
       "produto": "Celular Samsung Galaxy A37 5G 128GB",
       "link": "https://meli.la/2yTLtgG",
       "atual": "R$ 1.709,00",
-      "lido": "178,14",
+      "lido": "175,44",
       "referencia": "R$ 1.619,00"
+    },
+    {
+      "slug": "pa-peneira-de-areia-coletora-higienica-pet-gato",
+      "produto": "Pá Peneira de Areia Coletora Higiênica Pet Gato",
+      "link": "https://s.shopee.com.br/9fLwb9P9oI",
+      "atual": "R$ 14,95",
+      "lido": "R$ 35,00",
+      "referencia": "R$ 14,95"
     },
     {
       "slug": "celular-samsung-galaxy-s25-43-5g-512gb",
@@ -137,7 +169,7 @@
       "produto": "Samsung Galaxy S26 Ultra 5g Dual Sim Preto 256gb",
       "link": "https://meli.la/2mkji2E",
       "atual": "R$ 6.749,00",
-      "lido": "749,90",
+      "lido": "671,91",
       "referencia": "preco posto a mao em 27/10 21:17"
     },
     {
@@ -145,7 +177,7 @@
       "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
       "link": "https://meli.la/1RxB7bM",
       "atual": "R$ 3.165,00",
-      "lido": "332,30",
+      "lido": "309,89",
       "referencia": "preco posto a mao em 27/10 21:20"
     },
     {
@@ -153,7 +185,7 @@
       "produto": "Celular Samsung Galaxy A57 128gb cinza",
       "link": "https://meli.la/1BRdN9x",
       "atual": "R$ 1.583,12",
-      "lido": "201,75",
+      "lido": "1889,00",
       "referencia": "preco posto a mao em 28/10 10:13"
     },
     {
@@ -175,10 +207,10 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-31T13:37:38Z",
+      "quando": "2026-10-31T18:31:54Z",
       "teste": false,
-      "links": 188,
-      "ok": 188,
+      "links": 185,
+      "ok": 185,
       "erros": 0
     }
   },
