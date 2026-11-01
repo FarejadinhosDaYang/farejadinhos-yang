@@ -1,50 +1,74 @@
 {
-  "quando": "2026-11-01T16:00:03Z",
+  "quando": "2026-11-01T20:28:53Z",
   "origem": "schedule",
   "total": 218,
-  "iguais": 193,
+  "iguais": 190,
   "mudaram": [
     {
-      "slug": "kit-3-necessaire-bolsa-portatil-transparente",
-      "produto": "KIT 3 Necessaire Bolsa Portátil Transparente",
-      "de": "R$ 17,49",
-      "para": "R$ 24,99"
+      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
+      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
+      "de": "R$ 5.113,70",
+      "para": "5100,00"
     },
     {
-      "slug": "pisca-natal-cordao-100-leds-10m-8-funcoes-varias-2",
-      "produto": "Pisca Natal Cordão 100 Leds 10m 8 Funções Varias",
-      "de": "R$ 16,99",
-      "para": "R$ 26,00"
+      "slug": "organizador-de-geladeira-para-temperos-2-3l-linha-clear",
+      "produto": "Organizador de Geladeira para Temperos 2,3L",
+      "de": "R$ 37,89",
+      "para": "R$ 37,90"
     },
     {
-      "slug": "protetor-solar-facial-com-base-em-bastao-fps",
-      "produto": "Protetor Solar Facial com Base em Bastão FPS",
-      "de": "R$ 51,98",
-      "para": "R$ 53,99"
+      "slug": "celular-samsung-galaxy-a37-5g-128gb-4",
+      "produto": "Celular Samsung Galaxy A37 5G 128GB",
+      "de": "R$ 1.709,00",
+      "para": "1538,00"
     },
     {
-      "slug": "creatina-growth-supplements-monohidratada-em-po",
-      "produto": "Creatina Growth Supplements Monohidratada em pó",
-      "de": "R$ 39,90",
-      "para": "38,31"
+      "slug": "arvore-de-natal-pinheiro-canadense-luxo1200-galhos",
+      "produto": "Árvore De Natal Pinheiro Canadense Luxo1200 Galhos",
+      "de": "R$ 198,00",
+      "para": "R$ 249,99"
+    },
+    {
+      "slug": "principia-kit-duo-com-2-protetores-solares-faciais",
+      "produto": "Principia Kit Duo com 2 Protetores Solares Faciais",
+      "de": "R$ 69,82",
+      "para": "R$ 107,98"
+    },
+    {
+      "slug": "panos-de-chao-gigante-microfibra",
+      "produto": "Panos de Chão Gigante Microfibra",
+      "de": "R$ 29,80",
+      "para": "R$ 29,90"
     },
     {
       "slug": "aparelho-medidor-de-pressao-digital-de-braco-bsp11",
       "produto": "Aparelho medidor de pressão digital de braço BSP11",
-      "de": "R$ 105,71",
-      "para": "99,60"
+      "de": "R$ 99,60",
+      "para": "104,84"
     },
     {
-      "slug": "panela-de-arroz-bianca-rice-5-mondial-400w-npe-05-5x",
-      "produto": "Panela De Arroz Bianca Rice 5 Mondial 400W NPE-05-5X -",
-      "de": "R$ 147,20",
-      "para": "192,43"
+      "slug": "tapioqueira-polvilhador-com-peneira-dosador",
+      "produto": "Tapioqueira Polvilhador Com Peneira Dosador",
+      "de": "R$ 26,59",
+      "para": "27,59"
     },
     {
-      "slug": "panela-eletrica-de-arroz-mondial-700w-pe-42-10x",
-      "produto": "Panela Elétrica de Arroz, Mondial, 700W - PE-42-10X -",
-      "de": "R$ 206,06",
-      "para": "184,90"
+      "slug": "copo-termico-gigante-1-2l-inox-com-tampa-canudo",
+      "produto": "Copo Térmico Gigante 1,2l Inox Com Tampa Canudo",
+      "de": "R$ 48,99",
+      "para": "45,07"
+    },
+    {
+      "slug": "barra-de-proteina-integralmedica-crisp-bar-sabor",
+      "produto": "Barra de Proteína Integralmédica Crisp Bar sabor",
+      "de": "R$ 92,15",
+      "para": "89,24"
+    },
+    {
+      "slug": "suporte-magnetico-forte-para-telefone-carro-360",
+      "produto": "Suporte Magnético Forte Para Telefone Carro 360 °",
+      "de": "R$ 13,99",
+      "para": "R$ 15,99"
     }
   ],
   "semPreco": [],
@@ -111,7 +135,7 @@
       "produto": "Celular Samsung Galaxy S26 5G, 512GB",
       "link": "https://meli.la/1WPbdmM",
       "atual": "R$ 5.714,00",
-      "lido": "528,64",
+      "lido": "542,96",
       "referencia": "R$ 5.798,00"
     },
     {
@@ -121,14 +145,6 @@
       "atual": "R$ 2.550,00",
       "lido": "279,90",
       "referencia": "R$ 2.550,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-a37-5g-128gb-4",
-      "produto": "Celular Samsung Galaxy A37 5G 128GB",
-      "link": "https://meli.la/2yTLtgG",
-      "atual": "R$ 1.709,00",
-      "lido": "178,14",
-      "referencia": "R$ 1.619,00"
     },
     {
       "slug": "pa-peneira-de-areia-coletora-higienica-pet-gato",
@@ -197,7 +213,7 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-11-01T16:00:04Z",
+      "quando": "2026-11-01T20:29:00Z",
       "teste": false,
       "links": 175,
       "ok": 175,
