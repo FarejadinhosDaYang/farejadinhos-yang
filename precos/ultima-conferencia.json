@@ -1,38 +1,20 @@
 {
-  "quando": "2026-10-31T22:27:41Z",
+  "quando": "2026-11-01T02:11:45Z",
   "origem": "schedule",
   "total": 216,
-  "iguais": 194,
+  "iguais": 197,
   "mudaram": [
     {
-      "slug": "kit-3-necessaire-bolsa-portatil-transparente",
-      "produto": "KIT 3 Necessaire Bolsa Portátil Transparente",
-      "de": "R$ 17,49",
-      "para": "R$ 24,49"
+      "slug": "adaptador-carplay-sem-fio-para-iphone",
+      "produto": "Adaptador CarPlay Sem Fio para iPhone",
+      "de": "R$ 64,19",
+      "para": "76,50"
     },
     {
-      "slug": "pinhas-natal-enfeite-natural-decoracao-pendente",
-      "produto": "Pinhas Natal Enfeite Natural Decoração Pendente",
-      "de": "R$ 16,99",
-      "para": "R$ 14,99"
-    },
-    {
-      "slug": "comedouro-bebedouro-elevado-1-2-ou-3-unidades-anti",
-      "produto": "Comedouro Bebedouro Elevado 1 2 ou 3 Unidades Anti",
-      "de": "R$ 15,69",
-      "para": "R$ 15,70"
-    },
-    {
-      "slug": "panos-de-chao-gigante-microfibra",
-      "produto": "Panos de Chão Gigante Microfibra",
-      "de": "R$ 29,80",
-      "para": "R$ 29,90"
-    },
-    {
-      "slug": "faqueiro-tramontina-buzios-cem-aco-inox",
-      "produto": "Faqueiro Tramontina Búzios cem Aço Inox",
-      "de": "R$ 64,40",
-      "para": "56,03"
+      "slug": "conjunto-potes-vidro-hermetico-mantimentos-marmita",
+      "produto": "Conjunto Potes Vidro Hermético Mantimentos Marmita",
+      "de": "R$ 20,17",
+      "para": "R$ 27,89"
     }
   ],
   "semPreco": [],
@@ -99,7 +81,7 @@
       "produto": "Celular Samsung Galaxy S26 5G, 512GB",
       "link": "https://meli.la/1WPbdmM",
       "atual": "R$ 5.714,00",
-      "lido": "644,30",
+      "lido": "528,64",
       "referencia": "R$ 5.798,00"
     },
     {
@@ -177,7 +159,7 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-10-31T22:27:42Z",
+      "quando": "2026-11-01T02:11:46Z",
       "teste": false,
       "links": 177,
       "ok": 177,
