@@ -1333,7 +1333,7 @@
   },
   {
     "produto": "KIT 3 Necessaire Bolsa Portátil Transparente",
-    "preco": "R$ 17,49",
+    "preco": "R$ 24,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Beleza",
@@ -1346,7 +1346,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-26T14:35:50Z",
-    "precoConferido": "2026-11-01T13:10:58Z"
+    "precoConferido": "2026-11-01T16:03:57Z"
   },
   {
     "produto": "Ventilador de Teto com Luz Silencioso Controle",
@@ -1735,7 +1735,7 @@
   },
   {
     "produto": "Pisca Natal Cordão 100 Leds 10m 8 Funções Varias",
-    "preco": "R$ 16,99",
+    "preco": "R$ 26,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -1747,7 +1747,8 @@
     "data": "2026-10-28T00:37:33Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-28T23:03:05Z"
+    "liberacao": "2026-10-28T23:03:05Z",
+    "precoConferido": "2026-11-01T16:03:57Z"
   },
   {
     "produto": "Laço Veludo Grande Estruturado Para Arvore",
@@ -1955,7 +1956,7 @@
   },
   {
     "produto": "Protetor Solar Facial com Base em Bastão FPS",
-    "preco": "R$ 51,98",
+    "preco": "R$ 53,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Skincare",
@@ -1967,7 +1968,8 @@
     "data": "2026-10-28T00:39:55Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-29T15:39:59Z"
+    "liberacao": "2026-10-29T15:39:59Z",
+    "precoConferido": "2026-11-01T16:03:57Z"
   },
   {
     "produto": "Protetor Solar ANTISSINAIS Dandas Fps 70, Toque",
@@ -2812,7 +2814,7 @@
   },
   {
     "produto": "Creatina Growth Supplements Monohidratada em pó",
-    "preco": "R$ 39,90",
+    "preco": "R$ 38,31",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Academia",
@@ -2825,7 +2827,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-28T11:29:28Z",
-    "precoConferido": "2026-10-30T15:58:57Z"
+    "precoConferido": "2026-11-01T16:03:57Z"
   },
   {
     "produto": "Parafusadeira Furadeira 48v Profissional",
@@ -2847,7 +2849,7 @@
   },
   {
     "produto": "Aparelho medidor de pressão digital de braço BSP11",
-    "preco": "R$ 105,71",
+    "preco": "R$ 99,60",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Utilidades",
@@ -2860,7 +2862,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-28T23:17:42Z",
-    "precoConferido": "2026-11-01T09:15:37Z"
+    "precoConferido": "2026-11-01T16:03:57Z"
   },
   {
     "produto": "Escorredor de Macarrão Massas Inox 304 com Alças",
@@ -4057,7 +4059,7 @@
   },
   {
     "produto": "Panela De Arroz Bianca Rice 5 Mondial 400W NPE-05-5X -",
-    "preco": "R$ 147,20",
+    "preco": "R$ 192,43",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -4067,12 +4069,13 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/panela-de-arroz-bianca-rice-5-mondial-400w-npe-05-5x/",
     "slug": "panela-de-arroz-bianca-rice-5-mondial-400w-npe-05-5x",
     "data": "2026-11-01T13:02:51Z",
-    "precoAVista": "147,20",
-    "precoAPrazo": "160,00"
+    "precoAVista": "R$ 192,43",
+    "precoAPrazo": "160,00",
+    "precoConferido": "2026-11-01T16:03:57Z"
   },
   {
     "produto": "Panela Elétrica de Arroz, Mondial, 700W - PE-42-10X -",
-    "preco": "R$ 206,06",
+    "preco": "R$ 184,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -4082,8 +4085,9 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/panela-eletrica-de-arroz-mondial-700w-pe-42-10x/",
     "slug": "panela-eletrica-de-arroz-mondial-700w-pe-42-10x",
     "data": "2026-11-01T13:03:51Z",
-    "precoAVista": "206,06",
-    "precoAPrazo": "442,00"
+    "precoAVista": "R$ 184,90",
+    "precoAPrazo": "442,00",
+    "precoConferido": "2026-11-01T16:03:57Z"
   },
   {
     "produto": "Panela de Arroz Elétrica Mondial Fast Rice 5",

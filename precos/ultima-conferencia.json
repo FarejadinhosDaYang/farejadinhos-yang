@@ -1,20 +1,50 @@
 {
-  "quando": "2026-11-01T13:07:29Z",
-  "origem": "workflow_dispatch",
+  "quando": "2026-11-01T16:00:03Z",
+  "origem": "schedule",
   "total": 218,
-  "iguais": 198,
+  "iguais": 193,
   "mudaram": [
     {
       "slug": "kit-3-necessaire-bolsa-portatil-transparente",
       "produto": "KIT 3 Necessaire Bolsa Portátil Transparente",
-      "de": "R$ 24,99",
-      "para": "R$ 17,49"
+      "de": "R$ 17,49",
+      "para": "R$ 24,99"
     },
     {
-      "slug": "tapioqueira-polvilhador-com-peneira-dosador",
-      "produto": "Tapioqueira Polvilhador Com Peneira Dosador",
-      "de": "R$ 26,25",
-      "para": "26,59"
+      "slug": "pisca-natal-cordao-100-leds-10m-8-funcoes-varias-2",
+      "produto": "Pisca Natal Cordão 100 Leds 10m 8 Funções Varias",
+      "de": "R$ 16,99",
+      "para": "R$ 26,00"
+    },
+    {
+      "slug": "protetor-solar-facial-com-base-em-bastao-fps",
+      "produto": "Protetor Solar Facial com Base em Bastão FPS",
+      "de": "R$ 51,98",
+      "para": "R$ 53,99"
+    },
+    {
+      "slug": "creatina-growth-supplements-monohidratada-em-po",
+      "produto": "Creatina Growth Supplements Monohidratada em pó",
+      "de": "R$ 39,90",
+      "para": "38,31"
+    },
+    {
+      "slug": "aparelho-medidor-de-pressao-digital-de-braco-bsp11",
+      "produto": "Aparelho medidor de pressão digital de braço BSP11",
+      "de": "R$ 105,71",
+      "para": "99,60"
+    },
+    {
+      "slug": "panela-de-arroz-bianca-rice-5-mondial-400w-npe-05-5x",
+      "produto": "Panela De Arroz Bianca Rice 5 Mondial 400W NPE-05-5X -",
+      "de": "R$ 147,20",
+      "para": "192,43"
+    },
+    {
+      "slug": "panela-eletrica-de-arroz-mondial-700w-pe-42-10x",
+      "produto": "Panela Elétrica de Arroz, Mondial, 700W - PE-42-10X -",
+      "de": "R$ 206,06",
+      "para": "184,90"
     }
   ],
   "semPreco": [],
@@ -65,7 +95,7 @@
       "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
       "link": "https://meli.la/2LUJ4yy",
       "atual": "R$ 3.898,00",
-      "lido": "632,22",
+      "lido": "527,97",
       "referencia": "R$ 5.798,00"
     },
     {
@@ -167,7 +197,7 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-11-01T13:07:31Z",
+      "quando": "2026-11-01T16:00:04Z",
       "teste": false,
       "links": 175,
       "ok": 175,
