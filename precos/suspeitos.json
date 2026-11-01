@@ -4,7 +4,7 @@
     "produto": "Celular Samsung Galaxy A37 5G 128GB",
     "link": "https://meli.la/2yTLtgG",
     "atual": "R$ 1.709,00",
-    "lido": "175,44",
+    "lido": "167,20",
     "referencia": "R$ 1.619,00"
   },
   {
@@ -12,7 +12,7 @@
     "produto": "Celular Samsung Galaxy A57 128gb cinza",
     "link": "https://meli.la/1BRdN9x",
     "atual": "R$ 1.583,12",
-    "lido": "1889,00",
+    "lido": "182,53",
     "referencia": "preco posto a mao em 28/10 10:13"
   },
   {
@@ -28,7 +28,7 @@
     "produto": "Celular Samsung Galaxy S25+; 5g, 512gb",
     "link": "https://meli.la/28FNDG2",
     "atual": "R$ 3.898,00",
-    "lido": "451,10",
+    "lido": "474,90",
     "referencia": "preco posto a mao em 27/10 13:50"
   },
   {
@@ -36,7 +36,7 @@
     "produto": "Celular Samsung Galaxy S25&#43; 5g, 512gb",
     "link": "https://meli.la/28FNDG2",
     "atual": "R$ 3.898,00",
-    "lido": "451,10",
+    "lido": "474,90",
     "referencia": "R$ 2.518,00"
   },
   {
@@ -44,7 +44,7 @@
     "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
     "link": "https://meli.la/1RxB7bM",
     "atual": "R$ 3.165,00",
-    "lido": "309,89",
+    "lido": "332,30",
     "referencia": "preco posto a mao em 27/10 21:20"
   },
   {
@@ -68,7 +68,7 @@
     "produto": "Fritadeira Sem Óleo Air Fryer Digital 4L Mondial",
     "link": "https://meli.la/1eFBrXD",
     "atual": "R$ 157,56",
-    "lido": "347,45",
+    "lido": "365,74",
     "referencia": "preco posto a mao em 28/10 14:48"
   },
   {
@@ -112,6 +112,14 @@
     "referencia": "preco posto a mao em 28/10 10:16"
   },
   {
+    "slug": "mini-mixer-eletrico-recarregavel-usb-3-velocidades",
+    "produto": "Mini Mixer Elétrico Recarregável USB 3 Velocidades",
+    "link": "https://meli.la/1uymiXm",
+    "atual": "R$ 19,00",
+    "lido": "69,99",
+    "referencia": "R$ 19,00"
+  },
+  {
     "slug": "pa-peneira-de-areia-coletora-higienica-pet-gato",
     "produto": "Pá Peneira de Areia Coletora Higiênica Pet Gato",
     "link": "https://s.shopee.com.br/9fLwb9P9oI",
@@ -134,5 +142,13 @@
     "atual": "R$ 6.749,00",
     "lido": "749,90",
     "referencia": "preco posto a mao em 27/10 21:17"
+  },
+  {
+    "slug": "tapioqueira-polvilhador-com-peneira-dosador",
+    "produto": "Tapioqueira Polvilhador Com Peneira Dosador",
+    "link": "https://meli.la/2FKkByD",
+    "atual": "R$ 26,25",
+    "lido": "68,89",
+    "referencia": "R$ 26,25"
   }
 ]
