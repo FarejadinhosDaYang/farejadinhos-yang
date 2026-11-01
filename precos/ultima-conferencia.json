@@ -1,230 +1,20 @@
 {
-  "quando": "2026-11-01T09:12:20Z",
-  "origem": "schedule",
-  "total": 213,
-  "iguais": 157,
+  "quando": "2026-11-01T13:07:29Z",
+  "origem": "workflow_dispatch",
+  "total": 218,
+  "iguais": 198,
   "mudaram": [
-    {
-      "slug": "mini-compressor-de-ar-portatil-carro-moto",
-      "produto": "Mini Compressor De Ar Portátil Carro Moto",
-      "de": "R$ 52,71",
-      "para": "70,28"
-    },
-    {
-      "slug": "balcao-para-cooktop-4-ou-5-bocas-cozinha-moderna",
-      "produto": "Balcão para Cooktop 4 ou 5 Bocas Cozinha Moderna",
-      "de": "R$ 178,89",
-      "para": "R$ 184,99"
-    },
-    {
-      "slug": "escorredor-de-loucas-rack-aco-carbono-organizador-2",
-      "produto": "Escorredor de Louças Rack Aço Carbono Organizador",
-      "de": "R$ 92,00",
-      "para": "R$ 91,90"
-    },
-    {
-      "slug": "kit-2-prateleiras-reto-adesivo-premium-suporte",
-      "produto": "Kit 2 Prateleiras Reto Adesivo Premium Suporte",
-      "de": "R$ 47,97",
-      "para": "R$ 48,47"
-    },
-    {
-      "slug": "porta-temperos-9-potes-giratorio-preto-organizador",
-      "produto": "Porta Temperos 9 Potes Giratório Preto Organizador",
-      "de": "R$ 41,99",
-      "para": "R$ 34,99"
-    },
-    {
-      "slug": "organizador-de-geladeira-para-temperos-2-3l-linha-clear",
-      "produto": "Organizador de Geladeira para Temperos 2,3L",
-      "de": "R$ 37,90",
-      "para": "R$ 37,89"
-    },
-    {
-      "slug": "porta-ovos-4-andares-rolante-em-plastico",
-      "produto": "Porta Ovos 4 Andares Rolante em Plástico",
-      "de": "R$ 12,34",
-      "para": "R$ 12,99"
-    },
     {
       "slug": "kit-3-necessaire-bolsa-portatil-transparente",
       "produto": "KIT 3 Necessaire Bolsa Portátil Transparente",
-      "de": "R$ 24,49",
-      "para": "R$ 24,99"
+      "de": "R$ 24,99",
+      "para": "R$ 17,49"
     },
     {
-      "slug": "startools-chaleira-jarra-eletrica-110v-ou-220v-1-8",
-      "produto": "STARTOOLS Chaleira Jarra Elétrica 110V ou 220V 1.8",
-      "de": "R$ 41,99",
-      "para": "R$ 43,99"
-    },
-    {
-      "slug": "porta-ovos-4-andares-em-plastico-para-geladeira",
-      "produto": "Porta ovos 4 andares em plastico para geladeira",
-      "de": "R$ 13,05",
-      "para": "R$ 13,07"
-    },
-    {
-      "slug": "kit-maquina-para-tosar-pet-tesoura-pente",
-      "produto": "Kit Máquina Para Tosar Pet + Tesoura + Pente",
-      "de": "R$ 30,99",
-      "para": "R$ 30,26"
-    },
-    {
-      "slug": "fritadeira-eletrica-air-fryer-mondial-family-af-30",
-      "produto": "Fritadeira Elétrica Air Fryer Mondial Family AF-30",
-      "de": "R$ 219,90",
-      "para": "R$ 217,90"
-    },
-    {
-      "slug": "misturador-eletrico-recarregavel-usb-3-velocidades",
-      "produto": "Misturador Elétrico Recarregável USB 3 Velocidades",
-      "de": "R$ 17,99",
-      "para": "R$ 17,09"
-    },
-    {
-      "slug": "decoracao-para-arvore-de-natal-usb-rgb-luz-quente",
-      "produto": "Decoração para Árvore de Natal USB RGB/Luz Quente",
-      "de": "R$ 16,07",
-      "para": "R$ 15,75"
-    },
-    {
-      "slug": "nivea-hidratante-labial-amora-shine-4-8g",
-      "produto": "NIVEA Hidratante Labial Amora Shine 4,8g",
-      "de": "R$ 25,11",
-      "para": "R$ 27,90"
-    },
-    {
-      "slug": "nivea-kit-sun-protetor-solar-protect-hidrata",
-      "produto": "NIVEA KIT SUN Protetor Solar Protect & Hidrata",
-      "de": "R$ 55,71",
-      "para": "R$ 61,90"
-    },
-    {
-      "slug": "best-seruns-principia-cuidados-com-a-pele",
-      "produto": "Best Séruns Principia Cuidados com a Pele",
-      "de": "R$ 22,88",
-      "para": "R$ 29,00"
-    },
-    {
-      "slug": "principia-kit-peles-sensiveis-com-gel-de-limpeza",
-      "produto": "Principia Kit Peles Sensíveis com Gel de Limpeza",
-      "de": "R$ 105,68",
-      "para": "R$ 100,40"
-    },
-    {
-      "slug": "principia-kit-limpa-hidrata-e-protege-com-gel",
-      "produto": "Principia Kit Limpa Hidrata e Protege com Gel",
-      "de": "R$ 109,88",
-      "para": "R$ 156,97"
-    },
-    {
-      "slug": "principia-kit-protetor-solar-ps-01-fps-60-ps-05",
-      "produto": "Principia Kit Protetor Solar PS-01 FPS 60 + PS-05",
-      "de": "R$ 75,59",
-      "para": "R$ 107,98"
-    },
-    {
-      "slug": "principia-kit-completo-peles-sensiveis-com-gel",
-      "produto": "Principia Kit Completo Peles Sensíveis com Gel",
-      "de": "R$ 105,68",
-      "para": "R$ 150,97"
-    },
-    {
-      "slug": "principia-kit-com-2-protetores-solares-com-cor",
-      "produto": "Principia kit com 2 Protetores solares com cor",
-      "de": "R$ 80,99",
-      "para": "R$ 76,94"
-    },
-    {
-      "slug": "principia-kit-duo-com-2-protetores-solares-faciais",
-      "produto": "Principia Kit Duo com 2 Protetores Solares Faciais",
-      "de": "R$ 80,99",
-      "para": "R$ 69,82"
-    },
-    {
-      "slug": "nivea-creme-hidratante-lata-29g",
-      "produto": "NIVEA Creme Hidratante Lata 29g",
-      "de": "R$ 19,71",
-      "para": "R$ 21,90"
-    },
-    {
-      "slug": "tapete-higienico-descartavel-para-cachorro",
-      "produto": "Tapete Higiênico Descartável para Cachorro",
-      "de": "R$ 19,96",
-      "para": "R$ 19,94"
-    },
-    {
-      "slug": "brinquedo-interativo-cachorro-bola-magica-voadora",
-      "produto": "Brinquedo Interativo Cachorro Bola Mágica Voadora",
-      "de": "R$ 22,00",
-      "para": "R$ 29,99"
-    },
-    {
-      "slug": "comedouro-bebedouro-elevado-1-2-ou-3-unidades-anti",
-      "produto": "Comedouro Bebedouro Elevado 1 2 ou 3 Unidades Anti",
-      "de": "R$ 15,70",
-      "para": "R$ 15,69"
-    },
-    {
-      "slug": "cesto-de-roupa-grande-30x50cm-caixa-dobravel",
-      "produto": "Cesto De Roupa Grande 30x50CM Caixa Dobrável",
-      "de": "R$ 11,15",
-      "para": "R$ 14,59"
-    },
-    {
-      "slug": "panos-de-chao-gigante-microfibra",
-      "produto": "Panos de Chão Gigante Microfibra",
-      "de": "R$ 29,90",
-      "para": "R$ 29,80"
-    },
-    {
-      "slug": "parafusadeira-furadeira-48v-profissional",
-      "produto": "Parafusadeira Furadeira 48v Profissional",
-      "de": "R$ 104,31",
-      "para": "101,76"
-    },
-    {
-      "slug": "aparelho-medidor-de-pressao-digital-de-braco-bsp11",
-      "produto": "Aparelho medidor de pressão digital de braço BSP11",
-      "de": "R$ 95,85",
-      "para": "105,71"
-    },
-    {
-      "slug": "porta-ovos-gaveteiro-2-andares-organizador",
-      "produto": "Porta Ovos Gaveteiro 2 Andares Organizador",
-      "de": "R$ 39,99",
-      "para": "39,90"
-    },
-    {
-      "slug": "barra-de-proteina-integralmedica-crisp-bar-sabor",
-      "produto": "Barra de Proteína Integralmédica Crisp Bar sabor",
-      "de": "R$ 92,00",
-      "para": "92,15"
-    },
-    {
-      "slug": "conjunto-potes-vidro-hermetico-mantimentos-marmita",
-      "produto": "Conjunto Potes Vidro Hermético Mantimentos Marmita",
-      "de": "R$ 27,89",
-      "para": "R$ 20,17"
-    },
-    {
-      "slug": "lixadeira-de-unhas-eletrica-com-broca-e-motor",
-      "produto": "Lixadeira de Unhas Elétrica com Broca e Motor",
-      "de": "R$ 19,98",
-      "para": "R$ 20,74"
-    },
-    {
-      "slug": "suporte-magnetico-forte-para-telefone-carro-360",
-      "produto": "Suporte Magnético Forte Para Telefone Carro 360 °",
-      "de": "R$ 15,99",
-      "para": "R$ 13,99"
-    },
-    {
-      "slug": "kit-5-elastico-para-exercicios-mini-band-crossfit",
-      "produto": "Kit 5 Elástico para Exercícios Mini Band Crossfit",
-      "de": "R$ 14,22",
-      "para": "R$ 14,98"
+      "slug": "tapioqueira-polvilhador-com-peneira-dosador",
+      "produto": "Tapioqueira Polvilhador Com Peneira Dosador",
+      "de": "R$ 26,25",
+      "para": "26,59"
     }
   ],
   "semPreco": [],
@@ -307,7 +97,7 @@
       "produto": "Celular Samsung Galaxy A37 5G 128GB",
       "link": "https://meli.la/2yTLtgG",
       "atual": "R$ 1.709,00",
-      "lido": "167,20",
+      "lido": "178,14",
       "referencia": "R$ 1.619,00"
     },
     {
@@ -341,14 +131,6 @@
       "atual": "R$ 3.165,00",
       "lido": "332,30",
       "referencia": "preco posto a mao em 27/10 21:20"
-    },
-    {
-      "slug": "tapioqueira-polvilhador-com-peneira-dosador",
-      "produto": "Tapioqueira Polvilhador Com Peneira Dosador",
-      "link": "https://meli.la/2FKkByD",
-      "atual": "R$ 26,25",
-      "lido": "68,89",
-      "referencia": "R$ 26,25"
     },
     {
       "slug": "mini-mixer-eletrico-recarregavel-usb-3-velocidades",
@@ -385,10 +167,10 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-11-01T09:12:21Z",
+      "quando": "2026-11-01T13:07:31Z",
       "teste": false,
-      "links": 174,
-      "ok": 174,
+      "links": 175,
+      "ok": 175,
       "erros": 0
     }
   },
