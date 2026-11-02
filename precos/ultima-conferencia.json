@@ -1,74 +1,74 @@
 {
-  "quando": "2026-11-02T07:39:16Z",
+  "quando": "2026-11-02T18:18:13Z",
   "origem": "schedule",
-  "total": 171,
-  "iguais": 141,
+  "total": 163,
+  "iguais": 137,
   "mudaram": [
+    {
+      "slug": "kit-chave-catraca-soquete-46-pecas-indufer",
+      "produto": "Kit Chave Catraca Soquete 46 Peças Indufer",
+      "de": "R$ 28,99",
+      "para": "28,70"
+    },
+    {
+      "slug": "mini-compressor-de-ar-portatil-carro-moto",
+      "produto": "Mini Compressor De Ar Portátil Carro Moto",
+      "de": "R$ 70,28",
+      "para": "62,60"
+    },
     {
       "slug": "kit-10-pote-vidro-hermetico-marmita-640ml",
       "produto": "Kit 10 Pote Vidro Hermético Marmita 640ml",
-      "de": "R$ 99,90",
-      "para": "R$ 54,90"
+      "de": "R$ 54,90",
+      "para": "R$ 99,90"
     },
     {
-      "slug": "kit-3-necessaire-bolsa-portatil-transparente",
-      "produto": "KIT 3 Necessaire Bolsa Portátil Transparente",
-      "de": "R$ 17,49",
-      "para": "R$ 24,49"
+      "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
+      "produto": "Celular Samsung Galaxy A57 256gb cinza",
+      "de": "R$ 2.550,00",
+      "para": "2327,00"
     },
     {
-      "slug": "kit-maquina-para-tosar-pet-tesoura-pente",
-      "produto": "Kit Máquina Para Tosar Pet + Tesoura + Pente",
-      "de": "R$ 34,99",
-      "para": "R$ 30,26"
-    },
-    {
-      "slug": "principia-kit-duo-com-2-protetores-solares-faciais",
-      "produto": "Principia Kit Duo com 2 Protetores Solares Faciais",
-      "de": "R$ 107,98",
-      "para": "R$ 69,82"
+      "slug": "laco-veludo-grande-estruturado-para-arvore",
+      "produto": "Laço Veludo Grande Estruturado Para Arvore",
+      "de": "R$ 27,53",
+      "para": "R$ 29,99"
     },
     {
       "slug": "clareador-de-manchas-para-virilha",
       "produto": "Clareador de Manchas para Virilha",
-      "de": "R$ 152,88",
-      "para": "R$ 149,51"
-    },
-    {
-      "slug": "comedouro-bebedouro-elevado-1-2-ou-3-unidades-anti",
-      "produto": "Comedouro Bebedouro Elevado 1 2 ou 3 Unidades Anti",
-      "de": "R$ 15,70",
-      "para": "R$ 15,69"
+      "de": "R$ 149,51",
+      "para": "R$ 152,88"
     },
     {
       "slug": "panos-de-chao-gigante-microfibra",
       "produto": "Panos de Chão Gigante Microfibra",
-      "de": "R$ 29,90",
-      "para": "R$ 29,80"
+      "de": "R$ 29,80",
+      "para": "R$ 29,90"
     },
     {
-      "slug": "creatina-growth-supplements-monohidratada-em-po",
-      "produto": "Creatina Growth Supplements Monohidratada em pó",
-      "de": "R$ 38,31",
-      "para": "39,90"
+      "slug": "parafusadeira-furadeira-48v-profissional",
+      "produto": "Parafusadeira Furadeira 48v Profissional",
+      "de": "R$ 101,76",
+      "para": "105,26"
     },
     {
-      "slug": "tapioqueira-polvilhador-com-peneira-dosador",
-      "produto": "Tapioqueira Polvilhador Com Peneira Dosador",
-      "de": "R$ 27,59",
-      "para": "26,59"
-    },
-    {
-      "slug": "barra-de-proteina-integralmedica-crisp-bar-sabor",
-      "produto": "Barra de Proteína Integralmédica Crisp Bar sabor",
-      "de": "R$ 89,24",
-      "para": "87,00"
+      "slug": "cozedor-de-ovos-eletrico-portatil-a-vapor-para-ate",
+      "produto": "Cozedor de Ovos Elétrico Portátil a Vapor para até",
+      "de": "R$ 41,90",
+      "para": "42,67"
     },
     {
       "slug": "suporte-magnetico-forte-para-telefone-carro-360",
       "produto": "Suporte Magnético Forte Para Telefone Carro 360 °",
-      "de": "R$ 15,99",
-      "para": "R$ 13,99"
+      "de": "R$ 13,99",
+      "para": "R$ 15,99"
+    },
+    {
+      "slug": "panela-de-arroz-bianca-rice-5-mondial-400w-npe-05-5x",
+      "produto": "Panela De Arroz Bianca Rice 5 Mondial 400W NPE-05-5X -",
+      "de": "R$ 192,43",
+      "para": "147,20"
     }
   ],
   "semPreco": [],
@@ -87,7 +87,7 @@
       "produto": "iPhone 18 Pro 256GB Preto (somente eSIM)",
       "link": "https://meli.la/18pktG2",
       "atual": "R$ 9.499,00",
-      "lido": "9099,00",
+      "lido": "893,79",
       "referencia": "preco posto a mao em 18/10 23:09"
     },
     {
@@ -103,7 +103,7 @@
       "produto": "iPhone 17 Pro Max 256GB - Laranja-cósmico",
       "link": "https://meli.la/2wS1Uaq",
       "atual": "R$ 9.719,00",
-      "lido": "780,47",
+      "lido": "797,75",
       "referencia": "R$ 8.199,00"
     },
     {
@@ -139,28 +139,12 @@
       "referencia": "R$ 5.798,00"
     },
     {
-      "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
-      "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "link": "https://meli.la/1MNitr6",
-      "atual": "R$ 2.550,00",
-      "lido": "279,90",
-      "referencia": "R$ 2.550,00"
-    },
-    {
       "slug": "celular-samsung-galaxy-a37-5g-128gb-4",
       "produto": "Celular Samsung Galaxy A37 5G 128GB",
       "link": "https://meli.la/2yTLtgG",
       "atual": "R$ 1.538,00",
-      "lido": "177,70",
+      "lido": "165,20",
       "referencia": "R$ 1.619,00"
-    },
-    {
-      "slug": "pa-peneira-de-areia-coletora-higienica-pet-gato",
-      "produto": "Pá Peneira de Areia Coletora Higiênica Pet Gato",
-      "link": "https://s.shopee.com.br/9fLwb9P9oI",
-      "atual": "R$ 14,95",
-      "lido": "R$ 35,00",
-      "referencia": "R$ 14,95"
     },
     {
       "slug": "celular-samsung-galaxy-s25-43-5g-512gb",
@@ -187,14 +171,6 @@
       "referencia": "preco posto a mao em 27/10 21:20"
     },
     {
-      "slug": "mini-mixer-eletrico-recarregavel-usb-3-velocidades",
-      "produto": "Mini Mixer Elétrico Recarregável USB 3 Velocidades",
-      "link": "https://meli.la/1uymiXm",
-      "atual": "R$ 19,00",
-      "lido": "69,99",
-      "referencia": "R$ 19,00"
-    },
-    {
       "slug": "celular-samsung-galaxy-a57-256gb-cinza",
       "produto": "Celular Samsung Galaxy A57 128gb cinza",
       "link": "https://meli.la/1BRdN9x",
@@ -217,22 +193,14 @@
       "atual": "R$ 157,56",
       "lido": "347,45",
       "referencia": "preco posto a mao em 28/10 14:48"
-    },
-    {
-      "slug": "panela-de-arroz-bianca-rice-5-mondial-400w-npe-05-5x",
-      "produto": "Panela De Arroz Bianca Rice 5 Mondial 400W NPE-05-5X -",
-      "link": "https://meli.la/1VA8a39",
-      "atual": "R$ 192,43",
-      "lido": "37,25",
-      "referencia": "R$ 147,20"
     }
   ],
   "shopee": {
     "status": {
-      "quando": "2026-11-02T07:39:18Z",
+      "quando": "2026-11-02T18:18:14Z",
       "teste": false,
-      "links": 130,
-      "ok": 130,
+      "links": 127,
+      "ok": 127,
       "erros": 0
     }
   },
