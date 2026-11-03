@@ -81,19 +81,17 @@ if ($true) {
 
 # Confere o que está no ar ou na fila (até 7 dias pra trás — as que
 # seguram categoria sem fila também entram; o resto já saiu do site)
+# Confere TODAS as ofertas do catálogo: elas não expiram mais por tempo —
+# ficam no site enquanto a loja mostrar o preço (gerador/marcar_disponibilidade.py
+# marca quem ficou sem preço; o site esconde e a limpeza tira depois de 3 dias).
 $Alvo = @($Catalogo | Where-Object {
-    $_ -and $_.slug -and $_.link -and ([string]$_.link -match '^https?://') -and (
-        (([string]$_.categoria).Normalize([Text.NormalizationForm]::FormD) -replace '\p{Mn}', '').ToLowerInvariant() -match 'videos|celulares' -or
-        ($_.PSObject.Properties["fixo"] -and $_.fixo -eq $true) -or
-        -not (ParaDataUtc ($(if ($_.liberacao) { $_.liberacao } else { $_.data }))) -or
-        ($Agora - (ParaDataUtc ($(if ($_.liberacao) { $_.liberacao } else { $_.data })))).TotalDays -le 7
-    )
+    $_ -and $_.slug -and $_.link -and ([string]$_.link -match '^https?://')
 })
 
 Write-Host "Conferindo o preco de $($Alvo.Count) oferta(s)..."
 
 $Mudancas = @()
-$Relatorio = [ordered]@{ mudaram = @(); semPreco = @(); erros = @(); suspeitos = @() }
+$Relatorio = [ordered]@{ mudaram = @(); semPreco = @(); erros = @(); suspeitos = @(); lidos = @() }
 $SemPreco = 0
 $Iguais = 0
 $Erros = 0
@@ -125,6 +123,7 @@ foreach ($O in $Alvo) {
         }
         elseif ($NAtual -and [Math]::Abs($NNovo - $NAtual) -lt 0.01) {
             $Iguais++
+            $Relatorio.lidos += [string]$O.slug
         }
         elseif (($O.PSObject.Properties["precoTravado"] -and $O.precoTravado -eq $true) -or
                 ($O.PSObject.Properties["precoManual"] -and (ParaDataUtc $O.precoManual) -and
@@ -133,6 +132,7 @@ foreach ($O in $Alvo) {
             # ha menos de 7 dias: NAO muda o site, so avisa no painel
             # Preco posto a mao ha menos de 7 dias: NAO muda o site, so avisa no painel
             Write-Host "  MANUAL (nao aplicado): $($O.slug): site $($O.preco), loja $Novo"
+            $Relatorio.lidos += [string]$O.slug
             $Relatorio.suspeitos += [ordered]@{
                 slug = [string]$O.slug; produto = [string]$O.produto; link = [string]$O.link
                 atual = [string]$O.preco; lido = $Novo
@@ -144,6 +144,7 @@ foreach ($O in $Alvo) {
             # Muito fora do normal (mais que o dobro ou menos da metade): NÃO muda o site,
             # só avisa no painel pra conferir na mão.
             Write-Host "  SUSPEITO (nao aplicado): $($O.slug): site $($O.preco), loja $Novo, referencia $Ref"
+            $Relatorio.lidos += [string]$O.slug
             $Relatorio.suspeitos += [ordered]@{
                 slug = [string]$O.slug; produto = [string]$O.produto; link = [string]$O.link
                 atual = [string]$O.preco; lido = $Novo
@@ -152,6 +153,7 @@ foreach ($O in $Alvo) {
         }
         else {
             Write-Host "  MUDOU: $($O.slug): $($O.preco) -> $Novo"
+            $Relatorio.lidos += [string]$O.slug
             $Relatorio.mudaram += [ordered]@{ slug = [string]$O.slug; produto = [string]$O.produto; de = [string]$O.preco; para = $Novo }
             $Mudancas += [ordered]@{
                 acao        = "precos"
@@ -193,6 +195,7 @@ $Rel = [ordered]@{
     semPreco = @($Relatorio.semPreco)
     erros    = @($Relatorio.erros)
     suspeitos = @($Relatorio.suspeitos)
+    lidos    = @($Relatorio.lidos)
 }
 if ($ShopeeStatus) {
     $Rel.shopee = [ordered]@{ status = $ShopeeStatus }

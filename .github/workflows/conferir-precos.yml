@@ -22,7 +22,7 @@ concurrency:
 jobs:
   conferir:
     runs-on: windows-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
 
     steps:
       - name: Baixar repositorio
@@ -46,6 +46,12 @@ jobs:
           SHOPEE_SECRET: ${{ secrets.SHOPEE_SECRET }}
         run: |
           python gerador/conferir-anuncios.py
+
+      - name: Marcar quem ficou sem preco na loja (ofertas sem prazo)
+        shell: pwsh
+        run: |
+          python gerador/marcar_disponibilidade.py
+          if ($LASTEXITCODE -ne 0) { Write-Warning "marcar_disponibilidade falhou"; $global:LASTEXITCODE = 0 }
 
       - name: Lista Black November (descontos de verdade)
         shell: pwsh

@@ -129,15 +129,21 @@ foreach ($Oferta in $Ofertas) {
         continue
     }
 
-    $DataOferta = $Inicio
+    # OFERTAS SEM PRAZO (desde 03/11/2026): não expiram mais por tempo.
+    # Só sai quem está há mais de 72h sem preço na loja (conferência de
+    # preços -> gerador/marcar_disponibilidade.py grava "semPrecoDesde").
+    # Natal (e outras épocas) sai quando a temporada acaba.
+    $SemPreco = $null
+    if ($Oferta.PSObject.Properties["semPrecoDesde"] -and $Oferta.semPrecoDesde) { $SemPreco = ParaDataUtc $Oferta.semPrecoDesde }
+    $Sumiu = $SemPreco -and (($Agora - $SemPreco).TotalHours -gt $HORAS_EXPIRACAO)
+    $Local = $Agora.ToOffset([TimeSpan]::FromHours(-3))
+    $FimDeNatal = ($Partes -contains "natal") -and ((($Local.Month -eq 12) -and ($Local.Day -gt 25)) -or ($Local.Month -lt 9))
 
-    $Horas = ($Agora - $DataOferta).TotalHours
-
-    if ($Horas -le $HORAS_EXPIRACAO -or $Segurando.ContainsKey([string]$Oferta.slug)) {
-        $Mantidas += $Oferta
+    if ($Sumiu -or $FimDeNatal) {
+        $Removidas += $Oferta
     }
     else {
-        $Removidas += $Oferta
+        $Mantidas += $Oferta
     }
 }
 

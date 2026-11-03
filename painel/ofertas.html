@@ -345,7 +345,7 @@ try{ Object.assign(filtro, JSON.parse(localStorage.getItem("farejadinhos_filtro_
 
 function situacaoGrupo(o){
   const s = FarejadinhosVitrine.status(o, selecaoVitrine, new Date());
-  if(["fresca","reserva","adiantada","permanente"].includes(s)) return "noar";
+  if(["fresca","reserva","noar","adiantada","permanente"].includes(s)) return "noar";
   if(s === "agendada") return "agendada";
   return "fora";
 }
@@ -431,8 +431,10 @@ function render(){
           ? `<span class="badge badgeAgendada">🕒 Agendada pra ${formatarDataHora(o.liberacao)}</span>`
           : situacao === "fresca"
             ? `<span class="badge badgeAtiva">🟢 No ar · nova por mais ${restante.toFixed(1)}h</span>`
-            : situacao === "reserva"
-              ? `<span class="badge badgeAgendada">🟡 No ar · segurando a categoria (mín. ${FarejadinhosVitrine.META_CATEGORIA})</span>`
+            : situacao === "noar" || situacao === "reserva"
+              ? `<span class="badge badgeAtiva">🟢 No ar · preço conferido${o.precoConferido ? " " + formatarDataHora(o.precoConferido) : ""}</span>`
+            : situacao === "indisponivel"
+              ? `<span class="badge badgeExpirada">⚠️ Sumiu da loja · sem preço desde ${formatarDataHora(o.semPrecoDesde)}</span>`
               : situacao === "fora"
                 ? `<span class="badge badgeExpirada">⏸️ Fora do ar · reserva (volta se faltar oferta)</span>`
                 : `<span class="badge badgeExpirada">⚪ Expirada (mais de 3 dias)</span>`;
@@ -466,7 +468,7 @@ function render(){
           <h3>${escapeHtml(nomeProduto)}</h3>
           <div class="preco">${escapeHtml(precoExibido)}</div>
           ${melhorPrecoHtml}
-          <div class="badges">${statusBadge}${categoriaBadge}${destaqueBadge}</div>
+          <div class="badges">${statusBadge}${o.semPrecoDesde && situacao !== "indisponivel" ? `<span class="badge badgeAgendada">⚠️ Loja sem preço desde ${formatarDataHora(o.semPrecoDesde)} — sai em 3 dias se não voltar</span>` : ""}${categoriaBadge}${destaqueBadge}</div>
         </div>
         <div class="botoes">
           ${situacao === "agendada" ? `<button class="liberar" type="button">🚀 Liberar agora</button>` : ""}
