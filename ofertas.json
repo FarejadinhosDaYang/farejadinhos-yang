@@ -5393,7 +5393,18 @@
     "data": "2026-11-03T18:03:27Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-05T00:15:47Z"
+    "liberacao": "2026-11-05T00:15:47Z",
+    "anuncios": [
+      {
+        "link": "https://meli.la/2ZjGkU8",
+        "loja": "Mercado Livre",
+        "preco": "R$ 36,90",
+        "conferido": "",
+        "manual": "",
+        "confirmado": false,
+        "imagem": "https://farejadinhosdayang.com.br/assets/8448dd52-bf9d-4aab-bf4a-1fbd70d899af.webp"
+      }
+    ]
   },
   {
     "produto": "Creatina Soldiers Nutrition em pó Sem sabor x 500g",
