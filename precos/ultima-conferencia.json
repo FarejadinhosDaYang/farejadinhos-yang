@@ -1,78 +1,242 @@
 {
-  "quando": "2026-11-02T18:18:13Z",
+  "quando": "2026-11-03T01:33:40Z",
   "origem": "schedule",
-  "total": 163,
-  "iguais": 137,
+  "total": 200,
+  "iguais": 145,
   "mudaram": [
-    {
-      "slug": "kit-chave-catraca-soquete-46-pecas-indufer",
-      "produto": "Kit Chave Catraca Soquete 46 Peças Indufer",
-      "de": "R$ 28,99",
-      "para": "28,70"
-    },
     {
       "slug": "mini-compressor-de-ar-portatil-carro-moto",
       "produto": "Mini Compressor De Ar Portátil Carro Moto",
-      "de": "R$ 70,28",
-      "para": "62,60"
+      "de": "R$ 62,60",
+      "para": "65,89"
     },
     {
       "slug": "kit-10-pote-vidro-hermetico-marmita-640ml",
       "produto": "Kit 10 Pote Vidro Hermético Marmita 640ml",
-      "de": "R$ 54,90",
-      "para": "R$ 99,90"
+      "de": "R$ 99,90",
+      "para": "R$ 54,90"
     },
     {
-      "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
-      "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 2.550,00",
-      "para": "2327,00"
+      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
+      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
+      "de": "R$ 5.113,70",
+      "para": "4079,05"
     },
     {
-      "slug": "laco-veludo-grande-estruturado-para-arvore",
-      "produto": "Laço Veludo Grande Estruturado Para Arvore",
-      "de": "R$ 27,53",
-      "para": "R$ 29,99"
+      "slug": "comedouro-bebedouro-elevado-1-2-ou-3-unidades-anti",
+      "produto": "Comedouro Bebedouro Elevado 1 2 ou 3 Unidades Anti",
+      "de": "R$ 15,69",
+      "para": "R$ 15,70"
     },
     {
-      "slug": "clareador-de-manchas-para-virilha",
-      "produto": "Clareador de Manchas para Virilha",
-      "de": "R$ 149,51",
-      "para": "R$ 152,88"
+      "slug": "aparelho-medidor-de-pressao-digital-de-braco-bsp11",
+      "produto": "Aparelho medidor de pressão digital de braço BSP11",
+      "de": "R$ 104,84",
+      "para": "105,71"
     },
     {
-      "slug": "panos-de-chao-gigante-microfibra",
-      "produto": "Panos de Chão Gigante Microfibra",
-      "de": "R$ 29,80",
-      "para": "R$ 29,90"
+      "slug": "tapioqueira-polvilhador-com-peneira-dosador",
+      "produto": "Tapioqueira Polvilhador Com Peneira Dosador",
+      "de": "R$ 26,59",
+      "para": "27,59"
     },
     {
-      "slug": "parafusadeira-furadeira-48v-profissional",
-      "produto": "Parafusadeira Furadeira 48v Profissional",
-      "de": "R$ 101,76",
-      "para": "105,26"
+      "slug": "barra-de-proteina-integralmedica-crisp-bar-sabor",
+      "produto": "Barra de Proteína Integralmédica Crisp Bar sabor",
+      "de": "R$ 87,00",
+      "para": "89,24"
     },
+    {
+      "slug": "jogo-completo-de-utensilios-de-cozinha-de-silicone",
+      "produto": "Jogo Completo de Utensílios de Cozinha de Silicone",
+      "de": "R$ 28,98",
+      "para": "R$ 28,99"
+    },
+    {
+      "slug": "strobo-pisca-cordao-natal-500-leds-50m-prova",
+      "produto": "Strobo Pisca Cordão Natal 500 Leds 50m Prova",
+      "de": "R$ 159,99",
+      "para": "R$ 149,99"
+    },
+    {
+      "slug": "flores-de-natal-artificiais-glitter-pecas",
+      "produto": "Flores de Natal Artificiais Glitter Peças",
+      "de": "R$ 24,99",
+      "para": "R$ 19,99"
+    },
+    {
+      "slug": "kit-enfeites-decoracao-natalina-para-arvore",
+      "produto": "Kit Enfeites Decoração Natalina Para Árvore",
+      "de": "R$ 12,90",
+      "para": "R$ 13,90"
+    },
+    {
+      "slug": "cortina-luz-led-3-6x3m-com-8-modos-usb-natal-fadas",
+      "produto": "Cortina luz LED 3/6x3M com 8 Modos USB Natal Fadas",
+      "de": "R$ 33,99",
+      "para": "R$ 36,91"
+    },
+    {
+      "slug": "pula-corda-giratorio-com-led-gira-led-pisca-pisca",
+      "produto": "Pula Corda Giratório Com Led Gira LED Pisca/Pisca",
+      "de": "R$ 26,79",
+      "para": "R$ 26,29"
+    }
+  ],
+  "semPreco": [
+    {
+      "slug": "kit-12-enfeites-natalinos-de-pelucia-para-arvore",
+      "produto": "Kit 12 Enfeites Natalinos de Pelúcia para Árvore",
+      "link": "https://s.shopee.com.br/gR9dLSdIF",
+      "motivo": "API Shopee: a API não achou esse produto (pode ter saído do ar ou do programa de afiliados)"
+    },
+    {
+      "slug": "12m-22m-32m-leds-solar-luzes-corda-lampada-ao-ar",
+      "produto": "12M/22M/32M LEDs Solar Luzes Corda Lâmpada Ao Ar",
+      "link": "https://s.shopee.com.br/906R8Oq8m0",
+      "motivo": "API Shopee: a API não achou esse produto (pode ter saído do ar ou do programa de afiliados)"
+    },
+    {
+      "slug": "kit-15-e-30-bolinhas-enfeite-arvore-de-natal-mista",
+      "produto": "Kit 15 e 30 Bolinhas Enfeite Árvore De Natal Mista",
+      "link": "https://s.shopee.com.br/3VlSveBbnK",
+      "motivo": "API Shopee: a API não achou esse produto (pode ter saído do ar ou do programa de afiliados)"
+    },
+    {
+      "slug": "10-unidades-pacote-vermelho-e-dourado-simulacao",
+      "produto": "(10 Unidades/Pacote) Vermelho E Dourado Simulação",
+      "link": "https://s.shopee.com.br/3LS6CrZM99",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "projetor-luzes-natalino-enfeites-16-padroes",
+      "produto": "Projetor Luzes Natalino Enfeites 16 Padrões",
+      "link": "https://s.shopee.com.br/7KyEyDbrh1",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "arvore-de-natal-pinheiro-600-galhos-cheia-premium",
+      "produto": "Árvore De Natal Pinheiro 600 Galhos Cheia Premium",
+      "link": "https://s.shopee.com.br/20wXDnNYad",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "kit-com-4-capas-de-almofada-natalina-decoracao",
+      "produto": "KIt com 4 capas de almofada natalina decoração",
+      "link": "https://s.shopee.com.br/3B8g0YRKPA",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "papai-noel-decoracao-de-natal-escalando-escada",
+      "produto": "Papai Noel Decoração de natal Escalando Escada",
+      "link": "https://s.shopee.com.br/6q1yNIdlhq",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "100-leds-pisca-fio-verde-ou-transparente-110v",
+      "produto": "100 Leds Pisca Fio Verde Ou Transparente 110V",
+      "link": "https://s.shopee.com.br/2gCPPdkpcb",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "presepio-de-natal-nascimento-de-jesus-manjedoura",
+      "produto": "Presépio De natal nascimento de Jesus Manjedoura",
+      "link": "https://s.shopee.com.br/AAIQLQR4wo",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "pisca-100-leds-branco-quente-8-funcoes-10mts",
+      "produto": "Pisca 100 LEDs Branco Quente 8 Funções 10Mts",
+      "link": "https://s.shopee.com.br/70LOZbUKpK",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "cortina-de-luz-led-branco-quente-300-leds-usb",
+      "produto": "Cortina de Luz LED Branco Quente 300 LEDs USB",
+      "link": "https://s.shopee.com.br/3B8g0Yivbi",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "kit-metros-de-festao-enfeite-natalino-x-2mt",
+      "produto": "Kit Metros de Festão Enfeite Natalino X 2MT",
+      "link": "https://s.shopee.com.br/7fax9t11YO",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "relogio-infantil-marvel-homem-aranha-capitao",
+      "produto": "Relógio Infantil Marvel Homem Aranha Capitão",
+      "link": "https://s.shopee.com.br/6q1yNIUyAH",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "projetor-luzes-natalino-enfeites-bivolt-16-padroes",
+      "produto": "Projetor Luzes Natalino Enfeites Bivolt 16 Padrões",
+      "link": "https://s.shopee.com.br/5fq0z9iD4j",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "3m-bivolt-110v-220v-cortina-de-luz-led-natal",
+      "produto": "3M Bivolt 110V–220V Cortina de Luz LED Natal",
+      "link": "https://s.shopee.com.br/5VWamqa2rt",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "cortina-300-leds-metros-amarelo-festa-casamento",
+      "produto": "Cortina 300 Leds Metros Amarelo Festa/Casamento",
+      "link": "https://s.shopee.com.br/2VszDKTrky",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "piscas-moto-seta-led-sequencial-kit-2-ou-4-fan",
+      "produto": "Piscas Moto Seta Led Sequencial Kit 2 ou 4 Fan",
+      "link": "https://s.shopee.com.br/7fb5MpRnTO",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "pula-corda-giratorio-com-led-brinquedo-infantil",
+      "produto": "Pula Corda Giratório Com Led Brinquedo Infantil",
+      "link": "https://s.shopee.com.br/6VP7ygWEq3",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "12-pcs-pecas-anjo-enfeites-de-natal-de-madeira",
+      "produto": "12 Pçs Peças Anjo Enfeites De Natal De Madeira",
+      "link": "https://s.shopee.com.br/1Lh1pBYJ7j",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "kit-fada-saia-tiara-asa-varinha-com-led",
+      "produto": "Kit Fada Saia + Tiara + Asa + Varinha com Led",
+      "link": "https://s.shopee.com.br/60SrNlY8qu",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "kit-manta-decorativa-p-4-capas-de-almofadas",
+      "produto": "Kit Manta Decorativa P + 4 Capas de Almofadas",
+      "link": "https://s.shopee.com.br/qklEGaD8Y",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "200-hastes-trigo-seco-desidratado-para-decoracao",
+      "produto": "200 Hastes Trigo Seco Desidratado Para Decoração",
+      "link": "https://s.shopee.com.br/20wicPVllv",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "pula-corda-giratorio-com-led-gira-led-pisca-pisca-2",
+      "produto": "Pula Corda Giratório Com Led Gira LED Pisca/Pisca",
+      "link": "https://s.shopee.com.br/30pCKj4iHL",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    }
+  ],
+  "erros": [
     {
       "slug": "cozedor-de-ovos-eletrico-portatil-a-vapor-para-ate",
       "produto": "Cozedor de Ovos Elétrico Portátil a Vapor para até",
-      "de": "R$ 41,90",
-      "para": "42,67"
-    },
-    {
-      "slug": "suporte-magnetico-forte-para-telefone-carro-360",
-      "produto": "Suporte Magnético Forte Para Telefone Carro 360 °",
-      "de": "R$ 13,99",
-      "para": "R$ 15,99"
-    },
-    {
-      "slug": "panela-de-arroz-bianca-rice-5-mondial-400w-npe-05-5x",
-      "produto": "Panela De Arroz Bianca Rice 5 Mondial 400W NPE-05-5X -",
-      "de": "R$ 192,43",
-      "para": "147,20"
+      "link": "https://meli.la/1ua2Tgz",
+      "motivo": "Response status code does not indicate success: 404 (Not Found). :: \r\n{\r\n  \"sucesso\": false,\r\n  \"produto\": \"\",\r\n  \"preco\": \"\",\r\n  \"precoAntigo\": \"\",\r\n  \"imagemUrl\": \"\",\r\n  \"parcelas\": \"\",\r\n  \"precoAPrazo\": \"\",\r\n  \"semJuros\": \"\",\r\n  \"linkFinal\": \"https://www.mercadolivre.com.br/social/bernardshimizu/lists\",\r\n  \"tentativas\": [\r\n    \"pagina (facebookexternalhit): nada\""
     }
   ],
-  "semPreco": [],
-  "erros": [],
   "suspeitos": [
     {
       "slug": "samsung-galaxy-s25-5g-256gb-12gb-camera-tripla",
@@ -115,6 +279,14 @@
       "referencia": "R$ 7.799,00"
     },
     {
+      "slug": "kit-saco-a-vacuo-grande-organizador-edredom",
+      "produto": "Kit Saco A Vácuo Grande Organizador Edredom",
+      "link": "https://s.shopee.com.br/1qct6TiSlx",
+      "atual": "R$ 16,45",
+      "lido": "R$ 53,39",
+      "referencia": "R$ 19,90"
+    },
+    {
       "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
       "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
       "link": "https://meli.la/2LUJ4yy",
@@ -135,8 +307,16 @@
       "produto": "Celular Samsung Galaxy S26 5G, 512GB",
       "link": "https://meli.la/1WPbdmM",
       "atual": "R$ 5.714,00",
-      "lido": "547,87",
+      "lido": "557,48",
       "referencia": "R$ 5.798,00"
+    },
+    {
+      "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
+      "produto": "Celular Samsung Galaxy A57 256gb cinza",
+      "link": "https://meli.la/1MNitr6",
+      "atual": "R$ 2.327,00",
+      "lido": "243,75",
+      "referencia": "R$ 2.550,00"
     },
     {
       "slug": "celular-samsung-galaxy-a37-5g-128gb-4",
@@ -197,11 +377,11 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-11-02T18:18:14Z",
+      "quando": "2026-11-03T01:33:41Z",
       "teste": false,
-      "links": 127,
-      "ok": 127,
-      "erros": 0
+      "links": 171,
+      "ok": 147,
+      "erros": 24
     }
   },
   "anuncios": {
