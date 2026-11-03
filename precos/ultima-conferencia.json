@@ -1,242 +1,26 @@
 {
-  "quando": "2026-11-03T22:43:00Z",
-  "origem": "workflow_dispatch",
-  "total": 338,
-  "iguais": 277,
+  "quando": "2026-11-03T23:17:37Z",
+  "origem": "schedule",
+  "total": 336,
+  "iguais": 312,
   "mudaram": [
-    {
-      "slug": "fita-teste-piscina-cloro-ph-alcalinidade",
-      "produto": "Fita Teste Piscina Cloro, Ph, Alcalinidade",
-      "de": "R$ 35,90",
-      "para": "35,80"
-    },
-    {
-      "slug": "kit-limpeza-e-manutencao-de-piscina-completo",
-      "produto": "Kit Limpeza E Manutenção De Piscina Completo",
-      "de": "R$ 63,50",
-      "para": "109,90"
-    },
-    {
-      "slug": "super-clarificante-para-piscina-power-gel",
-      "produto": "Super Clarificante para Piscina Power Gel",
-      "de": "R$ 31,49",
-      "para": "37,42"
-    },
-    {
-      "slug": "camera-lampada-de-seguranca-wifi-ip-app-yoosee",
-      "produto": "Câmera Lâmpada De Segurança Wifi Ip App Yoosee",
-      "de": "R$ 53,99",
-      "para": "56,99"
-    },
-    {
-      "slug": "lixeira-inteligente-automatica-16l-sensor",
-      "produto": "Lixeira Inteligente Automática 16L Sensor",
-      "de": "R$ 68,50",
-      "para": "61,00"
-    },
-    {
-      "slug": "kit-10-pote-vidro-hermetico-marmita-640ml",
-      "produto": "Kit 10 Pote Vidro Hermético Marmita 640ml",
-      "de": "R$ 54,90",
-      "para": "R$ 99,90"
-    },
-    {
-      "slug": "sapateira-multiuso-para-calcados-9-3-andares",
-      "produto": "￼Sapateira Multiuso Para Calçados 9-3 Andares",
-      "de": "R$ 70,00",
-      "para": "R$ 46,99"
-    },
-    {
-      "slug": "kit-com-2-mesas-de-cabeceira-max-com-porta-celular",
-      "produto": "Kit com 2 Mesas de Cabeceira MAX com porta celular",
-      "de": "R$ 128,88",
-      "para": "R$ 129,37"
-    },
-    {
-      "slug": "celular-samsung-galaxy-s26-fe-128gb-8gb-ram-tela",
-      "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
-      "de": "R$ 3.999,00",
-      "para": "3998,97"
-    },
-    {
-      "slug": "aspirador-manual-piscina-herbinject-azul",
-      "produto": "Aspirador Manual Piscina Herbinject Azul",
-      "de": "R$ 34,20",
-      "para": "39,74"
-    },
-    {
-      "slug": "kit-maquina-para-tosar-pet-tesoura-pente",
-      "produto": "Kit Máquina Para Tosar Pet + Tesoura + Pente",
-      "de": "R$ 30,26",
-      "para": "R$ 34,99"
-    },
-    {
-      "slug": "aparelho-medidor-de-pressao-digital-de-braco-bsp11",
-      "produto": "Aparelho medidor de pressão digital de braço BSP11",
-      "de": "R$ 104,84",
-      "para": "91,21"
-    },
-    {
-      "slug": "copo-termico-gigante-1-2l-inox-com-tampa-canudo",
-      "produto": "Copo Térmico Gigante 1,2l Inox Com Tampa Canudo",
-      "de": "R$ 45,07",
-      "para": "48,99"
-    },
-    {
-      "slug": "barra-de-proteina-integralmedica-crisp-bar-sabor",
-      "produto": "Barra de Proteína Integralmédica Crisp Bar sabor",
-      "de": "R$ 88,93",
-      "para": "84,30"
-    },
-    {
-      "slug": "suporte-magnetico-forte-para-telefone-carro-360",
-      "produto": "Suporte Magnético Forte Para Telefone Carro 360 °",
-      "de": "R$ 13,99",
-      "para": "R$ 15,99"
-    },
-    {
-      "slug": "jogo-completo-de-utensilios-de-cozinha-de-silicone",
-      "produto": "Jogo Completo de Utensílios de Cozinha de Silicone",
-      "de": "R$ 28,98",
-      "para": "R$ 28,99"
-    },
-    {
-      "slug": "cozedor-eletrico-multifuncional-de-ovo-milho",
-      "produto": "Cozedor Elétrico Multifuncional De Ovo Milho",
-      "de": "R$ 33,58",
-      "para": "R$ 46,99"
-    },
-    {
-      "slug": "potes-hermeticos-electrolux-de-plastico-cinza",
-      "produto": "Potes Herméticos Electrolux de Plástico Cinza",
-      "de": "R$ 104,90",
-      "para": "R$ 89,90"
-    },
-    {
-      "slug": "panela-eletrica-de-arroz-pratic-rice-pe-43-6x-inox",
-      "produto": "Panela Elétrica De Arroz Pratic Rice Pe-43-6X Inox",
-      "de": "R$ 173,91",
-      "para": "199,90"
-    },
-    {
-      "slug": "panela-de-arroz-eletrica-mondial-fast-rice-5",
-      "produto": "Panela de Arroz Elétrica Mondial Fast Rice 5",
-      "de": "R$ 151,98",
-      "para": "R$ 144,84"
-    },
     {
       "slug": "strobo-pisca-cordao-natal-500-leds-50m-prova",
       "produto": "Strobo Pisca Cordão Natal 500 Leds 50m Prova",
-      "de": "R$ 149,99",
-      "para": "R$ 159,99"
-    },
-    {
-      "slug": "pisca-cascata-led-8-funcoes-10m-400-200-100-leds",
-      "produto": "Pisca Cascata LED 8 Funções 10m 400 200 100 Leds",
-      "de": "R$ 34,99",
-      "para": "R$ 34,69"
-    },
-    {
-      "slug": "arvore-de-natal-pinheiro-1-5m-1-8m-2-1m-2-4m",
-      "produto": "Arvore De Natal Pinheiro 1,5m 1,8m 2,1m 2,4m",
-      "de": "R$ 139,99",
-      "para": "R$ 130,19"
-    },
-    {
-      "slug": "kit-metros-de-festao-enfeite-natalino-x-2mt",
-      "produto": "Kit Metros de Festão Enfeite Natalino X 2MT",
-      "de": "R$ 26,84",
-      "para": "R$ 48,80"
-    },
-    {
-      "slug": "kit-manta-decorativa-p-4-capas-de-almofadas",
-      "produto": "Kit Manta Decorativa P + 4 Capas de Almofadas",
-      "de": "R$ 68,90",
-      "para": "R$ 69,90"
-    },
-    {
-      "slug": "pula-corda-giratorio-com-led-gira-led-pisca-pisca-2",
-      "produto": "Pula Corda Giratório Com Led Gira LED Pisca/Pisca",
-      "de": "R$ 26,79",
-      "para": "R$ 26,29"
-    },
-    {
-      "slug": "suporte-para-telefone-principal-alca-de-montagem",
-      "produto": "Suporte Para Telefone Principal Alça De Montagem",
-      "de": "R$ 24,65",
-      "para": "R$ 24,46"
-    },
-    {
-      "slug": "adaptador-de-tomada-ultra-resistente-de-porcelana",
-      "produto": "Adaptador de Tomada Ultra Resistente de Porcelana",
-      "de": "R$ 12,73",
-      "para": "R$ 12,72"
-    },
-    {
-      "slug": "copo-caneca-termica-com-tampa-360ml-inox",
-      "produto": "Copo Caneca Termica Com Tampa 360ML Inox",
-      "de": "R$ 17,89",
-      "para": "R$ 18,99"
-    },
-    {
-      "slug": "adaptador-de-tomada-ultra-resistente-de-porcelana-2",
-      "produto": "Adaptador de Tomada Ultra Resistente de Porcelana",
-      "de": "R$ 12,73",
-      "para": "R$ 12,72"
-    },
-    {
-      "slug": "grand-theft-auto-vi-playstation-5",
-      "produto": "Grand Theft Auto VI - PlayStation 5",
-      "de": "R$ 414,00",
-      "para": "418,41"
-    },
-    {
-      "slug": "l-oreal-paris-elseve-oleo-extraordinario-100ml",
-      "produto": "L'Oréal Paris Elseve Óleo Extraordinário 100ml",
-      "de": "R$ 26,91",
-      "para": "33,14"
-    },
-    {
-      "slug": "creatina-monohidratada-500g-pouch",
-      "produto": "Creatina Monohidratada 500g Pouch",
-      "de": "R$ 58,00",
-      "para": "74,90"
+      "de": "R$ 159,99",
+      "para": "R$ 249,99"
     },
     {
       "slug": "fritadeira-eletrica-afon-12l-bg-forno-oven",
       "produto": "Fritadeira Elétrica AFON-12L-BG Forno Oven",
-      "de": "R$ 506,73",
-      "para": "455,35"
-    },
-    {
-      "slug": "kit-jogo-de-ferramentas-aco-carbono-titanium",
-      "produto": "Kit Jogo De Ferramentas Aço Carbono Titanium",
-      "de": "R$ 13,45",
-      "para": "14,15"
+      "de": "R$ 455,35",
+      "para": "506,45"
     },
     {
       "slug": "cafeteira-espresso-philips-walita-cor-preto",
       "produto": "Cafeteira Espresso Philips Walita Cor Preto",
-      "de": "R$ 219,90",
-      "para": "218,25"
-    },
-    {
-      "slug": "mixer-power-inox-3-em-1-600w-elgin-lunar",
-      "produto": "Mixer Power Inox 3 Em 1 600w Elgin Lunar -",
-      "de": "R$ 104,88",
-      "para": "114,00"
-    },
-    {
-      "slug": "air-fryer-oven-12l-wap-10-funcoes-pre-programadas",
-      "produto": "Air Fryer Oven 12L WAP 10 Funções Pré-Programadas",
-      "de": "R$ 478,79",
-      "para": "479,90"
-    },
-    {
-      "slug": "sanduicheira-eletrica-cadence-san400-preta",
-      "produto": "Sanduicheira Elétrica Cadence SAN400 Preta",
-      "de": "R$ 93,99",
-      "para": "95,59"
+      "de": "R$ 218,25",
+      "para": "219,90"
     }
   ],
   "semPreco": [
@@ -393,14 +177,6 @@
       "atual": "R$ 157,56",
       "lido": "365,74",
       "referencia": "preco posto a mao em 28/10 14:48"
-    },
-    {
-      "slug": "tablet-samsung-galaxy-tab-a11-128gb",
-      "produto": "Tablet Samsung Galaxy Tab A11+, 128gb",
-      "link": "https://meli.la/32m3cG6",
-      "atual": "R$ 495,69",
-      "lido": "133,58",
-      "referencia": "R$ 495,69"
     },
     {
       "slug": "air-fryer-forno-25l-french-door-mondial",
@@ -668,7 +444,6 @@
     "filtro-coador-de-cafe-inox",
     "jogo-de-lencol-400-fios-extra-macio-com-fronhas-2",
     "kit-potes-mantimentos-vidro-hermeticos-com-tampa-2",
-    "suporte-organizador-de-ovos-dispenser-2",
     "kit-potes-de-vidro-hermeticos-tampa-bambu-2",
     "carregador-turbo-inteligente-v8-tipo-c-com-cabo-2",
     "tapete-eva-brinquedoteca-crossfit-academia-2",
@@ -696,7 +471,6 @@
     "kit-potes-mantimentos-vidro-hermeticos-com-tampa-3",
     "sapateira-4-ou-5-andares-multiuso-desmontavel",
     "carregador-portatil-5000mah-10000mah-inducao",
-    "suporte-organizador-de-ovos-dispenser-3",
     "colchonete-academia-eva-tapete-yoga-pilates",
     "carregador-power-bank-20000mah-portatil-de-celular",
     "kit-potes-de-vidro-hermeticos-tampa-bambu-3",
@@ -748,7 +522,7 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-11-03T22:43:02Z",
+      "quando": "2026-11-03T23:17:39Z",
       "teste": false,
       "links": 213,
       "ok": 209,
@@ -757,37 +531,22 @@
   },
   "anuncios": {
     "conferidos": 13,
-    "iguais": 4,
-    "pendentes": [
+    "iguais": 6,
+    "pendentes": [],
+    "mudaram": [
       {
         "slug": "extratora-e-higienizadora-portatil-wap-spotcleaner",
         "loja": "Mercado Livre",
         "link": "https://meli.la/1NqjND9",
-        "atual": "R$ 459,99",
-        "lido": "R$ 484,90"
+        "de": "R$ 459,99",
+        "para": "R$ 484,90"
       },
       {
         "slug": "balanca-digital-bioimpedancia-profissional-smart",
         "loja": "Mercado Livre",
         "link": "https://meli.la/2ZjGkU8",
-        "atual": "R$ 36,90",
-        "lido": "R$ 31,90"
-      }
-    ],
-    "mudaram": [
-      {
-        "slug": "saco-a-vacuo-com-ou-sem-bomba-organizacao",
-        "loja": "Shopee",
-        "link": "https://s.shopee.com.br/qkLudmGnb",
-        "de": "R$ 16,59",
-        "para": "R$ 16,58"
-      },
-      {
-        "slug": "porta-ovos-4-andares-rolante-em-plastico",
-        "loja": "Shopee",
-        "link": "https://s.shopee.com.br/W7VW1nXUc",
-        "de": "R$ 14,93",
-        "para": "R$ 13,96"
+        "de": "R$ 36,90",
+        "para": "R$ 31,90"
       }
     ],
     "barrados": [

@@ -1257,12 +1257,10 @@
       {
         "link": "https://meli.la/1NqjND9",
         "loja": "Mercado Livre",
-        "preco": "R$ 459,99",
-        "conferido": "2026-10-27T21:45:10Z",
-        "manual": "2026-10-27T21:45:10Z",
-        "confirmado": true,
-        "pendente": "R$ 484,90",
-        "pendenteEm": "2026-11-03T22:50:21Z"
+        "preco": "R$ 484,90",
+        "conferido": "2026-11-03T23:24:51Z",
+        "manual": "",
+        "confirmado": true
       }
     ]
   },
@@ -2776,7 +2774,7 @@
   },
   {
     "produto": "Strobo Pisca Cordão Natal 500 Leds 50m Prova",
-    "preco": "R$ 159,99",
+    "preco": "R$ 249,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -2789,7 +2787,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-02T23:56:35Z",
-    "precoConferido": "2026-11-03T22:50:20Z"
+    "precoConferido": "2026-11-03T23:24:50Z"
   },
   {
     "produto": "Árvore De Natal 1180 650 450 Galhos Luxo Premium",
@@ -5118,7 +5116,7 @@
   },
   {
     "produto": "Fritadeira Elétrica AFON-12L-BG Forno Oven",
-    "preco": "R$ 455,35",
+    "preco": "R$ 506,45",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -5128,7 +5126,7 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/fritadeira-eletrica-afon-12l-bg-forno-oven/",
     "slug": "fritadeira-eletrica-afon-12l-bg-forno-oven",
     "data": "2026-11-03T18:03:25Z",
-    "precoAVista": "R$ 455,35",
+    "precoAVista": "R$ 506,45",
     "precoAPrazo": "522,40",
     "liberacao": "2026-11-04T20:52:00Z",
     "parcelas": 10,
@@ -5143,7 +5141,7 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/8cf5a57f-8ef3-48c4-90a2-a682d0380f3a.jpg"
       }
     ],
-    "precoConferido": "2026-11-03T22:50:20Z"
+    "precoConferido": "2026-11-03T23:24:50Z"
   },
   {
     "produto": "Travesseiro Cervical Abranuv Ergonômico Espuma",
@@ -5365,13 +5363,11 @@
       {
         "link": "https://meli.la/2ZjGkU8",
         "loja": "Mercado Livre",
-        "preco": "R$ 36,90",
-        "conferido": "",
+        "preco": "R$ 31,90",
+        "conferido": "2026-11-03T23:24:51Z",
         "manual": "",
-        "confirmado": false,
-        "imagem": "https://farejadinhosdayang.com.br/assets/8448dd52-bf9d-4aab-bf4a-1fbd70d899af.webp",
-        "pendente": "R$ 31,90",
-        "pendenteEm": "2026-11-03T22:50:21Z"
+        "confirmado": true,
+        "imagem": "https://farejadinhosdayang.com.br/assets/8448dd52-bf9d-4aab-bf4a-1fbd70d899af.webp"
       }
     ]
   },
@@ -5494,7 +5490,7 @@
   },
   {
     "produto": "Cafeteira Espresso Philips Walita Cor Preto",
-    "preco": "R$ 218,25",
+    "preco": "R$ 219,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Café",
@@ -5504,11 +5500,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/cafeteira-espresso-philips-walita-cor-preto/",
     "slug": "cafeteira-espresso-philips-walita-cor-preto",
     "data": "2026-11-03T18:03:29Z",
-    "precoAVista": "R$ 218,25",
+    "precoAVista": "R$ 219,90",
     "precoAPrazo": "2199,00",
     "liberacao": "2026-11-04T20:20:00Z",
     "parcelas": 10,
-    "precoConferido": "2026-11-03T22:50:20Z"
+    "precoConferido": "2026-11-03T23:24:50Z"
   },
   {
     "produto": "Parafusadeira Furadeira Impacto Sem Fio 2 Baterias",
