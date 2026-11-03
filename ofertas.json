@@ -2410,22 +2410,6 @@
     "liberacao": "2026-10-31T00:01:41Z"
   },
   {
-    "produto": "Principia Protetor Solar PS-05 Cor 3.0 com 14,5%",
-    "preco": "R$ 49,00",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Skincare",
-    "destaque": false,
-    "imagem": "b25e1400-d31f-428b-9a41-f1bc2d4a2bd0.jpg",
-    "link": "https://s.shopee.com.br/9Kj9UzivWg",
-    "url": "https://farejadinhosdayang.com.br/ofertas/principia-protetor-solar-ps-05-cor-3-0-com-14-5/",
-    "slug": "principia-protetor-solar-ps-05-cor-3-0-com-14-5",
-    "data": "2026-10-28T13:48:15Z",
-    "precoAVista": "",
-    "precoAPrazo": "",
-    "liberacao": "2026-10-31T00:30:50Z"
-  },
-  {
     "produto": "Principia Protetor Solar PS-05 Cor 4.0 com 14,5%",
     "preco": "R$ 49,00",
     "precoAntigo": "",
@@ -2471,7 +2455,19 @@
     "data": "2026-10-28T13:48:16Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-31T23:15:00Z"
+    "liberacao": "2026-10-31T23:15:00Z",
+    "anuncios": [
+      {
+        "link": "https://s.shopee.com.br/9Kj9UzivWg",
+        "loja": "Shopee",
+        "preco": "R$ 49,00",
+        "conferido": "2026-10-28T13:48:15Z",
+        "manual": "2026-11-03T18:16:04Z",
+        "confirmado": true,
+        "imagem": "https://farejadinhosdayang.com.br/assets/b25e1400-d31f-428b-9a41-f1bc2d4a2bd0.jpg",
+        "variacao": "Cor"
+      }
+    ]
   },
   {
     "produto": "Air Fryer Electrolux por Rita Lobo 5,6L Cinza",
