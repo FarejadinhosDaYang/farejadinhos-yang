@@ -1,5 +1,13 @@
 [
   {
+    "slug": "air-fryer-forno-25l-french-door-mondial",
+    "produto": "Air Fryer Forno 25L French Door Mondial",
+    "link": "https://meli.la/1A77Qf9",
+    "atual": "R$ 975,18",
+    "lido": "100,99",
+    "referencia": "R$ 975,18"
+  },
+  {
     "slug": "celular-samsung-galaxy-a37-5g-128gb-4",
     "produto": "Celular Samsung Galaxy A37 5G 128GB",
     "link": "https://meli.la/2yTLtgG",
@@ -22,14 +30,6 @@
     "atual": "R$ 2.327,00",
     "lido": "243,75",
     "referencia": "R$ 2.550,00"
-  },
-  {
-    "slug": "celular-samsung-galaxy-s25-43-5g-512gb",
-    "produto": "Celular Samsung Galaxy S25+; 5g, 512gb",
-    "link": "https://meli.la/28FNDG2",
-    "atual": "R$ 3.898,00",
-    "lido": "474,90",
-    "referencia": "R$ 2.518,00"
   },
   {
     "slug": "celular-samsung-galaxy-s25-43-5g-512gb-2",
@@ -64,19 +64,11 @@
     "referencia": "R$ 5.798,00"
   },
   {
-    "slug": "celular-samsung-galaxy-s26-fe-128gb-8gb-ram-tela",
-    "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
-    "link": "https://link.amazon/B054bueQi",
-    "atual": "R$ 3.999,00",
-    "lido": "690,84",
-    "referencia": "R$ 5.499,00"
-  },
-  {
     "slug": "fritadeira-sem-oleo-air-fryer-digital-4l-mondial",
     "produto": "Fritadeira Sem Óleo Air Fryer Digital 4L Mondial",
     "link": "https://meli.la/1eFBrXD",
     "atual": "R$ 157,56",
-    "lido": "347,45",
+    "lido": "365,74",
     "referencia": "preco posto a mao em 28/10 14:48"
   },
   {
@@ -88,11 +80,19 @@
     "referencia": "R$ 7.799,00"
   },
   {
+    "slug": "iphone-17-pro-max-256gb-laranja-cosmico",
+    "produto": "iPhone 17 Pro Max 256GB - Laranja-cósmico",
+    "link": "https://meli.la/2wS1Uaq",
+    "atual": "R$ 8.099,00",
+    "lido": "816,90",
+    "referencia": "R$ 8.199,00"
+  },
+  {
     "slug": "iphone-18-pro-256gb-preto-somente-esim",
     "produto": "iPhone 18 Pro 256GB Preto (somente eSIM)",
     "link": "https://meli.la/18pktG2",
     "atual": "R$ 9.499,00",
-    "lido": "893,79",
+    "lido": "864,09",
     "referencia": "preco posto a mao em 18/10 23:09"
   },
   {
@@ -126,5 +126,13 @@
     "atual": "R$ 6.749,00",
     "lido": "749,90",
     "referencia": "preco posto a mao em 27/10 21:17"
+  },
+  {
+    "slug": "tablet-samsung-galaxy-tab-a11-128gb",
+    "produto": "Tablet Samsung Galaxy Tab A11+, 128gb",
+    "link": "https://meli.la/32m3cG6",
+    "atual": "R$ 495,69",
+    "lido": "133,58",
+    "referencia": "R$ 495,69"
   }
 ]
