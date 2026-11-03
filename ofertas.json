@@ -4003,7 +4003,7 @@
     "preco": "R$ 10,99",
     "precoAntigo": "",
     "cupom": "",
-    "categoria": "Casa",
+    "categoria": "Casa, Vídeos",
     "destaque": false,
     "imagem": "07751b44-1b4e-424a-8077-f077594997ea.jpg",
     "link": "https://s.shopee.com.br/1BNbcmEt04",
@@ -4012,7 +4012,8 @@
     "data": "2026-11-03T15:47:46Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-03T18:32:08Z"
+    "liberacao": "2026-11-03T18:32:08Z",
+    "anuncios": []
   },
   {
     "produto": "Suporte Para Telefone Principal Alça De Montagem",
@@ -4583,22 +4584,6 @@
     "liberacao": "2026-11-04T22:44:00Z"
   },
   {
-    "produto": "Suporte Organizador De Ovos Dispenser",
-    "preco": "R$ 10,99",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Casa",
-    "destaque": false,
-    "imagem": "9a0afbdb-d579-4554-a503-611052de7b29.jpg",
-    "link": "https://s.shopee.com.br/1BNbcmEt04",
-    "url": "https://farejadinhosdayang.com.br/ofertas/suporte-organizador-de-ovos-dispenser-2/",
-    "slug": "suporte-organizador-de-ovos-dispenser-2",
-    "data": "2026-11-03T15:48:56Z",
-    "precoAVista": "",
-    "precoAPrazo": "",
-    "liberacao": "2026-11-03T23:54:41Z"
-  },
-  {
     "produto": "Kit Potes de Vidro Herméticos Tampa Bambu",
     "preco": "R$ 69,99",
     "precoAntigo": "",
@@ -5030,22 +5015,6 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-03T17:34:06Z"
-  },
-  {
-    "produto": "Suporte Organizador De Ovos Dispenser",
-    "preco": "R$ 10,99",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Casa",
-    "destaque": false,
-    "imagem": "ec589674-dd0e-41d7-b675-1bb2758b25aa.jpg",
-    "link": "https://s.shopee.com.br/1BNbcmEt04",
-    "url": "https://farejadinhosdayang.com.br/ofertas/suporte-organizador-de-ovos-dispenser-3/",
-    "slug": "suporte-organizador-de-ovos-dispenser-3",
-    "data": "2026-11-03T15:52:10Z",
-    "precoAVista": "",
-    "precoAPrazo": "",
-    "liberacao": "2026-11-04T15:48:00Z"
   },
   {
     "produto": "Colchonete Academia EVA Tapete Yoga Pilates",
@@ -5798,7 +5767,7 @@
     "preco": "R$ 10,95",
     "precoAntigo": "",
     "cupom": "",
-    "categoria": "Beleza",
+    "categoria": "Beleza, Vídeos",
     "destaque": false,
     "imagem": "18c6953c-a3e0-43c2-8458-cf40c62c5adc.jpg",
     "link": "https://s.shopee.com.br/5LDAaUB0jR",
