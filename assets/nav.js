@@ -67,7 +67,7 @@
                         esc(c.nome) + " <small>" + c.n + "</small></a>";
                     if (!c.subs || !c.subs.length) return link;
                     return '<div class="yang-nav-grupo"><div style="display:flex;align-items:center">' + link.replace("<a ", '<a style="flex:1" ') +
-                        '<button type="button" class="yang-nav-seta" aria-expanded="false" aria-label="Subcategorias" style="border:0;background:none;font-size:15px;padding:6px 12px;cursor:pointer;color:inherit;transition:transform .18s">▸</button></div>' +
+                        '<button type="button" class="yang-nav-seta" aria-expanded="false" aria-label="Subcategorias" style="order:-1;border:0;background:none;font-size:15px;padding:6px 4px 6px 0;cursor:pointer;color:inherit;transition:transform .18s">▸</button></div>' +
                         '<div class="yang-nav-subs" hidden style="margin-left:34px;border-left:2px solid rgba(0,0,0,.12);padding-left:8px">' +
                         c.subs.map(function (s) { return '<a href="#" data-cat="' + esc(s.valor) + '" style="font-size:.95em">' + esc(s.nome) + " <small>" + s.n + "</small></a>"; }).join("") +
                         "</div></div>";
