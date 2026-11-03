@@ -4190,7 +4190,18 @@
     "data": "2026-11-03T15:47:52Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-04T00:16:54Z"
+    "liberacao": "2026-11-04T00:16:54Z",
+    "anuncios": [
+      {
+        "link": "https://s.shopee.com.br/9pfQ5tH1tn",
+        "loja": "Shopee",
+        "preco": "R$ 18,99",
+        "conferido": "",
+        "manual": "",
+        "confirmado": false,
+        "imagem": "https://farejadinhosdayang.com.br/assets/39c601ca-ebcb-443a-9d45-4e3d5138b010.jpg"
+      }
+    ]
   },
   {
     "produto": "Kit Potes 640ml Marmita Vidro Yab Hermético Tampa",
@@ -4767,22 +4778,6 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-04T22:17:53Z"
-  },
-  {
-    "produto": "Mini Processador de Alimentos Elétrico Triturador",
-    "preco": "R$ 22,28",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Eletrodomésticos",
-    "destaque": false,
-    "imagem": "eae2ed59-0c4b-4d0a-a4a0-e2eb33dbbf49.jpg",
-    "link": "https://s.shopee.com.br/6q1yNDfmsI",
-    "url": "https://farejadinhosdayang.com.br/ofertas/mini-processador-de-alimentos-eletrico-triturador-2/",
-    "slug": "mini-processador-de-alimentos-eletrico-triturador-2",
-    "data": "2026-11-03T15:48:57Z",
-    "precoAVista": "",
-    "precoAPrazo": "",
-    "liberacao": "2026-11-04T21:18:56Z"
   },
   {
     "produto": "Kit Potes 640ml Marmita Vidro Yab Hermético Tampa",
