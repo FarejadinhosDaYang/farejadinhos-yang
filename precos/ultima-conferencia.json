@@ -1,107 +1,299 @@
 {
-  "quando": "2026-11-03T09:29:18Z",
-  "origem": "schedule",
-  "total": 200,
-  "iguais": 135,
+  "quando": "2026-11-03T15:51:44Z",
+  "origem": "workflow_dispatch",
+  "total": 280,
+  "iguais": 122,
   "mudaram": [
     {
       "slug": "kit-10-pote-vidro-hermetico-marmita-640ml",
       "produto": "Kit 10 Pote Vidro Hermético Marmita 640ml",
-      "de": "R$ 54,90",
-      "para": "R$ 99,90"
+      "de": "R$ 99,90",
+      "para": "R$ 54,90"
     },
     {
-      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
-      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 4.079,05",
-      "para": "5113,70"
+      "slug": "organizador-algodao-e-cotonetes-acrilico-kit",
+      "produto": "Organizador Algodão E Cotonetes Acrílico Kit",
+      "de": "R$ 13,19",
+      "para": "R$ 13,20"
+    },
+    {
+      "slug": "iphone-17-pro-max-256gb-laranja-cosmico",
+      "produto": "iPhone 17 Pro Max 256GB - Laranja-cósmico",
+      "de": "R$ 9.719,00",
+      "para": "8099,00"
+    },
+    {
+      "slug": "organizador-de-geladeira-para-temperos-2-3l-linha-clear",
+      "produto": "Organizador de Geladeira para Temperos 2,3L",
+      "de": "R$ 37,90",
+      "para": "R$ 39,00"
+    },
+    {
+      "slug": "kit-saco-a-vacuo-grande-organizador-edredom",
+      "produto": "Kit Saco A Vácuo Grande Organizador Edredom",
+      "de": "R$ 16,45",
+      "para": "R$ 16,43"
+    },
+    {
+      "slug": "mini-umidificador-difusor-aromatizador-egg",
+      "produto": "Mini Umidificador Difusor Aromatizador Egg",
+      "de": "R$ 16,99",
+      "para": "R$ 15,49"
     },
     {
       "slug": "protetor-solar-facial-hidrabene-fps-70-toque-seco",
       "produto": "Protetor Solar Facial Hidrabene FPS 70 Toque Seco",
-      "de": "R$ 33,99",
-      "para": "R$ 29,90"
-    },
-    {
-      "slug": "brinquedo-cachorro-de-mastigacao-interativo",
-      "produto": "Brinquedo Cachorro De Mastigação Interativo",
-      "de": "R$ 19,98",
-      "para": "R$ 19,99"
+      "de": "R$ 29,90",
+      "para": "R$ 33,99"
     },
     {
       "slug": "comedouro-bebedouro-elevado-1-2-ou-3-unidades-anti",
       "produto": "Comedouro Bebedouro Elevado 1 2 ou 3 Unidades Anti",
-      "de": "R$ 15,70",
-      "para": "R$ 15,69"
+      "de": "R$ 15,69",
+      "para": "R$ 15,70"
     },
     {
-      "slug": "panos-de-chao-gigante-microfibra",
-      "produto": "Panos de Chão Gigante Microfibra",
-      "de": "R$ 29,90",
-      "para": "R$ 29,80"
+      "slug": "tapioqueira-polvilhador-com-peneira-dosador",
+      "produto": "Tapioqueira Polvilhador Com Peneira Dosador",
+      "de": "R$ 27,59",
+      "para": "27,99"
     },
     {
-      "slug": "aparelho-medidor-de-pressao-digital-de-braco-bsp11",
-      "produto": "Aparelho medidor de pressão digital de braço BSP11",
-      "de": "R$ 105,71",
-      "para": "104,84"
+      "slug": "cozedor-de-ovos-eletrico-portatil-a-vapor-para-ate",
+      "produto": "Cozedor de Ovos Elétrico Portátil a Vapor para até",
+      "de": "R$ 42,67",
+      "para": "41,90"
+    },
+    {
+      "slug": "cuscuzeiro-individual-mini-tetinha-aluminio-polido",
+      "produto": "Cuscuzeiro Individual Mini Tetinha Alumínio Polido",
+      "de": "R$ 27,09",
+      "para": "29,92"
     },
     {
       "slug": "barra-de-proteina-integralmedica-crisp-bar-sabor",
       "produto": "Barra de Proteína Integralmédica Crisp Bar sabor",
-      "de": "R$ 89,24",
-      "para": "87,00"
+      "de": "R$ 87,00",
+      "para": "89,24"
     },
     {
-      "slug": "suporte-magnetico-forte-para-telefone-carro-360",
-      "produto": "Suporte Magnético Forte Para Telefone Carro 360 °",
+      "slug": "bastao-de-selfie-telescopico-bluetooth",
+      "produto": "Bastão de selfie telescópico Bluetooth",
       "de": "R$ 15,99",
-      "para": "R$ 13,99"
+      "para": "R$ 14,99"
     },
     {
-      "slug": "jogo-completo-de-utensilios-de-cozinha-de-silicone",
-      "produto": "Jogo Completo de Utensílios de Cozinha de Silicone",
-      "de": "R$ 28,99",
-      "para": "R$ 28,98"
+      "slug": "panela-de-arroz-fast-rice-5-mondial-400w-npe-08-5x",
+      "produto": "Panela De Arroz Fast Rice 5 Mondial 400W - NPE-08-5X -",
+      "de": "R$ 134,47",
+      "para": "131,76"
+    },
+    {
+      "slug": "panela-eletrica-de-arroz-pratic-rice-pe-43-6x-inox",
+      "produto": "Panela Elétrica De Arroz Pratic Rice Pe-43-6X Inox",
+      "de": "R$ 199,90",
+      "para": "173,91"
+    }
+  ],
+  "semPreco": [
+    {
+      "slug": "luz-de-preenchimento-para-selfie-e-live",
+      "produto": "Luz de Preenchimento para Selfie e Live",
+      "link": "https://s.shopee.com.br/7AeeuynW05",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "kit-5-elastico-para-exercicios-mini-band-crossfit",
+      "produto": "Kit 5 Elástico para Exercícios Mini Band Crossfit",
+      "link": "https://s.shopee.com.br/1BNRm04snJ",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "cafeteira-portatil-3-em-1-expresso-eletrica",
+      "produto": "Cafeteira Portátil 3 em 1 Expresso Elétrica",
+      "link": "https://s.shopee.com.br/4LKTXmXUyL",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "3l-picador-de-alimentos-moedor-de-carne-mixer",
+      "produto": "3L Picador De Alimentos Moedor De Carne Mixer",
+      "link": "https://s.shopee.com.br/30p5xJLRtA",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "caneca-termica-atena-bear-thermal-personalizada",
+      "produto": "Caneca Térmica Atena Bear Thermal Personalizada",
+      "link": "https://s.shopee.com.br/9fLztdKmed",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
     },
     {
       "slug": "cozedor-eletrico-multifuncional-de-ovo-milho",
       "produto": "Cozedor Elétrico Multifuncional De Ovo Milho",
-      "de": "R$ 33,57",
-      "para": "R$ 33,58"
+      "link": "https://s.shopee.com.br/30p5xJlqXq",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
     },
     {
-      "slug": "arvore-de-natal-1180-650-450-galhos-luxo-premium",
-      "produto": "Árvore De Natal 1180 650 450 Galhos Luxo Premium",
-      "de": "R$ 95,99",
-      "para": "R$ 98,99"
+      "slug": "potes-hermeticos-electrolux-de-plastico-cinza",
+      "produto": "Potes Herméticos Electrolux de Plástico Cinza",
+      "link": "https://s.shopee.com.br/8KqcJ7EH9t",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "creme-hidratante-facial-5-manteiga-de-karite-5-2",
+      "produto": "Creme Hidratante Facial 5% Manteiga de Karité + 5%",
+      "link": "https://s.shopee.com.br/1BNRlz0onW",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "protetor-solar-facial-ps-01-fps-60-principia-3",
+      "produto": "Protetor Solar Facial PS-01 FPS 60 Principia",
+      "link": "https://s.shopee.com.br/9pfQ5uh1Vl",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "principia-protetor-solar-ps-05-cor-3-0-com-14-5",
+      "produto": "Principia Protetor Solar PS-05 Cor 3.0 com 14,5%",
+      "link": "https://s.shopee.com.br/9Kj9UzivWg",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "principia-protetor-solar-ps-05-cor-4-0-com-14-5",
+      "produto": "Principia Protetor Solar PS-05 Cor 4.0 com 14,5%",
+      "link": "https://s.shopee.com.br/1141ZgEeR7",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "principia-protetor-solar-ps-05-cor-5-0-com-14-5-2",
+      "produto": "Principia Protetor Solar PS-05 Cor 5.0 com 14,5%",
+      "link": "https://s.shopee.com.br/1W0IAbCkQQ",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "air-fryer-electrolux-por-rita-lobo-5-6l-cinza",
+      "produto": "Air Fryer Electrolux por Rita Lobo 5,6L Cinza",
+      "link": "https://s.shopee.com.br/6L5XvS3xHv",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "cafeteira-eletrica-electrolux-30-xicaras-efficient",
+      "produto": "Cafeteira Elétrica Electrolux 30 Xícaras Efficient",
+      "link": "https://s.shopee.com.br/4qGk8hVaxO",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "cafeteira-eletrica-electrolux-15-xicaras-efficient",
+      "produto": "Cafeteira Elétrica Electrolux 15 Xícaras Efficient",
+      "link": "https://s.shopee.com.br/30p5xKcZfx",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "saco-para-lavar-tenis-na-maquina-bolsa-protetora",
+      "produto": "Saco para Lavar Tênis na Máquina Bolsa Protetora",
+      "link": "https://s.shopee.com.br/3B8W9d7HQO",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "percarbonato-100-puro-tira-manchas-roupas-brancas",
+      "produto": "Percarbonato 100% Puro Tira Manchas Roupas Brancas",
+      "link": "https://s.shopee.com.br/1BXdAreyw",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "kit-6-nutella-650gr",
+      "produto": "Kit 6 Nutella 650gr",
+      "link": "https://s.shopee.com.br/8VA74sy9dW",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "panela-de-arroz-eletrica-mondial-fast-rice-5",
+      "produto": "Panela de Arroz Elétrica Mondial Fast Rice 5",
+      "link": "https://s.shopee.com.br/4B1B9fCM0N",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "panela-de-arroz-eletrica-5-xicaras-400w-npe-05-5x",
+      "produto": "Panela de Arroz Elétrica 5 Xícaras 400W NPE-05-5X",
+      "link": "https://s.shopee.com.br/70LMWtrxcu",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "pisca-natal-cordao-100-leds-10m-8-funcoes-varias",
+      "produto": "Pisca Natal Cordão 100 Leds 10m 8 Funções Varias",
+      "link": "https://s.shopee.com.br/9fM9kVKBPa",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "strobo-pisca-cordao-natal-500-leds-50m-prova",
+      "produto": "Strobo Pisca Cordão Natal 500 Leds 50m Prova",
+      "link": "https://s.shopee.com.br/AKbqXjQRbp",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
     },
     {
       "slug": "pisca-cascata-led-8-funcoes-10m-400-200-100-leds",
       "produto": "Pisca Cascata LED 8 Funções 10m 400 200 100 Leds",
-      "de": "R$ 31,69",
-      "para": "R$ 34,69"
+      "link": "https://s.shopee.com.br/7VHfAWSQoL",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "festao-aramado-galhos-verde-cru-enfeite-de-natal",
+      "produto": "Festão Aramado Galhos Verde Cru Enfeite de Natal",
+      "link": "https://s.shopee.com.br/70LOZbd8Mr",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "arvore-de-natal-pinheiro-canadense-luxo-base",
+      "produto": "Árvore De Natal Pinheiro Canadense Luxo Base",
+      "link": "https://s.shopee.com.br/30pFoFRxk9",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "cortina-de-luz-led-multicolorida-ou-usb",
+      "produto": "Cortina de Luz LED Multicolorida ou USB",
+      "link": "https://s.shopee.com.br/AUvGk1zPWG",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "azevinho-artificial-de-natal-holly-berry-vermelho",
+      "produto": "Azevinho artificial de natal,holly berry vermelho",
+      "link": "https://s.shopee.com.br/BV4R2ckUM",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
     },
     {
       "slug": "saia-para-arvore-de-natal-tapete-base-decorativa",
       "produto": "Saia para Árvore de Natal Tapete Base Decorativa",
-      "de": "R$ 19,90",
-      "para": "R$ 20,74"
+      "link": "https://s.shopee.com.br/3qOMnmOn3M",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "flores-de-natal-premium-arvore-artificial",
+      "produto": "Flores De Natal Premium Arvore Artificial",
+      "link": "https://s.shopee.com.br/5VWamqiqPi",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "enfeite-trenzinho-de-madeira-natalino-decoracao",
+      "produto": "Enfeite Trenzinho De Madeira Natalino Decoração",
+      "link": "https://s.shopee.com.br/6AmHa4gJ3u",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "kit-enfeites-decoracao-natalina-para-arvore",
+      "produto": "Kit Enfeites Decoração Natalina Para Árvore",
+      "link": "https://s.shopee.com.br/AUvGk2PoGq",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
     },
     {
       "slug": "papai-noel-escalador-30-40-na-escada-enfeite",
       "produto": "Papai Noel Escalador 30 40 na Escada Enfeite",
-      "de": "R$ 22,90",
-      "para": "R$ 23,90"
+      "link": "https://s.shopee.com.br/6VP7ygf2Nw",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
     },
     {
-      "slug": "cortina-luz-led-3-6x3m-com-8-modos-usb-natal-fadas",
-      "produto": "Cortina luz LED 3/6x3M com 8 Modos USB Natal Fadas",
-      "de": "R$ 36,91",
-      "para": "R$ 33,99"
-    }
-  ],
-  "semPreco": [
+      "slug": "fita-de-natal-decoracao-de-arvore-malha-tule-rolo",
+      "produto": "Fita De Natal Decoração De Árvore Malha Tule Rolo",
+      "link": "https://s.shopee.com.br/2gCPPdbtUx",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
     {
       "slug": "kit-12-enfeites-natalinos-de-pelucia-para-arvore",
       "produto": "Kit 12 Enfeites Natalinos de Pelúcia para Árvore",
@@ -109,10 +301,88 @@
       "motivo": "API Shopee: a API não achou esse produto (pode ter saído do ar ou do programa de afiliados)"
     },
     {
+      "slug": "10-azevinho-artificial-de-natal",
+      "produto": "10 azevinho artificial de natal",
+      "link": "https://s.shopee.com.br/LoUdLc79N",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "bola-decoracao-natal-arvore-colorida-luxo",
+      "produto": "Bola Decoração Natal Arvore Colorida Luxo",
+      "link": "https://s.shopee.com.br/30pFoFacoz",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "10m-cascata-400-led-8-funcoes-decoracao-natal-110v",
+      "produto": "10m Cascata 400 Led 8 Funções Decoração Natal 110v",
+      "link": "https://s.shopee.com.br/5q9RBShZjk",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "kit-manta-decorativa-4-capas-de-almofada-natal",
+      "produto": "Kit Manta Decorativa + 4 Capas de Almofada Natal",
+      "link": "https://s.shopee.com.br/3VlWPAQ3jK",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
       "slug": "12m-22m-32m-leds-solar-luzes-corda-lampada-ao-ar",
       "produto": "12M/22M/32M LEDs Solar Luzes Corda Lâmpada Ao Ar",
       "link": "https://s.shopee.com.br/906R8Oq8m0",
-      "motivo": "API Shopee: a API não achou esse produto (pode ter saído do ar ou do programa de afiliados)"
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "3m-bivolt-110v-220v-pisca-pisca-cortina-de-luz",
+      "produto": "3M Bivolt 110V–220V Pisca-pisca Cortina de Luz",
+      "link": "https://s.shopee.com.br/4qGtzccaE4",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "arvore-de-natal-pinheiro-1-5m-1-8m-2-1m-2-4m",
+      "produto": "Arvore De Natal Pinheiro 1,5m 1,8m 2,1m 2,4m",
+      "link": "https://s.shopee.com.br/50aKBvT0lZ",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "pisca-10m-100-leds-8-funcoes-220v-luz-de-natal",
+      "produto": "Pisca 10M 100 Leds 8 Funções 220V Luz De Natal",
+      "link": "https://s.shopee.com.br/7AeoluThUN",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "enfeites-de-natal-buque-galhos-bolha-de-barba",
+      "produto": "Enfeites De Natal Buque Galhos Bolha De Barba",
+      "link": "https://s.shopee.com.br/6L5hmNffiv",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "kit-enfeites-decoracao-para-arvore-de-natal",
+      "produto": "Kit Enfeites Decoração Para Arvore De Natal",
+      "link": "https://s.shopee.com.br/7fb5MpIrLo",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "kit-arvore-de-natal-completa-pisca-led-enfeites",
+      "produto": "Kit Árvore de Natal Completa Pisca LED Enfeites",
+      "link": "https://s.shopee.com.br/9fM9kVSyxd",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "cordao-strobo-natal-metros-bivolt-leds-pisca-prova",
+      "produto": "Cordão Strobo Natal Metros Bivolt Leds Pisca Prova",
+      "link": "https://s.shopee.com.br/30pFoFjYwh",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "10-unid-flores-artificiais-arvore-de-natal",
+      "produto": "10 Unid . Flores Artificiais Árvore De Natal",
+      "link": "https://s.shopee.com.br/7VHfAWJUgp",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "suporte-adesivo-para-pisca-decoracao-de-natal",
+      "produto": "Suporte Adesivo para Pisca Decoração de Natal",
+      "link": "https://s.shopee.com.br/5LDAaXagCq",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
     },
     {
       "slug": "kit-15-e-30-bolinhas-enfeite-arvore-de-natal-mista",
@@ -133,9 +403,9 @@
       "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
     },
     {
-      "slug": "pisca-strobo-cordao-enfeites-de-natal-decoracao",
-      "produto": "Pisca Strobo Cordão Enfeites de Natal Decoração",
-      "link": "https://s.shopee.com.br/4fxTnJdDZ3",
+      "slug": "festao-de-natal-verde-para-decoracao-enfeite",
+      "produto": "Festão de Natal Verde Para Decoração Enfeite",
+      "link": "https://s.shopee.com.br/9pfZwoSLce",
       "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
     },
     {
@@ -157,16 +427,10 @@
       "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
     },
     {
-      "slug": "festao-aramado-natal-grosso-2-7m-galhos-verde",
-      "produto": "Festão Aramado Natal Grosso 2,7m Galhos Verde",
-      "link": "https://s.shopee.com.br/6fiYAzeP2p",
-      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
-    },
-    {
       "slug": "arvore-de-natal-pinheiro-600-galhos-cheia-premium",
       "produto": "Árvore De Natal Pinheiro 600 Galhos Cheia Premium",
       "link": "https://s.shopee.com.br/20wXDnNYad",
-      "motivo": "API Shopee: a API não achou esse produto (pode ter saído do ar ou do programa de afiliados)"
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
     },
     {
       "slug": "kit-com-4-capas-de-almofada-natalina-decoracao",
@@ -223,9 +487,9 @@
       "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
     },
     {
-      "slug": "relogio-infantil-marvel-homem-aranha-capitao",
-      "produto": "Relógio Infantil Marvel Homem Aranha Capitão",
-      "link": "https://s.shopee.com.br/6q1yNIUyAH",
+      "slug": "projetor-luzes-natalino-enfeites-bivolt-16-padroes",
+      "produto": "Projetor Luzes Natalino Enfeites Bivolt 16 Padrões",
+      "link": "https://s.shopee.com.br/5fq0z9iD4j",
       "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
     },
     {
@@ -265,9 +529,9 @@
       "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
     },
     {
-      "slug": "fantasia-asa-borboleta-fada-com-led-pisca-completa",
-      "produto": "Fantasia Asa Borboleta Fada com LED Pisca Completa",
-      "link": "https://s.shopee.com.br/9pfZwoJY4d",
+      "slug": "12-pcs-pecas-anjo-enfeites-de-natal-de-madeira",
+      "produto": "12 Pçs Peças Anjo Enfeites De Natal De Madeira",
+      "link": "https://s.shopee.com.br/1Lh1pBYJ7j",
       "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
     },
     {
@@ -283,15 +547,315 @@
       "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
     },
     {
-      "slug": "200-hastes-trigo-seco-desidratado-para-decoracao",
-      "produto": "200 Hastes Trigo Seco Desidratado Para Decoração",
-      "link": "https://s.shopee.com.br/20wicPVllv",
+      "slug": "pisca-arroz-branco-quente-ou-colorida-natal",
+      "produto": "Pisca Arroz Branco Quente ou colorida Natal",
+      "link": "https://s.shopee.com.br/3LS6CriIGf",
       "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
     },
     {
       "slug": "pula-corda-giratorio-com-led-gira-led-pisca-pisca-2",
       "produto": "Pula Corda Giratório Com Led Gira LED Pisca/Pisca",
       "link": "https://s.shopee.com.br/30pCKj4iHL",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "jogo-de-lencol-400-fios-extra-macio-com-fronhas",
+      "produto": "Jogo de Lençol 400 Fios Extra Macio com Fronhas",
+      "link": "https://s.shopee.com.br/3qOKypJsBe",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "kit-potes-mantimentos-vidro-hermeticos-com-tampa",
+      "produto": "Kit Potes Mantimentos Vidro Herméticos Com Tampa",
+      "link": "https://s.shopee.com.br/AAIQLJyhl4",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "carregador-iphone-turbo-tipo-c-20w-cabo",
+      "produto": "Carregador iPhone Turbo Tipo-C 20W + Cabo",
+      "link": "https://s.shopee.com.br/BV2cAwxym",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "suporte-organizador-de-ovos-dispenser",
+      "produto": "Suporte Organizador De Ovos Dispenser",
+      "link": "https://s.shopee.com.br/1BNbcmEt04",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "suporte-para-telefone-principal-alca-de-montagem",
+      "produto": "Suporte Para Telefone Principal Alça De Montagem",
+      "link": "https://s.shopee.com.br/4fxTnKGoZ8",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "carregador-turbo-inteligente-v8-tipo-c-com-cabo",
+      "produto": "Carregador Turbo Inteligente + V8/tipo c com Cabo",
+      "link": "https://s.shopee.com.br/7KyEyEEyuF",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "tapete-eva-brinquedoteca-crossfit-academia",
+      "produto": "Tapete EVA Brinquedoteca Crossfit Academia",
+      "link": "https://s.shopee.com.br/9KjJLriBlj",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "colchonete-de-academia-profissional-compacto",
+      "produto": "Colchonete de Academia Profissional Compacto",
+      "link": "https://s.shopee.com.br/9APt9Yip6a",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "formas-de-silicone-quadrada-assadeira-air-fryer",
+      "produto": "Formas de Silicone Quadrada Assadeira Air Fryer",
+      "link": "https://s.shopee.com.br/30pFoAL2tA",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "cafeteira-eletrica-dolce-arome-mondial",
+      "produto": "Cafeteira Elétrica Dolce Arome Mondial",
+      "link": "https://s.shopee.com.br/AKbqXeJBOe",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "kit-10-ou-5-potes-vidro-hermetico-450ml-retangular",
+      "produto": "Kit 10 ou 5 Potes Vidro Hermético 450ml Retangular",
+      "link": "https://s.shopee.com.br/6L5hmHDIXh",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "kit-3-potes-hermeticos-com-cesto-escorredor-branco",
+      "produto": "Kit 3 Potes Herméticos com Cesto Escorredor Branco",
+      "link": "https://s.shopee.com.br/50aIMyt1vG",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "bolsa-organizadora-de-cabos-e-eletronicos",
+      "produto": "Bolsa Organizadora de Cabos e Eletrônicos",
+      "link": "https://s.shopee.com.br/9pfZwidZRG",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "bolsa-organizadora-de-cabos-e-eletronicos-2",
+      "produto": "Bolsa Organizadora de Cabos e Eletrônicos",
+      "link": "https://s.shopee.com.br/5q9RBMsnYc",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "mini-processador-de-alimentos-eletrico-triturador",
+      "produto": "Mini Processador de Alimentos Elétrico Triturador",
+      "link": "https://s.shopee.com.br/6q1yNDfmsI",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "funil-multifuncional-de-boca-larga-em-aco",
+      "produto": "Funil Multifuncional De Boca Larga Em Aço",
+      "link": "https://s.shopee.com.br/9pfTLFP5rQ",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "caneca-termica-cafe-400ml-aco-inox-304-com-tampa",
+      "produto": "Caneca Térmica Café 400ml Aço Inox 304 Com Tampa",
+      "link": "https://s.shopee.com.br/3qOMnlyOM8",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "adaptador-de-tomada-ultra-resistente-de-porcelana",
+      "produto": "Adaptador de Tomada Ultra Resistente de Porcelana",
+      "link": "https://s.shopee.com.br/W7upZUYxR",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "kit-4-potes-hermetico-multiuso-2l-com-bico-dosador",
+      "produto": "Kit 4 Potes Hermético Multiuso 2L com Bico Dosador",
+      "link": "https://s.shopee.com.br/LoSoPAnOY",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "kit-4-potes-hermeticos-1-litro",
+      "produto": "Kit 4 Potes Herméticos 1 Litro",
+      "link": "https://s.shopee.com.br/2BG6zm3ofx",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "carregador-rapido-de-120w-67w-com-6a-usb-c-cabo-1m",
+      "produto": "Carregador rápido de 120W 67W com 6A USB C cabo 1M",
+      "link": "https://s.shopee.com.br/AUvGk32vTY",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "copo-termico-cafe-450ml-inox-com-display-digital",
+      "produto": "Copo Térmico Cafe 450ml Inox com Display Digital",
+      "link": "https://s.shopee.com.br/1W0S1TyPGx",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "colchonete-eva-multiuso-academia-yoga-pilates",
+      "produto": "Colchonete EVA Multiuso Academia Yoga Pilates",
+      "link": "https://s.shopee.com.br/8fTcYdkj7X",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "mini-lampada-de-mesa-led-alimentada-por-bateria",
+      "produto": "Mini Lâmpada De Mesa LED Alimentada Por Bateria",
+      "link": "https://s.shopee.com.br/W7upfWg1V",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "promocao-atualizar-suporte-para-celular-e-tablet",
+      "produto": "PROMOÇÃO！Atualizar！Suporte Para Celular e Tablet",
+      "link": "https://s.shopee.com.br/8fTcYg1aSJ",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "jogo-de-lencol-400-fios-extra-macio-com-fronhas-2",
+      "produto": "Jogo de Lençol 400 Fios Extra Macio com Fronhas",
+      "link": "https://s.shopee.com.br/3qOKypJsBe",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "kit-potes-mantimentos-vidro-hermeticos-com-tampa-2",
+      "produto": "Kit Potes Mantimentos Vidro Herméticos Com Tampa",
+      "link": "https://s.shopee.com.br/AAIQLJyhl4",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "carregador-iphone-turbo-tipo-c-20w-cabo-2",
+      "produto": "Carregador iPhone Turbo Tipo-C 20W + Cabo",
+      "link": "https://s.shopee.com.br/BV2cAwxym",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "suporte-organizador-de-ovos-dispenser-2",
+      "produto": "Suporte Organizador De Ovos Dispenser",
+      "link": "https://s.shopee.com.br/1BNbcmEt04",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "suporte-para-telefone-principal-alca-de-montagem-2",
+      "produto": "Suporte Para Telefone Principal Alça De Montagem",
+      "link": "https://s.shopee.com.br/4fxTnKGoZ8",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "carregador-turbo-inteligente-v8-tipo-c-com-cabo-2",
+      "produto": "Carregador Turbo Inteligente + V8/tipo c com Cabo",
+      "link": "https://s.shopee.com.br/7KyEyEEyuF",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "tapete-eva-brinquedoteca-crossfit-academia-2",
+      "produto": "Tapete EVA Brinquedoteca Crossfit Academia",
+      "link": "https://s.shopee.com.br/9KjJLriBlj",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "colchonete-de-academia-profissional-compacto-2",
+      "produto": "Colchonete de Academia Profissional Compacto",
+      "link": "https://s.shopee.com.br/9APt9Yip6a",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "formas-de-silicone-quadrada-assadeira-air-fryer-2",
+      "produto": "Formas de Silicone Quadrada Assadeira Air Fryer",
+      "link": "https://s.shopee.com.br/30pFoAL2tA",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "cafeteira-eletrica-dolce-arome-mondial-2",
+      "produto": "Cafeteira Elétrica Dolce Arome Mondial",
+      "link": "https://s.shopee.com.br/AKbqXeJBOe",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "kit-10-ou-5-potes-vidro-hermetico-450ml-retangular-2",
+      "produto": "Kit 10 ou 5 Potes Vidro Hermético 450ml Retangular",
+      "link": "https://s.shopee.com.br/6L5hmHDIXh",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "kit-3-potes-hermeticos-com-cesto-escorredor-branco-2",
+      "produto": "Kit 3 Potes Herméticos com Cesto Escorredor Branco",
+      "link": "https://s.shopee.com.br/50aIMyt1vG",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "bolsa-organizadora-de-cabos-e-eletronicos-3",
+      "produto": "Bolsa Organizadora de Cabos e Eletrônicos",
+      "link": "https://s.shopee.com.br/9pfZwidZRG",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "bolsa-organizadora-de-cabos-e-eletronicos-4",
+      "produto": "Bolsa Organizadora de Cabos e Eletrônicos",
+      "link": "https://s.shopee.com.br/5q9RBMsnYc",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "mini-processador-de-alimentos-eletrico-triturador-2",
+      "produto": "Mini Processador de Alimentos Elétrico Triturador",
+      "link": "https://s.shopee.com.br/6q1yNDfmsI",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "funil-multifuncional-de-boca-larga-em-aco-2",
+      "produto": "Funil Multifuncional De Boca Larga Em Aço",
+      "link": "https://s.shopee.com.br/9pfTLFP5rQ",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "caneca-termica-cafe-400ml-aco-inox-304-com-tampa-2",
+      "produto": "Caneca Térmica Café 400ml Aço Inox 304 Com Tampa",
+      "link": "https://s.shopee.com.br/3qOMnlyOM8",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "adaptador-de-tomada-ultra-resistente-de-porcelana-2",
+      "produto": "Adaptador de Tomada Ultra Resistente de Porcelana",
+      "link": "https://s.shopee.com.br/W7upZUYxR",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "kit-4-potes-hermetico-multiuso-2l-com-bico-dosador-2",
+      "produto": "Kit 4 Potes Hermético Multiuso 2L com Bico Dosador",
+      "link": "https://s.shopee.com.br/LoSoPAnOY",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "kit-4-potes-hermeticos-1-litro-2",
+      "produto": "Kit 4 Potes Herméticos 1 Litro",
+      "link": "https://s.shopee.com.br/2BG6zm3ofx",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "carregador-rapido-de-120w-67w-com-6a-usb-c-cabo-1m-2",
+      "produto": "Carregador rápido de 120W 67W com 6A USB C cabo 1M",
+      "link": "https://s.shopee.com.br/AUvGk32vTY",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "copo-termico-cafe-450ml-inox-com-display-digital-2",
+      "produto": "Copo Térmico Cafe 450ml Inox com Display Digital",
+      "link": "https://s.shopee.com.br/1W0S1TyPGx",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "colchonete-eva-multiuso-academia-yoga-pilates-2",
+      "produto": "Colchonete EVA Multiuso Academia Yoga Pilates",
+      "link": "https://s.shopee.com.br/8fTcYdkj7X",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "mini-lampada-de-mesa-led-alimentada-por-bateria-2",
+      "produto": "Mini Lâmpada De Mesa LED Alimentada Por Bateria",
+      "link": "https://s.shopee.com.br/W7upfWg1V",
+      "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
+    },
+    {
+      "slug": "promocao-atualizar-suporte-para-celular-e-tablet-2",
+      "produto": "PROMOÇÃO！Atualizar！Suporte Para Celular e Tablet",
+      "link": "https://s.shopee.com.br/8fTcYg1aSJ",
       "motivo": "API Shopee: API Shopee 10030: Rate limit exceeded"
     }
   ],
@@ -304,6 +868,14 @@
       "atual": "R$ 3.772,00",
       "lido": "398,80",
       "referencia": "R$ 3.689,00"
+    },
+    {
+      "slug": "celular-samsung-galaxy-s26-fe-128gb-8gb-ram-tela",
+      "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
+      "link": "https://link.amazon/B054bueQi",
+      "atual": "R$ 3.999,00",
+      "lido": "690,84",
+      "referencia": "R$ 5.499,00"
     },
     {
       "slug": "iphone-18-pro-256gb-preto-somente-esim",
@@ -322,28 +894,12 @@
       "referencia": "preco posto a mao em 18/10 23:09"
     },
     {
-      "slug": "iphone-17-pro-max-256gb-laranja-cosmico",
-      "produto": "iPhone 17 Pro Max 256GB - Laranja-cósmico",
-      "link": "https://meli.la/2wS1Uaq",
-      "atual": "R$ 9.719,00",
-      "lido": "797,75",
-      "referencia": "R$ 8.199,00"
-    },
-    {
       "slug": "iphone-17-pro-256gb-laranja-cosmico",
       "produto": "iPhone 17 Pro 256GB - Laranja-cósmico",
       "link": "https://meli.la/2tshrR8",
       "atual": "R$ 7.680,00",
-      "lido": "759,30",
+      "lido": "788,06",
       "referencia": "R$ 7.799,00"
-    },
-    {
-      "slug": "kit-saco-a-vacuo-grande-organizador-edredom",
-      "produto": "Kit Saco A Vácuo Grande Organizador Edredom",
-      "link": "https://s.shopee.com.br/1qct6TiSlx",
-      "atual": "R$ 16,45",
-      "lido": "R$ 53,39",
-      "referencia": "R$ 19,90"
     },
     {
       "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
@@ -366,7 +922,7 @@
       "produto": "Celular Samsung Galaxy S26 5G, 512GB",
       "link": "https://meli.la/1WPbdmM",
       "atual": "R$ 5.714,00",
-      "lido": "557,48",
+      "lido": "599,90",
       "referencia": "R$ 5.798,00"
     },
     {
@@ -422,7 +978,7 @@
       "produto": "Marmita Elétrica Preta Bivolt Portátil Doméstica",
       "link": "https://meli.la/1o7bDku",
       "atual": "R$ 46,99",
-      "lido": "43,23",
+      "lido": "45,99",
       "referencia": "preco posto a mao em 28/10 10:16"
     },
     {
@@ -436,11 +992,11 @@
   ],
   "shopee": {
     "status": {
-      "quando": "2026-11-03T09:29:19Z",
+      "quando": "2026-11-03T15:51:46Z",
       "teste": false,
-      "links": 171,
-      "ok": 139,
-      "erros": 32
+      "links": 211,
+      "ok": 109,
+      "erros": 102
     }
   },
   "anuncios": {
