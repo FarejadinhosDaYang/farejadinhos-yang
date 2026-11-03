@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juntar parecidos | Painel Farejadinhos</title>
+<link rel="icon" href="../assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+    --red:#E5232E; --red-dark:#C21A24; --orange:#F7941D; --cream:#FDF3E3; --cream-2:#FFFAF1;
+    --ink:#2B1B12; --muted:#8A7563; --line:#F0DFC4; --verde:#1F7A44;
+}
+*{box-sizing:border-box}
+body{margin:0;padding:20px 16px 60px;background:var(--cream);font-family:'Work Sans',Arial,sans-serif;color:var(--ink)}
+.container{max-width:920px;margin:auto}
+.voltar{display:inline-block;margin-bottom:16px;color:var(--red-dark);font-weight:700;text-decoration:none;font-size:14px}
+h1{font-family:'Baloo 2',sans-serif;color:var(--red-dark);font-size:26px;margin:0 0 4px}
+.sub{color:var(--muted);font-size:14px;line-height:1.5;margin:0 0 16px}
+.caixa{background:var(--cream-2);border:1.5px solid var(--line);border-radius:16px;padding:14px 16px;margin-bottom:14px}
+label.l{display:block;font-weight:700;font-size:12.5px;margin:0 0 3px}
+input[type=password],input[type=search]{width:100%;padding:10px 11px;border:1.5px solid var(--line);border-radius:10px;font:500 14px 'Work Sans',sans-serif;background:#fff}
+.barra{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px}
+.barra input[type=search]{flex:1 1 220px}
+.chip{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font:700 12.5px 'Work Sans',sans-serif;cursor:pointer;color:var(--ink)}
+.chip.ativo{background:var(--ink);border-color:var(--ink);color:#fff}
+.resumo{font-size:13px;color:var(--muted);margin:8px 2px 0}
+.grupo{background:#fff;border:1.5px solid var(--line);border-radius:16px;margin-top:12px;overflow:hidden;box-shadow:0 4px 14px rgba(43,27,18,.05)}
+.grupo.feito{opacity:.55}
+.g-topo{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 14px;background:var(--cream-2);border-bottom:1px solid var(--line)}
+.g-topo b{font-family:'Baloo 2',sans-serif;font-size:16px}
+.g-topo .dica{font-size:12px;color:var(--muted)}
+.g-ignorar{border:0;background:none;color:var(--muted);font-weight:700;cursor:pointer;font-size:12.5px}
+.linha{display:grid;grid-template-columns:auto 54px 1fr auto;gap:10px;align-items:center;padding:9px 14px;border-bottom:1px solid #F6EBDA}
+.linha:last-of-type{border-bottom:0}
+.linha.principal{background:#F2FBF5}
+.linha img{width:54px;height:54px;object-fit:contain;border-radius:9px;background:#fff;border:1px solid var(--line)}
+.linha .sem{width:54px;height:54px;border-radius:9px;background:#F6EBDA;display:flex;align-items:center;justify-content:center;font-size:20px}
+.marcas{display:flex;flex-direction:column;gap:6px;align-items:center;font-size:11px;color:var(--muted)}
+.marcas input{width:18px;height:18px;margin:0;cursor:pointer}
+.nome{font-weight:600;font-size:14px;line-height:1.3}
+.nome a{color:inherit}
+.meta{display:flex;flex-wrap:wrap;gap:4px 8px;font-size:12px;color:var(--muted);margin-top:3px;align-items:center}
+.st{display:inline-block;padding:1px 8px;border-radius:999px;font-weight:700;font-size:11px}
+.st.noar{background:#E6F6EC;color:var(--verde)}
+.st.fila{background:#FFF1DE;color:#8A4B00}
+.st.fora{background:#EEE;color:#666}
+.st.antigo{background:#EFE7FB;color:#5B3FA0}
+.st.repetida{background:#FDE8E8;color:var(--red-dark)}
+.dir{text-align:right}
+.preco{font:800 16px 'Baloo 2',sans-serif;color:var(--red-dark);white-space:nowrap}
+.var{margin-top:5px;width:150px;padding:6px 8px;border:1.5px solid var(--line);border-radius:8px;font:500 12.5px 'Work Sans',sans-serif}
+.g-acoes{display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:10px 14px;background:var(--cream-2);border-top:1px solid var(--line)}
+.g-acoes .obs{font-size:12px;color:var(--muted);flex:1 1 260px}
+.btn{border:0;border-radius:10px;padding:10px 14px;font:800 14.5px 'Baloo 2','Work Sans',sans-serif;cursor:pointer;background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff}
+.btn:disabled{opacity:.55;cursor:default}
+.msg{font-size:13px;font-weight:600;padding:0 14px 10px}
+.msg.erro{color:var(--red-dark)}.msg.ok{color:var(--verde)}
+.vazio{color:var(--muted);padding:20px 4px}
+@media(max-width:600px){.linha{grid-template-columns:auto 44px 1fr}.linha img,.linha .sem{width:44px;height:44px}.dir{grid-column:2/-1;text-align:left;display:flex;gap:8px;align-items:center;flex-wrap:wrap}.var{margin-top:0}}
+</style>
+</head>
+<body>
+<div class="container">
+<a class="voltar" href="index.html">← Voltar pro painel</a>
+<h1>🔗 Juntar anúncios parecidos</h1>
+<p class="sub">A Yang procurou ofertas com nome parecido — <b>no ar, na fila, fora do ar</b> e até <b>produtos antigos</b> que já saíram do site mas cujo link ainda temos. Em cada grupo, escolha a oferta <b>principal</b> (⭐), marque quais juntar nela e, se for outra cor/versão, escreva qual. As marcadas viram "outros anúncios" da principal e somem da vitrine como oferta separada.</p>
+
+<div class="caixa">
+<label class="l" for="senha">Senha do painel</label>
+<input type="password" id="senha" placeholder="Senha do painel">
+<div class="barra">
+<input type="search" id="busca" placeholder="🔎 Filtrar grupos pelo nome">
+<button class="chip ativo" data-f="todos" type="button">Todos</button>
+<button class="chip" data-f="repetidas" type="button">Só repetidas (mesmo nome)</button>
+<button class="chip" data-f="antigos" type="button">Com links antigos</button>
+</div>
+<div class="resumo" id="resumo">Farejando…</div>
+</div>
+
+<div id="lista"></div>
+</div>
+
+<script src="../assets/vitrine.js"></script>
+<script>
+const WORKER_URL = "https://holy-pine-e7fc.bernard-shimizu.workers.dev";
+const CHAVE_IGNORADOS = "farejadinhos_parecidos_ignorados";
+let grupos = [], filtro = "todos";
+
+function esc(t){ const d = document.createElement("div"); d.textContent = t == null ? "" : String(t); return d.innerHTML; }
+function semAcento(t){ return String(t || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""); }
+const PARADAS = new Set("de da do das dos para com e em a o os as kit un und pcs pecas peca novo nova original premium promocao oferta frete gratis envio imediato pronta entrega".split(" "));
+function palavras(nome){
+  return [...new Set(semAcento(nome).replace(/&#?\w+;/g, " ").replace(/[^a-z0-9 ]/g, " ").split(/\s+/).filter(w => w.length > 1 && !PARADAS.has(w)))];
+}
+function parecidos(a, b){
+  if(!a.p.length || !b.p.length) return false;
+  const sa = new Set(a.p), comum = b.p.filter(w => sa.has(w)).length;
+  const j = comum / (a.p.length + b.p.length - comum);
+  // números/modelos (ex.: 370ml x 450ml, s25 x s26) diferentes: exige mais parecido
+  const na = a.p.filter(w => /\d/.test(w)).sort().join(" "), nb = b.p.filter(w => /\d/.test(w)).sort().join(" ");
+  return (na && nb && na !== nb) ? j >= 0.8 : j >= 0.6;
+}
+function numero(p){ return FarejadinhosVitrine.numeroPreco(p); }
+function reais(n){ return n ? "R$ " + Number(n).toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : "—"; }
+function ignorados(){ try{ return new Set(JSON.parse(localStorage.getItem(CHAVE_IGNORADOS) || "[]")); }catch(e){ return new Set(); } }
+function ignorar(chave){ const s = ignorados(); s.add(chave); try{ localStorage.setItem(CHAVE_IGNORADOS, JSON.stringify([...s])); }catch(e){} }
+
+try{ document.getElementById("senha").value = localStorage.getItem("farejadinhos_admin_senha") || ""; }catch(e){}
+
+Promise.all([
+  fetch("../ofertas.json?t=" + Date.now(), { cache: "no-store" }).then(r => r.json()),
+  fetch("../historico-precos.json?t=" + Date.now(), { cache: "no-store" }).then(r => r.ok ? r.json() : {}).catch(() => ({}))
+]).then(([ofertas, hist]) => {
+  const V = FarejadinhosVitrine, agora = new Date();
+  const sel = V.selecionar(ofertas, agora);
+  const ligados = new Set();
+  ofertas.forEach(o => { ligados.add(o.link); (o.anuncios || []).forEach(a => ligados.add(a.link)); });
+  const itens = ofertas.filter(o => o && o.slug && o.produto).map(o => {
+    const s = V.status(o, sel, agora);
+    const st = ["fresca", "reserva", "adiantada", "permanente"].includes(s) ? "noar" : s === "agendada" ? "fila" : "fora";
+    return { tipo: "site", o, slug: o.slug, nome: o.produto, link: o.link, valor: numero(o.preco), img: o.imagem ? "../assets/" + encodeURIComponent(o.imagem) : "",
+      st, cat: o.categoria || "", extras: (o.anuncios || []).length, p: palavras(o.produto) };
+  });
+  const vistos = new Set();
+  Object.values((hist && hist.produtos) || {}).forEach(h => {
+    (h.links || []).forEach(l => {
+      if(!l || ligados.has(l) || vistos.has(l)) return;
+      vistos.add(l);
+      const pts = h.pontos || [];
+      itens.push({ tipo: "antigo", nome: h.nome || h.nomeCompleto || "", link: l, valor: pts.length ? pts[pts.length - 1][1] : 0,
+        quando: pts.length ? pts[pts.length - 1][0] : "", img: h.imagem ? "../assets/" + encodeURIComponent(h.imagem) : "", st: "antigo", cat: h.categoria || "", p: palavras(h.nome || "") });
+    });
+  });
+  // agrupa (união de pares parecidos)
+  const pai = itens.map((_, i) => i);
+  const raiz = i => { while(pai[i] !== i){ pai[i] = pai[pai[i]]; i = pai[i]; } return i; };
+  for(let i = 0; i < itens.length; i++) for(let k = i + 1; k < itens.length; k++){
+    if(itens[i].tipo === "antigo" && itens[k].tipo === "antigo") continue;
+    if(parecidos(itens[i], itens[k])) pai[raiz(i)] = raiz(k);
+  }
+  const mapa = {};
+  itens.forEach((it, i) => (mapa[raiz(i)] = mapa[raiz(i)] || []).push(it));
+  const ign = ignorados();
+  grupos = Object.values(mapa).filter(g => g.length > 1 && g.some(x => x.tipo === "site")).map(g => {
+    const chave = g.map(x => x.link).sort().join("|");
+    const ordem = { noar: 0, fila: 1, fora: 2, antigo: 3 };
+    g.sort((a, b) => ordem[a.st] - ordem[b.st] || (b.extras || 0) - (a.extras || 0));
+    const principal = g.find(x => x.tipo === "site");
+    const repetida = g.filter(x => x.tipo === "site").every(x => semAcento(x.nome) === semAcento(principal.nome));
+    return { chave, itens: g, principal, repetida, antigos: g.some(x => x.tipo === "antigo") };
+  }).filter(g => !ign.has(g.chave))
+    .sort((a, b) => (b.repetida - a.repetida) || (b.itens.length - a.itens.length));
+  desenhar();
+}).catch(e => { document.getElementById("resumo").textContent = "❌ Não consegui carregar as ofertas: " + e.message; });
+
+document.querySelectorAll(".chip").forEach(c => c.onclick = () => {
+  filtro = c.dataset.f;
+  document.querySelectorAll(".chip").forEach(x => x.classList.toggle("ativo", x === c));
+  desenhar();
+});
+document.getElementById("busca").addEventListener("input", () => { clearTimeout(window._t); window._t = setTimeout(desenhar, 200); });
+
+function desenhar(){
+  const termo = semAcento(document.getElementById("busca").value).trim();
+  const lista = grupos.filter(g => (filtro === "todos" || (filtro === "repetidas" ? g.repetida : g.antigos)) &&
+    (!termo || g.itens.some(x => semAcento(x.nome).includes(termo))));
+  document.getElementById("resumo").textContent = `${lista.length} grupo(s) de anúncios parecidos` +
+    (grupos.length !== lista.length ? ` (de ${grupos.length})` : "") + ". Os de nome igual vêm primeiro.";
+  const el = document.getElementById("lista");
+  if(!lista.length){ el.innerHTML = '<div class="vazio">Nenhum grupo com esse filtro. 🐾</div>'; return; }
+  el.innerHTML = lista.map((g, gi) => {
+    const id = grupos.indexOf(g);
+    return `<div class="grupo${g.feito ? " feito" : ""}" data-g="${id}">
+      <div class="g-topo"><div><b>${g.itens.length} anúncios parecidos</b> <span class="dica">${g.repetida ? "· mesmo nome" : "· confira se é o mesmo produto"}</span></div>
+        <button class="g-ignorar" type="button">Não são o mesmo · ignorar</button></div>
+      ${g.itens.map((x, i) => {
+        const principal = x === g.principal;
+        const mesmoLink = x.tipo === "site" && !principal && x.link === g.principal.link;
+        const marcar = !principal && (semAcento(x.nome) === semAcento(g.principal.nome) || mesmoLink);
+        const st = { noar: "no ar", fila: "na fila", fora: "fora do ar", antigo: "já saiu · só o link" }[x.st];
+        return `<div class="linha${principal ? " principal" : ""}" data-i="${i}">
+          <div class="marcas">
+            ${x.tipo === "site" ? `<label title="Oferta principal"><input type="radio" name="p${id}" ${principal ? "checked" : ""}>⭐</label>` : `<span style="height:18px"></span>`}
+            <label title="Juntar na principal"><input type="checkbox" class="junta" ${marcar ? "checked" : ""} ${principal ? "disabled" : ""}>🔗</label>
+          </div>
+          ${x.img ? `<img src="${x.img}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'sem',textContent:'📦'}))">` : `<div class="sem">📦</div>`}
+          <div><div class="nome">${x.tipo === "site" ? `<a href="../ofertas/${encodeURIComponent(x.slug)}/" target="_blank">${esc(x.nome)}</a>` : esc(x.nome)}</div>
+            <div class="meta"><span class="st ${x.st}">${st}</span>${mesmoLink ? '<span class="st repetida">mesmo link (repetida)</span>' : ""}<span>${esc(FarejadinhosVitrine.lojaDe(x.link).nome)}</span>${x.cat ? `<span>${esc(x.cat)}</span>` : ""}${x.extras ? `<span>+${x.extras} anúncio(s)</span>` : ""}<a href="${esc(x.link)}" target="_blank" rel="noopener">abrir ↗</a></div></div>
+          <div class="dir"><div class="preco">${reais(x.valor)}</div>${principal ? "" : `<input class="var" placeholder="cor/versão (opcional)">`}</div>
+        </div>`;
+      }).join("")}
+      <div class="g-acoes"><span class="obs">⭐ = fica no site com tudo junto · 🔗 = vira anúncio da principal${g.antigos ? " · links antigos entram com o preço a confirmar (a conferência lê de novo na loja)" : ""}</span>
+        <button class="btn g-juntar" type="button" ${g.feito ? "disabled" : ""}>${g.feito ? "✅ Juntado" : "🔗 Juntar marcados"}</button></div>
+      <div class="msg"></div>
+    </div>`;
+  }).join("");
+
+  el.querySelectorAll(".grupo").forEach(div => {
+    const g = grupos[+div.dataset.g];
+    div.querySelectorAll(".linha").forEach(l => {
+      const r = l.querySelector("input[type=radio]");
+      if(r) r.onchange = () => { g.principal = g.itens[+l.dataset.i]; desenhar(); };
+    });
+    div.querySelector(".g-ignorar").onclick = () => { ignorar(g.chave); grupos = grupos.filter(x => x !== g); desenhar(); };
+    div.querySelector(".g-juntar").onclick = function(){ juntar(g, div, this); };
+  });
+}
+
+async function juntar(g, div, btn){
+  const msg = div.querySelector(".msg");
+  const senha = document.getElementById("senha").value.trim();
+  if(!senha){ msg.className = "msg erro"; msg.textContent = "Digite a senha do painel lá em cima."; return; }
+  const p = g.principal, ops = [];
+  div.querySelectorAll(".linha").forEach(l => {
+    const x = g.itens[+l.dataset.i];
+    if(x === p || !l.querySelector(".junta").checked) return;
+    const variacao = (l.querySelector(".var") || {}).value || "";
+    if(x.tipo === "site") ops.push({ acao: "anuncios", op: "juntar", slug: p.slug, de: x.slug, variacao: variacao.trim(), tirar: true });
+    else ops.push({ acao: "anuncios", op: "adicionar", slug: p.slug, link: x.link, preco: x.valor ? String(x.valor).replace(".", ",") : "",
+      loja: FarejadinhosVitrine.lojaDe(x.link).nome, variacao: variacao.trim(), imagem: x.img ? new URL(x.img, location.href).href : "", auto: true });
+  });
+  if(!ops.length){ msg.className = "msg erro"; msg.textContent = "Marque pelo menos um 🔗 pra juntar."; return; }
+  const aviso = p.st === "noar" ? "" : `\n\n⚠️ A principal está ${p.st === "fila" ? "NA FILA (aparece quando for liberada)" : "FORA DO AR"} — as juntadas somem junto até ela voltar.`;
+  if(!confirm(`Juntar ${ops.length} anúncio(s) em "${p.nome}"?\n\nAs ofertas juntadas saem da vitrine como ofertas separadas e passam a aparecer dentro desta.` + aviso)) return;
+  btn.disabled = true; btn.textContent = "Juntando...";
+  try{
+    const dados = new FormData();
+    dados.append("senha", senha);
+    dados.append("itens", JSON.stringify(ops));
+    const r = await fetch(WORKER_URL + "/lote", { method: "POST", body: dados });
+    const t = await r.text();
+    if(r.status === 401) throw new Error("Senha incorreta.");
+    if(!r.ok) throw new Error(t);
+    try{ localStorage.setItem("farejadinhos_admin_senha", senha); }catch(e){}
+    g.feito = true; ignorar(g.chave);
+    msg.className = "msg ok"; msg.textContent = "✅ Pedido enviado! Aparece no site em 1–2 minutos.";
+    btn.textContent = "✅ Juntado";
+    div.classList.add("feito");
+  }catch(e){ msg.className = "msg erro"; msg.textContent = "❌ " + e.message; btn.disabled = false; btn.textContent = "🔗 Juntar marcados"; }
+}
+</script>
+</body>
+</html>

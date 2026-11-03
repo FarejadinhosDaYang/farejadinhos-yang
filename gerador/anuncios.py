@@ -135,9 +135,12 @@ def main(arquivo):
                 continue
             n = numero(it.get("preco"))
             agora = agora_iso()
+            # "auto": preço antigo (ex.: link de uma oferta que já saiu) — só vale
+            # depois que a conferência automática ler de novo na loja
+            auto = bool(it.get("auto"))
             novo = {"link": link, "loja": str(it.get("loja") or "").strip() or loja_de(link),
-                    "preco": preco_br(n) if n else "", "conferido": agora,
-                    "manual": agora if n else "", "confirmado": bool(n)}
+                    "preco": preco_br(n) if n else "", "conferido": "" if auto else agora,
+                    "manual": agora if n and not auto else "", "confirmado": bool(n) and not auto}
             novo.update({k: v for k, v in extras.items() if v})
             lista = sem_este + [novo]
             print(f"  adicionado em {o['slug']}: {novo['loja']} {novo['preco']}")
