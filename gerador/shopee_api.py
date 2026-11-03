@@ -93,7 +93,20 @@ def resolver(link):
 
 
 # ---------------- API ----------------
-def consultar(shop_id, item_id):
+def consultar(shop_id, item_id, tentativas=4):
+    """Com limite de pedidos (erro 10030), espera e tenta de novo (15s, 30s, 60s)."""
+    for i in range(tentativas):
+        try:
+            return _consultar(shop_id, item_id)
+        except RuntimeError as e:
+            if "10030" not in str(e) or i == tentativas - 1:
+                raise
+            espera = 15 * (2 ** i)
+            print(f"  API Shopee no limite de pedidos; esperando {espera}s...")
+            time.sleep(espera)
+
+
+def _consultar(shop_id, item_id):
     app_id, secret = chaves()
     query = ("{productOfferV2(shopId:%s,itemId:%s,limit:1){nodes{itemId shopId productName "
              "priceMin priceMax priceDiscountRate imageUrl offerLink productLink}}}" % (int(shop_id), int(item_id)))
@@ -198,7 +211,7 @@ def lote(saida, teste=False, limite=0):
                 ok += 1
             else:
                 erros += 1
-            time.sleep(0.25)
+            time.sleep(0.8)  # devagar: a API tem limite de pedidos por minuto
         resultado["_status"].update({"links": len(links), "ok": ok, "erros": erros})
         print(f"API Shopee: {ok} preço(s) lido(s), {erros} sem preço, de {len(links)} link(s).")
         salvar_cache(cache)
