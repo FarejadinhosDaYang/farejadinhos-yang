@@ -1104,7 +1104,18 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-26T11:59:25Z",
-    "precoConferido": "2026-11-02T07:42:05Z"
+    "precoConferido": "2026-11-02T07:42:05Z",
+    "anuncios": [
+      {
+        "link": "https://s.shopee.com.br/6L5XvU7ThA",
+        "loja": "Shopee",
+        "preco": "R$ 34,99",
+        "conferido": "2026-10-28T00:41:11Z",
+        "manual": "2026-11-03T22:22:36Z",
+        "confirmado": true,
+        "imagem": "https://farejadinhosdayang.com.br/assets/c416ac11-699e-48ae-addb-b7b12d017a75.jpg"
+      }
+    ]
   },
   {
     "produto": "Arranhador Adesivo Premium: Sofá, Cama e Móveis",
@@ -1471,22 +1482,6 @@
     "precoAPrazo": "",
     "liberacao": "2026-10-28T18:10:48Z",
     "precoConferido": "2026-11-03T15:56:10Z"
-  },
-  {
-    "produto": "Kit Máquina Para Tosar Pet + Tesoura + Pente",
-    "preco": "R$ 34,99",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Pet",
-    "destaque": false,
-    "imagem": "c416ac11-699e-48ae-addb-b7b12d017a75.jpg",
-    "link": "https://s.shopee.com.br/6L5XvU7ThA",
-    "url": "https://farejadinhosdayang.com.br/ofertas/kit-maquina-para-tosar-pet-tesoura-pente-2/",
-    "slug": "kit-maquina-para-tosar-pet-tesoura-pente-2",
-    "data": "2026-10-28T00:41:11Z",
-    "precoAVista": "",
-    "precoAPrazo": "",
-    "liberacao": "2026-10-28T20:07:43Z"
   },
   {
     "produto": "Kit 5 Faixa Elástica Super Mini Band Para Treino",
