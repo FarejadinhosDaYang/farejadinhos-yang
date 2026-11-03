@@ -2410,22 +2410,6 @@
     "liberacao": "2026-10-31T00:01:41Z"
   },
   {
-    "produto": "Principia Protetor Solar PS-05 Cor 4.0 com 14,5%",
-    "preco": "R$ 49,00",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Skincare",
-    "destaque": false,
-    "imagem": "019aea3e-06a4-4b78-bcb6-cd1132c504cb.jpg",
-    "link": "https://s.shopee.com.br/1141ZgEeR7",
-    "url": "https://farejadinhosdayang.com.br/ofertas/principia-protetor-solar-ps-05-cor-4-0-com-14-5/",
-    "slug": "principia-protetor-solar-ps-05-cor-4-0-com-14-5",
-    "data": "2026-10-28T13:48:15Z",
-    "precoAVista": "",
-    "precoAPrazo": "",
-    "liberacao": "2026-10-31T14:30:00Z"
-  },
-  {
     "produto": "Creme Calmante Multirreparador Facial CM-01",
     "preco": "R$ 49,00",
     "precoAntigo": "",
@@ -2465,6 +2449,16 @@
         "manual": "2026-11-03T18:16:04Z",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/b25e1400-d31f-428b-9a41-f1bc2d4a2bd0.jpg",
+        "variacao": "Cor"
+      },
+      {
+        "link": "https://s.shopee.com.br/1141ZgEeR7",
+        "loja": "Shopee",
+        "preco": "R$ 49,00",
+        "conferido": "2026-10-28T13:48:15Z",
+        "manual": "2026-11-03T18:16:50Z",
+        "confirmado": true,
+        "imagem": "https://farejadinhosdayang.com.br/assets/019aea3e-06a4-4b78-bcb6-cd1132c504cb.jpg",
         "variacao": "Cor"
       }
     ]
