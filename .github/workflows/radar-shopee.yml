@@ -65,11 +65,14 @@ jobs:
             python3 gerador/radar_shopee.py
           fi
 
+      - name: Lista Black November (descontos de verdade)
+        run: python3 gerador/black_lista.py || true
+
       - name: Salvar no GitHub
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for f in radar/radar.json radar/ml-status.json; do if [ -f "$f" ]; then git add "$f"; fi; done
+          for f in radar/radar.json radar/ml-status.json temporada/black.json; do if [ -f "$f" ]; then git add "$f"; fi; done
           if git diff --cached --quiet; then echo "Nada novo."; exit 0; fi
           git commit -m "Radar da Yang atualizado"
           for i in 1 2 3; do

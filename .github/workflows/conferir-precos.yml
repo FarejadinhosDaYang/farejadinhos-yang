@@ -47,6 +47,12 @@ jobs:
         run: |
           python gerador/conferir-anuncios.py
 
+      - name: Lista Black November (descontos de verdade)
+        shell: pwsh
+        run: |
+          python gerador/black_lista.py
+          if ($LASTEXITCODE -ne 0) { Write-Warning "black_lista falhou"; $global:LASTEXITCODE = 0 }
+
       - name: Salvar no GitHub
         shell: pwsh
         run: |
@@ -56,6 +62,7 @@ jobs:
           git add ofertas ofertas.json
           # lista de preços barrados (só muda quando aparece/some um suspeito)
           git add precos/suspeitos.json
+          if (Test-Path temporada/black.json) { git add temporada/black.json }
           # códigos dos produtos da Shopee (pra API não precisar abrir o link toda vez)
           if (Test-Path precos/shopee-ids.json) { git add precos/shopee-ids.json }
           # relatório: sempre que o botão pedir, ou quando algum preço mudou

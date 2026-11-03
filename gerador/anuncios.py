@@ -42,6 +42,20 @@ def main(arquivo):
             print(f"  categoria de {o['slug']}: {o['categoria']}")
             mudou = True
             continue
+        if it.get("op") == "black":
+            # Black November: "auto" (pelo desconto), true (sempre) ou false (nunca)
+            o = por_slug.get(it.get("slug"))
+            if not o:
+                print(f"  ignorado (black): {it.get('slug')}")
+                continue
+            v = it.get("black")
+            if v is True or v is False:
+                o["black"] = v
+            else:
+                o.pop("black", None)
+            print(f"  black de {o['slug']}: {o.get('black', 'auto')}")
+            mudou = True
+            continue
         if it.get("op") == "fixar":
             o = por_slug.get(it.get("slug"))
             if not o:

@@ -1039,6 +1039,8 @@ footer a{ color:var(--red-dark); font-weight:600; text-decoration:none; }
 
 <div class="hero-dots" id="heroDots"></div>
 </div>
+<!-- Temporada especial (Black November): entra como 1º slide, antes do carrossel começar -->
+<script src="assets/temporada.js" data-base=""></script>
 
 <!-- Botões de cupons das lojas -->
 <nav class="cupons-lojas" aria-label="Cupons das lojas">
@@ -1255,6 +1257,8 @@ async function carregar(){
     // mais recentes de até 3 dias quando faltar pra chegar a 15.
     // A regra completa está em assets/vitrine.js.
     ofertas = FarejadinhosVitrine.selecionar(todas, new Date()).visiveis;
+    // Black November: espera a lista de descontos de verdade (rápido; no máx. 2,5s)
+    if(window.FarejadinhosTemporada && FarejadinhosTemporada.ativa()) { try{ await FarejadinhosTemporada.pronto; }catch(e){} }
 
     // "Outros" não existe mais: o que estiver nela aparece em Utilidades
     ofertas.forEach(o => { if((o.categoria || "").trim() === "Outros") o.categoria = "Utilidades"; });
@@ -1405,7 +1409,26 @@ function montarPrateleiras(){
         .filter(c => porCategoria[c].length >= 2)
         .sort((a, b) => porCategoria[b].length - porCategoria[a].length || a.localeCompare(b, "pt-BR"));
 
-    container.innerHTML = categorias.map(c => {
+    // 🖤 Black November: prateleira especial no topo (maiores descontos primeiro)
+    let htmlBlack = "";
+    const blacks = ofertas.filter(o => FarejadinhosVitrine.ehBlack && FarejadinhosVitrine.ehBlack(o))
+        .sort((a, b) => FarejadinhosVitrine.descontoPct(b) - FarejadinhosVitrine.descontoPct(a));
+    if(blacks.length >= 2){
+        htmlBlack = `
+        <section class="prateleira black-prateleira" id="blackSecao">
+            <div class="secao-head">
+                <h2 class="prateleira-titulo"><span class="ic">🖤</span>Black November da Yang</h2>
+                <span class="contagem">${blacks.length} ofertas com desconto de verdade</span>
+            </div>
+            <div class="trilho-wrap">
+                <button type="button" class="trilho-seta esq" aria-label="Voltar" hidden>‹</button>
+                <div class="trilho">${blacks.map(cardHtml).join("")}</div>
+                <button type="button" class="trilho-seta dir" aria-label="Avançar">›</button>
+            </div>
+        </section>`;
+    }
+
+    container.innerHTML = htmlBlack + categorias.map(c => {
         const padrao = ICONES_CATEGORIA[c] || { icone: "📦", cor: "var(--muted)" };
         const lista = porCategoria[c];
         return `
@@ -1612,6 +1635,11 @@ function cardHtml(o){
         let badgeCanto = "";
         if(o.destaque){
             badgeCanto = `<div class="badge-canto">⭐ Destaque</div>`;
+        }
+        if(FarejadinhosVitrine.ehBlack && FarejadinhosVitrine.ehBlack(o)){
+            // sem "-X%" no card (oferta sem preço de antes)? mostra o desconto da lista Black
+            const pctBlack = badgeDesconto ? 0 : FarejadinhosVitrine.descontoPct(o);
+            badgeCanto += `<div class="badge-black">BLACK${pctBlack ? " · -" + pctBlack + "%" : ""}</div>`;
         }
 
         const oldHtml = o.precoAntigo

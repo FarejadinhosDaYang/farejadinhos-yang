@@ -62,6 +62,15 @@ window.FAREJA_ICONES_CAT = {
 
     script.insertAdjacentHTML("beforebegin", html);
 
+    // Temporada especial (Black November): na página inicial o index.html
+    // carrega direto, antes do carrossel; nas outras, carrega daqui.
+    if (!home && !window.FarejadinhosTemporada) {
+        var tp = document.createElement("script");
+        tp.src = base + "assets/temporada.js";
+        tp.setAttribute("data-base", base);
+        document.head.appendChild(tp);
+    }
+
     // ======================================================
     // CATEGORIAS NO AR (lateral no computador + menu no celular)
     // ======================================================

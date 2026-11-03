@@ -200,6 +200,23 @@
         var slug = slugAtual();
         var atual = todas.filter(function (o) { return o && o.slug === slug; })[0];
         try { montarAnuncios(atual); } catch (e) {}
+        // 🖤 selo Black November (a temporada.js pode chegar um pouco depois)
+        (function seloBlack(tentativas) {
+            var V = window.FarejadinhosVitrine;
+            if (!window.FarejadinhosTemporada && tentativas > 0) { setTimeout(function () { seloBlack(tentativas - 1); }, 300); return; }
+            if (window.FarejadinhosTemporada && window.FarejadinhosTemporada.pronto && !seloBlack.esperou) {
+                seloBlack.esperou = true;
+                window.FarejadinhosTemporada.pronto.then(function () { seloBlack(0); });
+                return;
+            }
+            var preco = document.querySelector(".price");
+            if (!atual || !V || !V.ehBlack || !V.ehBlack(atual) || !preco || document.querySelector(".selo-black-oferta")) return;
+            var selo = document.createElement("div");
+            selo.className = "selo-black-oferta";
+            var pct = V.descontoPct(atual);
+            selo.textContent = "🖤 OFERTA BLACK NOVEMBER" + (pct ? " · -" + pct + "%" : "");
+            preco.parentNode.insertBefore(selo, preco);
+        })(10);
         // 🏷️ cupons da loja desse produto (área de cupons do site)
         try {
             var depoisCupom = document.querySelector(".anc-box") || document.querySelector(".card a.btn, a.btn");

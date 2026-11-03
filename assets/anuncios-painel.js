@@ -53,6 +53,9 @@ css.textContent += `
 .anunciosBox .ancFixo{display:block;margin:0 0 12px;padding:9px 10px;background:#FFF6E9;border:1.5px solid #F7941D;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer}
 .anunciosBox .ancFixo input{width:auto;margin:0 4px 0 0;vertical-align:-2px}
 .anunciosBox .ancFixo span{font-weight:400;color:var(--muted)}`;
+css.textContent += `
+.anunciosBox .ancBlack{background:#1A1411;border-color:#FFC24A;color:#FFE7B8}
+.anunciosBox .ancBlack select{display:block;width:100%;margin-top:6px;padding:7px 8px;border-radius:8px;border:1.5px solid #FFC24A;background:#0E0B0A;color:#FFE7B8;font:600 13px 'Work Sans',sans-serif}`;
 document.head.appendChild(css);
 
 // ============ Outros anúncios do mesmo produto (comparador) ============
@@ -81,6 +84,12 @@ function montarAnunciosPainel(o, box){
   const fmt = a => a.valor ? "R$ " + a.valor.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : "sem preço";
   box.innerHTML = `
     <label class="ancFixo"><input type="checkbox" class="ancFixoCheck" ${o.fixo ? "checked" : ""}> 📌 <b>Fixar no site</b> <span>— anúncio âncora: não expira e o preço continua sendo conferido</span></label>
+    <label class="ancFixo ancBlack">🖤 <b>Black November</b>
+      <select class="ancBlackSel">
+        <option value="auto"${o.black !== true && o.black !== false ? " selected" : ""}>Automático (entra com ${V.BLACK_DESCONTO_MIN || 40}% OFF ou mais${V.descontoPct ? " — esta tem " + V.descontoPct(o) + "%" : ""})</option>
+        <option value="sim"${o.black === true ? " selected" : ""}>Sim, é oferta Black</option>
+        <option value="nao"${o.black === false ? " selected" : ""}>Não, deixar de fora</option>
+      </select></label>
     <h4>🏪 Outros anúncios deste produto</h4>
     <div class="ancObs">O site mostra sempre o menor preço confiável entre todos. Preço posto aqui vale por 7 dias; depois a conferência automática assume (preço novo só vale depois de 2 leituras iguais).</div>
     ${lista.length > 1 ? lista.map(a => `
@@ -234,6 +243,17 @@ function montarAnunciosPainel(o, box){
   };
 
   // 🎨 cor/versão e foto de um anúncio que já está aqui
+  box.querySelector(".ancBlackSel").onchange = async function(){
+    const v = this.value, black = v === "sim" ? true : v === "nao" ? false : "auto";
+    this.disabled = true;
+    try{
+      await pedirAnuncio({ op: "black", slug: o.slug, black });
+      if(black === "auto") delete o.black; else o.black = black;
+      aviso(v === "sim" ? "🖤 Marcada como oferta Black! Aparece em 1-2 minutos." : v === "nao" ? "Fica de fora da Black November." : "Volta pro automático (pelo desconto).");
+    }catch(e){ aviso("❌ " + e.message, true); }
+    this.disabled = false;
+  };
+
   box.querySelector(".ancFixoCheck").onchange = async function(){
     const fixo = this.checked;
     this.disabled = true;

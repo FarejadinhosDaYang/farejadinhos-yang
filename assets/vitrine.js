@@ -262,6 +262,27 @@
     return copia;
   }
 
+  // ================= BLACK NOVEMBER =================
+  // Oferta "Black": marcada no painel (black: true) OU com desconto de
+  // pelo menos BLACK_DESCONTO_MIN% (preço antigo x preço). Só vale enquanto
+  // a temporada está ativa (assets/temporada.js); fora dela, nada muda.
+  const BLACK_DESCONTO_MIN = 40;
+  function descontoPct(o){
+    const p = numeroPreco(o && o.preco), a = numeroPreco(o && o.precoAntigo);
+    const proprio = a > p && p > 0 ? Math.round((1 - p / a) * 100) : 0;
+    // temporada/black.json: desconto mostrado pela loja (Radar) ou queda no histórico
+    const lista = (typeof window !== "undefined" && window.FarejadinhosBlackLista) || {};
+    return Math.max(proprio, (o && lista[o.slug]) || 0);
+  }
+  function ehBlack(o){
+    const T = typeof window !== "undefined" && window.FarejadinhosTemporada;
+    if(!o || !T || !T.ativa()) return false;
+    if(o.black === false) return false;          // tirado à mão
+    const lista = window.FarejadinhosBlackLista || {};
+    // na lista diária já entra quem tem ≥40% na loja ou caiu ≥20% no histórico
+    return o.black === true || !!lista[o.slug] || descontoPct(o) >= BLACK_DESCONTO_MIN;
+  }
+
   function podeIrProPodio(oferta){
     // âncora fixa não disputa o pódio (senão ganhava todo dia e o Top 3 não renovava)
     if(oferta && oferta.fixo === true) return false;
@@ -389,7 +410,7 @@
 
   window.FarejadinhosVitrine = {
     MINIMO_VITRINE, HORAS_FRESCA, HORAS_MAXIMA, META_CATEGORIA, MINIMO_CATEGORIA, TEMPORADAS,
-    inicio, idadeHoras, selecionar, status, foraDeEpoca, podeIrProPodio, FORA_DO_PODIO, dataOrdem, anunciosDe, melhorAnuncio, comMelhorAnuncio, lojaDe, numeroPreco, variacoesDe, corDe, ehPermanente, PERMANENTES, normalizar, categoriasDe, juntarCategoria, TAG_VIDEO
+    inicio, idadeHoras, selecionar, status, foraDeEpoca, podeIrProPodio, FORA_DO_PODIO, dataOrdem, anunciosDe, melhorAnuncio, comMelhorAnuncio, lojaDe, numeroPreco, variacoesDe, corDe, ehPermanente, ehBlack, descontoPct, BLACK_DESCONTO_MIN, PERMANENTES, normalizar, categoriasDe, juntarCategoria, TAG_VIDEO
   };
 
 })();
