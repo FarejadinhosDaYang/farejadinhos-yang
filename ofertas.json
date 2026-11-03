@@ -2661,7 +2661,18 @@
     "data": "2026-11-01T13:02:19Z",
     "precoAVista": "R$ 173,91",
     "precoAPrazo": "189,36",
-    "precoConferido": "2026-11-03T15:56:10Z"
+    "precoConferido": "2026-11-03T15:56:10Z",
+    "anuncios": [
+      {
+        "link": "https://meli.la/2315FMj",
+        "loja": "Mercado Livre",
+        "preco": "R$ 173,91",
+        "conferido": "",
+        "manual": "",
+        "confirmado": false,
+        "imagem": "https://farejadinhosdayang.com.br/assets/d899a5b2-476c-4d3b-a393-486236660f92.jpg"
+      }
+    ]
   },
   {
     "produto": "Panela De Arroz Bianca Rice 5 Mondial 400W NPE-05-5X -",
