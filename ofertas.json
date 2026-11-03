@@ -2835,7 +2835,8 @@
     "data": "2026-11-02T23:41:38Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-03T00:41:35Z"
+    "liberacao": "2026-11-03T00:41:35Z",
+    "fixo": true
   },
   {
     "produto": "Árvore De Natal Pinheiro Canadense Luxo Base",
@@ -2950,7 +2951,8 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-03T12:13:41Z",
-    "precoConferido": "2026-11-03T01:37:27Z"
+    "precoConferido": "2026-11-03T01:37:27Z",
+    "fixo": true
   },
   {
     "produto": "Enfeite Trenzinho De Madeira Natalino Decoração",
@@ -3032,7 +3034,8 @@
     "data": "2026-11-02T23:41:45Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-03T13:27:22Z"
+    "liberacao": "2026-11-03T13:27:22Z",
+    "fixo": true
   },
   {
     "produto": "10 azevinho artificial de natal",
@@ -3096,7 +3099,8 @@
     "data": "2026-11-02T23:41:47Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-03T14:26:18Z"
+    "liberacao": "2026-11-03T14:26:18Z",
+    "fixo": true
   },
   {
     "produto": "Kit Manta Decorativa + 4 Capas de Almofada Natal",
@@ -3946,7 +3950,8 @@
     "data": "2026-11-03T15:47:45Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-03T15:25:15Z"
+    "liberacao": "2026-11-03T15:25:15Z",
+    "fixo": true
   },
   {
     "produto": "Carregador iPhone Turbo Tipo-C 20W + Cabo",
@@ -3962,7 +3967,8 @@
     "data": "2026-11-03T15:47:45Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-03T16:07:48Z"
+    "liberacao": "2026-11-03T16:07:48Z",
+    "fixo": true
   },
   {
     "produto": "Portátil Abdominais Ventosas Fortes 3 Ajustes",
