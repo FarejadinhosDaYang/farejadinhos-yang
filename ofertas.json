@@ -48,7 +48,18 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-16T13:48:00Z",
-    "precoConferido": "2026-10-20T15:07:48Z"
+    "precoConferido": "2026-10-20T15:07:48Z",
+    "anuncios": [
+      {
+        "link": "https://meli.la/2S99bBL",
+        "loja": "Mercado Livre",
+        "preco": "R$ 44,11",
+        "conferido": "",
+        "manual": "",
+        "confirmado": false,
+        "imagem": "https://farejadinhosdayang.com.br/assets/6e2cf82b-eb7c-47f2-8534-5ce3c40d140f.webp"
+      }
+    ]
   },
   {
     "produto": "Clorador Flutuante Para Piscina Suporte",
