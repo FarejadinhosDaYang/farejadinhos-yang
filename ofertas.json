@@ -4497,22 +4497,6 @@
     "liberacao": "2026-11-03T20:41:25Z"
   },
   {
-    "produto": "Cuticle Pusher Nail Oil Pen Portable Ceramic Dead",
-    "preco": "R$ 11,90",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Beleza",
-    "destaque": false,
-    "imagem": "7e8e1dbe-61d5-4765-8fc7-751d5f0f4027.jpg",
-    "link": "https://s.shopee.com.br/7VHfATBuFm",
-    "url": "https://farejadinhosdayang.com.br/ofertas/cuticle-pusher-nail-oil-pen-portable-ceramic-dead-2/",
-    "slug": "cuticle-pusher-nail-oil-pen-portable-ceramic-dead-2",
-    "data": "2026-11-03T15:48:56Z",
-    "precoAVista": "",
-    "precoAPrazo": "",
-    "liberacao": "2026-11-03T19:58:19Z"
-  },
-  {
     "produto": "Kit Potes Mantimentos Vidro Herméticos Com Tampa",
     "preco": "R$ 39,56",
     "precoAntigo": "",
@@ -5913,7 +5897,19 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-03T22:07:36Z",
-    "precoManual": "2026-11-03T18:29:47Z"
+    "precoManual": "2026-11-03T18:29:47Z",
+    "anuncios": [
+      {
+        "link": "https://s.shopee.com.br/7VHfATBuFm",
+        "loja": "Shopee",
+        "preco": "R$ 11,90",
+        "conferido": "2026-11-03T15:48:56Z",
+        "manual": "2026-11-03T18:30:57Z",
+        "confirmado": true,
+        "imagem": "https://farejadinhosdayang.com.br/assets/7e8e1dbe-61d5-4765-8fc7-751d5f0f4027.jpg",
+        "variacao": "Links"
+      }
+    ]
   },
   {
     "produto": "Portátil Abdominais Ventosas Fortes 3 Ajustes",
