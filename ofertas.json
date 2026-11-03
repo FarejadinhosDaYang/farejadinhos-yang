@@ -2586,7 +2586,18 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-30T00:30:31Z",
-    "precoManual": "2026-10-30T00:45:38Z"
+    "precoManual": "2026-10-30T00:45:38Z",
+    "anuncios": [
+      {
+        "link": "https://s.shopee.com.br/3LRaC63gUN",
+        "loja": "Shopee",
+        "preco": "R$ 16,99",
+        "conferido": "",
+        "manual": "",
+        "confirmado": false,
+        "imagem": "https://farejadinhosdayang.com.br/assets/a0d88558-821e-4ff2-b6ab-791b37a3f24f.jpg"
+      }
+    ]
   },
   {
     "produto": "Percarbonato 100% Puro Tira Manchas Roupas Brancas",
