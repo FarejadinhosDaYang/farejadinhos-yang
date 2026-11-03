@@ -480,7 +480,18 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-30T21:21:20Z",
-    "precoConferido": "2026-10-28T12:51:57Z"
+    "precoConferido": "2026-10-28T12:51:57Z",
+    "anuncios": [
+      {
+        "link": "https://s.shopee.com.br/qkLudmGnb",
+        "loja": "Shopee",
+        "preco": "R$ 16,59",
+        "conferido": "",
+        "manual": "",
+        "confirmado": false,
+        "imagem": "https://farejadinhosdayang.com.br/assets/891a7f11-1226-4ad6-97bb-587e284160ee.jpg"
+      }
+    ]
   },
   {
     "produto": "Kit 2 Prateleiras Reto Adesivo Premium Suporte",
