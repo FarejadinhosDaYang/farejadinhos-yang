@@ -25,7 +25,8 @@ window.FAREJA_ICONES_CAT = {
     "Skincare": { icone: "🧴", cor: "#D0688A" },
     "Piscina": { icone: "🏊", cor: "#1E88C7" },
     "Vídeos": { icone: "🎬", cor: "#7B3FA0" },
-    "Celulares": { icone: "📱", cor: "#3949AB" }
+    "Celulares": { icone: "📱", cor: "#3949AB" },
+    "Acessórios de Celular": { icone: "🔌", cor: "#5C6BC0" }
 };
 
 (function () {
@@ -93,14 +94,27 @@ window.FAREJA_ICONES_CAT = {
             .then(function (d) {
                 var todas = Array.isArray(d) ? d : [d];
                 var visiveis = window.FarejadinhosVitrine ? window.FarejadinhosVitrine.selecionar(todas, new Date()).visiveis : todas;
-                var cont = {};
+                var V = window.FarejadinhosVitrine || {};
+                var grupo = V.grupoCategoria || function (c) { return c; };
+                var cont = {}, subs = {};
                 visiveis.forEach(function (o) {
-                    var cats = window.FarejadinhosVitrine && window.FarejadinhosVitrine.categoriasDe ? window.FarejadinhosVitrine.categoriasDe(o) : [(o && o.categoria || "").trim()];
-                    cats.forEach(function (c) { if (c) cont[c] = (cont[c] || 0) + 1; });
+                    var cats = V.categoriasDe ? V.categoriasDe(o) : [(o && o.categoria || "").trim()];
+                    var vistas = {};
+                    cats.forEach(function (c) { c = grupo(c); if (c && !vistas[c]) { vistas[c] = 1; cont[c] = (cont[c] || 0) + 1; } });
+                    var sub = V.subCelular ? V.subCelular(o) : "";
+                    if (sub) subs[sub] = (subs[sub] || 0) + 1;
                 });
                 return Object.keys(cont).sort(function (a, b) { return a.localeCompare(b, "pt-BR"); }).map(function (c) {
                     var ic = window.FAREJA_ICONES_CAT[c] || { icone: "🐾", cor: "#8A7563" };
-                    return { nome: c, icone: ic.icone, cor: ic.cor, n: cont[c], total: visiveis.length };
+                    var item = { nome: c, icone: ic.icone, cor: ic.cor, n: cont[c], total: visiveis.length };
+                    // Celulares: Samsung · Apple · Xiaomi · (outras) · Acessórios
+                    if (c === "Celulares" && V.SUBS_CELULAR) {
+                        var ordem = V.SUBS_CELULAR.slice(0, 3).concat(["Outras marcas"], V.SUBS_CELULAR.slice(3));
+                        item.subs = ordem.filter(function (s) { return subs[s]; }).map(function (s) {
+                            return { nome: s, valor: "Celulares/" + s, n: subs[s] };
+                        });
+                    }
+                    return item;
                 });
             })
             .catch(function () { return []; });
@@ -147,10 +161,25 @@ window.FAREJA_ICONES_CAT = {
                 '<a href="' + inicio + '#tituloGrid" data-cat="">' +
                 '<span class="yt-lat-ic" style="background:#E5232E">🔥</span><span class="yt-lat-nome">Todas as ofertas</span><small>' + total + "</small></a>" +
                 cats.map(function (c) {
-                    return '<a href="' + inicio + "?categoria=" + encodeURIComponent(c.nome) + '#tituloGrid" data-cat="' + esc(c.nome) + '">' +
+                    var link = '<a href="' + inicio + "?categoria=" + encodeURIComponent(c.nome) + '#tituloGrid" data-cat="' + esc(c.nome) + '">' +
                         '<span class="yt-lat-ic" style="background:' + c.cor + '">' + c.icone + "</span>" +
                         '<span class="yt-lat-nome">' + esc(c.nome) + "</span><small>" + c.n + "</small></a>";
+                    if (!c.subs || !c.subs.length) return link;
+                    // categoria com subcategorias: a setinha abre/fecha; o nome abre tudo
+                    return '<div class="yt-lat-grupo">' +
+                        '<div class="yt-lat-linha">' + link +
+                        '<button type="button" class="yt-lat-seta" aria-expanded="false" aria-label="Mostrar subcategorias de ' + esc(c.nome) + '">▸</button></div>' +
+                        '<div class="yt-lat-subs" hidden>' + c.subs.map(function (s) {
+                            return '<a class="yt-lat-sub" href="' + inicio + "?categoria=" + encodeURIComponent(s.valor) + '#tituloGrid" data-cat="' + esc(s.valor) + '">' +
+                                '<span class="yt-lat-nome">' + esc(s.nome) + "</span><small>" + s.n + "</small></a>";
+                        }).join("") + "</div></div>";
                 }).join("");
+            lista.querySelectorAll(".yt-lat-seta").forEach(function (b) {
+                b.addEventListener("click", function (e) {
+                    e.preventDefault(); e.stopPropagation();
+                    abrirGrupo(b.closest(".yt-lat-grupo"), b.getAttribute("aria-expanded") !== "true");
+                });
+            });
             marcar(ativa);
             lista.querySelectorAll("a").forEach(function (a) {
                 a.addEventListener("click", function (e) {
@@ -161,10 +190,22 @@ window.FAREJA_ICONES_CAT = {
             });
         });
 
+        function abrirGrupo(g, abrir) {
+            if (!g) return;
+            var b = g.querySelector(".yt-lat-seta");
+            g.querySelector(".yt-lat-subs").hidden = !abrir;
+            b.setAttribute("aria-expanded", abrir ? "true" : "false");
+            g.classList.toggle("aberto", abrir);
+        }
         function marcar(cat) {
             lateral.querySelectorAll("a").forEach(function (a) {
                 a.classList.toggle("ativo", a.getAttribute("data-cat") === cat);
             });
+            // subcategoria ativa: deixa o grupo dela aberto
+            if (cat && cat.indexOf("/") > 0) {
+                var a = lateral.querySelector('a[data-cat="' + cat.replace(/"/g, '\\"') + '"]');
+                if (a) abrirGrupo(a.closest(".yt-lat-grupo"), true);
+            }
         }
         document.addEventListener("fareja:filtro", function (e) { marcar(e.detail || ""); });
     }

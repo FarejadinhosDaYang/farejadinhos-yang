@@ -1399,10 +1399,14 @@ function montarPrateleiras(){
 
     const porCategoria = {};
     ofertas.forEach(o => {
-        FarejadinhosVitrine.categoriasDe(o).forEach(c => {
+        [...new Set(FarejadinhosVitrine.categoriasDe(o).map(FarejadinhosVitrine.grupoCategoria))].forEach(c => {
             (porCategoria[c] = porCategoria[c] || []).push(o);
         });
     });
+    if(porCategoria["Celulares"]){
+        porCategoria["Celulares"] = porCategoria["Celulares"].map((o, i) => [o, i])
+            .sort((a, b) => FarejadinhosVitrine.pesoNaCategoria(a[0]) - FarejadinhosVitrine.pesoNaCategoria(b[0]) || a[1] - b[1]).map(x => x[0]);
+    }
 
     // Só categorias com pelo menos 2 ofertas; as maiores primeiro
     const categorias = Object.keys(porCategoria)
@@ -1479,7 +1483,7 @@ function montarCategorias(){
     const container = document.getElementById("categoriasRow");
 
     const categorias = [...new Set(
-        ofertas.flatMap(o => FarejadinhosVitrine.categoriasDe(o)).filter(c => c !== "")
+        ofertas.flatMap(o => FarejadinhosVitrine.categoriasDe(o)).map(FarejadinhosVitrine.grupoCategoria).filter(c => c !== "")
     )].sort();
 
     if(categorias.length === 0){
@@ -1496,8 +1500,8 @@ function montarCategorias(){
 
     if(filtroAtivo.tipo !== "todas"){
 
-        const rotulo = filtroAtivo.valor;
-        const padrao = ICONES_CATEGORIA[filtroAtivo.valor];
+        const rotulo = FarejadinhosVitrine.nomeFiltro(filtroAtivo.valor);
+        const padrao = ICONES_CATEGORIA[String(filtroAtivo.valor).split("/")[0]];
         const icHtml = padrao
             ? `<span class="ic" style="background:${padrao.cor}">${padrao.icone}</span>`
             : "";
@@ -1556,7 +1560,7 @@ function aplicarFiltros(){
         let bateFiltro = true;
 
         if(filtroAtivo.tipo === "categoria"){
-            bateFiltro = FarejadinhosVitrine.categoriasDe(o).includes(filtroAtivo.valor);
+            bateFiltro = FarejadinhosVitrine.bateCategoria(o, filtroAtivo.valor);
         }
 
         const bateLoja = !lojaAtiva || lojaDe(o) === lojaAtiva;
@@ -1570,12 +1574,17 @@ function aplicarFiltros(){
     const nomeLoja = lojaAtiva ? LOJAS.find(l => l.id === lojaAtiva).nome : "";
     let titulo = "🔥 Todas as ofertas";
     if(termo.trim()) titulo = `🔎 Resultados pra “${document.getElementById("busca").value.trim()}”`;
-    else if(filtroAtivo.tipo !== "todas") titulo = `🔥 ${filtroAtivo.valor}`;
+    else if(filtroAtivo.tipo !== "todas") titulo = `🔥 ${FarejadinhosVitrine.nomeFiltro(filtroAtivo.valor)}`;
     else if(nomeLoja) titulo = `🔥 Ofertas ${nomeLoja}`;
     if(nomeLoja && (termo.trim() || filtroAtivo.tipo !== "todas")) titulo += ` · ${nomeLoja}`;
     document.getElementById("tituloGrid").textContent = titulo;
 
-    render(ordenar(filtradas, document.getElementById("ordem").value));
+    let lista = ordenar(filtradas, document.getElementById("ordem").value);
+    // Celulares: aparelhos sempre em cima, acessórios embaixo (mantém a ordem escolhida dentro de cada grupo)
+    if(filtroAtivo.tipo === "categoria" && String(filtroAtivo.valor).indexOf("Celulares") === 0){
+        lista = lista.map((o, i) => [o, i]).sort((a, b) => FarejadinhosVitrine.pesoNaCategoria(a[0]) - FarejadinhosVitrine.pesoNaCategoria(b[0]) || a[1] - b[1]).map(x => x[0]);
+    }
+    render(lista);
 
     // avisa a lateral / o menu qual categoria está ativa
     document.dispatchEvent(new CustomEvent("fareja:filtro", {

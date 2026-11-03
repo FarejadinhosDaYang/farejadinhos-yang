@@ -60,12 +60,28 @@
             var lista = detalhes.querySelector(".yang-nav-cats-lista");
             if (!window.FarejadinhosCategoriasNoAr) { lista.textContent = ""; return; }
             window.FarejadinhosCategoriasNoAr().then(function (cats) {
+                var esc = function (t) { var d = document.createElement("span"); d.textContent = t; return d.innerHTML.replace(/"/g, "&quot;"); };
                 lista.innerHTML = cats.map(function (c) {
-                    var d = document.createElement("span"); d.textContent = c.nome;
-                    return '<a href="#" data-cat="' + d.innerHTML.replace(/"/g, "&quot;") + '">' +
+                    var link = '<a href="#" data-cat="' + esc(c.nome) + '">' +
                         '<span class="yang-nav-cat-ic" style="background:' + c.cor + '">' + c.icone + "</span>" +
-                        d.innerHTML + " <small>" + c.n + "</small></a>";
+                        esc(c.nome) + " <small>" + c.n + "</small></a>";
+                    if (!c.subs || !c.subs.length) return link;
+                    return '<div class="yang-nav-grupo"><div style="display:flex;align-items:center">' + link.replace("<a ", '<a style="flex:1" ') +
+                        '<button type="button" class="yang-nav-seta" aria-expanded="false" aria-label="Subcategorias" style="border:0;background:none;font-size:15px;padding:6px 12px;cursor:pointer;color:inherit;transition:transform .18s">▸</button></div>' +
+                        '<div class="yang-nav-subs" hidden style="margin-left:34px;border-left:2px solid rgba(0,0,0,.12);padding-left:8px">' +
+                        c.subs.map(function (s) { return '<a href="#" data-cat="' + esc(s.valor) + '" style="font-size:.95em">' + esc(s.nome) + " <small>" + s.n + "</small></a>"; }).join("") +
+                        "</div></div>";
                 }).join("") || "Nenhuma categoria no ar.";
+                lista.querySelectorAll(".yang-nav-seta").forEach(function (b) {
+                    b.addEventListener("click", function (e) {
+                        e.preventDefault(); e.stopPropagation();
+                        var subs = b.closest(".yang-nav-grupo").querySelector(".yang-nav-subs");
+                        var abrir = subs.hidden;
+                        subs.hidden = !abrir;
+                        b.setAttribute("aria-expanded", abrir ? "true" : "false");
+                        b.style.transform = abrir ? "rotate(90deg)" : "";
+                    });
+                });
                 lista.querySelectorAll("a").forEach(function (a) {
                     a.addEventListener("click", function (e) {
                         e.preventDefault();

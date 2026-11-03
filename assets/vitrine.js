@@ -75,6 +75,45 @@
     return o;
   }
 
+  // ================= CELULARES e suas subcategorias =================
+  // Dentro de "Celulares" aparecem: Samsung, Apple e Xiaomi (pela marca no
+  // nome do aparelho — não precisa marcar nada) e Acessórios (categoria
+  // própria "Acessórios de Celular", que segue as regras normais: expira,
+  // recebe cupom, pode ir pro pódio). Filtro: "Celulares" (tudo, aparelhos
+  // primeiro) ou "Celulares/Samsung", "Celulares/Acessórios"...
+  const ACESSORIOS_CELULAR = "Acessórios de Celular";
+  const MARCAS_CELULAR = [
+    ["Apple", /\b(iphone|apple)\b/i],
+    ["Samsung", /\b(samsung|galaxy)\b/i],
+    ["Xiaomi", /\b(xiaomi|redmi|poco)\b/i]
+  ];
+  const SUBS_CELULAR = ["Samsung", "Apple", "Xiaomi", "Acessórios"];
+  function subCelular(o){
+    const cats = categoriasDe(o);
+    if(cats.includes(ACESSORIOS_CELULAR)) return "Acessórios";
+    if(!cats.includes("Celulares")) return "";
+    const nome = String(o.produto || "");
+    const m = MARCAS_CELULAR.find(([, re]) => re.test(nome));
+    return m ? m[0] : "Outras marcas";
+  }
+  // categoria "de vitrine": acessório de celular conta como Celulares
+  function grupoCategoria(c){ return c === ACESSORIOS_CELULAR ? "Celulares" : c; }
+  function bateCategoria(o, filtro){
+    filtro = String(filtro || "");
+    const i = filtro.indexOf("/");
+    if(i > 0){
+      const mae = filtro.slice(0, i), sub = filtro.slice(i + 1);
+      return mae === "Celulares" && subCelular(o) === sub;
+    }
+    return categoriasDe(o).some(c => c === filtro || grupoCategoria(c) === filtro);
+  }
+  // dentro de Celulares, aparelhos sempre em cima e acessórios embaixo
+  function pesoNaCategoria(o){ return subCelular(o) === "Acessórios" ? 1 : 0; }
+  function nomeFiltro(filtro){
+    const i = String(filtro || "").indexOf("/");
+    return i > 0 ? filtro.slice(0, i) + " · " + filtro.slice(i + 1) : String(filtro || "");
+  }
+
   // Todas as categorias em que a oferta aparece (ex.: ["Cozinha", "Vídeos"])
   function categoriasDe(o){
     normalizar(o);
@@ -410,7 +449,7 @@
 
   window.FarejadinhosVitrine = {
     MINIMO_VITRINE, HORAS_FRESCA, HORAS_MAXIMA, META_CATEGORIA, MINIMO_CATEGORIA, TEMPORADAS,
-    inicio, idadeHoras, selecionar, status, foraDeEpoca, podeIrProPodio, FORA_DO_PODIO, dataOrdem, anunciosDe, melhorAnuncio, comMelhorAnuncio, lojaDe, numeroPreco, variacoesDe, corDe, ehPermanente, ehBlack, descontoPct, BLACK_DESCONTO_MIN, PERMANENTES, normalizar, categoriasDe, juntarCategoria, TAG_VIDEO
+    inicio, idadeHoras, selecionar, status, foraDeEpoca, podeIrProPodio, FORA_DO_PODIO, dataOrdem, anunciosDe, melhorAnuncio, comMelhorAnuncio, lojaDe, numeroPreco, variacoesDe, corDe, ehPermanente, ACESSORIOS_CELULAR, SUBS_CELULAR, subCelular, grupoCategoria, bateCategoria, pesoNaCategoria, nomeFiltro, ehBlack, descontoPct, BLACK_DESCONTO_MIN, PERMANENTES, normalizar, categoriasDe, juntarCategoria, TAG_VIDEO
   };
 
 })();
