@@ -61,42 +61,49 @@
 
     var css = document.createElement("style");
     css.id = "estilo-black-november";
+    // Preto só como DESTAQUE: o site continua creme, com as cores da marca.
+    // Preto + dourado ficam no cabeçalho, na faixa, no slide e na vitrine Black.
+    var PATAS = "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='90' height='90' viewBox='0 0 40 40'><g fill='%23FFC24A' fill-opacity='.05' transform='rotate(-25 20 20)'><ellipse cx='20' cy='27' rx='10' ry='8.5'/><ellipse cx='8.5' cy='15' rx='4.2' ry='5.2'/><ellipse cx='16' cy='9' rx='4.2' ry='5.4'/><ellipse cx='24.5' cy='9' rx='4.2' ry='5.4'/><ellipse cx='31.5' cy='15' rx='4.2' ry='5.2'/></g></svg>\")";
     css.textContent = [
-        // fundo e cabeçalho
-        "html.black-nov body{background:#0E0B0A!important;color:#F3E7D9}",
-        "html.black-nov header.yang-topo{background:#0E0B0A;box-shadow:0 1px 0 #F7941D, 0 6px 22px rgba(0,0,0,.55)}",
-        "html.black-nov .topo-atalhos{background:#1A1411}",
-        "html.black-nov .topo-atalhos a.destaque{color:#FFB547}",
-        "html.black-nov .topo-atalhos a.black-link{color:#111;background:linear-gradient(135deg,#FFC24A,#F7941D);border-radius:999px;font-weight:800}",
-        // textos que ficam direto no fundo (cards continuam claros)
-        "html.black-nov .secao-head h2, html.black-nov .barra-todas h2, html.black-nov .prateleira-titulo, html.black-nov .rel-topo h2{color:#FFB547!important}",
-        "html.black-nov .contagem, html.black-nov .cupons-lojas .rotulo, html.black-nov footer, html.black-nov .barra-todas .direita, html.black-nov .barra-todas label, html.black-nov .lojas-filtro span, html.black-nov .rotulo-loja{color:#B9A898!important}",
-        "html.black-nov .ver-todas, html.black-nov .rel-topo a, html.black-nov footer a{color:#FFB547!important}",
-        "html.black-nov .barra-todas, html.black-nov .rel-topo{border-color:#3A2D25!important}",
-        "html.black-nov .cup-secao .secao-head h2{color:#FFB547}",
-        "html.black-nov .back{color:#FFB547!important}",
-        // página da oferta: o cartão claro ganha um contorno dourado
-        "html.black-nov .card{box-shadow:0 0 0 1.5px #3A2D25, 0 18px 50px rgba(0,0,0,.5)}",
-        // selo BLACK
-        "#blackSecao{scroll-margin-top:150px}",
-        ".badge-black{position:absolute;bottom:8px;right:8px;z-index:3;background:#0E0B0A;color:#FFC24A;font:800 11px 'Work Sans',Arial,sans-serif;letter-spacing:1.2px;padding:4px 8px;border-radius:7px;box-shadow:0 0 0 1.5px #FFC24A}",
-        ".selo-black-oferta{display:inline-flex;align-items:center;gap:6px;background:#0E0B0A;color:#FFC24A;font:800 12.5px 'Work Sans',Arial,sans-serif;letter-spacing:1px;padding:6px 12px;border-radius:999px;box-shadow:0 0 0 1.5px #FFC24A;margin:4px 0 8px}",
-        // slide do banner
-        ".hero-slide.s-black{background:radial-gradient(120% 140% at 85% 10%,#3B2412 0%,#140E0B 45%,#0A0807 100%);color:#F7EBDD}",
-        ".hero-slide.s-black .hero-texto h2 .linha.ouro{background:linear-gradient(90deg,#FFD27A,#F7941D);-webkit-background-clip:text;background-clip:text;color:transparent}",
-        ".hero-slide.s-black .hero-cta{background:linear-gradient(135deg,#FFC24A,#F7941D);color:#140E0B}",
-        ".black-contagem{display:inline-flex;align-items:baseline;gap:10px;margin:0 0 18px;padding:10px 16px;border-radius:14px;background:rgba(255,194,74,.08);box-shadow:inset 0 0 0 1.5px rgba(255,194,74,.35)}",
-        ".black-contagem b{font:800 clamp(26px,3.6vw,38px) 'Baloo 2',sans-serif;color:#FFC24A;line-height:1}",
-        ".black-contagem span{font-size:14px;color:#E8D7C4}",
-        ".black-visual{position:relative;display:flex;align-items:center;justify-content:center;width:300px;height:260px}",
-        ".black-visual .etiqueta{position:absolute;inset:auto;transform:rotate(-8deg);background:#0E0B0A;color:#FFC24A;font:800 64px/0.9 'Baloo 2',sans-serif;letter-spacing:2px;padding:22px 26px 16px;border-radius:18px;box-shadow:0 0 0 3px #FFC24A, 0 20px 40px rgba(0,0,0,.5);text-align:center}",
-        ".black-visual .etiqueta small{display:block;font:800 18px 'Work Sans',Arial,sans-serif;letter-spacing:6px;color:#F7EBDD;margin-top:6px}",
-        ".black-visual .furo{position:absolute;top:50%;left:12px;width:14px;height:14px;margin-top:-7px;border-radius:50%;background:#0A0807;box-shadow:inset 0 0 0 3px #FFC24A}",
+        // cabeçalho preto com fio dourado
+        "html.black-nov header.yang-topo{background:#15100D;box-shadow:0 2px 0 #E9A93A, 0 6px 18px rgba(43,27,18,.25)}",
+        "html.black-nov .topo-atalhos{background:#1F1713}",
+        "html.black-nov .topo-atalhos a.destaque{color:#FFC86B}",
+        "html.black-nov .topo-atalhos a.black-link{color:#15100D;background:linear-gradient(135deg,#FFD27A,#F2A33A);border-radius:999px;font-weight:800}",
+        // faixa que corre embaixo do cabeçalho
+        ".black-faixa{position:relative;overflow:hidden;background:linear-gradient(90deg,#F2A33A,#FFD27A 50%,#F2A33A);color:#15100D;font:800 12.5px 'Work Sans',Arial,sans-serif;letter-spacing:1.4px;text-transform:uppercase;white-space:nowrap;height:30px;display:flex;align-items:center}",
+        ".black-faixa .trilho-faixa{display:inline-flex;gap:28px;padding-left:28px;animation:blackCorre 38s linear infinite}",
+        ".black-faixa .trilho-faixa span:before{content:'🐾';margin-right:10px;letter-spacing:0}",
+        "@keyframes blackCorre{from{transform:translateX(0)}to{transform:translateX(-50%)}}",
+        "@media (prefers-reduced-motion:reduce){.black-faixa .trilho-faixa{animation:none}}",
+        // selos
+        "#blackSecao{scroll-margin-top:170px}",
+        ".badge-black{position:absolute;bottom:8px;right:8px;z-index:3;background:#15100D;color:#FFC86B;font:800 10.5px 'Work Sans',Arial,sans-serif;letter-spacing:1.2px;padding:4px 8px;border-radius:7px;box-shadow:0 0 0 1.5px #E9A93A, 0 3px 8px rgba(0,0,0,.25)}",
+        ".selo-black-oferta{display:inline-flex;align-items:center;gap:6px;background:#15100D;color:#FFC86B;font:800 12.5px 'Work Sans',Arial,sans-serif;letter-spacing:1px;padding:6px 12px;border-radius:999px;box-shadow:0 0 0 1.5px #E9A93A;margin:4px 0 8px}",
+        // slide do banner: preto quentinho, patinhas douradas e a Yang
+        ".hero-slide.s-black{background:radial-gradient(90% 120% at 80% 30%,#4A2A12 0%,#21140D 42%,#120C09 100%);color:#F7EBDD}",
+        ".hero-slide.s-black:before{content:'';position:absolute;inset:0;background-image:" + PATAS + ";background-size:72px 72px;pointer-events:none}",
+        ".hero-slide.s-black .hero-texto h2 .linha.ouro{background:linear-gradient(90deg,#FFD27A,#F2A33A);-webkit-background-clip:text;background-clip:text;color:transparent}",
+        ".hero-slide.s-black .hero-cta{background:linear-gradient(135deg,#FFD27A,#F2A33A);color:#15100D;box-shadow:0 8px 24px rgba(242,163,58,.35)}",
+        ".black-contagem{display:inline-flex;align-items:baseline;gap:10px;margin:0 0 16px;padding:9px 16px;border-radius:14px;background:rgba(255,200,107,.08);box-shadow:inset 0 0 0 1.5px rgba(255,200,107,.35)}",
+        ".black-contagem b{font:800 clamp(26px,3.6vw,38px) 'Baloo 2',sans-serif;color:#FFC86B;line-height:1}",
+        ".black-contagem span{font-size:14px;color:#EAD8C3}",
+        ".black-visual{position:relative;width:300px;height:290px;display:flex;align-items:flex-end;justify-content:center}",
+        ".black-visual:before{content:'';position:absolute;left:50%;top:52%;width:270px;height:270px;margin:-135px 0 0 -135px;border-radius:50%;background:radial-gradient(circle,rgba(255,200,107,.38) 0%,rgba(255,200,107,.08) 55%,transparent 70%)}",
+        ".black-visual img{position:relative;width:240px;height:auto;filter:drop-shadow(0 18px 28px rgba(0,0,0,.45))}",
+        ".black-visual .etiqueta{position:absolute;top:14px;right:6px;transform:rotate(10deg);background:#15100D;color:#FFC86B;font:800 26px/1 'Baloo 2',sans-serif;letter-spacing:1px;padding:9px 13px 7px;border-radius:12px;box-shadow:0 0 0 2px #E9A93A, 0 10px 22px rgba(0,0,0,.4);text-align:center}",
+        ".black-visual .etiqueta small{display:block;font:800 9.5px 'Work Sans',Arial,sans-serif;letter-spacing:3px;color:#F7EBDD;margin-top:2px}",
+        ".black-visual .etiqueta:before{content:'';position:absolute;top:-11px;left:50%;width:2px;height:12px;background:#E9A93A}",
         "@media(max-width:720px){.black-visual{display:none}}",
-        // prateleira Black
-        ".prateleira.black-prateleira{background:linear-gradient(180deg,#1A120D,#120D0A);border-radius:22px;padding:14px 14px 6px;box-shadow:inset 0 0 0 1.5px #3A2D25}",
-        ".prateleira.black-prateleira .prateleira-titulo{color:#FFC24A!important}",
-        ".prateleira.black-prateleira .prateleira-titulo .ic{background:#0E0B0A!important;box-shadow:0 0 0 1.5px #FFC24A}"
+        // vitrine Black: o único bloco escuro no meio do site creme
+        ".prateleira.black-prateleira{position:relative;background:radial-gradient(120% 140% at 0% 0%,#3A2210 0%,#1A110C 45%,#120C09 100%);border-radius:24px;padding:16px 16px 8px;box-shadow:0 14px 34px rgba(43,27,18,.22), inset 0 0 0 1.5px rgba(233,169,58,.35);overflow:hidden}",
+        ".prateleira.black-prateleira:before{content:'';position:absolute;inset:0;background-image:" + PATAS + ";background-size:72px 72px;pointer-events:none}",
+        ".prateleira.black-prateleira > *{position:relative}",
+        ".prateleira.black-prateleira .prateleira-titulo{color:#FFC86B!important}",
+        ".prateleira.black-prateleira .prateleira-titulo .ic{background:#15100D!important;box-shadow:0 0 0 1.5px #E9A93A;overflow:hidden;padding:0}",
+        ".prateleira.black-prateleira .prateleira-titulo .ic img{width:100%;height:100%;object-fit:cover;border-radius:50%}",
+        ".prateleira.black-prateleira .contagem{color:#D9C4AD!important}",
+        ".prateleira.black-prateleira .trilho-seta{background:#FFC86B;color:#15100D}"
     ].join("\n");
     (document.head || document.documentElement).appendChild(css);
 
@@ -115,6 +122,23 @@
     if (document.querySelector(".topo-atalhos nav")) atalho();
     else document.addEventListener("DOMContentLoaded", atalho);
 
+    // ---------- faixa dourada embaixo do cabeçalho ----------
+    function faixa() {
+        var topo = document.querySelector("header.yang-topo");
+        if (!topo || document.querySelector(".black-faixa")) return;
+        var c = contagem();
+        var itens = ["Black November da Yang", c.grande + " " + c.pequeno, "Só desconto de verdade", "Preço conferido todo dia", "Cupons de hoje no site"];
+        var html = itens.concat(itens).map(function (t) { return "<span>" + t + "</span>"; }).join("");
+        var f = document.createElement("a");
+        f.className = "black-faixa";
+        f.href = (document.getElementById("heroSlides") ? "" : base + "index.html") + "#blackSecao";
+        f.style.textDecoration = "none";
+        f.innerHTML = '<div class="trilho-faixa">' + html + html + "</div>";
+        topo.appendChild(f);
+    }
+    if (document.querySelector("header.yang-topo")) faixa();
+    else document.addEventListener("DOMContentLoaded", faixa);
+
     // ---------- banner: 1º slide (só na página inicial) ----------
     function slide() {
         var slides = document.getElementById("heroSlides");
@@ -127,10 +151,12 @@
             '<div class="hero-texto">' +
             '<h2><span class="linha">Black November</span><span class="linha ouro">da Yang.</span></h2>' +
             '<div class="black-contagem"><b>' + c.grande + "</b><span>" + c.pequeno + "</span></div>" +
-            "<p>O mês inteiro a Yang fareja os maiores descontos — e confere se o preço caiu de verdade antes de mostrar.</p>" +
+            "<p>O mês inteiro a Yang fareja os maiores descontos — e só mostra quando o preço caiu de verdade. 🐾</p>" +
             '<a class="hero-cta" href="#blackSecao">🖤 Ver as ofertas Black</a>' +
             "</div>" +
-            '<div class="hero-visual black-visual" aria-hidden="true"><div class="etiqueta">BLACK<small>NOVEMBER</small></div></div>';
+            '<figure class="hero-visual black-visual" aria-hidden="true">' +
+            '<picture><source srcset="assets/yang-ilustrada.webp" type="image/webp"><img src="assets/yang-ilustrada.png" alt="" width="532" height="640"></picture>' +
+            '<div class="etiqueta">BLACK<small>NOVEMBER</small></div></figure>';
         slides.insertBefore(s, slides.firstChild);
     }
     if (document.getElementById("heroSlides")) slide();
