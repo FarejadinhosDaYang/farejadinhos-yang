@@ -4119,7 +4119,18 @@
     "data": "2026-11-03T15:47:51Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-03T20:55:47Z"
+    "liberacao": "2026-11-03T20:55:47Z",
+    "anuncios": [
+      {
+        "link": "https://s.shopee.com.br/5q9RBMsnYc",
+        "loja": "Shopee",
+        "preco": "R$ 25,88",
+        "conferido": "2026-11-03T15:47:52Z",
+        "manual": "2026-11-04T18:34:57Z",
+        "confirmado": true,
+        "imagem": "https://farejadinhosdayang.com.br/assets/b7b04f7f-282f-4953-be87-d09631541f4c.jpg"
+      }
+    ]
   },
   {
     "produto": "Batedor Misturador Mixer Elétrico para Bebidas",
@@ -4136,22 +4147,6 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-04T12:34:29Z"
-  },
-  {
-    "produto": "Bolsa Organizadora de Cabos e Eletrônicos",
-    "preco": "R$ 25,88",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Utilidades",
-    "destaque": false,
-    "imagem": "b7b04f7f-282f-4953-be87-d09631541f4c.jpg",
-    "link": "https://s.shopee.com.br/5q9RBMsnYc",
-    "url": "https://farejadinhosdayang.com.br/ofertas/bolsa-organizadora-de-cabos-e-eletronicos-2/",
-    "slug": "bolsa-organizadora-de-cabos-e-eletronicos-2",
-    "data": "2026-11-03T15:47:52Z",
-    "precoAVista": "",
-    "precoAPrazo": "",
-    "liberacao": "2026-11-04T00:09:41Z"
   },
   {
     "produto": "Mini Processador de Alimentos Elétrico Triturador",
@@ -4665,22 +4660,6 @@
     "liberacao": "2026-11-05T21:30:00Z"
   },
   {
-    "produto": "Bolsa Organizadora de Cabos e Eletrônicos",
-    "preco": "R$ 20,57",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Utilidades",
-    "destaque": false,
-    "imagem": "9547bec9-c997-4482-8a80-36240bbcb0e8.jpg",
-    "link": "https://s.shopee.com.br/9pfZwidZRG",
-    "url": "https://farejadinhosdayang.com.br/ofertas/bolsa-organizadora-de-cabos-e-eletronicos-3/",
-    "slug": "bolsa-organizadora-de-cabos-e-eletronicos-3",
-    "data": "2026-11-03T15:48:57Z",
-    "precoAVista": "",
-    "precoAPrazo": "",
-    "liberacao": "2026-11-05T00:42:53Z"
-  },
-  {
     "produto": "Batedor Misturador Mixer Elétrico para Bebidas",
     "preco": "R$ 16,95",
     "precoAntigo": "",
@@ -4695,22 +4674,6 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T23:00:00Z"
-  },
-  {
-    "produto": "Bolsa Organizadora de Cabos e Eletrônicos",
-    "preco": "R$ 25,88",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Utilidades",
-    "destaque": false,
-    "imagem": "17659f1a-6f70-4084-9e67-5407bb3ac730.jpg",
-    "link": "https://s.shopee.com.br/5q9RBMsnYc",
-    "url": "https://farejadinhosdayang.com.br/ofertas/bolsa-organizadora-de-cabos-e-eletronicos-4/",
-    "slug": "bolsa-organizadora-de-cabos-e-eletronicos-4",
-    "data": "2026-11-03T15:48:57Z",
-    "precoAVista": "",
-    "precoAPrazo": "",
-    "liberacao": "2026-11-05T12:15:00Z"
   },
   {
     "produto": "Kit Potes 640ml Marmita Vidro Yab Hermético Tampa",
