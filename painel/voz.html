@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voz da Yang | Painel Farejadinhos</title>
+<link rel="icon" href="../assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lamejs/1.2.1/lame.min.js"></script>
+<style>
+:root{ --red:#E5232E; --red-dark:#C21A24; --orange:#F7941D; --cream:#FDF3E3; --cream-2:#FFFAF1; --ink:#2B1B12; --muted:#8A7563; --line:#F0DFC4; }
+*{box-sizing:border-box}
+body{margin:0;padding:20px 16px 40px;background:var(--cream);font-family:'Work Sans',Arial,sans-serif;color:var(--ink)}
+.container{max-width:860px;margin:auto}
+.voltar{display:inline-block;margin-bottom:16px;color:var(--red-dark);font-weight:700;text-decoration:none;font-size:14px}
+h1{font-family:'Baloo 2',sans-serif;color:var(--red-dark);font-size:26px;margin:0 0 4px}
+h2{font-family:'Baloo 2',sans-serif;color:var(--red-dark);font-size:20px;margin:26px 0 10px}
+.sub{color:var(--muted);font-size:14px;line-height:1.5;margin:0 0 18px}
+.caixa{background:var(--cream-2);border:1.5px solid var(--line);border-radius:18px;padding:16px;display:grid;gap:14px}
+label{display:grid;gap:6px;font-weight:700;font-size:14px}
+label small{font-weight:500;color:var(--muted);font-size:12.5px;line-height:1.45}
+label small a{color:var(--red-dark)}
+input,select,textarea{width:100%;padding:11px 12px;border:1.5px solid var(--line);border-radius:10px;font:500 15px 'Work Sans',Arial,sans-serif;background:#fff;color:var(--ink)}
+textarea{min-height:120px;resize:vertical;line-height:1.45}
+details{border:1.5px dashed var(--line);border-radius:12px;padding:10px 12px;background:#fff}
+summary{cursor:pointer;font-weight:700;font-size:14px}
+details textarea{margin-top:10px;min-height:170px;font-size:13.5px}
+button{border:0;border-radius:12px;padding:14px 18px;font:800 16px 'Baloo 2',sans-serif;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--red),var(--red-dark))}
+button:disabled{opacity:.6;cursor:wait}
+.emocoes{display:flex;flex-wrap:wrap;gap:8px}
+.emocoes button,.chip{padding:8px 12px;border-radius:99px;font:700 13.5px 'Work Sans',Arial,sans-serif;background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+.emocoes button:hover{border-color:var(--orange)}
+.vozes{display:flex;flex-wrap:wrap;gap:8px}
+.chip{cursor:pointer;display:flex;gap:6px;align-items:center}
+.chip input{width:auto;margin:0}
+.chip small{color:var(--muted);font-weight:500}
+.chip.oficial{border-color:var(--orange);background:#FFF1DD}
+.status{font-size:14px;line-height:1.5;display:none}
+.status.ok{display:block;color:#1d6b33}.status.erro{display:block;color:#a3141c}.status.espera{display:block}
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.res{background:var(--cream-2);border:1.5px solid var(--line);border-radius:16px;padding:12px;display:grid;gap:8px;align-content:start}
+.res.oficial{border-color:var(--orange)}
+.res .nome{font:800 17px 'Baloo 2',sans-serif}
+.res .nome small{font:500 12.5px 'Work Sans',Arial,sans-serif;color:var(--muted)}
+.res audio{width:100%}
+.res .linha{display:flex;gap:6px;flex-wrap:wrap}
+.res .linha a,.res .linha button{flex:1;text-align:center;border-radius:10px;padding:9px;font:700 13px 'Work Sans',Arial,sans-serif;text-decoration:none;background:#fff;color:var(--red-dark);border:1.5px solid var(--red)}
+.res .erroTag{color:#a3141c;font-size:13px;line-height:1.4}
+.dica{margin-top:18px;padding:14px 16px;border:1.5px dashed var(--line);border-radius:14px;font-size:13.5px;line-height:1.6;background:var(--cream-2)}
+.limpo{font-size:13px;background:#fff;border-radius:8px;padding:8px 10px;white-space:pre-wrap;border:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="container">
+<a class="voltar" href="index.html">← Voltar pro painel</a>
+<h1>🎙️ Voz da Yang</h1>
+<p class="sub">Escreva o que a Yang vai falar, coloque as emoções e gere a voz pelo Gemini. Dá pra comparar várias vozes com a mesma frase e escolher a oficial. O áudio sai em MP3, pronto pra subir no "🎞️ Gerar reel".</p>
+
+<div class="caixa">
+  <label>🔑 Chave do Gemini
+    <input type="password" id="chave" placeholder="Cole aqui (começa com AIza…)" autocomplete="off">
+    <small>Crie de graça em <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a>. Ela fica salva só neste navegador, não vai pro site nem pro GitHub.</small>
+  </label>
+
+  <label>💬 O que a Yang fala
+    <textarea id="texto" placeholder="Ex.: [animada] Gente, olha o que eu farejei hoje! [risada] Esse aqui é bom demais…"></textarea>
+    <small>Clique nas emoções pra inserir onde está o cursor. Pausa: use "…". Não precisa escrever número por extenso.</small>
+  </label>
+  <div class="emocoes" id="emocoes"></div>
+
+  <details>
+    <summary>🐶 Ficha da personagem (como a Yang fala)</summary>
+    <textarea id="ficha"></textarea>
+    <small style="display:block;margin-top:6px;color:var(--muted);font-size:12.5px">Essa ficha vai junto em toda geração, pra voz sair sempre com o mesmo jeito. <a href="#" id="fichaPadrao" style="color:var(--red-dark)">Voltar pra ficha padrão</a></small>
+  </details>
+
+  <label>🤖 Modelo
+    <select id="modelo">
+      <option value="gemini-3.1-flash-tts-preview">Gemini 3.1 Flash TTS (mais expressivo, entende as emoções)</option>
+      <option value="gemini-2.5-pro-preview-tts">Gemini 2.5 Pro TTS (mais caprichado, mais lento)</option>
+      <option value="gemini-2.5-flash-preview-tts">Gemini 2.5 Flash TTS (rápido)</option>
+    </select>
+  </label>
+
+  <div>
+    <div style="font-weight:700;font-size:14px;margin-bottom:8px">🎚️ Vozes pra testar <small style="font-weight:500;color:var(--muted)">(marque várias pra comparar)</small></div>
+    <div class="vozes" id="vozes"></div>
+  </div>
+
+  <button id="gerar">🎙️ Gerar voz</button>
+  <div class="status" id="status"></div>
+</div>
+
+<h2>🔊 Resultados</h2>
+<div class="limpo" id="limpo" style="display:none"></div>
+<div class="grade" id="resultados" style="margin-top:12px"></div>
+
+<div class="dica">
+  <b>Como usar no reel:</b> baixe o MP3 da voz que gostou e suba no <a href="reels.html" style="color:var(--red-dark);font-weight:700">🎞️ Gerar reel da Yang</a>, no lugar da voz do ElevenLabs. No campo de texto do reel, cole o "texto pra legenda" que aparece acima dos resultados (é o mesmo texto, sem as marcações de emoção).<br>
+  <b>Dica:</b> se alguma emoção for lida em voz alta em vez de interpretada, gere de novo ou troque por outra. O modelo 3.1 é o que melhor entende as marcações.
+</div>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const guardar = (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} };
+const ler = k => { try { return localStorage.getItem(k); } catch (e) { return null; } };
+
+// Botões mostram o nome em português e inserem a marcação em inglês (que o modelo entende melhor).
+const EMOCOES = [
+  ["🥳 animada", "[excitedly]"], ["😄 sorrindo", "[cheerfully]"], ["😆 risadinha", "[giggles]"],
+  ["🤣 gargalhada", "[laughing]"], ["😮‍💨 suspiro", "[sigh]"], ["🤫 sussurro", "[whispering]"],
+  ["😢 triste", "[sadly]"], ["😱 surpresa", "[gasps]"], ["🤔 pensando", "[uhm]"],
+  ["🥰 fofinha", "[sweetly]"], ["🙄 desconfiada", "[skeptically]"], ["⏸️ pausa", "…"]
+];
+
+// Vozes femininas do Gemini (nome oficial + jeito, segundo o Google).
+const VOZES = [
+  ["Leda", "jovem"], ["Zephyr", "brilhante"], ["Laomedeia", "animada"], ["Autonoe", "brilhante"],
+  ["Aoede", "leve"], ["Achernar", "suave"], ["Callirrhoe", "tranquila"], ["Despina", "macia"],
+  ["Erinome", "clara"], ["Pulcherrima", "decidida"], ["Vindemiatrix", "gentil"], ["Sulafat", "calorosa"],
+  ["Kore", "firme"], ["Gacrux", "madura"]
+];
+
+const FICHA_PADRAO = `# PERFIL: Yang, a cachorrinha do Farejadinhos da Yang
+Uma cachorrinha fofa, de gorrinho de urso laranja, que fareja os melhores preços da internet e conta pros amigos.
+
+## CENA
+Gravando um vídeo curto pro Instagram (Reels), falando direto com quem está assistindo, como uma amiga mostrando uma descoberta.
+
+### DIREÇÃO
+- Idioma: português do Brasil, sotaque paulista, natural e do dia a dia.
+- Estilo: voz aguda, doce e animada. Dá pra ouvir o sorriso na voz. Nada de cara de propaganda ou locutor.
+- Ritmo: rápido e saltitante, mas sem engolir palavras. Respira nas pausas marcadas com "…".
+- Siga as marcações entre colchetes como direção de atuação, sem falar elas em voz alta.
+
+#### TEXTO A FALAR`;
+
+// ---------- montar a tela ----------
+$("chave").value = ler("yang_gemini_chave") || "";
+$("chave").addEventListener("change", () => guardar("yang_gemini_chave", $("chave").value.trim()));
+$("ficha").value = ler("yang_voz_ficha") || FICHA_PADRAO;
+$("ficha").addEventListener("change", () => guardar("yang_voz_ficha", $("ficha").value));
+$("fichaPadrao").onclick = e => { e.preventDefault(); $("ficha").value = FICHA_PADRAO; guardar("yang_voz_ficha", FICHA_PADRAO); };
+$("texto").value = ler("yang_voz_texto") || "";
+$("texto").addEventListener("input", () => guardar("yang_voz_texto", $("texto").value));
+const modeloSalvo = ler("yang_voz_modelo"); if (modeloSalvo) $("modelo").value = modeloSalvo;
+$("modelo").addEventListener("change", () => guardar("yang_voz_modelo", $("modelo").value));
+
+EMOCOES.forEach(([nome, tag]) => {
+  const b = document.createElement("button"); b.type = "button"; b.textContent = nome;
+  b.onclick = () => inserir(tag === "…" ? "… " : tag + " ");
+  $("emocoes").appendChild(b);
+});
+function inserir(txt){
+  const t = $("texto"), i = t.selectionStart ?? t.value.length, f = t.selectionEnd ?? i;
+  const antes = t.value.slice(0, i), espaco = antes && !/\s$/.test(antes) ? " " : "";
+  t.value = antes + espaco + txt + t.value.slice(f);
+  const pos = i + espaco.length + txt.length; t.focus(); t.setSelectionRange(pos, pos);
+  guardar("yang_voz_texto", t.value);
+}
+
+let oficial = ler("yang_voz_oficial") || "";
+const marcadas = new Set(JSON.parse(ler("yang_voz_marcadas") || '["Leda","Zephyr","Laomedeia","Autonoe"]'));
+function desenharVozes(){
+  $("vozes").innerHTML = "";
+  VOZES.forEach(([nome, jeito]) => {
+    const l = document.createElement("label"); l.className = "chip" + (nome === oficial ? " oficial" : "");
+    l.innerHTML = `<input type="checkbox" ${marcadas.has(nome) ? "checked" : ""}> ${nome === oficial ? "⭐ " : ""}${nome} <small>${jeito}</small>`;
+    l.querySelector("input").onchange = e => { e.target.checked ? marcadas.add(nome) : marcadas.delete(nome); guardar("yang_voz_marcadas", JSON.stringify([...marcadas])); };
+    $("vozes").appendChild(l);
+  });
+}
+desenharVozes();
+
+// ---------- gerar ----------
+function textoLimpo(t){ return t.replace(/\[[^\]]*\]/g, "").replace(/[ \t]+/g, " ").replace(/ +([,.!?…])/g, "$1").trim(); }
+
+function status(classe, msg){ const s = $("status"); s.className = "status " + classe; s.textContent = msg; }
+
+async function gerarUma(chave, modelo, voz, prompt){
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelo}:generateContent?key=${encodeURIComponent(chave)}`;
+  const corpo = {
+    contents: [{ parts: [{ text: prompt }] }],
+    generationConfig: { responseModalities: ["AUDIO"], speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: voz } } } }
+  };
+  const r = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(corpo) });
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) {
+    const m = j.error?.message || ("erro " + r.status);
+    if (r.status === 400 && /API key/i.test(m)) throw new Error("Chave do Gemini inválida. Confira se copiou inteira.");
+    if (r.status === 429) throw new Error("Limite do plano grátis atingido. Espere 1 minuto e tente de novo (ou teste menos vozes de uma vez).");
+    if (r.status === 404) throw new Error("Esse modelo não está disponível pra sua chave. Troque o modelo lá em cima.");
+    throw new Error(m);
+  }
+  const parte = (j.candidates?.[0]?.content?.parts || []).find(p => p.inlineData?.data);
+  if (!parte) throw new Error("O Gemini não devolveu áudio (às vezes acontece com texto muito curto ou estranho). Tente de novo.");
+  const taxa = Number((parte.inlineData.mimeType || "").match(/rate=(\d+)/)?.[1]) || 24000;
+  const bin = atob(parte.inlineData.data), bytes = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  return { pcm: new Int16Array(bytes.buffer, 0, bytes.length >> 1), taxa };
+}
+
+// PCM 16-bit mono → MP3 (lamejs). Se a biblioteca não carregar, cai pra WAV.
+function paraArquivo({ pcm, taxa }){
+  if (window.lamejs) {
+    const enc = new lamejs.Mp3Encoder(1, taxa, 128), partes = [];
+    for (let i = 0; i < pcm.length; i += 1152) { const b = enc.encodeBuffer(pcm.subarray(i, i + 1152)); if (b.length) partes.push(new Uint8Array(b)); }
+    const fim = enc.flush(); if (fim.length) partes.push(new Uint8Array(fim));
+    return { blob: new Blob(partes, { type: "audio/mpeg" }), ext: "mp3" };
+  }
+  const buf = new ArrayBuffer(44 + pcm.length * 2), v = new DataView(buf), w = (o, s) => [...s].forEach((c, i) => v.setUint8(o + i, c.charCodeAt(0)));
+  w(0, "RIFF"); v.setUint32(4, 36 + pcm.length * 2, true); w(8, "WAVEfmt "); v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true);
+  v.setUint32(24, taxa, true); v.setUint32(28, taxa * 2, true); v.setUint16(32, 2, true); v.setUint16(34, 16, true); w(36, "data"); v.setUint32(40, pcm.length * 2, true);
+  new Int16Array(buf, 44).set(pcm);
+  return { blob: new Blob([buf], { type: "audio/wav" }), ext: "wav" };
+}
+
+function cartao(voz){
+  const c = document.createElement("div"); c.className = "res" + (voz === oficial ? " oficial" : "");
+  c.innerHTML = `<div class="nome">${voz === oficial ? "⭐ " : ""}${voz} <small>gerando…</small></div>`;
+  $("resultados").prepend(c); return c;
+}
+
+$("gerar").onclick = async () => {
+  const chave = $("chave").value.trim(), texto = $("texto").value.trim(), modelo = $("modelo").value;
+  const vozes = VOZES.map(v => v[0]).filter(n => marcadas.has(n));
+  if (!chave) return status("erro", "Cole a chave do Gemini primeiro.");
+  if (!texto) return status("erro", "Escreva o que a Yang vai falar.");
+  if (!vozes.length) return status("erro", "Marque pelo menos uma voz.");
+  guardar("yang_gemini_chave", chave);
+
+  const prompt = $("ficha").value.trim() + "\n" + texto;
+  $("limpo").style.display = "block";
+  $("limpo").innerHTML = "<b>📝 Texto pra legenda do reel (sem as emoções):</b>\n" + textoLimpo(texto).replace(/</g, "&lt;");
+
+  $("gerar").disabled = true;
+  let feitas = 0, erros = 0;
+  status("espera", `Farejando a voz… 0/${vozes.length}`);
+  // Uma de cada vez, pra não estourar o limite por minuto do plano grátis.
+  for (const voz of vozes) {
+    const c = cartao(voz);
+    try {
+      const { blob, ext } = paraArquivo(await gerarUma(chave, modelo, voz, prompt));
+      const url = URL.createObjectURL(blob), nomeArq = `voz-yang-${voz.toLowerCase()}-${Date.now().toString(36)}.${ext}`;
+      c.innerHTML = `<div class="nome">${voz === oficial ? "⭐ " : ""}${voz} <small>${$("modelo").selectedOptions[0].text.split(" (")[0]}</small></div>
+        <audio controls src="${url}"></audio>
+        <div class="linha"><a href="${url}" download="${nomeArq}">⬇️ Baixar ${ext.toUpperCase()}</a><button type="button">⭐ Essa é a Yang</button></div>`;
+      c.querySelector("button").onclick = () => {
+        oficial = voz; guardar("yang_voz_oficial", voz); marcadas.clear(); marcadas.add(voz);
+        guardar("yang_voz_marcadas", JSON.stringify([voz])); desenharVozes();
+        document.querySelectorAll(".res").forEach(x => x.classList.toggle("oficial", x === c));
+        status("ok", `⭐ ${voz} virou a voz oficial da Yang. Daqui pra frente ela já vem marcada sozinha.`);
+      };
+      feitas++;
+    } catch (e) {
+      erros++;
+      c.innerHTML = `<div class="nome">${voz}</div><div class="erroTag">❌ ${e.message}</div>`;
+      if (/Chave do Gemini inválida/.test(e.message)) break;
+    }
+    status("espera", `Farejando a voz… ${feitas + erros}/${vozes.length}`);
+  }
+  $("gerar").disabled = false;
+  if (!erros) status("ok", vozes.length > 1 ? "Pronto! Ouça as vozes e marque ⭐ na que tem mais cara de Yang." : "Pronto!");
+  else if (feitas) status("erro", `${feitas} deram certo e ${erros} deram erro (veja nos cartões).`);
+  else status("erro", "Nenhuma voz foi gerada. Veja o erro no cartão abaixo.");
+};
+</script>
+</body>
+</html>
