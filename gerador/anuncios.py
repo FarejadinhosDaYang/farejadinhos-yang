@@ -42,6 +42,19 @@ def main(arquivo):
             print(f"  categoria de {o['slug']}: {o['categoria']}")
             mudou = True
             continue
+        if it.get("op") == "sub":
+            # subcategoria escolhida à mão (vazio = automática pelas palavras)
+            o = por_slug.get(it.get("slug"))
+            if not o:
+                continue
+            v = str(it.get("sub") or "").strip()
+            if v:
+                o["sub"] = v
+            else:
+                o.pop("sub", None)
+            print(f"  subcategoria de {o['slug']}: {v or 'automática'}")
+            mudou = True
+            continue
         if it.get("op") == "black":
             # Black November: "auto" (pelo desconto), true (sempre) ou false (nunca)
             o = por_slug.get(it.get("slug"))

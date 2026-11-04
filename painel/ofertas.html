@@ -157,6 +157,7 @@ body{margin:0;padding:20px;background:var(--cream);font-family:'Work Sans',Arial
 
 </div>
 
+<script src="../assets/categorias-config.js"></script>
 <script src="../assets/vitrine.js"></script>
 <script src="../assets/divulgacao.js"></script>
 <script src="../assets/anuncios-painel.js"></script>
@@ -458,7 +459,8 @@ function render(){
       const item = document.createElement("div");
       item.className = "item";
 
-      const opcoesCategoria = ["Café","Casa","Academia","Celulares","Acessórios de Celular","Eletrônicos","Beleza","Moda","Pet","Cozinha","Utilidades","Natal","Skincare","Piscina","Eletrodomésticos"]
+      const opcoesCategoria = [...new Set(["Café","Casa","Academia","Celulares","Acessórios de Celular","Eletrônicos","Beleza","Moda","Pet","Cozinha","Utilidades","Natal","Skincare","Piscina","Eletrodomésticos"]
+        .concat(((window.FarejadinhosConfigCategorias || {}).categoriasExtras || []).map(x => x.nome).filter(Boolean)))]
         .map(c => `<option value="${c}" ${o.categoria === c ? "selected" : ""}>${c}</option>`)
         .join("");
 

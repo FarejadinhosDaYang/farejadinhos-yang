@@ -29,6 +29,15 @@ window.FAREJA_ICONES_CAT = {
     "Acessórios de Celular": { icone: "🔌", cor: "#5C6BC0" }
 };
 
+// categorias criadas pelo ➕ do modo admin (assets/categorias-config.js) ganham ícone
+window.farejaIconesExtras = function () {
+    var c = window.FarejadinhosConfigCategorias;
+    (c && c.categoriasExtras || []).forEach(function (x) {
+        if (x && x.nome && !window.FAREJA_ICONES_CAT[x.nome]) window.FAREJA_ICONES_CAT[x.nome] = { icone: x.icone || "🏷️", cor: x.cor || "#8A7563" };
+    });
+};
+window.farejaIconesExtras();
+
 (function () {
     var script = document.currentScript;
     var base = script.getAttribute("data-base") || "";
@@ -88,7 +97,8 @@ window.FAREJA_ICONES_CAT = {
     // [{ nome, icone, cor, n }] das categorias que têm oferta no ar
     window.FarejadinhosCategoriasNoAr = function () {
         if (promessa) return promessa;
-        promessa = (window.FarejadinhosVitrine ? Promise.resolve() : carregarScript(base + "assets/vitrine.js"))
+        promessa = (window.FarejadinhosConfigCategorias ? Promise.resolve() : carregarScript(base + "assets/categorias-config.js?v=" + Math.floor(Date.now() / 600000)))
+            .then(function () { window.farejaIconesExtras(); return window.FarejadinhosVitrine ? null : carregarScript(base + "assets/vitrine.js"); })
             .then(function () { return fetch(base + "ofertas.json?t=" + Math.floor(Date.now() / 60000), { cache: "no-store" }); })
             .then(function (r) { return r.json(); })
             .then(function (d) {
@@ -101,18 +111,21 @@ window.FAREJA_ICONES_CAT = {
                     var cats = V.categoriasDe ? V.categoriasDe(o) : [(o && o.categoria || "").trim()];
                     var vistas = {};
                     cats.forEach(function (c) { c = grupo(c); if (c && !vistas[c]) { vistas[c] = 1; cont[c] = (cont[c] || 0) + 1; } });
-                    var sub = V.subCelular ? V.subCelular(o) : "";
-                    if (sub) subs[sub] = (subs[sub] || 0) + 1;
+                    var sub = V.subcategoriaDe ? V.subcategoriaDe(o) : "";
+                    var mae = V.categoriaPrincipal ? V.categoriaPrincipal(o) : "";
+                    if (sub && mae) { subs[mae] = subs[mae] || {}; subs[mae][sub] = (subs[mae][sub] || 0) + 1; }
                 });
                 return Object.keys(cont).sort(function (a, b) { return a.localeCompare(b, "pt-BR"); }).map(function (c) {
                     var ic = window.FAREJA_ICONES_CAT[c] || { icone: "🐾", cor: "#8A7563" };
                     var item = { nome: c, icone: ic.icone, cor: ic.cor, n: cont[c], total: visiveis.length };
-                    // Celulares: Samsung · Apple · Xiaomi · (outras) · Acessórios
-                    if (c === "Celulares" && V.SUBS_CELULAR) {
-                        var ordem = V.SUBS_CELULAR.slice(0, 3).concat(["Outras marcas"], V.SUBS_CELULAR.slice(3));
-                        item.subs = ordem.filter(function (s) { return subs[s]; }).map(function (s) {
-                            return { nome: s, valor: "Celulares/" + s, n: subs[s] };
+                    // subcategorias (Celulares: marcas + Acessórios; as outras: assets/categorias-config.js)
+                    var daCat = subs[c] || {};
+                    if (V.subcategoriasDe) {
+                        item.subs = V.subcategoriasDe(c).filter(function (s) { return daCat[s]; }).map(function (s) {
+                            return { nome: s, valor: c + "/" + s, n: daCat[s] };
                         });
+                        // só "Outros" não vale a setinha
+                        if (item.subs.length === 1 && /^Outr/.test(item.subs[0].nome)) item.subs = [];
                     }
                     return item;
                 });

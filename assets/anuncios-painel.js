@@ -84,6 +84,17 @@ function montarAnunciosPainel(o, box){
   const fmt = a => a.valor ? "R$ " + a.valor.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : "sem preço";
   box.innerHTML = `
     <label class="ancFixo"><input type="checkbox" class="ancFixoCheck" ${o.fixo ? "checked" : ""}> 📌 <b>Fixar no site</b> <span>— anúncio âncora: não expira e o preço continua sendo conferido</span></label>
+    ${(() => {
+      const mae = V.categoriaPrincipal ? V.categoriaPrincipal(o) : "";
+      const subs = V.subcategoriasDe ? V.subcategoriasDe(mae).filter(s => !/^Outr/.test(s)) : [];
+      if(!subs.length || mae === "Celulares") return "";
+      const auto = V.subcategoriaDe(Object.assign({}, o, { sub: "" }));
+      return `<label class="ancFixo">🗂️ <b>Subcategoria</b> <span>— em ${esc(mae)}</span>
+        <select class="ancSubSel" style="display:block;width:100%;margin-top:6px;padding:7px 8px;border-radius:8px;border:1.5px solid var(--line);font:600 13px 'Work Sans',sans-serif">
+          <option value="">Automática (pelo nome: ${esc(auto)})</option>
+          ${subs.map(s => `<option value="${esc(s)}"${o.sub === s ? " selected" : ""}>${esc(s)}</option>`).join("")}
+        </select></label>`;
+    })()}
     <label class="ancFixo ancBlack">🖤 <b>Black November</b>
       <select class="ancBlackSel">
         <option value="auto"${o.black !== true && o.black !== false ? " selected" : ""}>Automático (entra com ${V.BLACK_DESCONTO_MIN || 40}% OFF ou mais${V.descontoPct ? " — esta tem " + V.descontoPct(o) + "%" : ""})</option>
@@ -243,6 +254,18 @@ function montarAnunciosPainel(o, box){
   };
 
   // 🎨 cor/versão e foto de um anúncio que já está aqui
+  const subSel = box.querySelector(".ancSubSel");
+  if(subSel) subSel.onchange = async function(){
+    const sub = this.value;
+    this.disabled = true;
+    try{
+      await pedirAnuncio({ op: "sub", slug: o.slug, sub });
+      o.sub = sub;
+      aviso(sub ? "🗂️ Subcategoria: " + sub + " (aparece em 1-2 minutos)." : "🗂️ Subcategoria automática de novo.");
+    }catch(e){ aviso("❌ " + e.message, true); }
+    this.disabled = false;
+  };
+
   box.querySelector(".ancBlackSel").onchange = async function(){
     const v = this.value, black = v === "sim" ? true : v === "nao" ? false : "auto";
     this.disabled = true;

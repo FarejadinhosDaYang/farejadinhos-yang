@@ -1100,6 +1100,7 @@ Preços, cupons e estoque foram conferidos na publicação e podem mudar na loja
 </div>
 
 <script src="assets/nav.js"></script>
+<script src="assets/categorias-config.js"></script>
 <script src="assets/vitrine.js"></script>
 <script src="assets/cupons-vitrine.js" data-base=""></script>
 <script>
@@ -1403,10 +1404,10 @@ function montarPrateleiras(){
             (porCategoria[c] = porCategoria[c] || []).push(o);
         });
     });
-    if(porCategoria["Celulares"]){
-        porCategoria["Celulares"] = porCategoria["Celulares"].map((o, i) => [o, i])
-            .sort((a, b) => FarejadinhosVitrine.pesoNaCategoria(a[0]) - FarejadinhosVitrine.pesoNaCategoria(b[0]) || a[1] - b[1]).map(x => x[0]);
-    }
+    // em cada prateleira, semelhantes juntos (subcategoria, depois nome)
+    Object.keys(porCategoria).forEach(c => {
+        if(c !== FarejadinhosVitrine.TAG_VIDEO) porCategoria[c] = FarejadinhosVitrine.ordenarNaCategoria(porCategoria[c]);
+    });
 
     // Só categorias com pelo menos 2 ofertas; as maiores primeiro
     const categorias = Object.keys(porCategoria)
@@ -1580,9 +1581,11 @@ function aplicarFiltros(){
     document.getElementById("tituloGrid").textContent = titulo;
 
     let lista = ordenar(filtradas, document.getElementById("ordem").value);
-    // Celulares: aparelhos sempre em cima, acessórios embaixo (mantém a ordem escolhida dentro de cada grupo)
-    if(filtroAtivo.tipo === "categoria" && String(filtroAtivo.valor).indexOf("Celulares") === 0){
-        lista = lista.map((o, i) => [o, i]).sort((a, b) => FarejadinhosVitrine.pesoNaCategoria(a[0]) - FarejadinhosVitrine.pesoNaCategoria(b[0]) || a[1] - b[1]).map(x => x[0]);
+    // Dentro de uma categoria: semelhantes juntos (por subcategoria e nome).
+    // Só na ordem padrão ("mais recentes"); se a pessoa escolheu outra ordem, respeita.
+    if(filtroAtivo.tipo === "categoria" && document.getElementById("ordem").value === "recentes" &&
+       String(filtroAtivo.valor) !== FarejadinhosVitrine.TAG_VIDEO){
+        lista = FarejadinhosVitrine.ordenarNaCategoria(lista);
     }
     render(lista);
 

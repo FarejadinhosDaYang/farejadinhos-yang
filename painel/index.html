@@ -787,7 +787,20 @@ Processando...
 
 
 <script src="../assets/divulgacao.js"></script>
+<script src="../assets/categorias-config.js"></script>
 <script src="../assets/categorias.js"></script>
+<script>
+// categorias que não estão na lista fixa do formulário (ex.: criadas pelo ➕ do modo admin)
+(function(){
+  var sel = document.getElementById("categoria");
+  if(!sel || !window.FarejadinhosCategorias) return;
+  var tem = {}; Array.prototype.forEach.call(sel.options, function(o){ tem[o.value] = 1; });
+  FarejadinhosCategorias.LISTA.forEach(function(c){
+    if(tem[c] || c === "Vídeos") return;
+    var o = document.createElement("option"); o.value = c; o.textContent = c; sel.appendChild(o);
+  });
+})();
+</script>
 <script>
 
 const WORKER_URL =

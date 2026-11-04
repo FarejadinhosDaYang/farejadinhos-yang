@@ -96,17 +96,64 @@
   }
   // categoria "de vitrine": acessório de celular conta como Celulares
   function grupoCategoria(c){ return c === ACESSORIOS_CELULAR ? "Celulares" : c; }
+
+  // ================= SUBCATEGORIAS (todas as categorias) =================
+  // Lista por categoria em assets/categorias-config.js (o ➕ do modo admin
+  // edita). A oferta cai na 1ª subcategoria cuja palavra aparece no nome
+  // ("^palavra" = só no começo do nome); o campo "sub" da oferta força uma.
+  // Sem nenhuma: "Outros". Celulares é especial: marca do aparelho + Acessórios.
+  function configCategorias(){
+    const c = (typeof window !== "undefined" && window.FarejadinhosConfigCategorias) || {};
+    return { subcategorias: c.subcategorias || {}, categoriasExtras: c.categoriasExtras || [] };
+  }
+  const semAcentoMin = t => " " + String(t || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, " ").trim() + " ";
+  function categoriaPrincipal(o){
+    const c = categoriasDe(o).filter(x => x !== TAG_VIDEO)[0] || "";
+    return grupoCategoria(c);
+  }
+  function subcategoriasDe(mae){
+    if(mae === "Celulares") return SUBS_CELULAR.slice(0, 3).concat(["Outras marcas"], SUBS_CELULAR.slice(3));
+    const l = (configCategorias().subcategorias[mae] || []).map(s => s.nome);
+    return l.length ? l.concat(["Outros"]) : [];
+  }
+  function subcategoriaDe(o){
+    const mae = categoriaPrincipal(o);
+    if(!mae) return "";
+    if(mae === "Celulares") return subCelular(o);
+    const subs = configCategorias().subcategorias[mae] || [];
+    if(!subs.length) return "";
+    if(o.sub && subs.some(s => s.nome === o.sub)) return o.sub;
+    const nome = semAcentoMin(o.produto);
+    for(const s of subs){
+      for(const p of (s.palavras || [])){
+        const k = semAcentoMin(String(p).replace(/^\^/, ""));
+        if(k.trim() && (String(p).charAt(0) === "^" ? nome.indexOf(k) === 0 : nome.indexOf(k) >= 0)) return s.nome;
+      }
+    }
+    return "Outros";
+  }
   function bateCategoria(o, filtro){
     filtro = String(filtro || "");
     const i = filtro.indexOf("/");
     if(i > 0){
       const mae = filtro.slice(0, i), sub = filtro.slice(i + 1);
-      return mae === "Celulares" && subCelular(o) === sub;
+      return categoriaPrincipal(o) === mae && subcategoriaDe(o) === sub;
     }
     return categoriasDe(o).some(c => c === filtro || grupoCategoria(c) === filtro);
   }
   // dentro de Celulares, aparelhos sempre em cima e acessórios embaixo
   function pesoNaCategoria(o){ return subCelular(o) === "Acessórios" ? 1 : 0; }
+  // "Semelhantes juntos": dentro de uma categoria, agrupa por subcategoria
+  // (na ordem da lista) e, dentro dela, por nome — as panelas de arroz
+  // ficam todas juntas, depois os liquidificadores... (ordem estável)
+  function ordenarNaCategoria(lista){
+    return lista.map((o, i) => {
+      const mae = categoriaPrincipal(o), subs = subcategoriasDe(mae), s = subcategoriaDe(o);
+      const pos = subs.indexOf(s);
+      return { o, i, mae, pos: pos < 0 ? 999 : pos, nome: semAcentoMin(o.produto) };
+    }).sort((a, b) => (a.mae === b.mae ? 0 : a.mae.localeCompare(b.mae)) || a.pos - b.pos || a.nome.localeCompare(b.nome) || a.i - b.i)
+      .map(x => x.o);
+  }
   function nomeFiltro(filtro){
     const i = String(filtro || "").indexOf("/");
     return i > 0 ? filtro.slice(0, i) + " · " + filtro.slice(i + 1) : String(filtro || "");
@@ -427,7 +474,7 @@
 
   window.FarejadinhosVitrine = {
     MINIMO_VITRINE, HORAS_FRESCA, HORAS_MAXIMA, META_CATEGORIA, MINIMO_CATEGORIA, TEMPORADAS,
-    inicio, idadeHoras, selecionar, status, indisponivel, HORAS_SEM_PRECO, foraDeEpoca, podeIrProPodio, FORA_DO_PODIO, dataOrdem, anunciosDe, melhorAnuncio, comMelhorAnuncio, lojaDe, numeroPreco, variacoesDe, corDe, ehPermanente, ACESSORIOS_CELULAR, SUBS_CELULAR, subCelular, grupoCategoria, bateCategoria, pesoNaCategoria, nomeFiltro, ehBlack, descontoPct, BLACK_DESCONTO_MIN, PERMANENTES, normalizar, categoriasDe, juntarCategoria, TAG_VIDEO
+    inicio, idadeHoras, selecionar, status, indisponivel, HORAS_SEM_PRECO, foraDeEpoca, podeIrProPodio, FORA_DO_PODIO, dataOrdem, anunciosDe, melhorAnuncio, comMelhorAnuncio, lojaDe, numeroPreco, variacoesDe, corDe, ehPermanente, ACESSORIOS_CELULAR, SUBS_CELULAR, subCelular, grupoCategoria, bateCategoria, pesoNaCategoria, nomeFiltro, configCategorias, categoriaPrincipal, subcategoriasDe, subcategoriaDe, ordenarNaCategoria, ehBlack, descontoPct, BLACK_DESCONTO_MIN, PERMANENTES, normalizar, categoriasDe, juntarCategoria, TAG_VIDEO
   };
 
 })();

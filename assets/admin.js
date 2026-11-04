@@ -33,6 +33,10 @@
     css.textContent = [
         ".adm-barra{position:fixed;left:12px;bottom:12px;z-index:90;display:flex;align-items:center;gap:6px;flex-wrap:wrap;background:#2B1B12;color:#fff;border-radius:14px;padding:8px 10px;font:600 13px 'Work Sans',Arial,sans-serif;box-shadow:0 10px 26px rgba(0,0,0,.28);max-width:calc(100vw - 24px)}",
         ".adm-barra b{color:#F7941D;margin-right:4px}",
+        ".yt-lat-lista a{position:relative}",
+        ".adm-cat-btn{flex:none;margin-left:2px;border:0;background:#FFF1DE;border-radius:7px;width:24px;height:24px;font-size:12px;cursor:pointer;line-height:1}",
+        ".adm-cat-btn:hover{background:#F7941D}",
+        ".adm-cat-nova{display:block;width:100%;margin-top:8px;padding:9px;border:1.5px dashed #F7941D;border-radius:11px;background:#FFF6E9;color:#C21A24;font:800 13px 'Work Sans',Arial,sans-serif;cursor:pointer}",
         ".adm-barra button,.adm-barra a{font:700 12.5px 'Work Sans',Arial,sans-serif;border:0;border-radius:9px;padding:7px 10px;cursor:pointer;text-decoration:none;background:#4a362a;color:#fff}",
         ".adm-barra .adm-principal{background:#F7941D;color:#2B1B12}",
         ".adm-barra .adm-perigo{background:#7a1a1f}",
@@ -118,6 +122,10 @@
 
     function carregarCategorias() {
         if (window.FarejadinhosCategorias) return Promise.resolve(window.FarejadinhosCategorias.LISTA);
+        if (!window.FarejadinhosConfigCategorias && !carregarCategorias.tentou) {
+            carregarCategorias.tentou = true;
+            return carregarScript("assets/categorias-config.js", "FarejadinhosConfigCategorias").catch(function () {}).then(carregarCategorias);
+        }
         return new Promise(function (ok) {
             var s = document.createElement("script");
             s.src = base + "assets/categorias.js";
@@ -194,7 +202,8 @@
         // 🏪 Outros anúncios / cores deste produto (mesmo editor do painel)
         var anc = document.createElement("div");
         extra.appendChild(anc);
-        carregarScript("assets/vitrine.js", "FarejadinhosVitrine")
+        carregarScript("assets/categorias-config.js", "FarejadinhosConfigCategorias").catch(function () {})
+            .then(function () { return carregarScript("assets/vitrine.js", "FarejadinhosVitrine"); })
             .then(function () { return carregarScript("assets/anuncios-painel.js", "FarejadinhosAnunciosPainel"); })
             .then(function () { window.FarejadinhosAnunciosPainel.montar(oferta, anc); })
             .catch(function () { anc.textContent = "Não consegui carregar o editor de outros anúncios."; });
@@ -283,7 +292,84 @@
     }
 
     // ---------- início ----------
+    // ---------- ➕ categorias e subcategorias na barra lateral ----------
+    // Cria/edita pelo /lote (acao "categorias" -> gerador/categorias_config.py,
+    // que grava assets/categorias-config.js). Vale pro site e pro painel.
+    function pedirCategorias(item, ok) {
+        var dados = new FormData();
+        dados.append("senha", ler());
+        dados.append("itens", JSON.stringify([Object.assign({ acao: "categorias" }, item)]));
+        return fetch(WORKER_URL + "/lote", { method: "POST", body: dados })
+            .then(function (r) { return r.text().then(function (t) { if (r.status === 401) throw new Error("Senha recusada."); if (!r.ok) throw new Error(t); }); })
+            .then(function () { aviso(ok + " Aparece no site em 1–2 minutos (atualize a página)."); })
+            .catch(function (e) { aviso("❌ " + e.message, true); });
+    }
+    function palavrasDaSub(cat, nome) {
+        var c = window.FarejadinhosConfigCategorias || {};
+        var s = ((c.subcategorias || {})[cat] || []).filter(function (x) { return x.nome === nome; })[0];
+        return s ? (s.palavras || []).join(", ") : "";
+    }
+    function novaSub(cat) {
+        var nome = prompt("Nova subcategoria dentro de \"" + cat + "\"\n\nNome (ex.: Panela de Arroz):", "");
+        if (!nome || !nome.trim()) return;
+        var pal = prompt("Palavras que aparecem no NOME dos produtos dessa subcategoria, separadas por vírgula.\nOs produtos com essas palavras entram nela sozinhos.\n\nEx.: panela de arroz, rice", nome.trim().toLowerCase());
+        if (pal === null) return;
+        pedirCategorias({ op: "add-sub", categoria: cat, nome: nome.trim(), palavras: pal }, "✅ Subcategoria \"" + nome.trim() + "\" criada em " + cat + ".");
+    }
+    function editarSub(cat, nome) {
+        if (/^Outr/.test(nome)) { aviso("\"" + nome + "\" é automática: junta o que não caiu em nenhuma subcategoria.", true); return; }
+        if (cat === "Celulares") { aviso("As subcategorias de Celulares são automáticas (marca do aparelho e Acessórios).", true); return; }
+        var novo = prompt("Editar subcategoria \"" + nome + "\" (" + cat + ")\n\nNome — deixe VAZIO pra APAGAR a subcategoria:", nome);
+        if (novo === null) return;
+        if (!novo.trim()) {
+            if (confirm("Apagar a subcategoria \"" + nome + "\"? Os produtos dela vão pra outra subcategoria ou pra \"Outros\".")) pedirCategorias({ op: "del-sub", categoria: cat, nome: nome }, "🗑️ Subcategoria apagada.");
+            return;
+        }
+        var pal = prompt("Palavras que aparecem no nome dos produtos (separadas por vírgula):", palavrasDaSub(cat, nome));
+        if (pal === null) return;
+        pedirCategorias({ op: "edit-sub", categoria: cat, nome: nome, novoNome: novo.trim(), palavras: pal }, "✅ Subcategoria atualizada.");
+    }
+    function novaCategoria() {
+        var nome = prompt("Nova categoria\n\nNome (ex.: Brinquedos):", "");
+        if (!nome || !nome.trim()) return;
+        var icone = prompt("Um emoji pra ela (ex.: 🧸):", "🏷️");
+        if (icone === null) return;
+        var pal = prompt("Palavras que aparecem no nome dos produtos dessa categoria, separadas por vírgula (ajuda o painel a sugerir sozinho). Pode deixar vazio.", "");
+        if (pal === null) return;
+        pedirCategorias({ op: "add-cat", nome: nome.trim(), icone: icone.trim(), palavras: pal },
+            "✅ Categoria \"" + nome.trim() + "\" criada — já aparece na lista de categorias do Editar e do painel; no menu, assim que tiver oferta nela.");
+    }
+    function adminCategorias() {
+        var lista = document.querySelector(".yt-lat-lista");
+        if (!lista || !lista.querySelector("a[data-cat]") || lista.querySelector(".adm-cat-nova")) return;
+        lista.querySelectorAll("a[data-cat]").forEach(function (a) {
+            var cat = a.getAttribute("data-cat");
+            if (!cat || a.querySelector(".adm-cat-btn")) return;
+            var b = document.createElement("button");
+            b.type = "button";
+            b.className = "adm-cat-btn";
+            var i = cat.indexOf("/");
+            if (i > 0) {
+                b.textContent = "✏️"; b.title = "Editar subcategoria";
+                b.onclick = function (e) { e.preventDefault(); e.stopPropagation(); editarSub(cat.slice(0, i), cat.slice(i + 1)); };
+            } else {
+                b.textContent = "➕"; b.title = "Nova subcategoria em " + cat;
+                b.onclick = function (e) { e.preventDefault(); e.stopPropagation(); novaSub(cat); };
+            }
+            a.appendChild(b);
+        });
+        var nova = document.createElement("button");
+        nova.type = "button";
+        nova.className = "adm-cat-nova";
+        nova.textContent = "➕ Nova categoria";
+        nova.onclick = novaCategoria;
+        lista.appendChild(nova);
+    }
+
     function ligar() {
+        // barra lateral de categorias: aparece um pouco depois (topo.js)
+        adminCategorias();
+        new MutationObserver(function () { adminCategorias(); }).observe(document.body, { childList: true, subtree: true });
         var slug = slugAtual();
         if (slug) {
             carregarOferta(slug).then(function () {

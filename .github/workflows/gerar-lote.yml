@@ -55,6 +55,10 @@ jobs:
               python gerador/anuncios.py $Arq
               if ($LASTEXITCODE -ne 0) { throw "anuncios.py falhou" }
             }
+            if ($texto -match '"acao"\s*:\s*"categorias"') {
+              python gerador/categorias_config.py $Arq
+              if ($LASTEXITCODE -ne 0) { throw "categorias_config.py falhou" }
+            }
             if ($texto -match '"acao"\s*:\s*"cupons-site"') {
               python gerador/cupons_site.py $Arq
               if ($LASTEXITCODE -ne 0) { throw "cupons_site.py falhou" }

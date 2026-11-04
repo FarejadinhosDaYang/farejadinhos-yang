@@ -182,6 +182,11 @@
       .trim() + " ";
   }
 
+  // Categorias criadas pelo ➕ do modo admin (assets/categorias-config.js),
+  // com as palavras-chave delas pra sugestão automática
+  const EXTRAS = ((window.FarejadinhosConfigCategorias || {}).categoriasExtras || []).filter(x => x && x.nome);
+  EXTRAS.forEach(x => { if(!CATEGORIAS[x.nome]) CATEGORIAS[x.nome] = (x.palavras || []).slice(); });
+
   // Pré-monta uma regex por palavra-chave (aceita plural: s / es)
   const REGRAS = Object.entries(CATEGORIAS).map(([categoria, palavras]) => ({
     categoria,
