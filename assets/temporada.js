@@ -88,6 +88,15 @@
         ".black-contagem{display:inline-flex;align-items:baseline;gap:10px;margin:0 0 16px;padding:9px 16px;border-radius:14px;background:rgba(255,200,107,.08);box-shadow:inset 0 0 0 1.5px rgba(255,200,107,.35)}",
         ".black-contagem b{font:800 clamp(26px,3.6vw,38px) 'Baloo 2',sans-serif;color:#FFC86B;line-height:1}",
         ".black-contagem span{font-size:14px;color:#EAD8C3}",
+        // relógio da Black Friday (dias : horas : min : seg)
+        ".black-relogio{margin:2px 0 16px}",
+        ".black-relogio .br-rotulo{font:700 13px 'Work Sans',Arial,sans-serif;color:#EAD8C3;letter-spacing:.3px;margin-bottom:7px}",
+        ".black-relogio .br-caixas{display:flex;align-items:flex-start;gap:6px}",
+        ".black-relogio i{font:800 26px/1 'Baloo 2',sans-serif;color:#E9A93A;font-style:normal;padding-top:9px;opacity:.8}",
+        ".black-relogio .br-caixa{min-width:64px;padding:8px 6px 6px;border-radius:12px;text-align:center;background:linear-gradient(180deg,rgba(255,200,107,.14),rgba(255,200,107,.04));box-shadow:inset 0 0 0 1.5px rgba(255,200,107,.4)}",
+        ".black-relogio .br-caixa b{display:block;font:800 clamp(26px,3.4vw,36px)/1 'Baloo 2',sans-serif;color:#FFC86B;font-variant-numeric:tabular-nums}",
+        ".black-relogio .br-caixa span{display:block;margin-top:3px;font:700 10px 'Work Sans',Arial,sans-serif;letter-spacing:1.2px;text-transform:uppercase;color:#D9C4AD}",
+        "@media(max-width:520px){.black-relogio .br-caixa{min-width:56px}.black-relogio i{font-size:20px;padding-top:8px}}",
         ".black-visual{position:relative;width:300px;height:290px;display:flex;align-items:flex-end;justify-content:center}",
         ".black-visual:before{content:'';position:absolute;left:50%;top:52%;width:270px;height:270px;margin:-135px 0 0 -135px;border-radius:50%;background:radial-gradient(circle,rgba(255,200,107,.38) 0%,rgba(255,200,107,.08) 55%,transparent 70%)}",
         ".black-visual img{position:relative;width:240px;height:auto;filter:drop-shadow(0 18px 28px rgba(0,0,0,.45))}",
@@ -150,7 +159,14 @@
         s.innerHTML =
             '<div class="hero-texto">' +
             '<h2><span class="linha">Black November</span><span class="linha ouro">da Yang.</span></h2>' +
-            '<div class="black-contagem"><b>' + c.grande + "</b><span>" + c.pequeno + "</span></div>" +
+            '<div class="black-relogio" aria-live="off">' +
+            '<div class="br-rotulo"></div>' +
+            '<div class="br-caixas">' +
+            '<div class="br-caixa"><b data-u="d">00</b><span>dias</span></div><i>:</i>' +
+            '<div class="br-caixa"><b data-u="h">00</b><span>horas</span></div><i>:</i>' +
+            '<div class="br-caixa"><b data-u="m">00</b><span>min</span></div><i>:</i>' +
+            '<div class="br-caixa"><b data-u="s">00</b><span>seg</span></div>' +
+            "</div></div>" +
             "<p>O mês inteiro a Yang fareja os maiores descontos — e só mostra quando o preço caiu de verdade. 🐾</p>" +
             '<a class="hero-cta" href="#blackSecao">🖤 Ver as ofertas Black</a>' +
             "</div>" +
@@ -158,6 +174,32 @@
             '<picture><source srcset="assets/yang-ilustrada.webp" type="image/webp"><img src="assets/yang-ilustrada.png" alt="" width="532" height="640"></picture>' +
             '<div class="etiqueta">BLACK<small>NOVEMBER</small></div></figure>';
         slides.insertBefore(s, slides.firstChild);
+        relogio(s.querySelector(".black-relogio"));
+    }
+
+    // Contagem regressiva ao vivo: até a Black Friday (27/11, 00h de Brasília);
+    // no dia, até o fim da Black Friday; depois, até o fim da Cyber Monday.
+    function relogio(el) {
+        if (!el) return;
+        var sexta = Date.parse(BLACK.sextaFeira), fimSexta = sexta + 24 * 3600e3;
+        var cyber = Date.parse(BLACK.cyberMonday), fimCyber = cyber + 24 * 3600e3;
+        var rot = el.querySelector(".br-rotulo"), u = {};
+        ["d", "h", "m", "s"].forEach(function (k) { u[k] = el.querySelector('[data-u="' + k + '"]'); });
+        var dois = function (n) { return (n < 10 ? "0" : "") + n; };
+        function tique() {
+            var t = Date.now(), alvo, texto;
+            if (t < sexta) { alvo = sexta; texto = "Faltam pra Black Friday (27/11)"; }
+            else if (t < fimSexta) { alvo = fimSexta; texto = "🔥 É HOJE! A Black Friday acaba em"; }
+            else if (t < fimCyber) { alvo = fimCyber; texto = t < cyber ? "Últimos dias · Cyber Monday (30/11) acaba em" : "🔥 Cyber Monday! Acaba em"; }
+            else { el.style.display = "none"; return; }
+            var r = Math.max(0, Math.floor((alvo - t) / 1000));
+            var d = Math.floor(r / 86400), h = Math.floor(r % 86400 / 3600), m = Math.floor(r % 3600 / 60), s = r % 60;
+            rot.textContent = texto;
+            u.d.textContent = dois(d); u.h.textContent = dois(h); u.m.textContent = dois(m); u.s.textContent = dois(s);
+            el.classList.toggle("sem-dias", d === 0);
+        }
+        tique();
+        setInterval(tique, 1000);
     }
     if (document.getElementById("heroSlides")) slide();
     else document.addEventListener("DOMContentLoaded", slide);
