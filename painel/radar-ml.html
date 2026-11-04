@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Radar do Mercado Livre | Painel Farejadinhos</title>
+<link rel="icon" href="../assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+    --red:#E5232E; --red-dark:#C21A24; --orange:#F7941D; --cream:#FDF3E3; --cream-2:#FFFAF1;
+    --ink:#2B1B12; --muted:#8A7563; --line:#F0DFC4; --verde:#1D6B33; --verde-bg:#E6F4EA; --ml:#FFE600;
+}
+*{box-sizing:border-box}
+body{margin:0;padding:20px 16px 140px;background:var(--cream);font-family:'Work Sans',Arial,sans-serif;color:var(--ink)}
+.container{max-width:1100px;margin:auto}
+.voltar{display:inline-block;margin-bottom:16px;color:var(--red-dark);font-weight:700;text-decoration:none;font-size:14px}
+h1{font-family:'Baloo 2',sans-serif;color:var(--red-dark);font-size:26px;margin:0 0 4px}
+.sub{color:var(--muted);font-size:14px;line-height:1.5;margin:0 0 14px}
+.sub a{color:var(--red-dark);font-weight:700}
+.topo{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+.topo input{flex:0 1 200px;padding:10px;border:1.5px solid var(--line);border-radius:10px;font:500 14px 'Work Sans',Arial,sans-serif;background:#fff}
+.cats{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin-bottom:10px;scrollbar-width:thin}
+.cat{flex:none;border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:7px 13px;font:600 13px 'Work Sans',Arial,sans-serif;cursor:pointer;color:var(--ink)}
+.cat.ativa{background:var(--ink);border-color:var(--ink);color:#fff}
+.cat:disabled{opacity:.6;cursor:wait}
+.filtros{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+.filtros input[type=search]{flex:1 1 200px;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;font:500 15px 'Work Sans',Arial,sans-serif;background:#fff}
+.filtros select{padding:9px;border:1.5px solid var(--line);border-radius:10px;font:500 14px 'Work Sans',Arial,sans-serif;background:#fff;color:var(--ink)}
+.filtros label{font-size:13.5px;display:flex;align-items:center;gap:5px;cursor:pointer}
+.contagem{font-size:13px;color:var(--muted);margin:0 0 10px}
+.estado{padding:14px 16px;border-radius:12px;background:#FFF6E9;border:1.5px solid #FFE0B8;font-size:14px;line-height:1.5;margin-bottom:14px}
+.estado.erro{background:#FDECEC;border-color:#F5C2C2}
+.estado ul{margin:6px 0 0;padding-left:18px;font-size:13px;color:var(--muted)}
+.estado button{margin-top:8px;border:1.5px solid var(--red);background:#fff;color:var(--red-dark);border-radius:10px;padding:7px 12px;font:700 13px 'Work Sans',Arial,sans-serif;cursor:pointer}
+.estado textarea{width:100%;height:140px;margin-top:8px;font:12px monospace;border:1.5px solid var(--line);border-radius:8px;padding:8px}
+
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.card{background:var(--cream-2);border:1.5px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+.card.sel{border-color:var(--red);box-shadow:0 0 0 2px rgba(229,35,46,.15)}
+.card.nosite{opacity:.6}
+.foto{position:relative;background:#fff;aspect-ratio:1/1}
+.foto img{width:100%;height:100%;object-fit:contain;display:block}
+.marcar{position:absolute;top:8px;left:8px;width:30px;height:30px;border-radius:8px;border:2px solid #fff;background:rgba(43,27,18,.35);display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;font-weight:800;font-size:18px}
+.card.sel .marcar{background:var(--red)}
+.pos{position:absolute;top:8px;right:8px;background:var(--ml);color:#2D3277;font:800 14px 'Baloo 2',sans-serif;padding:2px 9px;border-radius:999px}
+.sobe{position:absolute;bottom:8px;left:8px;color:#fff;font:700 12.5px 'Work Sans',Arial,sans-serif;padding:3px 9px;border-radius:999px;background:var(--verde)}
+.sobe.novo{background:var(--orange)} .sobe.desce{background:#8A7563}
+.off{position:absolute;bottom:8px;right:8px;background:var(--red);color:#fff;font:800 13px 'Baloo 2',sans-serif;padding:2px 8px;border-radius:999px}
+.info{padding:10px 12px 12px;display:flex;flex-direction:column;gap:6px;flex:1}
+.nome{font-weight:600;font-size:13.5px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.preco{font:800 19px 'Baloo 2',sans-serif;color:var(--red-dark);line-height:1}
+.preco s{font:500 12px 'Work Sans',Arial,sans-serif;color:var(--muted)}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:1px 7px;border-radius:999px;background:var(--verde-bg);color:var(--verde)}
+.afiliado{width:100%;padding:8px;border:1.5px solid var(--line);border-radius:8px;font:500 12.5px 'Work Sans',Arial,sans-serif;background:#fff}
+.afiliado.ok{border-color:var(--verde);background:var(--verde-bg)}
+.afiliado.ruim{border-color:#E5232E;background:#FDECEC}
+.acoes{display:flex;gap:6px;align-items:center;margin-top:auto}
+.acoes select{flex:1;min-width:0;padding:6px;border:1.5px solid var(--line);border-radius:8px;font:500 12.5px 'Work Sans',Arial,sans-serif;background:#fff;color:var(--ink)}
+.acoes a,.acoes button{border:1.5px solid var(--line);background:#fff;border-radius:8px;padding:6px 8px;font:600 12px 'Work Sans',Arial,sans-serif;color:var(--ink);text-decoration:none;cursor:pointer;white-space:nowrap}
+.acoes a.ml{background:var(--ml);border-color:#E6CF00;color:#2D3277}
+.vazio{padding:30px;text-align:center;color:var(--muted)}
+
+.barra{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1.5px solid var(--line);box-shadow:0 -8px 24px rgba(43,27,18,.1);padding:12px 16px;display:none}
+.barra.on{display:block}
+.barra .in{max-width:1100px;margin:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.barra b{font-family:'Baloo 2',sans-serif;font-size:17px}
+.barra .subir{border:0;border-radius:12px;padding:12px 18px;font:800 15px 'Baloo 2',sans-serif;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--red),var(--red-dark))}
+.barra .subir:disabled{opacity:.6;cursor:wait}
+.barra .limpar{border:0;background:none;color:var(--muted);font:600 13px 'Work Sans',Arial,sans-serif;cursor:pointer;text-decoration:underline}
+.status{flex:1 1 100%;font-size:13.5px}
+.status.ok{color:var(--verde)} .status.erro{color:#a3141c}
+.dica{margin-top:22px;padding:14px 16px;border:1.5px dashed var(--line);border-radius:14px;font-size:13.5px;line-height:1.6;background:var(--cream-2)}
+</style>
+</head>
+<body>
+<div class="container">
+
+<a class="voltar" href="index.html">← Voltar pro painel</a>
+<h1>🛒 Radar do Mercado Livre</h1>
+<p class="sub">Os <b>mais vendidos</b> do Mercado Livre, categoria por categoria, na hora. Também tem o <a href="radar.html">🔎 Radar da Shopee</a>.</p>
+
+<div class="topo">
+    <input type="password" id="senha" placeholder="Senha do painel" autocomplete="current-password" aria-label="Senha do painel">
+</div>
+<div class="cats" id="cats"></div>
+<div id="estado"></div>
+
+<div class="filtros" id="filtros" hidden>
+    <input type="search" id="busca" placeholder="Buscar nesta lista…" aria-label="Buscar">
+    <select id="ordem" aria-label="Ordem">
+        <option value="posicao">🏆 Posição no ranking</option>
+        <option value="subiu">🚀 Mais subiu no ranking</option>
+        <option value="desconto">Maior desconto</option>
+        <option value="barato">Menor preço</option>
+    </select>
+    <label><input type="checkbox" id="esconderSite" checked> esconder os que já estão no site</label>
+</div>
+<p class="contagem" id="contagem"></p>
+<div class="grade" id="grade"></div>
+
+<div class="dica">
+<b>Como funciona:</b> escolha uma categoria e a Yang abre a página de <b>Mais vendidos</b> do Mercado Livre na hora.
+O número amarelo é a <b>posição no ranking</b>. A etiqueta verde mostra quanto o produto <b>subiu</b> desde a última vez que você abriu essa categoria
+(🆕 = entrou no ranking agora). É esse movimento que mostra o que está viralizando. A comparação fica guardada neste navegador.<br>
+<b>Pra subir:</b> o ML não deixa criar link de afiliado automático. Então, pra cada produto: clique em <b>Ver no ML ↗</b>, gere o link de afiliado
+(barra de afiliados do ML → "Compartilhar" / gerador de links) e cole o <b>meli.la</b> no campo do card. Marque, confira a categoria e clique em <b>🚀 Subir no site</b>.
+Ele entra pelo mesmo caminho do lote: foto, página, fila de horários e histórico de preço.
+</div>
+</div>
+
+<div class="barra" id="barra"><div class="in">
+    <b id="selCont">0 selecionados</b>
+    <button class="subir" id="btnSubir" type="button">🚀 Subir no site</button>
+    <button class="limpar" id="btnLimpar" type="button">limpar seleção</button>
+    <div class="status" id="status"></div>
+</div></div>
+
+<script src="../assets/nomes.js"></script>
+<script src="../assets/categorias.js"></script>
+<script>
+const WORKER_URL = "https://holy-pine-e7fc.bernard-shimizu.workers.dev";
+const CATS = (window.FarejadinhosCategorias && FarejadinhosCategorias.LISTA || []).filter(c => c !== "Vídeos");
+// Categorias de "Mais vendidos" do Mercado Livre → categoria padrão no site
+const CATEGORIAS_ML = [
+    ["MLB1574", "🏠 Casa e decoração", "Casa"],
+    ["MLB5726", "⚡ Eletrodomésticos", "Eletrodomésticos"],
+    ["MLB1246", "💄 Beleza", "Beleza"],
+    ["MLB1000", "🎧 Eletrônicos", "Eletrônicos"],
+    ["MLB1051", "📱 Celulares", "Celulares"],
+    ["MLB1276", "💪 Esportes e fitness", "Academia"],
+    ["MLB1071", "🐾 Pet", "Pet"],
+    ["MLB263532", "🧰 Ferramentas", "Utilidades"],
+    ["MLB1747", "🚗 Carro e moto", "Utilidades"],
+    ["MLB1430", "👗 Moda", "Moda"],
+    ["MLB1648", "💻 Informática", "Eletrônicos"],
+    ["MLB1132", "🧸 Brinquedos", "Utilidades"],
+    ["MLB1384", "🍼 Bebês", "Utilidades"],
+    ["MLB1403", "☕ Alimentos e bebidas", "Café"],
+];
+
+let catAtual = null, itens = [], noSite = [];
+const sel = new Map();             // id -> categoria escolhida
+const links = {};                  // id -> link de afiliado colado
+
+function guardado(k, padrao){ try{ return JSON.parse(localStorage.getItem(k)) || padrao; }catch(e){ return padrao; } }
+function guardar(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+Object.assign(links, guardado("radarml_links", {}));
+const enviados = new Set(guardado("radarml_enviados", []));
+
+function el(tag, cls, txt){ const e = document.createElement(tag); if(cls) e.className = cls; if(txt != null) e.textContent = txt; return e; }
+function semAcento(t){ return String(t || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); }
+function numero(v){ return Number(String(v || "").replace(/\./g, "").replace(",", ".")) || 0; }
+function moeda(v){ return "R$ " + v; }
+function linkAfiliadoOk(l){ return /^https?:\/\/(meli\.la|(www\.)?mercadoli(vre|bre)\.com(\.br)?\/sec)\//i.test(String(l || "").trim()); }
+
+// "já está no site": nome bem parecido com alguma oferta (o ML não tem o mesmo link)
+function palavras(t){ return new Set(semAcento(t).replace(/[^a-z0-9 ]+/g, " ").split(/\s+/).filter(w => w.length > 2)); }
+function parecidoNoSite(nome){
+    const a = palavras(nome); if(a.size < 2) return false;
+    return noSite.some(b => { let c = 0; a.forEach(w => { if(b.has(w)) c++; }); return c / Math.min(a.size, b.size) >= 0.75; });
+}
+
+function mostrarEstado(html, erro){ const e = document.getElementById("estado"); e.innerHTML = html ? `<div class="estado${erro ? " erro" : ""}">${html}</div>` : ""; }
+
+function botoesCats(){
+    const box = document.getElementById("cats"); box.innerHTML = "";
+    CATEGORIAS_ML.forEach(([id, rot]) => {
+        const b = el("button", "cat" + (catAtual && catAtual[0] === id ? " ativa" : ""), rot); b.type = "button";
+        b.addEventListener("click", () => carregar(CATEGORIAS_ML.find(c => c[0] === id)));
+        box.appendChild(b);
+    });
+}
+
+async function carregar(cat, diagnostico){
+    const senha = document.getElementById("senha").value.trim();
+    if(!senha){ mostrarEstado("🔒 Digite a senha do painel antes de escolher a categoria.", true); document.getElementById("senha").focus(); return; }
+    catAtual = cat; botoesCats();
+    document.querySelectorAll(".cat").forEach(b => b.disabled = true);
+    mostrarEstado("🐾 Farejando os mais vendidos de <b>" + cat[1] + "</b> no Mercado Livre…");
+    document.getElementById("grade").innerHTML = ""; document.getElementById("contagem").textContent = "";
+    try{
+        const dados = new FormData();
+        dados.append("senha", senha); dados.append("categoria", cat[0]);
+        if(diagnostico) dados.append("diagnostico", "1");
+        const r = await fetch(WORKER_URL + "/mais-vendidos-ml", { method: "POST", body: dados });
+        if(r.status === 401) throw { msg: "Senha incorreta." };
+        if(r.status === 404 || r.status === 405) throw { msg: "O Worker ainda não tem a rota <b>/mais-vendidos-ml</b>. Cole o worker.js novo na Cloudflare e clique em Deploy." };
+        let j; try{ j = await r.json(); }catch(e){ throw { msg: "Resposta estranha do Worker (status " + r.status + ")." }; }
+        if(diagnostico) mostrarDiagnostico(j);
+        if(!j.sucesso) throw { msg: j.erro || "Não deu certo.", tentativas: j.tentativas };
+        try{ localStorage.setItem("farejadinhos_admin_senha", senha); }catch(e){}
+        // compara com a lista do último DIA anterior em que esta categoria foi aberta
+        const chave = "radarml_rank_" + cat[0];
+        const hoje = new Date().toISOString().slice(0, 10);
+        let est = guardado(chave, null);
+        if(est && est.dia !== hoje) est = { ant: { dia: est.dia, quando: est.quando, pos: est.pos } };
+        const ant = est && est.ant;
+        itens = j.itens.map(p => Object.assign({}, p, {
+            subiu: ant ? (ant.pos[p.id] ? ant.pos[p.id] - p.posicao : null) : undefined,
+            desconto: p.precoAntigo ? Math.round(100 * (1 - numero(p.preco) / numero(p.precoAntigo))) : 0,
+            categoria: window.FarejadinhosCategorias ? sugerirCat(p.nome, cat[2]) : cat[2],
+            noSite: parecidoNoSite(p.nome)
+        }));
+        guardar(chave, { dia: hoje, quando: new Date().toISOString(), pos: Object.fromEntries(itens.map(p => [p.id, p.posicao])), ant: ant || null });
+        if(!diagnostico) mostrarEstado(ant
+            ? "📈 Comparando com a lista de " + new Date(ant.quando).toLocaleString("pt-BR", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" }) + "."
+            : "🐾 Primeira vez nesta categoria: a partir de amanhã aparece quanto cada produto <b>subiu</b> no ranking.");
+        document.getElementById("filtros").hidden = false;
+        render();
+    }catch(e){
+        if(diagnostico && document.getElementById("diagTxt")){ document.querySelectorAll(".cat").forEach(b => b.disabled = false); return; }
+        const t = (e.tentativas || []).map(x => "<li>" + x.replace(/</g, "&lt;") + "</li>").join("");
+        mostrarEstado("❌ " + (e.msg || e.message || "Erro.") + (t ? "<ul>" + t + "</ul>" : "") +
+            '<br><button type="button" id="btnDiag">🩺 Gerar diagnóstico pro Claude</button>', true);
+        const d = document.getElementById("btnDiag"); if(d) d.addEventListener("click", () => carregar(cat, true));
+    }
+    document.querySelectorAll(".cat").forEach(b => b.disabled = false);
+}
+
+function sugerirCat(nome, padrao){
+    const s = FarejadinhosCategorias.sugerir(nome);
+    return s && s !== "Utilidades" ? s : padrao;
+}
+
+function mostrarDiagnostico(j){
+    const texto = JSON.stringify({ categoria: j.categoria, sucesso: j.sucesso, tentativas: j.tentativas, itens: (j.itens || []).slice(0, 3), amostra: j.amostra }, null, 1);
+    mostrarEstado('🩺 <b>Diagnóstico</b> — copie tudo abaixo e mande pro Claude:<textarea readonly id="diagTxt"></textarea><button type="button" id="btnCopiar">📋 Copiar</button>');
+    const ta = document.getElementById("diagTxt"); ta.value = texto;
+    document.getElementById("btnCopiar").addEventListener("click", () => { ta.select(); try{ navigator.clipboard.writeText(texto); }catch(e){ document.execCommand("copy"); } });
+}
+
+function visiveis(){
+    const q = semAcento(document.getElementById("busca").value).trim();
+    const esconder = document.getElementById("esconderSite").checked;
+    let l = itens.filter(p => (!esconder || !(p.noSite || enviados.has(p.id))) && (!q || semAcento(p.nome).includes(q)));
+    const o = document.getElementById("ordem").value;
+    const sub = p => p.subiu === null ? 999 : (p.subiu || 0);
+    l.sort({
+        posicao: (a, b) => a.posicao - b.posicao,
+        subiu: (a, b) => sub(b) - sub(a) || a.posicao - b.posicao,
+        desconto: (a, b) => b.desconto - a.desconto || a.posicao - b.posicao,
+        barato: (a, b) => numero(a.preco) - numero(b.preco),
+    }[o]);
+    return l;
+}
+
+function card(p){
+    const c = el("div", "card" + (sel.has(p.id) ? " sel" : "") + (p.noSite || enviados.has(p.id) ? " nosite" : ""));
+    const foto = el("div", "foto");
+    if(p.imagem){ const img = el("img"); img.src = p.imagem; img.alt = ""; img.loading = "lazy"; img.referrerPolicy = "no-referrer"; foto.appendChild(img); }
+    const m = el("button", "marcar", sel.has(p.id) ? "✓" : ""); m.type = "button"; m.title = "Selecionar pra subir";
+    m.setAttribute("aria-pressed", String(sel.has(p.id)));
+    foto.appendChild(m);
+    foto.appendChild(el("span", "pos", p.posicao + "º"));
+    if(p.subiu === null) foto.appendChild(el("span", "sobe novo", "🆕 entrou no ranking"));
+    else if(p.subiu > 0) foto.appendChild(el("span", "sobe", "▲ subiu " + p.subiu));
+    else if(p.subiu < 0) foto.appendChild(el("span", "sobe desce", "▼ " + (-p.subiu)));
+    if(p.desconto >= 5) foto.appendChild(el("span", "off", "-" + p.desconto + "%"));
+    c.appendChild(foto);
+
+    const info = el("div", "info");
+    info.appendChild(el("div", "nome", p.nome));
+    const pr = el("div", "preco", moeda(p.preco) + " ");
+    if(p.precoAntigo) pr.appendChild(el("s", null, moeda(p.precoAntigo)));
+    info.appendChild(pr);
+    if(p.noSite) info.appendChild(el("span", "tag", "✓ parecido com um do site"));
+    else if(enviados.has(p.id)) info.appendChild(el("span", "tag", "🚀 enviado"));
+
+    const inp = el("input", "afiliado"); inp.type = "url"; inp.placeholder = "Cole o link de afiliado (meli.la/…)";
+    inp.value = links[p.id] || "";
+    const pintar = () => { inp.classList.toggle("ok", linkAfiliadoOk(inp.value)); inp.classList.toggle("ruim", !!inp.value.trim() && !linkAfiliadoOk(inp.value)); };
+    pintar();
+    inp.addEventListener("input", () => {
+        links[p.id] = inp.value.trim(); guardar("radarml_links", links); pintar();
+        if(linkAfiliadoOk(inp.value) && !sel.has(p.id)) alternar(p, c, m, s);
+    });
+    info.appendChild(inp);
+
+    const ac = el("div", "acoes");
+    const s = el("select"); s.setAttribute("aria-label", "Categoria no site");
+    CATS.forEach(cat => { const o = el("option", null, cat); o.value = cat; s.appendChild(o); });
+    s.value = sel.get(p.id) || p.categoria;
+    s.addEventListener("change", () => { p.categoria = s.value; if(sel.has(p.id)) sel.set(p.id, s.value); });
+    ac.appendChild(s);
+    const ver = el("a", "ml", "Ver no ML ↗"); ver.href = p.link; ver.target = "_blank"; ver.rel = "noopener"; ac.appendChild(ver);
+    info.appendChild(ac);
+    c.appendChild(info);
+    m.addEventListener("click", () => alternar(p, c, m, s));
+    return c;
+}
+
+function alternar(p, c, m, s){
+    if(sel.has(p.id)) sel.delete(p.id); else sel.set(p.id, s.value);
+    c.classList.toggle("sel", sel.has(p.id)); m.textContent = sel.has(p.id) ? "✓" : "";
+    m.setAttribute("aria-pressed", String(sel.has(p.id)));
+    barra();
+}
+
+function barra(){
+    const n = sel.size;
+    document.getElementById("barra").classList.toggle("on", n > 0);
+    document.getElementById("selCont").textContent = n + (n === 1 ? " selecionado" : " selecionados");
+}
+
+function render(){
+    const l = visiveis();
+    const g = document.getElementById("grade"); g.innerHTML = "";
+    document.getElementById("contagem").textContent = l.length + " produto(s) · " + (catAtual ? catAtual[1] : "");
+    if(!l.length) g.appendChild(el("div", "vazio", "Nada por aqui com esse filtro."));
+    l.forEach(p => g.appendChild(card(p)));
+}
+
+["busca", "ordem"].forEach(id => document.getElementById(id).addEventListener("input", render));
+document.getElementById("esconderSite").addEventListener("change", render);
+document.getElementById("btnLimpar").addEventListener("click", () => { sel.clear(); render(); barra(); });
+try{ document.getElementById("senha").value = localStorage.getItem("farejadinhos_admin_senha") || ""; }catch(e){}
+
+document.getElementById("btnSubir").addEventListener("click", async function(){
+    const btn = this, st = document.getElementById("status");
+    const senha = document.getElementById("senha").value.trim();
+    if(!senha){ st.className = "status erro"; st.textContent = "Digite a senha do painel (lá em cima)."; return; }
+    const lista = itens.filter(p => sel.has(p.id));
+    if(!lista.length) return;
+    const semLink = lista.filter(p => !linkAfiliadoOk(links[p.id]));
+    if(semLink.length){
+        st.className = "status erro";
+        st.textContent = `Falta o link de afiliado (meli.la) em ${semLink.length} produto(s): ` + semLink.slice(0, 3).map(p => p.posicao + "º").join(", ") + (semLink.length > 3 ? "…" : "") + ". Sem ele você não ganha comissão.";
+        return;
+    }
+    if(!confirm(`Subir ${lista.length} produto(s) do Mercado Livre pro site?\nEles entram na fila de horários, igual ao lote.`)) return;
+    const itensLote = lista.map(p => ({
+        produto: window.FarejadinhosNomes ? FarejadinhosNomes.encurtar(p.nome) : p.nome,
+        produtoOriginal: p.nome,
+        preco: "R$ " + p.preco,
+        precoAntigo: p.precoAntigo ? "R$ " + p.precoAntigo : "", cupom: "",
+        categoria: sel.get(p.id) || p.categoria,
+        destaque: false,
+        link: links[p.id].trim(), linkProduto: p.link,
+        imagemUrl: p.imagem,
+        precoAVista: "", precoAPrazo: "", parcelas: "",
+        agendaInicio: "", agendaPorDia: "0"
+    }));
+    btn.disabled = true; btn.textContent = "Enviando…";
+    try{
+        const dados = new FormData();
+        dados.append("senha", senha);
+        dados.append("itens", JSON.stringify(itensLote));
+        const r = await fetch(WORKER_URL + "/lote", { method: "POST", body: dados });
+        const texto = await r.text();
+        if(r.status === 401) throw new Error("Senha incorreta.");
+        if(!r.ok) throw new Error(texto);
+        lista.forEach(p => enviados.add(p.id)); guardar("radarml_enviados", [...enviados]);
+        sel.clear();
+        st.className = "status ok";
+        st.textContent = "✅ Enviado! Em uns minutos eles aparecem em Ofertas ativas (e entram na fila de horários).";
+        render();
+        setTimeout(barra, 6000);
+    }catch(e){
+        st.className = "status erro"; st.textContent = "❌ " + e.message;
+    }
+    btn.disabled = false; btn.textContent = "🚀 Subir no site";
+});
+
+botoesCats();
+fetch("../ofertas.json?t=" + Date.now(), { cache: "no-store" }).then(r => r.json())
+    .then(l => { noSite = (Array.isArray(l) ? l : []).map(o => palavras(o.produtoOriginal || o.produto)); if(itens.length){ itens.forEach(p => p.noSite = parecidoNoSite(p.nome)); render(); } })
+    .catch(() => {});
+</script>
+</body>
+</html>
