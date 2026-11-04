@@ -1,0 +1,44 @@
+name: Radar da Amazon
+
+# Pesquisa os produtos da Amazon pela Creators API (Associados) e grava o radar.
+# Roda também quando o arquivo radar/amazon-pedido.txt muda (jeito de disparar pelo próprio repositório).
+on:
+  push:
+    paths:
+      - "radar/amazon-pedido.txt"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: radar-amazon
+  cancel-in-progress: false
+
+jobs:
+  radar-amazon:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Baixar repositorio
+        uses: actions/checkout@v4
+
+      - name: Testar a Creators API
+        env:
+          AMAZON_CLIENT_ID: ${{ secrets.AMAZON_CLIENT_ID }}
+          AMAZON_CLIENT_SECRET: ${{ secrets.AMAZON_CLIENT_SECRET }}
+          AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
+        run: python3 gerador/amazon_api.py teste
+
+      - name: Salvar no GitHub
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f radar/teste-amazon.json
+          if git diff --cached --quiet; then echo "Nada novo."; exit 0; fi
+          git commit -m "Teste da API da Amazon"
+          for i in 1 2 3; do
+            git pull --rebase && git push && exit 0
+            sleep 10
+          done
+          exit 1
