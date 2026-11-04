@@ -143,15 +143,52 @@
   }
   // dentro de Celulares, aparelhos sempre em cima e acessórios embaixo
   function pesoNaCategoria(o){ return subCelular(o) === "Acessórios" ? 1 : 0; }
+  // TIPO do produto (mais fino que a subcategoria): "Panela de arroz",
+  // "Air fryer", "Panela de pressão"... — é o que deixa os iguais lado a lado.
+  // A ordem desta lista importa: a 1ª que bater ganha.
+  const TIPOS = [
+    ["Air fryer", /\b(air ?fryer|fritadeira|forno oven)\b/], ["Panela de arroz", /\bpanela\b.*\barroz\b|\brice\b/],
+    ["Panela de pressão", /\bpressao\b/], ["Panela elétrica", /\bpanela eletrica\b/], ["Cafeteira", /\bcafeteira/],
+    ["Liquidificador", /\bliquidificador/], ["Mixer e misturador", /\b(mixer|misturador|batedor)\b/],
+    ["Processador e picador", /\b(processador|picador|triturador|moedor de carne)\b/], ["Moedor de café", /\bmoedor\b/],
+    ["Pipoqueira", /\bpipoqueira/], ["Chaleira", /\bchaleira/], ["Sanduicheira", /\bsanduicheira/], ["Cozedor", /\bcozedor/],
+    ["Panificadora", /\bpanificadora/], ["Potes e marmitas", /\b(potes?|marmitas?)\b/], ["Frigideira", /\bfrigideira/],
+    ["Tampas", /\btampas?\b.*\bsilicone\b|\bsilicone\b.*\btampas?\b/], ["Porta ovos", /\b(porta ovos|ovos dispenser|organizador de ovos)\b/],
+    ["Organizador", /\borganizador/], ["Canecas e copos", /\b(caneca|copo|tacas?)\b/], ["Garrafa", /\bgarrafa/],
+    ["Celular Samsung", /\b(samsung|galaxy)\b(?!.*\b(carregador|capinha|pelicula|suporte)\b)/], ["iPhone", /\biphone\b(?!.*\b(carregador|capinha|pelicula|cabo)\b)/],
+    ["Carregador", /\b(carregador|power ?bank|cabo)\b/], ["Suporte de celular", /\bsuporte\b.*\b(celular|telefone)\b/],
+    ["Árvore de Natal", /^ *(kit )?arvore/], ["Pisca-pisca", /\b(pisca|cordao|strobo|fio de led|fio fada)\b/], ["Cascata de luz", /\bcascata/],
+    ["Cortina de luz", /\bcortina/], ["Projetor de luzes", /\bprojetor/], ["Festão", /\bfestao/], ["Papai Noel", /\bpapai noel/],
+    ["Flores e azevinho", /\b(flores|azevinho)\b/], ["Enfeites", /\b(enfeites?|bolas?|bolinhas)\b/],
+    ["Toalhas", /\btoalhas?\b/], ["Lençol", /\blencol/], ["Travesseiro", /\btravesseiros?\b/], ["Tapete", /\btapetes?\b/],
+    ["Mop", /\bmop\b/], ["Varal", /\bvaral/], ["Parafusadeira", /\bparafusadeira/], ["Colchonete", /\bcolchonete/],
+    ["Creatina", /\bcreatina/], ["Protetor solar", /\bprotetor solar/], ["Balança", /\bbalanca/], ["Arranhador", /\barranhador/],
+    ["Brinquedo", /\bbrinquedo/], ["Necessaire", /\bnecessaire/], ["Ventilador", /\bventilador/], ["Filtro de café", /\b(filtro|coador)\b/]
+  ];
+  const PALAVRAS_VAZIAS = new Set("kit jogo conjunto com de da do das dos para e em a o un unid unidades pcs pecas peca novo nova original premium luxo mini super".split(" "));
+  function tipoDe(o){
+    const n = semAcentoMin(o.produto);
+    for(const [nome, re] of TIPOS) if(re.test(n)) return nome;
+    // sem tipo conhecido: a 1ª palavra que diz o que é (sem número/kit/plural)
+    const p = n.trim().split(" ").find(w => w.length > 2 && !/\d/.test(w) && !PALAVRAS_VAZIAS.has(w)) || "";
+    return p.replace(/(oes|aes)$/, "ao").replace(/s$/, "");
+  }
+
   // "Semelhantes juntos": dentro de uma categoria, agrupa por subcategoria
-  // (na ordem da lista) e, dentro dela, por nome — as panelas de arroz
-  // ficam todas juntas, depois os liquidificadores... (ordem estável)
+  // (na ordem da lista), depois pelo TIPO do produto (os tipos com mais
+  // produtos primeiro) e, dentro do tipo, pelo nome — todas as panelas de
+  // arroz juntas, depois as air fryers, depois as panelas de pressão...
   function ordenarNaCategoria(lista){
-    return lista.map((o, i) => {
+    const itens = lista.map((o, i) => {
       const mae = categoriaPrincipal(o), subs = subcategoriasDe(mae), s = subcategoriaDe(o);
       const pos = subs.indexOf(s);
-      return { o, i, mae, pos: pos < 0 ? 999 : pos, nome: semAcentoMin(o.produto) };
-    }).sort((a, b) => (a.mae === b.mae ? 0 : a.mae.localeCompare(b.mae)) || a.pos - b.pos || a.nome.localeCompare(b.nome) || a.i - b.i)
+      return { o, i, mae, pos: pos < 0 ? 999 : pos, tipo: tipoDe(o), nome: semAcentoMin(o.produto) };
+    });
+    const tam = {};
+    itens.forEach(x => { const k = x.mae + "|" + x.pos + "|" + x.tipo; tam[k] = (tam[k] || 0) + 1; });
+    const t = x => tam[x.mae + "|" + x.pos + "|" + x.tipo];
+    return itens.sort((a, b) => (a.mae === b.mae ? 0 : a.mae.localeCompare(b.mae)) || a.pos - b.pos ||
+        t(b) - t(a) || a.tipo.localeCompare(b.tipo) || a.nome.localeCompare(b.nome) || a.i - b.i)
       .map(x => x.o);
   }
   function nomeFiltro(filtro){
@@ -474,7 +511,7 @@
 
   window.FarejadinhosVitrine = {
     MINIMO_VITRINE, HORAS_FRESCA, HORAS_MAXIMA, META_CATEGORIA, MINIMO_CATEGORIA, TEMPORADAS,
-    inicio, idadeHoras, selecionar, status, indisponivel, HORAS_SEM_PRECO, foraDeEpoca, podeIrProPodio, FORA_DO_PODIO, dataOrdem, anunciosDe, melhorAnuncio, comMelhorAnuncio, lojaDe, numeroPreco, variacoesDe, corDe, ehPermanente, ACESSORIOS_CELULAR, SUBS_CELULAR, subCelular, grupoCategoria, bateCategoria, pesoNaCategoria, nomeFiltro, configCategorias, categoriaPrincipal, subcategoriasDe, subcategoriaDe, ordenarNaCategoria, ehBlack, descontoPct, BLACK_DESCONTO_MIN, PERMANENTES, normalizar, categoriasDe, juntarCategoria, TAG_VIDEO
+    inicio, idadeHoras, selecionar, status, indisponivel, HORAS_SEM_PRECO, foraDeEpoca, podeIrProPodio, FORA_DO_PODIO, dataOrdem, anunciosDe, melhorAnuncio, comMelhorAnuncio, lojaDe, numeroPreco, variacoesDe, corDe, ehPermanente, ACESSORIOS_CELULAR, SUBS_CELULAR, subCelular, grupoCategoria, bateCategoria, pesoNaCategoria, nomeFiltro, configCategorias, categoriaPrincipal, subcategoriasDe, subcategoriaDe, ordenarNaCategoria, tipoDe, ehBlack, descontoPct, BLACK_DESCONTO_MIN, PERMANENTES, normalizar, categoriasDe, juntarCategoria, TAG_VIDEO
   };
 
 })();
