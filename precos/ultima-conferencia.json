@@ -1,26 +1,158 @@
 {
-  "quando": "2026-11-03T23:17:37Z",
+  "quando": "2026-11-04T06:12:40Z",
   "origem": "schedule",
-  "total": 336,
-  "iguais": 312,
+  "total": 345,
+  "iguais": 295,
   "mudaram": [
+    {
+      "slug": "camera-lampada-de-seguranca-wifi-ip-app-yoosee",
+      "produto": "Câmera Lâmpada De Segurança Wifi Ip App Yoosee",
+      "de": "R$ 56,99",
+      "para": "59,01"
+    },
+    {
+      "slug": "organizador-de-geladeira-para-temperos-2-3l-linha-clear",
+      "produto": "Organizador de Geladeira para Temperos 2,3L",
+      "de": "R$ 39,00",
+      "para": "R$ 37,90"
+    },
+    {
+      "slug": "kit-maquina-para-tosar-pet-tesoura-pente",
+      "produto": "Kit Máquina Para Tosar Pet + Tesoura + Pente",
+      "de": "R$ 34,99",
+      "para": "R$ 30,26"
+    },
+    {
+      "slug": "protetor-solar-facial-hidrabene-fps-70-toque-seco",
+      "produto": "Protetor Solar Facial Hidrabene FPS 70 Toque Seco",
+      "de": "R$ 33,99",
+      "para": "R$ 29,90"
+    },
+    {
+      "slug": "brinquedo-cachorro-de-mastigacao-interativo",
+      "produto": "Brinquedo Cachorro De Mastigação Interativo",
+      "de": "R$ 19,99",
+      "para": "R$ 19,98"
+    },
+    {
+      "slug": "panos-de-chao-gigante-microfibra",
+      "produto": "Panos de Chão Gigante Microfibra",
+      "de": "R$ 29,90",
+      "para": "R$ 29,80"
+    },
+    {
+      "slug": "tapioqueira-polvilhador-com-peneira-dosador",
+      "produto": "Tapioqueira Polvilhador Com Peneira Dosador",
+      "de": "R$ 26,99",
+      "para": "20,00"
+    },
+    {
+      "slug": "suporte-magnetico-forte-para-telefone-carro-360",
+      "produto": "Suporte Magnético Forte Para Telefone Carro 360 °",
+      "de": "R$ 15,99",
+      "para": "R$ 13,99"
+    },
+    {
+      "slug": "jogo-completo-de-utensilios-de-cozinha-de-silicone",
+      "produto": "Jogo Completo de Utensílios de Cozinha de Silicone",
+      "de": "R$ 28,99",
+      "para": "R$ 28,98"
+    },
+    {
+      "slug": "cozedor-eletrico-multifuncional-de-ovo-milho",
+      "produto": "Cozedor Elétrico Multifuncional De Ovo Milho",
+      "de": "R$ 46,99",
+      "para": "R$ 38,99"
+    },
+    {
+      "slug": "panela-de-arroz-fast-rice-5-mondial-400w-npe-08-5x",
+      "produto": "Panela De Arroz Fast Rice 5 Mondial 400W - NPE-08-5X -",
+      "de": "R$ 131,76",
+      "para": "138,69"
+    },
     {
       "slug": "strobo-pisca-cordao-natal-500-leds-50m-prova",
       "produto": "Strobo Pisca Cordão Natal 500 Leds 50m Prova",
-      "de": "R$ 159,99",
-      "para": "R$ 249,99"
+      "de": "R$ 249,99",
+      "para": "R$ 139,49"
+    },
+    {
+      "slug": "pisca-cascata-led-8-funcoes-10m-400-200-100-leds",
+      "produto": "Pisca Cascata LED 8 Funções 10m 400 200 100 Leds",
+      "de": "R$ 34,69",
+      "para": "R$ 34,99"
+    },
+    {
+      "slug": "papai-noel-escalador-30-40-na-escada-enfeite",
+      "produto": "Papai Noel Escalador 30 40 na Escada Enfeite",
+      "de": "R$ 23,90",
+      "para": "R$ 24,80"
+    },
+    {
+      "slug": "arvore-de-natal-pinheiro-1-5m-1-8m-2-1m-2-4m",
+      "produto": "Arvore De Natal Pinheiro 1,5m 1,8m 2,1m 2,4m",
+      "de": "R$ 130,19",
+      "para": "R$ 139,99"
+    },
+    {
+      "slug": "cortina-luz-led-3-6x3m-com-8-modos-usb-natal-fadas",
+      "produto": "Cortina luz LED 3/6x3M com 8 Modos USB Natal Fadas",
+      "de": "R$ 33,99",
+      "para": "R$ 36,91"
+    },
+    {
+      "slug": "kit-metros-de-festao-enfeite-natalino-x-2mt",
+      "produto": "Kit Metros de Festão Enfeite Natalino X 2MT",
+      "de": "R$ 48,80",
+      "para": "R$ 31,72"
+    },
+    {
+      "slug": "piscas-moto-seta-led-sequencial-kit-2-ou-4-fan",
+      "produto": "Piscas Moto Seta Led Sequencial Kit 2 ou 4 Fan",
+      "de": "R$ 24,99",
+      "para": "R$ 24,95"
+    },
+    {
+      "slug": "kit-manta-decorativa-p-4-capas-de-almofadas",
+      "produto": "Kit Manta Decorativa P + 4 Capas de Almofadas",
+      "de": "R$ 69,90",
+      "para": "R$ 68,90"
     },
     {
       "slug": "fritadeira-eletrica-afon-12l-bg-forno-oven",
       "produto": "Fritadeira Elétrica AFON-12L-BG Forno Oven",
-      "de": "R$ 455,35",
-      "para": "506,45"
+      "de": "R$ 506,45",
+      "para": "505,53"
     },
     {
-      "slug": "cafeteira-espresso-philips-walita-cor-preto",
-      "produto": "Cafeteira Espresso Philips Walita Cor Preto",
-      "de": "R$ 218,25",
-      "para": "219,90"
+      "slug": "fritadeira-air-fryer-4-5l-widemax-com-interior",
+      "produto": "Fritadeira Air Fryer 4,5l Widemax Com Interior",
+      "de": "R$ 203,31",
+      "para": "258,90"
+    },
+    {
+      "slug": "liquidificador-pratic-turbo-mondial",
+      "produto": "Liquidificador Pratic Turbo, Mondial",
+      "de": "R$ 94,90",
+      "para": "88,26"
+    },
+    {
+      "slug": "electrolux-kit-3-bowls-tigelas-de-aco-inox",
+      "produto": "Electrolux Kit 3 Bowls Tigelas de Aço Inox",
+      "de": "R$ 80,38",
+      "para": "94,06"
+    },
+    {
+      "slug": "sanduicheira-eletrica-cadence-san400-preta",
+      "produto": "Sanduicheira Elétrica Cadence SAN400 Preta",
+      "de": "R$ 95,59",
+      "para": "94,50"
+    },
+    {
+      "slug": "frigideira-panquequeira-antiaderente-22cm-nacional",
+      "produto": "Frigideira Panquequeira Antiaderente 22Cm Nacional",
+      "de": "R$ 26,97",
+      "para": "R$ 28,82"
     }
   ],
   "semPreco": [
@@ -47,9 +179,21 @@
       "produto": "Árvore De Natal Pinheiro 600 Galhos Cheia Premium",
       "link": "https://s.shopee.com.br/20wXDnNYad",
       "motivo": "API Shopee: a API não achou esse produto (pode ter saído do ar ou do programa de afiliados)"
+    },
+    {
+      "slug": "grand-theft-auto-vi-playstation-5",
+      "produto": "Grand Theft Auto VI - PlayStation 5",
+      "link": "https://meli.la/2wzufWH",
+      "motivo": "pagina (facebookexternalhit): nome, foto | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto"
     }
   ],
   "erros": [
+    {
+      "slug": "kit-chave-catraca-soquete-46-pecas-indufer",
+      "produto": "Kit Chave Catraca Soquete 46 Peças Indufer",
+      "link": "https://meli.la/2H9VVJf",
+      "motivo": "Response status code does not indicate success: 404 (Not Found). :: \r\n{\r\n  \"sucesso\": false,\r\n  \"produto\": \"\",\r\n  \"preco\": \"\",\r\n  \"precoAntigo\": \"\",\r\n  \"imagemUrl\": \"\",\r\n  \"parcelas\": \"\",\r\n  \"precoAPrazo\": \"\",\r\n  \"semJuros\": \"\",\r\n  \"linkFinal\": \"https://www.mercadolivre.com.br/social/bernardshimizu/lists\",\r\n  \"tentativas\": [\r\n    \"pagina (facebookexternalhit): nada\""
+    },
     {
       "slug": "cozedor-de-ovos-eletrico-portatil-a-vapor-para-ate",
       "produto": "Cozedor de Ovos Elétrico Portátil a Vapor para até",
@@ -127,7 +271,7 @@
       "produto": "Celular Samsung Galaxy A57 256gb cinza",
       "link": "https://meli.la/1MNitr6",
       "atual": "R$ 2.327,00",
-      "lido": "243,75",
+      "lido": "239,90",
       "referencia": "R$ 2.550,00"
     },
     {
@@ -143,8 +287,8 @@
       "produto": "Samsung Galaxy S26 Ultra 5g Dual Sim Preto 256gb",
       "link": "https://meli.la/2mkji2E",
       "atual": "R$ 6.749,00",
-      "lido": "749,90",
-      "referencia": "preco posto a mao em 27/10 21:17"
+      "lido": "729,90",
+      "referencia": "R$ 6.749,00"
     },
     {
       "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-2",
@@ -152,7 +296,7 @@
       "link": "https://meli.la/1RxB7bM",
       "atual": "R$ 3.165,00",
       "lido": "299,90",
-      "referencia": "preco posto a mao em 27/10 21:20"
+      "referencia": "R$ 2.948,00"
     },
     {
       "slug": "celular-samsung-galaxy-a57-256gb-cinza",
@@ -179,6 +323,22 @@
       "referencia": "preco posto a mao em 28/10 14:48"
     },
     {
+      "slug": "cascata-de-natal-estrelas-bivolt-leds",
+      "produto": "Cascata de Natal Estrelas Bivolt Leds",
+      "link": "https://s.shopee.com.br/2qVpbwkCHc",
+      "atual": "R$ 99,89",
+      "lido": "R$ 49,90",
+      "referencia": "R$ 99,89"
+    },
+    {
+      "slug": "suporte-organizador-de-ovos-dispenser",
+      "produto": "Suporte Organizador De Ovos Dispenser",
+      "link": "https://s.shopee.com.br/1BNbcmEt04",
+      "atual": "R$ 10,99",
+      "lido": "R$ 4,99",
+      "referencia": "R$ 10,99"
+    },
+    {
       "slug": "air-fryer-forno-25l-french-door-mondial",
       "produto": "Air Fryer Forno 25L French Door Mondial",
       "link": "https://meli.la/1A77Qf9",
@@ -199,7 +359,6 @@
     "camera-lampada-de-seguranca-wifi-ip-app-yoosee",
     "lixeira-inteligente-automatica-16l-sensor",
     "mini-ventilador-soprador-ar-potente-turbo",
-    "kit-chave-catraca-soquete-46-pecas-indufer",
     "mini-compressor-de-ar-portatil-carro-moto",
     "fatiador-de-cozinha-multifuncional-profissional-em-aco",
     "cabides-com-5-camadas-organizador-de-blusas",
@@ -474,7 +633,6 @@
     "colchonete-academia-eva-tapete-yoga-pilates",
     "carregador-power-bank-20000mah-portatil-de-celular",
     "kit-potes-de-vidro-hermeticos-tampa-bambu-3",
-    "grand-theft-auto-vi-playstation-5",
     "l-oreal-paris-elseve-oleo-extraordinario-100ml",
     "creatina-monohidratada-500g-pouch",
     "fritadeira-eletrica-afon-12l-bg-forno-oven",
@@ -482,7 +640,6 @@
     "kit-4-shorts-2-em-1-duplo-dryfit-masculino",
     "eps-6905-baianca-epsilon-inteligente-bluetooth",
     "air-fryer-oven-philco-16l-digital-com-visor-paf16c",
-    "celular-samsung-galaxy-a56-5g-256gb-8gb-ram-cinza",
     "tablet-samsung-galaxy-tab-a11-128gb",
     "jogo-de-lencol-400-fios-ponto-palito-cama-queen",
     "fritadeira-air-fryer-4-5l-widemax-com-interior",
@@ -518,43 +675,60 @@
     "portatil-abdominais-ventosas-fortes-3-ajustes-2",
     "bb-cream-foundation-concealer-with-mushroom-shaped",
     "bb-creambase-corretivo-com-esponja-com-formato",
-    "bb-creambase-corretivo-com-esponja-com-formato-2"
+    "bb-creambase-corretivo-com-esponja-com-formato-2",
+    "caneta-de-oleo-de-cuticula-3-em-1-para-cuidados-2",
+    "cortina-de-led-3m-300-luz-8-modos-de-iluminacao",
+    "frigideira-panquequeira-antiaderente-22cm-nacional",
+    "cesto-organizador-de-roupa-suja-infantil",
+    "mini-liquidificador-portatil-shake-6-laminas",
+    "kit-3-camisas-masculinas-100-algodao-premium",
+    "tapete-de-yoga-e-pilates-tatame-eva-para-treino",
+    "carregador-portatil-5000mah-10000mah-inducao-2",
+    "cafeteira-eletrica-programavel-mallory-1-5-litros",
+    "caneca-copo-de-cafe-coffee-com-termometro-digital"
   ],
   "shopee": {
     "status": {
-      "quando": "2026-11-03T23:17:39Z",
+      "quando": "2026-11-04T06:12:42Z",
       "teste": false,
-      "links": 213,
-      "ok": 209,
+      "links": 223,
+      "ok": 219,
       "erros": 4
     }
   },
   "anuncios": {
-    "conferidos": 13,
-    "iguais": 6,
-    "pendentes": [],
-    "mudaram": [
+    "conferidos": 18,
+    "iguais": 8,
+    "pendentes": [
       {
-        "slug": "extratora-e-higienizadora-portatil-wap-spotcleaner",
-        "loja": "Mercado Livre",
-        "link": "https://meli.la/1NqjND9",
-        "de": "R$ 459,99",
-        "para": "R$ 484,90"
+        "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
+        "loja": "Outra loja",
+        "link": "https://link.amazon/B0epLOItP",
+        "atual": "R$ 5.065,61",
+        "lido": "R$ 5.002,00"
       },
       {
-        "slug": "balanca-digital-bioimpedancia-profissional-smart",
-        "loja": "Mercado Livre",
-        "link": "https://meli.la/2ZjGkU8",
-        "de": "R$ 36,90",
-        "para": "R$ 31,90"
+        "slug": "samsung-galaxy-s26-ultra-5g-dual-sim-preto-256gb",
+        "loja": "Outra loja",
+        "link": "https://link.amazon/B098ObooL",
+        "atual": "R$ 7.274,00",
+        "lido": "R$ 7.257,27"
       }
     ],
+    "mudaram": [],
     "barrados": [
+      {
+        "slug": "celular-samsung-galaxy-s25-43-5g-512gb-2",
+        "loja": "Mercado Livre",
+        "link": "https://meli.la/1xaZ7ij",
+        "lido": "R$ 422,12",
+        "principal": "R$ 3.898,00"
+      },
       {
         "slug": "celular-samsung-galaxy-a37-5g-128gb-4",
         "loja": "Mercado Livre",
         "link": "https://meli.la/1rCMkSR",
-        "lido": "R$ 173,80",
+        "lido": "R$ 325,80",
         "principal": "R$ 1.538,00"
       },
       {
@@ -574,6 +748,13 @@
       {
         "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-2",
         "loja": "Mercado Livre",
+        "link": "https://meli.la/1yVXM5E",
+        "lido": "R$ 299,90",
+        "principal": "R$ 3.165,00"
+      },
+      {
+        "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-2",
+        "loja": "Mercado Livre",
         "link": "https://meli.la/2XYYVU8",
         "lido": "R$ 323,90",
         "principal": "R$ 3.165,00"
@@ -587,6 +768,13 @@
       }
     ],
     "semPreco": [],
-    "erros": []
+    "erros": [
+      {
+        "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-2",
+        "loja": "Mercado Livre",
+        "link": "https://meli.la/2i5YnPJ",
+        "erro": "HTTP Error 404: Not Found"
+      }
+    ]
   }
 }
