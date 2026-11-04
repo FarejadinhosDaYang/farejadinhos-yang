@@ -21,7 +21,7 @@
     "link": "https://meli.la/1BRdN9x",
     "atual": "R$ 1.583,12",
     "lido": "182,53",
-    "referencia": "preco posto a mao em 28/10 10:13"
+    "referencia": "R$ 1.583,12"
   },
   {
     "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
@@ -38,14 +38,6 @@
     "atual": "R$ 3.898,00",
     "lido": "474,90",
     "referencia": "R$ 2.518,00"
-  },
-  {
-    "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-2",
-    "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
-    "link": "https://meli.la/1RxB7bM",
-    "atual": "R$ 3.165,00",
-    "lido": "299,90",
-    "referencia": "R$ 2.948,00"
   },
   {
     "slug": "celular-samsung-galaxy-s26-5g-512gb",
@@ -80,14 +72,6 @@
     "referencia": "R$ 8.199,00"
   },
   {
-    "slug": "iphone-18-pro-256gb-preto-somente-esim",
-    "produto": "iPhone 18 Pro 256GB Preto (somente eSIM)",
-    "link": "https://meli.la/18pktG2",
-    "atual": "R$ 9.499,00",
-    "lido": "864,09",
-    "referencia": "preco posto a mao em 18/10 23:09"
-  },
-  {
     "slug": "iphone-18-pro-max-256gb-preto-somente-esim",
     "produto": "iPhone 18 Pro Max 256GB Preto (somente eSIM)",
     "link": "https://meli.la/2fXqW9L",
@@ -96,28 +80,12 @@
     "referencia": "preco posto a mao em 18/10 23:09"
   },
   {
-    "slug": "marmita-eletrica-preta-bivolt-portatil-domestica",
-    "produto": "Marmita Elétrica Preta Bivolt Portátil Doméstica",
-    "link": "https://meli.la/1o7bDku",
-    "atual": "R$ 46,99",
-    "lido": "43,49",
-    "referencia": "preco posto a mao em 28/10 10:16"
-  },
-  {
     "slug": "samsung-galaxy-s25-5g-256gb-12gb-camera-tripla",
     "produto": "Samsung Galaxy S25 5G, 256GB, 12GB, Câmera Tripla",
     "link": "https://meli.la/25scAq6",
     "atual": "R$ 3.772,00",
     "lido": "398,80",
     "referencia": "R$ 3.689,00"
-  },
-  {
-    "slug": "samsung-galaxy-s26-ultra-5g-dual-sim-preto-256gb",
-    "produto": "Samsung Galaxy S26 Ultra 5g Dual Sim Preto 256gb",
-    "link": "https://meli.la/2mkji2E",
-    "atual": "R$ 6.749,00",
-    "lido": "729,90",
-    "referencia": "R$ 6.749,00"
   },
   {
     "slug": "suporte-organizador-de-ovos-dispenser",
