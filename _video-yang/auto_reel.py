@@ -12,7 +12,8 @@ pedido.json:
     "titulo": "A sujeira que|*ninguém alcança*",  (capa; opcional — sem ele usa a 1ª frase)
     "faixa": "🐾 ACHADINHO DA LIMPEZA",  "balao": "Olha isso! 😱",   (capa; opcionais)
     "de": 0, "ate": 22.8,                (opcional: só usa esse pedaço do vídeo — ex.: cortar preço escrito no fim)
-    "capa_t": 13.0                       (opcional: segundo do vídeo usado na capa)
+    "capa_t": 13.0,                      (opcional: segundo do vídeo usado na capa)
+    "legenda_fundo": true                (opcional: caixa escura atrás da legenda — bom pra gravação de tela)
   }
 Gera na pasta de saída: <id>-reel.mp4, <id>-capa.jpg, <id>-roteiro.json e <id>-log.txt.
 
@@ -301,6 +302,7 @@ def main():
     else: montar_fundo(video, de, ate, dur, fundo)
 
     rot = {"lado": "esquerda", "duracao": dur, "falas": falas}
+    if pedido.get("legenda_fundo"): rot["legenda_fundo"] = True     # gravação de tela: caixa escura atrás da legenda
     chamada = next((f for f in falas if re.search(r"coment", f["texto"], re.I)), None)
     if chamada: rot["selo"] = {"de": chamada["de"], "texto": "💬 COMENTA QUERO", "sub": f"ou entra no {SITE}"}
     rot_path = os.path.join(pasta, f"{pid}-roteiro.json")

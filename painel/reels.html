@@ -95,6 +95,8 @@ button:disabled{opacity:.6;cursor:wait}
         <small>Pula o começo (ex.: texto escrito por cima).</small></label>
       <label>…até o segundo <input id="ate" type="number" min="0" step="0.1" placeholder="fim">
         <small>Corta o fim (ex.: "paguei R$ 39,90", logo de marca).</small></label>
+      <label style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="legenda_fundo" style="width:auto">
+        Fundo escuro atrás da legenda <small>(bom pra gravação de tela do site, que tem muito texto)</small></label>
       <label>Segundo do vídeo pra foto da capa <input id="capa_t" type="number" min="0" step="0.1" placeholder="automático">
         <small>Um momento em que o produto aparece inteiro.</small></label>
     </div>
@@ -155,7 +157,7 @@ $("form").addEventListener("submit", e => {
   const sel = $("produto"), slug = sel.value, produto = slug ? sel.options[sel.selectedIndex].text.split(" · ")[0] : "";
   const num = id => { const v = $(id).value.trim(); return v === "" ? "" : Number(v); };
   const pedido = { produto, slug, texto, titulo: $("titulo").value.trim(), faixa: $("faixa").value, balao: $("balao").value.trim(),
-                   de: num("de"), ate: num("ate"), capa_t: num("capa_t") };
+                   de: num("de"), ate: num("ate"), capa_t: num("capa_t"), legenda_fundo: $("legenda_fundo").checked };
   const dados = new FormData();
   dados.append("senha", senha); dados.append("pedido", JSON.stringify(pedido));
   dados.append("video", video); dados.append("voz", voz);

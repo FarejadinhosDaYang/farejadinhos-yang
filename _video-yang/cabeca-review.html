@@ -22,6 +22,9 @@
   #legenda .w { display: inline-block; margin: 0 .12em; }
   #legenda .w.on { color: #FFD23F; }
   #legenda .w.off { visibility: hidden; }
+  /* opcional (gravação de tela, fundo cheio de texto): caixa escura atrás da legenda */
+  #legenda.fundo:not(:empty) { background: rgba(26,15,10,.72); border-radius: 34px; padding: 22px 26px 16px; left: 70px; right: 70px;
+                               -webkit-text-stroke: 10px #1a0f0a; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
   /* selo de chamada (ex.: COMENTA QUERO) */
   #selo { left: 0; right: 0; top: 230px; text-align: center; opacity: 0; }
   #selo span { display: inline-block; background: #E5232E; color: #fff; font-weight: 800; font-size: 92px; line-height: 1;
@@ -67,6 +70,7 @@ $("yang").classList.add(ROTEIRO.lado);
 // posições opcionais (ex.: tutorial com celular no meio: legenda no topo)
 if (ROTEIRO.publi_top != null) document.querySelector(".publi").style.top = ROTEIRO.publi_top + "px";
 if (ROTEIRO.legenda_top != null) $("legenda").style.top = ROTEIRO.legenda_top + "px";
+if (ROTEIRO.legenda_fundo) $("legenda").classList.add("fundo");
 if (ROTEIRO.selo && ROTEIRO.selo.top != null) $("selo").style.top = ROTEIRO.selo.top + "px";
 const imgs = Object.fromEntries([...document.querySelectorAll("#yang img")].map(i => [i.dataset.k, i]));
 
