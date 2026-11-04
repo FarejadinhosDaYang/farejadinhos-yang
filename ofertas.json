@@ -5776,22 +5776,6 @@
     "precoManual": "2026-11-03T18:30:25Z"
   },
   {
-    "produto": "BB CreamBase/Corretivo com Esponja com Formato",
-    "preco": "R$ 27,59",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Beleza",
-    "destaque": false,
-    "imagem": "465d0a0f-d9b5-4628-84da-ccdc820276dc.jpg",
-    "link": "https://s.shopee.com.br/8AXNOWOHpm",
-    "url": "https://farejadinhosdayang.com.br/ofertas/bb-creambase-corretivo-com-esponja-com-formato-2/",
-    "slug": "bb-creambase-corretivo-com-esponja-com-formato-2",
-    "data": "2026-11-03T22:39:43Z",
-    "precoAVista": "",
-    "precoAPrazo": "",
-    "liberacao": "2026-11-04T12:19:52Z"
-  },
-  {
     "produto": "Caneta De Óleo De Cutícula 3 Em 1 Para Cuidados",
     "preco": "R$ 10,95",
     "precoAntigo": "",
@@ -6202,6 +6186,16 @@
         "manual": "2026-11-04T11:13:17Z",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/8b75f462-f50a-4c3f-b0d0-1b89a229dd25.jpg",
+        "variacao": "Anuncio"
+      },
+      {
+        "link": "https://s.shopee.com.br/8AXNOWOHpm",
+        "loja": "Shopee",
+        "preco": "R$ 27,59",
+        "conferido": "2026-11-03T22:39:43Z",
+        "manual": "2026-11-04T11:13:55Z",
+        "confirmado": true,
+        "imagem": "https://farejadinhosdayang.com.br/assets/465d0a0f-d9b5-4628-84da-ccdc820276dc.jpg",
         "variacao": "Anuncio"
       }
     ]
