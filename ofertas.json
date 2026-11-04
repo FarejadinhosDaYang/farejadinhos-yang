@@ -897,7 +897,19 @@
     "precoAPrazo": "2399,00",
     "liberacao": "2026-10-24T13:48:00Z",
     "parcelas": 10,
-    "precoConferido": "2026-11-02T18:21:17Z"
+    "precoConferido": "2026-11-02T18:21:17Z",
+    "anuncios": [
+      {
+        "link": "https://meli.la/1BRdN9x",
+        "loja": "Mercado Livre",
+        "preco": "R$ 1.583,12",
+        "conferido": "2026-10-23T00:12:14Z",
+        "manual": "2026-11-04T17:20:36Z",
+        "confirmado": true,
+        "imagem": "https://farejadinhosdayang.com.br/assets/37791102-86e6-4363-a830-8bbde0a508e9.jpg",
+        "variacao": "Cor"
+      }
+    ]
   },
   {
     "produto": "Celular Samsung Galaxy A37 5G 128GB",
@@ -1979,25 +1991,6 @@
     "precoAPrazo": "",
     "liberacao": "2026-10-31T18:00:00Z",
     "precoConferido": "2026-11-03T17:55:48Z"
-  },
-  {
-    "produto": "Celular Samsung Galaxy A57 128gb cinza",
-    "preco": "R$ 1.583,12",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Celulares",
-    "destaque": false,
-    "imagem": "37791102-86e6-4363-a830-8bbde0a508e9.jpg",
-    "link": "https://meli.la/1BRdN9x",
-    "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-a57-256gb-cinza/",
-    "slug": "celular-samsung-galaxy-a57-256gb-cinza",
-    "data": "2026-10-23T00:12:14Z",
-    "precoAVista": "1583,12",
-    "precoAPrazo": "2399,00",
-    "liberacao": "2026-10-24T00:04:00Z",
-    "precoManual": "2026-10-28T13:13:41Z",
-    "fixo": true,
-    "parcelas": 10
   },
   {
     "produto": "Marmita Elétrica Preta Bivolt Portátil Doméstica",
