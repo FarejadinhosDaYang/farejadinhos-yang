@@ -53,7 +53,7 @@
         "link": "https://meli.la/2S99bBL",
         "loja": "Mercado Livre",
         "preco": "R$ 44,11",
-        "conferido": "2026-11-03T22:50:21Z",
+        "conferido": "2026-11-04T12:36:03Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/6e2cf82b-eb7c-47f2-8534-5ce3c40d140f.webp"
@@ -250,7 +250,7 @@
         "link": "https://s.shopee.com.br/70KjEYbSAp",
         "loja": "Shopee",
         "preco": "R$ 26,99",
-        "conferido": "2026-11-03T22:50:21Z",
+        "conferido": "2026-11-04T12:36:03Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/6888b4fe-7832-4aa0-a5e4-c873cb483976.jpg"
@@ -402,7 +402,7 @@
   },
   {
     "produto": "Kit com 2 Mesas de Cabeceira MAX com porta celular",
-    "preco": "R$ 129,37",
+    "preco": "R$ 125,39",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrônicos",
@@ -415,7 +415,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-18T16:50:30Z",
-    "precoConferido": "2026-11-03T22:50:20Z"
+    "precoConferido": "2026-11-04T12:36:03Z"
   },
   {
     "produto": "Porta Maquiagem Organizador De Cosméticos Perfume",
@@ -504,7 +504,7 @@
         "link": "https://s.shopee.com.br/qkLudmGnb",
         "loja": "Shopee",
         "preco": "R$ 16,58",
-        "conferido": "2026-11-03T22:50:21Z",
+        "conferido": "2026-11-04T12:36:03Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/891a7f11-1226-4ad6-97bb-587e284160ee.jpg"
@@ -599,14 +599,12 @@
       {
         "link": "https://link.amazon/B0epLOItP",
         "loja": "Outra loja",
-        "preco": "R$ 5.065,61",
-        "conferido": "2026-10-26T12:58:35Z",
-        "manual": "2026-10-28T00:19:23Z",
+        "preco": "R$ 5.002,00",
+        "conferido": "2026-11-04T12:36:03Z",
+        "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/be80d970-5211-4ffe-8904-6a755e29303b.jpg",
-        "variacao": "Cor",
-        "pendente": "R$ 5.002,00",
-        "pendenteEm": "2026-11-04T06:20:07Z"
+        "variacao": "Cor"
       }
     ],
     "precoConferido": "2026-11-03T09:32:28Z"
@@ -791,7 +789,7 @@
         "link": "https://s.shopee.com.br/W7VW1nXUc",
         "loja": "Shopee",
         "preco": "R$ 13,96",
-        "conferido": "2026-11-03T22:50:21Z",
+        "conferido": "2026-11-04T12:36:03Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/5909e84a-a0aa-4101-86e6-527945314011.jpg"
@@ -818,7 +816,7 @@
   },
   {
     "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
-    "preco": "R$ 3.898,00",
+    "preco": "R$ 5.199,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -828,11 +826,12 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s25-ultra-5g-256gb/",
     "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "3898,00",
+    "precoAVista": "R$ 5.199,00",
     "precoAPrazo": "6443,00",
     "liberacao": "2026-10-18T20:00:30Z",
     "precoManual": "2026-10-22T20:24:30Z",
-    "parcelas": 10
+    "parcelas": 10,
+    "precoConferido": "2026-11-04T12:36:03Z"
   },
   {
     "produto": "Celular Samsung Galaxy S25&#43; 5g, 512gb",
@@ -1239,7 +1238,7 @@
         "link": "https://meli.la/1NqjND9",
         "loja": "Mercado Livre",
         "preco": "R$ 484,90",
-        "conferido": "2026-11-03T23:24:51Z",
+        "conferido": "2026-11-04T12:36:03Z",
         "manual": "",
         "confirmado": true
       }
@@ -1284,14 +1283,12 @@
       {
         "link": "https://link.amazon/B098ObooL",
         "loja": "Outra loja",
-        "preco": "R$ 7.274,00",
-        "conferido": "2026-10-27T20:06:40Z",
-        "manual": "2026-10-28T00:18:02Z",
+        "preco": "R$ 7.257,27",
+        "conferido": "2026-11-04T12:36:03Z",
+        "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/8a3e1230-4e3e-4109-877a-8c16b096077d.jpg",
-        "variacao": "Cor",
-        "pendente": "R$ 7.257,27",
-        "pendenteEm": "2026-11-04T06:20:07Z"
+        "variacao": "Cor"
       }
     ]
   },
@@ -1346,7 +1343,7 @@
   },
   {
     "produto": "Protetor Solar Facial Hidrabene FPS 70 Toque Seco",
-    "preco": "R$ 29,90",
+    "preco": "R$ 33,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Skincare",
@@ -1361,7 +1358,7 @@
     "liberacao": "2026-10-28T00:11:58Z",
     "fixo": true,
     "anuncios": [],
-    "precoConferido": "2026-11-04T06:20:07Z"
+    "precoConferido": "2026-11-04T12:36:03Z"
   },
   {
     "produto": "Ollie Protetor Solar em Bastão Com Cor FPS 95",
@@ -1678,7 +1675,7 @@
   },
   {
     "produto": "Aparelho medidor de pressão digital de braço BSP11",
-    "preco": "R$ 91,21",
+    "preco": "R$ 104,84",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Utilidades",
@@ -1691,7 +1688,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-28T23:17:42Z",
-    "precoConferido": "2026-11-03T22:50:20Z"
+    "precoConferido": "2026-11-04T12:36:03Z"
   },
   {
     "produto": "Kit 3 Toalhas De Banho Gigante Luxo Grossa Atacado",
@@ -1712,7 +1709,7 @@
   },
   {
     "produto": "Tapioqueira Polvilhador Com Peneira Dosador",
-    "preco": "R$ 20,00",
+    "preco": "R$ 26,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Utilidades",
@@ -1725,7 +1722,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-29T11:00:00Z",
-    "precoConferido": "2026-11-04T06:20:07Z"
+    "precoConferido": "2026-11-04T12:36:03Z"
   },
   {
     "produto": "Aparador de Pelos Super Groom 10 Mondial",
@@ -2576,7 +2573,7 @@
         "link": "https://s.shopee.com.br/3LRaC63gUN",
         "loja": "Shopee",
         "preco": "R$ 16,99",
-        "conferido": "2026-11-03T22:50:21Z",
+        "conferido": "2026-11-04T12:36:03Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/a0d88558-821e-4ff2-b6ab-791b37a3f24f.jpg"
@@ -2669,7 +2666,9 @@
         "conferido": "",
         "manual": "",
         "confirmado": false,
-        "imagem": "https://farejadinhosdayang.com.br/assets/d899a5b2-476c-4d3b-a393-486236660f92.jpg"
+        "imagem": "https://farejadinhosdayang.com.br/assets/d899a5b2-476c-4d3b-a393-486236660f92.jpg",
+        "pendente": "R$ 206,03",
+        "pendenteEm": "2026-11-04T12:36:03Z"
       }
     ],
     "precoConferido": "2026-11-03T22:50:20Z"
@@ -2757,7 +2756,7 @@
   },
   {
     "produto": "Strobo Pisca Cordão Natal 500 Leds 50m Prova",
-    "preco": "R$ 139,49",
+    "preco": "R$ 249,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -2770,7 +2769,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-02T23:56:35Z",
-    "precoConferido": "2026-11-04T06:20:07Z"
+    "precoConferido": "2026-11-04T12:36:03Z"
   },
   {
     "produto": "Árvore De Natal 1180 650 450 Galhos Luxo Premium",
@@ -2974,7 +2973,7 @@
   },
   {
     "produto": "Papai Noel Escalador 30 40 na Escada Enfeite",
-    "preco": "R$ 24,80",
+    "preco": "R$ 27,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -2987,7 +2986,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-03T12:57:53Z",
-    "precoConferido": "2026-11-04T06:20:07Z"
+    "precoConferido": "2026-11-04T12:36:03Z"
   },
   {
     "produto": "Fita De Natal Decoração De Árvore Malha Tule Rolo",
@@ -4245,7 +4244,7 @@
         "link": "https://s.shopee.com.br/9pfQ5tH1tn",
         "loja": "Shopee",
         "preco": "R$ 18,99",
-        "conferido": "2026-11-03T22:50:21Z",
+        "conferido": "2026-11-04T12:36:03Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/39c601ca-ebcb-443a-9d45-4e3d5138b010.jpg"
@@ -5078,7 +5077,7 @@
   },
   {
     "produto": "L'Oréal Paris Elseve Óleo Extraordinário 100ml",
-    "preco": "R$ 33,14",
+    "preco": "R$ 36,14",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Utilidades",
@@ -5091,7 +5090,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T16:36:00Z",
-    "precoConferido": "2026-11-03T22:50:20Z"
+    "precoConferido": "2026-11-04T12:36:03Z"
   },
   {
     "produto": "Creatina Monohidratada 500g Pouch",
@@ -5112,7 +5111,7 @@
   },
   {
     "produto": "Fritadeira Elétrica AFON-12L-BG Forno Oven",
-    "preco": "R$ 505,53",
+    "preco": "R$ 506,45",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -5122,7 +5121,7 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/fritadeira-eletrica-afon-12l-bg-forno-oven/",
     "slug": "fritadeira-eletrica-afon-12l-bg-forno-oven",
     "data": "2026-11-03T18:03:25Z",
-    "precoAVista": "R$ 505,53",
+    "precoAVista": "R$ 506,45",
     "precoAPrazo": "522,40",
     "liberacao": "2026-11-04T23:32:17Z",
     "parcelas": 10,
@@ -5137,7 +5136,7 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/8cf5a57f-8ef3-48c4-90a2-a682d0380f3a.jpg"
       }
     ],
-    "precoConferido": "2026-11-04T06:20:07Z"
+    "precoConferido": "2026-11-04T12:36:03Z"
   },
   {
     "produto": "Travesseiro Cervical Abranuv Ergonômico Espuma",
@@ -5328,7 +5327,7 @@
         "link": "https://meli.la/2ZjGkU8",
         "loja": "Mercado Livre",
         "preco": "R$ 31,90",
-        "conferido": "2026-11-03T23:24:51Z",
+        "conferido": "2026-11-04T12:36:03Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/8448dd52-bf9d-4aab-bf4a-1fbd70d899af.webp"
@@ -5524,7 +5523,7 @@
   },
   {
     "produto": "Air Fryer Oven 12L WAP 10 Funções Pré-Programadas",
-    "preco": "R$ 479,90",
+    "preco": "R$ 479,32",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -5534,11 +5533,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/air-fryer-oven-12l-wap-10-funcoes-pre-programadas/",
     "slug": "air-fryer-oven-12l-wap-10-funcoes-pre-programadas",
     "data": "2026-11-03T18:03:29Z",
-    "precoAVista": "R$ 479,90",
+    "precoAVista": "R$ 479,32",
     "precoAPrazo": "532,00",
     "liberacao": "2026-11-06T22:40:00Z",
     "parcelas": 10,
-    "precoConferido": "2026-11-03T22:50:20Z"
+    "precoConferido": "2026-11-04T12:36:03Z"
   },
   {
     "produto": "Creatina Monohidratada Pura 300g Suplemento",
@@ -5674,7 +5673,7 @@
   },
   {
     "produto": "Sanduicheira Elétrica Cadence SAN400 Preta",
-    "preco": "R$ 94,50",
+    "preco": "R$ 93,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -5684,11 +5683,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/sanduicheira-eletrica-cadence-san400-preta/",
     "slug": "sanduicheira-eletrica-cadence-san400-preta",
     "data": "2026-11-03T18:03:31Z",
-    "precoAVista": "R$ 94,50",
+    "precoAVista": "R$ 93,99",
     "precoAPrazo": "94,89",
     "liberacao": "2026-11-07T21:16:00Z",
     "parcelas": 3,
-    "precoConferido": "2026-11-04T06:20:07Z"
+    "precoConferido": "2026-11-04T12:36:03Z"
   },
   {
     "produto": "Massageador Pistola Elétrica Profissional Muscular",
@@ -6061,7 +6060,7 @@
   },
   {
     "produto": "Pipoqueira Elétrica Sem Óleo Philco Preta 1200W",
-    "preco": "R$ 119,90",
+    "preco": "R$ 108,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -6073,7 +6072,8 @@
     "data": "2026-11-04T11:00:30Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-05T23:32:00Z"
+    "liberacao": "2026-11-05T23:32:00Z",
+    "precoConferido": "2026-11-04T12:36:03Z"
   },
   {
     "produto": "Fritadeira Air Fryer Itatiaia 3,5 Litros 127V",

@@ -1,158 +1,80 @@
 {
-  "quando": "2026-11-04T06:12:40Z",
-  "origem": "schedule",
-  "total": 345,
-  "iguais": 295,
+  "quando": "2026-11-04T12:28:27Z",
+  "origem": "workflow_dispatch",
+  "total": 354,
+  "iguais": 320,
   "mudaram": [
     {
-      "slug": "camera-lampada-de-seguranca-wifi-ip-app-yoosee",
-      "produto": "Câmera Lâmpada De Segurança Wifi Ip App Yoosee",
-      "de": "R$ 56,99",
-      "para": "59,01"
+      "slug": "kit-com-2-mesas-de-cabeceira-max-com-porta-celular",
+      "produto": "Kit com 2 Mesas de Cabeceira MAX com porta celular",
+      "de": "R$ 129,37",
+      "para": "R$ 125,39"
     },
     {
-      "slug": "organizador-de-geladeira-para-temperos-2-3l-linha-clear",
-      "produto": "Organizador de Geladeira para Temperos 2,3L",
-      "de": "R$ 39,00",
-      "para": "R$ 37,90"
-    },
-    {
-      "slug": "kit-maquina-para-tosar-pet-tesoura-pente",
-      "produto": "Kit Máquina Para Tosar Pet + Tesoura + Pente",
-      "de": "R$ 34,99",
-      "para": "R$ 30,26"
+      "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
+      "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
+      "de": "R$ 3.898,00",
+      "para": "5199,00"
     },
     {
       "slug": "protetor-solar-facial-hidrabene-fps-70-toque-seco",
       "produto": "Protetor Solar Facial Hidrabene FPS 70 Toque Seco",
-      "de": "R$ 33,99",
-      "para": "R$ 29,90"
-    },
-    {
-      "slug": "brinquedo-cachorro-de-mastigacao-interativo",
-      "produto": "Brinquedo Cachorro De Mastigação Interativo",
-      "de": "R$ 19,99",
-      "para": "R$ 19,98"
-    },
-    {
-      "slug": "panos-de-chao-gigante-microfibra",
-      "produto": "Panos de Chão Gigante Microfibra",
       "de": "R$ 29,90",
-      "para": "R$ 29,80"
+      "para": "R$ 33,99"
+    },
+    {
+      "slug": "aparelho-medidor-de-pressao-digital-de-braco-bsp11",
+      "produto": "Aparelho medidor de pressão digital de braço BSP11",
+      "de": "R$ 91,21",
+      "para": "104,84"
     },
     {
       "slug": "tapioqueira-polvilhador-com-peneira-dosador",
       "produto": "Tapioqueira Polvilhador Com Peneira Dosador",
-      "de": "R$ 26,99",
-      "para": "20,00"
-    },
-    {
-      "slug": "suporte-magnetico-forte-para-telefone-carro-360",
-      "produto": "Suporte Magnético Forte Para Telefone Carro 360 °",
-      "de": "R$ 15,99",
-      "para": "R$ 13,99"
-    },
-    {
-      "slug": "jogo-completo-de-utensilios-de-cozinha-de-silicone",
-      "produto": "Jogo Completo de Utensílios de Cozinha de Silicone",
-      "de": "R$ 28,99",
-      "para": "R$ 28,98"
-    },
-    {
-      "slug": "cozedor-eletrico-multifuncional-de-ovo-milho",
-      "produto": "Cozedor Elétrico Multifuncional De Ovo Milho",
-      "de": "R$ 46,99",
-      "para": "R$ 38,99"
-    },
-    {
-      "slug": "panela-de-arroz-fast-rice-5-mondial-400w-npe-08-5x",
-      "produto": "Panela De Arroz Fast Rice 5 Mondial 400W - NPE-08-5X -",
-      "de": "R$ 131,76",
-      "para": "138,69"
+      "de": "R$ 20,00",
+      "para": "26,99"
     },
     {
       "slug": "strobo-pisca-cordao-natal-500-leds-50m-prova",
       "produto": "Strobo Pisca Cordão Natal 500 Leds 50m Prova",
-      "de": "R$ 249,99",
-      "para": "R$ 139,49"
-    },
-    {
-      "slug": "pisca-cascata-led-8-funcoes-10m-400-200-100-leds",
-      "produto": "Pisca Cascata LED 8 Funções 10m 400 200 100 Leds",
-      "de": "R$ 34,69",
-      "para": "R$ 34,99"
+      "de": "R$ 139,49",
+      "para": "R$ 249,99"
     },
     {
       "slug": "papai-noel-escalador-30-40-na-escada-enfeite",
       "produto": "Papai Noel Escalador 30 40 na Escada Enfeite",
-      "de": "R$ 23,90",
-      "para": "R$ 24,80"
+      "de": "R$ 24,80",
+      "para": "R$ 27,90"
     },
     {
-      "slug": "arvore-de-natal-pinheiro-1-5m-1-8m-2-1m-2-4m",
-      "produto": "Arvore De Natal Pinheiro 1,5m 1,8m 2,1m 2,4m",
-      "de": "R$ 130,19",
-      "para": "R$ 139,99"
-    },
-    {
-      "slug": "cortina-luz-led-3-6x3m-com-8-modos-usb-natal-fadas",
-      "produto": "Cortina luz LED 3/6x3M com 8 Modos USB Natal Fadas",
-      "de": "R$ 33,99",
-      "para": "R$ 36,91"
-    },
-    {
-      "slug": "kit-metros-de-festao-enfeite-natalino-x-2mt",
-      "produto": "Kit Metros de Festão Enfeite Natalino X 2MT",
-      "de": "R$ 48,80",
-      "para": "R$ 31,72"
-    },
-    {
-      "slug": "piscas-moto-seta-led-sequencial-kit-2-ou-4-fan",
-      "produto": "Piscas Moto Seta Led Sequencial Kit 2 ou 4 Fan",
-      "de": "R$ 24,99",
-      "para": "R$ 24,95"
-    },
-    {
-      "slug": "kit-manta-decorativa-p-4-capas-de-almofadas",
-      "produto": "Kit Manta Decorativa P + 4 Capas de Almofadas",
-      "de": "R$ 69,90",
-      "para": "R$ 68,90"
+      "slug": "l-oreal-paris-elseve-oleo-extraordinario-100ml",
+      "produto": "L'Oréal Paris Elseve Óleo Extraordinário 100ml",
+      "de": "R$ 33,14",
+      "para": "36,14"
     },
     {
       "slug": "fritadeira-eletrica-afon-12l-bg-forno-oven",
       "produto": "Fritadeira Elétrica AFON-12L-BG Forno Oven",
-      "de": "R$ 506,45",
-      "para": "505,53"
+      "de": "R$ 505,53",
+      "para": "506,45"
     },
     {
-      "slug": "fritadeira-air-fryer-4-5l-widemax-com-interior",
-      "produto": "Fritadeira Air Fryer 4,5l Widemax Com Interior",
-      "de": "R$ 203,31",
-      "para": "258,90"
-    },
-    {
-      "slug": "liquidificador-pratic-turbo-mondial",
-      "produto": "Liquidificador Pratic Turbo, Mondial",
-      "de": "R$ 94,90",
-      "para": "88,26"
-    },
-    {
-      "slug": "electrolux-kit-3-bowls-tigelas-de-aco-inox",
-      "produto": "Electrolux Kit 3 Bowls Tigelas de Aço Inox",
-      "de": "R$ 80,38",
-      "para": "94,06"
+      "slug": "air-fryer-oven-12l-wap-10-funcoes-pre-programadas",
+      "produto": "Air Fryer Oven 12L WAP 10 Funções Pré-Programadas",
+      "de": "R$ 479,90",
+      "para": "479,32"
     },
     {
       "slug": "sanduicheira-eletrica-cadence-san400-preta",
       "produto": "Sanduicheira Elétrica Cadence SAN400 Preta",
-      "de": "R$ 95,59",
-      "para": "94,50"
+      "de": "R$ 94,50",
+      "para": "93,99"
     },
     {
-      "slug": "frigideira-panquequeira-antiaderente-22cm-nacional",
-      "produto": "Frigideira Panquequeira Antiaderente 22Cm Nacional",
-      "de": "R$ 26,97",
-      "para": "R$ 28,82"
+      "slug": "pipoqueira-eletrica-sem-oleo-philco-preta-1200w",
+      "produto": "Pipoqueira Elétrica Sem Óleo Philco Preta 1200W",
+      "de": "R$ 119,90",
+      "para": "R$ 108,90"
     }
   ],
   "semPreco": [
@@ -188,12 +110,6 @@
     }
   ],
   "erros": [
-    {
-      "slug": "kit-chave-catraca-soquete-46-pecas-indufer",
-      "produto": "Kit Chave Catraca Soquete 46 Peças Indufer",
-      "link": "https://meli.la/2H9VVJf",
-      "motivo": "Response status code does not indicate success: 404 (Not Found). :: \r\n{\r\n  \"sucesso\": false,\r\n  \"produto\": \"\",\r\n  \"preco\": \"\",\r\n  \"precoAntigo\": \"\",\r\n  \"imagemUrl\": \"\",\r\n  \"parcelas\": \"\",\r\n  \"precoAPrazo\": \"\",\r\n  \"semJuros\": \"\",\r\n  \"linkFinal\": \"https://www.mercadolivre.com.br/social/bernardshimizu/lists\",\r\n  \"tentativas\": [\r\n    \"pagina (facebookexternalhit): nada\""
-    },
     {
       "slug": "cozedor-de-ovos-eletrico-portatil-a-vapor-para-ate",
       "produto": "Cozedor de Ovos Elétrico Portátil a Vapor para até",
@@ -243,14 +159,6 @@
       "referencia": "R$ 7.799,00"
     },
     {
-      "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
-      "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
-      "link": "https://meli.la/2LUJ4yy",
-      "atual": "R$ 3.898,00",
-      "lido": "641,85",
-      "referencia": "R$ 5.798,00"
-    },
-    {
       "slug": "celular-samsung-galaxy-s25-43-5g-512gb-2",
       "produto": "Celular Samsung Galaxy S25&#43; 5g, 512gb",
       "link": "https://meli.la/28FNDG2",
@@ -271,7 +179,7 @@
       "produto": "Celular Samsung Galaxy A57 256gb cinza",
       "link": "https://meli.la/1MNitr6",
       "atual": "R$ 2.327,00",
-      "lido": "239,90",
+      "lido": "240,20",
       "referencia": "R$ 2.550,00"
     },
     {
@@ -311,7 +219,7 @@
       "produto": "Marmita Elétrica Preta Bivolt Portátil Doméstica",
       "link": "https://meli.la/1o7bDku",
       "atual": "R$ 46,99",
-      "lido": "45,99",
+      "lido": "43,49",
       "referencia": "preco posto a mao em 28/10 10:16"
     },
     {
@@ -337,14 +245,6 @@
       "atual": "R$ 10,99",
       "lido": "R$ 4,99",
       "referencia": "R$ 10,99"
-    },
-    {
-      "slug": "air-fryer-forno-25l-french-door-mondial",
-      "produto": "Air Fryer Forno 25L French Door Mondial",
-      "link": "https://meli.la/1A77Qf9",
-      "atual": "R$ 975,18",
-      "lido": "100,99",
-      "referencia": "R$ 975,18"
     }
   ],
   "lidos": [
@@ -359,10 +259,10 @@
     "camera-lampada-de-seguranca-wifi-ip-app-yoosee",
     "lixeira-inteligente-automatica-16l-sensor",
     "mini-ventilador-soprador-ar-potente-turbo",
+    "kit-chave-catraca-soquete-46-pecas-indufer",
     "mini-compressor-de-ar-portatil-carro-moto",
     "fatiador-de-cozinha-multifuncional-profissional-em-aco",
     "cabides-com-5-camadas-organizador-de-blusas",
-    "organizador-de-cosmetico-maquiagem-acrilico",
     "kit-10-pote-vidro-hermetico-marmita-640ml",
     "organizador-de-cosmetico-maquiagem-acrilico-2",
     "sapateira-multiuso-para-calcados-9-3-andares",
@@ -403,7 +303,6 @@
     "kit-3-necessaire-bolsa-portatil-transparente",
     "ventilador-de-teto-com-luz-silencioso-controle",
     "startools-chaleira-jarra-eletrica-110v-ou-220v-1-8",
-    "mini-aspirador-de-po-3-em-1-a-vacuo-usb-portatil",
     "garrafa-coqueteleira-com-reparticao-e-porta",
     "coqueteleira-shaker-academia-600ml-varias-cores",
     "kit-maquina-para-tosar-pet-tesoura-pente",
@@ -641,7 +540,6 @@
     "eps-6905-baianca-epsilon-inteligente-bluetooth",
     "air-fryer-oven-philco-16l-digital-com-visor-paf16c",
     "tablet-samsung-galaxy-tab-a11-128gb",
-    "jogo-de-lencol-400-fios-ponto-palito-cama-queen",
     "fritadeira-air-fryer-4-5l-widemax-com-interior",
     "liquidificador-pratic-turbo-mondial",
     "kit-jogo-de-ferramentas-aco-carbono-titanium",
@@ -673,9 +571,6 @@
     "cafeteira-eletrica-cadence-single-up",
     "caneta-de-oleo-de-cuticula-3-em-1-para-cuidados",
     "portatil-abdominais-ventosas-fortes-3-ajustes-2",
-    "bb-cream-foundation-concealer-with-mushroom-shaped",
-    "bb-creambase-corretivo-com-esponja-com-formato",
-    "bb-creambase-corretivo-com-esponja-com-formato-2",
     "caneta-de-oleo-de-cuticula-3-em-1-para-cuidados-2",
     "cortina-de-led-3m-300-luz-8-modos-de-iluminacao",
     "frigideira-panquequeira-antiaderente-22cm-nacional",
@@ -685,14 +580,29 @@
     "tapete-de-yoga-e-pilates-tatame-eva-para-treino",
     "carregador-portatil-5000mah-10000mah-inducao-2",
     "cafeteira-eletrica-programavel-mallory-1-5-litros",
-    "caneca-copo-de-cafe-coffee-com-termometro-digital"
+    "caneca-copo-de-cafe-coffee-com-termometro-digital",
+    "mini-aspirador-de-po-3-em-1-a-vacuo-usb-portatil",
+    "medicube-pdrn-pink-collagen-volume-multi-balm-10g",
+    "cozedor-de-ovos-portatil-eletrico-cozinha-a-vapor",
+    "cozedor-de-ovos-eletrico-portatil-cozinha-a-vapor",
+    "potes-hermeticos-cozinha-super-vedacao-mantimentos",
+    "kit-6-potes-de-vidro-com-tampa-de-bambu-hermeticos",
+    "liquidificador-3-velocidades-550w-turbo-power",
+    "kit-6-tampas-silicone-reutilizavel-elastica-tapoer",
+    "pipoqueira-eletrica-sem-oleo-philco-preta-1200w",
+    "fritadeira-air-fryer-itatiaia-3-5-litros-127v",
+    "bandeja-mesa-cafe-da-manha-pezinho-dobravel",
+    "kit-2-tapete-de-banheiro-soft-macio-secagem-rapida",
+    "kit-2-tapete-de-banheiro-antiderrapante-soft-macio",
+    "kit-com-2-tapete-antiderrapante-absorvente",
+    "bb-creambase-corretivo-com-esponja-com-formato"
   ],
   "shopee": {
     "status": {
-      "quando": "2026-11-04T06:12:42Z",
+      "quando": "2026-11-04T12:28:28Z",
       "teste": false,
-      "links": 223,
-      "ok": 219,
+      "links": 233,
+      "ok": 229,
       "erros": 4
     }
   },
@@ -701,21 +611,29 @@
     "iguais": 8,
     "pendentes": [
       {
+        "slug": "panela-eletrica-de-arroz-pratic-rice-pe-43-6x-inox",
+        "loja": "Mercado Livre",
+        "link": "https://meli.la/2315FMj",
+        "atual": "R$ 173,91",
+        "lido": "R$ 206,03"
+      }
+    ],
+    "mudaram": [
+      {
         "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
         "loja": "Outra loja",
         "link": "https://link.amazon/B0epLOItP",
-        "atual": "R$ 5.065,61",
-        "lido": "R$ 5.002,00"
+        "de": "R$ 5.065,61",
+        "para": "R$ 5.002,00"
       },
       {
         "slug": "samsung-galaxy-s26-ultra-5g-dual-sim-preto-256gb",
         "loja": "Outra loja",
         "link": "https://link.amazon/B098ObooL",
-        "atual": "R$ 7.274,00",
-        "lido": "R$ 7.257,27"
+        "de": "R$ 7.274,00",
+        "para": "R$ 7.257,27"
       }
     ],
-    "mudaram": [],
     "barrados": [
       {
         "slug": "celular-samsung-galaxy-s25-43-5g-512gb-2",
@@ -758,13 +676,6 @@
         "link": "https://meli.la/2XYYVU8",
         "lido": "R$ 323,90",
         "principal": "R$ 3.165,00"
-      },
-      {
-        "slug": "panela-eletrica-de-arroz-pratic-rice-pe-43-6x-inox",
-        "loja": "Mercado Livre",
-        "link": "https://meli.la/2315FMj",
-        "lido": "R$ 22,67",
-        "principal": "R$ 199,90"
       }
     ],
     "semPreco": [],
