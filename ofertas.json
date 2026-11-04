@@ -56,7 +56,9 @@
         "conferido": "2026-11-04T12:36:03Z",
         "manual": "",
         "confirmado": true,
-        "imagem": "https://farejadinhosdayang.com.br/assets/6e2cf82b-eb7c-47f2-8534-5ce3c40d140f.webp"
+        "imagem": "https://farejadinhosdayang.com.br/assets/6e2cf82b-eb7c-47f2-8534-5ce3c40d140f.webp",
+        "pendente": "R$ 57,52",
+        "pendenteEm": "2026-11-04T21:25:52Z"
       }
     ],
     "precoConferido": "2026-11-03T22:50:20Z"
@@ -148,7 +150,7 @@
   },
   {
     "produto": "Câmera Lâmpada De Segurança Wifi Ip App Yoosee",
-    "preco": "R$ 59,01",
+    "preco": "R$ 53,11",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrônicos",
@@ -161,7 +163,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-15T23:42:07Z",
-    "precoConferido": "2026-11-04T06:20:06Z"
+    "precoConferido": "2026-11-04T21:25:51Z"
   },
   {
     "produto": "Lixeira Inteligente Automática 16L Sensor",
@@ -705,7 +707,7 @@
   },
   {
     "produto": "Aspirador Manual Piscina Herbinject Azul",
-    "preco": "R$ 39,74",
+    "preco": "R$ 41,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Piscina",
@@ -715,16 +717,16 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/aspirador-manual-piscina-herbinject-azul/",
     "slug": "aspirador-manual-piscina-herbinject-azul",
     "data": "2026-10-15T22:42:11Z",
-    "precoAVista": "R$ 39,74",
+    "precoAVista": "R$ 41,90",
     "precoAPrazo": "213,78",
     "liberacao": "2026-10-19T15:40:00Z",
     "precoManual": "2026-10-19T11:40:05Z",
     "parcelas": 6,
-    "precoConferido": "2026-11-03T22:50:20Z"
+    "precoConferido": "2026-11-04T21:25:51Z"
   },
   {
     "produto": "Organizador de Geladeira para Temperos 2,3L",
-    "preco": "R$ 37,90",
+    "preco": "R$ 29,49",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha, Vídeos",
@@ -738,7 +740,7 @@
     "precoAPrazo": "",
     "liberacao": "2026-10-20T00:04:00Z",
     "precoManual": "2026-10-20T01:25:12Z",
-    "precoConferido": "2026-11-04T06:20:07Z"
+    "precoConferido": "2026-11-04T21:25:51Z"
   },
   {
     "produto": "Kit Saco A Vácuo Grande Organizador Edredom",
@@ -1222,7 +1224,9 @@
         "preco": "R$ 484,90",
         "conferido": "2026-11-04T12:36:03Z",
         "manual": "",
-        "confirmado": true
+        "confirmado": true,
+        "pendente": "R$ 428,99",
+        "pendenteEm": "2026-11-04T21:25:52Z"
       }
     ]
   },
@@ -1536,7 +1540,7 @@
   },
   {
     "produto": "Panos de Chão Gigante Microfibra",
-    "preco": "R$ 29,80",
+    "preco": "R$ 29,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Utilidades",
@@ -1549,7 +1553,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-28T15:44:39Z",
-    "precoConferido": "2026-11-04T06:20:07Z"
+    "precoConferido": "2026-11-04T21:25:51Z"
   },
   {
     "produto": "Ventilador Portátil de Mesa com Nebulização",
@@ -1603,7 +1607,7 @@
   },
   {
     "produto": "Creatina Growth Supplements Monohidratada em pó",
-    "preco": "R$ 39,90",
+    "preco": "R$ 37,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Academia",
@@ -1616,7 +1620,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-28T11:29:28Z",
-    "precoConferido": "2026-11-02T07:42:05Z"
+    "precoConferido": "2026-11-04T21:25:51Z"
   },
   {
     "produto": "Parafusadeira Furadeira 48v Profissional",
@@ -1689,7 +1693,7 @@
   },
   {
     "produto": "Aparador de Pelos Super Groom 10 Mondial",
-    "preco": "R$ 98,80",
+    "preco": "R$ 91,58",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Beleza",
@@ -1699,11 +1703,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/aparador-de-pelos-super-groom-10-mondial/",
     "slug": "aparador-de-pelos-super-groom-10-mondial",
     "data": "2026-10-28T00:58:10Z",
-    "precoAVista": "R$ 98,80",
+    "precoAVista": "R$ 91,58",
     "precoAPrazo": "127,04",
     "liberacao": "2026-10-28T00:42:19Z",
     "parcelas": 4,
-    "precoConferido": "2026-10-30T15:58:57Z"
+    "precoConferido": "2026-11-04T21:25:51Z"
   },
   {
     "produto": "Mop Giratório 8l Rodinhas Esfregão Cesto Inox",
@@ -1776,7 +1780,7 @@
   },
   {
     "produto": "Copo Térmico Gigante 1,2l Inox Com Tampa Canudo",
-    "preco": "R$ 48,99",
+    "preco": "R$ 45,07",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -1789,7 +1793,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-30T13:05:42Z",
-    "precoConferido": "2026-11-03T22:50:20Z"
+    "precoConferido": "2026-11-04T21:25:51Z"
   },
   {
     "produto": "Aparelho Medidor de Pressão Arterial Aferidor",
@@ -1945,7 +1949,7 @@
   },
   {
     "produto": "Marmita Elétrica Preta Bivolt Portátil Doméstica",
-    "preco": "R$ 43,49",
+    "preco": "R$ 45,23",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha, Vídeos",
@@ -1955,12 +1959,12 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/marmita-eletrica-preta-bivolt-portatil-domestica/",
     "slug": "marmita-eletrica-preta-bivolt-portatil-domestica",
     "data": "2026-10-15T22:42:12Z",
-    "precoAVista": "R$ 43,49",
+    "precoAVista": "R$ 45,23",
     "precoAPrazo": "104,48",
     "liberacao": "2026-10-27T22:01:58Z",
     "precoManual": "2026-10-28T13:16:15Z",
     "parcelas": 4,
-    "precoConferido": "2026-11-04T14:39:55Z"
+    "precoConferido": "2026-11-04T21:25:51Z"
   },
   {
     "produto": "Chaleira Elétrica Jarra Água Quente e Fria Bule",
@@ -1996,7 +2000,7 @@
   },
   {
     "produto": "Kit 10 ou 5 Potes Vidro Hermético 370ml Retangular",
-    "preco": "R$ 49,97",
+    "preco": "R$ 54,97",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -2009,7 +2013,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-30T13:20:17Z",
-    "precoConferido": "2026-10-29T09:58:01Z"
+    "precoConferido": "2026-11-04T21:25:51Z"
   },
   {
     "produto": "Lixadeira de Unhas Elétrica com Broca e Motor",
@@ -2063,7 +2067,7 @@
   },
   {
     "produto": "Suporte Magnético Forte Para Telefone Carro 360 °",
-    "preco": "R$ 13,99",
+    "preco": "R$ 15,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Acessórios de Celular",
@@ -2076,7 +2080,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-28T13:42:06Z",
-    "precoConferido": "2026-11-04T06:20:07Z"
+    "precoConferido": "2026-11-04T21:25:51Z"
   },
   {
     "produto": "Mini Mixer Portátil Misturador de Bebidas Batedor",
@@ -2447,7 +2451,7 @@
   },
   {
     "produto": "Cafeteira Elétrica Electrolux 15 Xícaras Efficient",
-    "preco": "R$ 149,90",
+    "preco": "R$ 119,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -2460,7 +2464,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-30T12:36:33Z",
-    "precoConferido": "2026-10-29T21:52:08Z"
+    "precoConferido": "2026-11-04T21:25:51Z"
   },
   {
     "produto": "Caneca Copo Café Coffee Isolado Termico de Aço",
@@ -2517,8 +2521,8 @@
       {
         "link": "https://s.shopee.com.br/3LRaC63gUN",
         "loja": "Shopee",
-        "preco": "R$ 16,99",
-        "conferido": "2026-11-04T12:36:03Z",
+        "preco": "R$ 17,49",
+        "conferido": "2026-11-04T21:25:52Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/a0d88558-821e-4ff2-b6ab-791b37a3f24f.jpg"
@@ -2636,7 +2640,7 @@
   },
   {
     "produto": "Panela Elétrica de Arroz, Mondial, 700W - PE-42-10X -",
-    "preco": "R$ 184,90",
+    "preco": "R$ 206,09",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -2646,9 +2650,9 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/panela-eletrica-de-arroz-mondial-700w-pe-42-10x/",
     "slug": "panela-eletrica-de-arroz-mondial-700w-pe-42-10x",
     "data": "2026-11-01T13:03:51Z",
-    "precoAVista": "R$ 184,90",
+    "precoAVista": "R$ 206,09",
     "precoAPrazo": "442,00",
-    "precoConferido": "2026-11-01T16:03:57Z"
+    "precoConferido": "2026-11-04T21:25:51Z"
   },
   {
     "produto": "Panela de Arroz Elétrica Mondial Fast Rice 5",
@@ -3326,7 +3330,7 @@
   },
   {
     "produto": "Festão de Natal Verde Para Decoração Enfeite",
-    "preco": "R$ 14,90",
+    "preco": "R$ 13,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -3338,7 +3342,8 @@
     "data": "2026-11-02T23:42:00Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-05T16:30:00Z"
+    "liberacao": "2026-11-05T16:30:00Z",
+    "precoConferido": "2026-11-04T21:25:51Z"
   },
   {
     "produto": "Pula Corda Giratório Com Led Gira LED Pisca/Pisca",
@@ -3697,7 +3702,7 @@
   },
   {
     "produto": "Piscas Moto Seta Led Sequencial Kit 2 ou 4 Fan",
-    "preco": "R$ 24,95",
+    "preco": "R$ 24,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -3710,7 +3715,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-06T20:55:00Z",
-    "precoConferido": "2026-11-04T06:20:07Z"
+    "precoConferido": "2026-11-04T21:25:51Z"
   },
   {
     "produto": "Pula Corda Giratório Com Led Brinquedo Infantil",
@@ -3860,7 +3865,7 @@
   },
   {
     "produto": "Kit Potes Mantimentos Vidro Herméticos Com Tampa",
-    "preco": "R$ 39,56",
+    "preco": "R$ 34,36",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -3873,7 +3878,8 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-03T15:25:15Z",
-    "fixo": true
+    "fixo": true,
+    "precoConferido": "2026-11-04T21:25:51Z"
   },
   {
     "produto": "Carregador iPhone Turbo Tipo-C 20W + Cabo",
@@ -4059,7 +4065,7 @@
   },
   {
     "produto": "Kit 10 ou 5 Potes Vidro Hermético 450ml Retangular",
-    "preco": "R$ 49,97",
+    "preco": "R$ 54,97",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -4071,7 +4077,8 @@
     "data": "2026-11-03T15:47:50Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-03T20:27:03Z"
+    "liberacao": "2026-11-03T20:27:03Z",
+    "precoConferido": "2026-11-04T21:25:51Z"
   },
   {
     "produto": "Aço Inoxidável Para Fazer Almôndegas De Carne",
@@ -4134,7 +4141,7 @@
   },
   {
     "produto": "Batedor Misturador Mixer Elétrico para Bebidas",
-    "preco": "R$ 16,95",
+    "preco": "R$ 16,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -4146,7 +4153,8 @@
     "data": "2026-11-03T15:47:51Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-04T12:34:29Z"
+    "liberacao": "2026-11-04T12:34:29Z",
+    "precoConferido": "2026-11-04T21:25:51Z"
   },
   {
     "produto": "Mini Processador de Alimentos Elétrico Triturador",
@@ -4278,9 +4286,9 @@
         "link": "https://s.shopee.com.br/8VA2VQDdou",
         "loja": "Shopee",
         "preco": "R$ 27,89",
-        "conferido": "",
+        "conferido": "2026-11-04T21:25:52Z",
         "manual": "",
-        "confirmado": false,
+        "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/6cd98111-3125-44a2-b1ee-6fdc5c930329.jpg"
       }
     ]
@@ -4496,7 +4504,7 @@
   },
   {
     "produto": "Kit Potes Mantimentos Vidro Herméticos Com Tampa",
-    "preco": "R$ 39,56",
+    "preco": "R$ 34,36",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -4508,7 +4516,8 @@
     "data": "2026-11-03T15:48:56Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-05T14:00:00Z"
+    "liberacao": "2026-11-05T14:00:00Z",
+    "precoConferido": "2026-11-04T21:25:51Z"
   },
   {
     "produto": "Kit Potes de Vidro Herméticos Tampa Bambu",
@@ -4624,7 +4633,7 @@
   },
   {
     "produto": "Kit 10 ou 5 Potes Vidro Hermético 450ml Retangular",
-    "preco": "R$ 49,97",
+    "preco": "R$ 54,97",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -4636,7 +4645,8 @@
     "data": "2026-11-03T15:48:57Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-05T18:00:00Z"
+    "liberacao": "2026-11-05T18:00:00Z",
+    "precoConferido": "2026-11-04T21:25:51Z"
   },
   {
     "produto": "Aço Inoxidável Para Fazer Almôndegas De Carne",
@@ -4672,7 +4682,7 @@
   },
   {
     "produto": "Batedor Misturador Mixer Elétrico para Bebidas",
-    "preco": "R$ 16,95",
+    "preco": "R$ 16,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -4684,7 +4694,8 @@
     "data": "2026-11-03T15:48:57Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-05T23:00:00Z"
+    "liberacao": "2026-11-05T23:00:00Z",
+    "precoConferido": "2026-11-04T21:25:51Z"
   },
   {
     "produto": "Kit Potes 640ml Marmita Vidro Yab Hermético Tampa",
@@ -4833,7 +4844,7 @@
   },
   {
     "produto": "Kit Potes Mantimentos Vidro Herméticos Com Tampa",
-    "preco": "R$ 39,56",
+    "preco": "R$ 34,36",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -4845,7 +4856,8 @@
     "data": "2026-11-03T15:52:10Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-06T13:20:00Z"
+    "liberacao": "2026-11-06T13:20:00Z",
+    "precoConferido": "2026-11-04T21:25:51Z"
   },
   {
     "produto": "Sapateira 4 ou 5 Andares Multiuso Desmontável",
@@ -4981,7 +4993,7 @@
   },
   {
     "produto": "Fritadeira Elétrica AFON-12L-BG Forno Oven",
-    "preco": "R$ 505,53",
+    "preco": "R$ 484,03",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -4991,7 +5003,7 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/fritadeira-eletrica-afon-12l-bg-forno-oven/",
     "slug": "fritadeira-eletrica-afon-12l-bg-forno-oven",
     "data": "2026-11-03T18:03:25Z",
-    "precoAVista": "R$ 505,53",
+    "precoAVista": "R$ 484,03",
     "precoAPrazo": "522,40",
     "liberacao": "2026-11-05T11:45:00Z",
     "parcelas": 10,
@@ -5006,7 +5018,7 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/8cf5a57f-8ef3-48c4-90a2-a682d0380f3a.jpg"
       }
     ],
-    "precoConferido": "2026-11-04T14:39:55Z"
+    "precoConferido": "2026-11-04T21:25:51Z"
   },
   {
     "produto": "Travesseiro Cervical Abranuv Ergonômico Espuma",
@@ -5290,7 +5302,7 @@
   },
   {
     "produto": "Parafusadeira Furadeira De Impacto The Black Tools",
-    "preco": "R$ 155,10",
+    "preco": "R$ 139,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Casa",
@@ -5300,10 +5312,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/parafusadeira-furadeira-de-impacto-the-black-tools/",
     "slug": "parafusadeira-furadeira-de-impacto-the-black-tools",
     "data": "2026-11-03T18:03:28Z",
-    "precoAVista": "155,10",
+    "precoAVista": "R$ 139,90",
     "precoAPrazo": "150,25",
     "liberacao": "2026-11-05T00:27:53Z",
-    "parcelas": 5
+    "parcelas": 5,
+    "precoConferido": "2026-11-04T21:25:51Z"
   },
   {
     "produto": "Fritadeira Air Fryer 11 Litros 8 Funções 1800w",
@@ -5359,7 +5372,7 @@
   },
   {
     "produto": "Mixer Power Inox 3 Em 1 600w Elgin Lunar -",
-    "preco": "R$ 114,00",
+    "preco": "R$ 94,89",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -5372,7 +5385,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-06T19:10:00Z",
-    "precoConferido": "2026-11-03T22:50:20Z"
+    "precoConferido": "2026-11-04T21:25:51Z"
   },
   {
     "produto": "Panificadora 19 Programas Gallant 600w Preta",
@@ -5543,7 +5556,7 @@
   },
   {
     "produto": "Sanduicheira Elétrica Cadence SAN400 Preta",
-    "preco": "R$ 89,29",
+    "preco": "R$ 95,59",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -5553,11 +5566,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/sanduicheira-eletrica-cadence-san400-preta/",
     "slug": "sanduicheira-eletrica-cadence-san400-preta",
     "data": "2026-11-03T18:03:31Z",
-    "precoAVista": "R$ 89,29",
+    "precoAVista": "R$ 95,59",
     "precoAPrazo": "94,89",
     "liberacao": "2026-11-07T21:16:00Z",
     "parcelas": 3,
-    "precoConferido": "2026-11-04T14:39:55Z"
+    "precoConferido": "2026-11-04T21:25:51Z"
   },
   {
     "produto": "Massageador Pistola Elétrica Profissional Muscular",
@@ -6160,7 +6173,7 @@
   },
   {
     "produto": "Liquidificador Britânia 2,6L 4 Velocidades",
-    "preco": "R$ 109,90",
+    "preco": "R$ 94,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -6172,6 +6185,7 @@
     "data": "2026-11-04T17:42:59Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-05T23:45:00Z"
+    "liberacao": "2026-11-05T23:45:00Z",
+    "precoConferido": "2026-11-04T21:25:51Z"
   }
 ]
