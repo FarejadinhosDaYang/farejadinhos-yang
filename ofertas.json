@@ -4272,7 +4272,18 @@
     "data": "2026-11-03T15:47:55Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-04T22:12:53Z"
+    "liberacao": "2026-11-04T22:12:53Z",
+    "anuncios": [
+      {
+        "link": "https://s.shopee.com.br/8VA2VQDdou",
+        "loja": "Shopee",
+        "preco": "R$ 27,89",
+        "conferido": "",
+        "manual": "",
+        "confirmado": false,
+        "imagem": "https://farejadinhosdayang.com.br/assets/6cd98111-3125-44a2-b1ee-6fdc5c930329.jpg"
+      }
+    ]
   },
   {
     "produto": "Kit 4 Potes Hermético Multiuso 2L com Bico Dosador",
@@ -4723,22 +4734,6 @@
     "precoAPrazo": "",
     "liberacao": "2026-11-05T00:12:53Z",
     "precoConferido": "2026-11-03T22:50:20Z"
-  },
-  {
-    "produto": "Conjunto Potes Vidro Hermético Mantimentos Marmita",
-    "preco": "R$ 27,89",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Cozinha",
-    "destaque": false,
-    "imagem": "6cd98111-3125-44a2-b1ee-6fdc5c930329.jpg",
-    "link": "https://s.shopee.com.br/9pfZwhzyR2",
-    "url": "https://farejadinhosdayang.com.br/ofertas/conjunto-potes-vidro-hermetico-mantimentos-marmita-2/",
-    "slug": "conjunto-potes-vidro-hermetico-mantimentos-marmita-2",
-    "data": "2026-11-03T15:48:57Z",
-    "precoAVista": "",
-    "precoAPrazo": "",
-    "liberacao": "2026-11-06T21:30:00Z"
   },
   {
     "produto": "Kit 4 Potes Hermético Multiuso 2L com Bico Dosador",
