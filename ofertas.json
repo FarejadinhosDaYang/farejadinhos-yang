@@ -5439,23 +5439,6 @@
     "liberacao": "2026-11-05T00:57:53Z"
   },
   {
-    "produto": "Travesseiro Ortopédico Cervical Borboleta Coop",
-    "preco": "R$ 149,99",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Casa",
-    "destaque": false,
-    "imagem": "5b6733f0-0dda-4607-871e-56b8392ab433.jpg",
-    "link": "https://meli.la/33rtMtr",
-    "url": "https://farejadinhosdayang.com.br/ofertas/travesseiro-ortopedico-cervical-borboleta-coop/",
-    "slug": "travesseiro-ortopedico-cervical-borboleta-coop",
-    "data": "2026-11-03T18:03:30Z",
-    "precoAVista": "149,99",
-    "precoAPrazo": "183,36",
-    "liberacao": "2026-11-05T20:30:00Z",
-    "parcelas": 6
-  },
-  {
     "produto": "Fritadeira Elétrica Philips Walita sem Óleo 220V",
     "preco": "R$ 331,55",
     "precoAntigo": "",
@@ -6187,5 +6170,23 @@
     "precoAPrazo": "",
     "liberacao": "2026-11-05T23:45:00Z",
     "precoConferido": "2026-11-04T21:25:51Z"
+  },
+  {
+    "produto": "Travesseiro Ortopédico Cervical Borboleta Coop",
+    "preco": "R$ 149,99",
+    "precoAntigo": "",
+    "cupom": "",
+    "categoria": "Casa, Vídeos",
+    "destaque": false,
+    "imagem": "5b6733f0-0dda-4607-871e-56b8392ab433.jpg",
+    "link": "https://meli.la/33rtMtr",
+    "url": "https://farejadinhosdayang.com.br/ofertas/travesseiro-ortopedico-cervical-borboleta-coop/",
+    "slug": "travesseiro-ortopedico-cervical-borboleta-coop",
+    "data": "2026-11-03T18:03:30Z",
+    "precoAVista": "149,99",
+    "precoAPrazo": "183,36",
+    "liberacao": "2026-11-05T20:30:00Z",
+    "precoManual": "2026-11-04T22:34:15Z",
+    "parcelas": 6
   }
 ]
