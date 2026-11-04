@@ -274,22 +274,6 @@
     "liberacao": "2026-10-17T23:31:23Z"
   },
   {
-    "produto": "Organizador De Cosmético Maquiagem Acrílico",
-    "preco": "R$ 36,90",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Beleza",
-    "destaque": false,
-    "imagem": "4491067a-6f2d-4150-9208-17f078f4fde3.jpg",
-    "link": "https://s.shopee.com.br/1LgcVYkMms",
-    "url": "https://farejadinhosdayang.com.br/ofertas/organizador-de-cosmetico-maquiagem-acrilico/",
-    "slug": "organizador-de-cosmetico-maquiagem-acrilico",
-    "data": "2026-10-17T23:01:31Z",
-    "precoAVista": "",
-    "precoAPrazo": "",
-    "liberacao": "2026-10-18T21:16:30Z"
-  },
-  {
     "produto": "Kit 10 Pote Vidro Hermético Marmita 640ml",
     "preco": "R$ 99,90",
     "precoAntigo": "",
@@ -321,7 +305,18 @@
     "data": "2026-10-17T23:01:32Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-19T13:48:00Z"
+    "liberacao": "2026-10-19T13:48:00Z",
+    "anuncios": [
+      {
+        "link": "https://s.shopee.com.br/1LgcVYkMms",
+        "loja": "Shopee",
+        "preco": "R$ 36,90",
+        "conferido": "2026-10-17T23:01:31Z",
+        "manual": "2026-11-04T11:12:28Z",
+        "confirmado": true,
+        "imagem": "https://farejadinhosdayang.com.br/assets/4491067a-6f2d-4150-9208-17f078f4fde3.jpg"
+      }
+    ]
   },
   {
     "produto": "￼Sapateira Multiuso Para Calçados 9-3 Andares",
