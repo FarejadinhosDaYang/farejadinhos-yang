@@ -4547,7 +4547,18 @@
     "data": "2026-11-03T15:48:56Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-03T20:41:25Z"
+    "liberacao": "2026-11-03T20:41:25Z",
+    "anuncios": [
+      {
+        "link": "https://meli.la/1d6A4u1",
+        "loja": "Mercado Livre",
+        "preco": "R$ 28,90",
+        "conferido": "2026-11-03T18:03:26Z",
+        "manual": "2026-11-04T11:14:41Z",
+        "confirmado": true,
+        "imagem": "https://farejadinhosdayang.com.br/assets/4c9359f6-b264-4e86-94e2-9510c3423799.jpg"
+      }
+    ]
   },
   {
     "produto": "Kit Potes Mantimentos Vidro Herméticos Com Tampa",
@@ -5210,23 +5221,6 @@
     "precoAPrazo": "1829,00",
     "liberacao": "2026-11-04T14:16:48Z",
     "parcelas": 10
-  },
-  {
-    "produto": "Jogo De Lençol 400 Fios Ponto Palito Cama Queen",
-    "preco": "R$ 28,90",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Casa",
-    "destaque": false,
-    "imagem": "4c9359f6-b264-4e86-94e2-9510c3423799.jpg",
-    "link": "https://meli.la/1d6A4u1",
-    "url": "https://farejadinhosdayang.com.br/ofertas/jogo-de-lencol-400-fios-ponto-palito-cama-queen/",
-    "slug": "jogo-de-lencol-400-fios-ponto-palito-cama-queen",
-    "data": "2026-11-03T18:03:26Z",
-    "precoAVista": "28,90",
-    "precoAPrazo": "106,00",
-    "liberacao": "2026-11-04T18:39:56Z",
-    "parcelas": 4
   },
   {
     "produto": "Fritadeira Air Fryer 4,5l Widemax Com Interior",
