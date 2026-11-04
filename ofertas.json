@@ -5793,22 +5793,6 @@
   },
   {
     "produto": "BB CreamBase/Corretivo com Esponja com Formato",
-    "preco": "R$ 31,66",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Beleza",
-    "destaque": false,
-    "imagem": "f4b2f532-3f78-4d77-81d8-01aaf1100ce1.jpg",
-    "link": "https://s.shopee.com.br/7fb6nbQBqj",
-    "url": "https://farejadinhosdayang.com.br/ofertas/bb-creambase-corretivo-com-esponja-com-formato/",
-    "slug": "bb-creambase-corretivo-com-esponja-com-formato",
-    "data": "2026-11-03T22:39:43Z",
-    "precoAVista": "",
-    "precoAPrazo": "",
-    "liberacao": "2026-11-03T23:09:41Z"
-  },
-  {
-    "produto": "BB CreamBase/Corretivo com Esponja com Formato",
     "preco": "R$ 27,59",
     "precoAntigo": "",
     "cupom": "",
@@ -6208,5 +6192,22 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-06T11:00:00Z"
+  },
+  {
+    "produto": "BB CreamBase/Corretivo com Esponja com Formato",
+    "preco": "R$ 31,66",
+    "precoAntigo": "",
+    "cupom": "",
+    "categoria": "Beleza",
+    "destaque": false,
+    "imagem": "f4b2f532-3f78-4d77-81d8-01aaf1100ce1.jpg",
+    "link": "https://s.shopee.com.br/7fb6nbQBqj",
+    "url": "https://farejadinhosdayang.com.br/ofertas/bb-creambase-corretivo-com-esponja-com-formato/",
+    "slug": "bb-creambase-corretivo-com-esponja-com-formato",
+    "data": "2026-11-03T22:39:43Z",
+    "precoAVista": "",
+    "precoAPrazo": "",
+    "liberacao": "2026-11-03T23:09:41Z",
+    "precoManual": "2026-11-04T11:12:35Z"
   }
 ]
