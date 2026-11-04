@@ -1080,22 +1080,6 @@
     "precoConferido": "2026-11-01T09:15:37Z"
   },
   {
-    "produto": "Mini Aspirador De Pó 3 em 1 a Vacuo Usb Portátil",
-    "preco": "R$ 21,99",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Eletrodomésticos, Vídeos",
-    "destaque": false,
-    "imagem": "9bfa5015-e5a8-4fb1-b1fd-9f77cf6662bf.jpg",
-    "link": "https://s.shopee.com.br/5AtXEqlQWS",
-    "url": "https://farejadinhosdayang.com.br/ofertas/mini-aspirador-de-po-3-em-1-a-vacuo-usb-portatil/",
-    "slug": "mini-aspirador-de-po-3-em-1-a-vacuo-usb-portatil",
-    "data": "2026-10-26T11:59:32Z",
-    "precoAVista": "",
-    "precoAPrazo": "",
-    "liberacao": "2026-10-26T15:30:07Z"
-  },
-  {
     "produto": "Garrafa Coqueteleira com Repartição e Porta",
     "preco": "R$ 23,90",
     "precoAntigo": "",
@@ -6004,5 +5988,22 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T22:33:00Z"
+  },
+  {
+    "produto": "Mini Aspirador De Pó 3 em 1 a Vacuo Usb Portátil",
+    "preco": "R$ 21,99",
+    "precoAntigo": "",
+    "cupom": "",
+    "categoria": "Eletrônicos, Vídeos",
+    "destaque": false,
+    "imagem": "9bfa5015-e5a8-4fb1-b1fd-9f77cf6662bf.jpg",
+    "link": "https://s.shopee.com.br/5AtXEqlQWS",
+    "url": "https://farejadinhosdayang.com.br/ofertas/mini-aspirador-de-po-3-em-1-a-vacuo-usb-portatil/",
+    "slug": "mini-aspirador-de-po-3-em-1-a-vacuo-usb-portatil",
+    "data": "2026-10-26T11:59:32Z",
+    "precoAVista": "",
+    "precoAPrazo": "",
+    "liberacao": "2026-10-26T15:30:07Z",
+    "precoManual": "2026-11-04T10:46:06Z"
   }
 ]
