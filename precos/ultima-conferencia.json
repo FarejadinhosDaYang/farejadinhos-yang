@@ -1,236 +1,218 @@
 {
-  "quando": "2026-11-05T10:48:10Z",
+  "quando": "2026-11-05T18:42:54Z",
   "origem": "schedule",
-  "total": 352,
-  "iguais": 295,
+  "total": 351,
+  "iguais": 298,
   "mudaram": [
-    {
-      "slug": "organizador-algodao-e-cotonetes-acrilico-kit",
-      "produto": "Organizador Algodão E Cotonetes Acrílico Kit",
-      "de": "R$ 13,20",
-      "para": "R$ 13,19"
-    },
     {
       "slug": "samsung-galaxy-s25-5g-256gb-12gb-camera-tripla",
       "produto": "Samsung Galaxy S25 5G, 256GB, 12GB, Câmera Tripla",
-      "de": "R$ 3.772,00",
-      "para": "3589,00"
+      "de": "R$ 3.589,00",
+      "para": "3999,00"
     },
     {
-      "slug": "iphone-17-pro-max-256gb-laranja-cosmico",
-      "produto": "iPhone 17 Pro Max 256GB - Laranja-cósmico",
-      "de": "R$ 8.099,00",
-      "para": "9719,00"
+      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
+      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
+      "de": "R$ 4.079,05",
+      "para": "4515,90"
+    },
+    {
+      "slug": "celular-samsung-galaxy-s26-fe-128gb-8gb-ram-tela",
+      "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
+      "de": "R$ 3.999,00",
+      "para": "3998,97"
     },
     {
       "slug": "iphone-17-pro-256gb-laranja-cosmico",
       "produto": "iPhone 17 Pro 256GB - Laranja-cósmico",
-      "de": "R$ 7.680,00",
-      "para": "8909,00"
+      "de": "R$ 8.909,00",
+      "para": "9599,00"
     },
     {
-      "slug": "celular-samsung-galaxy-s26-5g-512gb",
-      "produto": "Celular Samsung Galaxy S26 5G, 512GB",
-      "de": "R$ 5.714,00",
-      "para": "5799,00"
+      "slug": "aspirador-manual-piscina-herbinject-azul",
+      "produto": "Aspirador Manual Piscina Herbinject Azul",
+      "de": "R$ 41,90",
+      "para": "35,59"
+    },
+    {
+      "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
+      "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
+      "de": "R$ 5.199,00",
+      "para": "5415,00"
     },
     {
       "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
       "produto": "Celular Samsung Galaxy A57 256gb cinza",
-      "de": "R$ 2.327,00",
-      "para": "2659,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-a37-5g-128gb-4",
-      "produto": "Celular Samsung Galaxy A37 5G 128GB",
-      "de": "R$ 1.538,00",
-      "para": "1486,00"
-    },
-    {
-      "slug": "kit-maquina-para-tosar-pet-tesoura-pente",
-      "produto": "Kit Máquina Para Tosar Pet + Tesoura + Pente",
-      "de": "R$ 34,99",
-      "para": "R$ 30,26"
-    },
-    {
-      "slug": "extratora-e-higienizadora-portatil-wap-spotcleaner",
-      "produto": "Extratora e Higienizadora Portatil WAP SpotCleaner",
-      "de": "R$ 557,99",
-      "para": "R$ 549,99"
-    },
-    {
-      "slug": "samsung-galaxy-s26-ultra-5g-dual-sim-preto-256gb",
-      "produto": "Samsung Galaxy S26 Ultra 5g Dual Sim Preto 256gb",
-      "de": "R$ 6.749,00",
-      "para": "6569,00"
+      "de": "R$ 2.659,00",
+      "para": "2151,00"
     },
     {
       "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-2",
       "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
-      "de": "R$ 3.165,00",
-      "para": "2849,00"
+      "de": "R$ 2.849,00",
+      "para": "2699,00"
     },
     {
-      "slug": "comedouro-bebedouro-elevado-1-2-ou-3-unidades-anti",
-      "produto": "Comedouro Bebedouro Elevado 1 2 ou 3 Unidades Anti",
-      "de": "R$ 15,70",
-      "para": "R$ 15,69"
+      "slug": "protetor-solar-bastao-sallve-antimanchas-com-cor",
+      "produto": "Protetor Solar Bastão Sallve Antimanchas com Cor",
+      "de": "R$ 76,99",
+      "para": "R$ 78,99"
     },
     {
       "slug": "panos-de-chao-gigante-microfibra",
       "produto": "Panos de Chão Gigante Microfibra",
-      "de": "R$ 29,90",
-      "para": "R$ 29,80"
-    },
-    {
-      "slug": "creatina-growth-supplements-monohidratada-em-po",
-      "produto": "Creatina Growth Supplements Monohidratada em pó",
-      "de": "R$ 37,99",
-      "para": "39,90"
+      "de": "R$ 29,80",
+      "para": "R$ 31,90"
     },
     {
       "slug": "aparelho-medidor-de-pressao-digital-de-braco-bsp11",
       "produto": "Aparelho medidor de pressão digital de braço BSP11",
-      "de": "R$ 105,71",
-      "para": "84,77"
-    },
-    {
-      "slug": "mop-slim-com-balde-e-esfregao-simplo",
-      "produto": "Mop Slim Com Balde E Esfregão - Simplo",
-      "de": "R$ 76,00",
-      "para": "65,90"
-    },
-    {
-      "slug": "copo-termico-gigante-1-2l-inox-com-tampa-canudo",
-      "produto": "Copo Térmico Gigante 1,2l Inox Com Tampa Canudo",
-      "de": "R$ 45,07",
-      "para": "43,65"
+      "de": "R$ 84,77",
+      "para": "104,84"
     },
     {
       "slug": "jogo-6-tacas-vinho-tinto-cristal-luxo-titanium",
       "produto": "Jogo 6 Taças Vinho Tinto Cristal Luxo Titanium",
-      "de": "R$ 120,00",
-      "para": "78,99"
+      "de": "R$ 78,99",
+      "para": "53,25"
     },
     {
       "slug": "torneira-de-pia-gourmet-flexivel-de-parede-jato",
       "produto": "Torneira De Pia Gourmet Flexível De Parede Jato",
-      "de": "R$ 33,90",
-      "para": "22,94"
+      "de": "R$ 22,94",
+      "para": "25,99"
     },
     {
       "slug": "faqueiro-tramontina-buzios-cem-aco-inox",
       "produto": "Faqueiro Tramontina Búzios cem Aço Inox",
-      "de": "R$ 64,40",
-      "para": "64,39"
+      "de": "R$ 64,39",
+      "para": "66,48"
     },
     {
       "slug": "suporte-magnetico-forte-para-telefone-carro-360",
       "produto": "Suporte Magnético Forte Para Telefone Carro 360 °",
-      "de": "R$ 15,99",
-      "para": "R$ 13,99"
+      "de": "R$ 13,99",
+      "para": "R$ 15,99"
     },
     {
-      "slug": "jogo-completo-de-utensilios-de-cozinha-de-silicone",
-      "produto": "Jogo Completo de Utensílios de Cozinha de Silicone",
-      "de": "R$ 28,99",
-      "para": "R$ 28,98"
+      "slug": "potes-hermeticos-electrolux-de-plastico-cinza",
+      "produto": "Potes Herméticos Electrolux de Plástico Cinza",
+      "de": "R$ 89,90",
+      "para": "R$ 74,90"
     },
     {
-      "slug": "panela-de-arroz-fast-rice-5-mondial-400w-npe-08-5x",
-      "produto": "Panela De Arroz Fast Rice 5 Mondial 400W - NPE-08-5X -",
-      "de": "R$ 134,53",
-      "para": "131,76"
+      "slug": "panela-eletrica-de-arroz-mondial-700w-pe-42-10x",
+      "produto": "Panela Elétrica de Arroz, Mondial, 700W - PE-42-10X -",
+      "de": "R$ 206,09",
+      "para": "206,11"
     },
     {
-      "slug": "panela-eletrica-de-arroz-pratic-rice-pe-43-6x-inox",
-      "produto": "Panela Elétrica De Arroz Pratic Rice Pe-43-6X Inox",
-      "de": "R$ 199,90",
-      "para": "229,00"
+      "slug": "strobo-pisca-cordao-natal-500-leds-50m-prova",
+      "produto": "Strobo Pisca Cordão Natal 500 Leds 50m Prova",
+      "de": "R$ 139,49",
+      "para": "R$ 159,99"
     },
     {
-      "slug": "papai-noel-decoracao-de-natal-escalando-escada",
-      "produto": "Papai Noel Decoração de natal Escalando Escada",
-      "de": "R$ 24,99",
-      "para": "R$ 24,98"
+      "slug": "arvore-de-natal-pinheiro-canadense-luxo-base",
+      "produto": "Árvore De Natal Pinheiro Canadense Luxo Base",
+      "de": "R$ 252,90",
+      "para": "R$ 159,90"
     },
     {
-      "slug": "tenis-infantil-menino-aranha-led-masculino-pisca",
-      "produto": "Tenis Infantil Menino Aranha Led Masculino Pisca",
-      "de": "R$ 79,96",
-      "para": "R$ 78,90"
+      "slug": "saia-para-arvore-de-natal-tapete-base-decorativa",
+      "produto": "Saia para Árvore de Natal Tapete Base Decorativa",
+      "de": "R$ 20,74",
+      "para": "R$ 21,90"
     },
     {
-      "slug": "kit-metros-de-festao-enfeite-natalino-x-2mt",
-      "produto": "Kit Metros de Festão Enfeite Natalino X 2MT",
-      "de": "R$ 31,72",
-      "para": "R$ 48,80"
+      "slug": "papai-noel-escalador-30-40-na-escada-enfeite",
+      "produto": "Papai Noel Escalador 30 40 na Escada Enfeite",
+      "de": "R$ 27,90",
+      "para": "R$ 28,90"
     },
     {
       "slug": "piscas-moto-seta-led-sequencial-kit-2-ou-4-fan",
       "produto": "Piscas Moto Seta Led Sequencial Kit 2 ou 4 Fan",
-      "de": "R$ 24,99",
-      "para": "R$ 24,95"
-    },
-    {
-      "slug": "pisca-arroz-branco-quente-ou-colorida-natal",
-      "produto": "Pisca Arroz Branco Quente ou colorida Natal",
-      "de": "R$ 14,33",
-      "para": "R$ 16,05"
+      "de": "R$ 24,95",
+      "para": "R$ 24,99"
     },
     {
       "slug": "kit-10-ou-5-potes-vidro-hermetico-450ml-retangular",
       "produto": "Kit 10 ou 5 Potes Vidro Hermético 450ml Retangular",
-      "de": "R$ 54,97",
-      "para": "R$ 52,22"
+      "de": "R$ 52,22",
+      "para": "R$ 54,97"
+    },
+    {
+      "slug": "batedor-misturador-mixer-eletrico-para-bebidas",
+      "produto": "Batedor Misturador Mixer Elétrico para Bebidas",
+      "de": "R$ 16,99",
+      "para": "R$ 17,99"
+    },
+    {
+      "slug": "kit-4-potes-hermeticos-1-litro",
+      "produto": "Kit 4 Potes Herméticos 1 Litro",
+      "de": "R$ 46,90",
+      "para": "R$ 49,90"
     },
     {
       "slug": "copo-caneca-termica-com-tampa-360ml-inox",
       "produto": "Copo Caneca Termica Com Tampa 360ML Inox",
-      "de": "R$ 18,99",
-      "para": "R$ 18,98"
+      "de": "R$ 18,98",
+      "para": "R$ 18,99"
     },
     {
       "slug": "kit-10-ou-5-potes-vidro-hermetico-450ml-retangular-2",
       "produto": "Kit 10 ou 5 Potes Vidro Hermético 450ml Retangular",
-      "de": "R$ 54,97",
-      "para": "R$ 52,22"
+      "de": "R$ 52,22",
+      "para": "R$ 54,97"
     },
     {
-      "slug": "fritadeira-eletrica-afon-12l-bg-forno-oven",
-      "produto": "Fritadeira Elétrica AFON-12L-BG Forno Oven",
-      "de": "R$ 442,13",
-      "para": "484,03"
+      "slug": "batedor-misturador-mixer-eletrico-para-bebidas-2",
+      "produto": "Batedor Misturador Mixer Elétrico para Bebidas",
+      "de": "R$ 16,99",
+      "para": "R$ 17,99"
+    },
+    {
+      "slug": "l-oreal-paris-elseve-oleo-extraordinario-100ml",
+      "produto": "L'Oréal Paris Elseve Óleo Extraordinário 100ml",
+      "de": "R$ 29,83",
+      "para": "36,14"
+    },
+    {
+      "slug": "kit-5-toalhas-banho-gigante-grossa-hotel-luxo-480g",
+      "produto": "Kit 5 Toalhas Banho Gigante Grossa Hotel Luxo 480g",
+      "de": "R$ 131,15",
+      "para": "135,42"
+    },
+    {
+      "slug": "air-fryer-elgin-facilita-fry-3-5l-1400w",
+      "produto": "Air Fryer Elgin Facilita Fry 3,5L 1400W",
+      "de": "R$ 160,08",
+      "para": "190,00"
     },
     {
       "slug": "air-fryer-forno-25l-french-door-mondial",
       "produto": "Air Fryer Forno 25L French Door Mondial",
-      "de": "R$ 968,92",
-      "para": "978,71"
+      "de": "R$ 978,71",
+      "para": "975,18"
     },
     {
-      "slug": "parafusadeira-furadeira-impacto-sem-fio-2-baterias",
-      "produto": "Parafusadeira Furadeira Impacto Sem Fio 2 Baterias",
-      "de": "R$ 90,88",
-      "para": "123,99"
+      "slug": "mixer-power-inox-3-em-1-600w-elgin-lunar",
+      "produto": "Mixer Power Inox 3 Em 1 600w Elgin Lunar -",
+      "de": "R$ 94,89",
+      "para": "114,00"
     },
     {
-      "slug": "air-fryer-oven-12l-wap-10-funcoes-pre-programadas",
-      "produto": "Air Fryer Oven 12L WAP 10 Funções Pré-Programadas",
-      "de": "R$ 479,32",
-      "para": "484,03"
+      "slug": "panela-de-pressao-eletrica-philco-ppp01p-6l",
+      "produto": "Panela De Pressão Elétrica Philco Ppp01p 6L",
+      "de": "R$ 399,00",
+      "para": "379,05"
     },
     {
       "slug": "pipoqueira-eletrica-sem-oleo-philco-preta-1200w",
       "produto": "Pipoqueira Elétrica Sem Óleo Philco Preta 1200W",
-      "de": "R$ 119,90",
-      "para": "R$ 108,90"
-    },
-    {
-      "slug": "liquidificador-britania-2-6l-4-velocidades",
-      "produto": "Liquidificador Britânia 2,6L 4 Velocidades",
-      "de": "R$ 94,90",
-      "para": "R$ 99,90"
+      "de": "R$ 108,90",
+      "para": "R$ 119,90"
     }
   ],
   "semPreco": [
@@ -279,7 +261,7 @@
       "produto": "Kit Limpeza E Manutenção De Piscina Completo",
       "link": "https://meli.la/1V3wJNN",
       "atual": "R$ 109,90",
-      "lido": "40,77",
+      "lido": "40,70",
       "referencia": "R$ 109,90"
     },
     {
@@ -295,16 +277,8 @@
       "produto": "iPhone 18 Pro Max 256GB Preto (somente eSIM)",
       "link": "https://meli.la/2fXqW9L",
       "atual": "R$ 10.289,00",
-      "lido": "11654,00",
+      "lido": "10210,00",
       "referencia": "preco posto a mao em 18/10 23:09"
-    },
-    {
-      "slug": "aspirador-manual-piscina-herbinject-azul",
-      "produto": "Aspirador Manual Piscina Herbinject Azul",
-      "link": "https://meli.la/1t2eJpi",
-      "atual": "R$ 41,90",
-      "lido": "185,03",
-      "referencia": "R$ 40,88"
     },
     {
       "slug": "fritadeira-sem-oleo-air-fryer-digital-4l-mondial",
@@ -343,7 +317,7 @@
       "produto": "Tablet Samsung Galaxy Tab A11+, 128gb",
       "link": "https://meli.la/32m3cG6",
       "atual": "R$ 495,69",
-      "lido": "1487,00",
+      "lido": "1412,00",
       "referencia": "R$ 495,69"
     },
     {
@@ -359,7 +333,7 @@
       "produto": "Cafeteira Espresso Philips Walita Cor Preto",
       "link": "https://meli.la/1h4v88c",
       "atual": "R$ 218,25",
-      "lido": "2182,00",
+      "lido": "2098,00",
       "referencia": "R$ 219,90"
     },
     {
@@ -432,7 +406,6 @@
     "renova-granito-marmore-realca-cor-imediato-rock",
     "kit-6-tampas-panela-silicone-universal",
     "kit-3-necessaire-bolsa-portatil-transparente",
-    "ventilador-de-teto-com-luz-silencioso-controle",
     "startools-chaleira-jarra-eletrica-110v-ou-220v-1-8",
     "garrafa-coqueteleira-com-reparticao-e-porta",
     "coqueteleira-shaker-academia-600ml-varias-cores",
@@ -586,8 +559,6 @@
     "pula-corda-giratorio-com-led-brinquedo-infantil",
     "globo-de-neve-natalino-com-luzes-enfeite-de-natal",
     "12-pcs-pecas-anjo-enfeites-de-natal-de-madeira",
-    "fantasia-asa-borboleta-fada-com-led-pisca-completa",
-    "kit-fada-saia-tiara-asa-varinha-com-led",
     "kit-manta-decorativa-p-4-capas-de-almofadas",
     "pisca-arroz-branco-quente-ou-colorida-natal",
     "200-hastes-trigo-seco-desidratado-para-decoracao",
@@ -720,76 +691,85 @@
     "kit-com-2-tapete-antiderrapante-absorvente",
     "bb-creambase-corretivo-com-esponja-com-formato",
     "celular-samsung-galaxy-s25-43-5g-512gb-2",
-    "pipoqueira-eletrica-sem-oleo-rapida-e-pratica",
     "romantic-crown-mochila-de-viagem-expansivel",
     "romantic-crown-mochila-viagem-feminina-masculina",
     "kit-6-tampas-silicone-reutilizavel-elastica-tapoer-2",
     "liquidificador-britania-2-6l-4-velocidades",
-    "travesseiro-ortopedico-cervical-borboleta-coop"
+    "travesseiro-ortopedico-cervical-borboleta-coop",
+    "avental-unissex-cozinha-profissional-ajustavel",
+    "pipoqueira-eletrica-sem-oleo-rapida-e-pratica",
+    "ventilador-de-teto-com-luz-silencioso-controle"
   ],
   "shopee": {
     "status": {
-      "quando": "2026-11-05T10:48:11Z",
+      "quando": "2026-11-05T18:42:56Z",
       "teste": false,
-      "links": 236,
-      "ok": 231,
+      "links": 235,
+      "ok": 230,
       "erros": 5
     }
   },
   "anuncios": {
     "conferidos": 17,
-    "iguais": 10,
+    "iguais": 9,
     "pendentes": [
-      {
-        "slug": "celular-samsung-galaxy-a37-5g-128gb-4",
-        "loja": "Mercado Livre",
-        "link": "https://meli.la/1rCMkSR",
-        "atual": "R$ 1.899,00",
-        "lido": "R$ 1.564,00"
-      },
-      {
-        "slug": "celular-samsung-galaxy-a37-5g-128gb-4",
-        "loja": "Mercado Livre",
-        "link": "https://meli.la/1yNAJBz",
-        "atual": "R$ 1.619,00",
-        "lido": "R$ 1.599,00"
-      },
-      {
-        "slug": "celular-samsung-galaxy-a37-5g-128gb-4",
-        "loja": "Mercado Livre",
-        "link": "https://meli.la/17xzqfE",
-        "atual": "R$ 1.799,00",
-        "lido": "R$ 1.599,00"
-      },
-      {
-        "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-2",
-        "loja": "Mercado Livre",
-        "link": "https://meli.la/1yVXM5E",
-        "atual": "R$ 2.998,00",
-        "lido": "R$ 2.699,00"
-      },
-      {
-        "slug": "panela-eletrica-de-arroz-pratic-rice-pe-43-6x-inox",
-        "loja": "Mercado Livre",
-        "link": "https://meli.la/2315FMj",
-        "atual": "R$ 173,91",
-        "lido": "R$ 229,00"
-      }
-    ],
-    "mudaram": [
       {
         "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
         "loja": "Outra loja",
         "link": "https://link.amazon/B0epLOItP",
-        "de": "R$ 5.002,00",
-        "para": "R$ 4.095,64"
+        "atual": "R$ 4.095,64",
+        "lido": "R$ 4.799,00"
+      },
+      {
+        "slug": "extratora-e-higienizadora-portatil-wap-spotcleaner",
+        "loja": "Mercado Livre",
+        "link": "https://meli.la/1NqjND9",
+        "atual": "R$ 428,99",
+        "lido": "R$ 484,90"
       },
       {
         "slug": "samsung-galaxy-s26-ultra-5g-dual-sim-preto-256gb",
         "loja": "Outra loja",
         "link": "https://link.amazon/B098ObooL",
-        "de": "R$ 7.257,27",
-        "para": "R$ 7.499,00"
+        "atual": "R$ 7.499,00",
+        "lido": "R$ 7.257,27"
+      }
+    ],
+    "mudaram": [
+      {
+        "slug": "celular-samsung-galaxy-a37-5g-128gb-4",
+        "loja": "Mercado Livre",
+        "link": "https://meli.la/1rCMkSR",
+        "de": "R$ 1.899,00",
+        "para": "R$ 1.564,00"
+      },
+      {
+        "slug": "celular-samsung-galaxy-a37-5g-128gb-4",
+        "loja": "Mercado Livre",
+        "link": "https://meli.la/1yNAJBz",
+        "de": "R$ 1.619,00",
+        "para": "R$ 1.599,00"
+      },
+      {
+        "slug": "celular-samsung-galaxy-a37-5g-128gb-4",
+        "loja": "Mercado Livre",
+        "link": "https://meli.la/17xzqfE",
+        "de": "R$ 1.799,00",
+        "para": "R$ 1.599,00"
+      },
+      {
+        "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-2",
+        "loja": "Mercado Livre",
+        "link": "https://meli.la/1yVXM5E",
+        "de": "R$ 2.998,00",
+        "para": "R$ 2.699,00"
+      },
+      {
+        "slug": "panela-eletrica-de-arroz-pratic-rice-pe-43-6x-inox",
+        "loja": "Mercado Livre",
+        "link": "https://meli.la/2315FMj",
+        "de": "R$ 173,91",
+        "para": "R$ 229,00"
       }
     ],
     "barrados": [],
