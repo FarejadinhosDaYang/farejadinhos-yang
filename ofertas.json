@@ -6106,22 +6106,6 @@
     "parcelas": 10
   },
   {
-    "produto": "Pipoqueira Elétrica Sem Óleo Rápida e Prática",
-    "preco": "R$ 69,53",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Cozinha",
-    "destaque": false,
-    "imagem": "100a740a-e872-4bc5-b9c4-ca7b385a3292.jpg",
-    "link": "https://s.shopee.com.br/80DhGm1hAp",
-    "url": "https://farejadinhosdayang.com.br/ofertas/pipoqueira-eletrica-sem-oleo-rapida-e-pratica/",
-    "slug": "pipoqueira-eletrica-sem-oleo-rapida-e-pratica",
-    "data": "2026-11-04T17:42:56Z",
-    "precoAVista": "",
-    "precoAPrazo": "",
-    "liberacao": "2026-11-04T20:12:53Z"
-  },
-  {
     "produto": "ROMANTIC CROWN Mochila de Viagem Expansível",
     "preco": "R$ 99,98",
     "precoAntigo": "",
@@ -6219,5 +6203,22 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-06T13:55:00Z"
+  },
+  {
+    "produto": "Pipoqueira Elétrica Sem Óleo Rápida e Prática",
+    "preco": "R$ 69,53",
+    "precoAntigo": "",
+    "cupom": "",
+    "categoria": "Cozinha, Vídeos",
+    "destaque": false,
+    "imagem": "100a740a-e872-4bc5-b9c4-ca7b385a3292.jpg",
+    "link": "https://s.shopee.com.br/80DhGm1hAp",
+    "url": "https://farejadinhosdayang.com.br/ofertas/pipoqueira-eletrica-sem-oleo-rapida-e-pratica/",
+    "slug": "pipoqueira-eletrica-sem-oleo-rapida-e-pratica",
+    "data": "2026-11-04T17:42:56Z",
+    "precoAVista": "",
+    "precoAPrazo": "",
+    "liberacao": "2026-11-04T20:12:53Z",
+    "precoManual": "2026-11-05T15:49:31Z"
   }
 ]
