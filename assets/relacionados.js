@@ -54,7 +54,7 @@
         var l = String(link || "");
         if (/shopee|shp\.ee/i.test(l)) return ["shopee", "Shopee"];
         if (/mercadoli[vb]re|meli\.la/i.test(l)) return ["ml", "Mercado Livre"];
-        if (/amazon\.|amzn\./i.test(l)) return ["amazon", "Amazon"];
+        if (/amazon\.|amzn\.|link\.amazon/i.test(l)) return ["amazon", "Amazon"];
         return null;
     }
 

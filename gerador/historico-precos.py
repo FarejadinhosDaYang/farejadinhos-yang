@@ -47,7 +47,7 @@ def loja(link):
     l = str(link or "")
     if re.search(r"shopee|shp\.ee", l, re.I): return "Shopee"
     if re.search(r"mercadoli[vb]re|meli\.la", l, re.I): return "Mercado Livre"
-    if re.search(r"amazon\.|amzn\.", l, re.I): return "Amazon"
+    if re.search(r"amazon\.|amzn\.|link\.amazon", l, re.I): return "Amazon"
     return ""
 
 

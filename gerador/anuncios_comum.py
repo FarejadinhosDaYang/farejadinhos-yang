@@ -44,7 +44,7 @@ def preco_br(n):
 def loja_de(link):
     l = str(link or "")
     for padrao, nome in ((r"shopee|shp\.ee", "Shopee"), (r"mercadoli[vb]re|meli\.la", "Mercado Livre"),
-                         (r"amazon\.|amzn\.", "Amazon"), (r"magazineluiza|magalu", "Magalu"),
+                         (r"amazon\.|amzn\.|link\.amazon", "Amazon"), (r"magazineluiza|magalu", "Magalu"),
                          (r"aliexpress", "AliExpress")):
         if re.search(padrao, l, re.I):
             return nome

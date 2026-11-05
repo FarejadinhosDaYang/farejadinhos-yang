@@ -269,7 +269,7 @@
     const l = String(link || "");
     if(/shopee|shp\.ee/i.test(l)) return { id: "shopee", nome: "Shopee" };
     if(/mercadoli[vb]re|meli\.la/i.test(l)) return { id: "ml", nome: "Mercado Livre" };
-    if(/amazon\.|amzn\./i.test(l)) return { id: "amazon", nome: "Amazon" };
+    if(/amazon\.|amzn\.|link\.amazon/i.test(l)) return { id: "amazon", nome: "Amazon" };
     if(/magazineluiza|magalu/i.test(l)) return { id: "magalu", nome: "Magalu" };
     if(/aliexpress/i.test(l)) return { id: "ali", nome: "AliExpress" };
     return { id: "outra", nome: "Outra loja" };
@@ -303,7 +303,7 @@
       const lj = lojaDe(a.link);
       lista.push({
         principal: false, link: a.link, preco: a.preco, valor,
-        loja: a.loja || lj.nome, lojaId: lj.id, conferido: a.conferido || "",
+        loja: lj.id !== "outra" ? lj.nome : (a.loja || lj.nome), lojaId: lj.id, conferido: a.conferido || "",
         confiavel: !motivo, motivo,
         variacao: String(a.variacao || "").trim(), cor: a.cor || "",
         imagem: /^https?:\/\//i.test(a.imagem || "") ? a.imagem : ""

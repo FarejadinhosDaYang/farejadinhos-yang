@@ -161,7 +161,7 @@
         var l = String(link || "").toLowerCase();
         if (/shopee|shp\.ee/.test(l)) return "Shopee";
         if (/mercadoli[bv]re|meli\.la/.test(l)) return "Mercado Livre";
-        if (/amazon\.|amzn\.|a\.co\//.test(l)) return "Amazon";
+        if (/amazon\.|amzn\.|a\.co\/|link\.amazon/.test(l)) return "Amazon";
         return "";
     }
     function naOferta(oferta, depois) {

@@ -1128,7 +1128,7 @@ const ordemInicial = parametrosUrl.get("ordem") || "recentes";
 const LOJAS = [
     { id: "shopee", nome: "Shopee", cor: "#EE4D2D", teste: /shopee|shp\.ee/i },
     { id: "ml", nome: "Mercado Livre", cor: "#FFE600", teste: /mercadoli[vb]re|meli\.la|mercadolibre/i },
-    { id: "amazon", nome: "Amazon", cor: "#232F3E", teste: /amazon\.|amzn\.(to|com)|a\.co\//i }
+    { id: "amazon", nome: "Amazon", cor: "#232F3E", teste: /amazon\.|amzn\.(to|com)|a\.co\/|link\.amazon/i }
 ];
 function lojaDe(o){
     const alvo = (o.loja || "") + " " + (o.link || "");
