@@ -1088,6 +1088,8 @@ footer a{ color:var(--red-dark); font-weight:600; text-decoration:none; }
 
 <div class="grid" id="grid"></div>
 <div class="vazio" id="vazio" style="display:none">A Yang tá farejando a próxima oferta 🐾 — volta já já!</div>
+<!-- busca com poucos resultados: "Pede pra Yang farejar" na Shopee -->
+<div id="pedirNaBusca" style="display:none;margin-top:18px"></div>
 
 <footer>
 🐶 Farejadinhos da Yang — achadinhos, ofertas e cupons.<br>
@@ -1103,6 +1105,7 @@ Preços, cupons e estoque foram conferidos na publicação e podem mudar na loja
 <script src="assets/categorias-config.js"></script>
 <script src="assets/vitrine.js"></script>
 <script src="assets/cupons-vitrine.js" data-base=""></script>
+<script src="assets/pedir.js" data-base=""></script>
 <script>
 
 
@@ -1606,7 +1609,25 @@ window.farejaFiltrarCategoria = function(categoria){
     if(alvo) alvo.scrollIntoView({ behavior: "smooth", block: "start" });
 };
 
+// busca que achou pouco no site: oferece "Pede pra Yang farejar" com o termo
+let pedirTimer = null, pedirUltimo = "";
+function sugerirPedido(qtd){
+    const caixa = document.getElementById("pedirNaBusca");
+    if(!caixa || !window.FarejadinhosPedir) return;
+    const termo = document.getElementById("busca").value.trim();
+    clearTimeout(pedirTimer);
+    if(termo.length < 3 || qtd >= 4){ caixa.style.display = "none"; return; }
+    // espera a pessoa parar de digitar antes de buscar na Shopee
+    pedirTimer = setTimeout(() => {
+        if(termo === pedirUltimo && caixa.style.display === "block") return;
+        pedirUltimo = termo;
+        caixa.style.display = "block";
+        FarejadinhosPedir.montar(caixa, { termo, compacto: true, semSite: true });
+    }, 1200);
+}
+
 function render(lista){
+    sugerirPedido(lista.length);
 
     const grid = document.getElementById("grid");
     const vazio = document.getElementById("vazio");

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🐶 Pede pra Yang farejar | Farejadinhos da Yang</title>
+<meta name="description" content="Não achou o que procura? Diz pra Yang e ela fareja os produtos mais vendidos e bem avaliados na Shopee.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Farejadinhos da Yang">
+<meta property="og:title" content="🐶 Pede pra Yang farejar | Farejadinhos da Yang">
+<meta property="og:description" content="Diz o que você procura e a Yang fareja os mais vendidos e bem avaliados.">
+<meta property="og:image" content="../assets/og-padrao.png">
+<link rel="icon" href="../assets/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/nav.css">
+<link rel="stylesheet" href="../assets/topo.css">
+<style>
+:root{ --red:#E5232E; --red-dark:#C21A24; --orange:#F7941D; --cream:#FDF3E3; --cream-2:#FFFAF1; --ink:#2B1B12; --muted:#8A7563; --line:#F0DFC4; }
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);font-family:'Work Sans',Arial,sans-serif;color:var(--ink)}
+.wrap{max-width:900px;margin:auto;padding:22px 16px 50px}
+.back{display:block;text-align:center;margin-top:20px;font-size:13px;color:var(--muted);text-decoration:none}
+.disclaimer{margin-top:18px;font-size:11.5px;color:var(--muted);line-height:1.6;text-align:center}
+</style>
+</head>
+<body>
+<script src="../assets/topo.js" data-base="../"></script>
+<div class="wrap">
+<div id="pedirYang"></div>
+<div class="disclaimer">A Yang não fareja produtos adultos, armas, remédios, bebidas, comida, cigarro/vape nem réplicas.<br>
+<a href="../avisos/" style="color:var(--red-dark)">Avisos e privacidade</a></div>
+<a class="back" href="../">← voltar pro início</a>
+</div>
+<script src="../assets/nav.js"></script>
+<script src="../assets/categorias-config.js"></script>
+<script src="../assets/vitrine.js"></script>
+<script src="../assets/pedir.js" data-base="../"></script>
+<script>
+(function(){
+  var q = new URLSearchParams(location.search).get("q") || "";
+  FarejadinhosPedir.montar(document.getElementById("pedirYang"), { termo: q });
+})();
+</script>
+</body>
+</html>

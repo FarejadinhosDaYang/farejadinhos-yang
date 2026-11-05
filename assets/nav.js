@@ -35,6 +35,7 @@
             '<div class="yang-nav-cupons">' +
             '<span>Cupons das lojas</span>' +
             '<a class="yang-nav-cupom" href="' + base + 'index.html#cuponsSecao">🏷️ Cupons de hoje (copiar e usar)</a>' +
+            '<a class="yang-nav-cupom" href="' + base + 'pedir/">🐶 Não achou? Pede pra Yang farejar</a>' +
             '<a class="yang-nav-cupom shopee" href="https://s.shopee.com.br/4VdOXKYQfW" target="_blank" rel="sponsored noopener">🏷️ Cupons Shopee</a>' +
             '<a class="yang-nav-cupom ml" href="https://www.mercadolivre.com.br/cupons?source_page=mperfil#nav-header" target="_blank" rel="sponsored noopener">🏷️ Cupons Mercado Livre</a>' +
             "</div>" +

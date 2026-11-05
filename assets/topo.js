@@ -63,6 +63,7 @@ window.farejaIconesExtras();
         '<a class="destaque" href="' + ancora + '#tituloGrid">🔥 Ofertas do dia</a>' +
         '<a href="' + ancora + '#podioSecao">🏆 Maiores descontos</a>' +
         '<a href="' + ancora + '#cuponsSecao">🏷️ Cupons de hoje</a>' +
+        '<a href="' + base + 'pedir/">🐶 Pede pra Yang</a>' +
         '<a href="' + base + 'calculadora/">🧮 Vale a pena parcelar?</a>' +
         '<a href="https://s.shopee.com.br/4VdOXKYQfW" target="_blank" rel="sponsored noopener">🏷️ Cupons Shopee</a>' +
         '<a href="https://www.mercadolivre.com.br/cupons?source_page=mperfil#nav-header" target="_blank" rel="sponsored noopener">🏷️ Cupons Mercado Livre</a>' +
