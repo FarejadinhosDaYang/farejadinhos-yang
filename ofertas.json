@@ -608,12 +608,15 @@
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/be80d970-5211-4ffe-8904-6a755e29303b.jpg",
-        "variacao": "Cor",
+        "variacao": "Preto",
         "pendente": "R$ 4.799,00",
-        "pendenteEm": "2026-11-05T18:51:00Z"
+        "pendenteEm": "2026-11-05T18:51:00Z",
+        "cor": "#2B2B2B"
       }
     ],
-    "precoConferido": "2026-11-05T18:51:00Z"
+    "precoConferido": "2026-11-05T18:51:00Z",
+    "variacao": "Violeta",
+    "cor": "#8B7BB8"
   },
   {
     "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
@@ -883,8 +886,7 @@
         "conferido": "2026-10-23T00:12:14Z",
         "manual": "2026-11-04T17:20:36Z",
         "confirmado": true,
-        "imagem": "https://farejadinhosdayang.com.br/assets/37791102-86e6-4363-a830-8bbde0a508e9.jpg",
-        "variacao": "Cor"
+        "imagem": "https://farejadinhosdayang.com.br/assets/37791102-86e6-4363-a830-8bbde0a508e9.jpg"
       }
     ],
     "precoConferido": "2026-11-05T18:51:00Z"
@@ -1265,12 +1267,15 @@
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/8a3e1230-4e3e-4109-877a-8c16b096077d.jpg",
-        "variacao": "Cor",
+        "variacao": "Prata",
         "pendente": "R$ 7.257,27",
-        "pendenteEm": "2026-11-05T18:51:00Z"
+        "pendenteEm": "2026-11-05T18:51:00Z",
+        "cor": "#D9DCE1"
       }
     ],
-    "precoConferido": "2026-11-05T10:56:01Z"
+    "precoConferido": "2026-11-05T10:56:01Z",
+    "variacao": "Preto",
+    "cor": "#2B2B2B"
   },
   {
     "produto": "Celular Samsung Galaxy S25 Fe 5g, 128gb",
@@ -1297,11 +1302,14 @@
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/72a70978-5436-4a4b-8b8c-b289c054d4bc.jpg",
-        "variacao": "Cor"
+        "variacao": "Preto",
+        "cor": "#2B2B2B"
       }
     ],
     "parcelas": 10,
-    "precoConferido": "2026-11-05T18:51:00Z"
+    "precoConferido": "2026-11-05T18:51:00Z",
+    "variacao": "Azul-marinho",
+    "cor": "#2F3E66"
   },
   {
     "produto": "Protetor Solar Facial Hidrabene FPS 70 Toque Seco",
@@ -2396,8 +2404,7 @@
         "conferido": "2026-10-28T13:48:15Z",
         "manual": "2026-11-03T18:16:04Z",
         "confirmado": true,
-        "imagem": "https://farejadinhosdayang.com.br/assets/b25e1400-d31f-428b-9a41-f1bc2d4a2bd0.jpg",
-        "variacao": "Cor"
+        "imagem": "https://farejadinhosdayang.com.br/assets/b25e1400-d31f-428b-9a41-f1bc2d4a2bd0.jpg"
       },
       {
         "link": "https://s.shopee.com.br/1141ZgEeR7",
@@ -2406,8 +2413,7 @@
         "conferido": "2026-10-28T13:48:15Z",
         "manual": "2026-11-03T18:16:50Z",
         "confirmado": true,
-        "imagem": "https://farejadinhosdayang.com.br/assets/019aea3e-06a4-4b78-bcb6-cd1132c504cb.jpg",
-        "variacao": "Cor"
+        "imagem": "https://farejadinhosdayang.com.br/assets/019aea3e-06a4-4b78-bcb6-cd1132c504cb.jpg"
       }
     ]
   },
@@ -5589,8 +5595,7 @@
         "conferido": "2026-11-03T15:48:56Z",
         "manual": "2026-11-03T18:30:57Z",
         "confirmado": true,
-        "imagem": "https://farejadinhosdayang.com.br/assets/7e8e1dbe-61d5-4765-8fc7-751d5f0f4027.jpg",
-        "variacao": "Links"
+        "imagem": "https://farejadinhosdayang.com.br/assets/7e8e1dbe-61d5-4765-8fc7-751d5f0f4027.jpg"
       }
     ],
     "video": "videos/caneta-de-oleo-de-cuticula-3-em-1-para-cuidados.mp4",
@@ -6026,8 +6031,7 @@
         "conferido": "2026-11-03T22:39:42Z",
         "manual": "2026-11-04T11:13:17Z",
         "confirmado": true,
-        "imagem": "https://farejadinhosdayang.com.br/assets/8b75f462-f50a-4c3f-b0d0-1b89a229dd25.jpg",
-        "variacao": "Anuncio"
+        "imagem": "https://farejadinhosdayang.com.br/assets/8b75f462-f50a-4c3f-b0d0-1b89a229dd25.jpg"
       },
       {
         "link": "https://s.shopee.com.br/8AXNOWOHpm",
@@ -6036,8 +6040,7 @@
         "conferido": "2026-11-03T22:39:43Z",
         "manual": "2026-11-04T11:13:55Z",
         "confirmado": true,
-        "imagem": "https://farejadinhosdayang.com.br/assets/465d0a0f-d9b5-4628-84da-ccdc820276dc.jpg",
-        "variacao": "Anuncio"
+        "imagem": "https://farejadinhosdayang.com.br/assets/465d0a0f-d9b5-4628-84da-ccdc820276dc.jpg"
       }
     ]
   },
@@ -6065,8 +6068,7 @@
         "conferido": "2026-11-05T10:56:02Z",
         "manual": "2026-10-28T00:16:04Z",
         "confirmado": true,
-        "imagem": "https://farejadinhosdayang.com.br/assets/2dbc057b-3689-4c70-9632-2d40b4221c6c.jpg",
-        "variacao": "Cor"
+        "imagem": "https://farejadinhosdayang.com.br/assets/2dbc057b-3689-4c70-9632-2d40b4221c6c.jpg"
       }
     ],
     "parcelas": 10
