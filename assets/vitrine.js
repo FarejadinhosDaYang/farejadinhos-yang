@@ -13,9 +13,10 @@
  *    hora em hora e a oferta fica enquanto a loja mostrar o preço.
  * 4. (Antes: reserva / mínimo por categoria.)
  * 5. Se a conferência passar 72h sem conseguir ler o preço (produto saiu
- *    da loja, link morto), a oferta some do site ("semPrecoDesde", gravado
- *    por gerador/marcar_disponibilidade.py) e o limpar-ofertas.ps1 tira do
- *    catálogo. Fixadas (📌) e permanentes não saem.
+ *    da loja, link morto), a oferta fica ESCONDIDA ("semPrecoDesde", gravado
+ *    por gerador/marcar_disponibilidade.py) e volta sozinha quando o preço
+ *    reaparecer. Desde 05/11/2026 nada é apagado sozinho do catálogo: quem
+ *    tira é o Alexandre, pelo painel. Fixadas (📌) e permanentes não somem.
  *
  * 6. Categoria com MENOS DE 8 no ar não espera a vez na fila: as
  *    próximas ofertas agendadas DELA aparecem na hora até chegar a 8
@@ -26,7 +27,7 @@
  *    delas (TEMPORADAS, abaixo, repete todo ano). Fora dele somem do
  *    site e do menu, e a vitrine fica com as outras categorias.
  *
- * 8. Categorias PERMANENTES (Vídeos e Celulares — produtos que têm vídeo
+ * 8. Categorias PERMANENTES (Vídeos, Celulares e Automação — produtos que têm vídeo
  *    postado na página) aparecem NA HORA (mesmo agendadas na fila do
  *    lote) e nunca expiram: ficam no site pra sempre, e a limpeza
  *    automática não apaga.
@@ -53,7 +54,7 @@
 
   // Categorias que nunca expiram (nome sem acento, minúsculo).
   // Mesma lista em gerador/limpar-ofertas.ps1.
-  const PERMANENTES = ["videos", "celulares"];
+  const PERMANENTES = ["videos", "celulares", "automacao"];
 
   // "Vídeos" é uma categoria A MAIS: a oferta guarda as duas no campo
   // categoria, separadas por vírgula ("Cozinha, Vídeos"). Ao carregar,

@@ -36,6 +36,20 @@ jobs:
             Write-Host "Pedido de conferencia de precos enviado pro workflow 'Conferir precos'."
           }
 
+      # Lote "só links" ({"acao": "links", "links": [...]}): busca nome,
+      # preço e foto de cada link no Worker e vira um lote comum.
+      - name: Links -> itens do lote
+        shell: pwsh
+        env:
+          ARQUIVO_LOTE: ${{ inputs.arquivoLote }}
+          PAINEL_SENHA: ${{ secrets.PAINEL_SENHA }}
+        run: |
+          $texto = Get-Content -LiteralPath $env:ARQUIVO_LOTE -Raw -Encoding UTF8
+          if ($texto -match '"acao"\s*:\s*"links"') {
+            node gerador/links_para_lote.js $env:ARQUIVO_LOTE
+            if ($LASTEXITCODE -ne 0) { throw "links_para_lote.js falhou" }
+          }
+
       # Processa e salva numa tacada só. Se outro lote salvou no meio do
       # caminho (vários pedidos do painel ao mesmo tempo), descarta, pega a
       # versão mais nova do site e processa de novo — nada se perde.
@@ -62,6 +76,10 @@ jobs:
             if ($texto -match '"acao"\s*:\s*"cupons-site"') {
               python gerador/cupons_site.py $Arq
               if ($LASTEXITCODE -ne 0) { throw "cupons_site.py falhou" }
+            }
+            if ($texto -match '"acao"\s*:\s*"liberar-fila"') {
+              python gerador/liberar_fila.py $Arq
+              if ($LASTEXITCODE -ne 0) { throw "liberar_fila.py falhou" }
             }
             & .\gerador\gerar-lote.ps1 -ArquivoLote $Arq
           }

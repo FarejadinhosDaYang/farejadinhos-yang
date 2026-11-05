@@ -124,7 +124,7 @@ foreach ($Oferta in $Ofertas) {
     $CatNorm = ([string]$Oferta.categoria).Normalize([Text.NormalizationForm]::FormD) -replace '\p{Mn}', ''
     $Partes = @($CatNorm.ToLowerInvariant().Split(',') | ForEach-Object { $_.Trim() })
     # Anúncio âncora (📌 Fixar no site) também nunca expira
-    if ($Partes -contains "videos" -or $Partes -contains "celulares" -or ($Oferta.PSObject.Properties["fixo"] -and $Oferta.fixo -eq $true)) {
+    if ($Partes -contains "videos" -or $Partes -contains "celulares" -or $Partes -contains "automacao" -or ($Oferta.PSObject.Properties["fixo"] -and $Oferta.fixo -eq $true)) {
         $Mantidas += $Oferta
         continue
     }
@@ -139,7 +139,13 @@ foreach ($Oferta in $Ofertas) {
     $Local = $Agora.ToOffset([TimeSpan]::FromHours(-3))
     $FimDeNatal = ($Partes -contains "natal") -and ((($Local.Month -eq 12) -and ($Local.Day -gt 25)) -or ($Local.Month -lt 9))
 
-    if ($Sumiu -or $FimDeNatal) {
+    # DESDE 05/11/2026 nada sai sozinho do catálogo: sem preço há 72h a
+    # oferta só fica ESCONDIDA no site (assets/vitrine.js, "indisponivel")
+    # e volta sozinha quando a loja mostrar o preço de novo; Natal fora de
+    # época também só some do site (TEMPORADAS). Quem tira é o Alexandre,
+    # pelo "Remover" do painel. Pra voltar a apagar, troque $false por
+    # ($Sumiu -or $FimDeNatal).
+    if ($false) {
         $Removidas += $Oferta
     }
     else {
