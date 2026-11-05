@@ -159,7 +159,7 @@
             '<input type="text" inputmode="numeric" class="calc-n" placeholder="Ex.: 10" value="' + parcelasInicial + '">' +
             '</label>' +
 
-            '<label>Seu dinheiro rende quanto do CDI?' +
+            '<label>Seu dinheiro rende quanto do CDI? (%)' +
             '<input type="text" inputmode="decimal" class="calc-pct" placeholder="Ex.: 100">' +
             '</label>' +
 
