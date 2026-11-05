@@ -581,7 +581,7 @@ window.FarejadinhosConfigCategorias = {
  "categoriasExtras": [
   {
    "nome": "Automação",
-   "icone": "⚙️",
+   "icone": "⚡",
    "palavras": [
     "automacao",
     "casa inteligente",
