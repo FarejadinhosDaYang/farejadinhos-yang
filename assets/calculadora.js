@@ -109,6 +109,14 @@
             if (principal < 0) principal = 0;
         }
 
+        // O que sobrou ainda tem rendimento que não pagou imposto: desconta o IR
+        // (e o IOF, se fosse antes de 30 dias) como se a pessoa sacasse tudo no fim.
+        if (balance > 0) {
+            var ganhoRestante = Math.max(0, balance - principal);
+            var iofFinal = dias < 30 ? aliquotaIOF(dias) : 0;
+            balance -= ganhoRestante * (iofFinal + aliquotaIR(dias) * (1 - iofFinal));
+        }
+
         return balance;
     }
 
