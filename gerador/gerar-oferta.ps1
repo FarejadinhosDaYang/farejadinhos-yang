@@ -306,6 +306,8 @@ $SubAnterior = $Catalogo | Where-Object { $_ -and $_.slug -eq $Slug -and $_.PSOb
 $BlackAnterior = $Catalogo | Where-Object { $_ -and $_.slug -eq $Slug -and $_.PSObject.Properties["black"] } | Select-Object -First 1
 $EraFixo = @($Catalogo | Where-Object { $_ -and $_.slug -eq $Slug -and $_.PSObject.Properties["fixo"] -and $_.fixo -eq $true }).Count -gt 0
 $VariacaoAnterior = $Catalogo | Where-Object { $_ -and $_.slug -eq $Slug -and $_.PSObject.Properties["variacao"] } | Select-Object -First 1
+# Reel da Yang na pagina da oferta (video ao lado da foto): mantem numa edicao
+$VideoAnterior = $Catalogo | Where-Object { $_ -and $_.slug -eq $Slug -and $_.PSObject.Properties["video"] -and $_.video } | Select-Object -First 1
 
 # Remove uma entrada antiga com o mesmo slug (regeneracao) e
 # qualquer lixo/objeto vazio que tenha sobrado no arquivo.
@@ -346,6 +348,10 @@ if ($UsaImagemExistente) {
 }
 if ($EraTravado) { $NovaEntrada.precoTravado = $true }
 if ($EraFixo) { $NovaEntrada.fixo = $true }
+if ($VideoAnterior) {
+    $NovaEntrada.video = [string]$VideoAnterior.video
+    if ($VideoAnterior.PSObject.Properties["videoCapa"] -and $VideoAnterior.videoCapa) { $NovaEntrada.videoCapa = [string]$VideoAnterior.videoCapa }
+}
 if ($BlackAnterior) { $NovaEntrada.black = [bool]$BlackAnterior.black }
 if ($SubAnterior) { $NovaEntrada.sub = [string]$SubAnterior.sub }
 if ($AnunciosAnteriores.Count -gt 0) { $NovaEntrada.anuncios = @($AnunciosAnteriores) }

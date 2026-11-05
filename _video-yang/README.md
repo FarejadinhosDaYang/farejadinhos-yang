@@ -14,7 +14,8 @@ sincronizada com a voz do ElevenLabs, legenda palavra por palavra e o selo "💬
 | `reel.html` | Reel automático de oferta a partir de uma foto (gancho → produto → preço → chamada) |
 | `render.py` | Transforma qualquer modelo em MP4 1080×1920 30 fps (lip sync, fundo, fundo verde) |
 | `auto_reel.py` | Monta o Reel sozinho (vídeo + voz + texto) — usado pela página do painel "Gerar reel" |
-| `marcar-video.py` | Põe a oferta do Reel na categoria Vídeos (não sai mais do ar) |
+| `publicar-video.py` | **Põe o Reel na página da oferta** (ao lado da foto; versão leve em `videos/<slug>.mp4`) e a oferta em Vídeos |
+| `marcar-video.py` | Só põe a oferta do Reel na categoria Vídeos (não sai mais do ar), sem vídeo na página |
 | `capa.html` / `capa.py` | Capa do Reel (1080×1920) com gancho grande, Yang inteira e selo publi |
 | `pausas.py` | Lê a voz do ElevenLabs + o texto e gera o `roteiro.json` com o tempo de cada frase |
 | `cabeca/` | As 6 expressões da cabeça (boca fechada/meio/aberta × olhos abertos/piscando) + imagem original |
@@ -74,7 +75,8 @@ Os cortes escolhidos à mão (passo a passo abaixo) continuam valendo pros víde
 8. **Oferta vira permanente:** todo produto que ganha Reel vai pra categoria **Vídeos** (não expira em 3 dias,
    já que o post fica no perfil pra sempre). Fazer isso assim que o reel ficar pronto:
    ```bash
-   python3 _video-yang/marcar-video.py <slug ou pedaço do nome>   # depois commit + push
+   python3 _video-yang/publicar-video.py <slug> reel-X.mp4 capa.jpg   # vídeo na página + Vídeos; depois git add videos/ ofertas.json, commit + push
+   (só categoria, sem vídeo: python3 _video-yang/marcar-video.py <slug ou pedaço do nome>)
    ```
 9. Entregar o MP4 + a capa + a legenda do post.
 

@@ -196,10 +196,81 @@
         escolher(0);
     }
 
+    // 🎬 Reel da Yang ao lado da foto (ofertas com "video" no ofertas.json).
+    // Toca sozinho, sem som e em loop; tocando nele abre em tela cheia com som.
+    function montarVideo(atual) {
+        if (!atual || !atual.video || document.querySelector(".oferta-midia")) return;
+        var foto = document.querySelector("img.product");
+        if (!foto) return;
+        var alvo = foto.closest(".var-moldura") || foto;
+        var linha = document.createElement("div");
+        linha.className = "oferta-midia";
+        alvo.parentNode.insertBefore(linha, alvo);
+        var ladoFoto = document.createElement("div");
+        ladoFoto.className = "midia-foto";
+        ladoFoto.appendChild(alvo);
+        linha.appendChild(ladoFoto);
+
+        var caixa = document.createElement("button");
+        caixa.type = "button";
+        caixa.className = "midia-video";
+        caixa.setAttribute("aria-label", "Ver o vídeo da Yang sobre este produto");
+        var v = document.createElement("video");
+        v.muted = true; v.loop = true; v.playsInline = true;
+        v.setAttribute("muted", ""); v.setAttribute("playsinline", ""); v.setAttribute("preload", "none");
+        if (atual.videoCapa) v.poster = base + atual.videoCapa;
+        v.src = base + atual.video;
+        caixa.appendChild(v);
+        var selo = document.createElement("span");
+        selo.className = "midia-selo";
+        selo.textContent = "▶ Vídeo";
+        caixa.appendChild(selo);
+        linha.appendChild(caixa);
+
+        // só começa a baixar/tocar quando aparece na tela
+        function tocar() { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+        if ("IntersectionObserver" in window) {
+            new IntersectionObserver(function (es) {
+                es.forEach(function (e) { if (e.isIntersecting) tocar(); else v.pause(); });
+            }, { threshold: .35 }).observe(caixa);
+        } else tocar();
+
+        caixa.onclick = function () { abrirVideo(base + atual.video, atual.videoCapa ? base + atual.videoCapa : ""); };
+    }
+
+    function abrirVideo(src, poster) {
+        var fundo = document.createElement("div");
+        fundo.className = "midia-tela";
+        fundo.setAttribute("role", "dialog");
+        fundo.setAttribute("aria-label", "Vídeo do produto");
+        var v = document.createElement("video");
+        v.src = src; v.controls = true; v.autoplay = true; v.playsInline = true;
+        v.setAttribute("playsinline", "");
+        if (poster) v.poster = poster;
+        var x = document.createElement("button");
+        x.type = "button"; x.className = "midia-fechar"; x.textContent = "✕"; x.setAttribute("aria-label", "Fechar vídeo");
+        fundo.appendChild(v); fundo.appendChild(x);
+        document.body.appendChild(fundo);
+        document.body.style.overflow = "hidden";
+        var pequeno = document.querySelector(".midia-video video");
+        if (pequeno) pequeno.pause();
+        function fechar() {
+            v.pause(); fundo.remove(); document.body.style.overflow = "";
+            document.removeEventListener("keydown", tecla);
+            if (pequeno) { var p = pequeno.play(); if (p && p.catch) p.catch(function () {}); }
+        }
+        function tecla(e) { if (e.key === "Escape") fechar(); }
+        x.onclick = fechar;
+        fundo.onclick = function (e) { if (e.target === fundo) fechar(); };
+        document.addEventListener("keydown", tecla);
+        var p = v.play(); if (p && p.catch) p.catch(function () {});
+    }
+
     function montar(todas) {
         var slug = slugAtual();
         var atual = todas.filter(function (o) { return o && o.slug === slug; })[0];
         try { montarAnuncios(atual); } catch (e) {}
+        try { montarVideo(atual); } catch (e) {}
         // 🖤 selo Black November (a temporada.js pode chegar um pouco depois)
         (function seloBlack(tentativas) {
             var V = window.FarejadinhosVitrine;

@@ -31,7 +31,9 @@
     "data": "2026-10-15T22:42:10Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-26T11:00:00Z"
+    "liberacao": "2026-10-26T11:00:00Z",
+    "video": "videos/garrafa-forma-de-gelo-2-em-1-portatil-silicone.mp4",
+    "videoCapa": "videos/garrafa-forma-de-gelo-2-em-1-portatil-silicone.jpg"
   },
   {
     "produto": "Fita Teste Piscina Cloro, Ph, Alcalinidade",
@@ -796,7 +798,9 @@
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/5909e84a-a0aa-4101-86e6-527945314011.jpg"
       }
-    ]
+    ],
+    "video": "videos/porta-ovos-4-andares-rolante-em-plastico.mp4",
+    "videoCapa": "videos/porta-ovos-4-andares-rolante-em-plastico.jpg"
   },
   {
     "produto": "Dispenser Giratorio Organizador Alimentos",
@@ -1002,7 +1006,9 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-27T11:57:55Z",
-    "fixo": true
+    "fixo": true,
+    "video": "videos/kit-6-tampas-panela-silicone-universal.mp4",
+    "videoCapa": "videos/kit-6-tampas-panela-silicone-universal.jpg"
   },
   {
     "produto": "KIT 3 Necessaire Bolsa Portátil Transparente",
@@ -2515,7 +2521,9 @@
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/a0d88558-821e-4ff2-b6ab-791b37a3f24f.jpg"
       }
-    ]
+    ],
+    "video": "videos/saco-para-lavar-tenis-na-maquina-bolsa-protetora.mp4",
+    "videoCapa": "videos/saco-para-lavar-tenis-na-maquina-bolsa-protetora.jpg"
   },
   {
     "produto": "Percarbonato 100% Puro Tira Manchas Roupas Brancas",
@@ -5366,7 +5374,9 @@
     "precoAVista": "422,75",
     "precoAPrazo": "789,00",
     "liberacao": "2026-11-05T16:17:36Z",
-    "parcelas": 10
+    "parcelas": 10,
+    "video": "videos/panificadora-19-programas-gallant-600w-preta.mp4",
+    "videoCapa": "videos/panificadora-19-programas-gallant-600w-preta.jpg"
   },
   {
     "produto": "Air Fryer Oven 12L WAP 10 Funções Pré-Programadas",
@@ -5580,7 +5590,9 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/7e8e1dbe-61d5-4765-8fc7-751d5f0f4027.jpg",
         "variacao": "Links"
       }
-    ]
+    ],
+    "video": "videos/caneta-de-oleo-de-cuticula-3-em-1-para-cuidados.mp4",
+    "videoCapa": "videos/caneta-de-oleo-de-cuticula-3-em-1-para-cuidados.jpg"
   },
   {
     "produto": "Portátil Abdominais Ventosas Fortes 3 Ajustes",
@@ -5775,7 +5787,9 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-26T15:30:07Z",
-    "precoManual": "2026-11-04T10:46:06Z"
+    "precoManual": "2026-11-04T10:46:06Z",
+    "video": "videos/mini-aspirador-de-po-3-em-1-a-vacuo-usb-portatil.mp4",
+    "videoCapa": "videos/mini-aspirador-de-po-3-em-1-a-vacuo-usb-portatil.jpg"
   },
   {
     "produto": "Medicube PDRN Pink Collagen Volume Multi Balm 10g",
@@ -6169,7 +6183,9 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-04T20:12:53Z",
-    "precoManual": "2026-11-05T15:49:31Z"
+    "precoManual": "2026-11-05T15:49:31Z",
+    "video": "videos/pipoqueira-eletrica-sem-oleo-rapida-e-pratica.mp4",
+    "videoCapa": "videos/pipoqueira-eletrica-sem-oleo-rapida-e-pratica.jpg"
   },
   {
     "produto": "Ventilador de Teto com Luz Silencioso Controle",
@@ -6187,6 +6203,8 @@
     "precoAPrazo": "",
     "liberacao": "2026-10-27T20:00:11Z",
     "precoManual": "2026-11-05T16:51:03Z",
-    "fixo": true
+    "fixo": true,
+    "video": "videos/ventilador-de-teto-com-luz-silencioso-controle.mp4",
+    "videoCapa": "videos/ventilador-de-teto-com-luz-silencioso-controle.jpg"
   }
 ]

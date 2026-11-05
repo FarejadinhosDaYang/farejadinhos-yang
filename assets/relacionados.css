@@ -174,3 +174,15 @@
 .var-tile-preco{font:800 13.5px 'Baloo 2',Arial,sans-serif;color:#C21A24;line-height:1}
 .var-tile-preco.duvida{font:600 11px 'Work Sans',Arial,sans-serif;color:#8A7563}
 .var-tile.ativa .var-tile-preco{color:#1F7A44}
+
+/* ---------- Reel da Yang ao lado da foto ---------- */
+.oferta-midia{display:flex;gap:10px;align-items:stretch}
+.oferta-midia .midia-foto{flex:16 1 0;min-width:0}
+.midia-video{flex:9 1 0;min-width:0;position:relative;padding:0;border:1px solid #F0DFC4;border-radius:18px;overflow:hidden;background:#2B1B12;cursor:pointer;aspect-ratio:9/16;align-self:center;box-shadow:0 6px 18px rgba(43,27,18,.14)}
+.midia-video video{width:100%;height:100%;object-fit:cover;display:block}
+.midia-selo{position:absolute;right:6px;bottom:8px;background:rgba(229,35,46,.95);color:#fff;font:800 12px 'Work Sans',Arial,sans-serif;padding:4px 10px;border-radius:999px;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.midia-video:hover .midia-selo{background:#C21A24}
+.midia-video:focus-visible{outline:3px solid #F7941D;outline-offset:2px}
+.midia-tela{position:fixed;inset:0;z-index:9999;background:rgba(20,12,8,.92);display:flex;align-items:center;justify-content:center;padding:16px}
+.midia-tela video{max-width:100%;max-height:100%;aspect-ratio:9/16;border-radius:16px;background:#000}
+.midia-fechar{position:absolute;top:14px;right:14px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;color:#2B1B12;font:800 20px 'Work Sans',Arial,sans-serif;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.3)}

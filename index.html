@@ -481,6 +481,11 @@ h1,h2,h3,.brand{
     border-radius:999px;
 }
 
+.badge-video{
+    position:absolute; right:8px; bottom:8px; z-index:2;
+    background:rgba(43,27,18,.82); color:#fff;
+    font:800 11.5px 'Work Sans',Arial,sans-serif; padding:3px 9px; border-radius:999px;
+}
 .badge-desconto{
     position:absolute;
     top:8px;
@@ -1699,6 +1704,7 @@ function cardHtml(o){
                     ${o.variacoes ? `<div class="cardCores">${o.variacoes.slice(0, 5).map(v => v.cor ? `<span style="background:${escapeHtml(v.cor)}" title="${escapeHtml(v.nome)}"></span>` : "").join("")}</div>` : ""}
                     ${badgeCanto}
                     ${badgeDesconto}
+                    ${o.video ? `<div class="badge-video">▶ Vídeo</div>` : ""}
                 </div>
                 <div class="info">
                     ${categoriaHtml}
