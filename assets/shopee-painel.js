@@ -12,7 +12,7 @@
 (function () {
     var URL_SHOPEE = "https://farejadinhos-shopee.bernard-shimizu.workers.dev";
     var URL_PAINEL = "https://holy-pine-e7fc.bernard-shimizu.workers.dev"; // rota /lote (fila do site)
-    var POR_DIA = "25"; // mesma regra do lote: entra na fila, no máximo 25 por dia
+    var POR_DIA = "0"; // entra no ar na hora (desde 05/11/2026 tudo entra de uma vez)
 
     function senha() {
         var c = document.getElementById("senha");

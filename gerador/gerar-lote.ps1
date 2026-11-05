@@ -12,6 +12,8 @@
 #   "link": "...", "imagemUrl": "https://..."
 # }
 #
+# (DESDE 05/11/2026 entram TODAS DE UMA VEZ — veja $TUDO_DE_UMA_VEZ;
+# o que segue só vale quando o painel pede "N por dia".)
 # Diferente do fluxo de oferta única, aqui a imagem vem de um LINK
 # (não de um arquivo enviado), e as ofertas não aparecem todas de
 # uma vez: o que falta pra vitrine ter 15 ofertas entra na hora, e o
@@ -438,6 +440,18 @@ if ($ModoAgenda) {
     $TxtPorDia = if ($AgendaPorDia -gt 0) { "$AgendaPorDia por dia" } else { "o maximo por dia" }
     Write-Host "Agenda: comecando $TxtInicio, $TxtPorDia, $Imediatos na hora. Ultima sai em $($Ultimo.ToString('dd/MM HH:mm'))."
 }
+}
+
+# DESDE 05/11/2026: tudo entra no ar de uma vez (pedido do Alexandre).
+# Só espalha se o painel mandar uma agenda (agendaInicio / agendaPorDia).
+# Pra voltar a soltar aos poucos, troque por $false.
+$TUDO_DE_UMA_VEZ = $true
+# Com data escolhida no painel (amanhã / outro dia), entram todos juntos
+# às 8h desse dia. Com "N por dia" escolhido no painel, continua espalhando.
+if ($TUDO_DE_UMA_VEZ -and $AgendaPorDia -eq 0 -and $Total -gt 0) {
+    $Quando = if ($AgendaInicio -ne $null -and $AgendaInicio -gt $Agora) { $AgendaInicio } else { $Agora }
+    $Horarios = @(for ($k = 0; $k -lt $Total; $k++) { $Quando })
+    Write-Host "Agenda: os $Total entram no ar juntos em $($Quando.ToOffset($FUSO_BRASILIA).ToString('dd/MM HH:mm'))."
 }
 
 $Sucessos = 0

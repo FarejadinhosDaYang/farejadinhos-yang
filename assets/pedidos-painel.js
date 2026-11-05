@@ -49,7 +49,7 @@
         var dados = new FormData();
         dados.append("senha", s);
         dados.append("itens", JSON.stringify([{ produto: nome, preco: p.preco, precoAntigo: p.precoAntigo || "", cupom: "", categoria: cat,
-            destaque: false, link: p.afiliado, imagemUrl: p.imagemUrl, agendaInicio: "", agendaPorDia: "25" }]));
+            destaque: false, link: p.afiliado, imagemUrl: p.imagemUrl, agendaInicio: "", agendaPorDia: "0" }]));
         fetch(URL_PAINEL + "/lote", { method: "POST", body: dados }).then(function (r) {
             return r.text().then(function (t) { if (r.status === 401) throw new Error("Senha recusada."); if (!r.ok) throw new Error(t); });
         }).then(function () { botao.textContent = "✅ Na fila"; })
