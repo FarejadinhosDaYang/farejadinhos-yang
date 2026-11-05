@@ -1,8 +1,0 @@
-[{"acao":"categorias","op":"add-cat","nome":"Automação","icone":"⚙️","palavras":["automacao","casa inteligente","smart home","alexa","google home","echo dot","tuya","zigbee","tomada inteligente","lampada inteligente","interruptor inteligente","sensor de presenca","fechadura digital","fechadura inteligente","camera wifi","camera de seguranca","controle universal","controle ir","campainha inteligente","lixeira automatica","lixeira inteligente","wifi"]},
-{"acao":"categorias","op":"add-sub","categoria":"Automação","nome":"Câmeras e Segurança","palavras":["camera","cameras","campainha","fechadura","alarme"]},
-{"acao":"categorias","op":"add-sub","categoria":"Automação","nome":"Iluminação Inteligente","palavras":["lampada","fita led","luz inteligente"]},
-{"acao":"categorias","op":"add-sub","categoria":"Automação","nome":"Tomadas e Interruptores","palavras":["tomada","interruptor","plug"]},
-{"acao":"categorias","op":"add-sub","categoria":"Automação","nome":"Assistentes e Controles","palavras":["alexa","echo","google home","controle universal","controle ir","hub"]},
-{"acao":"categorias","op":"add-sub","categoria":"Automação","nome":"Sensores e Casa Automática","palavras":["sensor","lixeira","automatica","automatico"]},
-{"acao":"anuncios","op":"categoria","slug":"camera-lampada-de-seguranca-wifi-ip-app-yoosee","categoria":"Automação"},
-{"acao":"anuncios","op":"categoria","slug":"lixeira-inteligente-automatica-16l-sensor","categoria":"Automação"}]

@@ -528,7 +528,84 @@ window.FarejadinhosConfigCategorias = {
      "organizador"
     ]
    }
+  ],
+  "Automação": [
+   {
+    "nome": "Câmeras e Segurança",
+    "palavras": [
+     "camera",
+     "cameras",
+     "campainha",
+     "fechadura",
+     "alarme"
+    ]
+   },
+   {
+    "nome": "Iluminação Inteligente",
+    "palavras": [
+     "lampada",
+     "fita led",
+     "luz inteligente"
+    ]
+   },
+   {
+    "nome": "Tomadas e Interruptores",
+    "palavras": [
+     "tomada",
+     "interruptor",
+     "plug"
+    ]
+   },
+   {
+    "nome": "Assistentes e Controles",
+    "palavras": [
+     "alexa",
+     "echo",
+     "google home",
+     "controle universal",
+     "controle ir",
+     "hub"
+    ]
+   },
+   {
+    "nome": "Sensores e Casa Automática",
+    "palavras": [
+     "sensor",
+     "lixeira",
+     "automatica",
+     "automatico"
+    ]
+   }
   ]
  },
- "categoriasExtras": []
+ "categoriasExtras": [
+  {
+   "nome": "Automação",
+   "icone": "⚙️",
+   "palavras": [
+    "automacao",
+    "casa inteligente",
+    "smart home",
+    "alexa",
+    "google home",
+    "echo dot",
+    "tuya",
+    "zigbee",
+    "tomada inteligente",
+    "lampada inteligente",
+    "interruptor inteligente",
+    "sensor de presenca",
+    "fechadura digital",
+    "fechadura inteligente",
+    "camera wifi",
+    "camera de seguranca",
+    "controle universal",
+    "controle ir",
+    "campainha inteligente",
+    "lixeira automatica",
+    "lixeira inteligente",
+    "wifi"
+   ]
+  }
+ ]
 };
