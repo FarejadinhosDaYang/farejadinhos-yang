@@ -23,6 +23,7 @@
   #legenda .w.on { color: #FFD23F; }
   #legenda .w.off { visibility: hidden; }
   /* opcional (gravação de tela, fundo cheio de texto): caixa escura atrás da legenda */
+  #legenda.fundo { font-size: 64px; }
   #legenda.fundo:not(:empty) { background: rgba(26,15,10,.72); border-radius: 34px; padding: 22px 26px 16px; left: 70px; right: 70px;
                                -webkit-text-stroke: 10px #1a0f0a; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
   /* selo de chamada (ex.: COMENTA QUERO) */
@@ -116,6 +117,7 @@ function renderFrame(f) {
   const atual = ROTEIRO.falas.find(x => t >= x.de - 0.15 && t < x.ate + 0.35);
   const leg = $("legenda");
   if (!atual) leg.innerHTML = "";
+  else if (ROTEIRO.legenda_fundo && t < atual.palavras[0].de) leg.innerHTML = "";   // caixa escura só aparece com palavra
   else leg.innerHTML = atual.palavras.map(p => `<span class="w ${t < p.de ? "off" : (t < p.ate ? "on" : "")}"${p.w.length > 15 ? ` style="font-size:${(15 / p.w.length).toFixed(2)}em"` : ""}>${p.w}</span>`).join(" ");
 }
 const _rf = renderFrame;

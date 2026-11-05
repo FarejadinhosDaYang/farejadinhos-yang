@@ -13,7 +13,8 @@ pedido.json:
     "faixa": "🐾 ACHADINHO DA LIMPEZA",  "balao": "Olha isso! 😱",   (capa; opcionais)
     "de": 0, "ate": 22.8,                (opcional: só usa esse pedaço do vídeo — ex.: cortar preço escrito no fim)
     "capa_t": 13.0,                      (opcional: segundo do vídeo usado na capa)
-    "legenda_fundo": true                (opcional: caixa escura atrás da legenda — bom pra gravação de tela)
+    "legenda_fundo": true,               (opcional: caixa escura atrás da legenda — bom pra gravação de tela)
+    "legenda_top": 215                   (opcional: altura da legenda em px; o padrão é no meio da tela)
   }
 Gera na pasta de saída: <id>-reel.mp4, <id>-capa.jpg, <id>-roteiro.json e <id>-log.txt.
 
@@ -303,6 +304,7 @@ def main():
 
     rot = {"lado": "esquerda", "duracao": dur, "falas": falas}
     if pedido.get("legenda_fundo"): rot["legenda_fundo"] = True     # gravação de tela: caixa escura atrás da legenda
+    if pedido.get("legenda_top") not in (None, ""): rot["legenda_top"] = float(pedido["legenda_top"])  # altura da legenda (px, 0 = topo)
     chamada = next((f for f in falas if re.search(r"coment", f["texto"], re.I)), None)
     if chamada: rot["selo"] = {"de": chamada["de"], "texto": "💬 COMENTA QUERO", "sub": f"ou entra no {SITE}"}
     rot_path = os.path.join(pasta, f"{pid}-roteiro.json")
