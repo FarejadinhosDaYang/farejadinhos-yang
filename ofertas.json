@@ -163,7 +163,8 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-15T23:42:07Z",
-    "precoConferido": "2026-11-04T21:25:51Z"
+    "precoConferido": "2026-11-04T21:25:51Z",
+    "fixo": true
   },
   {
     "produto": "Lixeira Inteligente Automática 16L Sensor",
@@ -180,7 +181,8 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-16T15:40:00Z",
-    "precoConferido": "2026-11-03T22:50:20Z"
+    "precoConferido": "2026-11-03T22:50:20Z",
+    "fixo": true
   },
   {
     "produto": "Mini Ventilador Soprador Ar Potente Turbo",
@@ -6220,7 +6222,8 @@
     "slug": "interruptor-inteligente-tuya-wifi-touch-brasil-6-botoes",
     "data": "2026-11-05T19:09:07Z",
     "precoAVista": "",
-    "precoAPrazo": ""
+    "precoAPrazo": "",
+    "fixo": true
   },
   {
     "produto": "Interruptor Inteligente Touch WI-FI 6 Teclas Eiw 1006",
@@ -6235,7 +6238,8 @@
     "slug": "interruptor-inteligente-touch-wi-fi-6-teclas-eiw-1006",
     "data": "2026-11-05T19:56:48Z",
     "precoAVista": "152,42",
-    "precoAPrazo": "289,92"
+    "precoAPrazo": "289,92",
+    "fixo": true
   },
   {
     "produto": "Interruptor Inteligente WiFi Touch 2 Teclas com Tomada",
@@ -6250,7 +6254,8 @@
     "slug": "interruptor-inteligente-wifi-touch-2-teclas-com-tomada",
     "data": "2026-11-05T19:57:15Z",
     "precoAVista": "89,90",
-    "precoAPrazo": "89,90"
+    "precoAPrazo": "89,90",
+    "fixo": true
   },
   {
     "produto": "Interruptor de Luz Inteligente Tuya Wifi Touch Brasil",
@@ -6265,6 +6270,7 @@
     "slug": "interruptor-de-luz-inteligente-tuya-wifi-touch-brasil",
     "data": "2026-11-05T19:57:39Z",
     "precoAVista": "76,99",
-    "precoAPrazo": "113,92"
+    "precoAPrazo": "113,92",
+    "fixo": true
   }
 ]
