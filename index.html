@@ -1414,7 +1414,7 @@ function montarPrateleiras(){
     });
     // em cada prateleira, semelhantes juntos (subcategoria, depois nome)
     Object.keys(porCategoria).forEach(c => {
-        porCategoria[c] = FarejadinhosVitrine.ordenarNaCategoria(porCategoria[c]);
+        porCategoria[c] = FarejadinhosVitrine.ordenarNaCategoria(porCategoria[c], c);
     });
 
     // Só categorias com pelo menos 2 ofertas; as maiores primeiro
@@ -1592,9 +1592,13 @@ function aplicarFiltros(){
     // Dentro de uma categoria: semelhantes juntos (por subcategoria e nome).
     // Só na ordem padrão ("mais recentes"); se a pessoa escolheu outra ordem, respeita.
     if(filtroAtivo.tipo === "categoria" && document.getElementById("ordem").value === "recentes"){
-        lista = FarejadinhosVitrine.ordenarNaCategoria(lista);
+        lista = FarejadinhosVitrine.ordenarNaCategoria(lista, filtroAtivo.valor);
     }
     render(lista);
+    // modo admin: dá pra arrastar os cards pra arrumar a ordem desta categoria
+    document.dispatchEvent(new CustomEvent("fareja:lista", { detail: window.farejaUltimaLista = {
+        chave: filtroAtivo.tipo === "categoria" && document.getElementById("ordem").value === "recentes" && !termo.trim() && !lojaAtiva ? filtroAtivo.valor : "",
+        slugs: lista.map(o => o.slug) } }));
 
     // avisa a lateral / o menu qual categoria está ativa
     document.dispatchEvent(new CustomEvent("fareja:filtro", {
@@ -1697,7 +1701,7 @@ function cardHtml(o){
         const linkLoja = /^https?:\/\//i.test(o.link || "") ? o.link : paginaOferta;
 
         return `
-        <article class="oferta-card">
+        <article class="oferta-card" data-slug="${escapeHtml(o.slug)}">
             <a class="card-link" href="${paginaOferta}">
                 <div class="img-wrap">
                     <img src="${o.imagemUrl ? escapeHtml(o.imagemUrl) : "assets/" + encodeURIComponent(o.imagem)}" alt="${escapeHtml(o.produto)}" loading="lazy">

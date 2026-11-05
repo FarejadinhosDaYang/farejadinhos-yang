@@ -58,6 +58,20 @@
         ".adm-modal input{font:500 15px 'Work Sans',Arial,sans-serif;padding:11px;border:1.5px solid #F0DFC4;border-radius:10px}",
         ".adm-modal .adm-botoes{display:flex;gap:8px;justify-content:flex-end}",
         ".adm-modal button{font:700 14px 'Work Sans',Arial,sans-serif;border:0;border-radius:10px;padding:10px 14px;cursor:pointer}",
+        ".adm-org-barra{position:sticky;top:8px;z-index:60;display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:#2B1B12;color:#fff;border-radius:14px;padding:10px 12px;margin:0 0 12px;font:600 13px 'Work Sans',Arial,sans-serif;box-shadow:0 8px 20px rgba(0,0,0,.2)}",
+        ".adm-org-barra .adm-org-txt{flex:1 1 220px;line-height:1.35}",
+        ".adm-org-barra .adm-org-txt b{color:#F7941D}",
+        ".adm-org-barra button{font:700 12.5px 'Work Sans',Arial,sans-serif;border:0;border-radius:9px;padding:8px 11px;cursor:pointer;background:#4a362a;color:#fff}",
+        ".adm-org-barra .adm-principal{background:#F7941D;color:#2B1B12}",
+        ".adm-org .oferta-card{cursor:grab;outline:2px dashed #F7941D;outline-offset:-2px;user-select:none;-webkit-user-select:none;touch-action:pan-y}",
+        ".adm-org .oferta-card a{pointer-events:none}",
+        ".adm-org .oferta-card .pegar-oferta,.adm-org .adm-lapis{display:none}",
+        ".adm-org .oferta-card img{-webkit-user-drag:none}",
+        ".adm-org-num{position:absolute;top:8px;left:8px;z-index:6;min-width:30px;height:30px;padding:0 6px;border-radius:999px;background:#2B1B12;color:#F7941D;font:800 14px 'Baloo 2',Arial,sans-serif;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 8px rgba(0,0,0,.25)}",
+        ".adm-org-alca{position:absolute;top:8px;right:8px;z-index:6;width:30px;height:30px;border-radius:9px;background:#F7941D;color:#2B1B12;font:900 16px Arial;display:flex;align-items:center;justify-content:center}",
+        ".adm-org-fantasma{opacity:.3}",
+        ".adm-org-voando{position:fixed;left:0;top:0;z-index:200;pointer-events:none;margin:0;box-shadow:0 18px 40px rgba(0,0,0,.3);outline:3px solid #E5232E;border-radius:16px;opacity:.95;background:#fff}",
+        ".adm-org-escolhido{outline:3px solid #E5232E !important;box-shadow:0 14px 30px rgba(0,0,0,.25)}",
         ".adm-modal button[type=submit]{background:#E5232E;color:#fff}"
     ].join("\n");
     document.head.appendChild(css);
@@ -366,6 +380,189 @@
         lista.appendChild(nova);
     }
 
+
+    // ---------- ↕️ Organizar: arrastar os cards pra ordem certa ----------
+    // Numa categoria (ou subcategoria) com a ordem padrão, o botão
+    // "↕️ Organizar" deixa arrastar os cards. "💾 Salvar ordem" grava em cada
+    // oferta (campo "ordem", lote acao "anuncios" op "ordem"); oferta nova
+    // entra no lugar automático dela. "↩️ Automática" desfaz.
+    var orgLista = window.farejaUltimaLista || null, orgAtivo = false, orgSort = null;
+    function nomeChave(c) { var i = c.indexOf("/"); return i > 0 ? c.slice(0, i) + " · " + c.slice(i + 1) : c; }
+    // arrastar: mouse arrasta na hora; no celular, segura ~0,25s e arrasta
+    function arrastavel(grid, aoSoltar) {
+        var arr = null, timer = null, inicio = null, rolar = 0, raf = 0;
+        function cards() { return Array.prototype.slice.call(grid.querySelectorAll(".oferta-card")); }
+        function comecar(card, x, y) {
+            var r = card.getBoundingClientRect();
+            var fant = card.cloneNode(true);
+            fant.classList.add("adm-org-voando");
+            fant.style.width = r.width + "px"; fant.style.height = r.height + "px";
+            document.body.appendChild(fant);
+            card.classList.add("adm-org-fantasma");
+            arr = { card: card, fant: fant, dx: x - r.left, dy: y - r.top };
+            mover(x, y);
+            if (navigator.vibrate) try { navigator.vibrate(15); } catch (e) {}
+        }
+        function mover(x, y) {
+            arr.fant.style.transform = "translate(" + (x - arr.dx) + "px," + (y - arr.dy) + "px) rotate(1.5deg)";
+            var alvo = null, depois = false;
+            cards().forEach(function (c) {
+                if (c === arr.card || alvo) return;
+                var r = c.getBoundingClientRect();
+                if (x >= r.left && x <= r.right && y >= r.top && y <= r.bottom) {
+                    alvo = c;
+                    depois = (x - r.left) / r.width > .5;
+                }
+            });
+            if (alvo) {
+                var ref = depois ? alvo.nextSibling : alvo;
+                if (ref !== arr.card) grid.insertBefore(arr.card, ref);
+            }
+            var h = window.innerHeight;
+            rolar = y < 80 ? -14 : y > h - 80 ? 14 : 0;
+            if (rolar && !raf) raf = requestAnimationFrame(function passo() {
+                if (!arr || !rolar) { raf = 0; return; }
+                window.scrollBy(0, rolar); raf = requestAnimationFrame(passo);
+            });
+        }
+        function terminar() {
+            clearTimeout(timer); timer = null; inicio = null;
+            if (!arr) return;
+            arr.fant.remove(); arr.card.classList.remove("adm-org-fantasma");
+            arr = null; rolar = 0;
+            aoSoltar();
+        }
+        function down(e) {
+            var card = e.target.closest && e.target.closest(".oferta-card");
+            if (!card || !grid.contains(card) || e.button > 0) return;
+            inicio = { x: e.clientX, y: e.clientY, card: card };
+            if (e.pointerType === "mouse") { e.preventDefault(); return; }
+            timer = setTimeout(function () { if (inicio) comecar(card, inicio.x, inicio.y); }, 250);
+        }
+        function move(e) {
+            if (arr) { e.preventDefault(); mover(e.clientX, e.clientY); return; }
+            if (!inicio) return;
+            var d = Math.abs(e.clientX - inicio.x) + Math.abs(e.clientY - inicio.y);
+            if (e.pointerType === "mouse") { if (d > 5) comecar(inicio.card, inicio.x, inicio.y); }
+            else if (d > 10) { clearTimeout(timer); inicio = null; }   // estava rolando a página
+        }
+        function tocar(e) { if (arr) e.preventDefault(); }   // segura a página parada enquanto arrasta
+        grid.addEventListener("pointerdown", down);
+        window.addEventListener("pointermove", move, { passive: false });
+        window.addEventListener("pointerup", terminar);
+        window.addEventListener("pointercancel", terminar);
+        grid.addEventListener("touchmove", tocar, { passive: false });
+        grid.addEventListener("contextmenu", tocar);
+        return { destroy: function () {
+            terminar();
+            grid.removeEventListener("pointerdown", down);
+            window.removeEventListener("pointermove", move);
+            window.removeEventListener("pointerup", terminar);
+            window.removeEventListener("pointercancel", terminar);
+            grid.removeEventListener("touchmove", tocar);
+            grid.removeEventListener("contextmenu", tocar);
+        } };
+    }
+    function botaoOrganizar() {
+        var b = document.querySelector(".adm-barra");
+        if (!b) return;
+        var btn = b.querySelector("[data-org]");
+        var pode = orgLista && orgLista.chave && orgLista.slugs && orgLista.slugs.length > 1;
+        if (!pode) { if (btn) btn.remove(); return; }
+        if (!btn) {
+            btn = document.createElement("button");
+            btn.setAttribute("data-org", "");
+            btn.className = "adm-principal";
+            btn.onclick = entrarOrganizar;
+            b.insertBefore(btn, b.children[1] || null);
+        }
+        btn.textContent = "↕️ Organizar " + nomeChave(orgLista.chave);
+    }
+    function numerar(grid) {
+        Array.prototype.forEach.call(grid.querySelectorAll(".oferta-card"), function (c, i) {
+            var n = c.querySelector(".adm-org-num");
+            if (!n) {
+                n = document.createElement("span"); n.className = "adm-org-num"; c.appendChild(n);
+                var h = document.createElement("span"); h.className = "adm-org-alca"; h.textContent = "⠿"; h.title = "Arrastar"; c.appendChild(h);
+                if (getComputedStyle(c).position === "static") c.style.position = "relative";
+            }
+            n.textContent = i + 1;
+        });
+    }
+    function bloquearClique(e) { if (orgAtivo) { e.preventDefault(); e.stopPropagation(); } }
+    function sairOrganizar(redesenhar) {
+        var grid = document.getElementById("grid");
+        orgAtivo = false;
+        if (orgSort) { orgSort.destroy(); orgSort = null; }
+        var barra = document.querySelector(".adm-org-barra");
+        if (barra) barra.remove();
+        if (grid) {
+            grid.classList.remove("adm-org");
+            grid.removeEventListener("click", bloquearClique, true);
+            grid.querySelectorAll(".adm-org-num,.adm-org-alca").forEach(function (x) { x.remove(); });
+        }
+        if (redesenhar && typeof aplicarFiltros === "function") aplicarFiltros();
+    }
+    function mandarOrdem(chave, slugs, ok) {
+        var dados = new FormData();
+        dados.append("senha", ler());
+        dados.append("itens", JSON.stringify([{ acao: "anuncios", op: "ordem", chave: chave, slugs: slugs }]));
+        return fetch(WORKER_URL + "/lote", { method: "POST", body: dados })
+            .then(function (r) { return r.text().then(function (t) { if (r.status === 401) throw new Error("Senha recusada."); if (!r.ok) throw new Error(t); }); })
+            .then(function () {
+                // já vale nesta página (o site publica em 1–2 minutos)
+                if (typeof ofertas !== "undefined" && Array.isArray(ofertas)) {
+                    var pos = {}; slugs.forEach(function (s, i) { pos[s] = i; });
+                    ofertas.forEach(function (o) {
+                        if (!o) return;
+                        var m = o.ordem && typeof o.ordem === "object" ? o.ordem : {};
+                        if (o.slug in pos) m[chave] = pos[o.slug]; else delete m[chave];
+                        o.ordem = m;
+                    });
+                }
+                aviso(ok);
+            });
+    }
+    function entrarOrganizar() {
+        var grid = document.getElementById("grid");
+        if (!grid || !orgLista || !orgLista.chave || orgAtivo) return;
+        var chave = orgLista.chave;
+        (function () {
+            orgAtivo = true;
+            grid.classList.add("adm-org");
+            grid.addEventListener("click", bloquearClique, true);
+            var barra = document.createElement("div");
+            barra.className = "adm-org-barra";
+            barra.innerHTML = '<span class="adm-org-txt">↕️ Organizando <b>' + esc(nomeChave(chave)) + '</b> — arraste os produtos pro lugar certo' +
+                ' <span style="opacity:.75">(no celular: segure o card um instante e arraste)</span></span>' +
+                '<button class="adm-principal" data-ok>💾 Salvar ordem</button><button data-auto>↩️ Automática</button><button data-x>Cancelar</button>';
+            grid.parentNode.insertBefore(barra, grid);
+            numerar(grid);
+            orgSort = arrastavel(grid, function () { numerar(grid); });
+            barra.querySelector("[data-x]").onclick = function () { sairOrganizar(true); };
+            barra.querySelector("[data-ok]").onclick = function () {
+                var btn = this; btn.disabled = true; btn.textContent = "⏳ Salvando...";
+                var slugs = Array.prototype.map.call(grid.querySelectorAll(".oferta-card"), function (c) { return c.getAttribute("data-slug"); }).filter(Boolean);
+                mandarOrdem(chave, slugs, "✅ Ordem de " + nomeChave(chave) + " salva! O site atualiza em 1–2 minutos.")
+                    .then(function () { sairOrganizar(true); })
+                    .catch(function (e) { btn.disabled = false; btn.textContent = "💾 Salvar ordem"; aviso("❌ " + e.message, true); });
+            };
+            barra.querySelector("[data-auto]").onclick = function () {
+                if (!confirm("Voltar " + nomeChave(chave) + " pra ordem automática (parecidos juntos)?")) return;
+                var btn = this; btn.disabled = true;
+                mandarOrdem(chave, [], "↩️ " + nomeChave(chave) + " voltou pra ordem automática.")
+                    .then(function () { sairOrganizar(true); })
+                    .catch(function (e) { btn.disabled = false; aviso("❌ " + e.message, true); });
+            };
+            barra.scrollIntoView({ behavior: "smooth", block: "start" });
+        })();
+    }
+    document.addEventListener("fareja:lista", function (e) {
+        orgLista = e.detail || null;
+        if (orgAtivo) sairOrganizar(false);
+        botaoOrganizar();
+    });
+
     function ligar() {
         // barra lateral de categorias: aparece um pouco depois (topo.js)
         adminCategorias();
@@ -378,6 +575,7 @@
             });
         } else {
             montarBarra();
+            botaoOrganizar();
             lapisNosCards();
             new MutationObserver(lapisNosCards).observe(document.body, { childList: true, subtree: true });
         }

@@ -189,7 +189,28 @@
   // (na ordem da lista), depois pelo TIPO do produto (os tipos com mais
   // produtos primeiro) e, dentro do tipo, pelo nome — todas as panelas de
   // arroz juntas, depois as air fryers, depois as panelas de pressão...
-  function ordenarNaCategoria(lista){
+  // Ordem arrumada à mão (modo admin → "↕️ Organizar", arrastando os cards).
+  // Fica em cada oferta: "ordem": {"Cozinha": 3, "Cozinha/Panelas": 0}.
+  // As que têm número trocam de lugar só entre si, nos lugares que já
+  // ocupariam na ordem automática; oferta nova (sem número) entra no
+  // lugar automático dela.
+  function ordemManual(lista, chave){
+    if(!chave) return lista;
+    const num = o => o && o.ordem && typeof o.ordem === "object" && typeof o.ordem[chave] === "number" ? o.ordem[chave] : null;
+    const lugares = [], marcadas = [];
+    lista.forEach((o, i) => { if(num(o) !== null){ lugares.push(i); marcadas.push(o); } });
+    if(marcadas.length < 1) return lista;
+    marcadas.sort((a, b) => num(a) - num(b));
+    const nova = lista.slice();
+    lugares.forEach((i, k) => { nova[i] = marcadas[k]; });
+    return nova;
+  }
+
+  function ordenarNaCategoria(lista, chave){
+    return ordemManual(ordenarAuto(lista), chave);
+  }
+
+  function ordenarAuto(lista){
     const itens = lista.map((o, i) => {
       const mae = categoriaPrincipal(o), subs = subcategoriasDe(mae), s = subcategoriaDe(o);
       const pos = subs.indexOf(s);
@@ -265,6 +286,14 @@
     return isFinite(n) && n > 0 ? n : 0;
   }
 
+  // nome de cor/versão; palavras genéricas digitadas por engano ("Cor",
+  // "Anúncio", "Links"...) contam como sem variação
+  const VAR_VAZIAS = ["cor", "cores", "anuncio", "anuncios", "link", "links", "versao", "variacao", "opcao", "outro", "outra", "-"];
+  function nomeVariacao(v){
+    const s = String(v || "").trim();
+    return VAR_VAZIAS.includes(semAcentoMin(s).trim()) ? "" : s;
+  }
+
   function lojaDe(link){
     const l = String(link || "");
     if(/shopee|shp\.ee/i.test(l)) return { id: "shopee", nome: "Shopee" };
@@ -285,7 +314,7 @@
       loja: lojaDe(oferta.link).nome, lojaId: lojaDe(oferta.link).id,
       conferido: oferta.precoConferido || oferta.precoManual || oferta.data || "",
       confiavel: pPrincipal > 0, motivo: "",
-      variacao: String(oferta.variacao || "").trim(), cor: oferta.cor || "", imagem: ""
+      variacao: nomeVariacao(oferta.variacao), cor: oferta.cor || "", imagem: ""
     }];
     (Array.isArray(oferta.anuncios) ? oferta.anuncios : []).forEach(a => {
       if(!a || !/^https?:\/\//i.test(a.link || "")) return;
@@ -305,7 +334,7 @@
         principal: false, link: a.link, preco: a.preco, valor,
         loja: lj.id !== "outra" ? lj.nome : (a.loja || lj.nome), lojaId: lj.id, conferido: a.conferido || "",
         confiavel: !motivo, motivo,
-        variacao: String(a.variacao || "").trim(), cor: a.cor || "",
+        variacao: nomeVariacao(a.variacao), cor: a.cor || "",
         imagem: /^https?:\/\//i.test(a.imagem || "") ? a.imagem : ""
       });
     });
@@ -522,7 +551,7 @@
 
   window.FarejadinhosVitrine = {
     MINIMO_VITRINE, HORAS_FRESCA, HORAS_MAXIMA, META_CATEGORIA, MINIMO_CATEGORIA, TEMPORADAS,
-    inicio, idadeHoras, selecionar, status, indisponivel, HORAS_SEM_PRECO, foraDeEpoca, podeIrProPodio, FORA_DO_PODIO, dataOrdem, anunciosDe, melhorAnuncio, comMelhorAnuncio, lojaDe, numeroPreco, variacoesDe, corDe, ehPermanente, ACESSORIOS_CELULAR, SUBS_CELULAR, subCelular, grupoCategoria, bateCategoria, pesoNaCategoria, nomeFiltro, configCategorias, categoriaPrincipal, subcategoriasDe, subcategoriaDe, ordenarNaCategoria, tipoDe, ehBlack, descontoPct, BLACK_DESCONTO_MIN, PERMANENTES, normalizar, categoriasDe, juntarCategoria, TAG_VIDEO
+    inicio, idadeHoras, selecionar, status, indisponivel, HORAS_SEM_PRECO, foraDeEpoca, podeIrProPodio, FORA_DO_PODIO, dataOrdem, anunciosDe, melhorAnuncio, comMelhorAnuncio, lojaDe, numeroPreco, variacoesDe, corDe, ehPermanente, ACESSORIOS_CELULAR, SUBS_CELULAR, subCelular, grupoCategoria, bateCategoria, pesoNaCategoria, nomeFiltro, configCategorias, categoriaPrincipal, subcategoriasDe, subcategoriaDe, ordenarNaCategoria, ordemManual, tipoDe, ehBlack, descontoPct, BLACK_DESCONTO_MIN, PERMANENTES, normalizar, categoriasDe, juntarCategoria, TAG_VIDEO
   };
 
 })();

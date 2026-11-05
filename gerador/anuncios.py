@@ -7,6 +7,8 @@ Itens do lote: {"acao": "anuncios", "op": "adicionar"|"remover"|"editar",
 "editar" muda variação/cor/foto de um anúncio; com o link principal da
 oferta, muda a variação do anúncio principal (campos variacao/cor da oferta).
 "fixar" {"slug", "fixo": true|false} — anúncio âncora: nunca sai do site.
+"ordem" {"chave": "Cozinha" ou "Cozinha/Panelas", "slugs": [...]} — ordem à mão
+na categoria (arrastando no modo admin); "slugs": [] volta pra automática.
 "juntar" {"slug", "de": "<slug de outra oferta>", "variacao", "cor", "tirar": true}
 transforma uma oferta que já está no site em anúncio desta (link, preço,
 foto e os anúncios dela); com "tirar", a outra sai da lista do site.
@@ -53,6 +55,28 @@ def main(arquivo):
             else:
                 o.pop("sub", None)
             print(f"  subcategoria de {o['slug']}: {v or 'automática'}")
+            mudou = True
+            continue
+        if it.get("op") == "ordem":
+            # ordem arrumada à mão numa categoria/subcategoria (arrastando no
+            # modo admin). "slugs" vazio = volta pra ordem automática.
+            chave = str(it.get("chave") or "").strip()
+            if not chave:
+                continue
+            pos = {s: i for i, s in enumerate(it.get("slugs") or [])}
+            for x in catalogo:
+                if not isinstance(x, dict):
+                    continue
+                o_ = x.get("ordem") if isinstance(x.get("ordem"), dict) else {}
+                if x.get("slug") in pos:
+                    o_[chave] = pos[x["slug"]]
+                else:
+                    o_.pop(chave, None)
+                if o_:
+                    x["ordem"] = o_
+                else:
+                    x.pop("ordem", None)
+            print(f"  ordem de {chave}: {len(pos)} oferta(s)" if pos else f"  ordem de {chave}: automática")
             mudou = True
             continue
         if it.get("op") == "black":
