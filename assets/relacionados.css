@@ -135,10 +135,16 @@
 .anc-box{margin:16px 0 6px;text-align:left;font-family:'Work Sans',Arial,sans-serif}
 .anc-selo{display:inline-block;background:#FFF3D6;border:1.5px solid #F7941D;color:#8A4B00;font-weight:800;font-size:13px;border-radius:999px;padding:4px 12px;margin-bottom:10px}
 .anc-titulo{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:17px;color:#2B1B12;margin-bottom:6px}
-.anc-item{display:grid;grid-template-columns:auto 1fr auto;grid-template-areas:"loja preco ver" "loja quando ver";column-gap:10px;align-items:center;background:#fff;border:1.5px solid #F0DFC4;border-radius:12px;padding:9px 12px;margin-bottom:7px;text-decoration:none;color:#2B1B12}
+.anc-item{display:grid;grid-template-columns:58px 1fr auto;grid-template-areas:"foto topo ver" "foto preco ver" "foto quando ver";column-gap:12px;row-gap:1px;align-items:center;background:#fff;border:1.5px solid #F0DFC4;border-radius:14px;padding:8px 12px 8px 8px;margin-bottom:8px;text-decoration:none;color:#2B1B12;transition:border-color .15s,box-shadow .15s,transform .15s}
+.anc-item:hover{border-color:#F7941D;box-shadow:0 4px 14px rgba(43,27,18,.08);transform:translateY(-1px)}
+.anc-foto{grid-area:foto;width:58px;height:58px;border-radius:10px;background:#fff;border:1px solid #F3E7D3;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.anc-foto img{max-width:100%;max-height:100%;object-fit:contain}
+.anc-topo{grid-area:topo;display:flex;align-items:center;gap:6px;flex-wrap:wrap;min-width:0}
+.anc-var{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:#5C4636}
+.anc-var i{width:10px;height:10px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.25)}
 .anc-item.melhor{border-color:#2E9E5B;background:#F2FBF5}
 .anc-item.duvida{opacity:.7}
-.anc-loja{grid-area:loja;font-size:12px;font-weight:800;border-radius:7px;padding:3px 8px;background:#eee;color:#333;white-space:nowrap}
+.anc-loja{font-size:12px;font-weight:800;border-radius:7px;padding:3px 8px;background:#eee;color:#333;white-space:nowrap}
 .anc-loja.shopee{background:#EE4D2D;color:#fff}.anc-loja.ml{background:#FFE600;color:#2D3277}.anc-loja.amazon{background:#232F3E;color:#fff}.anc-loja.magalu{background:#0086FF;color:#fff}
 .anc-preco{grid-area:preco;font-family:'Baloo 2',sans-serif;font-weight:800;font-size:18px;line-height:1.1}
 .anc-item.melhor .anc-preco{color:#1F7A44}

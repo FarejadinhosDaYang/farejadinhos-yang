@@ -118,7 +118,14 @@
             preco.parentNode.insertBefore(rotulo, preco);
         }
 
-        function mostrarLista(lista, nomeVar) {
+        // foto de cada anúncio: a dele; senão a da cor/versão; senão a principal
+        function fotoDo(a, fotoVar) {
+            if (a.imagem) return a.imagem;
+            if (fotoVar) return fotoVar;
+            return fotoPrincipal;
+        }
+
+        function mostrarLista(lista, nomeVar, fotoVar) {
             var melhor = lista.filter(function (a) { return a.confiavel; })[0] || lista[0];
             var confiaveis = lista.filter(function (a) { return a.confiavel; });
             // topo: preço, botão, "de R$"
@@ -128,14 +135,16 @@
             box.innerHTML =
                 (confiaveis.length > 1 ? '<div class="anc-selo">🏆 Menor preço entre ' + confiaveis.length + " anúncios" +
                     (nomeVar ? " de " + esc(nomeVar) : "") + " · " + esc(melhor.loja) + "</div>" : "") +
-                (lista.length > 1 ? '<div class="anc-titulo">🏪 ' + (nomeVar ? esc(nomeVar) + " em outros anúncios" : "Este produto em outros anúncios") + "</div>" +
+                (lista.length > 1 || nomeVar ? '<div class="anc-titulo">🏪 ' + (nomeVar ? "Onde comprar: " + esc(nomeVar) : "Este produto em outros anúncios") + "</div>" +
                 lista.map(function (a) {
                     var m = a === melhor;
                     var quando = haQuanto(a.conferido);
                     return '<a class="anc-item' + (m ? " melhor" : "") + (a.confiavel ? "" : " duvida") + '" href="' + esc(a.link) + '" target="_blank" rel="nofollow sponsored noopener">' +
-                        '<span class="anc-loja ' + esc(a.lojaId) + '">' + esc(a.loja) + "</span>" +
+                        '<span class="anc-foto"><img src="' + esc(fotoDo(a, fotoVar)) + '" alt="" loading="lazy" onerror="this.style.visibility=\'hidden\'"></span>' +
+                        '<span class="anc-topo"><span class="anc-loja ' + esc(a.lojaId) + '">' + esc(a.loja) + "</span>" +
+                        (a.variacao && !nomeVar ? '<span class="anc-var">' + (a.cor ? '<i style="background:' + esc(a.cor) + '"></i>' : "") + esc(a.variacao) + "</span>" : "") + "</span>" +
                         '<span class="anc-preco">' + (a.confiavel ? reais(a.valor) : "preço a conferir") + "</span>" +
-                        '<span class="anc-quando">' + (m ? "✅ mais barato" : a.confiavel ? (quando ? "conferido " + quando : "") : "abrir pra ver") + "</span>" +
+                        '<span class="anc-quando">' + (m && lista.length > 1 ? "✅ mais barato" : a.confiavel ? (quando ? "conferido " + quando : "") : "abrir pra ver") + "</span>" +
                         '<span class="anc-ver">Ver ↗</span></a>';
                 }).join("") +
                 '<div class="anc-obs">Preços conferidos automaticamente; podem mudar na loja. Vale sempre o preço de lá.</div>' : "");
@@ -173,7 +182,7 @@
             }
             if (rotulo) rotulo.innerHTML = (ehCor ? "Cor: " : "Opção: ") + "<b>" + esc(v.nome) + "</b>" +
                 (i === 0 && v.confiavel ? ' <span class="var-mais-barata">a mais barata agora</span>' : "");
-            mostrarLista(v.lista, v.nome);
+            mostrarLista(v.lista, v.nome, v.imagem && v.imagem !== "principal" ? v.imagem : "");
         }
 
         vars.forEach(function (v, i) {
