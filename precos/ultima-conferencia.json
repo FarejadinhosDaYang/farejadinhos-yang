@@ -1,164 +1,116 @@
 {
-  "quando": "2026-11-04T21:17:39Z",
+  "quando": "2026-11-05T02:23:40Z",
   "origem": "schedule",
   "total": 352,
-  "iguais": 304,
+  "iguais": 311,
   "mudaram": [
     {
-      "slug": "camera-lampada-de-seguranca-wifi-ip-app-yoosee",
-      "produto": "Câmera Lâmpada De Segurança Wifi Ip App Yoosee",
-      "de": "R$ 59,01",
-      "para": "53,11"
+      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
+      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
+      "de": "R$ 4.696,54",
+      "para": "4079,05"
     },
     {
-      "slug": "aspirador-manual-piscina-herbinject-azul",
-      "produto": "Aspirador Manual Piscina Herbinject Azul",
-      "de": "R$ 39,74",
-      "para": "41,90"
+      "slug": "celular-samsung-galaxy-s26-fe-128gb-8gb-ram-tela",
+      "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
+      "de": "R$ 3.998,97",
+      "para": "3999,00"
     },
     {
-      "slug": "organizador-de-geladeira-para-temperos-2-3l-linha-clear",
-      "produto": "Organizador de Geladeira para Temperos 2,3L",
-      "de": "R$ 37,90",
-      "para": "R$ 29,49"
+      "slug": "kit-maquina-para-tosar-pet-tesoura-pente",
+      "produto": "Kit Máquina Para Tosar Pet + Tesoura + Pente",
+      "de": "R$ 30,26",
+      "para": "R$ 34,99"
     },
     {
-      "slug": "panos-de-chao-gigante-microfibra",
-      "produto": "Panos de Chão Gigante Microfibra",
-      "de": "R$ 29,80",
-      "para": "R$ 29,90"
+      "slug": "parafusadeira-furadeira-48v-profissional",
+      "produto": "Parafusadeira Furadeira 48v Profissional",
+      "de": "R$ 105,26",
+      "para": "110,95"
     },
     {
-      "slug": "creatina-growth-supplements-monohidratada-em-po",
-      "produto": "Creatina Growth Supplements Monohidratada em pó",
-      "de": "R$ 39,90",
-      "para": "37,99"
+      "slug": "aparelho-medidor-de-pressao-digital-de-braco-bsp11",
+      "produto": "Aparelho medidor de pressão digital de braço BSP11",
+      "de": "R$ 104,84",
+      "para": "105,71"
     },
     {
       "slug": "aparador-de-pelos-super-groom-10-mondial",
       "produto": "Aparador de Pelos Super Groom 10 Mondial",
-      "de": "R$ 98,80",
-      "para": "91,58"
+      "de": "R$ 91,58",
+      "para": "110,68"
     },
     {
-      "slug": "copo-termico-gigante-1-2l-inox-com-tampa-canudo",
-      "produto": "Copo Térmico Gigante 1,2l Inox Com Tampa Canudo",
-      "de": "R$ 48,99",
-      "para": "45,07"
+      "slug": "jogo-completo-de-utensilios-de-cozinha-de-silicone",
+      "produto": "Jogo Completo de Utensílios de Cozinha de Silicone",
+      "de": "R$ 28,98",
+      "para": "R$ 28,99"
     },
     {
-      "slug": "marmita-eletrica-preta-bivolt-portatil-domestica",
-      "produto": "Marmita Elétrica Preta Bivolt Portátil Doméstica",
-      "de": "R$ 43,49",
-      "para": "45,23"
+      "slug": "strobo-pisca-cordao-natal-500-leds-50m-prova",
+      "produto": "Strobo Pisca Cordão Natal 500 Leds 50m Prova",
+      "de": "R$ 249,99",
+      "para": "R$ 139,49"
     },
     {
-      "slug": "kit-10-ou-5-potes-vidro-hermetico-370ml-retangular",
-      "produto": "Kit 10 ou 5 Potes Vidro Hermético 370ml Retangular",
-      "de": "R$ 49,97",
-      "para": "R$ 54,97"
+      "slug": "arvore-de-natal-pinheiro-canadense-luxo-base",
+      "produto": "Árvore De Natal Pinheiro Canadense Luxo Base",
+      "de": "R$ 199,90",
+      "para": "R$ 252,90"
     },
     {
-      "slug": "suporte-magnetico-forte-para-telefone-carro-360",
-      "produto": "Suporte Magnético Forte Para Telefone Carro 360 °",
-      "de": "R$ 13,99",
-      "para": "R$ 15,99"
-    },
-    {
-      "slug": "cafeteira-eletrica-electrolux-15-xicaras-efficient",
-      "produto": "Cafeteira Elétrica Electrolux 15 Xícaras Efficient",
-      "de": "R$ 149,90",
-      "para": "R$ 119,90"
-    },
-    {
-      "slug": "panela-eletrica-de-arroz-mondial-700w-pe-42-10x",
-      "produto": "Panela Elétrica de Arroz, Mondial, 700W - PE-42-10X -",
-      "de": "R$ 184,90",
-      "para": "206,09"
-    },
-    {
-      "slug": "festao-de-natal-verde-para-decoracao-enfeite",
-      "produto": "Festão de Natal Verde Para Decoração Enfeite",
-      "de": "R$ 14,90",
-      "para": "R$ 13,90"
-    },
-    {
-      "slug": "piscas-moto-seta-led-sequencial-kit-2-ou-4-fan",
-      "produto": "Piscas Moto Seta Led Sequencial Kit 2 ou 4 Fan",
-      "de": "R$ 24,95",
+      "slug": "papai-noel-decoracao-de-natal-escalando-escada",
+      "produto": "Papai Noel Decoração de natal Escalando Escada",
+      "de": "R$ 24,98",
       "para": "R$ 24,99"
     },
     {
       "slug": "kit-potes-mantimentos-vidro-hermeticos-com-tampa",
       "produto": "Kit Potes Mantimentos Vidro Herméticos Com Tampa",
-      "de": "R$ 39,56",
-      "para": "R$ 34,36"
-    },
-    {
-      "slug": "kit-10-ou-5-potes-vidro-hermetico-450ml-retangular",
-      "produto": "Kit 10 ou 5 Potes Vidro Hermético 450ml Retangular",
-      "de": "R$ 49,97",
-      "para": "R$ 54,97"
-    },
-    {
-      "slug": "batedor-misturador-mixer-eletrico-para-bebidas",
-      "produto": "Batedor Misturador Mixer Elétrico para Bebidas",
-      "de": "R$ 16,95",
-      "para": "R$ 16,99"
+      "de": "R$ 34,36",
+      "para": "R$ 39,56"
     },
     {
       "slug": "kit-potes-mantimentos-vidro-hermeticos-com-tampa-2",
       "produto": "Kit Potes Mantimentos Vidro Herméticos Com Tampa",
-      "de": "R$ 39,56",
-      "para": "R$ 34,36"
-    },
-    {
-      "slug": "kit-10-ou-5-potes-vidro-hermetico-450ml-retangular-2",
-      "produto": "Kit 10 ou 5 Potes Vidro Hermético 450ml Retangular",
-      "de": "R$ 49,97",
-      "para": "R$ 54,97"
-    },
-    {
-      "slug": "batedor-misturador-mixer-eletrico-para-bebidas-2",
-      "produto": "Batedor Misturador Mixer Elétrico para Bebidas",
-      "de": "R$ 16,95",
-      "para": "R$ 16,99"
+      "de": "R$ 34,36",
+      "para": "R$ 39,56"
     },
     {
       "slug": "kit-potes-mantimentos-vidro-hermeticos-com-tampa-3",
       "produto": "Kit Potes Mantimentos Vidro Herméticos Com Tampa",
-      "de": "R$ 39,56",
-      "para": "R$ 34,36"
+      "de": "R$ 34,36",
+      "para": "R$ 39,56"
+    },
+    {
+      "slug": "l-oreal-paris-elseve-oleo-extraordinario-100ml",
+      "produto": "L'Oréal Paris Elseve Óleo Extraordinário 100ml",
+      "de": "R$ 36,14",
+      "para": "29,83"
     },
     {
       "slug": "fritadeira-eletrica-afon-12l-bg-forno-oven",
       "produto": "Fritadeira Elétrica AFON-12L-BG Forno Oven",
-      "de": "R$ 505,53",
-      "para": "484,03"
+      "de": "R$ 484,03",
+      "para": "442,13"
     },
     {
-      "slug": "parafusadeira-furadeira-de-impacto-the-black-tools",
-      "produto": "Parafusadeira Furadeira De Impacto The Black Tools",
-      "de": "R$ 155,10",
-      "para": "139,90"
+      "slug": "air-fryer-elgin-facilita-fry-3-5l-1400w",
+      "produto": "Air Fryer Elgin Facilita Fry 3,5L 1400W",
+      "de": "R$ 184,00",
+      "para": "160,08"
     },
     {
-      "slug": "mixer-power-inox-3-em-1-600w-elgin-lunar",
-      "produto": "Mixer Power Inox 3 Em 1 600w Elgin Lunar -",
-      "de": "R$ 114,00",
-      "para": "94,89"
+      "slug": "air-fryer-forno-25l-french-door-mondial",
+      "produto": "Air Fryer Forno 25L French Door Mondial",
+      "de": "R$ 975,18",
+      "para": "968,92"
     },
     {
-      "slug": "sanduicheira-eletrica-cadence-san400-preta",
-      "produto": "Sanduicheira Elétrica Cadence SAN400 Preta",
-      "de": "R$ 89,29",
-      "para": "95,59"
-    },
-    {
-      "slug": "liquidificador-britania-2-6l-4-velocidades",
-      "produto": "Liquidificador Britânia 2,6L 4 Velocidades",
-      "de": "R$ 109,90",
-      "para": "R$ 94,90"
+      "slug": "parafusadeira-furadeira-impacto-sem-fio-2-baterias",
+      "produto": "Parafusadeira Furadeira Impacto Sem Fio 2 Baterias",
+      "de": "R$ 123,99",
+      "para": "90,88"
     }
   ],
   "semPreco": [
@@ -172,6 +124,12 @@
       "slug": "12m-22m-32m-leds-solar-luzes-corda-lampada-ao-ar",
       "produto": "12M/22M/32M LEDs Solar Luzes Corda Lâmpada Ao Ar",
       "link": "https://s.shopee.com.br/906R8Oq8m0",
+      "motivo": "API Shopee: a API não achou esse produto (pode ter saído do ar ou do programa de afiliados)"
+    },
+    {
+      "slug": "cortina-luz-led-3-6x3m-com-8-modos-usb-natal-fadas",
+      "produto": "Cortina luz LED 3/6x3M com 8 Modos USB Natal Fadas",
+      "link": "https://s.shopee.com.br/6AmHa4XVVx",
       "motivo": "API Shopee: a API não achou esse produto (pode ter saído do ar ou do programa de afiliados)"
     },
     {
@@ -201,7 +159,7 @@
       "produto": "Samsung Galaxy S25 5G, 256GB, 12GB, Câmera Tripla",
       "link": "https://meli.la/25scAq6",
       "atual": "R$ 3.772,00",
-      "lido": "398,80",
+      "lido": "411,90",
       "referencia": "R$ 3.689,00"
     },
     {
@@ -249,7 +207,7 @@
       "produto": "Celular Samsung Galaxy A57 256gb cinza",
       "link": "https://meli.la/1MNitr6",
       "atual": "R$ 2.327,00",
-      "lido": "236,35",
+      "lido": "224,82",
       "referencia": "R$ 2.550,00"
     },
     {
@@ -265,7 +223,7 @@
       "produto": "Samsung Galaxy S26 Ultra 5g Dual Sim Preto 256gb",
       "link": "https://meli.la/2mkji2E",
       "atual": "R$ 6.749,00",
-      "lido": "671,91",
+      "lido": "729,90",
       "referencia": "R$ 6.749,00"
     },
     {
@@ -313,7 +271,7 @@
       "produto": "Tablet Samsung Galaxy Tab A11+, 128gb",
       "link": "https://meli.la/32m3cG6",
       "atual": "R$ 495,69",
-      "lido": "181,12",
+      "lido": "148,71",
       "referencia": "R$ 495,69"
     },
     {
@@ -502,7 +460,6 @@
     "kit-manta-decorativa-4-capas-de-almofada-natal",
     "3m-bivolt-110v-220v-pisca-pisca-cortina-de-luz",
     "arvore-de-natal-pinheiro-1-5m-1-8m-2-1m-2-4m",
-    "cortina-luz-led-3-6x3m-com-8-modos-usb-natal-fadas",
     "pisca-10m-100-leds-8-funcoes-220v-luz-de-natal",
     "enfeites-de-natal-buque-galhos-bolha-de-barba",
     "kit-enfeites-decoracao-para-arvore-de-natal",
@@ -638,7 +595,6 @@
     "panificadora-19-programas-gallant-600w-preta",
     "air-fryer-oven-12l-wap-10-funcoes-pre-programadas",
     "creatina-monohidratada-pura-300g-suplemento",
-    "travesseiro-ortopedico-cervical-borboleta-coop",
     "fritadeira-eletrica-philips-walita-sem-oleo-220v",
     "kit-6-sacos-edredom-organizadores-guarda-roupa",
     "varal-de-chao-dobravel-kontuz-3-andares-e-rodinhas",
@@ -680,43 +636,51 @@
     "romantic-crown-mochila-de-viagem-expansivel",
     "romantic-crown-mochila-viagem-feminina-masculina",
     "kit-6-tampas-silicone-reutilizavel-elastica-tapoer-2",
-    "liquidificador-britania-2-6l-4-velocidades"
+    "liquidificador-britania-2-6l-4-velocidades",
+    "travesseiro-ortopedico-cervical-borboleta-coop"
   ],
   "shopee": {
     "status": {
-      "quando": "2026-11-04T21:17:42Z",
+      "quando": "2026-11-05T02:23:42Z",
       "teste": false,
       "links": 236,
-      "ok": 232,
-      "erros": 4
+      "ok": 231,
+      "erros": 5
     }
   },
   "anuncios": {
     "conferidos": 17,
-    "iguais": 8,
+    "iguais": 7,
     "pendentes": [
+      {
+        "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
+        "loja": "Outra loja",
+        "link": "https://link.amazon/B0epLOItP",
+        "atual": "R$ 5.002,00",
+        "lido": "R$ 4.095,64"
+      },
+      {
+        "slug": "samsung-galaxy-s26-ultra-5g-dual-sim-preto-256gb",
+        "loja": "Outra loja",
+        "link": "https://link.amazon/B098ObooL",
+        "atual": "R$ 7.257,27",
+        "lido": "R$ 7.499,00"
+      }
+    ],
+    "mudaram": [
       {
         "slug": "fita-teste-piscina-cloro-ph-alcalinidade",
         "loja": "Mercado Livre",
         "link": "https://meli.la/2S99bBL",
-        "atual": "R$ 44,11",
-        "lido": "R$ 57,52"
+        "de": "R$ 44,11",
+        "para": "R$ 57,52"
       },
       {
         "slug": "extratora-e-higienizadora-portatil-wap-spotcleaner",
         "loja": "Mercado Livre",
         "link": "https://meli.la/1NqjND9",
-        "atual": "R$ 484,90",
-        "lido": "R$ 428,99"
-      }
-    ],
-    "mudaram": [
-      {
-        "slug": "saco-para-lavar-tenis-na-maquina-bolsa-protetora",
-        "loja": "Shopee",
-        "link": "https://s.shopee.com.br/3LRaC63gUN",
-        "de": "R$ 16,99",
-        "para": "R$ 17,49"
+        "de": "R$ 484,90",
+        "para": "R$ 428,99"
       }
     ],
     "barrados": [
@@ -724,7 +688,7 @@
         "slug": "celular-samsung-galaxy-a37-5g-128gb-4",
         "loja": "Mercado Livre",
         "link": "https://meli.la/1rCMkSR",
-        "lido": "R$ 325,80",
+        "lido": "R$ 173,80",
         "principal": "R$ 1.538,00"
       },
       {
@@ -759,7 +723,7 @@
         "slug": "celular-samsung-galaxy-s25-43-5g-512gb-2",
         "loja": "Mercado Livre",
         "link": "https://meli.la/1xaZ7ij",
-        "lido": "R$ 422,12",
+        "lido": "R$ 413,21",
         "principal": "R$ 3.898,00"
       }
     ],
