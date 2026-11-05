@@ -1026,24 +1026,6 @@
     "precoConferido": "2026-11-02T07:42:05Z"
   },
   {
-    "produto": "Ventilador de Teto com Luz Silencioso Controle",
-    "preco": "R$ 57,77",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Casa",
-    "destaque": false,
-    "imagem": "4794242d-ccfc-4ac1-944a-b5244572c1db.jpg",
-    "link": "https://s.shopee.com.br/qkY4rbzwQ",
-    "url": "https://farejadinhosdayang.com.br/ofertas/ventilador-de-teto-com-luz-silencioso-controle/",
-    "slug": "ventilador-de-teto-com-luz-silencioso-controle",
-    "data": "2026-10-26T11:59:30Z",
-    "precoAVista": "",
-    "precoAPrazo": "",
-    "liberacao": "2026-10-27T20:00:11Z",
-    "fixo": true,
-    "precoConferido": "2026-10-30T15:58:57Z"
-  },
-  {
     "produto": "STARTOOLS Chaleira Jarra Elétrica 110V ou 220V 1.8",
     "preco": "R$ 43,99",
     "precoAntigo": "",
@@ -6188,5 +6170,23 @@
     "precoAPrazo": "",
     "liberacao": "2026-11-04T20:12:53Z",
     "precoManual": "2026-11-05T15:49:31Z"
+  },
+  {
+    "produto": "Ventilador de Teto com Luz Silencioso Controle",
+    "preco": "R$ 57,77",
+    "precoAntigo": "",
+    "cupom": "",
+    "categoria": "Casa, Vídeos",
+    "destaque": false,
+    "imagem": "4794242d-ccfc-4ac1-944a-b5244572c1db.jpg",
+    "link": "https://s.shopee.com.br/qkY4rbzwQ",
+    "url": "https://farejadinhosdayang.com.br/ofertas/ventilador-de-teto-com-luz-silencioso-controle/",
+    "slug": "ventilador-de-teto-com-luz-silencioso-controle",
+    "data": "2026-10-26T11:59:30Z",
+    "precoAVista": "",
+    "precoAPrazo": "",
+    "liberacao": "2026-10-27T20:00:11Z",
+    "precoManual": "2026-11-05T16:51:03Z",
+    "fixo": true
   }
 ]
