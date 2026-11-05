@@ -245,16 +245,6 @@ window.FarejadinhosConfigCategorias = {
     ]
    },
    {
-    "nome": "Casa Inteligente",
-    "palavras": [
-     "camera",
-     "lixeira",
-     "aspirador",
-     "ventilador",
-     "soprador"
-    ]
-   },
-   {
     "nome": "Games e Tablets",
     "palavras": [
      "playstation",
@@ -262,6 +252,16 @@ window.FarejadinhosConfigCategorias = {
      "tablet",
      "xbox",
      "nintendo"
+    ]
+   },
+   {
+    "nome": "Casa Inteligente",
+    "palavras": [
+     "camera",
+     "lixeira",
+     "aspirador",
+     "ventilador",
+     "soprador"
     ]
    }
   ],
@@ -496,6 +496,36 @@ window.FarejadinhosConfigCategorias = {
      "clorador",
      "clarificante",
      "teste"
+    ]
+   }
+  ],
+  "Moda": [
+   {
+    "nome": "Mochilas e Bolsas",
+    "palavras": [
+     "mochila",
+     "bolsa",
+     "necessaire"
+    ]
+   },
+   {
+    "nome": "Roupas",
+    "palavras": [
+     "camisa",
+     "camiseta",
+     "short",
+     "shorts",
+     "calca",
+     "vestido"
+    ]
+   },
+   {
+    "nome": "Organização",
+    "palavras": [
+     "cabide",
+     "cabides",
+     "sapateira",
+     "organizador"
     ]
    }
   ]

@@ -123,11 +123,14 @@
     const subs = configCategorias().subcategorias[mae] || [];
     if(!subs.length) return "";
     if(o.sub && subs.some(s => s.nome === o.sub)) return o.sub;
-    const nome = semAcentoMin(o.produto);
+    const nome = semAcentoMin(o.produto).trim();
     for(const s of subs){
       for(const p of (s.palavras || [])){
-        const k = semAcentoMin(String(p).replace(/^\^/, ""));
-        if(k.trim() && (String(p).charAt(0) === "^" ? nome.indexOf(k) === 0 : nome.indexOf(k) >= 0)) return s.nome;
+        const k = semAcentoMin(String(p).replace(/^\^/, "")).trim();
+        if(!k) continue;
+        // palavra inteira, aceitando plural (camisa -> camisas, pote -> potes)
+        const re = new RegExp((String(p).charAt(0) === "^" ? "^" : "(^| )") + k.replace(/[.*+?()[\]{}|\\$]/g, "\\$&") + "(s|es)?( |$)");
+        if(re.test(nome)) return s.nome;
       }
     }
     return "Outros";
@@ -148,13 +151,20 @@
   // A ordem desta lista importa: a 1ª que bater ganha.
   const TIPOS = [
     ["Air fryer", /\b(air ?fryer|fritadeira|forno oven)\b/], ["Panela de arroz", /\bpanela\b.*\barroz\b|\brice\b/],
-    ["Panela de pressão", /\bpressao\b/], ["Panela elétrica", /\bpanela eletrica\b/], ["Cafeteira", /\bcafeteira/],
+    ["Panela de pressão", /\bpanela\b.*\bpressao\b/], ["Medidor de pressão", /\b(medidor|aferidor)\b.*\bpressao\b|\bpressao arterial\b/], ["Panela elétrica", /\bpanela eletrica\b/], ["Cafeteira", /\bcafeteira/],
     ["Liquidificador", /\bliquidificador/], ["Mixer e misturador", /\b(mixer|misturador|batedor)\b/],
     ["Processador e picador", /\b(processador|picador|triturador|moedor de carne)\b/], ["Moedor de café", /\bmoedor\b/],
     ["Pipoqueira", /\bpipoqueira/], ["Chaleira", /\bchaleira/], ["Sanduicheira", /\bsanduicheira/], ["Cozedor", /\bcozedor/],
     ["Panificadora", /\bpanificadora/], ["Potes e marmitas", /\b(potes?|marmitas?)\b/], ["Frigideira", /\bfrigideira/],
     ["Tampas", /\btampas?\b.*\bsilicone\b|\bsilicone\b.*\btampas?\b/], ["Porta ovos", /\b(porta ovos|ovos dispenser|organizador de ovos)\b/],
     ["Organizador", /\borganizador/], ["Canecas e copos", /\b(caneca|copo|tacas?)\b/], ["Garrafa", /\bgarrafa/],
+    ["Tablet", /\btablet\b/], ["Games", /\b(playstation|ps5|xbox|nintendo|switch)\b/], ["Brinquedo", /\bbrinquedo/],
+    ["Mochila", /\bmochila/], ["Bolsa", /\bbolsas?\b/], ["Camisa", /\bcamis(a|as|eta|etas)\b/], ["Short", /\bshorts?\b/],
+    ["Hidratante", /\b(hidratante|creme|balm|bepantol)\b/], ["Limpeza facial", /\bgel de limpeza|\bsabonete/],
+    ["Cutícula e unhas", /\b(cuticula|unhas?)\b/], ["Maquiagem", /\b(bb cream|base|corretivo|batom)\b/],
+    ["Coleira", /\bcoleira/], ["Comedouro", /\b(comedouro|bebedouro)\b/], ["Suplemento", /\b(pre treino|whey|proteina)\b/],
+    ["Coqueteleira", /\bcoqueteleira|\bshaker/], ["Elástico de treino", /\b(elastic[oa]s?|mini band)\b/],
+    ["Sapateira", /\bsapateira/], ["Aspirador", /\baspirador/], ["Saco a vácuo", /\bsaco a vacuo|\bvacuo\b/], ["Ferramentas", /\b(chave|catraca|soquete|ferramentas)\b/],
     ["Celular Samsung", /\b(samsung|galaxy)\b(?!.*\b(carregador|capinha|pelicula|suporte)\b)/], ["iPhone", /\biphone\b(?!.*\b(carregador|capinha|pelicula|cabo)\b)/],
     ["Carregador", /\b(carregador|power ?bank|cabo)\b/], ["Suporte de celular", /\bsuporte\b.*\b(celular|telefone)\b/],
     ["Árvore de Natal", /^ *(kit )?arvore/], ["Pisca-pisca", /\b(pisca|cordao|strobo|fio de led|fio fada)\b/], ["Cascata de luz", /\bcascata/],
@@ -163,7 +173,7 @@
     ["Toalhas", /\btoalhas?\b/], ["Lençol", /\blencol/], ["Travesseiro", /\btravesseiros?\b/], ["Tapete", /\btapetes?\b/],
     ["Mop", /\bmop\b/], ["Varal", /\bvaral/], ["Parafusadeira", /\bparafusadeira/], ["Colchonete", /\bcolchonete/],
     ["Creatina", /\bcreatina/], ["Protetor solar", /\bprotetor solar/], ["Balança", /\bbalanca/], ["Arranhador", /\barranhador/],
-    ["Brinquedo", /\bbrinquedo/], ["Necessaire", /\bnecessaire/], ["Ventilador", /\bventilador/], ["Filtro de café", /\b(filtro|coador)\b/]
+    ["Necessaire", /\bnecessaire/], ["Ventilador", /\bventilador/], ["Filtro de café", /\b(filtro|coador)\b/]
   ];
   const PALAVRAS_VAZIAS = new Set("kit jogo conjunto com de da do das dos para e em a o un unid unidades pcs pecas peca novo nova original premium luxo mini super".split(" "));
   function tipoDe(o){

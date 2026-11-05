@@ -1406,7 +1406,7 @@ function montarPrateleiras(){
     });
     // em cada prateleira, semelhantes juntos (subcategoria, depois nome)
     Object.keys(porCategoria).forEach(c => {
-        if(c !== FarejadinhosVitrine.TAG_VIDEO) porCategoria[c] = FarejadinhosVitrine.ordenarNaCategoria(porCategoria[c]);
+        porCategoria[c] = FarejadinhosVitrine.ordenarNaCategoria(porCategoria[c]);
     });
 
     // Só categorias com pelo menos 2 ofertas; as maiores primeiro
@@ -1583,8 +1583,7 @@ function aplicarFiltros(){
     let lista = ordenar(filtradas, document.getElementById("ordem").value);
     // Dentro de uma categoria: semelhantes juntos (por subcategoria e nome).
     // Só na ordem padrão ("mais recentes"); se a pessoa escolheu outra ordem, respeita.
-    if(filtroAtivo.tipo === "categoria" && document.getElementById("ordem").value === "recentes" &&
-       String(filtroAtivo.valor) !== FarejadinhosVitrine.TAG_VIDEO){
+    if(filtroAtivo.tipo === "categoria" && document.getElementById("ordem").value === "recentes"){
         lista = FarejadinhosVitrine.ordenarNaCategoria(lista);
     }
     render(lista);
