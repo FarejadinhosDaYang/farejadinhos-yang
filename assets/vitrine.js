@@ -210,16 +210,51 @@
     return ordemManual(ordenarAuto(lista), chave);
   }
 
+  // ===== Celulares: do mais forte pro mais fraco =====
+  // Linha (Samsung S > Z > A > M; iPhone; Xiaomi > Poco F > Redmi Note > Redmi/Poco),
+  // depois geração (S26 > S25; A57 > A37 > A27), depois versão
+  // (Ultra/Pro Max > Plus/Pro > normal > FE/e) e, empatando, mais memória.
+  // Número maior = melhor. 0 = não reconheceu (vai pro fim da marca).
+  function forcaCelular(nome){
+    const n = semAcentoMin(nome).replace(/\+/g, " plus ");
+    const tem = re => re.test(n);
+    const gb = (() => { const m = n.match(/ (\d{2,4}) ?(gb|tb) /); return m ? (m[2] === "tb" ? 1024 : +m[1]) : 0; })();
+    let linha = 0, ger = 0, versao = 2;
+    let m;
+    if((m = n.match(/ galaxy (s|z fold|z flip|a|m) ?(\d{1,2})/)) || (m = n.match(/ (s|a|m)(\d{2}) /))){
+      const l = m[1];
+      linha = l === "s" ? 9 : l === "z fold" ? 8 : l === "z flip" ? 7 : l === "a" ? 5 : 3;
+      ger = +m[2];
+      if(tem(/ ultra /)) versao = 5; else if(tem(/ (plus|\+) /)) versao = 4; else if(tem(/ edge /)) versao = 3;
+      else if(tem(/ fe /)) versao = 1;
+    } else if((m = n.match(/ iphone (\d{1,2})/))){
+      linha = 9; ger = +m[1];
+      if(tem(/ pro max /)) versao = 5; else if(tem(/ pro /)) versao = 4; else if(tem(/ (air|plus) /)) versao = 3;
+      else if(tem(new RegExp(" iphone " + m[1] + " ?e "))) versao = 1;
+    } else if((m = n.match(/ (xiaomi|poco f|redmi note|poco [xm]|redmi|poco c) ?(\d{1,2})/))){
+      linha = { "xiaomi": 8, "poco f": 6, "redmi note": 5, "poco x": 4, "poco m": 3, "redmi": 3, "poco c": 2 }[m[1]] || 2;
+      ger = +m[2];
+      if(tem(/ ultra /)) versao = 5; else if(tem(/ pro (plus|\+) /)) versao = 4.5; else if(tem(/ pro /)) versao = 4;
+      else if(tem(/ lite /)) versao = 1;
+    } else if((m = n.match(/ moto(rola)? (edge|g) ?(\d{2,3})/))){
+      linha = m[2] === "edge" ? 6 : 3; ger = Math.min(99, +m[3]);
+    }
+    if(!linha) return 0;
+    return linha * 1e6 + ger * 1e4 + versao * 1e3 + Math.min(gb, 999);
+  }
+
   function ordenarAuto(lista){
     const itens = lista.map((o, i) => {
       const mae = categoriaPrincipal(o), subs = subcategoriasDe(mae), s = subcategoriaDe(o);
       const pos = subs.indexOf(s);
-      return { o, i, mae, pos: pos < 0 ? 999 : pos, tipo: tipoDe(o), nome: semAcentoMin(o.produto) };
+      const forca = mae === "Celulares" && s !== "Acessórios" ? forcaCelular(o.produto) : 0;
+      return { o, i, mae, pos: pos < 0 ? 999 : pos, tipo: forca ? "" : tipoDe(o), forca, nome: semAcentoMin(o.produto) };
     });
     const tam = {};
     itens.forEach(x => { const k = x.mae + "|" + x.pos + "|" + x.tipo; tam[k] = (tam[k] || 0) + 1; });
     const t = x => tam[x.mae + "|" + x.pos + "|" + x.tipo];
     return itens.sort((a, b) => (a.mae === b.mae ? 0 : a.mae.localeCompare(b.mae)) || a.pos - b.pos ||
+        b.forca - a.forca ||
         t(b) - t(a) || a.tipo.localeCompare(b.tipo) || a.nome.localeCompare(b.nome) || a.i - b.i)
       .map(x => x.o);
   }
@@ -551,7 +586,7 @@
 
   window.FarejadinhosVitrine = {
     MINIMO_VITRINE, HORAS_FRESCA, HORAS_MAXIMA, META_CATEGORIA, MINIMO_CATEGORIA, TEMPORADAS,
-    inicio, idadeHoras, selecionar, status, indisponivel, HORAS_SEM_PRECO, foraDeEpoca, podeIrProPodio, FORA_DO_PODIO, dataOrdem, anunciosDe, melhorAnuncio, comMelhorAnuncio, lojaDe, numeroPreco, variacoesDe, corDe, ehPermanente, ACESSORIOS_CELULAR, SUBS_CELULAR, subCelular, grupoCategoria, bateCategoria, pesoNaCategoria, nomeFiltro, configCategorias, categoriaPrincipal, subcategoriasDe, subcategoriaDe, ordenarNaCategoria, ordemManual, tipoDe, ehBlack, descontoPct, BLACK_DESCONTO_MIN, PERMANENTES, normalizar, categoriasDe, juntarCategoria, TAG_VIDEO
+    inicio, idadeHoras, selecionar, status, indisponivel, HORAS_SEM_PRECO, foraDeEpoca, podeIrProPodio, FORA_DO_PODIO, dataOrdem, anunciosDe, melhorAnuncio, comMelhorAnuncio, lojaDe, numeroPreco, variacoesDe, corDe, ehPermanente, ACESSORIOS_CELULAR, SUBS_CELULAR, subCelular, grupoCategoria, bateCategoria, pesoNaCategoria, nomeFiltro, configCategorias, categoriaPrincipal, subcategoriasDe, subcategoriaDe, ordenarNaCategoria, ordemManual, forcaCelular, tipoDe, ehBlack, descontoPct, BLACK_DESCONTO_MIN, PERMANENTES, normalizar, categoriasDe, juntarCategoria, TAG_VIDEO
   };
 
 })();
