@@ -576,6 +576,64 @@ window.FarejadinhosConfigCategorias = {
      "automatico"
     ]
    }
+  ],
+  "Ferramentas": [
+   {
+    "nome": "Parafusadeiras e Furadeiras",
+    "palavras": [
+     "parafusadeira",
+     "furadeira",
+     "broca",
+     "bits",
+     "chave de impacto"
+    ]
+   },
+   {
+    "nome": "Jogos de Chaves",
+    "palavras": [
+     "jogo de chaves",
+     "kit de chaves",
+     "catraca",
+     "soquete",
+     "chave allen",
+     "chave de fenda",
+     "chave inglesa",
+     "chave de boca",
+     "torquimetro"
+    ]
+   },
+   {
+    "nome": "Ferramentas Manuais",
+    "palavras": [
+     "alicate",
+     "martelo",
+     "estilete",
+     "grampeador",
+     "rebitadeira",
+     "morsa"
+    ]
+   },
+   {
+    "nome": "Medição e Elétrica",
+    "palavras": [
+     "trena",
+     "nivel",
+     "multimetro",
+     "ferro de solda",
+     "estacao de solda",
+     "fita isolante",
+     "chave teste"
+    ]
+   },
+   {
+    "nome": "Maletas e Organização",
+    "palavras": [
+     "caixa de ferramentas",
+     "maleta",
+     "organizador de ferramentas",
+     "painel de ferramentas"
+    ]
+   }
   ]
  },
  "categoriasExtras": [
@@ -605,6 +663,52 @@ window.FarejadinhosConfigCategorias = {
     "lixeira automatica",
     "lixeira inteligente",
     "wifi"
+   ]
+  },
+  {
+   "nome": "Ferramentas",
+   "icone": "🔧",
+   "palavras": [
+    "ferramenta",
+    "ferramentas",
+    "parafusadeira",
+    "furadeira",
+    "chave de fenda",
+    "chave philips",
+    "jogo de chaves",
+    "kit de chaves",
+    "chave catraca",
+    "catraca",
+    "soquete",
+    "jogo de soquetes",
+    "chave allen",
+    "chave inglesa",
+    "chave de boca",
+    "alicate",
+    "martelo",
+    "trena",
+    "nivel a laser",
+    "nivel laser",
+    "serra",
+    "serra tico tico",
+    "esmerilhadeira",
+    "lixadeira",
+    "tupia",
+    "multimetro",
+    "ferro de solda",
+    "estacao de solda",
+    "pistola de cola quente",
+    "broca",
+    "jogo de brocas",
+    "bits",
+    "grampeador",
+    "rebitadeira",
+    "torquimetro",
+    "caixa de ferramentas",
+    "maleta de ferramentas",
+    "macaco hidraulico",
+    "morsa",
+    "estilete"
    ]
   }
  ]

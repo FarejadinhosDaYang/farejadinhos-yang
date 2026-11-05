@@ -79,6 +79,7 @@
       "expresso", "cappuccino", "prensa francesa", "graos de cafe", "cafe em graos"
     ],
     "Beleza": [
+      "lixadeira de unha", "lixa eletrica de unha", "broca de unha", "motor de unha",
       "perfume", "maquiagem", "batom", "rimel", "mascara de cilios", "base liquida",
       "corretivo", "shampoo", "condicionador", "creme", "hidratante",
       "secador", "chapinha", "prancha alisadora", "escova secadora",
@@ -138,13 +139,12 @@
     ],
     "Utilidades": [
       "utilidade", "guarda chuva", "sombrinha", "lanterna", "pilha", "pilhas recarregaveis",
-      "bateria recarregavel", "fita adesiva", "fita isolante", "fita dupla face",
+      "bateria recarregavel", "fita adesiva", "fita dupla face",
       "cadeado", "balanca", "termometro", "mala de viagem", "mala", "necessaire",
       "organizador de mala", "chaveiro", "bomba de ar", "encher pneu", "compressor de ar",
-      "calibrador", "kit ferramenta", "ferramenta", "alicate", "trena", "multimetro",
-      "chave de fenda", "jogo de chaves", "cola instantanea", "super cola",
+      "calibrador", "cola instantanea", "super cola",
       "abracadeira", "enforca gato", "gancho adesivo", "ventosa", "porta documento",
-      "porta cartao", "canivete", "estilete", "tesoura", "regua", "kit emergencia",
+      "porta cartao", "canivete", "tesoura", "regua", "kit emergencia",
       "capa de chuva", "saco a vacuo", "etiquetadora", "relogio de parede", "despertador"
     ],
     "Casa": [
@@ -156,8 +156,7 @@
       "limpeza", "aromatizador", "difusor", "tomada",
       "extensao", "filtro de linha", "benjamim", "prateleira", "estante",
       "nicho", "decoracao", "quadro", "vaso", "cadeira", "mesa", "colchao", "cama",
-      "banheiro", "chuveiro", "ducha", "porta toalha", "lixeira",
-      "furadeira", "parafusadeira", "jardim", "mangueira", "cesto", "caixa organizadora", "sapateira",
+      "banheiro", "chuveiro", "ducha", "porta toalha", "lixeira", "jardim", "mangueira", "cesto", "caixa organizadora", "sapateira",
       "rack", "escrivaninha", "espelho", "fechadura", "campainha",
       "pano de chao", "balde", "dispenser", "cabideiro", "guarda roupa"
     ]
