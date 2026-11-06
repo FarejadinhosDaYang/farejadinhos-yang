@@ -7,6 +7,7 @@ Itens do lote: {"acao": "anuncios", "op": "adicionar"|"remover"|"editar",
 "editar" muda variação/cor/foto de um anúncio; com o link principal da
 oferta, muda a variação do anúncio principal (campos variacao/cor da oferta).
 "fixar" {"slug", "fixo": true|false} — anúncio âncora: nunca sai do site.
+"apagar" {"slug"} — tira a oferta do catálogo (como o Remover do painel).
 "ordem" {"chave": "Cozinha" ou "Cozinha/Panelas", "slugs": [...]} — ordem à mão
 na categoria (arrastando no modo admin); "slugs": [] volta pra automática.
 "juntar" {"slug", "de": "<slug de outra oferta>", "variacao", "cor", "tirar": true}
@@ -56,6 +57,14 @@ def main(arquivo):
                 o.pop("sub", None)
             print(f"  subcategoria de {o['slug']}: {v or 'automática'}")
             mudou = True
+            continue
+        if it.get("op") == "apagar":
+            # tira a oferta do catálogo (igual ao "Remover" do painel)
+            antes = len(catalogo)
+            catalogo[:] = [x for x in catalogo if not (isinstance(x, dict) and x.get("slug") == it.get("slug"))]
+            if len(catalogo) < antes:
+                print(f"  apagada: {it.get('slug')}")
+                mudou = True
             continue
         if it.get("op") == "ordem":
             # ordem arrumada à mão numa categoria/subcategoria (arrastando no
