@@ -82,7 +82,7 @@
   },
   {
     "produto": "Kit Limpeza E Manutenção De Piscina Completo",
-    "preco": "R$ 109,90",
+    "preco": "R$ 62,85",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Piscina",
@@ -95,7 +95,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-17T11:00:00Z",
-    "precoConferido": "2026-11-03T22:50:20Z"
+    "precoConferido": "2026-11-06T06:45:03Z"
   },
   {
     "produto": "Super Clarificante para Piscina Power Gel",
@@ -263,7 +263,7 @@
   },
   {
     "produto": "Cabides Com 5 Camadas Organizador De Blusas",
-    "preco": "R$ 10,97",
+    "preco": "R$ 14,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Moda",
@@ -275,7 +275,8 @@
     "data": "2026-10-17T23:01:29Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-17T23:31:23Z"
+    "liberacao": "2026-10-17T23:31:23Z",
+    "precoConferido": "2026-11-06T06:45:03Z"
   },
   {
     "produto": "Kit 10 Pote Vidro Hermético Marmita 640ml",
@@ -534,7 +535,7 @@
   },
   {
     "produto": "Organizador Algodão E Cotonetes Acrílico Kit",
-    "preco": "R$ 13,20",
+    "preco": "R$ 13,19",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Casa",
@@ -547,7 +548,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-30T22:48:48Z",
-    "precoConferido": "2026-11-06T00:20:30Z"
+    "precoConferido": "2026-11-06T06:45:03Z"
   },
   {
     "produto": "Suporte de Lâmina de Barbear Adesivo Moderno",
@@ -585,7 +586,7 @@
   },
   {
     "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-    "preco": "R$ 4.696,54",
+    "preco": "R$ 4.079,05",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -595,7 +596,7 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera/",
     "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "R$ 4.696,54",
+    "precoAVista": "R$ 4.079,05",
     "precoAPrazo": "5066,16",
     "liberacao": "2026-10-19T11:56:00Z",
     "parcelas": 12,
@@ -609,16 +610,18 @@
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/be80d970-5211-4ffe-8904-6a755e29303b.jpg",
         "variacao": "Preto",
-        "cor": "#2B2B2B"
+        "cor": "#2B2B2B",
+        "pendente": "R$ 4.095,64",
+        "pendenteEm": "2026-11-06T06:45:04Z"
       }
     ],
     "variacao": "Violeta",
     "cor": "#8B7BB8",
-    "precoConferido": "2026-11-06T00:20:30Z"
+    "precoConferido": "2026-11-06T06:45:03Z"
   },
   {
     "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
-    "preco": "R$ 3.998,97",
+    "preco": "R$ 3.999,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -628,11 +631,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-fe-128gb-8gb-ram-tela/",
     "slug": "celular-samsung-galaxy-s26-fe-128gb-8gb-ram-tela",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "R$ 3.998,97",
+    "precoAVista": "R$ 3.999,00",
     "precoAPrazo": "3999,00",
     "liberacao": "2026-10-19T19:24:00Z",
     "parcelas": 12,
-    "precoConferido": "2026-11-05T18:51:00Z"
+    "precoConferido": "2026-11-06T06:45:03Z"
   },
   {
     "produto": "iPhone 18 Pro 256GB Preto (somente eSIM)",
@@ -693,7 +696,7 @@
   },
   {
     "produto": "iPhone 17 Pro 256GB - Laranja-cósmico",
-    "preco": "R$ 9.599,00",
+    "preco": "R$ 8.909,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -703,12 +706,12 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/iphone-17-pro-256gb-laranja-cosmico/",
     "slug": "iphone-17-pro-256gb-laranja-cosmico",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "R$ 9.599,00",
+    "precoAVista": "R$ 8.909,00",
     "precoAPrazo": "8975,70",
     "liberacao": "2026-10-21T17:02:04Z",
     "precoManual": "2026-10-19T11:23:17Z",
     "parcelas": 10,
-    "precoConferido": "2026-11-05T18:51:00Z"
+    "precoConferido": "2026-11-06T06:45:03Z"
   },
   {
     "produto": "Aspirador Manual Piscina Herbinject Azul",
@@ -825,7 +828,7 @@
   },
   {
     "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
-    "preco": "R$ 5.399,00",
+    "preco": "R$ 5.199,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -835,16 +838,16 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s25-ultra-5g-256gb/",
     "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "R$ 5.399,00",
+    "precoAVista": "R$ 5.199,00",
     "precoAPrazo": "6443,00",
     "liberacao": "2026-10-18T20:00:30Z",
     "precoManual": "2026-10-22T20:24:30Z",
     "parcelas": 10,
-    "precoConferido": "2026-11-06T00:20:30Z"
+    "precoConferido": "2026-11-06T06:45:03Z"
   },
   {
     "produto": "Celular Samsung Galaxy S26 5G, 512GB",
-    "preco": "R$ 5.799,00",
+    "preco": "R$ 5.999,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -854,11 +857,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-5g-512gb/",
     "slug": "celular-samsung-galaxy-s26-5g-512gb",
     "data": "2026-10-23T00:12:14Z",
-    "precoAVista": "R$ 5.799,00",
+    "precoAVista": "R$ 5.999,00",
     "precoAPrazo": "6443,00",
     "liberacao": "2026-10-23T16:36:00Z",
     "parcelas": 10,
-    "precoConferido": "2026-11-05T10:56:01Z"
+    "precoConferido": "2026-11-06T06:45:03Z"
   },
   {
     "produto": "Celular Samsung Galaxy A57 256gb cinza",
@@ -1264,7 +1267,9 @@
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/8a3e1230-4e3e-4109-877a-8c16b096077d.jpg",
         "variacao": "Prata",
-        "cor": "#D9DCE1"
+        "cor": "#D9DCE1",
+        "pendente": "R$ 7.499,00",
+        "pendenteEm": "2026-11-06T06:45:04Z"
       }
     ],
     "precoConferido": "2026-11-05T10:56:01Z",
@@ -1291,15 +1296,13 @@
       {
         "link": "https://meli.la/1yVXM5E",
         "loja": "Mercado Livre",
-        "preco": "R$ 2.699,00",
-        "conferido": "2026-11-05T18:51:00Z",
+        "preco": "R$ 2.998,00",
+        "conferido": "2026-11-06T06:45:04Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/72a70978-5436-4a4b-8b8c-b289c054d4bc.jpg",
         "variacao": "Preto",
-        "cor": "#2B2B2B",
-        "pendente": "R$ 2.998,00",
-        "pendenteEm": "2026-11-06T00:20:31Z"
+        "cor": "#2B2B2B"
       }
     ],
     "parcelas": 10,
@@ -1659,7 +1662,7 @@
   },
   {
     "produto": "Kit 3 Toalhas De Banho Gigante Luxo Grossa Atacado",
-    "preco": "R$ 78,65",
+    "preco": "R$ 59,91",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Casa",
@@ -1672,11 +1675,11 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-31T00:45:25Z",
-    "precoConferido": "2026-11-06T00:20:30Z"
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Tapioqueira Polvilhador Com Peneira Dosador",
-    "preco": "R$ 26,59",
+    "preco": "R$ 18,91",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Utilidades",
@@ -1689,7 +1692,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-29T11:00:00Z",
-    "precoConferido": "2026-11-06T00:20:30Z"
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Aparador de Pelos Super Groom 10 Mondial",
@@ -1848,7 +1851,7 @@
   },
   {
     "produto": "Torneira De Pia Gourmet Flexível De Parede Jato",
-    "preco": "R$ 32,97",
+    "preco": "R$ 24,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -1861,7 +1864,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-30T16:00:38Z",
-    "precoConferido": "2026-11-06T00:20:30Z"
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Suporte Inox Pendurar Vassoura Pá Rodo Mop",
@@ -2068,7 +2071,7 @@
   },
   {
     "produto": "Suporte Magnético Forte Para Telefone Carro 360 °",
-    "preco": "R$ 15,99",
+    "preco": "R$ 13,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Acessórios de Celular",
@@ -2081,7 +2084,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-28T13:42:06Z",
-    "precoConferido": "2026-11-05T18:51:00Z"
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Mini Mixer Portátil Misturador de Bebidas Batedor",
@@ -2248,7 +2251,7 @@
   },
   {
     "produto": "Jogo Completo de Utensílios de Cozinha de Silicone",
-    "preco": "R$ 28,99",
+    "preco": "R$ 28,98",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -2261,7 +2264,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-30T21:06:45Z",
-    "precoConferido": "2026-11-06T00:20:30Z"
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Caneca Térmica Atena Bear Thermal Personalizada",
@@ -2282,7 +2285,7 @@
   },
   {
     "produto": "Cozedor Elétrico Multifuncional De Ovo Milho",
-    "preco": "R$ 32,99",
+    "preco": "R$ 32,98",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -2295,7 +2298,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-30T22:34:13Z",
-    "precoConferido": "2026-11-04T14:39:55Z"
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Potes Herméticos Electrolux de Plástico Cinza",
@@ -2502,7 +2505,7 @@
   },
   {
     "produto": "Saco para Lavar Tênis na Máquina Bolsa Protetora",
-    "preco": "R$ 16,99",
+    "preco": "R$ 17,49",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Utilidades, Vídeos",
@@ -2528,7 +2531,8 @@
       }
     ],
     "video": "videos/saco-para-lavar-tenis-na-maquina-bolsa-protetora.mp4",
-    "videoCapa": "videos/saco-para-lavar-tenis-na-maquina-bolsa-protetora.jpg"
+    "videoCapa": "videos/saco-para-lavar-tenis-na-maquina-bolsa-protetora.jpg",
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Percarbonato 100% Puro Tira Manchas Roupas Brancas",
@@ -2639,7 +2643,7 @@
   },
   {
     "produto": "Panela Elétrica de Arroz, Mondial, 700W - PE-42-10X -",
-    "preco": "R$ 208,05",
+    "preco": "R$ 206,11",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -2649,9 +2653,9 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/panela-eletrica-de-arroz-mondial-700w-pe-42-10x/",
     "slug": "panela-eletrica-de-arroz-mondial-700w-pe-42-10x",
     "data": "2026-11-01T13:03:51Z",
-    "precoAVista": "R$ 208,05",
+    "precoAVista": "R$ 206,11",
     "precoAPrazo": "442,00",
-    "precoConferido": "2026-11-06T00:20:30Z"
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Panela de Arroz Elétrica Mondial Fast Rice 5",
@@ -2772,7 +2776,7 @@
   },
   {
     "produto": "Árvore De Natal Pinheiro Canadense Luxo Base",
-    "preco": "R$ 159,90",
+    "preco": "R$ 252,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -2785,7 +2789,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-03T00:56:35Z",
-    "precoConferido": "2026-11-05T18:51:00Z"
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Cordão LED Strobo 10m 100 LEDs",
@@ -2837,7 +2841,7 @@
   },
   {
     "produto": "Saia para Árvore de Natal Tapete Base Decorativa",
-    "preco": "R$ 21,90",
+    "preco": "R$ 22,74",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -2850,7 +2854,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-03T11:44:12Z",
-    "precoConferido": "2026-11-05T18:51:00Z"
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Flores De Natal Premium Arvore Artificial",
@@ -2923,7 +2927,7 @@
   },
   {
     "produto": "Papai Noel Escalador 30 40 na Escada Enfeite",
-    "preco": "R$ 28,90",
+    "preco": "R$ 31,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -2936,7 +2940,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-03T12:57:53Z",
-    "precoConferido": "2026-11-05T18:51:00Z"
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Fita De Natal Decoração De Árvore Malha Tule Rolo",
@@ -3088,7 +3092,7 @@
   },
   {
     "produto": "Arvore De Natal Pinheiro 1,5m 1,8m 2,1m 2,4m",
-    "preco": "R$ 139,99",
+    "preco": "R$ 127,39",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -3101,7 +3105,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-04T17:41:27Z",
-    "precoConferido": "2026-11-04T06:20:07Z"
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Cortina luz LED 3/6x3M com 8 Modos USB Natal Fadas",
@@ -3577,7 +3581,7 @@
   },
   {
     "produto": "Kit Metros de Festão Enfeite Natalino X 2MT",
-    "preco": "R$ 48,80",
+    "preco": "R$ 29,28",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -3590,7 +3594,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T20:12:56Z",
-    "precoConferido": "2026-11-05T10:56:01Z"
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Ano Trem De Natal Ornamento De Madeira Bonito",
@@ -3706,7 +3710,7 @@
   },
   {
     "produto": "Piscas Moto Seta Led Sequencial Kit 2 ou 4 Fan",
-    "preco": "R$ 24,99",
+    "preco": "R$ 24,95",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -3719,7 +3723,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T20:12:56Z",
-    "precoConferido": "2026-11-05T18:51:00Z"
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Pula Corda Giratório Com Led Brinquedo Infantil",
@@ -3838,7 +3842,7 @@
   },
   {
     "produto": "Kit Potes Mantimentos Vidro Herméticos Com Tampa",
-    "preco": "R$ 39,56",
+    "preco": "R$ 40,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -3852,11 +3856,11 @@
     "precoAPrazo": "",
     "liberacao": "2026-11-03T15:25:15Z",
     "fixo": true,
-    "precoConferido": "2026-11-05T02:31:42Z"
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Carregador iPhone Turbo Tipo-C 20W + Cabo",
-    "preco": "R$ 14,99",
+    "preco": "R$ 14,98",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Acessórios de Celular",
@@ -3869,7 +3873,8 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-03T16:07:48Z",
-    "fixo": true
+    "fixo": true,
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Portátil Abdominais Ventosas Fortes 3 Ajustes",
@@ -4006,7 +4011,7 @@
   },
   {
     "produto": "Cafeteira Elétrica Dolce Arome Mondial",
-    "preco": "R$ 257,99",
+    "preco": "R$ 237,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -4018,7 +4023,8 @@
     "data": "2026-11-03T15:47:49Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-03T22:39:41Z"
+    "liberacao": "2026-11-03T22:39:41Z",
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Profissional 15 Graus Titular Faca Whetstone",
@@ -4258,8 +4264,8 @@
       {
         "link": "https://s.shopee.com.br/8VA2VQDdou",
         "loja": "Shopee",
-        "preco": "R$ 27,89",
-        "conferido": "2026-11-06T00:20:31Z",
+        "preco": "R$ 20,27",
+        "conferido": "2026-11-06T06:45:04Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/6cd98111-3125-44a2-b1ee-6fdc5c930329.jpg"
@@ -4334,7 +4340,7 @@
   },
   {
     "produto": "Copo Térmico Cafe 450ml Inox com Display Digital",
-    "preco": "R$ 23,80",
+    "preco": "R$ 23,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Café",
@@ -4346,11 +4352,12 @@
     "data": "2026-11-03T15:47:57Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-03T19:29:35Z"
+    "liberacao": "2026-11-03T19:29:35Z",
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Copo Caneca Termica Com Tampa 360ML Inox",
-    "preco": "R$ 18,99",
+    "preco": "R$ 18,98",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Café",
@@ -4364,7 +4371,7 @@
     "precoAPrazo": "",
     "liberacao": "2026-11-03T21:38:53Z",
     "anuncios": [],
-    "precoConferido": "2026-11-05T18:51:00Z"
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Colchonete EVA Multiuso Academia Yoga Pilates",
@@ -4478,7 +4485,7 @@
   },
   {
     "produto": "Kit Potes Mantimentos Vidro Herméticos Com Tampa",
-    "preco": "R$ 39,56",
+    "preco": "R$ 40,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -4491,7 +4498,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T14:00:00Z",
-    "precoConferido": "2026-11-05T02:31:42Z"
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Kit Potes de Vidro Herméticos Tampa Bambu",
@@ -4575,7 +4582,7 @@
   },
   {
     "produto": "Cafeteira Elétrica Dolce Arome Mondial",
-    "preco": "R$ 257,99",
+    "preco": "R$ 237,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -4587,7 +4594,8 @@
     "data": "2026-11-03T15:48:57Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-04T20:27:53Z"
+    "liberacao": "2026-11-04T20:27:53Z",
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Profissional 15 Graus Titular Faca Whetstone",
@@ -4770,7 +4778,7 @@
   },
   {
     "produto": "Copo Térmico Cafe 450ml Inox com Display Digital",
-    "preco": "R$ 23,80",
+    "preco": "R$ 23,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Café",
@@ -4782,7 +4790,8 @@
     "data": "2026-11-03T15:48:58Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-04T19:27:53Z"
+    "liberacao": "2026-11-04T19:27:53Z",
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Colchonete EVA Multiuso Academia Yoga Pilates",
@@ -4818,7 +4827,7 @@
   },
   {
     "produto": "Kit Potes Mantimentos Vidro Herméticos Com Tampa",
-    "preco": "R$ 39,56",
+    "preco": "R$ 40,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -4831,7 +4840,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T20:12:56Z",
-    "precoConferido": "2026-11-05T02:31:42Z"
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Sapateira 4 ou 5 Andares Multiuso Desmontável",
@@ -4933,7 +4942,7 @@
   },
   {
     "produto": "L'Oréal Paris Elseve Óleo Extraordinário 100ml",
-    "preco": "R$ 36,14",
+    "preco": "R$ 30,72",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Utilidades",
@@ -4946,7 +4955,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T15:45:00Z",
-    "precoConferido": "2026-11-05T18:51:00Z"
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Creatina Monohidratada 500g Pouch",
@@ -5167,7 +5176,7 @@
   },
   {
     "produto": "Balança Digital Bioimpedância Profissional smart",
-    "preco": "R$ 28,95",
+    "preco": "R$ 32,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Academia",
@@ -5190,7 +5199,8 @@
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/8448dd52-bf9d-4aab-bf4a-1fbd70d899af.webp"
       }
-    ]
+    ],
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Creatina Soldiers Nutrition em pó Sem sabor x 500g",
@@ -5210,7 +5220,7 @@
   },
   {
     "produto": "Electrolux Kit 3 Bowls Tigelas de Aço Inox",
-    "preco": "R$ 94,06",
+    "preco": "R$ 89,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -5220,11 +5230,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/electrolux-kit-3-bowls-tigelas-de-aco-inox/",
     "slug": "electrolux-kit-3-bowls-tigelas-de-aco-inox",
     "data": "2026-11-03T18:03:28Z",
-    "precoAVista": "R$ 94,06",
+    "precoAVista": "R$ 89,90",
     "precoAPrazo": "93,12",
     "liberacao": "2026-11-05T20:12:56Z",
     "parcelas": 3,
-    "precoConferido": "2026-11-04T06:20:07Z"
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Air Fryer Elgin Facilita Fry 3,5L 1400W",
@@ -5387,7 +5397,7 @@
   },
   {
     "produto": "Air Fryer Oven 12L WAP 10 Funções Pré-Programadas",
-    "preco": "R$ 484,03",
+    "preco": "R$ 479,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -5397,11 +5407,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/air-fryer-oven-12l-wap-10-funcoes-pre-programadas/",
     "slug": "air-fryer-oven-12l-wap-10-funcoes-pre-programadas",
     "data": "2026-11-03T18:03:29Z",
-    "precoAVista": "R$ 484,03",
+    "precoAVista": "R$ 479,90",
     "precoAPrazo": "532,00",
     "liberacao": "2026-11-05T20:12:56Z",
     "parcelas": 10,
-    "precoConferido": "2026-11-05T10:56:01Z"
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Creatina Monohidratada Pura 300g Suplemento",
@@ -5438,7 +5448,7 @@
   },
   {
     "produto": "Kit 6 Sacos Edredom Organizadores Guarda Roupa",
-    "preco": "R$ 61,90",
+    "preco": "R$ 58,69",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Casa",
@@ -5448,11 +5458,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/kit-6-sacos-edredom-organizadores-guarda-roupa/",
     "slug": "kit-6-sacos-edredom-organizadores-guarda-roupa",
     "data": "2026-11-03T18:03:30Z",
-    "precoAVista": "R$ 61,90",
+    "precoAVista": "R$ 58,69",
     "precoAPrazo": "115,84",
     "liberacao": "2026-11-05T18:17:36Z",
     "parcelas": 4,
-    "precoConferido": "2026-11-06T00:20:30Z"
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Varal de Chão Dobrável KONTUZ 3 Andares e Rodinhas",
@@ -5488,7 +5498,7 @@
   },
   {
     "produto": "Panela De Pressão Elétrica Philco Ppp01p 6L",
-    "preco": "R$ 379,05",
+    "preco": "R$ 331,55",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -5498,11 +5508,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/panela-de-pressao-eletrica-philco-ppp01p-6l/",
     "slug": "panela-de-pressao-eletrica-philco-ppp01p-6l",
     "data": "2026-11-03T18:03:30Z",
-    "precoAVista": "R$ 379,05",
+    "precoAVista": "R$ 331,55",
     "precoAPrazo": "549,90",
     "liberacao": "2026-11-05T20:12:56Z",
     "parcelas": 10,
-    "precoConferido": "2026-11-05T18:51:00Z"
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Varal De Chão Vertical Grande De Roupas 3 Andares",
@@ -5522,7 +5532,7 @@
   },
   {
     "produto": "Sanduicheira Elétrica Cadence SAN400 Preta",
-    "preco": "R$ 95,59",
+    "preco": "R$ 94,50",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -5532,11 +5542,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/sanduicheira-eletrica-cadence-san400-preta/",
     "slug": "sanduicheira-eletrica-cadence-san400-preta",
     "data": "2026-11-03T18:03:31Z",
-    "precoAVista": "R$ 95,59",
+    "precoAVista": "R$ 94,50",
     "precoAPrazo": "94,89",
     "liberacao": "2026-11-05T20:12:56Z",
     "parcelas": 3,
-    "precoConferido": "2026-11-04T21:25:51Z"
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Massageador Pistola Elétrica Profissional Muscular",
@@ -5912,7 +5922,7 @@
   },
   {
     "produto": "Pipoqueira Elétrica Sem Óleo Philco Preta 1200W",
-    "preco": "R$ 119,90",
+    "preco": "R$ 108,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -5925,7 +5935,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T20:12:56Z",
-    "precoConferido": "2026-11-05T18:51:00Z"
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Fritadeira Air Fryer Itatiaia 3,5 Litros 127V",
@@ -5993,7 +6003,7 @@
   },
   {
     "produto": "Kit com 2 Tapete Antiderrapante Absorvente",
-    "preco": "R$ 19,98",
+    "preco": "R$ 13,45",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Casa",
@@ -6005,7 +6015,8 @@
     "data": "2026-11-04T11:06:48Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-05T17:32:36Z"
+    "liberacao": "2026-11-05T17:32:36Z",
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "BB CreamBase/Corretivo com Esponja com Formato",
@@ -6123,7 +6134,7 @@
   },
   {
     "produto": "Liquidificador Britânia 2,6L 4 Velocidades",
-    "preco": "R$ 109,90",
+    "preco": "R$ 99,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -6136,7 +6147,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T20:12:56Z",
-    "precoConferido": "2026-11-06T00:20:30Z"
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Travesseiro Ortopédico Cervical Borboleta Coop",
@@ -6229,7 +6240,7 @@
   },
   {
     "produto": "Interruptor Inteligente Touch WI-FI 6 Teclas Eiw 1006",
-    "preco": "R$ 152,42",
+    "preco": "R$ 144,79",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Automação",
@@ -6239,13 +6250,14 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/interruptor-inteligente-touch-wi-fi-6-teclas-eiw-1006/",
     "slug": "interruptor-inteligente-touch-wi-fi-6-teclas-eiw-1006",
     "data": "2026-11-05T19:56:48Z",
-    "precoAVista": "152,42",
+    "precoAVista": "R$ 144,79",
     "precoAPrazo": "289,92",
-    "fixo": true
+    "fixo": true,
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Interruptor Inteligente WiFi Touch 2 Teclas com Tomada",
-    "preco": "R$ 89,90",
+    "preco": "R$ 100,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Automação",
@@ -6255,9 +6267,10 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/interruptor-inteligente-wifi-touch-2-teclas-com-tomada/",
     "slug": "interruptor-inteligente-wifi-touch-2-teclas-com-tomada",
     "data": "2026-11-05T19:57:15Z",
-    "precoAVista": "89,90",
+    "precoAVista": "R$ 100,00",
     "precoAPrazo": "89,90",
-    "fixo": true
+    "fixo": true,
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Interruptor de Luz Inteligente Tuya Wifi Touch Brasil",
@@ -6277,7 +6290,7 @@
   },
   {
     "produto": "Amazon Echo Dot 5ª Geração Com Alexa E Som",
-    "preco": "R$ 445,55",
+    "preco": "R$ 495,57",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Automação",
@@ -6327,7 +6340,8 @@
         "variacao": "Branco",
         "cor": "#EDEDED"
       }
-    ]
+    ],
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Echo Show 15 Amazon Smart Display Full Hd 15,6''",
@@ -6349,7 +6363,7 @@
   },
   {
     "produto": "Amazon Alexa Show 5 3a Geração Cor Preto",
-    "preco": "R$ 500,25",
+    "preco": "R$ 637,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Automação",
@@ -6373,7 +6387,8 @@
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/87ae73c7-5aae-4fed-a01f-85877f77aaa5.jpg"
       }
-    ]
+    ],
+    "precoConferido": "2026-11-06T06:45:04Z"
   },
   {
     "produto": "Echo Spot Com Alexa: Despertador Inteligente Preto",
