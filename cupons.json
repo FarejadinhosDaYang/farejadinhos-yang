@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-06T13:38:00Z",
+  "atualizado": "2026-11-06T13:38:51Z",
   "paginas": {
     "Shopee": "https://s.shopee.com.br/4VdOXKYQfW",
     "Mercado Livre": "https://www.mercadolivre.com.br/cupons?source_page=mperfil#nav-header"
@@ -100,6 +100,18 @@
       "obs": "",
       "link": "",
       "ate": "2026-11-07T13:38:00Z"
+    },
+    {
+      "codigo": "SITE0TODO611",
+      "loja": "Mercado Livre",
+      "tipo": "",
+      "valor": 0.0,
+      "minimo": 0.0,
+      "teto": 0.0,
+      "titulo": "Cupom do site todo",
+      "obs": "",
+      "link": "https://meli.la/1dSYXus",
+      "ate": "2026-11-07T13:38:51Z"
     }
   ]
 }
