@@ -357,22 +357,6 @@
     "liberacao": "2026-10-18T23:10:30Z"
   },
   {
-    "produto": "Porta Maquiagem Organizador De Cosméticos Perfume",
-    "preco": "R$ 29,76",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Beleza",
-    "destaque": false,
-    "imagem": "7206dbe5-84b5-4986-86ba-5285f47d455d.jpg",
-    "link": "https://s.shopee.com.br/5q91rpTEf8",
-    "url": "https://farejadinhosdayang.com.br/ofertas/porta-maquiagem-organizador-de-cosmeticos-perfume/",
-    "slug": "porta-maquiagem-organizador-de-cosmeticos-perfume",
-    "data": "2026-10-17T23:01:37Z",
-    "precoAVista": "",
-    "precoAPrazo": "",
-    "liberacao": "2026-10-19T21:16:00Z"
-  },
-  {
     "produto": "Expositor de Perfumes Cosméticos 3 Andares",
     "preco": "R$ 29,99",
     "precoAntigo": "",
@@ -436,7 +420,18 @@
     "data": "2026-10-17T23:01:39Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-20T20:20:00Z"
+    "liberacao": "2026-10-20T20:20:00Z",
+    "anuncios": [
+      {
+        "link": "https://s.shopee.com.br/5q91rpTEf8",
+        "loja": "Shopee",
+        "preco": "R$ 29,76",
+        "conferido": "2026-10-17T23:01:37Z",
+        "manual": "2026-11-07T21:12:34Z",
+        "confirmado": true,
+        "imagem": "https://farejadinhosdayang.com.br/assets/7206dbe5-84b5-4986-86ba-5285f47d455d.jpg"
+      }
+    ]
   },
   {
     "produto": "Necessaire Organizador Cosmético Maquiagem",
