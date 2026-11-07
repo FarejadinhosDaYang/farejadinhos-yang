@@ -55,7 +55,7 @@
         "link": "https://meli.la/2S99bBL",
         "loja": "Mercado Livre",
         "preco": "R$ 57,52",
-        "conferido": "2026-11-07T07:13:50Z",
+        "conferido": "2026-11-07T22:51:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/6e2cf82b-eb7c-47f2-8534-5ce3c40d140f.webp"
@@ -254,7 +254,7 @@
         "link": "https://s.shopee.com.br/70KjEYbSAp",
         "loja": "Shopee",
         "preco": "R$ 26,99",
-        "conferido": "2026-11-07T07:13:50Z",
+        "conferido": "2026-11-07T22:51:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/6888b4fe-7832-4aa0-a5e4-c873cb483976.jpg"
@@ -519,7 +519,7 @@
         "link": "https://s.shopee.com.br/qkLudmGnb",
         "loja": "Shopee",
         "preco": "R$ 16,58",
-        "conferido": "2026-11-07T07:13:50Z",
+        "conferido": "2026-11-07T22:51:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/891a7f11-1226-4ad6-97bb-587e284160ee.jpg"
@@ -578,7 +578,7 @@
   },
   {
     "produto": "Samsung Galaxy S25 5G, 256GB, 12GB, Câmera Tripla",
-    "preco": "R$ 2.998,00",
+    "preco": "R$ 4.652,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -588,11 +588,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/samsung-galaxy-s25-5g-256gb-12gb-camera-tripla/",
     "slug": "samsung-galaxy-s25-5g-256gb-12gb-camera-tripla",
     "data": "2026-10-18T15:10:04Z",
-    "precoAVista": "R$ 2.998,00",
+    "precoAVista": "R$ 4.652,00",
     "precoAPrazo": "4099,00",
     "liberacao": "2026-10-18T15:34:30Z",
     "parcelas": 10,
-    "precoConferido": "2026-11-07T18:52:52Z"
+    "precoConferido": "2026-11-07T22:51:43Z"
   },
   {
     "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
@@ -615,7 +615,7 @@
         "link": "https://link.amazon/B0epLOItP",
         "loja": "Outra loja",
         "preco": "R$ 4.799,00",
-        "conferido": "2026-11-07T07:13:50Z",
+        "conferido": "2026-11-07T22:51:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/be80d970-5211-4ffe-8904-6a755e29303b.jpg",
@@ -807,7 +807,7 @@
         "link": "https://s.shopee.com.br/W7VW1nXUc",
         "loja": "Shopee",
         "preco": "R$ 13,96",
-        "conferido": "2026-11-07T07:13:50Z",
+        "conferido": "2026-11-07T22:51:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/5909e84a-a0aa-4101-86e6-527945314011.jpg"
@@ -926,14 +926,14 @@
         "confirmado": true,
         "variacao": "Grafite",
         "imagem": "https://farejadinhosdayang.com.br/assets/34376bc0-2af2-48f2-94b4-c40bf9456bc6.jpg",
-        "pendente": "R$ 1.531,00",
-        "pendenteEm": "2026-11-07T18:52:53Z"
+        "pendente": "R$ 1.547,00",
+        "pendenteEm": "2026-11-07T22:51:44Z"
       },
       {
         "link": "https://meli.la/1yNAJBz",
         "loja": "Mercado Livre",
         "preco": "R$ 1.599,00",
-        "conferido": "2026-11-07T07:13:50Z",
+        "conferido": "2026-11-07T22:51:44Z",
         "manual": "",
         "confirmado": true,
         "variacao": "Branco",
@@ -943,7 +943,7 @@
         "link": "https://meli.la/17xzqfE",
         "loja": "Mercado Livre",
         "preco": "R$ 1.599,00",
-        "conferido": "2026-11-07T07:13:50Z",
+        "conferido": "2026-11-07T22:51:44Z",
         "manual": "",
         "confirmado": true,
         "variacao": "Lilás",
@@ -1227,12 +1227,10 @@
       {
         "link": "https://meli.la/1NqjND9",
         "loja": "Mercado Livre",
-        "preco": "R$ 529,00",
-        "conferido": "2026-11-07T14:05:58Z",
+        "preco": "R$ 484,90",
+        "conferido": "2026-11-07T22:51:44Z",
         "manual": "",
-        "confirmado": true,
-        "pendente": "R$ 484,90",
-        "pendenteEm": "2026-11-07T18:52:53Z"
+        "confirmado": true
       }
     ],
     "precoConferido": "2026-11-05T10:56:01Z"
@@ -1277,7 +1275,7 @@
         "link": "https://link.amazon/B098ObooL",
         "loja": "Outra loja",
         "preco": "R$ 7.257,27",
-        "conferido": "2026-11-07T07:13:50Z",
+        "conferido": "2026-11-07T22:51:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/8a3e1230-4e3e-4109-877a-8c16b096077d.jpg",
@@ -1310,7 +1308,7 @@
         "link": "https://meli.la/1yVXM5E",
         "loja": "Mercado Livre",
         "preco": "R$ 2.998,00",
-        "conferido": "2026-11-07T07:13:50Z",
+        "conferido": "2026-11-07T22:51:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/72a70978-5436-4a4b-8b8c-b289c054d4bc.jpg",
@@ -1692,7 +1690,7 @@
   },
   {
     "produto": "Tapioqueira Polvilhador Com Peneira Dosador",
-    "preco": "R$ 26,59",
+    "preco": "R$ 27,19",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Utilidades",
@@ -1705,7 +1703,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-29T11:00:00Z",
-    "precoConferido": "2026-11-07T07:13:50Z"
+    "precoConferido": "2026-11-07T22:51:43Z"
   },
   {
     "produto": "Aparador de Pelos Super Groom 10 Mondial",
@@ -1867,7 +1865,7 @@
   },
   {
     "produto": "Torneira De Pia Gourmet Flexível De Parede Jato",
-    "preco": "R$ 25,99",
+    "preco": "R$ 23,91",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -1880,7 +1878,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-30T16:00:38Z",
-    "precoConferido": "2026-11-07T07:13:50Z"
+    "precoConferido": "2026-11-07T22:51:43Z"
   },
   {
     "produto": "Suporte Inox Pendurar Vassoura Pá Rodo Mop",
@@ -2271,7 +2269,7 @@
   },
   {
     "produto": "Jogo Completo de Utensílios de Cozinha de Silicone",
-    "preco": "R$ 28,98",
+    "preco": "R$ 28,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -2284,7 +2282,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-30T21:06:45Z",
-    "precoConferido": "2026-11-07T07:13:50Z"
+    "precoConferido": "2026-11-07T22:51:43Z"
   },
   {
     "produto": "Caneca Térmica Atena Bear Thermal Personalizada",
@@ -2544,7 +2542,7 @@
         "link": "https://s.shopee.com.br/3LRaC63gUN",
         "loja": "Shopee",
         "preco": "R$ 17,49",
-        "conferido": "2026-11-07T07:13:50Z",
+        "conferido": "2026-11-07T22:51:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/a0d88558-821e-4ff2-b6ab-791b37a3f24f.jpg"
@@ -2637,7 +2635,7 @@
         "link": "https://meli.la/2315FMj",
         "loja": "Mercado Livre",
         "preco": "R$ 206,03",
-        "conferido": "2026-11-07T07:13:50Z",
+        "conferido": "2026-11-07T22:51:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/d899a5b2-476c-4d3b-a393-486236660f92.jpg"
@@ -2861,7 +2859,7 @@
   },
   {
     "produto": "Saia para Árvore de Natal Tapete Base Decorativa",
-    "preco": "R$ 23,94",
+    "preco": "R$ 24,94",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -2874,7 +2872,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-03T11:44:12Z",
-    "precoConferido": "2026-11-07T07:13:50Z"
+    "precoConferido": "2026-11-07T22:51:43Z"
   },
   {
     "produto": "Flores De Natal Premium Arvore Artificial",
@@ -3328,7 +3326,7 @@
   },
   {
     "produto": "Árvore de Natal Premium Super Cheia Grande Luxo",
-    "preco": "R$ 179,89",
+    "preco": "R$ 190,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -3340,7 +3338,8 @@
     "data": "2026-11-02T23:41:59Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-05T15:15:00Z"
+    "liberacao": "2026-11-05T15:15:00Z",
+    "precoConferido": "2026-11-07T22:51:43Z"
   },
   {
     "produto": "Pisca Strobo Cordão Enfeites de Natal Decoração",
@@ -3492,7 +3491,7 @@
   },
   {
     "produto": "Papai Noel Decoração de natal Escalando Escada",
-    "preco": "R$ 24,98",
+    "preco": "R$ 24,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -3505,7 +3504,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T20:12:56Z",
-    "precoConferido": "2026-11-07T07:13:50Z"
+    "precoConferido": "2026-11-07T22:51:43Z"
   },
   {
     "produto": "100 Leds Pisca Fio Verde Ou Transparente 110V",
@@ -3525,7 +3524,7 @@
   },
   {
     "produto": "Cascata Led Pisca Cortina Luz RGB Amarela",
-    "preco": "R$ 39,99",
+    "preco": "R$ 33,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -3538,7 +3537,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T20:12:56Z",
-    "precoConferido": "2026-11-07T07:13:50Z"
+    "precoConferido": "2026-11-07T22:51:43Z"
   },
   {
     "produto": "Presépio De natal nascimento de Jesus Manjedoura",
@@ -4116,7 +4115,7 @@
         "link": "https://s.shopee.com.br/9pfQ5tH1tn",
         "loja": "Shopee",
         "preco": "R$ 18,99",
-        "conferido": "2026-11-07T07:13:50Z",
+        "conferido": "2026-11-07T22:51:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/39c601ca-ebcb-443a-9d45-4e3d5138b010.jpg"
@@ -4797,7 +4796,7 @@
         "link": "https://meli.la/2ZjGkU8",
         "loja": "Mercado Livre",
         "preco": "R$ 31,90",
-        "conferido": "2026-11-07T07:13:50Z",
+        "conferido": "2026-11-07T22:51:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/8448dd52-bf9d-4aab-bf4a-1fbd70d899af.webp"
@@ -4823,7 +4822,7 @@
   },
   {
     "produto": "Electrolux Kit 3 Bowls Tigelas de Aço Inox",
-    "preco": "R$ 78,23",
+    "preco": "R$ 110,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -4833,15 +4832,15 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/electrolux-kit-3-bowls-tigelas-de-aco-inox/",
     "slug": "electrolux-kit-3-bowls-tigelas-de-aco-inox",
     "data": "2026-11-03T18:03:28Z",
-    "precoAVista": "R$ 78,23",
+    "precoAVista": "R$ 110,00",
     "precoAPrazo": "93,12",
     "liberacao": "2026-11-05T20:12:56Z",
     "parcelas": 3,
-    "precoConferido": "2026-11-07T18:52:52Z"
+    "precoConferido": "2026-11-07T22:51:43Z"
   },
   {
     "produto": "Air Fryer Elgin Facilita Fry 3,5L 1400W",
-    "preco": "R$ 195,70",
+    "preco": "R$ 190,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -4851,11 +4850,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/air-fryer-elgin-facilita-fry-3-5l-1400w/",
     "slug": "air-fryer-elgin-facilita-fry-3-5l-1400w",
     "data": "2026-11-03T18:03:28Z",
-    "precoAVista": "R$ 195,70",
+    "precoAVista": "R$ 190,00",
     "precoAPrazo": "249,00",
     "liberacao": "2026-11-05T18:47:36Z",
     "parcelas": 6,
-    "precoConferido": "2026-11-07T18:52:52Z"
+    "precoConferido": "2026-11-07T22:51:43Z"
   },
   {
     "produto": "Kit 2 Sacos Para Lavar Tênis E Sapatos Em Máquina",
@@ -5087,7 +5086,7 @@
   },
   {
     "produto": "Filtro Coador De Café Inox 103 Reutilizável",
-    "preco": "R$ 26,80",
+    "preco": "R$ 28,91",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Café",
@@ -5100,7 +5099,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T11:00:00Z",
-    "precoConferido": "2026-11-07T18:52:52Z"
+    "precoConferido": "2026-11-07T22:51:43Z"
   },
   {
     "produto": "Panela De Pressão Elétrica Philco Ppp01p 6L",
@@ -5678,7 +5677,7 @@
         "link": "https://meli.la/1xaZ7ij",
         "loja": "Mercado Livre",
         "preco": "R$ 4.299,00",
-        "conferido": "2026-11-07T07:13:50Z",
+        "conferido": "2026-11-07T22:51:44Z",
         "manual": "2026-10-28T00:16:04Z",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/2dbc057b-3689-4c70-9632-2d40b4221c6c.jpg"
@@ -5720,7 +5719,7 @@
   },
   {
     "produto": "Liquidificador Britânia 2,6L 4 Velocidades",
-    "preco": "R$ 99,90",
+    "preco": "R$ 109,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -5733,7 +5732,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T20:12:56Z",
-    "precoConferido": "2026-11-07T07:13:50Z"
+    "precoConferido": "2026-11-07T22:51:43Z"
   },
   {
     "produto": "Travesseiro Ortopédico Cervical Borboleta Coop",
@@ -5877,7 +5876,7 @@
   },
   {
     "produto": "Amazon Echo Dot 5ª Geração Com Alexa E Som",
-    "preco": "R$ 442,80",
+    "preco": "R$ 445,45",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Automação",
@@ -5928,7 +5927,7 @@
         "cor": "#EDEDED"
       }
     ],
-    "precoConferido": "2026-11-07T18:52:52Z"
+    "precoConferido": "2026-11-07T22:51:43Z"
   },
   {
     "produto": "Echo Show 15 Amazon Smart Display Full Hd 15,6''",
