@@ -50,6 +50,21 @@ jobs:
             if ($LASTEXITCODE -ne 0) { throw "links_para_lote.js falhou" }
           }
 
+      # Lote "mais do mesmo tipo" ({"acao": "mais-do-tipo", "tipos": [...]}):
+      # procura os mais vendidos de cada tipo na Shopee e vira um lote comum.
+      - name: Mais do tipo -> itens do lote
+        shell: pwsh
+        env:
+          ARQUIVO_LOTE: ${{ inputs.arquivoLote }}
+          SHOPEE_APP_ID: ${{ secrets.SHOPEE_APP_ID }}
+          SHOPEE_SECRET: ${{ secrets.SHOPEE_SECRET }}
+        run: |
+          $texto = Get-Content -LiteralPath $env:ARQUIVO_LOTE -Raw -Encoding UTF8
+          if ($texto -match '"acao"\s*:\s*"mais-do-tipo"') {
+            python gerador/mais_do_tipo.py $env:ARQUIVO_LOTE
+            if ($LASTEXITCODE -ne 0) { throw "mais_do_tipo.py falhou" }
+          }
+
       # Processa e salva numa tacada só. Se outro lote salvou no meio do
       # caminho (vários pedidos do painel ao mesmo tempo), descarta, pega a
       # versão mais nova do site e processa de novo — nada se perde.
