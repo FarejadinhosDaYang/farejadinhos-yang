@@ -1,0 +1,23 @@
+[
+ {
+  "acao": "cupons-site",
+  "cupons": [
+   {
+    "codigo": "TODOSITE0711",
+    "loja": "Mercado Livre",
+    "tipo": "",
+    "valor": 0,
+    "minimo": 0,
+    "teto": 0,
+    "titulo": "Cupom do site todo",
+    "obs": "",
+    "link": "",
+    "ate": ""
+   }
+  ],
+  "paginas": {
+   "Shopee": "https://s.shopee.com.br/4VdOXKYQfW",
+   "Mercado Livre": "https://www.mercadolivre.com.br/cupons?source_page=mperfil#nav-header"
+  }
+ }
+]
