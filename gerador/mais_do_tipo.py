@@ -76,7 +76,7 @@ for(const a of ["assets/categorias-config.js","assets/categorias.js","assets/nom
 const w=ctx.window;const nomes=JSON.parse(fs.readFileSync(0,"utf8"));
 process.stdout.write(JSON.stringify(nomes.map(n=>[w.FarejadinhosNomes.encurtar(n),w.FarejadinhosCategorias.sugerir(n)])));
 """
-    r = subprocess.run(["node", "-e", js, SITE], input=json.dumps(nomes), capture_output=True, text=True, check=True)
+    r = subprocess.run(["node", "-e", js, SITE], input=json.dumps(nomes), capture_output=True, text=True, encoding="utf-8", check=True)
     out = json.loads(r.stdout)
     return [(a, categoria_fixa or b) for a, b in out]
 
@@ -132,7 +132,11 @@ def main(arquivo):
     if achados:
         # categoria fixa do pedido vale pra todos daquele pedido
         nomes = node([a[0] for a in achados], "")
+        vistos = set()
         for (nome, item, cat_fixa), (curto, cat) in zip(achados, nomes):
+            if norm(curto) in vistos:  # mesmo produto de outro vendedor: fica o mais vendido
+                continue
+            vistos.add(norm(curto))
             item = {"produto": curto, **item, "categoria": cat_fixa or cat}
             itens.append(item)
             print(f"  ✅ {item['produto']} | {item['preco']} | {item['categoria']}")
