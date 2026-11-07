@@ -586,7 +586,7 @@
   },
   {
     "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-    "preco": "R$ 4.696,54",
+    "preco": "R$ 4.079,05",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -596,7 +596,7 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera/",
     "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "R$ 4.696,54",
+    "precoAVista": "R$ 4.079,05",
     "precoAPrazo": "5066,16",
     "liberacao": "2026-10-19T11:56:00Z",
     "parcelas": 12,
@@ -610,16 +610,18 @@
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/be80d970-5211-4ffe-8904-6a755e29303b.jpg",
         "variacao": "Preto",
-        "cor": "#2B2B2B"
+        "cor": "#2B2B2B",
+        "pendente": "R$ 4.095,64",
+        "pendenteEm": "2026-11-07T01:02:31Z"
       }
     ],
     "variacao": "Violeta",
     "cor": "#8B7BB8",
-    "precoConferido": "2026-11-06T15:07:33Z"
+    "precoConferido": "2026-11-07T01:02:30Z"
   },
   {
     "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
-    "preco": "R$ 3.998,97",
+    "preco": "R$ 3.999,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -629,11 +631,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-fe-128gb-8gb-ram-tela/",
     "slug": "celular-samsung-galaxy-s26-fe-128gb-8gb-ram-tela",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "R$ 3.998,97",
+    "precoAVista": "R$ 3.999,00",
     "precoAPrazo": "3999,00",
     "liberacao": "2026-10-19T19:24:00Z",
     "parcelas": 12,
-    "precoConferido": "2026-11-06T15:07:33Z"
+    "precoConferido": "2026-11-07T01:02:30Z"
   },
   {
     "produto": "iPhone 18 Pro 256GB Preto (somente eSIM)",
@@ -826,7 +828,7 @@
   },
   {
     "produto": "Celular Samsung Galaxy S25 Ultra 5g, 256gb",
-    "preco": "R$ 5.199,00",
+    "preco": "R$ 4.452,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -836,12 +838,12 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s25-ultra-5g-256gb/",
     "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "R$ 5.199,00",
+    "precoAVista": "R$ 4.452,00",
     "precoAPrazo": "6443,00",
     "liberacao": "2026-10-18T20:00:30Z",
     "precoManual": "2026-10-22T20:24:30Z",
     "parcelas": 10,
-    "precoConferido": "2026-11-06T06:45:03Z"
+    "precoConferido": "2026-11-07T01:02:30Z"
   },
   {
     "produto": "Celular Samsung Galaxy S26 5G, 512GB",
@@ -892,7 +894,7 @@
   },
   {
     "produto": "Celular Samsung Galaxy A37 5G 128GB",
-    "preco": "R$ 1.899,00",
+    "preco": "R$ 1.319,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -902,7 +904,7 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-a37-5g-128gb-4/",
     "slug": "celular-samsung-galaxy-a37-5g-128gb-4",
     "data": "2026-10-23T00:12:15Z",
-    "precoAVista": "R$ 1.899,00",
+    "precoAVista": "R$ 1.319,00",
     "precoAPrazo": "1799,00",
     "liberacao": "2026-10-26T20:28:37Z",
     "parcelas": 10,
@@ -915,7 +917,9 @@
         "manual": "",
         "confirmado": true,
         "variacao": "Grafite",
-        "imagem": "https://farejadinhosdayang.com.br/assets/34376bc0-2af2-48f2-94b4-c40bf9456bc6.jpg"
+        "imagem": "https://farejadinhosdayang.com.br/assets/34376bc0-2af2-48f2-94b4-c40bf9456bc6.jpg",
+        "pendente": "R$ 1.720,00",
+        "pendenteEm": "2026-11-07T01:02:31Z"
       },
       {
         "link": "https://meli.la/1yNAJBz",
@@ -939,7 +943,7 @@
       }
     ],
     "variacao": "Azul-marinho",
-    "precoConferido": "2026-11-06T21:00:16Z"
+    "precoConferido": "2026-11-07T01:02:30Z"
   },
   {
     "produto": "Moedor Multifuncional de Café 110V com Design",
@@ -1213,11 +1217,9 @@
         "link": "https://meli.la/1NqjND9",
         "loja": "Mercado Livre",
         "preco": "R$ 484,90",
-        "conferido": "2026-11-06T00:20:31Z",
+        "conferido": "2026-11-07T01:02:31Z",
         "manual": "",
-        "confirmado": true,
-        "pendente": "R$ 529,00",
-        "pendenteEm": "2026-11-06T21:00:16Z"
+        "confirmado": true
       }
     ],
     "precoConferido": "2026-11-05T10:56:01Z"
@@ -1267,7 +1269,9 @@
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/8a3e1230-4e3e-4109-877a-8c16b096077d.jpg",
         "variacao": "Prata",
-        "cor": "#D9DCE1"
+        "cor": "#D9DCE1",
+        "pendente": "R$ 7.499,00",
+        "pendenteEm": "2026-11-07T01:02:31Z"
       }
     ],
     "precoConferido": "2026-11-05T10:56:01Z",
@@ -1300,7 +1304,9 @@
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/72a70978-5436-4a4b-8b8c-b289c054d4bc.jpg",
         "variacao": "Preto",
-        "cor": "#2B2B2B"
+        "cor": "#2B2B2B",
+        "pendente": "R$ 2.699,00",
+        "pendenteEm": "2026-11-07T01:02:31Z"
       }
     ],
     "parcelas": 10,
@@ -1643,7 +1649,7 @@
   },
   {
     "produto": "Aparelho medidor de pressão digital de braço BSP11",
-    "preco": "R$ 104,84",
+    "preco": "R$ 84,98",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Utilidades",
@@ -1656,7 +1662,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-28T23:17:42Z",
-    "precoConferido": "2026-11-05T18:51:00Z"
+    "precoConferido": "2026-11-07T01:02:30Z"
   },
   {
     "produto": "Kit 3 Toalhas De Banho Gigante Luxo Grossa Atacado",
@@ -1677,7 +1683,7 @@
   },
   {
     "produto": "Tapioqueira Polvilhador Com Peneira Dosador",
-    "preco": "R$ 26,59",
+    "preco": "R$ 34,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Utilidades",
@@ -1690,7 +1696,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-29T11:00:00Z",
-    "precoConferido": "2026-11-06T15:07:33Z"
+    "precoConferido": "2026-11-07T01:02:30Z"
   },
   {
     "produto": "Aparador de Pelos Super Groom 10 Mondial",
@@ -1849,7 +1855,7 @@
   },
   {
     "produto": "Torneira De Pia Gourmet Flexível De Parede Jato",
-    "preco": "R$ 25,99",
+    "preco": "R$ 32,97",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -1862,11 +1868,11 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-30T16:00:38Z",
-    "precoConferido": "2026-11-06T15:07:33Z"
+    "precoConferido": "2026-11-07T01:02:30Z"
   },
   {
     "produto": "Suporte Inox Pendurar Vassoura Pá Rodo Mop",
-    "preco": "R$ 24,65",
+    "preco": "R$ 42,41",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Casa",
@@ -1879,7 +1885,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-31T21:30:00Z",
-    "precoConferido": "2026-11-06T00:20:30Z"
+    "precoConferido": "2026-11-07T01:02:30Z"
   },
   {
     "produto": "Mini Mixer Elétrico Recarregável USB 3 Velocidades",
@@ -2249,7 +2255,7 @@
   },
   {
     "produto": "Jogo Completo de Utensílios de Cozinha de Silicone",
-    "preco": "R$ 28,98",
+    "preco": "R$ 28,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -2262,7 +2268,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-30T21:06:45Z",
-    "precoConferido": "2026-11-06T06:45:04Z"
+    "precoConferido": "2026-11-07T01:02:30Z"
   },
   {
     "produto": "Caneca Térmica Atena Bear Thermal Personalizada",
@@ -2619,8 +2625,8 @@
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/d899a5b2-476c-4d3b-a393-486236660f92.jpg",
-        "pendente": "R$ 243,67",
-        "pendenteEm": "2026-11-06T21:00:16Z"
+        "pendente": "R$ 206,03",
+        "pendenteEm": "2026-11-07T01:02:31Z"
       }
     ],
     "precoConferido": "2026-11-06T15:07:33Z"
@@ -2776,7 +2782,7 @@
   },
   {
     "produto": "Árvore De Natal Pinheiro Canadense Luxo Base",
-    "preco": "R$ 349,90",
+    "preco": "R$ 159,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -2789,7 +2795,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-03T00:56:35Z",
-    "precoConferido": "2026-11-06T21:00:16Z"
+    "precoConferido": "2026-11-07T01:02:30Z"
   },
   {
     "produto": "Cordão LED Strobo 10m 100 LEDs",
@@ -3470,7 +3476,7 @@
   },
   {
     "produto": "Papai Noel Decoração de natal Escalando Escada",
-    "preco": "R$ 24,98",
+    "preco": "R$ 24,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -3483,7 +3489,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T20:12:56Z",
-    "precoConferido": "2026-11-05T10:56:01Z"
+    "precoConferido": "2026-11-07T01:02:30Z"
   },
   {
     "produto": "100 Leds Pisca Fio Verde Ou Transparente 110V",
@@ -4521,7 +4527,7 @@
   },
   {
     "produto": "L'Oréal Paris Elseve Óleo Extraordinário 100ml",
-    "preco": "R$ 29,90",
+    "preco": "R$ 26,91",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Utilidades",
@@ -4534,7 +4540,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T15:45:00Z",
-    "precoConferido": "2026-11-06T15:07:34Z"
+    "precoConferido": "2026-11-07T01:02:30Z"
   },
   {
     "produto": "Creatina Monohidratada 500g Pouch",
@@ -4555,7 +4561,7 @@
   },
   {
     "produto": "Fritadeira Elétrica AFON-12L-BG Forno Oven",
-    "preco": "R$ 484,03",
+    "preco": "R$ 442,13",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -4565,7 +4571,7 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/fritadeira-eletrica-afon-12l-bg-forno-oven/",
     "slug": "fritadeira-eletrica-afon-12l-bg-forno-oven",
     "data": "2026-11-03T18:03:25Z",
-    "precoAVista": "R$ 484,03",
+    "precoAVista": "R$ 442,13",
     "precoAPrazo": "522,40",
     "liberacao": "2026-11-05T11:45:00Z",
     "parcelas": 10,
@@ -4580,7 +4586,7 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/8cf5a57f-8ef3-48c4-90a2-a682d0380f3a.jpg"
       }
     ],
-    "precoConferido": "2026-11-05T10:56:01Z"
+    "precoConferido": "2026-11-07T01:02:30Z"
   },
   {
     "produto": "Travesseiro Cervical Abranuv Ergonômico Espuma",
@@ -4800,7 +4806,7 @@
   },
   {
     "produto": "Electrolux Kit 3 Bowls Tigelas de Aço Inox",
-    "preco": "R$ 43,39",
+    "preco": "R$ 105,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -4810,15 +4816,15 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/electrolux-kit-3-bowls-tigelas-de-aco-inox/",
     "slug": "electrolux-kit-3-bowls-tigelas-de-aco-inox",
     "data": "2026-11-03T18:03:28Z",
-    "precoAVista": "R$ 43,39",
+    "precoAVista": "R$ 105,99",
     "precoAPrazo": "93,12",
     "liberacao": "2026-11-05T20:12:56Z",
     "parcelas": 3,
-    "precoConferido": "2026-11-06T21:00:16Z"
+    "precoConferido": "2026-11-07T01:02:30Z"
   },
   {
     "produto": "Air Fryer Elgin Facilita Fry 3,5L 1400W",
-    "preco": "R$ 190,00",
+    "preco": "R$ 188,10",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -4828,11 +4834,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/air-fryer-elgin-facilita-fry-3-5l-1400w/",
     "slug": "air-fryer-elgin-facilita-fry-3-5l-1400w",
     "data": "2026-11-03T18:03:28Z",
-    "precoAVista": "R$ 190,00",
+    "precoAVista": "R$ 188,10",
     "precoAPrazo": "249,00",
     "liberacao": "2026-11-05T18:47:36Z",
     "parcelas": 6,
-    "precoConferido": "2026-11-05T18:51:00Z"
+    "precoConferido": "2026-11-07T01:02:30Z"
   },
   {
     "produto": "Kit 2 Sacos Para Lavar Tênis E Sapatos Em Máquina",
@@ -4853,7 +4859,7 @@
   },
   {
     "produto": "Air Fryer Forno 25L French Door Mondial",
-    "preco": "R$ 975,18",
+    "preco": "R$ 1.009,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -4863,11 +4869,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/air-fryer-forno-25l-french-door-mondial/",
     "slug": "air-fryer-forno-25l-french-door-mondial",
     "data": "2026-11-03T18:03:28Z",
-    "precoAVista": "R$ 975,18",
+    "precoAVista": "R$ 1.009,00",
     "precoAPrazo": "1026,50",
     "liberacao": "2026-11-05T20:12:56Z",
     "parcelas": 10,
-    "precoConferido": "2026-11-06T15:07:34Z"
+    "precoConferido": "2026-11-07T01:02:30Z"
   },
   {
     "produto": "Parafusadeira Furadeira De Impacto The Black Tools",
@@ -4978,7 +4984,7 @@
   },
   {
     "produto": "Air Fryer Oven 12L WAP 10 Funções Pré-Programadas",
-    "preco": "R$ 449,10",
+    "preco": "R$ 499,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -4988,11 +4994,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/air-fryer-oven-12l-wap-10-funcoes-pre-programadas/",
     "slug": "air-fryer-oven-12l-wap-10-funcoes-pre-programadas",
     "data": "2026-11-03T18:03:29Z",
-    "precoAVista": "R$ 449,10",
+    "precoAVista": "R$ 499,00",
     "precoAPrazo": "532,00",
     "liberacao": "2026-11-05T20:12:56Z",
     "parcelas": 10,
-    "precoConferido": "2026-11-06T21:00:16Z"
+    "precoConferido": "2026-11-07T01:02:30Z"
   },
   {
     "produto": "Creatina Monohidratada Pura 300g Suplemento",
@@ -5246,7 +5252,7 @@
   },
   {
     "produto": "Cesto Organizador de Roupa Suja Infantil",
-    "preco": "R$ 24,66",
+    "preco": "R$ 24,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Casa",
@@ -5258,7 +5264,8 @@
     "data": "2026-11-04T02:06:46Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-04T13:03:43Z"
+    "liberacao": "2026-11-04T13:03:43Z",
+    "precoConferido": "2026-11-07T01:02:30Z"
   },
   {
     "produto": "Mini Liquidificador Portátil Shake 6 Laminas",
@@ -5808,7 +5815,7 @@
   },
   {
     "produto": "Interruptor Inteligente WiFi Touch 2 Teclas com Tomada",
-    "preco": "R$ 89,90",
+    "preco": "R$ 100,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Automação",
@@ -5818,10 +5825,10 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/interruptor-inteligente-wifi-touch-2-teclas-com-tomada/",
     "slug": "interruptor-inteligente-wifi-touch-2-teclas-com-tomada",
     "data": "2026-11-05T19:57:15Z",
-    "precoAVista": "R$ 89,90",
+    "precoAVista": "R$ 100,00",
     "precoAPrazo": "89,90",
     "fixo": true,
-    "precoConferido": "2026-11-06T15:07:34Z"
+    "precoConferido": "2026-11-07T01:02:31Z"
   },
   {
     "produto": "Interruptor de Luz Inteligente Tuya Wifi Touch Brasil",
