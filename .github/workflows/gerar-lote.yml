@@ -58,6 +58,7 @@ jobs:
           ARQUIVO_LOTE: ${{ inputs.arquivoLote }}
           SHOPEE_APP_ID: ${{ secrets.SHOPEE_APP_ID }}
           SHOPEE_SECRET: ${{ secrets.SHOPEE_SECRET }}
+          PYTHONIOENCODING: utf-8
         run: |
           $texto = Get-Content -LiteralPath $env:ARQUIVO_LOTE -Raw -Encoding UTF8
           if ($texto -match '"acao"\s*:\s*"mais-do-tipo"') {
