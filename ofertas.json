@@ -321,7 +321,10 @@
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/4491067a-6f2d-4150-9208-17f078f4fde3.jpg"
       }
-    ]
+    ],
+    "ordem": {
+      "Beleza": 1
+    }
   },
   {
     "produto": "￼Sapateira Multiuso Para Calçados 9-3 Andares",
@@ -371,7 +374,10 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-20T13:48:00Z",
-    "precoConferido": "2026-10-22T20:06:47Z"
+    "precoConferido": "2026-10-22T20:06:47Z",
+    "ordem": {
+      "Beleza": 5
+    }
   },
   {
     "produto": "Necessaire organizadora bolsa portatil celular",
@@ -431,7 +437,10 @@
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/7206dbe5-84b5-4986-86ba-5285f47d455d.jpg"
       }
-    ]
+    ],
+    "ordem": {
+      "Beleza": 2
+    }
   },
   {
     "produto": "Necessaire Organizador Cosmético Maquiagem",
@@ -448,7 +457,10 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-21T12:52:00Z",
-    "precoConferido": "2026-10-26T12:58:35Z"
+    "precoConferido": "2026-10-26T12:58:35Z",
+    "ordem": {
+      "Beleza": 0
+    }
   },
   {
     "produto": "Rotação Organizador Portátil 360º De Mesa",
@@ -464,7 +476,10 @@
     "data": "2026-10-17T23:01:43Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-21T17:46:04Z"
+    "liberacao": "2026-10-21T17:46:04Z",
+    "ordem": {
+      "Beleza": 4
+    }
   },
   {
     "produto": "Escorredor de Louças Rack Aço Carbono Organizador",
@@ -1025,7 +1040,10 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-26T14:35:50Z",
-    "precoConferido": "2026-11-07T07:13:50Z"
+    "precoConferido": "2026-11-07T07:13:50Z",
+    "ordem": {
+      "Beleza": 6
+    }
   },
   {
     "produto": "STARTOOLS Chaleira Jarra Elétrica 110V ou 220V 1.8",
@@ -1705,7 +1723,10 @@
     "precoAPrazo": "127,04",
     "liberacao": "2026-10-28T00:42:19Z",
     "parcelas": 4,
-    "precoConferido": "2026-11-06T00:20:30Z"
+    "precoConferido": "2026-11-06T00:20:30Z",
+    "ordem": {
+      "Beleza": 11
+    }
   },
   {
     "produto": "Mop Giratório 8l Rodinhas Esfregão Cesto Inox",
@@ -2029,7 +2050,10 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-28T14:16:58Z",
-    "precoConferido": "2026-11-01T09:15:37Z"
+    "precoConferido": "2026-11-01T09:15:37Z",
+    "ordem": {
+      "Beleza": 10
+    }
   },
   {
     "produto": "Carregador Portátil 12000mAh LED com Cabos",
@@ -5191,7 +5215,10 @@
       }
     ],
     "video": "videos/caneta-de-oleo-de-cuticula-3-em-1-para-cuidados.mp4",
-    "videoCapa": "videos/caneta-de-oleo-de-cuticula-3-em-1-para-cuidados.jpg"
+    "videoCapa": "videos/caneta-de-oleo-de-cuticula-3-em-1-para-cuidados.jpg",
+    "ordem": {
+      "Beleza": 9
+    }
   },
   {
     "produto": "Caneta De Óleo De Cutícula 3 Em 1 Para Cuidados",
@@ -5207,7 +5234,10 @@
     "data": "2026-11-04T02:06:46Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-04T11:50:37Z"
+    "liberacao": "2026-11-04T11:50:37Z",
+    "ordem": {
+      "Beleza": 8
+    }
   },
   {
     "produto": "Cortina de LED 3M 300 Luz 8 Modos De Iluminação",
@@ -5622,7 +5652,10 @@
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/465d0a0f-d9b5-4628-84da-ccdc820276dc.jpg"
       }
-    ]
+    ],
+    "ordem": {
+      "Beleza": 7
+    }
   },
   {
     "produto": "Celular Samsung Galaxy S25+; 5g, 512gb",
