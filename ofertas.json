@@ -99,7 +99,7 @@
   },
   {
     "produto": "Super Clarificante para Piscina Power Gel",
-    "preco": "R$ 37,42",
+    "preco": "R$ 44,91",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Piscina",
@@ -112,7 +112,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-17T15:40:00Z",
-    "precoConferido": "2026-11-03T22:50:20Z"
+    "precoConferido": "2026-11-07T18:52:52Z"
   },
   {
     "produto": "Peneira Metálica com Engate Rápido Limpeza",
@@ -568,7 +568,7 @@
   },
   {
     "produto": "Samsung Galaxy S25 5G, 256GB, 12GB, Câmera Tripla",
-    "preco": "R$ 3.332,00",
+    "preco": "R$ 2.998,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -578,11 +578,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/samsung-galaxy-s25-5g-256gb-12gb-camera-tripla/",
     "slug": "samsung-galaxy-s25-5g-256gb-12gb-camera-tripla",
     "data": "2026-10-18T15:10:04Z",
-    "precoAVista": "R$ 3.332,00",
+    "precoAVista": "R$ 2.998,00",
     "precoAPrazo": "4099,00",
     "liberacao": "2026-10-18T15:34:30Z",
     "parcelas": 10,
-    "precoConferido": "2026-11-07T14:05:57Z"
+    "precoConferido": "2026-11-07T18:52:52Z"
   },
   {
     "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
@@ -675,7 +675,7 @@
   },
   {
     "produto": "iPhone 17 Pro Max 256GB - Laranja-cósmico",
-    "preco": "R$ 7.949,00",
+    "preco": "R$ 9.719,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -685,12 +685,12 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/iphone-17-pro-max-256gb-laranja-cosmico/",
     "slug": "iphone-17-pro-max-256gb-laranja-cosmico",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "R$ 7.949,00",
+    "precoAVista": "R$ 9.719,00",
     "precoAPrazo": "10790,00",
     "liberacao": "2026-10-21T20:42:04Z",
     "precoManual": "2026-10-19T11:22:11Z",
     "parcelas": 10,
-    "precoConferido": "2026-11-06T15:07:33Z"
+    "precoConferido": "2026-11-07T18:52:52Z"
   },
   {
     "produto": "iPhone 17 Pro 256GB - Laranja-cósmico",
@@ -863,7 +863,7 @@
   },
   {
     "produto": "Celular Samsung Galaxy A57 256gb cinza",
-    "preco": "R$ 2.262,00",
+    "preco": "R$ 2.399,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -873,7 +873,7 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-a57-256gb-cinza-2/",
     "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
     "data": "2026-10-23T00:12:14Z",
-    "precoAVista": "R$ 2.262,00",
+    "precoAVista": "R$ 2.399,00",
     "precoAPrazo": "2399,00",
     "liberacao": "2026-10-24T13:48:00Z",
     "parcelas": 10,
@@ -888,7 +888,7 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/37791102-86e6-4363-a830-8bbde0a508e9.jpg"
       }
     ],
-    "precoConferido": "2026-11-06T21:00:16Z"
+    "precoConferido": "2026-11-07T18:52:52Z"
   },
   {
     "produto": "Celular Samsung Galaxy A37 5G 128GB",
@@ -916,8 +916,8 @@
         "confirmado": true,
         "variacao": "Grafite",
         "imagem": "https://farejadinhosdayang.com.br/assets/34376bc0-2af2-48f2-94b4-c40bf9456bc6.jpg",
-        "pendente": "R$ 1.542,00",
-        "pendenteEm": "2026-11-07T14:05:58Z"
+        "pendente": "R$ 1.531,00",
+        "pendenteEm": "2026-11-07T18:52:53Z"
       },
       {
         "link": "https://meli.la/1yNAJBz",
@@ -1217,7 +1217,9 @@
         "preco": "R$ 529,00",
         "conferido": "2026-11-07T14:05:58Z",
         "manual": "",
-        "confirmado": true
+        "confirmado": true,
+        "pendente": "R$ 484,90",
+        "pendenteEm": "2026-11-07T18:52:53Z"
       }
     ],
     "precoConferido": "2026-11-05T10:56:01Z"
@@ -1643,7 +1645,7 @@
   },
   {
     "produto": "Aparelho medidor de pressão digital de braço BSP11",
-    "preco": "R$ 114,43",
+    "preco": "R$ 104,84",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Utilidades",
@@ -1656,7 +1658,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-28T23:17:42Z",
-    "precoConferido": "2026-11-07T14:05:57Z"
+    "precoConferido": "2026-11-07T18:52:52Z"
   },
   {
     "produto": "Kit 3 Toalhas De Banho Gigante Luxo Grossa Atacado",
@@ -2069,7 +2071,7 @@
   },
   {
     "produto": "Suporte Magnético Forte Para Telefone Carro 360 °",
-    "preco": "R$ 13,99",
+    "preco": "R$ 15,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Acessórios de Celular",
@@ -2082,7 +2084,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-28T13:42:06Z",
-    "precoConferido": "2026-11-07T07:13:50Z"
+    "precoConferido": "2026-11-07T18:52:52Z"
   },
   {
     "produto": "Mini Mixer Portátil Misturador de Bebidas Batedor",
@@ -2626,7 +2628,7 @@
   },
   {
     "produto": "Panela De Arroz Bianca Rice 5 Mondial 400W NPE-05-5X -",
-    "preco": "R$ 160,00",
+    "preco": "R$ 147,20",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -2636,9 +2638,9 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/panela-de-arroz-bianca-rice-5-mondial-400w-npe-05-5x/",
     "slug": "panela-de-arroz-bianca-rice-5-mondial-400w-npe-05-5x",
     "data": "2026-11-01T13:02:51Z",
-    "precoAVista": "R$ 160,00",
+    "precoAVista": "R$ 147,20",
     "precoAPrazo": "160,00",
-    "precoConferido": "2026-11-07T14:05:57Z"
+    "precoConferido": "2026-11-07T18:52:52Z"
   },
   {
     "produto": "Panela Elétrica de Arroz, Mondial, 700W - PE-42-10X -",
@@ -2857,7 +2859,7 @@
   },
   {
     "produto": "Flores De Natal Premium Arvore Artificial",
-    "preco": "R$ 24,73",
+    "preco": "R$ 25,73",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -2870,7 +2872,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-03T11:58:56Z",
-    "precoConferido": "2026-11-03T17:55:49Z"
+    "precoConferido": "2026-11-07T18:52:52Z"
   },
   {
     "produto": "Flores de Natal Artificiais Glitter Peças",
@@ -3144,7 +3146,7 @@
   },
   {
     "produto": "Enfeites De Natal Buque Galhos Bolha De Barba",
-    "preco": "R$ 15,99",
+    "preco": "R$ 16,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -3156,7 +3158,8 @@
     "data": "2026-11-02T23:41:52Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-04T18:42:53Z"
+    "liberacao": "2026-11-04T18:42:53Z",
+    "precoConferido": "2026-11-07T18:52:52Z"
   },
   {
     "produto": "Kit Enfeites Decoração Para Arvore De Natal",
@@ -4556,7 +4559,7 @@
   },
   {
     "produto": "Fritadeira Elétrica AFON-12L-BG Forno Oven",
-    "preco": "R$ 442,13",
+    "preco": "R$ 487,05",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -4566,7 +4569,7 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/fritadeira-eletrica-afon-12l-bg-forno-oven/",
     "slug": "fritadeira-eletrica-afon-12l-bg-forno-oven",
     "data": "2026-11-03T18:03:25Z",
-    "precoAVista": "R$ 442,13",
+    "precoAVista": "R$ 487,05",
     "precoAPrazo": "522,40",
     "liberacao": "2026-11-05T11:45:00Z",
     "parcelas": 10,
@@ -4581,7 +4584,7 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/8cf5a57f-8ef3-48c4-90a2-a682d0380f3a.jpg"
       }
     ],
-    "precoConferido": "2026-11-07T01:02:30Z"
+    "precoConferido": "2026-11-07T18:52:52Z"
   },
   {
     "produto": "Travesseiro Cervical Abranuv Ergonômico Espuma",
@@ -4801,7 +4804,7 @@
   },
   {
     "produto": "Electrolux Kit 3 Bowls Tigelas de Aço Inox",
-    "preco": "R$ 110,00",
+    "preco": "R$ 78,23",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -4811,15 +4814,15 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/electrolux-kit-3-bowls-tigelas-de-aco-inox/",
     "slug": "electrolux-kit-3-bowls-tigelas-de-aco-inox",
     "data": "2026-11-03T18:03:28Z",
-    "precoAVista": "R$ 110,00",
+    "precoAVista": "R$ 78,23",
     "precoAPrazo": "93,12",
     "liberacao": "2026-11-05T20:12:56Z",
     "parcelas": 3,
-    "precoConferido": "2026-11-07T14:05:57Z"
+    "precoConferido": "2026-11-07T18:52:52Z"
   },
   {
     "produto": "Air Fryer Elgin Facilita Fry 3,5L 1400W",
-    "preco": "R$ 197,60",
+    "preco": "R$ 195,70",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -4829,15 +4832,15 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/air-fryer-elgin-facilita-fry-3-5l-1400w/",
     "slug": "air-fryer-elgin-facilita-fry-3-5l-1400w",
     "data": "2026-11-03T18:03:28Z",
-    "precoAVista": "R$ 197,60",
+    "precoAVista": "R$ 195,70",
     "precoAPrazo": "249,00",
     "liberacao": "2026-11-05T18:47:36Z",
     "parcelas": 6,
-    "precoConferido": "2026-11-07T07:13:50Z"
+    "precoConferido": "2026-11-07T18:52:52Z"
   },
   {
     "produto": "Kit 2 Sacos Para Lavar Tênis E Sapatos Em Máquina",
-    "preco": "R$ 28,40",
+    "preco": "R$ 33,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -4850,7 +4853,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T20:12:56Z",
-    "precoConferido": "2026-11-06T15:07:34Z"
+    "precoConferido": "2026-11-07T18:52:52Z"
   },
   {
     "produto": "Air Fryer Forno 25L French Door Mondial",
@@ -4943,7 +4946,7 @@
   },
   {
     "produto": "Mixer Power Inox 3 Em 1 600w Elgin Lunar -",
-    "preco": "R$ 114,00",
+    "preco": "R$ 113,10",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -4956,7 +4959,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T20:12:56Z",
-    "precoConferido": "2026-11-05T18:51:00Z"
+    "precoConferido": "2026-11-07T18:52:52Z"
   },
   {
     "produto": "Panificadora 19 Programas Gallant 600w Preta",
@@ -5065,7 +5068,7 @@
   },
   {
     "produto": "Filtro Coador De Café Inox 103 Reutilizável",
-    "preco": "R$ 28,91",
+    "preco": "R$ 26,80",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Café",
@@ -5078,7 +5081,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T11:00:00Z",
-    "precoConferido": "2026-11-07T14:05:57Z"
+    "precoConferido": "2026-11-07T18:52:52Z"
   },
   {
     "produto": "Panela De Pressão Elétrica Philco Ppp01p 6L",
@@ -5344,7 +5347,7 @@
   },
   {
     "produto": "Caneca Copo De Café Coffee Com Termômetro DIGITAL",
-    "preco": "R$ 23,99",
+    "preco": "R$ 28,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Café",
@@ -5356,7 +5359,8 @@
     "data": "2026-11-04T02:06:49Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-05T12:45:00Z"
+    "liberacao": "2026-11-05T12:45:00Z",
+    "precoConferido": "2026-11-07T18:52:52Z"
   },
   {
     "produto": "Mini Aspirador De Pó 3 em 1 a Vacuo Usb Portátil",
@@ -5492,7 +5496,7 @@
   },
   {
     "produto": "Pipoqueira Elétrica Sem Óleo Philco Preta 1200W",
-    "preco": "R$ 108,90",
+    "preco": "R$ 119,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -5505,7 +5509,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T20:12:56Z",
-    "precoConferido": "2026-11-07T07:13:50Z"
+    "precoConferido": "2026-11-07T18:52:52Z"
   },
   {
     "produto": "Fritadeira Air Fryer Itatiaia 3,5 Litros 127V",
@@ -5790,7 +5794,8 @@
     "data": "2026-11-05T19:09:07Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "fixo": true
+    "fixo": true,
+    "semPrecoDesde": "2026-11-07T18:53:06Z"
   },
   {
     "produto": "Interruptor Inteligente Touch WI-FI 6 Teclas Eiw 1006",
@@ -5844,7 +5849,7 @@
   },
   {
     "produto": "Amazon Echo Dot 5ª Geração Com Alexa E Som",
-    "preco": "R$ 495,57",
+    "preco": "R$ 442,80",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Automação",
@@ -5895,7 +5900,7 @@
         "cor": "#EDEDED"
       }
     ],
-    "precoConferido": "2026-11-06T06:45:04Z"
+    "precoConferido": "2026-11-07T18:52:52Z"
   },
   {
     "produto": "Echo Show 15 Amazon Smart Display Full Hd 15,6''",
@@ -5917,7 +5922,7 @@
   },
   {
     "produto": "Amazon Alexa Show 5 3a Geração Cor Preto",
-    "preco": "R$ 719,20",
+    "preco": "R$ 683,24",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Automação",
@@ -5942,7 +5947,7 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/87ae73c7-5aae-4fed-a01f-85877f77aaa5.jpg"
       }
     ],
-    "precoConferido": "2026-11-06T21:00:16Z"
+    "precoConferido": "2026-11-07T18:52:52Z"
   },
   {
     "produto": "Echo Spot Com Alexa: Despertador Inteligente Preto",
