@@ -1608,7 +1608,18 @@
     "data": "2026-10-28T00:44:09Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-28T17:26:57Z"
+    "liberacao": "2026-10-28T17:26:57Z",
+    "anuncios": [
+      {
+        "link": "https://s.shopee.com.br/qkY4sfvOs",
+        "loja": "Shopee",
+        "preco": "R$ 37,99",
+        "conferido": "",
+        "manual": "",
+        "confirmado": false,
+        "imagem": "https://farejadinhosdayang.com.br/assets/c34da242-9216-44f6-aa7e-c4a38ab49d19.jpg"
+      }
+    ]
   },
   {
     "produto": "Organizador de Fios e Cabos",
