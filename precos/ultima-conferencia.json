@@ -1,152 +1,104 @@
 {
-  "quando": "2026-11-08T16:40:57Z",
+  "quando": "2026-11-08T21:07:54Z",
   "origem": "schedule",
-  "total": 351,
-  "iguais": 307,
+  "total": 348,
+  "iguais": 311,
   "mudaram": [
+    {
+      "slug": "kit-chave-catraca-soquete-46-pecas-indufer",
+      "produto": "Kit Chave Catraca Soquete 46 Peças Indufer",
+      "de": "R$ 28,70",
+      "para": "22,96"
+    },
     {
       "slug": "samsung-galaxy-s25-5g-256gb-12gb-camera-tripla",
       "produto": "Samsung Galaxy S25 5G, 256GB, 12GB, Câmera Tripla",
-      "de": "R$ 4.199,00",
-      "para": "3949,00"
-    },
-    {
-      "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
-      "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-      "de": "R$ 4.079,05",
-      "para": "4696,54"
-    },
-    {
-      "slug": "celular-samsung-galaxy-s26-fe-128gb-8gb-ram-tela",
-      "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
-      "de": "R$ 3.999,00",
-      "para": "3998,97"
-    },
-    {
-      "slug": "iphone-17-pro-256gb-laranja-cosmico",
-      "produto": "iPhone 17 Pro 256GB - Laranja-cósmico",
-      "de": "R$ 9.599,00",
-      "para": "8909,00"
+      "de": "R$ 3.949,00",
+      "para": "4199,00"
     },
     {
       "slug": "celular-samsung-galaxy-s26-5g-512gb",
       "produto": "Celular Samsung Galaxy S26 5G, 512GB",
-      "de": "R$ 3.599,00",
-      "para": "4499,00"
+      "de": "R$ 4.499,00",
+      "para": "5617,00"
     },
     {
-      "slug": "protetor-solar-bastao-sallve-antimanchas-com-cor",
-      "produto": "Protetor Solar Bastão Sallve Antimanchas com Cor",
-      "de": "R$ 78,99",
-      "para": "R$ 76,99"
+      "slug": "parafusadeira-furadeira-48v-profissional",
+      "produto": "Parafusadeira Furadeira 48v Profissional",
+      "de": "R$ 123,28",
+      "para": "92,65"
+    },
+    {
+      "slug": "aparelho-medidor-de-pressao-digital-de-braco-bsp11",
+      "produto": "Aparelho medidor de pressão digital de braço BSP11",
+      "de": "R$ 104,84",
+      "para": "98,19"
     },
     {
       "slug": "kit-3-toalhas-de-banho-gigante-luxo-grossa-atacado",
       "produto": "Kit 3 Toalhas De Banho Gigante Luxo Grossa Atacado",
-      "de": "R$ 59,91",
-      "para": "58,00"
+      "de": "R$ 58,00",
+      "para": "59,91"
     },
     {
-      "slug": "mini-mixer-eletrico-recarregavel-usb-3-velocidades",
-      "produto": "Mini Mixer Elétrico Recarregável USB 3 Velocidades",
-      "de": "R$ 19,00",
-      "para": "19,99"
-    },
-    {
-      "slug": "marmita-eletrica-preta-bivolt-portatil-domestica",
-      "produto": "Marmita Elétrica Preta Bivolt Portátil Doméstica",
-      "de": "R$ 46,99",
-      "para": "51,99"
-    },
-    {
-      "slug": "suporte-magnetico-forte-para-telefone-carro-360",
-      "produto": "Suporte Magnético Forte Para Telefone Carro 360 °",
-      "de": "R$ 13,99",
-      "para": "R$ 15,99"
+      "slug": "jogo-completo-de-utensilios-de-cozinha-de-silicone",
+      "produto": "Jogo Completo de Utensílios de Cozinha de Silicone",
+      "de": "R$ 28,98",
+      "para": "R$ 28,99"
     },
     {
       "slug": "potes-hermeticos-electrolux-de-plastico-cinza",
       "produto": "Potes Herméticos Electrolux de Plástico Cinza",
-      "de": "R$ 74,90",
-      "para": "R$ 79,90"
+      "de": "R$ 79,90",
+      "para": "R$ 74,90"
     },
     {
-      "slug": "panela-eletrica-de-arroz-pratic-rice-pe-43-6x-inox",
-      "produto": "Panela Elétrica De Arroz Pratic Rice Pe-43-6X Inox",
-      "de": "R$ 183,91",
-      "para": "197,68"
+      "slug": "panela-de-arroz-fast-rice-5-mondial-400w-npe-08-5x",
+      "produto": "Panela De Arroz Fast Rice 5 Mondial 400W - NPE-08-5X -",
+      "de": "R$ 131,76",
+      "para": "128,15"
     },
     {
-      "slug": "panela-de-arroz-bianca-rice-5-mondial-400w-npe-05-5x",
-      "produto": "Panela De Arroz Bianca Rice 5 Mondial 400W NPE-05-5X -",
-      "de": "R$ 147,20",
-      "para": "139,20"
+      "slug": "arvore-de-natal-pinheiro-1-5m-1-8m-2-1m-2-4m",
+      "produto": "Arvore De Natal Pinheiro 1,5m 1,8m 2,1m 2,4m",
+      "de": "R$ 127,39",
+      "para": "R$ 139,99"
     },
     {
-      "slug": "carregador-iphone-turbo-tipo-c-20w-cabo",
-      "produto": "Carregador iPhone Turbo Tipo-C 20W + Cabo",
-      "de": "R$ 14,98",
-      "para": "R$ 14,99"
+      "slug": "papai-noel-decoracao-de-natal-escalando-escada",
+      "produto": "Papai Noel Decoração de natal Escalando Escada",
+      "de": "R$ 24,98",
+      "para": "R$ 24,99"
     },
     {
-      "slug": "carregador-power-bank-20000mah-portatil-de-celular",
-      "produto": "Carregador Power Bank 20000mah Portátil de celular",
-      "de": "R$ 55,98",
-      "para": "R$ 65,99"
+      "slug": "kit-jogo-de-ferramentas-aco-carbono-titanium",
+      "produto": "Kit Jogo De Ferramentas Aço Carbono Titanium",
+      "de": "R$ 19,99",
+      "para": "23,68"
     },
     {
-      "slug": "fritadeira-eletrica-afon-12l-bg-forno-oven",
-      "produto": "Fritadeira Elétrica AFON-12L-BG Forno Oven",
-      "de": "R$ 485,56",
-      "para": "506,45"
+      "slug": "fritadeira-eletrica-philips-walita-sem-oleo-220v",
+      "produto": "Fritadeira Elétrica Philips Walita sem Óleo 220V",
+      "de": "R$ 331,55",
+      "para": "269,85"
     },
     {
-      "slug": "air-fryer-elgin-facilita-fry-3-5l-1400w",
-      "produto": "Air Fryer Elgin Facilita Fry 3,5L 1400W",
-      "de": "R$ 190,00",
-      "para": "180,00"
-    },
-    {
-      "slug": "pipoqueira-eletrica-sem-oleo-philco-preta-1200w",
-      "produto": "Pipoqueira Elétrica Sem Óleo Philco Preta 1200W",
-      "de": "R$ 108,90",
-      "para": "R$ 119,90"
-    },
-    {
-      "slug": "interruptor-inteligente-wifi-touch-2-teclas-com-tomada",
-      "produto": "Interruptor Inteligente WiFi Touch 2 Teclas com Tomada",
-      "de": "R$ 100,00",
-      "para": "89,90"
+      "slug": "liquidificador-britania-2-6l-4-velocidades",
+      "produto": "Liquidificador Britânia 2,6L 4 Velocidades",
+      "de": "R$ 99,90",
+      "para": "R$ 109,90"
     },
     {
       "slug": "amazon-echo-dot-5-geracao-com-alexa-e-som",
       "produto": "Amazon Echo Dot 5ª Geração Com Alexa E Som",
-      "de": "R$ 442,80",
-      "para": "495,57"
+      "de": "R$ 495,57",
+      "para": "432,40"
     },
     {
-      "slug": "amazon-alexa-show-5-3a-geracao-cor-preto",
-      "produto": "Amazon Alexa Show 5 3a Geração Cor Preto",
-      "de": "R$ 500,25",
-      "para": "683,24"
-    },
-    {
-      "slug": "amazon-echo-dot-max-geracao-mais-recente",
-      "produto": "Amazon Echo Dot Max (Geração mais recente)",
-      "de": "R$ 759,01",
-      "para": "759,00"
-    },
-    {
-      "slug": "kit-renovadores-gota-de-colageno-e-rosa-mosqueta",
-      "produto": "Kit Renovadores Gota de Colágeno e Rosa Mosqueta",
-      "de": "R$ 66,41",
-      "para": "R$ 69,90"
-    },
-    {
-      "slug": "medicube-zero-pore-pads-2-0",
-      "produto": "Medicube Zero Pore Pads 2.0",
-      "de": "R$ 123,00",
-      "para": "116,85"
+      "slug": "liquidificador-britania-1200w-3l-12-velocidades",
+      "produto": "Liquidificador Britânia 1200W 3L 12 Velocidades",
+      "de": "R$ 126,00",
+      "para": "R$ 139,00"
     }
   ],
   "semPreco": [
@@ -184,22 +136,16 @@
       "slug": "interruptor-inteligente-tuya-wifi-touch-brasil-6-botoes",
       "produto": "Interruptor Inteligente Tuya Wifi Touch Brasil (6 botões)",
       "link": "https://s.click.aliexpress.com/e/_c3avZPJd",
-      "motivo": "pagina (facebookexternalhit): status 429 | pagina (farejadinhos): Too many redirects.https://s.click.aliexpress.com/e/_c3avZPJd, https://www.aliexpress.com/item/1005005278664613.html?aff_fcid=6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd&terminal_id=b9136681e34946719da77cabf70dc7bc&afSmartRedirect=y, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd&terminal_id=b9136681e34946719da77cabf70dc7bc&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd%26terminal_id%3Db9136681e34946719da77cabf70dc7bc%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=543957cc2878482b92434e8e0c7d4db6&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd%26terminal_id%3Db9136681e34946719da77cabf70dc7bc%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.1556376629106111.1794156541400, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd&terminal_id=b9136681e34946719da77cabf70dc7bc&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd%26terminal_id%3Db9136681e34946719da77cabf70dc7bc%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=5d8eec58fc8340089ed21705f8ebb187&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd%26terminal_id%3Db9136681e34946719da77cabf70dc7bc%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.1439672248106111.1794156541932, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd&terminal_id=b9136681e34946719da77cabf70dc7bc&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd%26terminal_id%3Db9136681e34946719da77cabf70dc7bc%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=17c8c50abdf84770b5fb797845997ba0&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd%26terminal_id%3Db9136681e34946719da77cabf70dc7bc%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.1507459695106110.1794156542157, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd&terminal_id=b9136681e34946719da77cabf70dc7bc&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd%26terminal_id%3Db9136681e34946719da77cabf70dc7bc%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=a6430ba45e0c4812ace4c6291f67cf6d&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd%26terminal_id%3Db9136681e34946719da77cabf70dc7bc%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.1979476233106111.1794156542451, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd&terminal_id=b9136681e34946719da77cabf70dc7bc&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd%26terminal_id%3Db9136681e34946719da77cabf70dc7bc%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=2ecd13a02fed4089a3424fd131129216&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd%26terminal_id%3Db9136681e34946719da77cabf70dc7bc%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.2139693878106111.1794156542702, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd&terminal_id=b9136681e34946719da77cabf70dc7bc&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd%26terminal_id%3Db9136681e34946719da77cabf70dc7bc%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=4246d8ba250846a491715019939b3d40&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd%26terminal_id%3Db9136681e34946719da77cabf70dc7bc%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.1234801633106111.1794156542917, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=6ef3c0861a7b40cba4b2cd5d2d39d6ef-1794156540289-02409-_c3avZPJd&terminal_id=b9136681e34946719da77cabf70dc7bc&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US | pagina (navegador): Too many redirects.https://s.click.aliexpress.com/e/_c3avZPJd, https://www.aliexpress.com/item/1005005278664613.html?aff_fcid=8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd&terminal_id=c7ecf49f072846598eb0f1f6c8f5c576&afSmartRedirect=y, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd&terminal_id=c7ecf49f072846598eb0f1f6c8f5c576&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd%26terminal_id%3Dc7ecf49f072846598eb0f1f6c8f5c576%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=0bdb8d8b01ff4c14962df0831ffb13fb&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd%26terminal_id%3Dc7ecf49f072846598eb0f1f6c8f5c576%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.350402271106111.1794156543428, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd&terminal_id=c7ecf49f072846598eb0f1f6c8f5c576&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd%26terminal_id%3Dc7ecf49f072846598eb0f1f6c8f5c576%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=8ee488816b01492388f19662b5554554&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd%26terminal_id%3Dc7ecf49f072846598eb0f1f6c8f5c576%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.1074296520106110.1794156543613, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd&terminal_id=c7ecf49f072846598eb0f1f6c8f5c576&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd%26terminal_id%3Dc7ecf49f072846598eb0f1f6c8f5c576%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=724ef5fd27a542779f57e9d1f631d60d&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd%26terminal_id%3Dc7ecf49f072846598eb0f1f6c8f5c576%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.1103517747106111.1794156544021, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd&terminal_id=c7ecf49f072846598eb0f1f6c8f5c576&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd%26terminal_id%3Dc7ecf49f072846598eb0f1f6c8f5c576%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=99c3431343254647a3d5f278b4e4b6e9&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd%26terminal_id%3Dc7ecf49f072846598eb0f1f6c8f5c576%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.1935998078106111.1794156544406, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd&terminal_id=c7ecf49f072846598eb0f1f6c8f5c576&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd%26terminal_id%3Dc7ecf49f072846598eb0f1f6c8f5c576%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=8e4a8a99a6724e279b35b44e2d64ec97&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd%26terminal_id%3Dc7ecf49f072846598eb0f1f6c8f5c576%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.1426221699106110.1794156544635, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd&terminal_id=c7ecf49f072846598eb0f1f6c8f5c576&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd%26terminal_id%3Dc7ecf49f072846598eb0f1f6c8f5c576%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=da5f18af9cee4f21b3c27aa12cfb6b9d&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd%26terminal_id%3Dc7ecf49f072846598eb0f1f6c8f5c576%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.140720462106111.1794156544845, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=8313bcd5f71e4b68a2a7e5b04776f343-1794156543154-02323-_c3avZPJd&terminal_id=c7ecf49f072846598eb0f1f6c8f5c576&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US | pagina (WhatsApp): nome, foto | destino: https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=3444c09504784e4dab5f1acae9a798a1-1794156545206-02514-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff"
+      "motivo": "pagina (facebookexternalhit): nome, foto | pagina (farejadinhos): Too many redirects.https://s.click.aliexpress.com/e/_c3avZPJd, https://www.aliexpress.com/item/1005005278664613.html?aff_fcid=0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd&terminal_id=2ebb5d8ec7ee4d3d9fb178a55185cfd6&afSmartRedirect=y, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd&terminal_id=2ebb5d8ec7ee4d3d9fb178a55185cfd6&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd%26terminal_id%3D2ebb5d8ec7ee4d3d9fb178a55185cfd6%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=8594a0b3990a467db6d1e77d08744de4&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd%26terminal_id%3D2ebb5d8ec7ee4d3d9fb178a55185cfd6%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.985431986024176.1794172541774, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd&terminal_id=2ebb5d8ec7ee4d3d9fb178a55185cfd6&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd%26terminal_id%3D2ebb5d8ec7ee4d3d9fb178a55185cfd6%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=0002b3c27c304b539e7eee581aba29eb&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd%26terminal_id%3D2ebb5d8ec7ee4d3d9fb178a55185cfd6%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.1080228601024177.1794172542412, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd&terminal_id=2ebb5d8ec7ee4d3d9fb178a55185cfd6&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd%26terminal_id%3D2ebb5d8ec7ee4d3d9fb178a55185cfd6%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=1c741c51dd574410a44448b9655b94c5&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd%26terminal_id%3D2ebb5d8ec7ee4d3d9fb178a55185cfd6%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.32671287024176.1794172542667, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd&terminal_id=2ebb5d8ec7ee4d3d9fb178a55185cfd6&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd%26terminal_id%3D2ebb5d8ec7ee4d3d9fb178a55185cfd6%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=e99dc106cf344aa6bc680a8ab54d7bf0&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd%26terminal_id%3D2ebb5d8ec7ee4d3d9fb178a55185cfd6%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.559676170024176.1794172543350, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd&terminal_id=2ebb5d8ec7ee4d3d9fb178a55185cfd6&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd%26terminal_id%3D2ebb5d8ec7ee4d3d9fb178a55185cfd6%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=152cd398f82142d19cc66ca127e44d10&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd%26terminal_id%3D2ebb5d8ec7ee4d3d9fb178a55185cfd6%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.1568573045024176.1794172543622, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd&terminal_id=2ebb5d8ec7ee4d3d9fb178a55185cfd6&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd%26terminal_id%3D2ebb5d8ec7ee4d3d9fb178a55185cfd6%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=9d13f798cbc44feb909905822a0798b8&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3D0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd%26terminal_id%3D2ebb5d8ec7ee4d3d9fb178a55185cfd6%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.318910929024177.1794172544013, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=0c498cb994e840b2a16fed03071c6c54-1794172540149-00340-_c3avZPJd&terminal_id=2ebb5d8ec7ee4d3d9fb178a55185cfd6&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US | pagina (navegador): Too many redirects.https://s.click.aliexpress.com/e/_c3avZPJd, https://www.aliexpress.com/item/1005005278664613.html?aff_fcid=c1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=c1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd&terminal_id=b1b080668ec94b388cda98cb993a7b3f&afSmartRedirect=y, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=c1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=c1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd&terminal_id=b1b080668ec94b388cda98cb993a7b3f&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3Dc1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3Dc1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd%26terminal_id%3Db1b080668ec94b388cda98cb993a7b3f%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=0ebe1b2a703e4d509fe1b26466517e13&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3Dc1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3Dc1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd%26terminal_id%3Db1b080668ec94b388cda98cb993a7b3f%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.1245902447024176.1794172544556, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=c1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=c1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd&terminal_id=b1b080668ec94b388cda98cb993a7b3f&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3Dc1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3Dc1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd%26terminal_id%3Db1b080668ec94b388cda98cb993a7b3f%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=1c2d6b9a60aa424d9482ce25da53c4d7&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3Dc1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3Dc1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd%26terminal_id%3Db1b080668ec94b388cda98cb993a7b3f%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.1609107113024176.1794172544857, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=c1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=c1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd&terminal_id=b1b080668ec94b388cda98cb993a7b3f&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3Dc1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3Dc1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd%26terminal_id%3Db1b080668ec94b388cda98cb993a7b3f%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=81fdc9adcb674ff8bc86187e0a8c16a6&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3Dc1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3Dc1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd%26terminal_id%3Db1b080668ec94b388cda98cb993a7b3f%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.705160183024176.1794172545045, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=c1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=c1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd&terminal_id=b1b080668ec94b388cda98cb993a7b3f&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3Dc1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3Dc1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd%26terminal_id%3Db1b080668ec94b388cda98cb993a7b3f%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=dad9247759a64d17b418a38b3f75bd90&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3Dc1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3Dc1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd%26terminal_id%3Db1b080668ec94b388cda98cb993a7b3f%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.347710235024176.1794172545336, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=c1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=c1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd&terminal_id=b1b080668ec94b388cda98cb993a7b3f&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3Dc1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3Dc1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd%26terminal_id%3Db1b080668ec94b388cda98cb993a7b3f%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=dd5467e28c534ce3b15aeefaab54b409&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3Dc1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3Dc1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd%26terminal_id%3Db1b080668ec94b388cda98cb993a7b3f%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.1365287284024176.1794172545667, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=c1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=c1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd&terminal_id=b1b080668ec94b388cda98cb993a7b3f&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3Dc1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3Dc1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd%26terminal_id%3Db1b080668ec94b388cda98cb993a7b3f%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=634006bed8444622b1c09998058826f4&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3Dc1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3avZPJd%26aff_platform%3DshareComponent-detail%26sk%3D_c3avZPJd%26aff_trace_key%3Dc1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd%26terminal_id%3Db1b080668ec94b388cda98cb993a7b3f%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.741307301024176.1794172545995, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=c1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff_platform=shareComponent-detail&sk=_c3avZPJd&aff_trace_key=c1233133908e46a1b1b13f18c8bcdf7d-1794172544238-05890-_c3avZPJd&terminal_id=b1b080668ec94b388cda98cb993a7b3f&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US | pagina (WhatsApp): nome, foto | destino: https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=cedd1e0e632647208a7d3f15452c1039-1794172546220-02060-_c3avZPJd&tt=CPS_NORMAL&aff_fsk=_c3avZPJd&aff"
     },
     {
       "slug": "interruptor-de-luz-inteligente-tuya-wifi-touch-brasil",
       "produto": "Interruptor de Luz Inteligente Tuya Wifi Touch Brasil",
       "link": "https://s.click.aliexpress.com/e/_c3EOGQpd",
-      "motivo": "pagina (facebookexternalhit): status 429 | pagina (farejadinhos): nada | pagina (navegador): nada | pagina (WhatsApp): nome, foto | destino: https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=1ffe36a332174dbca771eb791b3fd928-1794156551489-03637-_c3EOGQpd&tt=CPS_NORMAL&aff_fsk=_c3EOGQpd&aff"
+      "motivo": "pagina (facebookexternalhit): nome, foto | pagina (farejadinhos): Too many redirects.https://s.click.aliexpress.com/e/_c3EOGQpd, https://www.aliexpress.com/item/1005005278664613.html?aff_fcid=7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd&tt=CPS_NORMAL&aff_fsk=_c3EOGQpd&aff_platform=shareComponent-detail&sk=_c3EOGQpd&aff_trace_key=7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd&terminal_id=721b886622564fa3bac28ee4acf063a7&afSmartRedirect=y, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd&tt=CPS_NORMAL&aff_fsk=_c3EOGQpd&aff_platform=shareComponent-detail&sk=_c3EOGQpd&aff_trace_key=7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd&terminal_id=721b886622564fa3bac28ee4acf063a7&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3EOGQpd%26aff_platform%3DshareComponent-detail%26sk%3D_c3EOGQpd%26aff_trace_key%3D7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd%26terminal_id%3D721b886622564fa3bac28ee4acf063a7%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=c50c8c27079e4093b55519f006eae1c1&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3EOGQpd%26aff_platform%3DshareComponent-detail%26sk%3D_c3EOGQpd%26aff_trace_key%3D7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd%26terminal_id%3D721b886622564fa3bac28ee4acf063a7%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.832126962118095.1794172553377, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd&tt=CPS_NORMAL&aff_fsk=_c3EOGQpd&aff_platform=shareComponent-detail&sk=_c3EOGQpd&aff_trace_key=7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd&terminal_id=721b886622564fa3bac28ee4acf063a7&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3EOGQpd%26aff_platform%3DshareComponent-detail%26sk%3D_c3EOGQpd%26aff_trace_key%3D7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd%26terminal_id%3D721b886622564fa3bac28ee4acf063a7%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=011395e791bf4ccdb34edb0eaaacfeb3&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3EOGQpd%26aff_platform%3DshareComponent-detail%26sk%3D_c3EOGQpd%26aff_trace_key%3D7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd%26terminal_id%3D721b886622564fa3bac28ee4acf063a7%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.924632211118095.1794172553896, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd&tt=CPS_NORMAL&aff_fsk=_c3EOGQpd&aff_platform=shareComponent-detail&sk=_c3EOGQpd&aff_trace_key=7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd&terminal_id=721b886622564fa3bac28ee4acf063a7&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3EOGQpd%26aff_platform%3DshareComponent-detail%26sk%3D_c3EOGQpd%26aff_trace_key%3D7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd%26terminal_id%3D721b886622564fa3bac28ee4acf063a7%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=f85cb9f6a09d4c55b3d3e89441933dd6&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3EOGQpd%26aff_platform%3DshareComponent-detail%26sk%3D_c3EOGQpd%26aff_trace_key%3D7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd%26terminal_id%3D721b886622564fa3bac28ee4acf063a7%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.1984127820118095.1794172554110, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd&tt=CPS_NORMAL&aff_fsk=_c3EOGQpd&aff_platform=shareComponent-detail&sk=_c3EOGQpd&aff_trace_key=7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd&terminal_id=721b886622564fa3bac28ee4acf063a7&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3EOGQpd%26aff_platform%3DshareComponent-detail%26sk%3D_c3EOGQpd%26aff_trace_key%3D7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd%26terminal_id%3D721b886622564fa3bac28ee4acf063a7%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=5d4d4755f0c34994b730c85ff3944a8a&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3EOGQpd%26aff_platform%3DshareComponent-detail%26sk%3D_c3EOGQpd%26aff_trace_key%3D7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd%26terminal_id%3D721b886622564fa3bac28ee4acf063a7%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.405210533118095.1794172554634, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd&tt=CPS_NORMAL&aff_fsk=_c3EOGQpd&aff_platform=shareComponent-detail&sk=_c3EOGQpd&aff_trace_key=7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd&terminal_id=721b886622564fa3bac28ee4acf063a7&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3EOGQpd%26aff_platform%3DshareComponent-detail%26sk%3D_c3EOGQpd%26aff_trace_key%3D7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd%26terminal_id%3D721b886622564fa3bac28ee4acf063a7%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=969632151706447f98eb9c0c2722b2ba&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3EOGQpd%26aff_platform%3DshareComponent-detail%26sk%3D_c3EOGQpd%26aff_trace_key%3D7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd%26terminal_id%3D721b886622564fa3bac28ee4acf063a7%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.1079645800118095.1794172554976, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd&tt=CPS_NORMAL&aff_fsk=_c3EOGQpd&aff_platform=shareComponent-detail&sk=_c3EOGQpd&aff_trace_key=7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd&terminal_id=721b886622564fa3bac28ee4acf063a7&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3EOGQpd%26aff_platform%3DshareComponent-detail%26sk%3D_c3EOGQpd%26aff_trace_key%3D7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd%26terminal_id%3D721b886622564fa3bac28ee4acf063a7%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=9250355c265945099de382a3a1817fc9&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3EOGQpd%26aff_platform%3DshareComponent-detail%26sk%3D_c3EOGQpd%26aff_trace_key%3D7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd%26terminal_id%3D721b886622564fa3bac28ee4acf063a7%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.2059150898118095.1794172555248, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd&tt=CPS_NORMAL&aff_fsk=_c3EOGQpd&aff_platform=shareComponent-detail&sk=_c3EOGQpd&aff_trace_key=7b550ab0c8074980ad8cee00ec3eb60f-1794172551796-07140-_c3EOGQpd&terminal_id=721b886622564fa3bac28ee4acf063a7&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US | pagina (navegador): Too many redirects.https://s.click.aliexpress.com/e/_c3EOGQpd, https://www.aliexpress.com/item/1005005278664613.html?aff_fcid=3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd&tt=CPS_NORMAL&aff_fsk=_c3EOGQpd&aff_platform=shareComponent-detail&sk=_c3EOGQpd&aff_trace_key=3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd&terminal_id=7ba6e46400284a4e82d5f0d3b29ff5d5&afSmartRedirect=y, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd&tt=CPS_NORMAL&aff_fsk=_c3EOGQpd&aff_platform=shareComponent-detail&sk=_c3EOGQpd&aff_trace_key=3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd&terminal_id=7ba6e46400284a4e82d5f0d3b29ff5d5&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3EOGQpd%26aff_platform%3DshareComponent-detail%26sk%3D_c3EOGQpd%26aff_trace_key%3D3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd%26terminal_id%3D7ba6e46400284a4e82d5f0d3b29ff5d5%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=0ea003d9b5094442ae28990bbe157610&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3EOGQpd%26aff_platform%3DshareComponent-detail%26sk%3D_c3EOGQpd%26aff_trace_key%3D3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd%26terminal_id%3D7ba6e46400284a4e82d5f0d3b29ff5d5%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.448149294118095.1794172555666, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd&tt=CPS_NORMAL&aff_fsk=_c3EOGQpd&aff_platform=shareComponent-detail&sk=_c3EOGQpd&aff_trace_key=3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd&terminal_id=7ba6e46400284a4e82d5f0d3b29ff5d5&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3EOGQpd%26aff_platform%3DshareComponent-detail%26sk%3D_c3EOGQpd%26aff_trace_key%3D3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd%26terminal_id%3D7ba6e46400284a4e82d5f0d3b29ff5d5%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=a7e59c98a8b3402f9924d1b3ef1f1777&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3EOGQpd%26aff_platform%3DshareComponent-detail%26sk%3D_c3EOGQpd%26aff_trace_key%3D3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd%26terminal_id%3D7ba6e46400284a4e82d5f0d3b29ff5d5%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.1823346827118095.1794172555849, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd&tt=CPS_NORMAL&aff_fsk=_c3EOGQpd&aff_platform=shareComponent-detail&sk=_c3EOGQpd&aff_trace_key=3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd&terminal_id=7ba6e46400284a4e82d5f0d3b29ff5d5&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3EOGQpd%26aff_platform%3DshareComponent-detail%26sk%3D_c3EOGQpd%26aff_trace_key%3D3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd%26terminal_id%3D7ba6e46400284a4e82d5f0d3b29ff5d5%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=397b3a1006dd45e9af1eeecf29d31e67&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3EOGQpd%26aff_platform%3DshareComponent-detail%26sk%3D_c3EOGQpd%26aff_trace_key%3D3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd%26terminal_id%3D7ba6e46400284a4e82d5f0d3b29ff5d5%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.1490667795118095.1794172556250, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd&tt=CPS_NORMAL&aff_fsk=_c3EOGQpd&aff_platform=shareComponent-detail&sk=_c3EOGQpd&aff_trace_key=3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd&terminal_id=7ba6e46400284a4e82d5f0d3b29ff5d5&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3EOGQpd%26aff_platform%3DshareComponent-detail%26sk%3D_c3EOGQpd%26aff_trace_key%3D3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd%26terminal_id%3D7ba6e46400284a4e82d5f0d3b29ff5d5%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=9f2871cceb384b61a7f7efcf093d859e&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3EOGQpd%26aff_platform%3DshareComponent-detail%26sk%3D_c3EOGQpd%26aff_trace_key%3D3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd%26terminal_id%3D7ba6e46400284a4e82d5f0d3b29ff5d5%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.1674428191118095.1794172556444, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd&tt=CPS_NORMAL&aff_fsk=_c3EOGQpd&aff_platform=shareComponent-detail&sk=_c3EOGQpd&aff_trace_key=3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd&terminal_id=7ba6e46400284a4e82d5f0d3b29ff5d5&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3EOGQpd%26aff_platform%3DshareComponent-detail%26sk%3D_c3EOGQpd%26aff_trace_key%3D3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd%26terminal_id%3D7ba6e46400284a4e82d5f0d3b29ff5d5%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=686c221560704ba1b8a5c238d273c561&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3EOGQpd%26aff_platform%3DshareComponent-detail%26sk%3D_c3EOGQpd%26aff_trace_key%3D3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd%26terminal_id%3D7ba6e46400284a4e82d5f0d3b29ff5d5%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.1230759139118095.1794172556662, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd&tt=CPS_NORMAL&aff_fsk=_c3EOGQpd&aff_platform=shareComponent-detail&sk=_c3EOGQpd&aff_trace_key=3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd&terminal_id=7ba6e46400284a4e82d5f0d3b29ff5d5&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US, https://login.aliexpress.com/sync_cookie_read.htm?xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3EOGQpd%26aff_platform%3DshareComponent-detail%26sk%3D_c3EOGQpd%26aff_trace_key%3D3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd%26terminal_id%3D7ba6e46400284a4e82d5f0d3b29ff5d5%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS, https://login.aliexpress.us/sync_cookie_write.htm?acs_random_token=b6a57205cfaf479b843869df395a800f&xman_goto=https%3A%2F%2Fwww.aliexpress.us%2Fitem%2F3256805092349861.html%3Faff_fcid%3D3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd%26tt%3DCPS_NORMAL%26aff_fsk%3D_c3EOGQpd%26aff_platform%3DshareComponent-detail%26sk%3D_c3EOGQpd%26aff_trace_key%3D3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd%26terminal_id%3D7ba6e46400284a4e82d5f0d3b29ff5d5%26afSmartRedirect%3Dy%26gatewayAdapt%3Dglo2usa4itemAdapt%26_randl_shipto%3DUS&_ga=GA1.1.1148416476118095.1794172556907, https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd&tt=CPS_NORMAL&aff_fsk=_c3EOGQpd&aff_platform=shareComponent-detail&sk=_c3EOGQpd&aff_trace_key=3da1f437af3847d088ca61b703b1bab0-1794172555456-01933-_c3EOGQpd&terminal_id=7ba6e46400284a4e82d5f0d3b29ff5d5&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US | pagina (WhatsApp): nome, foto | destino: https://www.aliexpress.us/item/3256805092349861.html?aff_fcid=9507c078fac141ca81ac58a5246610a4-1794172557225-08117-_c3EOGQpd&tt=CPS_NORMAL&aff_fsk=_c3EOGQpd&aff"
     }
   ],
   "erros": [
-    {
-      "slug": "kit-chave-catraca-soquete-46-pecas-indufer",
-      "produto": "Kit Chave Catraca Soquete 46 Peças Indufer",
-      "link": "https://meli.la/2H9VVJf",
-      "motivo": "Response status code does not indicate success: 404 (Not Found). :: \r\n{\r\n  \"sucesso\": false,\r\n  \"produto\": \"\",\r\n  \"preco\": \"\",\r\n  \"precoAntigo\": \"\",\r\n  \"imagemUrl\": \"\",\r\n  \"parcelas\": \"\",\r\n  \"precoAPrazo\": \"\",\r\n  \"semJuros\": \"\",\r\n  \"linkFinal\": \"https://www.mercadolivre.com.br/social/bernardshimizu/lists\",\r\n  \"tentativas\": [\r\n    \"pagina (facebookexternalhit): nada\""
-    },
     {
       "slug": "cozedor-de-ovos-eletrico-portatil-a-vapor-para-ate",
       "produto": "Cozedor de Ovos Elétrico Portátil a Vapor para até",
@@ -208,6 +154,14 @@
     }
   ],
   "suspeitos": [
+    {
+      "slug": "kit-limpeza-e-manutencao-de-piscina-completo",
+      "produto": "Kit Limpeza E Manutenção De Piscina Completo",
+      "link": "https://meli.la/1V3wJNN",
+      "atual": "R$ 62,85",
+      "lido": "35,59",
+      "referencia": "R$ 109,90"
+    },
     {
       "slug": "iphone-18-pro-256gb-preto-somente-esim",
       "produto": "iPhone 18 Pro 256GB Preto (somente eSIM)",
@@ -231,6 +185,14 @@
       "atual": "R$ 157,56",
       "lido": "365,74",
       "referencia": "R$ 157,56"
+    },
+    {
+      "slug": "azevinho-artificial-de-natal-holly-berry-vermelho",
+      "produto": "Azevinho artificial de natal,holly berry vermelho",
+      "link": "https://s.shopee.com.br/BV4R2ckUM",
+      "atual": "R$ 13,99",
+      "lido": "R$ 34,99",
+      "referencia": "R$ 13,99"
     },
     {
       "slug": "cascata-de-natal-estrelas-bivolt-leds",
@@ -269,7 +231,7 @@
       "produto": "Cafeteira Espresso Philips Walita Cor Preto",
       "link": "https://meli.la/1h4v88c",
       "atual": "R$ 218,25",
-      "lido": "2199,00",
+      "lido": "2180,00",
       "referencia": "R$ 219,90"
     },
     {
@@ -309,6 +271,7 @@
     "camera-lampada-de-seguranca-wifi-ip-app-yoosee",
     "lixeira-inteligente-automatica-16l-sensor",
     "mini-ventilador-soprador-ar-potente-turbo",
+    "kit-chave-catraca-soquete-46-pecas-indufer",
     "mini-compressor-de-ar-portatil-carro-moto",
     "fatiador-de-cozinha-multifuncional-profissional-em-aco",
     "cabides-com-5-camadas-organizador-de-blusas",
@@ -468,7 +431,6 @@
     "kit-enfeites-decoracao-para-arvore-de-natal",
     "kit-arvore-de-natal-completa-pisca-led-enfeites",
     "4-pcs-natal-mini-modelos-de-luz-rua-streetlight",
-    "cordao-strobo-natal-metros-bivolt-leds-pisca-prova",
     "10-unid-flores-artificiais-arvore-de-natal",
     "suporte-adesivo-para-pisca-decoracao-de-natal",
     "15-unidade-fio-de-led-fio-fada-cordao-de-luzes",
@@ -580,7 +542,6 @@
     "massageador-pistola-eletrica-profissional-muscular",
     "cafeteira-eletrica-cadence-single-up",
     "caneta-de-oleo-de-cuticula-3-em-1-para-cuidados",
-    "caneta-de-oleo-de-cuticula-3-em-1-para-cuidados-2",
     "cortina-de-led-3m-300-luz-8-modos-de-iluminacao",
     "frigideira-panquequeira-antiaderente-22cm-nacional",
     "cesto-organizador-de-roupa-suja-infantil",
@@ -638,46 +599,60 @@
     "medicube-zero-pore-pads-2-0",
     "escova-5-em-1-secador-pente-modelador",
     "kit-formas-assadeira-papel-manteiga-descartavel",
-    "medicube-pdrn-pink-collagen-volume-multi-balm",
     "pcs-pasta-de-nariz-de-limpeza-profunda-carvao"
   ],
   "shopee": {
     "status": {
-      "quando": "2026-11-08T16:40:58Z",
+      "quando": "2026-11-08T21:07:55Z",
       "teste": false,
-      "links": 246,
-      "ok": 241,
+      "links": 244,
+      "ok": 239,
       "erros": 5
     }
   },
   "anuncios": {
-    "conferidos": 17,
-    "iguais": 14,
-    "pendentes": [
+    "conferidos": 22,
+    "iguais": 17,
+    "pendentes": [],
+    "mudaram": [
       {
         "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
         "loja": "Outra loja",
         "link": "https://link.amazon/B0epLOItP",
-        "atual": "R$ 4.095,64",
-        "lido": "R$ 4.799,00"
+        "de": "R$ 4.095,64",
+        "para": "R$ 4.799,00"
       },
       {
         "slug": "celular-samsung-galaxy-a37-5g-128gb-4",
         "loja": "Mercado Livre",
         "link": "https://meli.la/1rCMkSR",
-        "atual": "R$ 1.564,00",
-        "lido": "R$ 1.668,00"
+        "de": "R$ 1.564,00",
+        "para": "R$ 1.668,00"
       },
       {
         "slug": "samsung-galaxy-s26-ultra-5g-dual-sim-preto-256gb",
         "loja": "Outra loja",
         "link": "https://link.amazon/B098ObooL",
-        "atual": "R$ 7.499,00",
-        "lido": "R$ 7.257,27"
+        "de": "R$ 7.499,00",
+        "para": "R$ 7.257,27"
+      },
+      {
+        "slug": "ventilador-portatil-de-mesa-com-nebulizacao-2",
+        "loja": "Shopee",
+        "link": "https://s.shopee.com.br/qkY4sfvOs",
+        "de": "R$ 37,99",
+        "para": "R$ 36,99"
       }
     ],
-    "mudaram": [],
-    "barrados": [],
+    "barrados": [
+      {
+        "slug": "escorredor-de-loucas-rack-aco-carbono-organizador-2",
+        "loja": "Shopee",
+        "link": "https://s.shopee.com.br/8fTDF2IRuL",
+        "lido": "R$ 236,00",
+        "principal": "R$ 91,90"
+      }
+    ],
     "semPreco": [],
     "erros": []
   }
