@@ -583,6 +583,16 @@ h1,h2,h3,.brand{
 
 .oferta-card .pegar-oferta{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 
+/* 🐾 Pegar oferta + 🔔 me avise quando baixar, lado a lado */
+.oferta-card .acoes-card{ display:flex; gap:6px; margin:0 13px 14px; align-items:stretch; }
+.oferta-card .acoes-card .pegar-oferta{ flex:1; min-width:0; margin:0; }
+.sino-card{
+    flex:none; width:38px; border-radius:10px; border:1.5px solid var(--line,#F0DFC4); background:#fff;
+    font-size:16px; line-height:1; cursor:pointer; padding:0; transition:background .15s,border-color .15s,transform .12s;
+}
+.sino-card:hover{ border-color:var(--orange,#F7941D); transform:translateY(-1px); }
+.sino-card.ligado{ background:#FFF4E6; border-color:var(--orange,#F7941D); box-shadow:inset 0 0 0 1px var(--orange,#F7941D); }
+
 /* celular: grade com 2 por linha e botão mais compacto */
 @media(max-width:560px){
     .grid{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
@@ -590,6 +600,9 @@ h1,h2,h3,.brand{
     .oferta-card h3{ font-size:12.5px; min-height:32px; }
     .oferta-card .preco{ font-size:16px; margin-bottom:6px; }
     .oferta-card .pegar-oferta{ font-size:12.5px; margin:0 9px 10px; padding:7px 6px 6px; }
+    .oferta-card .acoes-card{ margin:0 9px 10px; gap:5px; }
+    .oferta-card .acoes-card .pegar-oferta{ margin:0; }
+    .sino-card{ width:32px; font-size:14px; }
 }
 
 .oferta-card .pegar-oferta:hover{
@@ -1720,7 +1733,10 @@ function cardHtml(o){
                     ${cupomHtml}
                 </div>
             </a>
-            <a class="pegar-oferta" href="${escapeHtml(linkLoja)}"${linkLoja === paginaOferta ? "" : ' target="_blank" rel="sponsored noopener"'}>🐾 Pegar oferta</a>
+            <div class="acoes-card">
+                <a class="pegar-oferta" href="${escapeHtml(linkLoja)}"${linkLoja === paginaOferta ? "" : ' target="_blank" rel="sponsored noopener"'}>🐾 Pegar oferta</a>
+                <button type="button" class="sino-card" data-sino="${escapeHtml(o.slug)}" data-preco="${FarejadinhosVitrine.numeroPreco(o.preco) || ""}" title="Me avise quando baixar" aria-label="Me avise quando o preço baixar">🔔</button>
+            </div>
         </article>
         `;
 }

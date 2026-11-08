@@ -252,6 +252,60 @@
     };
     document.dispatchEvent(new Event("fareja:avisos"));
 
+    // ---------- 🔔 sininho nos cards (vitrine): [data-sino="slug"][data-preco] ----------
+    var css2 = document.createElement("style");
+    css2.textContent = ".yp-toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:96;max-width:min(460px,calc(100vw - 24px));background:#2B1B12;color:#FFFAF1;border-radius:14px;padding:11px 14px;font:600 13.5px/1.45 'Work Sans',Arial,sans-serif;box-shadow:0 12px 30px rgba(0,0,0,.3)}" +
+        ".yp-toast.erro{background:#8E1219}";
+    document.head.appendChild(css2);
+    var toastT = null;
+    function toast(html, erro) {
+        var el = document.querySelector(".yp-toast");
+        if (!el) { el = document.createElement("div"); el.className = "yp-toast"; document.body.appendChild(el); }
+        el.className = "yp-toast" + (erro ? " erro" : "");
+        el.innerHTML = html;
+        clearTimeout(toastT);
+        toastT = setTimeout(function () { el.remove(); }, erro ? 7000 : 5000);
+    }
+    var meusAlertas = {};
+    function pintar() {
+        document.querySelectorAll("[data-sino]").forEach(function (b) {
+            var lig = !!meusAlertas[b.getAttribute("data-sino")];
+            b.classList.toggle("ligado", lig);
+            b.title = lig ? "Avisando se baixar — toque pra parar" : "Me avise quando baixar";
+        });
+    }
+    if (suporta) {
+        window.FarejadinhosAvisos.alertas().then(function (l) {
+            l.forEach(function (x) { meusAlertas[x.slug] = x.preco; });
+            pintar();
+            if (window.MutationObserver) {
+                var pend = 0;
+                new MutationObserver(function () { clearTimeout(pend); pend = setTimeout(pintar, 120); })
+                    .observe(document.body, { childList: true, subtree: true });
+            }
+        });
+    }
+    document.addEventListener("click", function (e) {
+        var b = e.target && e.target.closest && e.target.closest("[data-sino]");
+        if (!b) return;
+        e.preventDefault(); e.stopPropagation();
+        var A = window.FarejadinhosAvisos, sup = A.suporte();
+        if (sup === "ios") { toast("📱 No iPhone, primeiro adicione o site à tela de início: <b>Compartilhar</b> → <b>Adicionar à Tela de Início</b>. Abra por lá e toque no 🔔 de novo."); return; }
+        if (sup !== "ok") { toast("Esse navegador não aceita avisos. Tenta pelo Chrome 😉", true); return; }
+        var slug = b.getAttribute("data-sino"), preco = Number(b.getAttribute("data-preco")) || 0;
+        if (!preco) { toast("Essa oferta está sem preço agora — tenta de novo mais tarde.", true); return; }
+        b.disabled = true;
+        if (meusAlertas[slug]) {
+            A.cancelarAlerta(slug).then(function () { delete meusAlertas[slug]; pintar(); toast("🔕 Ok, parei de acompanhar essa oferta."); })
+                .catch(function (er) { toast("❌ " + esc(er.message), true); }).then(function () { b.disabled = false; });
+            return;
+        }
+        A.avisarQuandoBaixar(slug, preco).then(function () {
+            meusAlertas[slug] = preco; pintar();
+            toast("🔔 Pronto! A Yang te avisa aqui no celular se baixar de <b>R$ " + preco.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + "</b>. 🐶");
+        }).catch(function (er) { toast("❌ " + esc(er.message), true); }).then(function () { b.disabled = false; });
+    }, true);
+
     // já tem inscrição mas o aparelho perdeu a marquinha? recoloca
     inscricaoAtual().then(function (s) { if (s) set("fareja_push_ok", "1"); });
 
