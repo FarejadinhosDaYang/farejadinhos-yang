@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cliques | Painel Farejadinhos</title>
+<link rel="icon" href="../assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+    --red:#E5232E; --red-dark:#C21A24; --orange:#F7941D; --cream:#FDF3E3; --cream-2:#FFFAF1;
+    --ink:#2B1B12; --muted:#8A7563; --line:#F0DFC4; --verde:#1D6B33; --verde-bg:#E6F4EA;
+}
+*{box-sizing:border-box}
+body{margin:0;padding:20px 16px 48px;background:var(--cream);font-family:'Work Sans',Arial,sans-serif;color:var(--ink)}
+.container{max-width:1000px;margin:auto}
+.voltar{display:inline-block;margin-bottom:16px;color:var(--red-dark);font-weight:700;text-decoration:none;font-size:14px}
+h1{font-family:'Baloo 2',sans-serif;color:var(--red-dark);font-size:26px;margin:0 0 4px}
+h2{font-family:'Baloo 2',sans-serif;font-size:19px;margin:22px 0 8px}
+.sub{color:var(--muted);font-size:14px;line-height:1.5;margin:0 0 16px}
+.periodo{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.periodo button{font:700 13.5px 'Work Sans',Arial,sans-serif;border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;cursor:pointer;color:var(--ink)}
+.periodo button.ativo{background:var(--red);border-color:var(--red);color:#fff}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.tile{background:var(--cream-2);border:1.5px solid var(--line);border-radius:16px;padding:12px 14px}
+.tile .rot{font-size:13px;color:var(--muted)}
+.tile .val{font:800 28px 'Baloo 2',sans-serif;line-height:1.1;margin-top:2px;font-variant-numeric:tabular-nums}
+.barras{display:flex;align-items:flex-end;gap:3px;height:70px;margin-top:6px;background:var(--cream-2);border:1.5px solid var(--line);border-radius:14px;padding:10px 10px 0}
+.barras div{flex:1;background:var(--orange);border-radius:3px 3px 0 0;min-height:2px}
+.legenda{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:4px}
+.lista{display:grid;gap:8px}
+.item{display:grid;grid-template-columns:48px 1fr auto;gap:12px;align-items:center;background:var(--cream-2);border:1.5px solid var(--line);border-radius:14px;padding:8px 12px;text-decoration:none;color:inherit}
+.item:hover{border-color:var(--orange)}
+.item img{width:48px;height:48px;object-fit:contain;background:#fff;border-radius:8px;border:1px solid var(--line)}
+.item .nome{font-weight:600;font-size:14px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.item .meta{font-size:12px;color:var(--muted);margin-top:2px}
+.item .num{text-align:right;font-variant-numeric:tabular-nums;min-width:86px}
+.item .num b{display:block;font:800 19px 'Baloo 2',sans-serif;color:var(--red-dark);line-height:1.1}
+.item .num span{font-size:11.5px;color:var(--muted)}
+.cats{display:grid;gap:6px}
+.cat{display:grid;grid-template-columns:150px 1fr 48px;gap:10px;align-items:center;font-size:13.5px}
+.cat .bar{height:12px;border-radius:6px;background:var(--orange)}
+.cat .n{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+.dica{background:#FFF6E9;border:1.5px solid #FFE0B8;border-radius:12px;padding:10px 12px;font-size:13px;line-height:1.5;color:#6A4A00;margin:6px 0 10px}
+.vazio{color:var(--muted);font-size:14px;padding:10px 0}
+.erro{background:#FDECEC;border:1.5px solid #F5C2C2;color:var(--red-dark);border-radius:12px;padding:12px;font-size:14px;line-height:1.5}
+@media (max-width:560px){ .cat{grid-template-columns:110px 1fr 40px} }
+</style>
+</head>
+<body>
+<div class="container">
+<a class="voltar" href="./">← Voltar ao painel</a>
+<h1>📊 Cliques e visitas por oferta</h1>
+<p class="sub">Quantas pessoas abriram cada oferta e quantas clicaram pra ir até a loja. Você (com a senha do painel salva) não entra na conta.</p>
+
+<div class="periodo" id="periodo">
+  <button data-d="1">Hoje</button><button data-d="7" class="ativo">7 dias</button><button data-d="30">30 dias</button>
+</div>
+<div id="conteudo"><p class="vazio">Carregando...</p></div>
+</div>
+
+<script src="../assets/categorias-config.js"></script>
+<script src="../assets/vitrine.js"></script>
+<script>
+const CONTADOR_URL = "https://farejadinhos-contador.bernard-shimizu.workers.dev";
+const caixa = document.getElementById("conteudo");
+let catalogo = {};
+function esc(t){ const d = document.createElement("div"); d.textContent = t == null ? "" : String(t); return d.innerHTML; }
+function fmt(n){ return Number(n || 0).toLocaleString("pt-BR"); }
+function pct(a, b){ return b ? Math.round(a / b * 100) + "%" : "–"; }
+
+function item(x, principal){
+  const o = catalogo[x.slug] || {};
+  const img = o.imagem ? "../assets/" + o.imagem : "../assets/yang-badge.png";
+  const taxa = x.visitas ? pct(x.cliques, x.visitas) + " clicam" : "";
+  return `<a class="item" href="../ofertas/${encodeURIComponent(x.slug)}/" target="_blank" rel="noopener">
+    <img src="${esc(img)}" alt="" loading="lazy">
+    <div><div class="nome">${esc(o.produto || x.slug)}</div>
+      <div class="meta">${esc(o.preco || "")}${o.categoria ? " · " + esc(String(o.categoria).split(",")[0]) : ""}${o.produto ? "" : " · já saiu do site"}${taxa ? " · " + taxa : ""}</div></div>
+    <div class="num"><b>${fmt(principal === "v" ? x.visitas : x.cliques)}</b><span>${principal === "v" ? "visitas · " + fmt(x.cliques) + " cliques" : "cliques · " + fmt(x.visitas) + " visitas"}</span></div>
+  </a>`;
+}
+
+function carregar(dias){
+  caixa.innerHTML = '<p class="vazio">Carregando...</p>';
+  fetch(CONTADOR_URL + "/relatorio?dias=" + dias + "&t=" + Date.now(), { cache: "no-store" })
+    .then(r => r.json())
+    .then(j => {
+      if(j.erro) throw new Error(j.erro);
+      if(!j.porDia) throw new Error("O contador ainda está com o código antigo.");
+      // cliques por categoria: pela categoria de cada oferta (catálogo atual)
+      const porCat = {};
+      const todas = {};
+      (j.maisClicadas || []).concat(j.maisVistas || []).forEach(x => { todas[x.slug] = x; });
+      Object.values(todas).forEach(x => {
+        const o = catalogo[x.slug];
+        const c = o && window.FarejadinhosVitrine ? FarejadinhosVitrine.grupoCategoria(FarejadinhosVitrine.categoriaPrincipal(o)) : "Saiu do site";
+        porCat[c] = (porCat[c] || 0) + (x.cliques || 0);
+      });
+      const cats = Object.entries(porCat).filter(c => c[1] > 0).sort((a, b) => b[1] - a[1]);
+      const maxCat = Math.max(1, ...cats.map(c => c[1]));
+      const maxDia = Math.max(1, ...(j.porDia || []).map(d => d.cliques));
+      caixa.innerHTML = `
+        <div class="tiles">
+          <div class="tile"><div class="rot">Visitas em ofertas</div><div class="val">${fmt(j.total.visitas)}</div></div>
+          <div class="tile"><div class="rot">Cliques pra loja</div><div class="val">${fmt(j.total.cliques)}</div></div>
+          <div class="tile"><div class="rot">Quem abre e clica</div><div class="val">${pct(j.total.cliques, j.total.visitas)}</div></div>
+          ${(j.porLoja || []).slice(0, 3).map(l => `<div class="tile"><div class="rot">Cliques ${esc(l.loja)}</div><div class="val">${fmt(l.cliques)}</div></div>`).join("")}
+        </div>
+        ${(j.porDia || []).length > 1 ? `<h2>Cliques por dia</h2><div class="barras">${j.porDia.map(d => `<div title="${d.dia.split("-").reverse().slice(0,2).join("/")}: ${d.cliques} cliques, ${d.visitas} visitas" style="height:${Math.round(d.cliques / maxDia * 100)}%"></div>`).join("")}</div>
+          <div class="legenda"><span>${j.porDia[0].dia.split("-").reverse().slice(0,2).join("/")}</span><span>hoje</span></div>` : ""}
+        <h2>🏆 Mais clicadas</h2>
+        ${(j.maisClicadas || []).length ? `<div class="lista">${j.maisClicadas.slice(0, 15).map(x => item(x, "c")).join("")}</div>` : '<p class="vazio">Nenhum clique ainda nesse período.</p>'}
+        <h2>🗂️ Categorias que mais dão clique</h2>
+        ${cats.length ? `<div class="cats">${cats.map(c => `<div class="cat"><span>${esc(c[0])}</span><div class="bar" style="width:${Math.max(3, c[1] / maxCat * 100)}%"></div><span class="n">${fmt(c[1])}</span></div>`).join("")}</div>` : '<p class="vazio">Ainda sem cliques.</p>'}
+        <h2>👀 Mais vistas</h2>
+        ${(j.maisVistas || []).length ? `<div class="lista">${j.maisVistas.slice(0, 10).map(x => item(x, "v")).join("")}</div>` : '<p class="vazio">Ainda sem visitas em ofertas nesse período.</p>'}
+        <h2>🤔 Muita visita, pouco clique</h2>
+        <div class="dica">Gente abre mas não vai pra loja: talvez o preço não convenceu, a foto não ajuda ou já tem coisa melhor no site. Bom lugar pra trocar a foto, conferir o preço ou tirar.</div>
+        ${(j.poucoClique || []).length ? `<div class="lista">${j.poucoClique.map(x => item(x, "v")).join("")}</div>` : '<p class="vazio">Nenhuma oferta com 15+ visitas e menos de 8% de cliques. 👏</p>'}
+      `;
+    })
+    .catch(e => {
+      caixa.innerHTML = `<div class="erro">Não consegui ler os números: ${esc(e.message)}<br>Se acabou de atualizar, confira se o código novo do Worker <b>farejadinhos-contador</b> foi colado (Edit code → colar → Deploy).</div>`;
+    });
+}
+
+fetch("../ofertas.json?t=" + Date.now()).then(r => r.json()).then(l => {
+  (l || []).forEach(o => { if(o && o.slug) catalogo[o.slug] = o; });
+}).catch(() => {}).then(() => carregar(7));
+document.getElementById("periodo").addEventListener("click", e => {
+  const b = e.target.closest("button"); if(!b) return;
+  document.querySelectorAll("#periodo button").forEach(x => x.classList.toggle("ativo", x === b));
+  carregar(Number(b.dataset.d));
+});
+</script>
+</body>
+</html>

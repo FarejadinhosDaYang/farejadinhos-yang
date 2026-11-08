@@ -15,6 +15,11 @@
  * Rotas:
  *   POST /visita   corpo {"novaVisita":1,"novaPessoa":0,"novaHoje":1,"pagina":"/..."}
  *   GET  /numeros  -> { total:{visitas,pessoas,paginas}, hoje:{...}, dias:[...] }
+ *   POST /clique   corpo {"slug":"...","categoria":"...","loja":"..."}  (clique pra loja)
+ *   GET  /relatorio?dias=7 -> mais vistas, mais clicadas, categorias, "muita visita e pouco clique"
+ *
+ * Por oferta, conta por dia: visitas na página da oferta ("v") e cliques
+ * pra loja ("c"). Guarda 60 dias (o resto é apagado sozinho).
  */
 
 const ORIGENS = [
@@ -48,8 +53,16 @@ function hojeBR() {
 let tabelaPronta = false;
 async function preparar(db) {
   if (tabelaPronta) return;
-  await db.prepare("CREATE TABLE IF NOT EXISTS contagem (chave TEXT PRIMARY KEY, valor INTEGER NOT NULL DEFAULT 0)").run();
+  await db.batch([
+    db.prepare("CREATE TABLE IF NOT EXISTS contagem (chave TEXT PRIMARY KEY, valor INTEGER NOT NULL DEFAULT 0)"),
+    db.prepare("CREATE TABLE IF NOT EXISTS ofertas_dia (dia TEXT NOT NULL, slug TEXT NOT NULL, tipo TEXT NOT NULL, categoria TEXT DEFAULT '', loja TEXT DEFAULT '', n INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (dia, slug, tipo, loja))"),
+  ]);
   tabelaPronta = true;
+}
+
+function contarOferta(db, dia, slug, tipo, categoria, loja) {
+  return db.prepare("INSERT INTO ofertas_dia (dia, slug, tipo, categoria, loja, n) VALUES (?1, ?2, ?3, ?4, ?5, 1) " +
+    "ON CONFLICT(dia, slug, tipo, loja) DO UPDATE SET n = n + 1, categoria = CASE WHEN ?4 <> '' THEN ?4 ELSE categoria END").bind(dia, slug, tipo, categoria, loja);
 }
 
 function somar(db, chave) {
@@ -81,8 +94,50 @@ export default {
         if (d.novaVisita) ops.push(somar(env.DB, "total:visitas"), somar(env.DB, "dia:" + dia + ":visitas"));
         if (d.novaPessoa) ops.push(somar(env.DB, "total:pessoas"));
         if (d.novaHoje) ops.push(somar(env.DB, "dia:" + dia + ":pessoas"));
+        // visita na página de uma oferta
+        const m = String(d.pagina || "").match(/^\/ofertas\/([a-z0-9-]{3,120})\/?$/);
+        if (m) ops.push(contarOferta(env.DB, dia, m[1], "v", "", ""));
         await env.DB.batch(ops);
         return json({ ok: true }, origem);
+      }
+
+      // ----- clique pra loja (botão "Pegar oferta", card da vitrine...) -----
+      if (url.pathname === "/clique" && request.method === "POST") {
+        if (origem && !ORIGENS.includes(origem)) return json({ ok: false }, origem, 403);
+        let d = {};
+        try { d = JSON.parse(await request.text() || "{}"); } catch (e) {}
+        const slug = String(d.slug || "").toLowerCase().replace(/[^a-z0-9-]/g, "").slice(0, 120);
+        if (!slug) return json({ ok: false }, origem, 400);
+        const dia = hojeBR();
+        await env.DB.batch([
+          contarOferta(env.DB, dia, slug, "c", String(d.categoria || "").slice(0, 40), String(d.loja || "").slice(0, 30)),
+          somar(env.DB, "total:cliques"), somar(env.DB, "dia:" + dia + ":cliques"),
+        ]);
+        // limpeza de vez em quando (guarda 60 dias)
+        if (Math.random() < 0.02) {
+          const corte = new Date(Date.now() - 3 * 3600 * 1000 - 60 * 86400000).toISOString().slice(0, 10);
+          await env.DB.prepare("DELETE FROM ofertas_dia WHERE dia < ?1").bind(corte).run();
+        }
+        return json({ ok: true }, origem);
+      }
+
+      // ----- relatório de cliques (painel) -----
+      if (url.pathname === "/relatorio") {
+        const dias = Math.max(1, Math.min(60, Number(url.searchParams.get("dias")) || 7));
+        const desde = new Date(Date.now() - 3 * 3600 * 1000 - (dias - 1) * 86400000).toISOString().slice(0, 10);
+        const q = (sql) => env.DB.prepare(sql).bind(desde).all().then(r => r.results);
+        const [porOferta, porCategoria, porLoja, porDia] = await Promise.all([
+          q("SELECT slug, SUM(CASE WHEN tipo='v' THEN n ELSE 0 END) AS visitas, SUM(CASE WHEN tipo='c' THEN n ELSE 0 END) AS cliques FROM ofertas_dia WHERE dia >= ?1 GROUP BY slug"),
+          q("SELECT categoria, SUM(n) AS cliques FROM ofertas_dia WHERE dia >= ?1 AND tipo='c' AND categoria <> '' GROUP BY categoria ORDER BY cliques DESC LIMIT 20"),
+          q("SELECT loja, SUM(n) AS cliques FROM ofertas_dia WHERE dia >= ?1 AND tipo='c' AND loja <> '' GROUP BY loja ORDER BY cliques DESC"),
+          q("SELECT dia, SUM(CASE WHEN tipo='v' THEN n ELSE 0 END) AS visitas, SUM(CASE WHEN tipo='c' THEN n ELSE 0 END) AS cliques FROM ofertas_dia WHERE dia >= ?1 GROUP BY dia ORDER BY dia"),
+        ]);
+        const maisClicadas = porOferta.filter(x => x.cliques > 0).sort((a, b) => b.cliques - a.cliques).slice(0, 25);
+        const maisVistas = porOferta.filter(x => x.visitas > 0).sort((a, b) => b.visitas - a.visitas).slice(0, 25);
+        const poucoClique = porOferta.filter(x => x.visitas >= 15 && x.cliques / x.visitas < 0.08)
+          .sort((a, b) => b.visitas - a.visitas).slice(0, 15);
+        const tot = porOferta.reduce((s, x) => ({ visitas: s.visitas + x.visitas, cliques: s.cliques + x.cliques }), { visitas: 0, cliques: 0 });
+        return json({ dias, desde, total: tot, maisClicadas, maisVistas, poucoClique, porCategoria, porLoja, porDia }, origem);
       }
 
       // ----- ler os números (painel) -----

@@ -262,6 +262,51 @@ window.farejaIconesExtras();
     } catch (e) {}
 })();
 
+/* ===== CLIQUES PRA LOJA =====
+ * Cada clique num link de loja (Pegar oferta, card da vitrine, anúncio do
+ * comparador, cupom...) avisa o contador: qual oferta e qual loja. Nada
+ * pessoal. Serve pro relatório do painel (painel/cliques.html).
+ * Mesmas exceções do contador de visitas (você/painel não contam).
+ */
+(function () {
+    var CONTADOR_URL = "https://farejadinhos-contador.bernard-shimizu.workers.dev";
+    try {
+        if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) return;
+        if (/\/painel\//.test(location.pathname) || /[?&]admin\b/.test(location.search)) return;
+        if (localStorage.getItem("farejadinhos_admin_senha")) return;
+        if (navigator.webdriver) return;
+    } catch (e) { return; }
+    var LOJAS = [[/meli\.la|mercadoli[vb]re/i, "Mercado Livre"], [/shopee|shp\.ee/i, "Shopee"], [/amazon\.|amzn\.|link\.amazon|a\.co\//i, "Amazon"],
+        [/aliexpress|s\.click\.ali/i, "AliExpress"], [/magazineluiza|magalu|divulgador\.magalu/i, "Magalu"], [/compre\.link/i, "Outra"]];
+    document.addEventListener("click", function (e) {
+        var a = e.target && e.target.closest && e.target.closest("a[href]");
+        if (!a) return;
+        var href = a.href || "";
+        var loja = "";
+        for (var i = 0; i < LOJAS.length; i++) if (LOJAS[i][0].test(href)) { loja = LOJAS[i][1]; break; }
+        if (!loja) return;
+        var dono = a.closest("[data-slug]");
+        var slug = dono ? dono.getAttribute("data-slug") : "";
+        if (!slug) { var m = location.pathname.match(/\/ofertas\/([^\/]+)\/?$/); slug = m ? decodeURIComponent(m[1]) : ""; }
+        if (!slug) {  // vitrine: acha a oferta pelo link
+            try {
+                var lista = typeof ofertas !== "undefined" && Array.isArray(ofertas) ? ofertas : [];
+                for (var k = 0; k < lista.length && !slug; k++) {
+                    var o = lista[k];
+                    if (!o) continue;
+                    if (o.link === href || (o.anuncios || []).some(function (x) { return x && x.link === href; })) slug = o.slug;
+                }
+            } catch (er) {}
+        }
+        if (!slug) return;
+        var corpo = JSON.stringify({ slug: slug, loja: loja });
+        try {
+            if (navigator.sendBeacon && navigator.sendBeacon(CONTADOR_URL + "/clique", new Blob([corpo], { type: "text/plain" }))) return;
+        } catch (er) {}
+        try { fetch(CONTADOR_URL + "/clique", { method: "POST", body: corpo, keepalive: true, headers: { "Content-Type": "text/plain" } }).catch(function () {}); } catch (er) {}
+    }, true);
+})();
+
 /* ===== AVISOS (notificações) — assets/avisos-push.js ===== */
 (function () {
     // "cartão de app" (manifest): no iPhone, é o que faz o site virar app
