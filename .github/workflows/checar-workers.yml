@@ -18,3 +18,8 @@ jobs:
           t GET  "https://farejadinhos-contador.bernard-shimizu.workers.dev/relatorio?dias=1"
           t GET  https://farejadinhos-contador.bernard-shimizu.workers.dev/numeros
           t GET  https://farejadinhos-reels.bernard-shimizu.workers.dev/
+      - name: Testar sitemap e robots do site
+        run: |
+          for u in sitemap.xml robots.txt google061fe68eba0e64b9.html; do
+            echo "== $u"; curl -s -m 20 -A "Googlebot/2.1" -D - "https://farejadinhosdayang.com.br/$u" -o /tmp/r | grep -iE "^HTTP|content-type"; head -c 300 /tmp/r; echo; grep -c "<url>" /tmp/r || true
+          done
