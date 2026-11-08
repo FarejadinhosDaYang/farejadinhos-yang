@@ -231,6 +231,13 @@
       linha = 9; ger = +m[1];
       if(tem(/ pro max /)) versao = 5; else if(tem(/ pro /)) versao = 4; else if(tem(/ (air|plus) /)) versao = 3;
       else if(tem(new RegExp(" iphone " + m[1] + " ?e "))) versao = 1;
+    } else if(tem(/ ipad /)){
+      // iPads vêm depois dos iPhones: Pro > Air > iPad > mini; depois o mais novo
+      linha = 4;
+      versao = tem(/ ipad pro /) ? 5 : tem(/ ipad air /) ? 4 : tem(/ ipad mini /) ? 2 : 3;
+      m = n.match(/ (20\d\d) /) || n.match(/ ipad (\d{1,2}) /) || n.match(/ m(\d) /) || n.match(/ (\d{1,2})(th|a|ª)? ?(gen|geracao) /);
+      ger = m ? (+m[1] > 2000 ? +m[1] - 2000 : +m[1]) : 0;
+      return linha * 1e6 + versao * 1e5 + ger * 1e3 + Math.min(gb, 999);
     } else if((m = n.match(/ (xiaomi|poco f|redmi note|poco [xm]|redmi|poco c) ?(\d{1,2})/))){
       linha = { "xiaomi": 8, "poco f": 6, "redmi note": 5, "poco x": 4, "poco m": 3, "redmi": 3, "poco c": 2 }[m[1]] || 2;
       ger = +m[2];
