@@ -75,6 +75,10 @@ async function main() {
   const senha = process.env.PAINEL_SENHA || "";
   if (!senha) throw new Error("falta o segredo PAINEL_SENHA");
   const w = carregar(["assets/categorias-config.js", "assets/categorias.js", "assets/nomes.js"]);
+  const suspeito = require(path.join(RAIZ, "assets", "preco-suspeito.js"));
+  let catalogo = [];
+  try { catalogo = JSON.parse(fs.readFileSync(path.join(RAIZ, "ofertas.json"), "utf8").replace(/^\uFEFF/, "")); } catch (e) {}
+  const foraPorPreco = [];
 
   const itens = [];
   for (const link of links) {
@@ -96,6 +100,25 @@ async function main() {
         link, imagemUrl: j.imagemUrl,
       };
       if (j.precoAPrazo && j.parcelas) { item.precoAPrazo = j.precoAPrazo; item.parcelas = j.parcelas; }
+      // preço suspeito (parcela, preço de outro produto...): conserta ou tenta ler de novo
+      let s = suspeito.checar({ ...item, produto: j.produto }, catalogo);
+      if (s.motivo && !s.corrigido) {
+        await new Promise(ok => setTimeout(ok, 4000));
+        const j2 = await produto(senha, link).catch(() => null);
+        if (j2 && j2.preco) {
+          item.preco = j2.preco; item.precoAntigo = j2.precoAntigo || item.precoAntigo;
+          if (j2.precoAPrazo && j2.parcelas) { item.precoAPrazo = j2.precoAPrazo; item.parcelas = j2.parcelas; }
+          s = suspeito.checar({ ...item, produto: j.produto }, catalogo);
+        }
+      }
+      if (s.corrigido) {
+        console.log(`  🔧 ${item.produto}: ${s.motivo}; usando ${s.corrigido} (era ${item.preco})`);
+        item.preco = s.corrigido;
+      } else if (s.motivo) {
+        console.log(`  🚫 fora do lote (preço suspeito: ${s.motivo}): ${item.produto} | ${item.preco} | ${link}`);
+        foraPorPreco.push({ link, produto: item.produto, preco: item.preco, motivo: s.motivo });
+        continue;
+      }
       itens.push(item);
       console.log(`  ✅ ${item.produto} | ${item.preco} | ${item.categoria}`);
     } catch (e) {
@@ -107,6 +130,17 @@ async function main() {
   if (extras.soNomes) { fs.writeFileSync(arq, "[]", "utf8"); console.log("Só nomes: nada foi subido."); process.exit(3); }
   fs.writeFileSync(arq, JSON.stringify(itens, null, 2), "utf8");
   console.log(`Links: ${itens.length} de ${links.length} viraram itens do lote.`);
+  if (foraPorPreco.length) {
+    // fica registrado pro painel/Claude mostrarem (e no resumo da execução)
+    const reg = path.join(RAIZ, "precos", "fora-por-preco.json");
+    let antes = [];
+    try { antes = JSON.parse(fs.readFileSync(reg, "utf8")); } catch (e) {}
+    const quando = new Date().toISOString().slice(0, 19) + "Z";
+    fs.mkdirSync(path.dirname(reg), { recursive: true });
+    fs.writeFileSync(reg, JSON.stringify(foraPorPreco.map(x => ({ ...x, quando })).concat(antes).slice(0, 200), null, 2), "utf8");
+    if (process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,
+      "### 🚫 Fora do lote por preço suspeito\n" + foraPorPreco.map(x => `- ${x.produto} — ${x.preco} (${x.motivo}) ${x.link}`).join("\n") + "\n");
+  }
 }
 
 main().catch(e => { console.error(e.message); process.exit(1); });

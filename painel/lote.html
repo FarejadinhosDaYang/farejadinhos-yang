@@ -14,6 +14,7 @@
 <script src="../assets/categorias.js"></script>
 <script src="../assets/cupons.js"></script>
 <script src="../assets/nomes.js"></script>
+<script src="../assets/preco-suspeito.js"></script>
 <script src="../assets/shopee-painel.js"></script>
 <style>
 
@@ -574,6 +575,19 @@ async function buscarFotosAutomaticas(){
                         item.precoAPrazo = json.precoAPrazo;
                         item.parcelas = json.parcelas;
                         p.semJuros = json.semJuros || "";
+                    }
+
+                    // preço suspeito (pegou a parcela, preço de outro produto...)
+                    if(item.preco && window.FarejadinhosPrecoSuspeito){
+                        const s = FarejadinhosPrecoSuspeito.checar({ produto: p.nomeOriginal || item.produto, preco: item.preco,
+                            precoAntigo: item.precoAntigo, precoAPrazo: item.precoAPrazo, parcelas: item.parcelas }, []);
+                        if(s.corrigido){
+                            p.motivo = "🔧 " + s.motivo + ": usei " + s.corrigido + " (a loja mostrou " + item.preco + ")";
+                            item.preco = s.corrigido;
+                        } else if(s.motivo){
+                            p.motivo = "⚠️ Preço suspeito (" + s.motivo + "): a loja mostrou " + item.preco + ". Confira e digite o preço certo.";
+                            item.preco = "";
+                        }
                     }
 
                     // nome chegou agora: sugere a categoria

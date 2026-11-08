@@ -116,7 +116,8 @@ jobs:
             Processar
             git add assets ofertas entrada ofertas.json
             if (Test-Path cupons.json) { git add cupons.json }
-            if ([string]::IsNullOrWhiteSpace((git status --porcelain assets ofertas entrada ofertas.json cupons.json))) {
+            if (Test-Path precos/fora-por-preco.json) { git add precos/fora-por-preco.json }
+            if ([string]::IsNullOrWhiteSpace((git status --porcelain assets ofertas entrada ofertas.json cupons.json precos/fora-por-preco.json))) {
               Write-Host "Nada para commitar."; $Salvou = $true; break
             }
             git commit -q -m "Lote de ofertas importado"
