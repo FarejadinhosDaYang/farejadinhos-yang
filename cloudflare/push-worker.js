@@ -10,6 +10,9 @@
  *   - sozinho, a cada 15 min (Cron Trigger): ofertas que acabaram de
  *     entrar no ar no site e batem com as categorias/palavras de cada um.
  *     Máximo de 3 avisos por pessoa por dia, só das 8h às 22h.
+ *   - sozinho, a cada 15 min: "🔔 Avise-me quando baixar" — quem pediu
+ *     numa oferta recebe aviso quando o menor preço cair 3% ou mais
+ *     (no máximo 1 aviso por oferta por dia).
  *
  * Usa o MESMO banco D1 do contador (binding DB). As chaves de segurança
  * do push (VAPID) são criadas sozinhas na primeira vez e ficam no banco.
@@ -73,6 +76,7 @@ async function preparar(db) {
     db.prepare("CREATE TABLE IF NOT EXISTS push_config (chave TEXT PRIMARY KEY, valor TEXT)"),
     db.prepare("CREATE TABLE IF NOT EXISTS push_inscritos (id TEXT PRIMARY KEY, endpoint TEXT NOT NULL, p256dh TEXT NOT NULL, auth TEXT NOT NULL, melhores INTEGER DEFAULT 1, cupons INTEGER DEFAULT 0, categorias TEXT DEFAULT '[]', palavras TEXT DEFAULT '[]', criado TEXT, dia TEXT, qtd_dia INTEGER DEFAULT 0)"),
     db.prepare("CREATE TABLE IF NOT EXISTS push_avisadas (slug TEXT PRIMARY KEY, quando TEXT)"),
+    db.prepare("CREATE TABLE IF NOT EXISTS push_alertas (id TEXT NOT NULL, slug TEXT NOT NULL, preco REAL, criado TEXT, avisado TEXT, PRIMARY KEY (id, slug))"),
   ]);
   pronto = true;
 }
@@ -145,7 +149,7 @@ async function enviarEContar(db, lista, montar, v, contarNoDia) {
     try {
       const st = await enviarPush(insc, dados, v);
       if (st === 404 || st === 410) {
-        await db.prepare("DELETE FROM push_inscritos WHERE id = ?1").bind(insc.id).run();
+        await db.batch([db.prepare("DELETE FROM push_inscritos WHERE id = ?1").bind(insc.id), db.prepare("DELETE FROM push_alertas WHERE id = ?1").bind(insc.id)]);
         removidos++;
       } else if (st >= 200 && st < 300) {
         ok++;
@@ -169,6 +173,58 @@ function inicioDe(o) {
 function precoTxt(o) {
   const p = String(o.preco || "").trim();
   return p ? (/^R\$/.test(p) ? p : "R$ " + p) : "";
+}
+
+// ------------------------------------- 🔔 avise-me quando baixar (cron)
+function numeroPreco(p) {
+  const s = String(p == null ? "" : p).replace(/[^\d,.]/g, "");
+  if (!s) return 0;
+  if (/,\d{1,2}$/.test(s)) return parseFloat(s.replace(/\./g, "").replace(",", ".")) || 0;
+  if (/\.\d{1,2}$/.test(s) && (s.match(/\./g) || []).length === 1) return parseFloat(s) || 0;
+  return parseFloat(s.replace(/[.,]/g, "")) || 0;
+}
+// menor preço da oferta (principal + anúncios juntados já conferidos)
+function menorPreco(o) {
+  let m = numeroPreco(o.preco);
+  for (const a of Array.isArray(o.anuncios) ? o.anuncios : []) {
+    if (!a || !(a.confirmado || a.manual)) continue;
+    const v = numeroPreco(a.preco);
+    if (v > 0 && v >= numeroPreco(o.preco) / 2 && (!m || v < m)) m = v;
+  }
+  return m;
+}
+function reais(v) { return "R$ " + v.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+
+async function avisarQuedas(db, todas, v) {
+  const alertas = (await db.prepare("SELECT a.id, a.slug, a.preco, a.avisado, i.endpoint, i.p256dh, i.auth FROM push_alertas a JOIN push_inscritos i ON i.id = a.id").all()).results;
+  if (!alertas.length) return { alertas: 0 };
+  const porSlug = {};
+  for (const o of todas) if (o && o.slug) porSlug[o.slug] = o;
+  const dia = hojeBR();
+  let enviados = 0;
+  const muda = [];
+  for (const al of alertas) {
+    const o = porSlug[al.slug];
+    if (!o) { muda.push(db.prepare("DELETE FROM push_alertas WHERE id = ?1 AND slug = ?2").bind(al.id, al.slug)); continue; }
+    const agora = menorPreco(o);
+    if (!agora || !al.preco) continue;
+    if (agora > al.preco * 0.97) {
+      // subiu: a referência acompanha (avisa quando baixar de novo)
+      if (agora > al.preco) muda.push(db.prepare("UPDATE push_alertas SET preco = ?3 WHERE id = ?1 AND slug = ?2").bind(al.id, al.slug, agora));
+      continue;
+    }
+    if (al.avisado && al.avisado.slice(0, 10) === dia) continue;
+    const r = await enviarEContar(db, [{ id: al.id, endpoint: al.endpoint, p256dh: al.p256dh, auth: al.auth }], () => ({
+      titulo: "📉 Baixou! " + String(o.produto || "").slice(0, 60),
+      mensagem: "De " + reais(al.preco) + " por " + reais(agora) + " — a Yang ficou de olho pra você 🐶",
+      url: SITE + "/ofertas/" + encodeURIComponent(o.slug) + "/",
+      imagem: o.imagem ? SITE + "/assets/" + encodeURIComponent(o.imagem) : "",
+    }), v, false);
+    enviados += r.ok;
+    muda.push(db.prepare("UPDATE push_alertas SET preco = ?3, avisado = ?4 WHERE id = ?1 AND slug = ?2").bind(al.id, al.slug, agora, new Date().toISOString()));
+  }
+  if (muda.length) await db.batch(muda);
+  return { alertas: alertas.length, enviados };
 }
 
 // Cupons do dia: quando aparecem códigos novos — nas ofertas do site ou na
@@ -238,6 +294,8 @@ async function avisarOfertasNovas(env) {
   });
 
   const resCupons = await avisarCupons(db, todas);
+  let resQuedas = {};
+  try { resQuedas = await avisarQuedas(db, todas, await chaves(db)); } catch (e) { resQuedas = { erro: String(e.message || e) }; }
 
   // primeira vez: marca tudo como já avisado (não manda uma enxurrada)
   const primeira = !(await db.prepare("SELECT valor FROM push_config WHERE chave = 'iniciado'").first());
@@ -249,7 +307,7 @@ async function avisarOfertasNovas(env) {
     if (marcar.length) await db.batch(marcar);
     return { iniciado: true, marcadas: novas.length };
   }
-  if (!novas.length) return { novas: 0, cupons: resCupons };
+  if (!novas.length) return { novas: 0, cupons: resCupons, quedas: resQuedas };
 
   const v = await chaves(db);
   const dia = hojeBR();
@@ -286,7 +344,7 @@ async function avisarOfertasNovas(env) {
   }, v, true);
 
   if (marcar.length) await db.batch(marcar);
-  return { novas: novas.length, ...res, cupons: resCupons };
+  return { novas: novas.length, ...res, cupons: resCupons, quedas: resQuedas };
 }
 
 // ------------------------------------------------------------------ HTTP
@@ -337,6 +395,32 @@ export default {
         return json({ ok: true }, origem);
       }
 
+      // 🔔 avise-me quando baixar (numa oferta)
+      if (url.pathname === "/alerta" && request.method === "POST") {
+        const s = d.inscricao || {};
+        const slug = String(d.slug || "").trim().slice(0, 120);
+        const preco = Number(d.preco) || 0;
+        if (!s.endpoint || !/^https:\/\//.test(s.endpoint) || !s.keys || !s.keys.p256dh || !s.keys.auth || !slug || !(preco > 0)) return json({ erro: "pedido inválido" }, origem, 400);
+        const id = await idDe(s.endpoint);
+        await db.batch([
+          db.prepare("INSERT INTO push_inscritos (id, endpoint, p256dh, auth, melhores, categorias, palavras, criado, cupons) VALUES (?1, ?2, ?3, ?4, 0, '[]', '[]', ?5, 0) " +
+            "ON CONFLICT(id) DO UPDATE SET endpoint = ?2, p256dh = ?3, auth = ?4").bind(id, s.endpoint, s.keys.p256dh, s.keys.auth, new Date().toISOString()),
+          db.prepare("INSERT INTO push_alertas (id, slug, preco, criado) VALUES (?1, ?2, ?3, ?4) ON CONFLICT(id, slug) DO UPDATE SET preco = ?3")
+            .bind(id, slug, preco, new Date().toISOString()),
+        ]);
+        const n = await db.prepare("SELECT COUNT(*) AS n FROM push_alertas WHERE id = ?1").bind(id).first();
+        if (n && n.n > 50) await db.prepare("DELETE FROM push_alertas WHERE id = ?1 AND slug IN (SELECT slug FROM push_alertas WHERE id = ?1 ORDER BY criado LIMIT ?2)").bind(id, n.n - 50).run();
+        return json({ ok: true }, origem);
+      }
+      if (url.pathname === "/alerta-cancelar" && request.method === "POST") {
+        if (d.endpoint && d.slug) await db.prepare("DELETE FROM push_alertas WHERE id = ?1 AND slug = ?2").bind(await idDe(d.endpoint), String(d.slug)).run();
+        return json({ ok: true }, origem);
+      }
+      if (url.pathname === "/alertas" && request.method === "POST") {
+        const rows = d.endpoint ? (await db.prepare("SELECT slug, preco FROM push_alertas WHERE id = ?1").bind(await idDe(d.endpoint)).all()).results : [];
+        return json({ alertas: rows }, origem);
+      }
+
       if (url.pathname === "/minhas" && request.method === "POST") {
         const row = d.endpoint ? await db.prepare("SELECT melhores, cupons, categorias, palavras FROM push_inscritos WHERE id = ?1").bind(await idDe(d.endpoint)).first() : null;
         if (!row) return json({ inscrito: false }, origem);
@@ -344,7 +428,7 @@ export default {
       }
 
       if (url.pathname === "/cancelar" && request.method === "POST") {
-        if (d.endpoint) await db.prepare("DELETE FROM push_inscritos WHERE id = ?1").bind(await idDe(d.endpoint)).run();
+        if (d.endpoint) { const id = await idDe(d.endpoint); await db.batch([db.prepare("DELETE FROM push_inscritos WHERE id = ?1").bind(id), db.prepare("DELETE FROM push_alertas WHERE id = ?1").bind(id)]); }
         return json({ ok: true }, origem);
       }
 
@@ -361,7 +445,10 @@ export default {
           for (const p of JSON.parse(r.palavras || "[]")) { const k = semAcento(p); pal[k] = (pal[k] || 0) + 1; }
         }
         const ordenar = o => Object.entries(o).sort((a, b) => b[1] - a[1]).slice(0, 15).map(([nome, n]) => ({ nome, n }));
-        return json({ total: rows.length, melhores, cupons, categorias: ordenar(cat), palavras: ordenar(pal) }, origem);
+        const al = await db.prepare("SELECT COUNT(*) AS n, COUNT(DISTINCT slug) AS ofertas FROM push_alertas").first();
+        const topo = (await db.prepare("SELECT slug, COUNT(*) AS n FROM push_alertas GROUP BY slug ORDER BY n DESC LIMIT 10").all()).results;
+        return json({ total: rows.length, melhores, cupons, categorias: ordenar(cat), palavras: ordenar(pal),
+          alertas: { total: al ? al.n : 0, ofertas: al ? al.ofertas : 0, maisPedidas: topo } }, origem);
       }
 
       if (url.pathname === "/enviar" && request.method === "POST") {

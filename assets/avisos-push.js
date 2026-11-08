@@ -221,6 +221,37 @@
         faixa.querySelector(".yp-nao").onclick = function () { fecharFaixa(true); };
     }
 
+    // ---------- 🔔 avise-me quando baixar (usado na página da oferta) ----------
+    function inscrever() {
+        return Notification.requestPermission().then(function (perm) {
+            if (perm !== "granted") throw new Error(perm === "denied"
+                ? "O navegador bloqueou os avisos deste site. Pra liberar, toque no cadeado ao lado do endereço → Notificações → Permitir."
+                : "Sem permissão pra avisar. Sem problema!");
+            return Promise.all([registro(), fetch(PUSH_URL + "/chave").then(function (r) { return r.json(); })]);
+        }).then(function (res) {
+            var reg = res[0], chave = res[1].publica;
+            return reg.pushManager.getSubscription().then(function (s) {
+                return s || reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: chaveParaBytes(chave) });
+            });
+        });
+    }
+    window.FarejadinhosAvisos = {
+        // "ok" | "ios" (iPhone: precisa pôr o site na tela de início) | "nao"
+        suporte: function () { return suporta ? "ok" : (ehIOS && !instalado ? "ios" : "nao"); },
+        alertas: function () {
+            return inscricaoAtual().then(function (s) {
+                return s ? post("/alertas", { endpoint: s.endpoint }).then(function (j) { return j.alertas || []; }) : [];
+            }).catch(function () { return []; });
+        },
+        avisarQuandoBaixar: function (slug, preco) {
+            return inscrever().then(function (s) { return post("/alerta", { inscricao: s.toJSON(), slug: slug, preco: preco }); });
+        },
+        cancelarAlerta: function (slug) {
+            return inscricaoAtual().then(function (s) { return s ? post("/alerta-cancelar", { endpoint: s.endpoint, slug: slug }) : null; });
+        }
+    };
+    document.dispatchEvent(new Event("fareja:avisos"));
+
     // já tem inscrição mas o aparelho perdeu a marquinha? recoloca
     inscricaoAtual().then(function (s) { if (s) set("fareja_push_ok", "1"); });
 

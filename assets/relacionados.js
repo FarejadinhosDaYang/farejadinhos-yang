@@ -331,11 +331,61 @@
         var p = v.play(); if (p && p.catch) p.catch(function () {});
     }
 
+    // 🔔 "Me avise quando baixar": aviso no celular quando o menor preço cair
+    // (Worker de avisos; o pedido fica guardado lá, por oferta)
+    function montarAlerta(atual) {
+        var V = window.FarejadinhosVitrine;
+        var btn = document.querySelector(".card a.btn, a.btn");
+        if (!atual || !btn || !V || document.querySelector(".alerta-preco")) return;
+        var m = V.melhorAnuncio ? V.melhorAnuncio(atual, new Date()) : null;
+        var preco = m && m.valor ? m.valor : (V.numeroPreco ? V.numeroPreco(atual.preco) : 0);
+        if (!preco) return;
+        var caixa = document.createElement("div");
+        caixa.className = "alerta-preco";
+        caixa.innerHTML = '<button type="button" class="alerta-btn">🔔 Me avise quando baixar</button><div class="alerta-msg" hidden></div>';
+        btn.parentNode.insertBefore(caixa, btn.nextSibling);
+        var b = caixa.querySelector(".alerta-btn"), msg = caixa.querySelector(".alerta-msg");
+        function dizer(t, erro) { msg.hidden = false; msg.className = "alerta-msg" + (erro ? " erro" : ""); msg.innerHTML = t; }
+        function ligado(ref) {
+            b.classList.add("ligado");
+            b.textContent = "🔔 Avisando se baixar de " + reais(ref);
+            b.title = "Toque pra parar de acompanhar";
+        }
+        function quandoPronto(fn) {
+            if (window.FarejadinhosAvisos) return fn(window.FarejadinhosAvisos);
+            document.addEventListener("fareja:avisos", function () { fn(window.FarejadinhosAvisos); }, { once: true });
+        }
+        quandoPronto(function (A) {
+            A.alertas().then(function (l) {
+                var meu = l.filter(function (x) { return x.slug === atual.slug; })[0];
+                if (meu) ligado(meu.preco);
+            });
+        });
+        b.onclick = function () {
+            if (!window.FarejadinhosAvisos) { dizer("Carregando... tenta de novo em um segundo."); return; }
+            var A = window.FarejadinhosAvisos, sup = A.suporte();
+            if (sup === "ios") { dizer("📱 No iPhone, primeiro adicione o site à tela de início: toque em <b>Compartilhar</b> → <b>Adicionar à Tela de Início</b>, abra por lá e toque aqui de novo."); return; }
+            if (sup !== "ok") { dizer("Esse navegador não aceita avisos. Tenta pelo Chrome 😉", true); return; }
+            b.disabled = true;
+            if (b.classList.contains("ligado")) {
+                A.cancelarAlerta(atual.slug).then(function () {
+                    b.classList.remove("ligado"); b.textContent = "🔔 Me avise quando baixar"; dizer("Ok, parei de acompanhar essa oferta.");
+                }).catch(function (e) { dizer("❌ " + e.message, true); }).then(function () { b.disabled = false; });
+                return;
+            }
+            A.avisarQuandoBaixar(atual.slug, preco).then(function () {
+                ligado(preco);
+                dizer("✅ Pronto! A Yang vai te avisar aqui no celular quando essa oferta baixar de " + reais(preco) + ". 🐶");
+            }).catch(function (e) { dizer("❌ " + e.message, true); }).then(function () { b.disabled = false; });
+        };
+    }
+
     function montar(todas) {
         var slug = slugAtual();
         var atual = todas.filter(function (o) { return o && o.slug === slug; })[0];
         try { montarAnuncios(atual); } catch (e) {}
         try { montarVideo(atual); } catch (e) {}
+        try { montarAlerta(atual); } catch (e) {}
         // 🖤 selo Black November (a temporada.js pode chegar um pouco depois)
         (function seloBlack(tentativas) {
             var V = window.FarejadinhosVitrine;

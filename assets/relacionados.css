@@ -203,3 +203,12 @@
 .midia-tela{position:fixed;inset:0;z-index:9999;background:rgba(20,12,8,.92);display:flex;align-items:center;justify-content:center;padding:16px}
 .midia-tela video{max-width:100%;max-height:100%;aspect-ratio:9/16;border-radius:16px;background:#000}
 .midia-fechar{position:absolute;top:14px;right:14px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;color:#2B1B12;font:800 20px 'Work Sans',Arial,sans-serif;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+
+/* 🔔 me avise quando baixar */
+.alerta-preco{margin:10px 0 4px}
+.alerta-btn{width:100%;font:800 14.5px 'Baloo 2','Work Sans',Arial,sans-serif;background:#fff;color:#2B1B12;border:1.5px solid #F0DFC4;border-radius:12px;padding:10px 12px;cursor:pointer;transition:border-color .15s,background .15s}
+.alerta-btn:hover{border-color:#F7941D}
+.alerta-btn.ligado{background:#FFF4E6;border-color:#F7941D;color:#B85E00}
+.alerta-btn:disabled{opacity:.6}
+.alerta-msg{margin-top:6px;font:500 13px 'Work Sans',Arial,sans-serif;color:#5C4636;line-height:1.4}
+.alerta-msg.erro{color:#C21A24}
