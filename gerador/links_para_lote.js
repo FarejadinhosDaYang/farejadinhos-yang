@@ -58,7 +58,19 @@ async function main() {
     }
   }
   links = [...new Set(links.map(l => String(l || "").trim()).filter(Boolean))];
-  if (!links.length) return;
+  // link que já está no site (como oferta ou anúncio juntado) fica de fora
+  const noSite = new Set();
+  try {
+    for (const o of JSON.parse(fs.readFileSync(path.join(RAIZ, "ofertas.json"), "utf8").replace(/^\uFEFF/, ""))) {
+      if (!o) continue;
+      noSite.add(String(o.link || "").trim());
+      for (const a of o.anuncios || []) if (a && a.link) noSite.add(String(a.link).trim());
+    }
+  } catch (e) { console.log("  (não li o ofertas.json: " + e.message + ")"); }
+  const repetidos = links.filter(l => noSite.has(l));
+  if (repetidos.length) console.log(`  ⏭️ ${repetidos.length} link(s) já estão no site: ${repetidos.join(" ")}`);
+  links = links.filter(l => !noSite.has(l));
+  if (!links.length) { fs.writeFileSync(arq, "[]", "utf8"); console.log("Links: todos já estavam no site."); return; }
 
   const senha = process.env.PAINEL_SENHA || "";
   if (!senha) throw new Error("falta o segredo PAINEL_SENHA");
