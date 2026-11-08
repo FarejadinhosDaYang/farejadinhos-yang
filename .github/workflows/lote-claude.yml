@@ -1,0 +1,31 @@
+name: Lote enviado pelo Claude
+
+# Jeito do Claude subir ofertas sem a senha do painel: ele grava um arquivo de lote
+# (mesmo formato do painel/radar) em entrada/claude/ e este workflow manda o
+# "Gerar lote de ofertas" processar — igual ao botão "🚀 Subir no site".
+on:
+  push:
+    branches: [main]
+    paths:
+      - "entrada/claude/*.json"
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  disparar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mandar cada lote novo pro Gerar lote
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          jq -r '[.commits[].added[]] | unique | .[] | select(test("^entrada/claude/.*\\.json$"))' "$GITHUB_EVENT_PATH" > novos.txt
+          cat novos.txt
+          while read -r arq; do
+            [ -n "$arq" ] || continue
+            gh workflow run gerar-lote.yml --ref main -f arquivoLote="$arq"
+            echo "Disparado: $arq"
+          done < novos.txt
