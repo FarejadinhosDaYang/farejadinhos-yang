@@ -5415,7 +5415,7 @@
     "preco": "R$ 127,00",
     "precoAntigo": "",
     "cupom": "",
-    "categoria": "Skincare",
+    "categoria": "Skincare, Vídeos",
     "destaque": false,
     "imagem": "8abe8a14-1598-433b-bd08-f8e7b629a229.jpg",
     "link": "https://s.shopee.com.br/7fb5Mmbfdf",
@@ -5424,7 +5424,9 @@
     "data": "2026-11-04T11:00:29Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-04T11:00:00Z"
+    "liberacao": "2026-11-04T11:00:00Z",
+    "video": "videos/medicube-pdrn-pink-collagen-volume-multi-balm-10g.mp4",
+    "videoCapa": "videos/medicube-pdrn-pink-collagen-volume-multi-balm-10g.jpg"
   },
   {
     "produto": "Cozedor De Ovos Portátil Elétrico Cozinha A Vapor",
