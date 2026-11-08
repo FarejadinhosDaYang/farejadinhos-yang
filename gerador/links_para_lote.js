@@ -54,7 +54,7 @@ async function main() {
   for (const it of lista) {
     if (it && it.acao === "links") {
       links.push(...(it.links || []));
-      extras = { categoria: it.categoria || "" };
+      extras = { categoria: it.categoria || "", soNomes: !!it.soNomes };
     }
   }
   links = [...new Set(links.map(l => String(l || "").trim()).filter(Boolean))];
@@ -69,7 +69,7 @@ async function main() {
   } catch (e) { console.log("  (não li o ofertas.json: " + e.message + ")"); }
   const repetidos = links.filter(l => noSite.has(l));
   if (repetidos.length) console.log(`  ⏭️ ${repetidos.length} link(s) já estão no site: ${repetidos.join(" ")}`);
-  links = links.filter(l => !noSite.has(l));
+  if (!extras.soNomes) links = links.filter(l => !noSite.has(l));
   if (!links.length) { fs.writeFileSync(arq, "[]", "utf8"); console.log("Links: todos já estavam no site."); return; }
 
   const senha = process.env.PAINEL_SENHA || "";
@@ -80,6 +80,11 @@ async function main() {
   for (const link of links) {
     try {
       const j = await produto(senha, link);
+      if (extras.soNomes) {  // só lista o nome completo de cada link (pra organizar), não sobe nada
+        console.log(`  NOME\t${link}\t${j && j.produto || "?"}\t${j && j.preco || "?"}\t${j && j.precoAntigo || ""}`);
+        await new Promise(ok => setTimeout(ok, 500));
+        continue;
+      }
       if (!j || !j.produto || !j.preco || !j.imagemUrl) {
         console.log(`  ⚠️ fora do lote (faltou ${!j || !j.produto ? "nome" : !j.preco ? "preço" : "foto"}): ${link}`);
         continue;
@@ -99,6 +104,7 @@ async function main() {
     }
     await new Promise(ok => setTimeout(ok, 800));
   }
+  if (extras.soNomes) { fs.writeFileSync(arq, "[]", "utf8"); console.log("Só nomes: nada foi subido."); process.exit(3); }
   fs.writeFileSync(arq, JSON.stringify(itens, null, 2), "utf8");
   console.log(`Links: ${itens.length} de ${links.length} viraram itens do lote.`);
 }
