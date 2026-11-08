@@ -1,0 +1,20 @@
+[
+ {
+  "acao": "anuncios",
+  "op": "editar",
+  "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
+  "link": "https://link.amazon/B074YgW4y",
+  "variacao": "Violeta",
+  "tamanho": "256GB"
+ },
+ {
+  "acao": "anuncios",
+  "op": "juntar",
+  "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
+  "de": "celular-samsung-galaxy-s26-5g-512gb",
+  "variacao": "Azul-claro",
+  "cor": "#BFD8EC",
+  "tamanho": "512GB",
+  "tirar": true
+ }
+]
