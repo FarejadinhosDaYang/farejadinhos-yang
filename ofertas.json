@@ -643,11 +643,24 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/be80d970-5211-4ffe-8904-6a755e29303b.jpg",
         "variacao": "Preto",
         "cor": "#2B2B2B"
+      },
+      {
+        "link": "https://meli.la/1WPbdmM",
+        "loja": "Mercado Livre",
+        "preco": "R$ 5.617,00",
+        "conferido": "2026-11-08T21:16:15Z",
+        "manual": "2026-11-08T21:47:30Z",
+        "confirmado": true,
+        "imagem": "https://farejadinhosdayang.com.br/assets/4177a6cd-f49f-4c27-aac0-feaf58650fb2.jpg",
+        "variacao": "Azul-claro",
+        "cor": "#BFD8EC",
+        "tamanho": "512GB"
       }
     ],
     "variacao": "Violeta",
     "cor": "#8B7BB8",
-    "precoConferido": "2026-11-08T16:49:32Z"
+    "precoConferido": "2026-11-08T16:49:32Z",
+    "tamanho": "256GB"
   },
   {
     "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
@@ -883,24 +896,6 @@
     "precoManual": "2026-10-22T20:24:30Z",
     "parcelas": 10,
     "precoConferido": "2026-11-07T07:13:50Z"
-  },
-  {
-    "produto": "Celular Samsung Galaxy S26 5G, 512GB",
-    "preco": "R$ 5.617,00",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Celulares",
-    "destaque": false,
-    "imagem": "4177a6cd-f49f-4c27-aac0-feaf58650fb2.jpg",
-    "link": "https://meli.la/1WPbdmM",
-    "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-5g-512gb/",
-    "slug": "celular-samsung-galaxy-s26-5g-512gb",
-    "data": "2026-10-23T00:12:14Z",
-    "precoAVista": "R$ 5.617,00",
-    "precoAPrazo": "6443,00",
-    "liberacao": "2026-10-23T16:36:00Z",
-    "parcelas": 10,
-    "precoConferido": "2026-11-08T21:16:15Z"
   },
   {
     "produto": "Celular Samsung Galaxy A57 256gb cinza",
