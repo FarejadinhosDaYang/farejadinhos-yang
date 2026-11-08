@@ -154,6 +154,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+          # foto nova fica leve (máx. 1000px)
+          python -m pip install -q pillow
+          $novas = @(git ls-files --others --modified --exclude-standard assets | Where-Object { $_ -match '\.(jpe?g|png|webp)$' })
+          if ($novas.Count) { python gerador/fotos_leves.py @novas }
+
           git add assets ofertas entrada ofertas.json
 
           $temAlteracoes = git status --porcelain
