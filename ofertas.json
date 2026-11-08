@@ -578,7 +578,7 @@
   },
   {
     "produto": "Samsung Galaxy S25 5G, 256GB, 12GB, Câmera Tripla",
-    "preco": "R$ 4.652,00",
+    "preco": "R$ 3.849,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -588,15 +588,15 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/samsung-galaxy-s25-5g-256gb-12gb-camera-tripla/",
     "slug": "samsung-galaxy-s25-5g-256gb-12gb-camera-tripla",
     "data": "2026-10-18T15:10:04Z",
-    "precoAVista": "R$ 4.652,00",
+    "precoAVista": "R$ 3.849,00",
     "precoAPrazo": "4099,00",
     "liberacao": "2026-10-18T15:34:30Z",
     "parcelas": 10,
-    "precoConferido": "2026-11-07T22:51:43Z"
+    "precoConferido": "2026-11-08T02:34:24Z"
   },
   {
     "produto": "Celular Samsung Galaxy S26 5G 256GB 12GB RAM Cmera",
-    "preco": "R$ 4.696,54",
+    "preco": "R$ 4.079,05",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -606,7 +606,7 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera/",
     "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "R$ 4.696,54",
+    "precoAVista": "R$ 4.079,05",
     "precoAPrazo": "5066,16",
     "liberacao": "2026-10-19T11:56:00Z",
     "parcelas": 12,
@@ -620,16 +620,18 @@
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/be80d970-5211-4ffe-8904-6a755e29303b.jpg",
         "variacao": "Preto",
-        "cor": "#2B2B2B"
+        "cor": "#2B2B2B",
+        "pendente": "R$ 4.095,64",
+        "pendenteEm": "2026-11-08T02:34:25Z"
       }
     ],
     "variacao": "Violeta",
     "cor": "#8B7BB8",
-    "precoConferido": "2026-11-07T07:13:49Z"
+    "precoConferido": "2026-11-08T02:34:24Z"
   },
   {
     "produto": "Celular Samsung Galaxy S26 FE 128GB 8GB RAM Tela",
-    "preco": "R$ 3.998,97",
+    "preco": "R$ 3.999,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -639,11 +641,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-fe-128gb-8gb-ram-tela/",
     "slug": "celular-samsung-galaxy-s26-fe-128gb-8gb-ram-tela",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "R$ 3.998,97",
+    "precoAVista": "R$ 3.999,00",
     "precoAPrazo": "3999,00",
     "liberacao": "2026-10-19T19:24:00Z",
     "parcelas": 12,
-    "precoConferido": "2026-11-07T07:13:49Z"
+    "precoConferido": "2026-11-08T02:34:24Z"
   },
   {
     "produto": "iPhone 18 Pro 256GB Preto (somente eSIM)",
@@ -926,8 +928,8 @@
         "confirmado": true,
         "variacao": "Grafite",
         "imagem": "https://farejadinhosdayang.com.br/assets/34376bc0-2af2-48f2-94b4-c40bf9456bc6.jpg",
-        "pendente": "R$ 1.547,00",
-        "pendenteEm": "2026-11-07T22:51:44Z"
+        "pendente": "R$ 1.545,00",
+        "pendenteEm": "2026-11-08T02:34:25Z"
       },
       {
         "link": "https://meli.la/1yNAJBz",
@@ -1098,7 +1100,7 @@
   },
   {
     "produto": "Kit Máquina Para Tosar Pet + Tesoura + Pente",
-    "preco": "R$ 30,26",
+    "preco": "R$ 34,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Pet",
@@ -1122,7 +1124,7 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/c416ac11-699e-48ae-addb-b7b12d017a75.jpg"
       }
     ],
-    "precoConferido": "2026-11-05T10:56:01Z"
+    "precoConferido": "2026-11-08T02:34:24Z"
   },
   {
     "produto": "Arranhador Adesivo Premium: Sofá, Cama e Móveis",
@@ -1280,7 +1282,9 @@
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/8a3e1230-4e3e-4109-877a-8c16b096077d.jpg",
         "variacao": "Prata",
-        "cor": "#D9DCE1"
+        "cor": "#D9DCE1",
+        "pendente": "R$ 7.499,00",
+        "pendenteEm": "2026-11-08T02:34:25Z"
       }
     ],
     "precoConferido": "2026-11-05T10:56:01Z",
@@ -1375,7 +1379,7 @@
   },
   {
     "produto": "Bepantol Derma Pink Mosqueta Hidratante",
-    "preco": "R$ 30,60",
+    "preco": "R$ 30,94",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Skincare",
@@ -1387,7 +1391,8 @@
     "data": "2026-10-28T00:40:03Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-31T11:00:00Z"
+    "liberacao": "2026-10-31T11:00:00Z",
+    "precoConferido": "2026-11-08T02:34:24Z"
   },
   {
     "produto": "Arranhador Adesivo Protetor Gato Pets Sofá Cama",
@@ -1457,7 +1462,7 @@
   },
   {
     "produto": "Comedouro Bebedouro Elevado 1 2 ou 3 Unidades Anti",
-    "preco": "R$ 15,69",
+    "preco": "R$ 15,70",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Pet",
@@ -1470,7 +1475,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-28T18:10:48Z",
-    "precoConferido": "2026-11-05T10:56:01Z"
+    "precoConferido": "2026-11-08T02:34:24Z"
   },
   {
     "produto": "Kit 5 Faixa Elástica Super Mini Band Para Treino",
@@ -2726,7 +2731,7 @@
   },
   {
     "produto": "Strobo Pisca Cordão Natal 500 Leds 50m Prova",
-    "preco": "R$ 159,99",
+    "preco": "R$ 299,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -2739,7 +2744,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-02T23:56:35Z",
-    "precoConferido": "2026-11-07T14:05:57Z"
+    "precoConferido": "2026-11-08T02:34:24Z"
   },
   {
     "produto": "Árvore De Natal 1180 650 450 Galhos Luxo Premium",
@@ -3112,7 +3117,7 @@
   },
   {
     "produto": "Arvore De Natal Pinheiro 1,5m 1,8m 2,1m 2,4m",
-    "preco": "R$ 127,39",
+    "preco": "R$ 139,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -3125,7 +3130,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-04T17:41:27Z",
-    "precoConferido": "2026-11-06T06:45:04Z"
+    "precoConferido": "2026-11-08T02:34:24Z"
   },
   {
     "produto": "Cortina luz LED 3/6x3M com 8 Modos USB Natal Fadas",
@@ -4225,7 +4230,7 @@
         "link": "https://s.shopee.com.br/8VA2VQDdou",
         "loja": "Shopee",
         "preco": "R$ 20,27",
-        "conferido": "2026-11-07T14:05:58Z",
+        "conferido": "2026-11-08T02:34:25Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/6cd98111-3125-44a2-b1ee-6fdc5c930329.jpg"
@@ -4351,7 +4356,7 @@
   },
   {
     "produto": "Carregador 45w Tipo C Turbo ORIGINALPara Galaxy",
-    "preco": "R$ 23,99",
+    "preco": "R$ 41,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Acessórios de Celular",
@@ -4364,7 +4369,8 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-04T14:02:11Z",
-    "anuncios": []
+    "anuncios": [],
+    "precoConferido": "2026-11-08T02:34:24Z"
   },
   {
     "produto": "Mini Lâmpada De Mesa LED Alimentada Por Bateria",
@@ -4577,7 +4583,7 @@
   },
   {
     "produto": "Fritadeira Elétrica AFON-12L-BG Forno Oven",
-    "preco": "R$ 487,05",
+    "preco": "R$ 485,56",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -4587,7 +4593,7 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/fritadeira-eletrica-afon-12l-bg-forno-oven/",
     "slug": "fritadeira-eletrica-afon-12l-bg-forno-oven",
     "data": "2026-11-03T18:03:25Z",
-    "precoAVista": "R$ 487,05",
+    "precoAVista": "R$ 485,56",
     "precoAPrazo": "522,40",
     "liberacao": "2026-11-05T11:45:00Z",
     "parcelas": 10,
@@ -4602,7 +4608,7 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/8cf5a57f-8ef3-48c4-90a2-a682d0380f3a.jpg"
       }
     ],
-    "precoConferido": "2026-11-07T18:52:52Z"
+    "precoConferido": "2026-11-08T02:34:24Z"
   },
   {
     "produto": "Travesseiro Cervical Abranuv Ergonômico Espuma",
@@ -4875,7 +4881,7 @@
   },
   {
     "produto": "Air Fryer Forno 25L French Door Mondial",
-    "preco": "R$ 975,18",
+    "preco": "R$ 1.005,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -4885,11 +4891,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/air-fryer-forno-25l-french-door-mondial/",
     "slug": "air-fryer-forno-25l-french-door-mondial",
     "data": "2026-11-03T18:03:28Z",
-    "precoAVista": "R$ 975,18",
+    "precoAVista": "R$ 1.005,00",
     "precoAPrazo": "1026,50",
     "liberacao": "2026-11-05T20:12:56Z",
     "parcelas": 10,
-    "precoConferido": "2026-11-07T14:05:57Z"
+    "precoConferido": "2026-11-08T02:34:24Z"
   },
   {
     "produto": "Parafusadeira Furadeira De Impacto The Black Tools",
@@ -5121,7 +5127,7 @@
   },
   {
     "produto": "Varal De Chão Vertical Grande De Roupas 3 Andares",
-    "preco": "R$ 66,33",
+    "preco": "R$ 72,10",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Casa",
@@ -5133,7 +5139,8 @@
     "data": "2026-11-03T18:03:31Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-05T20:12:56Z"
+    "liberacao": "2026-11-05T20:12:56Z",
+    "precoConferido": "2026-11-08T02:34:24Z"
   },
   {
     "produto": "Sanduicheira Elétrica Cadence SAN400 Preta",
@@ -5843,7 +5850,7 @@
   },
   {
     "produto": "Interruptor Inteligente WiFi Touch 2 Teclas com Tomada",
-    "preco": "R$ 89,90",
+    "preco": "R$ 100,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Automação",
@@ -5853,10 +5860,10 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/interruptor-inteligente-wifi-touch-2-teclas-com-tomada/",
     "slug": "interruptor-inteligente-wifi-touch-2-teclas-com-tomada",
     "data": "2026-11-05T19:57:15Z",
-    "precoAVista": "R$ 89,90",
+    "precoAVista": "R$ 100,00",
     "precoAPrazo": "89,90",
     "fixo": true,
-    "precoConferido": "2026-11-07T07:13:50Z"
+    "precoConferido": "2026-11-08T02:34:24Z"
   },
   {
     "produto": "Interruptor de Luz Inteligente Tuya Wifi Touch Brasil",
@@ -5876,7 +5883,7 @@
   },
   {
     "produto": "Amazon Echo Dot 5ª Geração Com Alexa E Som",
-    "preco": "R$ 445,45",
+    "preco": "R$ 483,63",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Automação",
@@ -5927,7 +5934,7 @@
         "cor": "#EDEDED"
       }
     ],
-    "precoConferido": "2026-11-07T22:51:43Z"
+    "precoConferido": "2026-11-08T02:34:24Z"
   },
   {
     "produto": "Echo Show 15 Amazon Smart Display Full Hd 15,6''",
