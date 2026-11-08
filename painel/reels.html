@@ -62,22 +62,27 @@ button:disabled{opacity:.6;cursor:wait}
     <small>Com o produto escolhido, a oferta vai pra categoria Vídeos e não sai mais do ar.</small>
   </label>
 
+  <label class="pronto-op" style="display:flex;gap:10px;align-items:flex-start;background:#fff;border:1.5px solid var(--line,#F0DFC4);border-radius:12px;padding:10px 12px;cursor:pointer">
+    <input type="checkbox" id="pronto" style="width:auto;margin-top:3px">
+    <span><b>📎 Já tenho o vídeo pronto</b> — só anexar na página do produto (vídeos feitos no Claude ou em outro app). Sem voz, sem montagem: escolha o produto acima e mande o MP4.</span>
+  </label>
+
   <div class="dupla">
     <label>🎞️ Vídeo do produto <input type="file" id="video" accept="video/*" required></label>
-    <label>🎙️ Voz do ElevenLabs (MP3) <input type="file" id="voz" accept="audio/*,.mp3" required></label>
+    <label class="so-montar">🎙️ Voz do ElevenLabs (MP3) <input type="file" id="voz" accept="audio/*,.mp3" required></label>
   </div>
 
-  <label>Texto da narração
+  <label class="so-montar">Texto da narração
     <textarea id="texto" required placeholder='Cole aqui exatamente o texto que você colou no ElevenLabs, com as reticências (…). Ex.: Sabe aquela sujeira do trilho… Esse mini aspirador resolve! … comenta "quero" que eu te mando o link… ou entra no farejadinhos da Yang ponto com ponto bê érre, tá na bio!'></textarea>
     <small>As legendas saem deste texto, frase por frase (as reticências separam as frases). Se tiver "comenta quero", o selo 💬 COMENTA QUERO aparece nessa hora, com "ou entra no farejadinhosdayang.com.br" embaixo. O site falado por extenso sai escrito certinho na legenda.<br>
     <b>🎯 Cortes no lugar certo:</b> cole o texto <b>com as marcações de cena</b> que o Claude manda, tipo <code>[2.4-4.8] Na tigela de vidro…</code> — cada frase toca exatamente aquele trecho do vídeo (em segundos). Pro ElevenLabs vai o texto <b>sem</b> as marcações. Sem marcação, a montagem distribui o vídeo sozinha.</small>
   </label>
 
-  <label>Título da capa
+  <label class="so-montar">Título da capa
     <input id="titulo" placeholder="Ex.: A sujeira que|*ninguém alcança*">
     <small>Até umas 6 palavras. <b>|</b> quebra a linha e <b>*palavra*</b> fica amarela. Vazio = usa a primeira frase.</small>
   </label>
-  <div class="dupla">
+  <div class="dupla so-montar">
     <label>Faixa da capa
       <select id="faixa">
         <option>🐾 A YANG FAREJOU</option><option>🐾 ACHADINHO DA COZINHA</option><option>🐾 ACHADINHO DA LIMPEZA</option>
@@ -88,7 +93,7 @@ button:disabled{opacity:.6;cursor:wait}
     <label>Balãozinho da Yang na capa <input id="balao" placeholder="Ex.: Olha isso! 😱"></label>
   </div>
 
-  <details>
+  <details class="so-montar">
     <summary>⚙️ Ajustes do vídeo (opcional)</summary>
     <div class="dupla">
       <label>Usar o vídeo a partir do segundo <input id="de" type="number" min="0" step="0.1" placeholder="0">
@@ -148,22 +153,33 @@ function preencher(filtro){
 }
 $("busca").addEventListener("input", e => preencher(e.target.value));
 
+// ---- "já tenho o vídeo pronto" ----
+function modoPronto(){
+  const pronto = $("pronto").checked;
+  document.querySelectorAll(".so-montar").forEach(el => { el.style.display = pronto ? "none" : ""; });
+  $("voz").required = !pronto; $("texto").required = !pronto;
+  if (!$("btn").disabled) $("btn").textContent = pronto ? "📎 Anexar vídeo à oferta" : "🎬 Montar reel";
+}
+$("pronto").addEventListener("change", modoPronto);
+
 // ---- enviar ----
 let esperando = "";
 $("form").addEventListener("submit", e => {
   e.preventDefault();
   const senha = $("senha").value.trim(), video = $("video").files[0], voz = $("voz").files[0], texto = $("texto").value.trim();
   const st = $("status"), btn = $("btn"), barra = $("barra");
-  if (!senha || !video || !voz || !texto){ st.className = "status erro"; st.textContent = "Preencha a senha, o vídeo, a voz e o texto."; return; }
+  const pronto = $("pronto").checked;
+  if (pronto && (!senha || !video || !$("produto").value)){ st.className = "status erro"; st.textContent = "Preencha a senha, escolha o produto e mande o vídeo."; return; }
+  if (!pronto && (!senha || !video || !voz || !texto)){ st.className = "status erro"; st.textContent = "Preencha a senha, o vídeo, a voz e o texto."; return; }
   if (video.size > 95e6){ st.className = "status erro"; st.textContent = "O vídeo passa de 95 MB — corte ou comprima antes."; return; }
   const sel = $("produto"), slug = sel.value, produto = slug ? sel.options[sel.selectedIndex].text.split(" · ")[0] : "";
   const num = id => { const v = $(id).value.trim(); return v === "" ? "" : Number(v); };
-  const pedido = { produto, slug, texto, titulo: $("titulo").value.trim(), faixa: $("faixa").value, balao: $("balao").value.trim(),
+  const pedido = pronto ? { pronto: true, produto, slug } : { produto, slug, texto, titulo: $("titulo").value.trim(), faixa: $("faixa").value, balao: $("balao").value.trim(),
                    de: num("de"), ate: num("ate"), capa_t: num("capa_t"), legenda_fundo: $("legenda_fundo").checked,
                    musica: $("musica").value.trim() };
   const dados = new FormData();
   dados.append("senha", senha); dados.append("pedido", JSON.stringify(pedido));
-  dados.append("video", video); dados.append("voz", voz);
+  dados.append("video", video); if (!pronto) dados.append("voz", voz);
 
   btn.disabled = true; btn.textContent = "Enviando…"; barra.style.display = "block"; barra.firstElementChild.style.width = "0";
   st.className = "status espera"; st.textContent = "Enviando os arquivos…";
@@ -176,14 +192,16 @@ $("form").addEventListener("submit", e => {
       try{ localStorage.setItem("farejadinhos_admin_senha", senha); }catch(e){}
       esperando = r.id; btn.textContent = "⏳ Montando…";
       st.className = "status espera";
-      st.textContent = "✅ Arquivos recebidos! A Yang está montando o reel (uns 5 a 8 minutos). Pode deixar esta página aberta — ela avisa quando ficar pronto.";
+      st.textContent = pronto
+        ? "✅ Vídeo recebido! Em uns 3 minutos ele entra na página do produto. Pode mandar o próximo quando terminar."
+        : "✅ Arquivos recebidos! A Yang está montando o reel (uns 5 a 8 minutos). Pode deixar esta página aberta — ela avisa quando ficar pronto.";
       acompanhar(Date.now());
     } else {
       st.className = "status erro"; st.textContent = "❌ " + (r.erro || ("erro " + xhr.status));
-      btn.disabled = false; btn.textContent = "🎬 Montar reel"; barra.style.display = "none";
+      btn.disabled = false; btn.textContent = ($("pronto").checked ? "📎 Anexar vídeo à oferta" : "🎬 Montar reel"); barra.style.display = "none";
     }
   };
-  xhr.onerror = () => { st.className = "status erro"; st.textContent = "❌ Não consegui falar com o Worker de reels (ele já foi instalado?)."; btn.disabled = false; btn.textContent = "🎬 Montar reel"; };
+  xhr.onerror = () => { st.className = "status erro"; st.textContent = "❌ Não consegui falar com o Worker de reels (ele já foi instalado?)."; btn.disabled = false; btn.textContent = ($("pronto").checked ? "📎 Anexar vídeo à oferta" : "🎬 Montar reel"); };
   xhr.send(dados);
 });
 
@@ -195,10 +213,10 @@ function acompanhar(inicio){
     if (item){
       st.className = "status " + (item.status === "pronto" ? "ok" : "erro");
       st.textContent = item.status === "pronto" ? "✅ Reel pronto! Está logo aí embaixo." : "❌ Deu erro ao montar — veja o detalhe na lista aí embaixo.";
-      btn.disabled = false; btn.textContent = "🎬 Montar reel"; $("barra").style.display = "none"; esperando = "";
+      btn.disabled = false; btn.textContent = ($("pronto").checked ? "📎 Anexar vídeo à oferta" : "🎬 Montar reel"); $("barra").style.display = "none"; esperando = "";
     } else if (Date.now() - inicio > 25 * 60e3){
       st.className = "status erro"; st.textContent = "Demorou mais que o normal. Confira em GitHub → Actions → Gerar reel.";
-      btn.disabled = false; btn.textContent = "🎬 Montar reel";
+      btn.disabled = false; btn.textContent = ($("pronto").checked ? "📎 Anexar vídeo à oferta" : "🎬 Montar reel");
     } else acompanhar(inicio);
   }, 30000);
 }

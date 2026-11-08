@@ -3,6 +3,8 @@
  *
  * Worker separado, usado pela página painel/reels.html:
  *   POST /reel  (formulário) senha, video (arquivo), voz (arquivo MP3), pedido (texto JSON)
+ *               Com pedido.pronto = true ("Já tenho o vídeo pronto"): só o vídeo e o
+ *               pedido.slug do produto — não monta nada, só põe na página da oferta.
  *               -> { ok: true, id }
  *               Guarda os arquivos na release "reels-entrada" do repositório e dispara o
  *               workflow "Gerar reel" (gerar-reel.yml), que monta o Reel, a capa e põe a oferta em Vídeos.
@@ -94,19 +96,23 @@ export default {
       const video = form.get("video"), voz = form.get("voz");
       let pedido = {};
       try { pedido = JSON.parse(form.get("pedido") || "{}"); } catch (e) { return json({ erro: "pedido inválido" }, 400, origem); }
-      if (!video || typeof video === "string" || !voz || typeof voz === "string") return json({ erro: "mande o vídeo e a voz" }, 400, origem);
-      if (!String(pedido.texto || "").trim()) return json({ erro: "falta o texto da narração" }, 400, origem);
-      if (video.size > MAX_MB * 1e6 || voz.size > 30e6) return json({ erro: `arquivo grande demais (máx. ${MAX_MB} MB)` }, 413, origem);
+      // "Já tenho o vídeo pronto": só o vídeo + o produto (sem voz nem narração)
+      const pronto = !!pedido.pronto;
+      if (!video || typeof video === "string") return json({ erro: "mande o vídeo" }, 400, origem);
+      if (pronto && !String(pedido.slug || "").trim()) return json({ erro: "escolha o produto do vídeo" }, 400, origem);
+      if (!pronto && (!voz || typeof voz === "string")) return json({ erro: "mande o vídeo e a voz" }, 400, origem);
+      if (!pronto && !String(pedido.texto || "").trim()) return json({ erro: "falta o texto da narração" }, 400, origem);
+      if (video.size > MAX_MB * 1e6 || (!pronto && voz.size > 30e6)) return json({ erro: `arquivo grande demais (máx. ${MAX_MB} MB)` }, 413, origem);
 
       const agora = new Date(Date.now() - 3 * 3600e3).toISOString();      // horário de Brasília
       const id = agora.slice(0, 10).replace(/-/g, "") + "-" + agora.slice(11, 19).replace(/:/g, "") + "-" +
                  Math.random().toString(36).slice(2, 6);
-      const ev = extensao(video.name, "mp4"), ea = extensao(voz.name, "mp3");
-      pedido = { ...pedido, id, video: `${id}-fonte.${ev}`, voz: `${id}-voz.${ea}` };
+      const ev = extensao(video.name, "mp4"), ea = pronto ? "" : extensao(voz.name, "mp3");
+      pedido = { ...pedido, id, video: `${id}-fonte.${ev}`, voz: pronto ? "" : `${id}-voz.${ea}` };
 
       const rel = await releaseEntrada(env);
       await subir(env, rel, pedido.video, video, video.type || "video/mp4");
-      await subir(env, rel, pedido.voz, voz, voz.type || "audio/mpeg");
+      if (!pronto) await subir(env, rel, pedido.voz, voz, voz.type || "audio/mpeg");
       await subir(env, rel, `${id}-pedido.json`, JSON.stringify(pedido), "application/json");
 
       const d = await gh(env, `/repos/${REPO}/actions/workflows/gerar-reel.yml/dispatches`, {

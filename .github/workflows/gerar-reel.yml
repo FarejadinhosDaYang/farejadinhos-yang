@@ -51,7 +51,19 @@ jobs:
 
       - name: Montar o reel e a capa
         run: |
-          python3 _video-yang/auto_reel.py "entrada-reel/${ID}-pedido.json" saida-reel
+          PRONTO=$(python3 -c "import json;print('1' if json.load(open('entrada-reel/${ID}-pedido.json',encoding='utf-8')).get('pronto') else '')")
+          if [ -n "$PRONTO" ]; then
+            # "Já tenho o vídeo pronto": não monta nada, só deixa o vídeo leve pro site e tira a capa
+            mkdir -p saida-reel
+            FONTE=$(ls entrada-reel/${ID}-fonte.* | head -1)
+            ffmpeg -y -loglevel error -i "$FONTE" -vf "scale='min(720,iw)':-2" -c:v libx264 -preset medium -crf 24 \
+              -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart "saida-reel/${ID}-reel.mp4"
+            ffmpeg -y -loglevel error -ss 1 -i "saida-reel/${ID}-reel.mp4" -frames:v 1 -q:v 3 "saida-reel/${ID}-capa.jpg" || \
+              ffmpeg -y -loglevel error -i "saida-reel/${ID}-reel.mp4" -frames:v 1 -q:v 3 "saida-reel/${ID}-capa.jpg"
+            echo "Vídeo pronto enviado pelo painel (sem montagem)." > "saida-reel/${ID}-log.txt"
+          else
+            python3 _video-yang/auto_reel.py "entrada-reel/${ID}-pedido.json" saida-reel
+          fi
 
       - name: Publicar (release reels-prontos)
         run: |
