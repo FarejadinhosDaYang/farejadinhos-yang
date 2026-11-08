@@ -308,6 +308,8 @@ $OrdemAnterior = $Catalogo | Where-Object { $_ -and $_.slug -eq $Slug -and $_.PS
 $BlackAnterior = $Catalogo | Where-Object { $_ -and $_.slug -eq $Slug -and $_.PSObject.Properties["black"] } | Select-Object -First 1
 $EraFixo = @($Catalogo | Where-Object { $_ -and $_.slug -eq $Slug -and $_.PSObject.Properties["fixo"] -and $_.fixo -eq $true }).Count -gt 0
 $VariacaoAnterior = $Catalogo | Where-Object { $_ -and $_.slug -eq $Slug -and $_.PSObject.Properties["variacao"] } | Select-Object -First 1
+$TamanhoAnterior = $Catalogo | Where-Object { $_ -and $_.slug -eq $Slug -and $_.PSObject.Properties["tamanho"] -and $_.tamanho } | Select-Object -First 1
+$ConfigAnterior = $Catalogo | Where-Object { $_ -and $_.slug -eq $Slug -and $_.PSObject.Properties["configuracao"] -and $_.configuracao } | Select-Object -First 1
 # Reel da Yang na pagina da oferta (video ao lado da foto): mantem numa edicao
 $VideoAnterior = $Catalogo | Where-Object { $_ -and $_.slug -eq $Slug -and $_.PSObject.Properties["video"] -and $_.video } | Select-Object -First 1
 
@@ -358,6 +360,8 @@ if ($BlackAnterior) { $NovaEntrada.black = [bool]$BlackAnterior.black }
 if ($SubAnterior) { $NovaEntrada.sub = [string]$SubAnterior.sub }
 if ($OrdemAnterior) { $NovaEntrada.ordem = $OrdemAnterior.ordem }
 if ($AnunciosAnteriores.Count -gt 0) { $NovaEntrada.anuncios = @($AnunciosAnteriores) }
+if ($TamanhoAnterior) { $NovaEntrada.tamanho = [string]$TamanhoAnterior.tamanho }
+if ($ConfigAnterior) { $NovaEntrada.configuracao = [string]$ConfigAnterior.configuracao }
 if ($VariacaoAnterior) {
     $NovaEntrada.variacao = [string]$VariacaoAnterior.variacao
     if ($VariacaoAnterior.PSObject.Properties["cor"] -and $VariacaoAnterior.cor) { $NovaEntrada.cor = [string]$VariacaoAnterior.cor }

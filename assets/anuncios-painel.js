@@ -107,18 +107,22 @@ function montarAnunciosPainel(o, box){
       <div class="ancLinha${a === melhor ? " melhor" : ""}">
         <span>${a.principal ? "⭐" : "🏪"}</span>
         ${a.imagem ? `<img src="${esc(a.imagem)}" alt="" style="width:26px;height:26px;object-fit:contain;border-radius:6px;background:#fff">` : ""}
-        <a href="${esc(a.link)}" target="_blank" rel="noopener">${esc(a.loja)}${a.principal ? " (principal)" : ""}${a.variacao ? ` · <span class="ancCor" style="--c:${esc(V.corDe(a.variacao, a.cor) || "transparent")}"></span>${esc(a.variacao)}` : ""}</a>
+        <a href="${esc(a.link)}" target="_blank" rel="noopener">${esc(a.loja)}${a.principal ? " (principal)" : ""}${a.tamanho ? ` · <b>${esc(a.tamanho)}</b>` : ""}${a.configuracao ? ` · ${esc(a.configuracao)}` : ""}${a.variacao ? ` · <span class="ancCor" style="--c:${esc(V.corDe(a.variacao, a.cor) || "transparent")}"></span>${esc(a.variacao)}` : ""}</a>
         <b>${fmt(a)}</b>
         <small>${a === melhor ? "✅ no site" : a.confiavel ? "" : esc(a.motivo)}</small>
         ${a.principal ? "" : `<button class="ancTirar ancEditarVar" type="button" title="Cor/versão e foto deste anúncio" data-link="${esc(a.link)}">🎨</button><button class="ancTirar" data-tirar="1" type="button" title="Tirar este anúncio" data-link="${esc(a.link)}">🗑️</button>`}
       </div>
       ${a.principal ? "" : `<div class="ancEdVar" data-link="${esc(a.link)}" hidden>
+        <input type="text" class="edTam" placeholder="Tamanho (ex.: 256GB)" value="${esc(a.tamanho || "")}" style="max-width:130px">
+        <input type="text" class="edCfg" placeholder="Configuração (ex.: Wi-Fi + Cellular)" value="${esc(a.configuracao || "")}" style="max-width:190px">
         <input type="text" class="edVar" placeholder="Cor/versão (ex.: Lilás) — vazio = mesma do principal" value="${esc(a.variacao || "")}">
         <input type="color" class="edCor" value="${esc(V.corDe(a.variacao, a.cor) || "#cccccc")}" title="Cor da bolinha">
         <input type="text" class="edFoto" placeholder="Foto desta cor (link da imagem)" value="${esc(a.imagem || "")}">
         <button class="ancBtn edSalvar" type="button">💾 Salvar</button>
       </div>`}`).join("") : ""}
     <div class="ancNovo">
+      <input type="text" class="ancTamPrincipal" placeholder="Tamanho do principal (ex.: 128GB)" value="${esc(o.tamanho || "")}" style="max-width:150px">
+      <input type="text" class="ancCfgPrincipal" placeholder="Configuração (ex.: Wi-Fi)" value="${esc(o.configuracao || "")}" style="max-width:170px">
       <input type="text" class="ancVarPrincipal" placeholder="Cor/versão do anúncio principal (ex.: Preto)" value="${esc(o.variacao || "")}">
       <button class="ancBtn ancSalvarVar" type="button">Salvar</button>
     </div>
@@ -174,12 +178,18 @@ function montarAnunciosPainel(o, box){
     });
   }
   async function juntar(outra, botao){
-    const variacao = prompt(`Juntar "${outra.produto}" (${outra.preco}) a este produto.\n\nÉ outra cor/versão? Escreva qual (ex.: Azul, 512GB).\nSe for o MESMO produto em outra loja/anúncio, deixe vazio.`, "");
+    let variacao = prompt(`Juntar "${outra.produto}" (${outra.preco}) a este produto.\n\nÉ outra cor e/ou tamanho? Escreva (ex.: Azul · 256GB · 256GB Azul).\nSe for o MESMO produto em outra loja/anúncio, deixe vazio.`, "");
     if(variacao === null) return;
+    // "256GB Azul" -> tamanho 256GB + cor Azul
+    let tamanho = "";
+    variacao = variacao.replace(/\b(\d+(?:[.,]\d+)?\s*(?:GB|TB))\b/i, m => { tamanho = m.replace(/\s+/g, "").toUpperCase(); return ""; }).replace(/\s{2,}/g, " ").trim();
+    // "Wi-Fi + Cellular" / "Wi-Fi" / "5G" -> configuração
+    let configuracao = "";
+    variacao = variacao.replace(/wi-?fi(\s*\+\s*(cellular|celular|5g))?/i, m => { configuracao = /\+/.test(m) ? "Wi-Fi + Cellular" : "Wi-Fi"; return ""; }).replace(/[·,\s]{2,}/g, " ").trim();
     const tirar = confirm(`Tirar "${outra.produto}" da vitrine do site?\n\nOK = ela some como oferta separada e fica só como anúncio deste produto (recomendado, evita repetido).\nCancelar = continua também como oferta separada.`);
     botao.disabled = true; botao.textContent = "Juntando...";
     try{
-      await pedirAnuncio({ op: "juntar", slug: o.slug, de: outra.slug, variacao: variacao.trim(),
+      await pedirAnuncio({ op: "juntar", slug: o.slug, de: outra.slug, variacao: variacao.trim(), tamanho, configuracao,
         cor: variacao.trim() ? (V.corDe(variacao) || "") : "", tirar });
       jaLigados.add(outra.link);
       botao.textContent = "✅ Juntado";
@@ -247,8 +257,9 @@ function montarAnunciosPainel(o, box){
   box.querySelector(".ancSalvarVar").onclick = async function(){
     this.disabled = true;
     try{
-      await pedirAnuncio({ op: "editar", slug: o.slug, link: o.link, variacao: box.querySelector(".ancVarPrincipal").value.trim() });
-      aviso("✅ Cor do anúncio principal salva! Aparece no site em 1-2 minutos.");
+      await pedirAnuncio({ op: "editar", slug: o.slug, link: o.link, variacao: box.querySelector(".ancVarPrincipal").value.trim(),
+        tamanho: box.querySelector(".ancTamPrincipal").value.trim(), configuracao: box.querySelector(".ancCfgPrincipal").value.trim() });
+      aviso("✅ Cor/tamanho do anúncio principal salvos! Aparece no site em 1-2 minutos.");
     }catch(e){ aviso("❌ " + e.message, true); }
     this.disabled = false;
   };
@@ -301,7 +312,8 @@ function montarAnunciosPainel(o, box){
       this.disabled = true;
       try{
         await pedirAnuncio({ op: "editar", slug: o.slug, link: ed.dataset.link, variacao,
-          cor: variacao && cor.dataset.mexeu ? cor.value : "", imagem: ed.querySelector(".edFoto").value.trim() });
+          cor: variacao && cor.dataset.mexeu ? cor.value : "", imagem: ed.querySelector(".edFoto").value.trim(),
+          tamanho: ed.querySelector(".edTam").value.trim(), configuracao: ed.querySelector(".edCfg").value.trim() });
         aviso("✅ Salvo! Aparece no site em 1-2 minutos." + (variacao && !o.variacao ? " Dica: preencha também a cor do anúncio principal." : ""));
         ed.hidden = true;
       }catch(e){ aviso("❌ " + e.message, true); }

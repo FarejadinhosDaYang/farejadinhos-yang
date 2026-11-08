@@ -97,7 +97,12 @@
         if (!atual || !V || !V.anunciosDe) return;
         var todos = V.anunciosDe(atual, new Date());
         if (todos.length < 2) return;
-        var vars = V.variacoesDe ? V.variacoesDe(atual, new Date()) : [];
+        // níveis de escolha, como na Amazon: Tamanho → Cor → Configuração
+        var agoraV = new Date();
+        var nivel = function (c) { return V.nivelDe ? V.nivelDe(atual, agoraV, c) : 0; };
+        var temTam = nivel("tamanho") >= 2, temCfg = nivel("configuracao") >= 2;
+        var nCor = V.nivelDe ? nivel("variacao") : (V.variacoesDe ? V.variacoesDe(atual, agoraV).length : 0);
+        var temCor = nCor >= 2 || (nCor >= 1 && (temTam || temCfg));
 
         var btn = document.querySelector(".card a.btn, a.btn");
         var preco = document.querySelector(".price");
@@ -105,6 +110,7 @@
         var foto = document.querySelector("img.product");
         var fotoPrincipal = foto ? foto.getAttribute("src") : "";
         var precoPrincipalTxt = preco ? preco.textContent.trim() : "";
+        var oldTxt = old ? old.textContent : "";
 
         var box = document.createElement("div");
         box.className = "anc-box";
@@ -112,7 +118,7 @@
         if (depois && depois.parentNode) depois.parentNode.insertBefore(box, depois.nextSibling);
 
         var rotulo = null;
-        if (vars.length > 1 && preco) {
+        if (temCor && preco) {
             rotulo = document.createElement("div");
             rotulo.className = "var-rotulo";
             preco.parentNode.insertBefore(rotulo, preco);
@@ -131,7 +137,11 @@
             // topo: preço, botão, "de R$"
             if (preco) preco.textContent = melhor.principal ? precoPrincipalTxt : (melhor.valor ? reais(melhor.valor) : "Preço a conferir");
             if (btn) btn.href = melhor.link;
-            if (old) old.style.display = melhor.principal ? "" : "none";
+            if (old) {
+                if (melhor.principal) { old.textContent = oldTxt; old.style.display = ""; }
+                else if (melhor.precoAntigo > melhor.valor) { old.textContent = oldTxt.replace(/R\$\s?[\d.,]+/, reais(melhor.precoAntigo)); old.style.display = ""; }
+                else old.style.display = "none";
+            }
             box.innerHTML =
                 (confiaveis.length > 1 ? '<div class="anc-selo">🏆 Menor preço entre ' + confiaveis.length + " anúncios" +
                     (nomeVar ? " de " + esc(nomeVar) : "") + " · " + esc(melhor.loja) + "</div>" : "") +
@@ -150,59 +160,105 @@
                 '<div class="anc-obs">Preços conferidos automaticamente; podem mudar na loja. Vale sempre o preço de lá.</div>' : "");
         }
 
-        if (vars.length < 2) { mostrarLista(todos, ""); return; }
-
-        // opções de cor/versão em quadradinhos (foto + nome + preço), abaixo do preço
-        var trilho = document.createElement("div");
-        trilho.className = "var-opcoes";
-        trilho.setAttribute("role", "radiogroup");
-        trilho.setAttribute("aria-label", "Escolher cor ou versão");
+        if (!temTam && !temCor && !temCfg) { mostrarLista(todos, ""); return; }
         if (rotulo) rotulo.parentNode.removeChild(rotulo);
-        var ancora = preco || btn;
-        if (ancora && ancora.parentNode) {
-            ancora.parentNode.insertBefore(trilho, ancora.nextSibling);
-            if (rotulo) trilho.parentNode.insertBefore(rotulo, trilho);
-        }
-        var ehCor = vars.some(function (v) { return v.cor; });
 
-        function escolher(i) {
-            var v = vars[i];
-            Array.prototype.forEach.call(trilho.children, function (b, k) {
-                b.classList.toggle("ativa", k === i);
-                b.setAttribute("aria-checked", k === i ? "true" : "false");
-            });
-            if (foto) {
-                var nova = v.imagem && v.imagem !== "principal" ? v.imagem : fotoPrincipal;
-                if (foto.getAttribute("src") !== nova) {
-                    foto.classList.add("trocando");
-                    foto.onload = function () { foto.classList.remove("trocando"); };
-                    foto.src = nova;
-                    setTimeout(function () { foto.classList.remove("trocando"); }, 600);
-                }
+        function trocarFoto(nova) {
+            if (!foto || !nova || foto.getAttribute("src") === nova) return;
+            foto.classList.add("trocando");
+            foto.onload = function () { foto.classList.remove("trocando"); };
+            foto.src = nova;
+            setTimeout(function () { foto.classList.remove("trocando"); }, 600);
+        }
+
+        var niveis = [];
+        if (temTam) niveis.push({ campo: "tamanho", titulo: "Tamanho" });
+        if (temCor) niveis.push({ campo: "variacao", titulo: "Cor" });
+        if (temCfg) niveis.push({ campo: "configuracao", titulo: "Configuração" });
+        var ref = preco || btn;
+        niveis.forEach(function (nv) {
+            nv.rotulo = document.createElement("div");
+            nv.rotulo.className = "var-rotulo";
+            nv.caixa = document.createElement("div");
+            nv.caixa.className = nv.campo === "variacao" ? "var-opcoes" : "var-tams";
+            nv.caixa.setAttribute("role", "radiogroup");
+            nv.caixa.setAttribute("aria-label", "Escolher " + nv.titulo.toLowerCase());
+            if (ref && ref.parentNode) {
+                ref.parentNode.insertBefore(nv.rotulo, ref.nextSibling);
+                ref.parentNode.insertBefore(nv.caixa, nv.rotulo.nextSibling);
+                ref = nv.caixa;
             }
-            if (rotulo) rotulo.innerHTML = (ehCor ? "Cor: " : "Opção: ") + "<b>" + esc(v.nome) + "</b>" +
-                (i === 0 && v.confiavel ? ' <span class="var-mais-barata">a mais barata agora</span>' : "");
-            mostrarLista(v.lista, v.nome, v.imagem && v.imagem !== "principal" ? v.imagem : "");
+        });
+        var sel = {};
+
+        function opcoes(nv, filtro) {
+            if (nv.campo === "variacao") {
+                return V.variacoesDe(atual, agoraV, filtro).map(function (v) {
+                    return { nome: v.nome, valor: v.melhor.valor, confiavel: v.confiavel, lista: v.lista, cor: v.cor,
+                        imagem: v.imagem, antigo: v.confiavel && v.melhor.precoAntigo > v.melhor.valor ? v.melhor.precoAntigo : 0 };
+                });
+            }
+            return V.opcoesDe(atual, agoraV, nv.campo, filtro);
         }
 
-        vars.forEach(function (v, i) {
-            var b = document.createElement("button");
-            b.type = "button";
-            b.className = "var-tile";
-            b.setAttribute("role", "radio");
-            var precoV = v.confiavel ? reais(v.melhor.valor) : "a conferir";
-            b.setAttribute("aria-label", v.nome + " · " + precoV);
-            var img = v.imagem && v.imagem !== "principal" ? v.imagem : (v.imagem === "principal" ? fotoPrincipal : "");
-            b.innerHTML =
-                '<span class="var-tile-foto">' + (img
-                    ? '<img src="' + esc(img) + '" alt="" loading="lazy">'
-                    : '<span class="var-cor" style="background:' + esc(v.cor || "#eee") + '"></span>') + "</span>" +
-                '<span class="var-tile-nome">' + (v.cor && img ? '<i style="background:' + esc(v.cor) + '"></i>' : "") + esc(v.nome) + "</span>" +
-                '<span class="var-tile-preco' + (v.confiavel ? "" : " duvida") + '">' + precoV + "</span>";
-            b.onclick = function () { escolher(i); };
-            trilho.appendChild(b);
-        });
-        escolher(0);
+        function desenhar(desde) {
+            var filtro = {}, ultima = null, fotoCor = "";
+            niveis.forEach(function (nv, idx) {
+                if (idx < desde) {
+                    if (sel[nv.campo] !== undefined) { filtro[nv.campo] = sel[nv.campo]; ultima = nv.atual || ultima; }
+                    if (nv.campo === "variacao" && nv.atual) fotoCor = nv.atual.imagem;
+                    return;
+                }
+                var ops = opcoes(nv, Object.assign({}, filtro));
+                nv.caixa.innerHTML = "";
+                if (!ops.length) {
+                    nv.caixa.style.display = nv.rotulo.style.display = "none";
+                    delete sel[nv.campo]; nv.atual = null;
+                    return;
+                }
+                nv.caixa.style.display = nv.rotulo.style.display = "";
+                var barata = ops.reduce(function (m, o) { return o.confiavel && (!m || o.valor < m.valor) ? o : m; }, null);
+                var atualOp = ops.filter(function (o) { return o.nome === sel[nv.campo]; })[0] || barata || ops[0];
+                sel[nv.campo] = atualOp.nome; nv.atual = atualOp;
+                ops.forEach(function (op) {
+                    var b = document.createElement("button");
+                    b.type = "button";
+                    b.setAttribute("role", "radio");
+                    var ativa = op === atualOp;
+                    b.setAttribute("aria-checked", ativa ? "true" : "false");
+                    var precoO = op.confiavel ? reais(op.valor) : "a conferir";
+                    var antigo = op.antigo ? '<s class="var-tile-antigo">' + reais(op.antigo) + "</s>" : "";
+                    if (nv.campo === "variacao") {
+                        b.className = "var-tile" + (ativa ? " ativa" : "");
+                        var img = op.imagem && op.imagem !== "principal" ? op.imagem : (op.imagem === "principal" ? fotoPrincipal : "");
+                        b.innerHTML =
+                            '<span class="var-tile-foto">' + (img
+                                ? '<img src="' + esc(img) + '" alt="" loading="lazy">'
+                                : '<span class="var-cor" style="background:' + esc(op.cor || "#eee") + '"></span>') + "</span>" +
+                            '<span class="var-tile-nome">' + (op.cor && img ? '<i style="background:' + esc(op.cor) + '"></i>' : "") + esc(op.nome) + "</span>" +
+                            '<span class="var-tile-preco' + (op.confiavel ? "" : " duvida") + '">' + precoO + "</span>" + antigo;
+                    } else {
+                        b.className = "var-tam" + (ativa ? " ativa" : "");
+                        b.innerHTML = "<b>" + esc(op.nome) + "</b><span class=\"var-tam-preco\">" + precoO + "</span>" + antigo;
+                    }
+                    b.setAttribute("aria-label", nv.titulo + " " + op.nome + " · " + precoO);
+                    b.onclick = function () { sel[nv.campo] = op.nome; desenhar(idx); };
+                    nv.caixa.appendChild(b);
+                });
+                nv.rotulo.innerHTML = nv.titulo + ": <b>" + esc(atualOp.nome) + "</b>" +
+                    (atualOp === barata && ops.length > 1 && idx === niveis.length - 1 ? ' <span class="var-mais-barata">a mais barata</span>' : "");
+                filtro[nv.campo] = atualOp.nome;
+                if (nv.campo === "variacao") fotoCor = atualOp.imagem;
+                ultima = atualOp;
+            });
+            var lista = ultima ? ultima.lista : todos;
+            var fotoAnuncio = (lista.filter(function (a) { return a.imagem; })[0] || {}).imagem || "";
+            var fotoV = fotoCor && fotoCor !== "principal" ? fotoCor : (fotoCor === "principal" ? "" : fotoAnuncio);
+            trocarFoto(fotoV || fotoPrincipal);
+            var nome = niveis.map(function (nv) { return sel[nv.campo]; }).filter(Boolean).join(" · ");
+            mostrarLista(lista, nome, fotoV);
+        }
+        desenhar(0);
     }
 
     // 🎬 Reel da Yang ao lado da foto (ofertas com "video" no ofertas.json).

@@ -180,6 +180,17 @@
 .var-tile-preco{font:800 13.5px 'Baloo 2',Arial,sans-serif;color:#C21A24;line-height:1}
 .var-tile-preco.duvida{font:600 11px 'Work Sans',Arial,sans-serif;color:#8A7563}
 .var-tile.ativa .var-tile-preco{color:#1F7A44}
+.var-tile-antigo{font:500 11px 'Work Sans',Arial,sans-serif;color:#9A8676;line-height:1.1}
+/* tamanho (128GB · 256GB) acima das cores */
+.var-tams{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 10px}
+.var-tam{display:flex;flex-direction:column;align-items:center;gap:1px;min-width:78px;background:#fff;border:1.5px solid #E2D3BC;border-radius:10px;padding:7px 12px;cursor:pointer;font-family:'Work Sans',Arial,sans-serif;color:#2B1B12;transition:border-color .15s,box-shadow .15s}
+.var-tam b{font-size:14px;font-weight:800}
+.var-tam{align-items:flex-start;text-align:left;min-width:96px}
+.var-tam .var-tam-preco{font:800 13px 'Baloo 2',Arial,sans-serif;color:#C21A24;white-space:nowrap}
+.var-tam.ativa .var-tam-preco{color:#1F7A44}
+.var-tam .var-tile-antigo{font-size:10.5px}
+.var-tam:hover{border-color:#F7941D}
+.var-tam.ativa{border-color:#E5232E;box-shadow:0 0 0 2px rgba(229,35,46,.18);background:#FFF7F0}
 
 /* ---------- Reel da Yang ao lado da foto ---------- */
 .oferta-midia{display:flex;gap:10px;align-items:stretch}

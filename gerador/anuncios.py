@@ -10,7 +10,10 @@ oferta, muda a variação do anúncio principal (campos variacao/cor da oferta).
 "apagar" {"slug"} — tira a oferta do catálogo (como o Remover do painel).
 "ordem" {"chave": "Cozinha" ou "Cozinha/Panelas", "slugs": [...]} — ordem à mão
 na categoria (arrastando no modo admin); "slugs": [] volta pra automática.
-"juntar" {"slug", "de": "<slug de outra oferta>", "variacao", "cor", "tirar": true}
+"juntar" {"slug", "de": "<slug de outra oferta>", "variacao", "cor", "tamanho", "configuracao", "tirar": true}
+("tamanho" = 128GB, 256GB... — 1º nível de escolha na página, antes da cor;
+ "configuracao" = Wi-Fi / Wi-Fi + Cellular... — 3º nível, depois da cor;
+ vale também em "adicionar" e "editar", inclusive no link principal.)
 transforma uma oferta que já está no site em anúncio desta (link, preço,
 foto e os anúncios dela); com "tirar", a outra sai da lista do site.
 Anúncio posto à mão vale direto (o Alexandre conferiu o preço) por 7 dias;
@@ -121,12 +124,16 @@ def main(arquivo):
                 continue
             agora = agora_iso()
             var = str(it.get("variacao") or "").strip()
+            tam = str(it.get("tamanho") or "").strip()
+            cfg = str(it.get("configuracao") or "").strip()
             lista = [a for a in (o.get("anuncios") or []) if isinstance(a, dict)]
             ja = {a.get("link") for a in lista} | {o.get("link")}
             foto = f"https://farejadinhosdayang.com.br/assets/{outra['imagem']}" if outra.get("imagem") else ""
             novos = [{"link": outra.get("link"), "loja": loja_de(outra.get("link")), "preco": outra.get("preco") or "",
                       "conferido": outra.get("precoConferido") or outra.get("data") or agora,
                       "manual": agora, "confirmado": True, "imagem": foto}]
+            if outra.get("precoAntigo"):
+                novos[0]["precoAntigo"] = outra["precoAntigo"]
             for a in outra.get("anuncios") or []:
                 if isinstance(a, dict):
                     novos.append(dict(a, imagem=a.get("imagem") or foto))
@@ -137,6 +144,10 @@ def main(arquivo):
                     a["variacao"] = var
                     if it.get("cor"):
                         a["cor"] = str(it["cor"])
+                if tam:
+                    a["tamanho"] = tam
+                if cfg:
+                    a["configuracao"] = cfg
                 lista.append(a)
                 ja.add(a["link"])
             o["anuncios"] = lista
@@ -153,7 +164,7 @@ def main(arquivo):
             continue
         lista = [a for a in (o.get("anuncios") or []) if isinstance(a, dict)]
         sem_este = [a for a in lista if a.get("link") != link]
-        extras = {k: str(it.get(k) or "").strip() for k in ("variacao", "cor", "imagem") if k in it}
+        extras = {k: str(it.get(k) or "").strip() for k in ("variacao", "cor", "imagem", "tamanho", "configuracao") if k in it}
         if extras.get("imagem") and not extras["imagem"].lower().startswith(("http://", "https://")):
             extras["imagem"] = ""
         if it.get("op") == "editar":

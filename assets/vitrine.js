@@ -349,7 +349,9 @@
       loja: lojaDe(oferta.link).nome, lojaId: lojaDe(oferta.link).id,
       conferido: oferta.precoConferido || oferta.precoManual || oferta.data || "",
       confiavel: pPrincipal > 0, motivo: "",
-      variacao: nomeVariacao(oferta.variacao), cor: oferta.cor || "", imagem: ""
+      variacao: nomeVariacao(oferta.variacao), cor: oferta.cor || "", imagem: "",
+      tamanho: nomeTamanho(oferta.tamanho), configuracao: String(oferta.configuracao || "").trim(),
+      precoAntigo: numeroPreco(oferta.precoAntigo)
     }];
     (Array.isArray(oferta.anuncios) ? oferta.anuncios : []).forEach(a => {
       if(!a || !/^https?:\/\//i.test(a.link || "")) return;
@@ -370,7 +372,9 @@
         loja: lj.id !== "outra" ? lj.nome : (a.loja || lj.nome), lojaId: lj.id, conferido: a.conferido || "",
         confiavel: !motivo, motivo,
         variacao: nomeVariacao(a.variacao), cor: a.cor || "",
-        imagem: /^https?:\/\//i.test(a.imagem || "") ? a.imagem : ""
+        imagem: /^https?:\/\//i.test(a.imagem || "") ? a.imagem : "",
+        tamanho: nomeTamanho(a.tamanho), configuracao: String(a.configuracao || "").trim(),
+        precoAntigo: numeroPreco(a.precoAntigo)
       });
     });
     return lista.sort((x, y) => (y.confiavel - x.confiavel) || ((x.valor || Infinity) - (y.valor || Infinity)));
@@ -409,18 +413,78 @@
 
   // [{ nome, cor, imagem, melhor, lista, confiavel }], mais barata primeiro.
   // Só faz sentido com 2+ variações; com 0/1 devolve [].
-  function variacoesDe(oferta, agora){
+  // ===== Tamanho/versão (128GB, 256GB, 1TB, 110V...) =====
+  // Segundo nível de escolha, como na Amazon: primeiro o tamanho, depois a cor.
+  // Fica em "tamanho" na oferta e em cada anúncio; quem não tem herda o do principal.
+  function nomeTamanho(v){
+    return String(v || "").trim().replace(/^(\d+(?:[.,]\d+)?)\s*(gb|tb)$/i, (_, n, u) => n + u.toUpperCase());
+  }
+  function valorTamanho(s){
+    const m = String(s || "").match(/(\d+(?:[.,]\d+)?)\s*(tb|gb)?/i);
+    if(!m) return Infinity;
+    return parseFloat(m[1].replace(",", ".")) * (m[2] && m[2].toLowerCase() === "tb" ? 1024 : 1);
+  }
+  function comHeranca(oferta, agora){
     const l = anunciosDe(oferta, agora);
     const principal = l.find(a => a.principal);
-    // anúncio sem variação herda a do principal (mesmo produto)
-    l.forEach(a => { if(!a.variacao) a.variacao = principal.variacao; });
+    // anúncio sem variação/tamanho herda o do principal (mesmo produto)
+    l.forEach(a => {
+      if(!a.variacao) a.variacao = principal.variacao;
+      if(!a.tamanho) a.tamanho = principal.tamanho;
+      if(!a.configuracao) a.configuracao = principal.configuracao;
+    });
+    return l;
+  }
+
+  // Opções de um campo ("tamanho", "variacao" = cor, "configuracao" = Wi-Fi /
+  // Wi-Fi + Cellular...) entre os anúncios que batem com as escolhas já
+  // feitas (filtro {campo: valor}). Cada opção: nome, menor preço, lista.
+  const chaveOpcao = v => semAcentoMin(v).trim();
+  function opcoesDe(oferta, agora, campo, filtro){
+    filtro = filtro || {};
+    const l = comHeranca(oferta, agora).filter(a => Object.keys(filtro).every(k => chaveOpcao(a[k]) === chaveOpcao(filtro[k])));
+    const grupos = {};
+    l.forEach(a => {
+      if(!a[campo]) return;
+      const g = grupos[chaveOpcao(a[campo])] = grupos[chaveOpcao(a[campo])] || { nome: a[campo], valor: 0, antigo: 0, confiavel: false, lista: [] };
+      g.lista.push(a);
+      if(a.confiavel && a.valor && (!g.valor || a.valor < g.valor)){ g.valor = a.valor; g.antigo = a.precoAntigo > a.valor ? a.precoAntigo : 0; g.confiavel = true; }
+    });
+    const os = Object.values(grupos);
+    if(campo === "tamanho") return os.sort((x, y) => valorTamanho(x.nome) - valorTamanho(y.nome) || x.nome.localeCompare(y.nome));
+    if(campo === "configuracao") return os.sort((x, y) => (x.valor || Infinity) - (y.valor || Infinity));
+    return os;
+  }
+  // quantos valores diferentes o campo tem na oferta toda
+  function nivelDe(oferta, agora, campo){ return opcoesDe(oferta, agora, campo).length; }
+  function tamanhosDe(oferta, agora){
+    const grupos = {};
+    comHeranca(oferta, agora).forEach(a => {
+      if(!a.tamanho) return;
+      const k = semAcentoMin(a.tamanho).trim();
+      const g = grupos[k] = grupos[k] || { nome: a.tamanho, valor: 0, confiavel: false, lista: [] };
+      g.lista.push(a);
+      if(a.confiavel && a.valor && (!g.valor || a.valor < g.valor)){ g.valor = a.valor; g.confiavel = true; }
+    });
+    const ts = Object.values(grupos);
+    if(ts.length < 2) return [];
+    return ts.sort((x, y) => valorTamanho(x.nome) - valorTamanho(y.nome) || x.nome.localeCompare(y.nome));
+  }
+
+  // tamanho (opcional): só as cores desse tamanho; aí basta 1 cor pra montar
+  function variacoesDe(oferta, agora, tamanho){
+    let l = comHeranca(oferta, agora);
+    if(tamanho !== undefined){
+      const f = typeof tamanho === "object" ? tamanho : { tamanho };
+      l = l.filter(a => Object.keys(f).every(k => chaveOpcao(a[k]) === chaveOpcao(f[k])));
+    }
     const grupos = {};
     l.forEach(a => {
       const k = chaveVar(a.variacao);
       (grupos[k] = grupos[k] || { nome: a.variacao, cor: "", imagem: "", lista: [] }).lista.push(a);
     });
     const vs = Object.values(grupos).filter(g => g.nome);
-    if(vs.length < 2) return [];
+    if(vs.length < (tamanho !== undefined ? 1 : 2)) return [];
     vs.forEach(g => {
       g.melhor = g.lista.find(a => a.confiavel) || g.lista[0];
       g.confiavel = !!g.lista.find(a => a.confiavel);
@@ -586,7 +650,7 @@
 
   window.FarejadinhosVitrine = {
     MINIMO_VITRINE, HORAS_FRESCA, HORAS_MAXIMA, META_CATEGORIA, MINIMO_CATEGORIA, TEMPORADAS,
-    inicio, idadeHoras, selecionar, status, indisponivel, HORAS_SEM_PRECO, foraDeEpoca, podeIrProPodio, FORA_DO_PODIO, dataOrdem, anunciosDe, melhorAnuncio, comMelhorAnuncio, lojaDe, numeroPreco, variacoesDe, corDe, ehPermanente, ACESSORIOS_CELULAR, SUBS_CELULAR, subCelular, grupoCategoria, bateCategoria, pesoNaCategoria, nomeFiltro, configCategorias, categoriaPrincipal, subcategoriasDe, subcategoriaDe, ordenarNaCategoria, ordemManual, forcaCelular, tipoDe, ehBlack, descontoPct, BLACK_DESCONTO_MIN, PERMANENTES, normalizar, categoriasDe, juntarCategoria, TAG_VIDEO
+    inicio, idadeHoras, selecionar, status, indisponivel, HORAS_SEM_PRECO, foraDeEpoca, podeIrProPodio, FORA_DO_PODIO, dataOrdem, anunciosDe, melhorAnuncio, comMelhorAnuncio, lojaDe, numeroPreco, variacoesDe, corDe, ehPermanente, ACESSORIOS_CELULAR, SUBS_CELULAR, subCelular, grupoCategoria, bateCategoria, pesoNaCategoria, nomeFiltro, configCategorias, categoriaPrincipal, subcategoriasDe, subcategoriaDe, ordenarNaCategoria, ordemManual, forcaCelular, tipoDe, tamanhosDe, nomeTamanho, opcoesDe, nivelDe, ehBlack, descontoPct, BLACK_DESCONTO_MIN, PERMANENTES, normalizar, categoriasDe, juntarCategoria, TAG_VIDEO
   };
 
 })();
