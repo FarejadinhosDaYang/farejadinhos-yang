@@ -496,7 +496,18 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-30T20:37:36Z",
-    "precoConferido": "2026-11-01T09:15:37Z"
+    "precoConferido": "2026-11-01T09:15:37Z",
+    "anuncios": [
+      {
+        "link": "https://s.shopee.com.br/8fTDF2IRuL",
+        "loja": "Shopee",
+        "preco": "R$ 92,00",
+        "conferido": "",
+        "manual": "",
+        "confirmado": false,
+        "imagem": "https://farejadinhosdayang.com.br/assets/a68c89bc-360a-4286-82d2-afa8a2538ddc.jpg"
+      }
+    ]
   },
   {
     "produto": "Saco a Vacuo COM ou SEM Bomba Organização",
