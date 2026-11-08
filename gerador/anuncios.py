@@ -7,6 +7,7 @@ Itens do lote: {"acao": "anuncios", "op": "adicionar"|"remover"|"editar",
 "editar" muda variação/cor/foto de um anúncio; com o link principal da
 oferta, muda a variação do anúncio principal (campos variacao/cor da oferta).
 "fixar" {"slug", "fixo": true|false} — anúncio âncora: nunca sai do site.
+"nome" {"slug", "produto": "Nome novo"} — renomeia (catálogo e página da oferta).
 "apagar" {"slug"} — tira a oferta do catálogo (como o Remover do painel).
 "ordem" {"chave": "Cozinha" ou "Cozinha/Panelas", "slugs": [...]} — ordem à mão
 na categoria (arrastando no modo admin); "slugs": [] volta pra automática.
@@ -19,10 +20,13 @@ foto e os anúncios dela); com "tirar", a outra sai da lista do site.
 Anúncio posto à mão vale direto (o Alexandre conferiu o preço) por 7 dias;
 depois disso a conferência automática (conferir-anuncios.py) assume.
 """
+import html
 import json
+import os
+import re
 import sys
 
-from anuncios_comum import agora_iso, ler, loja_de, numero, preco_br, salvar
+from anuncios_comum import SITE, agora_iso, ler, loja_de, numero, preco_br, salvar
 
 
 def main(arquivo):
@@ -59,6 +63,29 @@ def main(arquivo):
             else:
                 o.pop("sub", None)
             print(f"  subcategoria de {o['slug']}: {v or 'automática'}")
+            mudou = True
+            continue
+        if it.get("op") == "nome":
+            # renomeia a oferta (no catálogo e na página dela)
+            o = por_slug.get(it.get("slug"))
+            novo_nome = re.sub(r"\s+", " ", str(it.get("produto") or "")).strip()
+            if not o or not novo_nome:
+                print(f"  ignorado (nome): {it.get('slug')}")
+                continue
+            antigo = str(o.get("produto") or "")
+            o["produto"] = novo_nome
+            pagina = os.path.join(SITE, "ofertas", o["slug"], "index.html")
+            if antigo and os.path.exists(pagina):
+                with open(pagina, encoding="utf-8") as f:
+                    html_ = f.read()
+                for a_, b_ in {(antigo, novo_nome), (html.escape(antigo, quote=True), html.escape(novo_nome, quote=True)),
+                               (html.escape(antigo, quote=False), html.escape(novo_nome, quote=False)),
+                               (antigo.replace("'", "&#39;"), novo_nome.replace("'", "&#39;"))}:
+                    if a_:
+                        html_ = html_.replace(a_, b_)
+                with open(pagina, "w", encoding="utf-8", newline="\n") as f:
+                    f.write(html_)
+            print(f"  nome de {o['slug']}: {antigo} -> {novo_nome}")
             mudou = True
             continue
         if it.get("op") == "apagar":

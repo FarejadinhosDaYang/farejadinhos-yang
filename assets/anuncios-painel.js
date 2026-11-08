@@ -83,6 +83,8 @@ function montarAnunciosPainel(o, box){
   const melhor = lista.find(a => a.confiavel) || lista[0];
   const fmt = a => a.valor ? "R$ " + a.valor.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : "sem preço";
   box.innerHTML = `
+    <div class="ancNovo"><input type="text" class="ancNome" value="${esc(o.produto || "")}" placeholder="Nome do anúncio" title="Nome que aparece no site">
+      <button class="ancBtn ancSalvarNome" type="button" title="Renomear o anúncio no site">✏️ Renomear</button></div>
     <label class="ancFixo"><input type="checkbox" class="ancFixoCheck" ${o.fixo ? "checked" : ""}> 📌 <b>Fixar no site</b> <span>— anúncio âncora: não expira e o preço continua sendo conferido</span></label>
     ${(() => {
       const mae = V.categoriaPrincipal ? V.categoriaPrincipal(o) : "";
@@ -284,6 +286,18 @@ function montarAnunciosPainel(o, box){
       await pedirAnuncio({ op: "black", slug: o.slug, black });
       if(black === "auto") delete o.black; else o.black = black;
       aviso(v === "sim" ? "🖤 Marcada como oferta Black! Aparece em 1-2 minutos." : v === "nao" ? "Fica de fora da Black November." : "Volta pro automático (pelo desconto).");
+    }catch(e){ aviso("❌ " + e.message, true); }
+    this.disabled = false;
+  };
+
+  box.querySelector(".ancSalvarNome").onclick = async function(){
+    const produto = box.querySelector(".ancNome").value.replace(/\s+/g, " ").trim();
+    if(!produto || produto === o.produto) return;
+    this.disabled = true;
+    try{
+      await pedirAnuncio({ op: "nome", slug: o.slug, produto });
+      o.produto = produto;
+      aviso("✏️ Renomeado para \"" + produto + "\"! Aparece no site em 1-2 minutos.");
     }catch(e){ aviso("❌ " + e.message, true); }
     this.disabled = false;
   };
