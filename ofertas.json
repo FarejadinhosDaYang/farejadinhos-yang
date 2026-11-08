@@ -5466,7 +5466,18 @@
     "precoAPrazo": "",
     "liberacao": "2026-11-04T11:00:00Z",
     "video": "videos/medicube-pdrn-pink-collagen-volume-multi-balm-10g.mp4",
-    "videoCapa": "videos/medicube-pdrn-pink-collagen-volume-multi-balm-10g.jpg"
+    "videoCapa": "videos/medicube-pdrn-pink-collagen-volume-multi-balm-10g.jpg",
+    "anuncios": [
+      {
+        "link": "https://meli.la/2FLd15n",
+        "loja": "Mercado Livre",
+        "preco": "R$ 50,14",
+        "conferido": "2026-11-08T15:36:08Z",
+        "manual": "2026-11-08T17:06:54Z",
+        "confirmado": true,
+        "imagem": "https://farejadinhosdayang.com.br/assets/c07ac3c5-73d4-493c-a5f2-9437638bbb54.jpg"
+      }
+    ]
   },
   {
     "produto": "Cozedor De Ovos Portátil Elétrico Cozinha A Vapor",
@@ -6377,23 +6388,6 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-08T15:36:06Z"
-  },
-  {
-    "produto": "Medicube PDRN Pink Collagen Volume Multi Balm",
-    "preco": "R$ 50,14",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Skincare, Vídeos",
-    "destaque": false,
-    "imagem": "c07ac3c5-73d4-493c-a5f2-9437638bbb54.jpg",
-    "link": "https://meli.la/2FLd15n",
-    "url": "https://farejadinhosdayang.com.br/ofertas/medicube-pdrn-pink-collagen-volume-multi-balm/",
-    "slug": "medicube-pdrn-pink-collagen-volume-multi-balm",
-    "data": "2026-11-08T15:36:08Z",
-    "precoAVista": "50,14",
-    "precoAPrazo": "86,16",
-    "liberacao": "2026-11-08T15:36:06Z",
-    "parcelas": 3
   },
   {
     "produto": "Pçs Pasta De Nariz De Limpeza Profunda Carvão",
