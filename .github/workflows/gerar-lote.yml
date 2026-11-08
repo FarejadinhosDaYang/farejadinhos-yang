@@ -105,6 +105,7 @@ jobs:
             # fotos novas ficam leves (máx. 1000px, mesma qualidade visual)
             $novas = @(git ls-files --others --exclude-standard assets | Where-Object { $_ -match '\.(jpe?g|png|webp)$' })
             if ($novas.Count) { python gerador/fotos_leves.py @novas }
+            python gerador/seo.py
           }
 
           git config user.name "github-actions[bot]"
@@ -117,7 +118,8 @@ jobs:
             git add assets ofertas entrada ofertas.json
             if (Test-Path cupons.json) { git add cupons.json }
             if (Test-Path precos/fora-por-preco.json) { git add precos/fora-por-preco.json }
-            if ([string]::IsNullOrWhiteSpace((git status --porcelain assets ofertas entrada ofertas.json cupons.json precos/fora-por-preco.json))) {
+            if (Test-Path sitemap.xml) { git add sitemap.xml robots.txt }
+            if ([string]::IsNullOrWhiteSpace((git status --porcelain assets ofertas entrada ofertas.json cupons.json precos/fora-por-preco.json sitemap.xml robots.txt))) {
               Write-Host "Nada para commitar."; $Salvou = $true; break
             }
             git commit -q -m "Lote de ofertas importado"

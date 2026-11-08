@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /painel/
+Disallow: /entrada/
+Disallow: /gerador/
+
+Sitemap: https://farejadinhosdayang.com.br/sitemap.xml

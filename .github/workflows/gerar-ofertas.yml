@@ -158,8 +158,10 @@ jobs:
           python -m pip install -q pillow
           $novas = @(git ls-files --others --modified --exclude-standard assets | Where-Object { $_ -match '\.(jpe?g|png|webp)$' })
           if ($novas.Count) { python gerador/fotos_leves.py @novas }
+          python gerador/seo.py
 
           git add assets ofertas entrada ofertas.json
+          if (Test-Path sitemap.xml) { git add sitemap.xml robots.txt }
 
           $temAlteracoes = git status --porcelain
 
