@@ -33,6 +33,8 @@ O usuário sobe o vídeo, o MP3 e o texto narrado em `painel/reels.html` → Wor
 (frases pelas reticências, tempos por programação dinâmica nas pausas, fundo com pedaço de cada cena, capa) →
 release `reels-prontos` + `reels/lista.json` + oferta em Vídeos. Teste local:
 `python3 auto_reel.py pedido.json saida/` (formato do pedido no topo do arquivo).
+Música de fundo: faixas livres de direitos em `musicas/` (ver `musicas/LEIAME.md`); o pedido pode ter
+`"musica": "parte-do-nome"` ou `"nenhuma"`. Sem o campo, sorteia; pasta vazia, sem música.
 Os cortes escolhidos à mão (passo a passo abaixo) continuam valendo pros vídeos difíceis.
 
 ## Passo a passo de um Reel de review

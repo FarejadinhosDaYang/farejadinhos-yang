@@ -14,7 +14,9 @@ pedido.json:
     "de": 0, "ate": 22.8,                (opcional: só usa esse pedaço do vídeo — ex.: cortar preço escrito no fim)
     "capa_t": 13.0,                      (opcional: segundo do vídeo usado na capa)
     "legenda_fundo": true,               (opcional: caixa escura atrás da legenda — bom pra gravação de tela)
-    "legenda_top": 215                   (opcional: altura da legenda em px; o padrão é no meio da tela)
+    "legenda_top": 215,                  (opcional: altura da legenda em px; o padrão é no meio da tela)
+    "musica": "animada"                  (opcional: nome (ou parte do nome) de um arquivo de _video-yang/musicas/;
+                                          sem esse campo sorteia uma de lá; "nenhuma" = sem música)
   }
 Gera na pasta de saída: <id>-reel.mp4, <id>-capa.jpg, <id>-roteiro.json e <id>-log.txt.
 
@@ -27,6 +29,8 @@ Como decide sozinho:
   pedaço do meio de CADA cena (todas aparecem) e acelera de leve. Sem o som original.
 - Selo "💬 COMENTA QUERO" (com "ou entra no farejadinhosdayang.com.br" embaixo) entra junto da frase que tem "comenta";
   capa com a Yang inteira e selo publi.
+- Música de fundo (pasta musicas/, só faixas livres de direitos): volume nivelado bem abaixo da voz, abaixa
+  sozinha enquanto a Yang fala e sobe um pouco nas pausas; entra e sai suave. Pasta vazia = reel sem música.
 - O site falado por extenso ("farejadinhos da Yang ponto com ponto bê érre") vira "farejadinhosdayang.com.br" na legenda.
 """
 import json, math, os, re, subprocess, sys
@@ -241,6 +245,44 @@ TAGS_CAT = {"cozinha": "#cozinhapratica #utilidadesdecozinha", "casa": "#casaorg
             "academia": "#academia #treino", "cafe": "#cafe #amocafe", "moda": "#moda #lookdodia",
             "eletronicos": "#tecnologia #gadgets", "natal": "#natal #decoracaodenatal", "piscina": "#piscina #verao"}
 
+MUSICAS = os.path.join(AQUI, "musicas")
+EXT_MUSICA = (".mp3", ".m4a", ".wav", ".ogg", ".aac")
+
+
+def escolher_musica(pedido, pid):
+    """Devolve o caminho da música ou None. Sem "musica" no pedido: sorteia (sempre a mesma pro mesmo id)."""
+    pedida = str(pedido.get("musica") or "").strip()
+    if pedida.lower() in ("nenhuma", "sem", "nao", "não", "0", "false"):
+        return None
+    faixas = sorted(f for f in os.listdir(MUSICAS) if f.lower().endswith(EXT_MUSICA)) if os.path.isdir(MUSICAS) else []
+    if not faixas:
+        return None
+    if pedida:
+        achou = [f for f in faixas if pedida.lower() in f.lower()]
+        if not achou:
+            log(f"música '{pedida}' não encontrada em musicas/ — sorteando outra")
+        else:
+            return os.path.join(MUSICAS, achou[0])
+    soma = sum(ord(c) for c in pid)
+    return os.path.join(MUSICAS, faixas[soma % len(faixas)])
+
+
+def por_musica(reel, musica, dur):
+    """Mistura a música por baixo da voz: nivela a música (-30 LUFS), abaixa quando há fala (sidechain), fade in/out."""
+    tmp = reel + ".musica.mp4"
+    fim = max(0.0, dur - 1.5)
+    filt = (f"[1:a]aresample=48000,aformat=channel_layouts=stereo,loudnorm=I=-30:TP=-6:LRA=11,"
+            f"atrim=0:{dur},asetpts=N/SR/TB,afade=t=in:d=0.6,afade=t=out:st={fim:.2f}:d=1.5[m];"
+            f"[0:a]aresample=48000,aformat=channel_layouts=stereo,asplit[voz][chave];"
+            f"[m][chave]sidechaincompress=threshold=0.02:ratio=6:attack=30:release=450:makeup=1[mb];"
+            f"[voz][mb]amix=inputs=2:normalize=0:duration=first,alimiter=limit=0.95[a]")
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", reel, "-stream_loop", "-1", "-i", musica,
+                    "-filter_complex", filt, "-map", "0:v", "-map", "[a]", "-c:v", "copy",
+                    "-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", tmp], check=True)
+    os.replace(tmp, reel)
+    log(f"música: {os.path.basename(musica)}")
+
+
 def _chave(t):
     import unicodedata
     return unicodedata.normalize("NFD", t or "").encode("ascii", "ignore").decode().lower().strip()
@@ -314,6 +356,8 @@ def main():
     subprocess.run([sys.executable, os.path.join(AQUI, "render.py"), "cabeca-review.html", reel,
                     "--fundo", fundo, "--audio", voz, "--roteiro", rot_path], check=True, cwd=AQUI)
     os.remove(fundo)
+    musica = escolher_musica(pedido, pid)
+    if musica: por_musica(reel, musica, dur)
 
     titulo = pedido.get("titulo") or falas[0]["texto"]
     capa_t = pedido.get("capa_t")
