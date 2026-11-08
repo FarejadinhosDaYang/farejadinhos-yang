@@ -2784,7 +2784,18 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-02T23:56:35Z",
-    "precoConferido": "2026-11-08T02:34:24Z"
+    "precoConferido": "2026-11-08T02:34:24Z",
+    "anuncios": [
+      {
+        "link": "https://s.shopee.com.br/30pFoFjYwh",
+        "loja": "Shopee",
+        "preco": "R$ 239,90",
+        "conferido": "2026-11-06T15:07:33Z",
+        "manual": "2026-11-08T17:06:19Z",
+        "confirmado": true,
+        "imagem": "https://farejadinhosdayang.com.br/assets/e18f05d6-3da9-43b9-a1d0-0493d64e22a9.jpg"
+      }
+    ]
   },
   {
     "produto": "Árvore De Natal 1180 650 450 Galhos Luxo Premium",
@@ -3270,23 +3281,6 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-04T21:57:53Z"
-  },
-  {
-    "produto": "Cordão Strobo Natal Metros Bivolt Leds Pisca Prova",
-    "preco": "R$ 239,90",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Natal",
-    "destaque": false,
-    "imagem": "e18f05d6-3da9-43b9-a1d0-0493d64e22a9.jpg",
-    "link": "https://s.shopee.com.br/30pFoFjYwh",
-    "url": "https://farejadinhosdayang.com.br/ofertas/cordao-strobo-natal-metros-bivolt-leds-pisca-prova/",
-    "slug": "cordao-strobo-natal-metros-bivolt-leds-pisca-prova",
-    "data": "2026-11-02T23:41:55Z",
-    "precoAVista": "",
-    "precoAPrazo": "",
-    "liberacao": "2026-11-04T23:42:53Z",
-    "precoConferido": "2026-11-06T15:07:33Z"
   },
   {
     "produto": "10 Unid . Flores Artificiais Árvore De Natal",
