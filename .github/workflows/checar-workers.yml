@@ -1,0 +1,20 @@
+name: Checar Workers
+
+# Confere se os Workers da Cloudflare estão no ar e com o código novo.
+on:
+  workflow_dispatch:
+
+jobs:
+  checar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Testar rotas
+        run: |
+          O="Origin: https://farejadinhosdayang.com.br"
+          t() { echo "== $1 $2"; curl -s -m 20 -X "$1" -H "$O" -H "Content-Type: text/plain" ${3:+-d "$3"} "$2" -w "  [HTTP %{http_code}]\n" | head -c 600; echo; }
+          t POST https://farejadinhos-push.bernard-shimizu.workers.dev/alertas '{"endpoint":"https://teste.invalido/x"}'
+          t GET  https://farejadinhos-push.bernard-shimizu.workers.dev/chave
+          t GET  "https://farejadinhos-contador.bernard-shimizu.workers.dev/relatorio?dias=1"
+          t GET  https://farejadinhos-contador.bernard-shimizu.workers.dev/numeros
+          t GET  https://farejadinhos-reels.bernard-shimizu.workers.dev/
