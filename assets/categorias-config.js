@@ -263,6 +263,12 @@ window.FarejadinhosConfigCategorias = {
      "ventilador",
      "soprador"
     ]
+   },
+   {
+    "nome": "Ar condicionado",
+    "palavras": [
+     "ar condicionado"
+    ]
    }
   ],
   "Café": [
