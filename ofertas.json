@@ -6532,7 +6532,18 @@
     "data": "2026-11-04T11:00:30Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-05T20:12:56Z"
+    "liberacao": "2026-11-05T20:12:56Z",
+    "anuncios": [
+      {
+        "link": "https://s.shopee.com.br/40hGzK198R",
+        "loja": "Shopee",
+        "preco": "R$ 13,99",
+        "conferido": "",
+        "manual": "",
+        "confirmado": false,
+        "imagem": "https://farejadinhosdayang.com.br/assets/c80271d0-ffda-4fca-935a-23b4fec884bf.jpg"
+      }
+    ]
   },
   {
     "produto": "Pipoqueira Elétrica Sem Óleo Philco Preta 1200W",
