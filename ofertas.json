@@ -8060,7 +8060,18 @@
     "precoAVista": "2121,00",
     "precoAPrazo": "2799,00",
     "liberacao": "2026-11-09T12:17:24Z",
-    "parcelas": 10
+    "parcelas": 10,
+    "anuncios": [
+      {
+        "link": "https://link.amazon/B09udojRu",
+        "loja": "Amazon",
+        "preco": "R$ 2.017,90",
+        "conferido": "2026-11-09T12:17:28Z",
+        "manual": "2026-11-09T14:00:35Z",
+        "confirmado": true,
+        "imagem": "https://farejadinhosdayang.com.br/assets/c4b4eeac-cc2f-454f-940b-1267666e9ea3.jpg"
+      }
+    ]
   },
   {
     "produto": "Ar Condicionado Electrolux Color Adapt Inverter",
@@ -8246,23 +8257,6 @@
     "data": "2026-11-09T12:17:28Z",
     "precoAVista": "2068,60",
     "precoAPrazo": "1939,00",
-    "liberacao": "2026-11-09T12:17:24Z",
-    "parcelas": 12
-  },
-  {
-    "produto": "Ar condicionado Split Hi Wall Gree G-Side Auto",
-    "preco": "R$ 2.017,90",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Eletrodomésticos",
-    "destaque": false,
-    "imagem": "c4b4eeac-cc2f-454f-940b-1267666e9ea3.jpg",
-    "link": "https://link.amazon/B09udojRu",
-    "url": "https://farejadinhosdayang.com.br/ofertas/ar-condicionado-split-hi-wall-gree-g-side-auto-2/",
-    "slug": "ar-condicionado-split-hi-wall-gree-g-side-auto-2",
-    "data": "2026-11-09T12:17:28Z",
-    "precoAVista": "2017,90",
-    "precoAPrazo": "2205,90",
     "liberacao": "2026-11-09T12:17:24Z",
     "parcelas": 12
   },
