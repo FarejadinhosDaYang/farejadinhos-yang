@@ -600,7 +600,7 @@
   },
   {
     "produto": "Samsung Galaxy S25 5G",
-    "preco": "R$ 4.199,00",
+    "preco": "R$ 4.051,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -610,11 +610,10 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/samsung-galaxy-s25-5g-256gb-12gb-camera-tripla/",
     "slug": "samsung-galaxy-s25-5g-256gb-12gb-camera-tripla",
     "data": "2026-10-18T15:10:04Z",
-    "precoAVista": "R$ 4.199,00",
+    "precoAVista": "R$ 4.051,00",
     "precoAPrazo": "4099,00",
     "liberacao": "2026-10-18T15:34:30Z",
     "parcelas": 10,
-    "precoConferido": "2026-11-08T21:16:15Z",
     "variacao": "Verde-claro",
     "cor": "#BFD8C2",
     "tamanho": "256GB",
@@ -703,7 +702,8 @@
         "cor": "#BFD8C2",
         "tamanho": "256GB"
       }
-    ]
+    ],
+    "precoConferido": "2026-11-09T00:59:39Z"
   },
   {
     "produto": "Samsung Galaxy S26 5G",
@@ -1904,7 +1904,7 @@
   },
   {
     "produto": "Kit Máquina Para Tosar Pet + Tesoura + Pente",
-    "preco": "R$ 30,26",
+    "preco": "R$ 34,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Pet",
@@ -1928,7 +1928,7 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/c416ac11-699e-48ae-addb-b7b12d017a75.jpg"
       }
     ],
-    "precoConferido": "2026-11-08T10:23:04Z"
+    "precoConferido": "2026-11-09T00:59:39Z"
   },
   {
     "produto": "Arranhador Adesivo Premium: Sofá, Cama e Móveis",
@@ -2448,7 +2448,7 @@
   },
   {
     "produto": "Comedouro Bebedouro Elevado 1 2 ou 3 Unidades Anti",
-    "preco": "R$ 15,69",
+    "preco": "R$ 15,70",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Pet",
@@ -2461,7 +2461,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-28T18:10:48Z",
-    "precoConferido": "2026-11-08T10:23:04Z"
+    "precoConferido": "2026-11-09T00:59:39Z"
   },
   {
     "produto": "Kit 5 Faixa Elástica Super Mini Band Para Treino",
@@ -2640,7 +2640,7 @@
   },
   {
     "produto": "Parafusadeira Furadeira 48v Profissional",
-    "preco": "R$ 92,65",
+    "preco": "R$ 124,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Ferramentas",
@@ -2650,15 +2650,15 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/parafusadeira-furadeira-48v-profissional/",
     "slug": "parafusadeira-furadeira-48v-profissional",
     "data": "2026-10-28T00:58:09Z",
-    "precoAVista": "R$ 92,65",
+    "precoAVista": "R$ 124,90",
     "precoAPrazo": "129,00",
     "liberacao": "2026-10-30T23:47:06Z",
     "parcelas": 4,
-    "precoConferido": "2026-11-08T21:16:15Z"
+    "precoConferido": "2026-11-09T00:59:39Z"
   },
   {
     "produto": "Aparelho medidor de pressão digital de braço BSP11",
-    "preco": "R$ 98,19",
+    "preco": "R$ 104,84",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Utilidades",
@@ -2671,7 +2671,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-28T23:17:42Z",
-    "precoConferido": "2026-11-08T21:16:15Z"
+    "precoConferido": "2026-11-09T00:59:39Z"
   },
   {
     "produto": "Kit 3 Toalhas De Banho Gigante Luxo Grossa Atacado",
@@ -3649,7 +3649,9 @@
         "conferido": "2026-11-08T16:49:32Z",
         "manual": "",
         "confirmado": true,
-        "imagem": "https://farejadinhosdayang.com.br/assets/d899a5b2-476c-4d3b-a393-486236660f92.jpg"
+        "imagem": "https://farejadinhosdayang.com.br/assets/d899a5b2-476c-4d3b-a393-486236660f92.jpg",
+        "pendente": "R$ 206,14",
+        "pendenteEm": "2026-11-09T00:59:39Z"
       }
     ],
     "precoConferido": "2026-11-08T16:49:32Z"
@@ -3672,7 +3674,7 @@
   },
   {
     "produto": "Panela Elétrica de Arroz, Mondial, 700W - PE-42-10X -",
-    "preco": "R$ 206,14",
+    "preco": "R$ 208,05",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -3682,13 +3684,13 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/panela-eletrica-de-arroz-mondial-700w-pe-42-10x/",
     "slug": "panela-eletrica-de-arroz-mondial-700w-pe-42-10x",
     "data": "2026-11-01T13:03:51Z",
-    "precoAVista": "R$ 206,14",
+    "precoAVista": "R$ 208,05",
     "precoAPrazo": "442,00",
-    "precoConferido": "2026-11-06T15:07:33Z"
+    "precoConferido": "2026-11-09T00:59:39Z"
   },
   {
     "produto": "Panela de Arroz Elétrica Mondial Fast Rice 5",
-    "preco": "R$ 142,00",
+    "preco": "R$ 134,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -3701,7 +3703,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-01T13:04:51Z",
-    "precoConferido": "2026-11-06T00:20:30Z"
+    "precoConferido": "2026-11-09T00:59:39Z"
   },
   {
     "produto": "Panela de Arroz Elétrica 5 Xícaras 400W NPE-05-5X",
@@ -4331,7 +4333,7 @@
   },
   {
     "produto": "Árvore de Natal Premium Super Cheia Grande Luxo",
-    "preco": "R$ 179,89",
+    "preco": "R$ 190,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -4344,7 +4346,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T15:15:00Z",
-    "precoConferido": "2026-11-08T10:23:04Z"
+    "precoConferido": "2026-11-09T00:59:39Z"
   },
   {
     "produto": "Pisca Strobo Cordão Enfeites de Natal Decoração",
@@ -5585,7 +5587,7 @@
   },
   {
     "produto": "Fritadeira Elétrica AFON-12L-BG Forno Oven",
-    "preco": "R$ 506,45",
+    "preco": "R$ 481,12",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -5595,7 +5597,7 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/fritadeira-eletrica-afon-12l-bg-forno-oven/",
     "slug": "fritadeira-eletrica-afon-12l-bg-forno-oven",
     "data": "2026-11-03T18:03:25Z",
-    "precoAVista": "R$ 506,45",
+    "precoAVista": "R$ 481,12",
     "precoAPrazo": "522,40",
     "liberacao": "2026-11-05T11:45:00Z",
     "parcelas": 10,
@@ -5610,7 +5612,7 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/8cf5a57f-8ef3-48c4-90a2-a682d0380f3a.jpg"
       }
     ],
-    "precoConferido": "2026-11-08T16:49:32Z"
+    "precoConferido": "2026-11-09T00:59:39Z"
   },
   {
     "produto": "Travesseiro Cervical Abranuv Ergonômico Espuma",
@@ -5786,7 +5788,7 @@
   },
   {
     "produto": "Balança Digital Bioimpedância Profissional smart",
-    "preco": "R$ 32,90",
+    "preco": "R$ 29,49",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Academia",
@@ -5810,7 +5812,7 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/8448dd52-bf9d-4aab-bf4a-1fbd70d899af.webp"
       }
     ],
-    "precoConferido": "2026-11-06T06:45:04Z"
+    "precoConferido": "2026-11-09T00:59:39Z"
   },
   {
     "produto": "Creatina Soldiers Nutrition em pó Sem sabor x 500g",
@@ -5883,7 +5885,7 @@
   },
   {
     "produto": "Air Fryer Forno 25L French Door Mondial",
-    "preco": "R$ 975,18",
+    "preco": "R$ 1.005,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -5893,11 +5895,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/air-fryer-forno-25l-french-door-mondial/",
     "slug": "air-fryer-forno-25l-french-door-mondial",
     "data": "2026-11-03T18:03:28Z",
-    "precoAVista": "R$ 975,18",
+    "precoAVista": "R$ 1.005,00",
     "precoAPrazo": "1026,50",
     "liberacao": "2026-11-05T20:12:56Z",
     "parcelas": 10,
-    "precoConferido": "2026-11-08T10:23:04Z"
+    "precoConferido": "2026-11-09T00:59:39Z"
   },
   {
     "produto": "Parafusadeira Furadeira De Impacto The Black Tools",
@@ -6371,7 +6373,7 @@
   },
   {
     "produto": "Caneca Copo De Café Coffee Com Termômetro DIGITAL",
-    "preco": "R$ 28,99",
+    "preco": "R$ 23,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Café",
@@ -6384,7 +6386,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T12:45:00Z",
-    "precoConferido": "2026-11-07T18:52:52Z"
+    "precoConferido": "2026-11-09T00:59:39Z"
   },
   {
     "produto": "Mini Aspirador De Pó 3 em 1 a Vacuo Usb Portátil",
@@ -6890,7 +6892,7 @@
   },
   {
     "produto": "Amazon Echo Dot 5ª Geração Com Alexa E Som",
-    "preco": "R$ 432,40",
+    "preco": "R$ 421,17",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Automação",
@@ -6941,7 +6943,7 @@
         "cor": "#EDEDED"
       }
     ],
-    "precoConferido": "2026-11-08T21:16:15Z"
+    "precoConferido": "2026-11-09T00:59:39Z"
   },
   {
     "produto": "Echo Show 15 Amazon Smart Display Full Hd 15,6''",
