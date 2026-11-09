@@ -7281,7 +7281,18 @@
     "data": "2026-11-08T15:04:48Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-08T15:04:47Z"
+    "liberacao": "2026-11-08T15:04:47Z",
+    "anuncios": [
+      {
+        "link": "https://s.shopee.com.br/8V9gLak10u",
+        "loja": "Shopee",
+        "preco": "R$ 59,90",
+        "conferido": "",
+        "manual": "",
+        "confirmado": false,
+        "imagem": "https://farejadinhosdayang.com.br/assets/bcecc169-f5c9-4b07-93de-3657496e9ee9.jpg"
+      }
+    ]
   },
   {
     "produto": "Medicube Zero Pore Pads 2.0",
