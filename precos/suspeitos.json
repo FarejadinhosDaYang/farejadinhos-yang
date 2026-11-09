@@ -8,6 +8,14 @@
     "referencia": "R$ 42,45"
   },
   {
+    "slug": "amazon-echo-dot-max-geracao-mais-recente",
+    "produto": "Amazon Echo Dot Max (Geração mais recente)",
+    "link": "https://link.amazon/B0gXE4Hof",
+    "atual": "R$ 759,00",
+    "lido": "19,90",
+    "referencia": "R$ 759,01"
+  },
+  {
     "slug": "azevinho-artificial-de-natal-holly-berry-vermelho",
     "produto": "Azevinho artificial de natal,holly berry vermelho",
     "link": "https://s.shopee.com.br/BV4R2ckUM",
@@ -16,11 +24,19 @@
     "referencia": "R$ 13,99"
   },
   {
+    "slug": "cafeteira-eletrica-cadence-single-up",
+    "produto": "Cafeteira Elétrica Cadence Single Up",
+    "link": "https://s.shopee.com.br/1Lh1p6rRec",
+    "atual": "R$ 119,90",
+    "lido": "R$ 99,90",
+    "referencia": "preco posto a mao em 03/11 15:27"
+  },
+  {
     "slug": "cafeteira-espresso-philips-walita-cor-preto",
     "produto": "Cafeteira Espresso Philips Walita Cor Preto",
     "link": "https://meli.la/1h4v88c",
     "atual": "R$ 218,25",
-    "lido": "2180,00",
+    "lido": "3149,00",
     "referencia": "R$ 219,90"
   },
   {
@@ -36,8 +52,16 @@
     "produto": "Celular Samsung Galaxy S25+; 5g, 512gb",
     "link": "https://meli.la/28FNDG2",
     "atual": "R$ 3.898,00",
-    "lido": "2998,00",
+    "lido": "4511,00",
     "referencia": "preco posto a mao em 04/11 14:22"
+  },
+  {
+    "slug": "echo-pop-geracao-mais-recente",
+    "produto": "Echo Pop (Geração mais recente)",
+    "link": "https://link.amazon/B09o4AY9l",
+    "atual": "R$ 399,00",
+    "lido": "849,00",
+    "referencia": "R$ 399,00"
   },
   {
     "slug": "fritadeira-sem-oleo-air-fryer-digital-4l-mondial",
