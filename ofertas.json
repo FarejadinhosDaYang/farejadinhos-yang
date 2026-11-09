@@ -3565,7 +3565,18 @@
     "data": "2026-10-30T00:47:09Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-30T11:58:56Z"
+    "liberacao": "2026-10-30T11:58:56Z",
+    "anuncios": [
+      {
+        "link": "https://s.shopee.com.br/AUukjGcOx6",
+        "loja": "Shopee",
+        "preco": "R$ 17,90",
+        "conferido": "",
+        "manual": "",
+        "confirmado": false,
+        "imagem": "https://farejadinhosdayang.com.br/assets/332ad675-aa95-49e7-bae6-263cfc67c40b.jpg"
+      }
+    ]
   },
   {
     "produto": "Kit 6 Nutella 650gr",
