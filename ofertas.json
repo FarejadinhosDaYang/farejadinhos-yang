@@ -6293,7 +6293,19 @@
     "data": "2026-11-04T02:06:46Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-04T22:27:53Z"
+    "liberacao": "2026-11-04T22:27:53Z",
+    "anuncios": [
+      {
+        "link": "https://s.shopee.com.br/9KjR4Kwhky",
+        "loja": "Shopee",
+        "preco": "R$ 23,00",
+        "conferido": "2026-11-07T21:48:20Z",
+        "manual": "2026-11-09T13:59:36Z",
+        "confirmado": true,
+        "imagem": "https://farejadinhosdayang.com.br/assets/bf2ea8bb-1798-43a0-b09e-d4c91f5f9eee.jpg",
+        "precoAntigo": "R$ 47,92"
+      }
+    ]
   },
   {
     "produto": "Kit 3 Camisas Masculinas 100% Algodão Premium",
@@ -7088,22 +7100,6 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/liquidificador-mondial-l-99-turbo/",
     "slug": "liquidificador-mondial-l-99-turbo",
     "data": "2026-11-07T21:48:19Z",
-    "precoAVista": "",
-    "precoAPrazo": "",
-    "liberacao": "2026-11-07T21:48:18Z"
-  },
-  {
-    "produto": "Mini Liquidificador Portátil Shake 6 Laminas",
-    "preco": "R$ 23,00",
-    "precoAntigo": "R$ 47,92",
-    "cupom": "",
-    "categoria": "Eletrodomésticos",
-    "destaque": false,
-    "imagem": "bf2ea8bb-1798-43a0-b09e-d4c91f5f9eee.jpg",
-    "link": "https://s.shopee.com.br/9KjR4Kwhky",
-    "url": "https://farejadinhosdayang.com.br/ofertas/mini-liquidificador-portatil-shake-6-laminas-2/",
-    "slug": "mini-liquidificador-portatil-shake-6-laminas-2",
-    "data": "2026-11-07T21:48:20Z",
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-07T21:48:18Z"
