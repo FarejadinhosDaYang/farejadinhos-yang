@@ -6462,7 +6462,18 @@
     "data": "2026-11-04T11:00:29Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-05T15:00:00Z"
+    "liberacao": "2026-11-05T15:00:00Z",
+    "anuncios": [
+      {
+        "link": "https://s.shopee.com.br/6AllZIstjf",
+        "loja": "Shopee",
+        "preco": "R$ 29,98",
+        "conferido": "",
+        "manual": "",
+        "confirmado": false,
+        "imagem": "https://farejadinhosdayang.com.br/assets/d13437fd-dd40-4451-8663-ea23c8954bfe.jpg"
+      }
+    ]
   },
   {
     "produto": "Cozedor de Ovos Elétrico Portátil Cozinha à Vapor",
