@@ -5845,7 +5845,18 @@
     "precoAPrazo": "93,12",
     "liberacao": "2026-11-05T20:12:56Z",
     "parcelas": 3,
-    "precoConferido": "2026-11-07T22:51:43Z"
+    "precoConferido": "2026-11-07T22:51:43Z",
+    "anuncios": [
+      {
+        "link": "https://link.amazon/B01z8sG7o",
+        "loja": "Amazon",
+        "preco": "R$ 89,92",
+        "conferido": "",
+        "manual": "",
+        "confirmado": false,
+        "imagem": "https://farejadinhosdayang.com.br/assets/cad782b9-47ca-4e41-a153-5b7080ec0d90.jpg"
+      }
+    ]
   },
   {
     "produto": "Air Fryer Elgin Facilita Fry 3,5L 1400W",
