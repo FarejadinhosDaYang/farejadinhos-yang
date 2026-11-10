@@ -20,7 +20,7 @@ PASTA = RAIZ / "videos"
 
 def comprimir(entrada, saida):
     # 540x960 (se o reel vier em outro tamanho, encaixa sem esticar), som leve, "faststart" pra tocar já no carregamento
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(entrada),
+    subprocess.run(["ffmpeg", "-nostdin", "-y", "-loglevel", "error", "-i", str(entrada),
                     "-vf", "scale=540:960:force_original_aspect_ratio=decrease,pad=540:960:(ow-iw)/2:(oh-ih)/2:color=0xFDF3E3,fps=30",
                     "-c:v", "libx264", "-preset", "slow", "-crf", "28", "-profile:v", "main", "-pix_fmt", "yuv420p",
                     "-c:a", "aac", "-b:a", "96k", "-ac", "2", "-movflags", "+faststart", str(saida)], check=True)
@@ -28,9 +28,9 @@ def comprimir(entrada, saida):
 
 def capa(entrada_capa, video, saida):
     if entrada_capa:
-        cmd = ["ffmpeg", "-y", "-loglevel", "error", "-i", str(entrada_capa)]
+        cmd = ["ffmpeg", "-nostdin", "-y", "-loglevel", "error", "-i", str(entrada_capa)]
     else:
-        cmd = ["ffmpeg", "-y", "-loglevel", "error", "-ss", "1.5", "-i", str(video), "-frames:v", "1"]
+        cmd = ["ffmpeg", "-nostdin", "-y", "-loglevel", "error", "-ss", "1.5", "-i", str(video), "-frames:v", "1"]
     subprocess.run(cmd + ["-vf", "scale=540:960:force_original_aspect_ratio=decrease", "-q:v", "4", str(saida)], check=True)
 
 
