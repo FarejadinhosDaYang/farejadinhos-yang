@@ -328,7 +328,37 @@
         if (!nome || !nome.trim()) return;
         var pal = prompt("Palavras que aparecem no NOME dos produtos dessa subcategoria, separadas por vírgula.\nOs produtos com essas palavras entram nela sozinhos.\n\nEx.: panela de arroz, rice", nome.trim().toLowerCase());
         if (pal === null) return;
-        pedirCategorias({ op: "add-sub", categoria: cat, nome: nome.trim(), palavras: pal }, "✅ Subcategoria \"" + nome.trim() + "\" criada em " + cat + ".");
+        // quantos produtos vão cair nela? se estiverem em OUTRA categoria, oferece mover
+        var V = window.FarejadinhosVitrine, lista = (typeof ofertas !== "undefined" && Array.isArray(ofertas)) ? ofertas : [];
+        var termos = pal.split(",").map(function (s) { return " " + s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, " ").trim() + " "; })
+            .filter(function (s) { return s.trim(); });
+        var bate = function (o) {
+            var n = " " + String(o.produto || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, " ").trim() + " ";
+            return termos.some(function (w) { return n.indexOf(w) >= 0 || n.indexOf(w.replace(/ $/, "s ")) >= 0; });
+        };
+        var principal = function (o) { return V && V.categoriaPrincipal ? V.categoriaPrincipal(o) : String(o.categoria || "").split(",")[0].trim(); };
+        var aqui = lista.filter(function (o) { return o && bate(o) && principal(o) === cat; });
+        var fora = lista.filter(function (o) { return o && bate(o) && principal(o) !== cat; });
+        var mover = false;
+        if (fora.length) {
+            var onde = {};
+            fora.forEach(function (o) { var c = principal(o); onde[c] = (onde[c] || 0) + 1; });
+            mover = confirm((aqui.length ? aqui.length + " produto(s) de " + cat + " vão entrar nela.\n\n" : "Nenhum produto de " + cat + " tem essas palavras no nome.\n\n") +
+                fora.length + " produto(s) com essas palavras estão em OUTRA categoria (" +
+                Object.keys(onde).map(function (c) { return c + ": " + onde[c]; }).join(", ") + ").\n\n" +
+                "Mover esses " + fora.length + " pra " + cat + " → " + nome.trim() + "?\n(OK = mover · Cancelar = só criar a subcategoria)");
+        }
+        pedirCategorias({ op: "add-sub", categoria: cat, nome: nome.trim(), palavras: pal },
+            "✅ Subcategoria \"" + nome.trim() + "\" criada em " + cat + (mover ? " e " + fora.length + " produto(s) movidos pra ela." : (aqui.length ? " (" + aqui.length + " produto(s) já caem nela)." : ".")));
+        if (mover) {
+            var dados = new FormData();
+            dados.append("senha", ler());
+            dados.append("itens", JSON.stringify(fora.map(function (o) {
+                var resto = String(o.categoria || "").split(",").map(function (s) { return s.trim(); }).filter(function (s) { return /^v[ií]deos?$/i.test(s); });
+                return { acao: "anuncios", op: "categoria", slug: o.slug, categoria: [cat].concat(resto).join(", ") };
+            }).concat(fora.map(function (o) { return { acao: "anuncios", op: "sub", slug: o.slug, sub: nome.trim() }; }))));
+            fetch(WORKER_URL + "/lote", { method: "POST", body: dados }).catch(function (e) { aviso("❌ Não consegui mover: " + e.message, true); });
+        }
     }
     function editarSub(cat, nome) {
         if (/^Outr/.test(nome)) { aviso("\"" + nome + "\" é automática: junta o que não caiu em nenhuma subcategoria.", true); return; }

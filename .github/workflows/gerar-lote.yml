@@ -112,7 +112,10 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           $Salvou = $false
-          for ($t = 1; $t -le 6; $t++) {
+          # Vários lotes ao mesmo tempo (vários cliques seguidos no admin) disputam
+          # o mesmo ofertas.json: quem perde refaz em cima da versão nova, com
+          # espera cada vez maior e aleatória pra não bater de novo.
+          for ($t = 1; $t -le 25; $t++) {
             Write-Host "== tentativa $t =="
             Processar
             git add assets ofertas entrada ofertas.json
@@ -129,6 +132,6 @@ jobs:
             git fetch -q origin main
             git reset -q --hard origin/main
             git clean -fdq assets ofertas entrada
-            Start-Sleep -Seconds (Get-Random -Minimum 4 -Maximum 15)
+            Start-Sleep -Seconds (Get-Random -Minimum 3 -Maximum ([Math]::Min(60, 12 + 4 * $t)))
           }
-          if (-not $Salvou) { throw "Nao consegui salvar o lote depois de 6 tentativas." }
+          if (-not $Salvou) { throw "Nao consegui salvar o lote depois de 25 tentativas." }

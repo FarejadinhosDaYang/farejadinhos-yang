@@ -1,0 +1,61 @@
+[
+ {
+  "acao": "categorias",
+  "op": "del-sub",
+  "categoria": "Eletrônicos",
+  "nome": "Ar condicionado"
+ },
+ {
+  "acao": "categorias",
+  "op": "add-sub",
+  "categoria": "Eletrodomésticos",
+  "nome": "Ar-condicionado",
+  "palavras": "ar condicionado, ar-condicionado, split"
+ },
+ {
+  "acao": "anuncios",
+  "op": "adicionar",
+  "slug": "kit-2-sacos-para-lavar-tenis-e-sapatos-em-maquina",
+  "link": "https://meli.la/1WtuMcp",
+  "preco": "33,9",
+  "loja": "Mercado Livre",
+  "variacao": "",
+  "imagem": "https://farejadinhosdayang.com.br/assets/19933955-ffd6-425e-a7ec-252e0532afc2.webp",
+  "auto": true
+ },
+ {
+  "acao": "anuncios",
+  "op": "juntar",
+  "slug": "ar-condicionado-split-elgin-eco-inverter-ii-wifi",
+  "de": "ar-condicionado-split-elgin-eco-inverter-ii-wifi-2",
+  "variacao": "",
+  "tirar": true
+ },
+ {
+  "acao": "anuncios",
+  "op": "juntar",
+  "slug": "ar-condicionado-inverter-12k-midea-ecomaster-43",
+  "de": "ar-condicionado-inverter-12k-midea-ecomaster-43-2",
+  "variacao": "",
+  "tirar": true
+ },
+ {
+  "acao": "anuncios",
+  "op": "juntar",
+  "slug": "carregador-portatil-5000mah-10000mah-inducao",
+  "de": "carregador-portatil-5000mah-10000mah-inducao-2",
+  "variacao": "",
+  "tirar": true
+ },
+ {
+  "acao": "anuncios",
+  "op": "adicionar",
+  "slug": "protetor-solar-facial-ps-01-fps-60-principia-3",
+  "link": "https://s.shopee.com.br/2BFyxpAD4U",
+  "preco": "29,99",
+  "loja": "Shopee",
+  "variacao": "",
+  "imagem": "https://farejadinhosdayang.com.br/assets/846505d6-c2f5-4637-ab1c-efdbaa624d67.jpg",
+  "auto": true
+ }
+]
