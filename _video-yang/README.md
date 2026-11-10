@@ -33,6 +33,9 @@ O usuário sobe o vídeo, o MP3 e o texto narrado em `painel/reels.html` → Wor
 (frases pelas reticências, tempos por programação dinâmica nas pausas, fundo com pedaço de cada cena, capa) →
 release `reels-prontos` + `reels/lista.json` + oferta em Vídeos. Teste local:
 `python3 auto_reel.py pedido.json saida/` (formato do pedido no topo do arquivo).
+Produto que ainda não está no site: o reel vai pra fila `videos/pendentes/` (campo "Produto ainda não está no site?"
+do painel, ou `python3 _video-yang/anexar-pendentes.py guardar reel.mp4 capa.jpg "palavras do nome"`) e o workflow
+`anexar-videos.yml` põe o vídeo na oferta sozinho depois de cada oferta/lote novo (vale 30 dias).
 Música de fundo: faixas livres de direitos em `musicas/` (ver `musicas/LEIAME.md`); o pedido pode ter
 `"musica": "parte-do-nome"` ou `"nenhuma"`. Sem o campo, sorteia; pasta vazia, sem música.
 Os cortes escolhidos à mão (passo a passo abaixo) continuam valendo pros vídeos difíceis.

@@ -61,6 +61,9 @@ button:disabled{opacity:.6;cursor:wait}
     <select id="produto"><option value="">— escolha o produto (opcional) —</option></select>
     <small>Com o produto escolhido, a oferta vai pra categoria Vídeos e não sai mais do ar.</small>
   </label>
+  <label>Produto ainda não está no site? <input id="palavras" placeholder="ex.: escova 5 em 1" autocomplete="off">
+    <small>Escreva 2 ou 3 palavras do nome do produto. O vídeo fica esperando e entra sozinho na oferta assim que ela for criada (até 30 dias).</small>
+  </label>
 
   <label class="pronto-op" style="display:flex;gap:10px;align-items:flex-start;background:#fff;border:1.5px solid var(--line,#F0DFC4);border-radius:12px;padding:10px 12px;cursor:pointer">
     <input type="checkbox" id="pronto" style="width:auto;margin-top:3px">
@@ -176,7 +179,7 @@ $("form").addEventListener("submit", e => {
   const num = id => { const v = $(id).value.trim(); return v === "" ? "" : Number(v); };
   const pedido = pronto ? { pronto: true, produto, slug } : { produto, slug, texto, titulo: $("titulo").value.trim(), faixa: $("faixa").value, balao: $("balao").value.trim(),
                    de: num("de"), ate: num("ate"), capa_t: num("capa_t"), legenda_fundo: $("legenda_fundo").checked,
-                   musica: $("musica").value.trim() };
+                   musica: $("musica").value.trim(), palavras: slug ? "" : $("palavras").value.trim() };
   const dados = new FormData();
   dados.append("senha", senha); dados.append("pedido", JSON.stringify(pedido));
   dados.append("video", video); if (!pronto) dados.append("voz", voz);

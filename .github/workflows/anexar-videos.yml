@@ -1,0 +1,44 @@
+name: Anexar videos pendentes
+
+# Reels que ficaram prontos antes do produto entrar no site esperam em videos/pendentes/.
+# Depois de cada oferta/lote novo (ou quando chega vídeo na fila), põe o vídeo na oferta certa.
+on:
+  workflow_run:
+    workflows: ["Gerar lote de ofertas", "Gerar oferta"]
+    types: [completed]
+  push:
+    branches: [main]
+    paths:
+      - "videos/pendentes/lista.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: anexar-videos
+  cancel-in-progress: false
+
+jobs:
+  anexar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Tem fila?
+        id: fila
+        run: |
+          if [ -s videos/pendentes/lista.json ] && [ "$(python3 -c "import json;print(len(json.load(open('videos/pendentes/lista.json'))))")" != "0" ]; then echo "tem=1" >> "$GITHUB_OUTPUT"; fi
+      - name: Conferir a fila e salvar
+        if: steps.fila.outputs.tem == '1'
+        run: |
+          python3 _video-yang/anexar-pendentes.py
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A videos ofertas.json
+          git commit -m "Video pendente posto na oferta" || exit 0
+          for i in 1 2 3 4; do
+            git pull --rebase && git push && break
+            sleep $((5 * i))
+          done

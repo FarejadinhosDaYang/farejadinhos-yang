@@ -96,6 +96,11 @@ jobs:
               if r.returncode != 0:   # se não der pra pôr o vídeo, pelo menos não deixa a oferta expirar
                   r = subprocess.run(["python3", "_video-yang/marcar-video.py", slug], capture_output=True, text=True)
               video_msg = (r.stdout or r.stderr).strip()
+          elif ok and str(pedido.get("palavras") or "").strip():
+              # produto ainda não está no site: o vídeo espera na fila e entra sozinho quando a oferta chegar
+              r = subprocess.run(["python3", "_video-yang/anexar-pendentes.py", "guardar", f"saida-reel/{pid}-reel.mp4",
+                                  f"saida-reel/{pid}-capa.jpg", pedido["palavras"]], capture_output=True, text=True)
+              video_msg = (r.stdout or r.stderr).strip()
           os.makedirs("reels", exist_ok=True)
           try: lista = json.load(open("reels/lista.json", encoding="utf-8"))
           except Exception: lista = []
