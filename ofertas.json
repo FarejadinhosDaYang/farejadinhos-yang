@@ -3372,7 +3372,18 @@
     "data": "2026-10-28T13:48:14Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-10-31T00:01:41Z"
+    "liberacao": "2026-10-31T00:01:41Z",
+    "anuncios": [
+      {
+        "link": "https://s.shopee.com.br/2BFyxpAD4U",
+        "loja": "Shopee",
+        "preco": "R$ 29,99",
+        "conferido": "",
+        "manual": "",
+        "confirmado": false,
+        "imagem": "https://farejadinhosdayang.com.br/assets/846505d6-c2f5-4637-ab1c-efdbaa624d67.jpg"
+      }
+    ]
   },
   {
     "produto": "Creme Calmante Multirreparador Facial CM-01",
@@ -5503,7 +5514,18 @@
     "data": "2026-11-03T15:52:10Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-03T17:34:06Z"
+    "liberacao": "2026-11-03T17:34:06Z",
+    "anuncios": [
+      {
+        "link": "https://s.shopee.com.br/AAIRmBz8qw",
+        "loja": "Shopee",
+        "preco": "R$ 28,86",
+        "conferido": "2026-11-04T02:06:47Z",
+        "manual": "2026-11-10T01:21:27Z",
+        "confirmado": true,
+        "imagem": "https://farejadinhosdayang.com.br/assets/5b0805c9-e921-4100-9a09-21fbdd2ef47c.jpg"
+      }
+    ]
   },
   {
     "produto": "Colchonete Academia EVA Tapete Yoga Pilates",
@@ -5900,7 +5922,18 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T20:12:56Z",
-    "precoConferido": "2026-11-07T18:52:52Z"
+    "precoConferido": "2026-11-07T18:52:52Z",
+    "anuncios": [
+      {
+        "link": "https://meli.la/1WtuMcp",
+        "loja": "Mercado Livre",
+        "preco": "R$ 33,90",
+        "conferido": "",
+        "manual": "",
+        "confirmado": false,
+        "imagem": "https://farejadinhosdayang.com.br/assets/19933955-ffd6-425e-a7ec-252e0532afc2.webp"
+      }
+    ]
   },
   {
     "produto": "Air Fryer Forno 25L French Door Mondial",
@@ -6371,22 +6404,6 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T12:30:00Z"
-  },
-  {
-    "produto": "Carregador Portátil 5000Mah/10000Mah Indução",
-    "preco": "R$ 28,86",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Eletrônicos",
-    "destaque": false,
-    "imagem": "5b0805c9-e921-4100-9a09-21fbdd2ef47c.jpg",
-    "link": "https://s.shopee.com.br/AAIRmBz8qw",
-    "url": "https://farejadinhosdayang.com.br/ofertas/carregador-portatil-5000mah-10000mah-inducao-2/",
-    "slug": "carregador-portatil-5000mah-10000mah-inducao-2",
-    "data": "2026-11-04T02:06:47Z",
-    "precoAVista": "",
-    "precoAPrazo": "",
-    "liberacao": "2026-11-04T16:13:45Z"
   },
   {
     "produto": "Cafeteira Elétrica Programavel Mallory 1,5 Litros",
@@ -8100,7 +8117,8 @@
     "precoAVista": "2119,00",
     "precoAPrazo": "2185,00",
     "liberacao": "2026-11-09T12:17:24Z",
-    "parcelas": 10
+    "parcelas": 10,
+    "anuncios": []
   },
   {
     "produto": "Ar condicionado Split Hi Wall Gree G-Side Auto",
@@ -8184,23 +8202,6 @@
     "precoConferido": "2026-11-09T18:55:10Z"
   },
   {
-    "produto": "Ar Condicionado Inverter 12k Midea Ecomaster &#43",
-    "preco": "R$ 2.119,00",
-    "precoAntigo": "",
-    "cupom": "MELIOFF25",
-    "categoria": "Eletrodomésticos",
-    "destaque": false,
-    "imagem": "bc5a81c7-ad67-43ac-a74a-8ad3b034dc14.jpg",
-    "link": "https://meli.la/1xzoqis",
-    "url": "https://farejadinhosdayang.com.br/ofertas/ar-condicionado-inverter-12k-midea-ecomaster-43-2/",
-    "slug": "ar-condicionado-inverter-12k-midea-ecomaster-43-2",
-    "data": "2026-11-09T12:17:26Z",
-    "precoAVista": "2119,00",
-    "precoAPrazo": "2185,00",
-    "liberacao": "2026-11-09T12:17:24Z",
-    "parcelas": 10
-  },
-  {
     "produto": "Ar Condicionado Inverter Midea Ecomaster 12000Btu",
     "preco": "R$ 2.499,00",
     "precoAntigo": "",
@@ -8268,7 +8269,18 @@
     "precoAPrazo": "1939,00",
     "liberacao": "2026-11-09T12:17:24Z",
     "parcelas": 12,
-    "precoConferido": "2026-11-09T18:55:10Z"
+    "precoConferido": "2026-11-09T18:55:10Z",
+    "anuncios": [
+      {
+        "link": "https://link.amazon/B0dh08P9a",
+        "loja": "Amazon",
+        "preco": "R$ 1.939,00",
+        "conferido": "2026-11-09T18:55:10Z",
+        "manual": "2026-11-10T01:21:27Z",
+        "confirmado": true,
+        "imagem": "https://farejadinhosdayang.com.br/assets/2c5357d5-8f0d-446a-b744-d7026810b9e7.jpg"
+      }
+    ]
   },
   {
     "produto": "Ar Condicionado Split HW LG AI Smart Inverter",
@@ -8302,24 +8314,6 @@
     "data": "2026-11-09T12:17:28Z",
     "precoAVista": "R$ 2.032,90",
     "precoAPrazo": "1893,68",
-    "liberacao": "2026-11-09T12:17:24Z",
-    "parcelas": 12,
-    "precoConferido": "2026-11-09T18:55:10Z"
-  },
-  {
-    "produto": "Ar Condicionado Split Elgin Eco Inverter II WiFi",
-    "preco": "R$ 1.939,00",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Eletrodomésticos",
-    "destaque": false,
-    "imagem": "2c5357d5-8f0d-446a-b744-d7026810b9e7.jpg",
-    "link": "https://link.amazon/B0dh08P9a",
-    "url": "https://farejadinhosdayang.com.br/ofertas/ar-condicionado-split-elgin-eco-inverter-ii-wifi-2/",
-    "slug": "ar-condicionado-split-elgin-eco-inverter-ii-wifi-2",
-    "data": "2026-11-09T12:17:28Z",
-    "precoAVista": "R$ 1.939,00",
-    "precoAPrazo": "1939,00",
     "liberacao": "2026-11-09T12:17:24Z",
     "parcelas": 12,
     "precoConferido": "2026-11-09T18:55:10Z"

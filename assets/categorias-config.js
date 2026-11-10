@@ -53,6 +53,14 @@ window.FarejadinhosConfigCategorias = {
      "higienizadora",
      "aspirador"
     ]
+   },
+   {
+    "nome": "Ar-condicionado",
+    "palavras": [
+     "ar condicionado",
+     "ar-condicionado",
+     "split"
+    ]
    }
   ],
   "Cozinha": [
@@ -262,12 +270,6 @@ window.FarejadinhosConfigCategorias = {
      "aspirador",
      "ventilador",
      "soprador"
-    ]
-   },
-   {
-    "nome": "Ar condicionado",
-    "palavras": [
-     "ar condicionado"
     ]
    }
   ],
