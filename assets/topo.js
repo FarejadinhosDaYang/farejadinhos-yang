@@ -53,20 +53,20 @@ window.farejaIconesExtras();
         '<div class="yt-nome">Farejadinhos<span>da Yang</span></div>' +
         "</a>" +
         '<form class="yt-busca" id="formBusca" role="search" action="' + inicio + '" method="get">' +
-        '<input type="search" id="busca" name="q" placeholder="O que você procura? A Yang fareja 🐾" aria-label="Buscar ofertas">' +
+        '<input type="search" id="busca" name="q" placeholder="O que você procura? A Yang fareja" aria-label="Buscar ofertas">' +
         '<button type="submit" aria-label="Buscar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.6-4.6"/></svg></button>' +
         "</form>" +
         '<div data-yang-nav data-base="' + base + '"></div>' +
         "</div>" +
         '<div class="topo-atalhos">' +
         '<nav aria-label="Atalhos">' +
-        '<a class="destaque" href="' + ancora + '#tituloGrid">🔥 Ofertas do dia</a>' +
-        '<a href="' + ancora + '#podioSecao">🏆 Maiores descontos</a>' +
-        '<a href="' + ancora + '#cuponsSecao">🏷️ Cupons de hoje</a>' +
-        '<a href="' + base + 'pedir/">🐶 Pede pra Yang</a>' +
-        '<a href="' + base + 'calculadora/">🧮 Vale a pena parcelar?</a>' +
-        '<a href="https://s.shopee.com.br/4VdOXKYQfW" target="_blank" rel="sponsored noopener">🏷️ Cupons Shopee</a>' +
-        '<a href="https://www.mercadolivre.com.br/cupons?source_page=mperfil#nav-header" target="_blank" rel="sponsored noopener">🏷️ Cupons Mercado Livre</a>' +
+        '<a class="destaque" href="' + ancora + '#tituloGrid">Ofertas do dia</a>' +
+        '<a href="' + ancora + '#podioSecao">Maiores descontos</a>' +
+        '<a href="' + ancora + '#cuponsSecao">Cupons de hoje</a>' +
+        '<a href="' + base + 'pedir/">Pede pra Yang</a>' +
+        '<a href="' + base + 'calculadora/">Vale a pena parcelar?</a>' +
+        '<a href="https://s.shopee.com.br/4VdOXKYQfW" target="_blank" rel="sponsored noopener">Cupons Shopee</a>' +
+        '<a href="https://www.mercadolivre.com.br/cupons?source_page=mperfil#nav-header" target="_blank" rel="sponsored noopener">Cupons Mercado Livre</a>' +
         "</nav>" +
         "</div>" +
         "</header>";

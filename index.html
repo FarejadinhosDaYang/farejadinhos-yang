@@ -42,7 +42,10 @@
     --ink:#2B1B12;
     --muted:#8A7563;
     --line:#F0DFC4;
+    /* espaço entre blocos da página: um valor só, pra tudo respirar igual */
+    --secao:36px;
 }
+@media(max-width:560px){ :root{ --secao:28px; } }
 
 *{box-sizing:border-box}
 
@@ -383,9 +386,9 @@ h1,h2,h3,.brand{
     align-items:center;
     gap:8px;
     background:var(--cream-2);
-    border:1.5px solid var(--line);
+    border:1px solid var(--line);
     border-radius:999px;
-    padding:9px 16px 9px 9px;
+    padding:7px 14px 7px 7px;
     font-weight:700;
     font-size:13.5px;
     color:var(--ink);
@@ -415,7 +418,10 @@ h1,h2,h3,.brand{
     font-size:13px;
     color:#fff;
     flex:none;
+    background:#fff !important;
+    box-shadow:inset 0 0 0 1px var(--line);
 }
+.categoria-btn.ativa .ic{ box-shadow:none; }
 
 /* ===== BUSCA/GRID DE OFERTAS ===== */
 
@@ -424,14 +430,14 @@ h1,h2,h3,.brand{
     align-items:center;
     justify-content:space-between;
     gap:10px;
-    margin:26px 0 14px;
+    margin:var(--secao) 0 14px;
     padding:0 2px;
 }
 
 .secao-head h2{
-    font-size:19px;
+    font-size:20px;
     margin:0;
-    color:var(--red-dark);
+    color:var(--ink);
 }
 
 .contagem{
@@ -448,14 +454,16 @@ h1,h2,h3,.brand{
 
 .oferta-card{
     background:var(--cream-2);
-    border:1.5px solid var(--line);
-    border-radius:18px;
+    border:1px solid var(--line);
+    border-radius:16px;
     overflow:hidden;
     text-decoration:none;
     color:var(--ink);
     display:flex;
     flex-direction:column;
+    transition:border-color .2s ease, box-shadow .2s ease;
 }
+.oferta-card:hover{ border-color:#E4CBA6; box-shadow:0 8px 20px rgba(43,27,18,.08); }
 
 .oferta-card .img-wrap{ position:relative; }
 
@@ -463,10 +471,11 @@ h1,h2,h3,.brand{
     width:100%;
     aspect-ratio:1/1;
     object-fit:contain;
-    padding:8px;
+    padding:10px;
     box-sizing:border-box;
     background:#ffffff;
     display:block;
+    border-bottom:1px solid var(--line);
 }
 
 .badge-canto{
@@ -477,7 +486,7 @@ h1,h2,h3,.brand{
     color:#fff;
     font-size:10.5px;
     font-weight:700;
-    padding:3px 9px;
+    padding:3px 8px;
     border-radius:999px;
 }
 
@@ -499,7 +508,7 @@ h1,h2,h3,.brand{
 }
 
 .oferta-card .info{
-    padding:12px 13px 14px;
+    padding:12px 14px 14px;
     flex:1;
     display:flex;
     flex-direction:column;
@@ -517,10 +526,13 @@ h1,h2,h3,.brand{
 .oferta-card h3{
     font-size:13.5px;
     line-height:1.3;
-    margin:0 0 6px;
-    min-height:35px;
+    margin:0 0 10px;
     font-family:'Work Sans',sans-serif;
-    font-weight:600;
+    font-weight:500;
+    display:-webkit-box;
+    -webkit-line-clamp:3;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
 }
 
 .oferta-card .old{
@@ -532,25 +544,32 @@ h1,h2,h3,.brand{
 .oferta-card .preco{
     font-family:'Baloo 2',sans-serif;
     font-weight:800;
-    color:var(--red-dark);
-    font-size:17px;
-    margin-bottom:9px;
+    color:var(--ink);
+    font-size:18px;
+    line-height:1.15;
+    font-variant-numeric:tabular-nums;
 }
 
 .oferta-card .cardCores{position:absolute;left:8px;bottom:8px;display:flex;gap:4px;background:rgba(255,255,255,.9);border-radius:999px;padding:4px 6px}
 .oferta-card .cardCores span{width:13px;height:13px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.2)}
-.oferta-card .aPartir{font-size:11px;font-weight:600;color:#8A7563}
-.oferta-card .maisLojas{font-size:11.5px;font-weight:700;color:#1F7A44;margin-top:2px}
+.oferta-card .aPartir{display:block;font-family:'Work Sans',sans-serif;font-size:11px;font-weight:600;color:#8A7563;line-height:1.3}
+.oferta-card .preco{white-space:nowrap}
+.oferta-card .maisLojas{font-size:11.5px;font-weight:600;color:#1F7A44;margin-top:4px}
 .oferta-card .cupom{
     font-size:11px;
     font-weight:700;
-    background:#fff6e9;
-    border:1px dashed var(--orange);
-    color:var(--red-dark);
-    padding:3px 8px;
-    border-radius:8px;
-    margin-bottom:9px;
+    letter-spacing:.3px;
+    background:transparent;
+    border:1px dashed var(--muted);
+    color:var(--muted);
+    padding:2px 7px;
+    border-radius:6px;
+    margin-top:6px;
     align-self:flex-start;
+    max-width:100%;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
 }
 
 /* o card leva pra página da oferta; o botão vermelho vai direto pra loja */
@@ -562,23 +581,23 @@ h1,h2,h3,.brand{
     color:inherit;
 }
 
+.oferta-card h3 + *, .podio-card h3 + *{ margin-top:auto; }
 .oferta-card .card-link:hover h3{ color:var(--red-dark); }
 
 .oferta-card .pegar-oferta{
     display:block;
-    margin:0 13px 14px;
-    background:linear-gradient(135deg,var(--red),var(--red-dark));
-    color:#fff;
+    margin:0 14px 14px;
+    background:#fff;
+    color:var(--red-dark);
+    border:1.5px solid #F2C4C6;
     text-align:center;
     text-decoration:none;
-    font-family:'Baloo 2',sans-serif;
-    font-size:14px;
-    font-weight:800;
-    letter-spacing:.2px;
-    padding:8px 9px 7px;
+    font-family:'Work Sans',sans-serif;
+    font-size:13.5px;
+    font-weight:700;
+    padding:8px 9px;
     border-radius:10px;
-    box-shadow:0 6px 14px rgba(229,35,46,.25);
-    transition:transform .12s ease, box-shadow .12s ease;
+    transition:background .15s ease, border-color .15s ease, color .15s ease;
 }
 
 .oferta-card .pegar-oferta{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
@@ -597,18 +616,20 @@ h1,h2,h3,.brand{
 @media(max-width:560px){
     .grid{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
     .oferta-card .info{ padding:10px 10px 12px; }
-    .oferta-card h3{ font-size:12.5px; min-height:32px; }
-    .oferta-card .preco{ font-size:16px; margin-bottom:6px; }
-    .oferta-card .pegar-oferta{ font-size:12.5px; margin:0 9px 10px; padding:7px 6px 6px; }
-    .oferta-card .acoes-card{ margin:0 9px 10px; gap:5px; }
+    .oferta-card h3{ font-size:12.5px; }
+    .oferta-card .preco{ font-size:16px; }
+    .oferta-card .pegar-oferta{ font-size:12.5px; margin:0 10px 10px; padding:7px 6px; }
+    .oferta-card .acoes-card{ margin:0 10px 10px; gap:5px; }
     .oferta-card .acoes-card .pegar-oferta{ margin:0; }
     .sino-card{ width:32px; font-size:14px; }
 }
 
 .oferta-card .pegar-oferta:hover{
-    transform:translateY(-1px);
-    box-shadow:0 8px 18px rgba(229,35,46,.32);
+    background:var(--red);
+    border-color:var(--red);
+    color:#fff;
 }
+.oferta-card .pegar-oferta:focus-visible{ outline:3px solid var(--ink); outline-offset:2px; }
 
 .vazio{
     background:var(--cream-2);
@@ -622,25 +643,42 @@ h1,h2,h3,.brand{
 
 /* ===== PÓDIO (top 3 por desconto) ===== */
 
-.podio-secao{ margin-top:26px; }
-
+.podio-secao{ margin-top:var(--secao); }
 .podio-secao .secao-head{ margin-top:0; }
+.podio-secao .contagem{ font-family:'Caveat',cursive; font-weight:700; font-size:21px; color:var(--muted); white-space:nowrap; }
+.podio-secao .secao-head h2{ white-space:nowrap; }
+@media(max-width:560px){ .podio-secao .contagem{ font-size:16px; } }
 
 .podio{
     display:grid;
-    grid-template-columns:1fr 1.15fr 1fr;
+    grid-template-columns:1fr 1.18fr 1fr;
     align-items:end;
     gap:14px;
-    max-width:760px;
+    max-width:820px;
     margin:0 auto;
 }
 
+/* cores lisas das medalhas (sem degradê) + o tom do brilho que corre na borda */
+.p1{ --medalha:#E0AE2E; --medalha-txt:#5A3E00; --brilho:#FFF4C2; --volta:3.2s; --borda:3px; }
+.p2{ --medalha:#B9C1C9; --medalha-txt:#33404C; --brilho:#FFFFFF; --volta:3.9s; --borda:2px; }
+.p3{ --medalha:#CD8A52; --medalha-txt:#4A2608; --brilho:#FFE0C2; --volta:4.5s; --borda:2px; }
+
+/* ângulo animável do brilho (navegadores antigos ficam com a borda parada, sem quebrar nada) */
+@property --giro{ syntax:'<angle>'; inherits:false; initial-value:0deg; }
+
+/* a moldura: o fundo do bloco é um degradê em círculo que gira;
+   o card e o degrau ficam por cima, sobrando só a "borda" à mostra */
 .podio-lugar{
     display:flex;
     flex-direction:column;
     min-width:0;
+    padding:var(--borda);
+    border-radius:18px 18px 14px 14px;
+    background:conic-gradient(from var(--giro), var(--medalha) 0deg, var(--medalha) 250deg, var(--brilho) 300deg, var(--medalha) 350deg);
+    animation:podio-giro var(--volta) linear infinite;
 }
-
+.p1{ box-shadow:0 12px 28px rgba(224,174,46,.28); }
+@keyframes podio-giro{ to{ --giro:360deg; } }
 .podio-lugar.p1{ order:2; }
 .podio-lugar.p2{ order:1; }
 .podio-lugar.p3{ order:3; }
@@ -648,16 +686,15 @@ h1,h2,h3,.brand{
 .podio-card{
     position:relative;
     background:var(--cream-2);
-    border:2px solid var(--medalha);
-    border-radius:18px 18px 0 0;
-    border-bottom:none;
+    border-radius:15px 15px 0 0;
     overflow:hidden;
     text-decoration:none;
     color:var(--ink);
     display:flex;
     flex-direction:column;
-    box-shadow:0 10px 24px rgba(43,27,18,.10);
 }
+.podio-lugar{ transition:transform .2s ease; }
+.podio-lugar:hover{ transform:translateY(-3px); }
 
 .podio-card img{
     width:100%;
@@ -667,37 +704,38 @@ h1,h2,h3,.brand{
     padding:10px;
     box-sizing:border-box;
     display:block;
+    border-bottom:1px solid var(--line);
 }
 
 .podio-card .medalha{
     position:absolute;
-    top:8px;
-    left:8px;
-    width:36px;
-    height:36px;
+    top:10px;
+    left:10px;
+    width:34px;
+    height:34px;
     border-radius:50%;
-    background:var(--medalha-grad);
-    color:#fff;
+    background:var(--medalha);
+    color:var(--medalha-txt);
     font-family:'Baloo 2',sans-serif;
     font-weight:800;
-    font-size:17px;
+    font-size:15px;
+    line-height:1;
     display:flex;
     align-items:center;
     justify-content:center;
-    box-shadow:0 3px 8px rgba(0,0,0,.25), inset 0 -2px 0 rgba(0,0,0,.15);
-    text-shadow:0 1px 1px rgba(0,0,0,.25);
+    box-shadow:0 0 0 3px #fff;
 }
 
-.podio-card .badge-desconto{ font-size:12px; padding:4px 9px; }
+.podio-card .badge-desconto{ font-size:12px; padding:4px 9px; top:10px; right:10px; }
 
-.podio-card .info{ padding:10px 12px 12px; }
+.podio-card .info{ padding:12px 14px 14px; display:flex; flex-direction:column; flex:1; }
 
 .podio-card h3{
-    font-size:13px;
+    font-size:13.5px;
     line-height:1.3;
-    margin:0 0 6px;
+    margin:0 0 8px;
     font-family:'Work Sans',sans-serif;
-    font-weight:600;
+    font-weight:500;
     display:-webkit-box;
     -webkit-line-clamp:2;
     -webkit-box-orient:vertical;
@@ -709,59 +747,57 @@ h1,h2,h3,.brand{
 .podio-card .preco{
     font-family:'Baloo 2',sans-serif;
     font-weight:800;
-    color:var(--red-dark);
-    font-size:18px;
+    color:var(--ink);
+    font-size:19px;
     line-height:1.1;
+    font-variant-numeric:tabular-nums;
 }
+.p1 .podio-card .preco{ font-size:23px; color:var(--red-dark); }
 
-/* o "degrau" do pódio */
+/* o degrau: bloco liso na cor da medalha, mais alto pro 1º */
 .podio-degrau{
-    background:var(--medalha-grad);
-    color:#fff;
-    text-align:center;
-    font-family:'Baloo 2',sans-serif;
-    font-weight:800;
-    border-radius:0 0 12px 12px;
-    text-shadow:0 1px 2px rgba(0,0,0,.25);
+    background:var(--medalha);
+    color:var(--medalha-txt);
+    border-radius:0 0 11px 11px;
     display:flex;
-    flex-direction:column;
     align-items:center;
     justify-content:center;
-    line-height:1.05;
+    font-family:'Baloo 2',sans-serif;
+    font-weight:800;
+    font-size:13px;
+    letter-spacing:.8px;
+    text-transform:uppercase;
 }
-
-.podio-degrau .lugar{ font-size:26px; }
-.podio-degrau .rotulo{ font-size:11px; letter-spacing:.6px; text-transform:uppercase; opacity:.95; }
-
-.p1 .podio-degrau{ height:74px; }
-.p2 .podio-degrau{ height:52px; }
-.p3 .podio-degrau{ height:38px; }
-
-.p1 .podio-card{ transform:translateY(0); }
-.p1 .podio-card .preco{ font-size:21px; }
-
-.p1{ --medalha:#D4A017; --medalha-grad:linear-gradient(160deg,#F7D774,#D4A017 55%,#B8860B); }
-.p2{ --medalha:#9EA7B0; --medalha-grad:linear-gradient(160deg,#E3E7EA,#A8B0B8 55%,#7F8A94); }
-.p3{ --medalha:#C27A3A; --medalha-grad:linear-gradient(160deg,#EBB07A,#C27A3A 55%,#9A5B26); }
+.p1 .podio-degrau{ height:46px; font-size:15px; }
+.p2 .podio-degrau{ height:32px; }
+.p3 .podio-degrau{ height:22px; }
 
 @media(max-width:560px){
-    .podio{ gap:8px; grid-template-columns:1fr 1.1fr 1fr; }
+    .podio{ gap:7px; grid-template-columns:1fr 1.14fr 1fr; }
+    .podio-lugar{ border-radius:14px 14px 11px 11px; }
+    .p1{ --borda:2.5px; }
+    .podio-card{ border-radius:11.5px 11.5px 0 0; }
+    .podio-card img{ padding:6px; }
     .podio-card .info{ padding:8px 8px 10px; }
-    .podio-card h3{ font-size:11.5px; }
+    .podio-card h3{ font-size:11.5px; margin-bottom:6px; }
     .podio-card .preco{ font-size:15px; }
     .p1 .podio-card .preco{ font-size:17px; }
-    .podio-card .medalha{ width:28px; height:28px; font-size:14px; top:6px; left:6px; }
+    .podio-card .medalha{ width:26px; height:26px; font-size:12px; top:6px; left:6px; box-shadow:0 0 0 2px #fff; }
     .podio-card .badge-desconto{ font-size:10px; padding:3px 6px; top:6px; right:6px; }
-    .podio-degrau .lugar{ font-size:20px; }
-    .podio-degrau .rotulo{ font-size:9.5px; }
-    .p1 .podio-degrau{ height:58px; }
-    .p2 .podio-degrau{ height:42px; }
-    .p3 .podio-degrau{ height:30px; }
+    .podio-degrau{ font-size:10px; border-radius:0 0 9px 9px; }
+    .p1 .podio-degrau{ height:30px; font-size:11px; }
+    .p2 .podio-degrau{ height:20px; }
+    .p3 .podio-degrau{ height:12px; font-size:0; }
+}
+
+@media (prefers-reduced-motion:reduce){
+    .podio-lugar{ animation:none; transition:none; }
+    .podio-lugar:hover{ transform:none; }
 }
 
 /* ===== PRATELEIRAS (uma por categoria, deslizam pro lado) ===== */
 
-.prateleira{ margin-top:26px; }
+.prateleira{ margin-top:var(--secao); }
 
 .prateleira .secao-head{ margin:0 0 10px; }
 
@@ -780,7 +816,11 @@ h1,h2,h3,.brand{
     justify-content:center;
     font-size:15px;
     flex:none;
+    background:#fff !important;
+    box-shadow:inset 0 0 0 1px var(--line);
 }
+
+.prateleira-titulo{ font-size:20px; color:var(--ink) !important; }
 
 .ver-todas{
     background:none;
@@ -793,6 +833,7 @@ h1,h2,h3,.brand{
     white-space:nowrap;
     padding:6px 2px;
 }
+.ver-todas:hover{ text-decoration:underline; text-underline-offset:3px; }
 
 .trilho-wrap{ position:relative; }
 
@@ -849,12 +890,12 @@ h1,h2,h3,.brand{
     justify-content:space-between;
     gap:10px;
     flex-wrap:wrap;
-    margin:30px 0 14px;
-    padding-top:18px;
-    border-top:1.5px dashed var(--line);
+    margin:var(--secao) 0 14px;
+    padding-top:var(--secao);
+    border-top:1px solid var(--line);
 }
 
-.barra-todas h2{ font-size:19px; margin:0; color:var(--red-dark); }
+.barra-todas h2{ font-size:20px; margin:0; color:var(--ink); }
 
 .barra-todas .direita{ display:flex; align-items:center; gap:10px; }
 
@@ -931,19 +972,20 @@ h1,h2,h3,.brand{
 .btn-loja:disabled:hover{ border-color:var(--line); }
 
 .tagLoja{
-    display:inline-block;
-    font-size:10px;
-    font-weight:800;
-    letter-spacing:.2px;
-    padding:2px 7px;
-    border-radius:999px;
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    font-size:11px;
+    font-weight:600;
+    color:var(--muted);
     margin-bottom:6px;
     margin-right:4px;
     vertical-align:top;
 }
-.tagLoja.shopee{ background:#FFE8E1; color:#C23B16; }
-.tagLoja.ml{ background:#FFF6B8; color:#2D3277; }
-.tagLoja.amazon{ background:#E8EDF3; color:#232F3E; }
+.tagLoja::before{ content:""; width:7px; height:7px; border-radius:50%; background:currentColor; flex:none; }
+.tagLoja.shopee::before{ background:#EE4D2D; }
+.tagLoja.ml::before{ background:#E8C900; }
+.tagLoja.amazon::before{ background:#232F3E; }
 .oferta-card .tagLoja{ align-self:flex-start; width:fit-content; }
 
 /* ===== FOOTER ===== */
@@ -952,7 +994,7 @@ footer{
     text-align:center;
     color:var(--muted);
     font-size:12.5px;
-    margin-top:40px;
+    margin-top:calc(var(--secao) * 1.5);
     line-height:1.6;
 }
 
@@ -960,16 +1002,17 @@ footer a{ color:var(--red-dark); font-weight:600; text-decoration:none; }
 
 
 /* ===== Botões de cupons das lojas ===== */
-.cupons-lojas{ display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:12px; margin:22px auto 4px; }
-.cupons-lojas .rotulo{ font-family:'Caveat',cursive; font-size:24px; color:var(--muted); width:100%; text-align:center; margin-bottom:-4px; }
-.btn-cupom{ display:inline-flex; align-items:center; gap:8px; padding:12px 22px; border-radius:999px; font-family:'Baloo 2',sans-serif; font-weight:800; font-size:17px; text-decoration:none; box-shadow:0 4px 0 rgba(0,0,0,.14); transition:transform .15s, box-shadow .15s; }
-.btn-cupom:hover{ transform:translateY(-2px); box-shadow:0 6px 0 rgba(0,0,0,.14); }
-.btn-cupom:active{ transform:translateY(1px); box-shadow:0 2px 0 rgba(0,0,0,.14); }
-.btn-cupom.shopee{ background:#EE4D2D; color:#fff; }
-.btn-cupom.ml{ background:#FFE600; color:#2D3277; }
+.cupons-lojas{ display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:10px; margin:20px auto 0; }
+.cupons-lojas .rotulo{ font-family:'Caveat',cursive; font-weight:700; font-size:22px; color:var(--muted); width:100%; text-align:center; margin-bottom:-2px; }
+.btn-cupom{ display:inline-flex; align-items:center; gap:9px; padding:10px 18px; border-radius:999px; background:#fff; border:1px solid var(--line); color:var(--ink); font-family:'Work Sans',sans-serif; font-weight:700; font-size:14.5px; text-decoration:none; transition:border-color .15s, box-shadow .15s; }
+.btn-cupom:hover{ border-color:#E4CBA6; box-shadow:0 4px 12px rgba(43,27,18,.08); }
+.btn-cupom:focus-visible{ outline:3px solid var(--ink); outline-offset:2px; }
+.btn-cupom .bolinha{ width:9px; height:9px; border-radius:50%; flex:none; }
+.btn-cupom.shopee .bolinha{ background:#EE4D2D; }
+.btn-cupom.ml .bolinha{ background:#E8C900; }
 @media(max-width:560px){
   .cupons-lojas{ gap:8px; }
-  .btn-cupom{ flex:1 1 100%; justify-content:center; padding:11px 14px; font-size:16px; }
+  .btn-cupom{ flex:1 1 0; justify-content:center; padding:10px 6px; font-size:12.5px; gap:6px; white-space:nowrap; }
 }
 </style>
 
@@ -1062,9 +1105,9 @@ footer a{ color:var(--red-dark); font-weight:600; text-decoration:none; }
 
 <!-- Botões de cupons das lojas -->
 <nav class="cupons-lojas" aria-label="Cupons das lojas">
-<span class="rotulo">pega o cupom antes de comprar 🐾</span>
-<a class="btn-cupom shopee" href="https://s.shopee.com.br/4VdOXKYQfW" target="_blank" rel="sponsored noopener">🏷️ Cupons Shopee</a>
-<a class="btn-cupom ml" href="https://www.mercadolivre.com.br/cupons?source_page=mperfil#nav-header" target="_blank" rel="sponsored noopener">🏷️ Cupons Mercado Livre</a>
+<span class="rotulo">pega o cupom antes de comprar</span>
+<a class="btn-cupom shopee" href="https://s.shopee.com.br/4VdOXKYQfW" target="_blank" rel="sponsored noopener"><span class="bolinha"></span>Cupons Shopee</a>
+<a class="btn-cupom ml" href="https://www.mercadolivre.com.br/cupons?source_page=mperfil#nav-header" target="_blank" rel="sponsored noopener"><span class="bolinha"></span>Cupons Mercado Livre</a>
 </nav>
 
 <!-- Pódio + prateleiras: somem quando a pessoa busca ou filtra -->
@@ -1072,8 +1115,8 @@ footer a{ color:var(--red-dark); font-weight:600; text-decoration:none; }
 
 <section class="podio-secao" id="podioSecao" hidden>
 <div class="secao-head">
-<h2>🏆 Pódio do dia</h2>
-<span class="contagem">os maiores descontos</span>
+<h2>Pódio do dia</h2>
+<span class="contagem">os maiores descontos de hoje</span>
 </div>
 <div class="podio" id="podio"></div>
 </section>
@@ -1085,7 +1128,7 @@ footer a{ color:var(--red-dark); font-weight:600; text-decoration:none; }
 </div>
 
 <div class="barra-todas" id="barraTodas">
-<h2 id="tituloGrid">🔥 Todas as ofertas</h2>
+<h2 id="tituloGrid">Todas as ofertas</h2>
 <div class="direita">
 <span class="contagem" id="contagem"></span>
 <label class="ordenar">Ordenar
@@ -1378,15 +1421,13 @@ function montarPodio(){
         return;
     }
 
-    const rotulos = ["Ouro", "Prata", "Bronze"];
-
     podio.innerHTML = top.map((o, i) => {
         const pct = descontoPct(o);
         return `
         <div class="podio-lugar p${i + 1}">
             <a class="podio-card" href="ofertas/${encodeURIComponent(o.slug)}/">
                 <img src="assets/${encodeURIComponent(o.imagem)}" alt="${escapeHtml(o.produto)}" loading="lazy">
-                <span class="medalha" aria-hidden="true">${i + 1}º</span>
+                <span class="medalha">${i + 1}º</span>
                 ${pct > 0 ? `<div class="badge-desconto">-${pct}%</div>` : ""}
                 <div class="info">
                     <h3>${escapeHtml(o.produto)}</h3>
@@ -1394,10 +1435,7 @@ function montarPodio(){
                     <div class="preco">${escapeHtml(o.preco)}</div>
                 </div>
             </a>
-            <div class="podio-degrau">
-                <span class="lugar">${i + 1}º</span>
-                <span class="rotulo">${rotulos[i]}</span>
-            </div>
+            <div class="podio-degrau" aria-hidden="true">${["Ouro","Prata","Bronze"][i]}</div>
         </div>`;
     }).join("");
 
@@ -1688,7 +1726,7 @@ function cardHtml(o){
 
         let badgeCanto = "";
         if(o.destaque){
-            badgeCanto = `<div class="badge-canto">⭐ Destaque</div>`;
+            badgeCanto = `<div class="badge-canto">Destaque</div>`;
         }
         if(FarejadinhosVitrine.ehBlack && FarejadinhosVitrine.ehBlack(o)){
             // sem "-X%" no card (oferta sem preço de antes)? mostra o desconto da lista Black
@@ -1706,7 +1744,7 @@ function cardHtml(o){
             : "");
 
         const cupomHtml = o.cupom
-            ? `<div class="cupom">🏷️ ${escapeHtml(o.cupom)}</div>`
+            ? `<div class="cupom">CUPOM ${escapeHtml(o.cupom)}</div>`
             : "";
 
         const paginaOferta = `ofertas/${encodeURIComponent(o.slug)}/`;
@@ -1728,13 +1766,13 @@ function cardHtml(o){
                     <h3>${escapeHtml(o.produto)}</h3>
                     ${oldHtml}
                     <div class="preco">${o.aPartirDe ? `<small class="aPartir">a partir de</small> ` : ""}${escapeHtml(o.preco)}</div>
-                    ${o.variacoes ? `<div class="maisLojas">🎨 ${o.variacoes.length} opções · menor preço ${/\d/.test(o.variacaoMelhor || "") ? "na versão" : "na cor"} ${escapeHtml(o.variacaoMelhor || "")}</div>`
-                      : o.totalAnuncios > 1 ? `<div class="maisLojas">🏪 menor preço entre ${o.totalAnuncios} anúncios</div>` : ""}
+                    ${o.variacoes ? `<div class="maisLojas">${o.variacoes.length} opções · menor preço ${/\d/.test(o.variacaoMelhor || "") ? "na versão" : "na cor"} ${escapeHtml(o.variacaoMelhor || "")}</div>`
+                      : o.totalAnuncios > 1 ? `<div class="maisLojas">menor preço entre ${o.totalAnuncios} anúncios</div>` : ""}
                     ${cupomHtml}
                 </div>
             </a>
             <div class="acoes-card">
-                <a class="pegar-oferta" href="${escapeHtml(linkLoja)}"${linkLoja === paginaOferta ? "" : ' target="_blank" rel="sponsored noopener"'}>🐾 Pegar oferta</a>
+                <a class="pegar-oferta" href="${escapeHtml(linkLoja)}"${linkLoja === paginaOferta ? "" : ' target="_blank" rel="sponsored noopener"'}>Pegar oferta</a>
                 <button type="button" class="sino-card" data-sino="${escapeHtml(o.slug)}" data-preco="${FarejadinhosVitrine.numeroPreco(o.preco) || ""}" title="Me avise quando baixar" aria-label="Me avise quando o preço baixar">🔔</button>
             </div>
         </article>
