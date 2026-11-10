@@ -323,40 +323,73 @@
         var s = ((c.subcategorias || {})[cat] || []).filter(function (x) { return x.nome === nome; })[0];
         return s ? (s.palavras || []).join(", ") : "";
     }
+    // palavras tiradas do próprio nome: "Liquidificadores e Mixers" -> liquidificador, mixer...
+    // (o site já aceita plural, hífen e acento: "ar-condicionado" acha "Ar Condicionados")
+    function singular(w) {
+        if (w.length <= 4) return w;
+        return w.replace(/[oõ]es$/i, "ão").replace(/[aã]es$/i, "ão").replace(/ores$/i, "or").replace(/[eé]is$/i, "el")
+            .replace(/ais$/i, "al").replace(/([^s])s$/i, "$1");
+    }
+    function semAcento(t) { return String(t || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""); }
+    function palavrasAuto(nome) {
+        var out = [];
+        String(nome || "").split(/\s*(?:,|\/|&|\+|\se\s)\s*/i).forEach(function (pedaco) {
+            pedaco = pedaco.trim().toLowerCase();
+            if (pedaco.length < 2) return;
+            var sing = pedaco.split(/\s+/).map(singular).join(" ");
+            [sing, pedaco].forEach(function (p) { if (out.indexOf(p) < 0) out.push(p); });
+        });
+        return out;
+    }
+    // produtos que caem nessas palavras (mesma regra do site: palavra inteira, aceita plural)
+    function produtosCom(palavras) {
+        var lista = (typeof ofertas !== "undefined" && Array.isArray(ofertas)) ? ofertas : [];
+        var res = palavras.map(function (p) {
+            var k = semAcento(p).replace(/[^a-z0-9]+/g, " ").trim().replace(/[.*+?()[\]{}|\\$]/g, "\\$&");
+            return k ? new RegExp("(^| )" + k + "(s|es)?( |$)") : null;
+        }).filter(Boolean);
+        return lista.filter(function (o) {
+            if (!o) return false;
+            var n = semAcento(o.produto).replace(/[^a-z0-9]+/g, " ").trim();
+            return res.some(function (re) { return re.test(n); });
+        });
+    }
     function novaSub(cat) {
         var nome = prompt("Nova subcategoria dentro de \"" + cat + "\"\n\nNome (ex.: Panela de Arroz):", "");
         if (!nome || !nome.trim()) return;
-        var pal = prompt("Palavras que aparecem no NOME dos produtos dessa subcategoria, separadas por vírgula.\nOs produtos com essas palavras entram nela sozinhos.\n\nEx.: panela de arroz, rice", nome.trim().toLowerCase());
-        if (pal === null) return;
-        // quantos produtos vão cair nela? se estiverem em OUTRA categoria, oferece mover
-        var V = window.FarejadinhosVitrine, lista = (typeof ofertas !== "undefined" && Array.isArray(ofertas)) ? ofertas : [];
-        var termos = pal.split(",").map(function (s) { return " " + s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, " ").trim() + " "; })
-            .filter(function (s) { return s.trim(); });
-        var bate = function (o) {
-            var n = " " + String(o.produto || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, " ").trim() + " ";
-            return termos.some(function (w) { return n.indexOf(w) >= 0 || n.indexOf(w.replace(/ $/, "s ")) >= 0; });
-        };
+        nome = nome.trim();
+        var palavras = palavrasAuto(nome);
+        var V = window.FarejadinhosVitrine;
         var principal = function (o) { return V && V.categoriaPrincipal ? V.categoriaPrincipal(o) : String(o.categoria || "").split(",")[0].trim(); };
-        var aqui = lista.filter(function (o) { return o && bate(o) && principal(o) === cat; });
-        var fora = lista.filter(function (o) { return o && bate(o) && principal(o) !== cat; });
+        var achados = produtosCom(palavras);
+        if (!achados.length) {
+            // só pergunta quando o nome não bate com nenhum produto
+            var extra = prompt("Não achei nenhum produto com \"" + nome + "\" no nome.\n\nOs produtos chamam de outro jeito? Escreva as palavras separadas por vírgula (ex.: split, btus).\nOu deixe vazio pra criar assim mesmo.", "");
+            if (extra === null) return;
+            extra.split(",").map(function (s) { return s.trim(); }).filter(Boolean).forEach(function (p) { if (palavras.indexOf(p) < 0) palavras.push(p); });
+            achados = produtosCom(palavras);
+        }
+        var aqui = achados.filter(function (o) { return principal(o) === cat; });
+        var fora = achados.filter(function (o) { return principal(o) !== cat; });
         var mover = false;
         if (fora.length) {
             var onde = {};
             fora.forEach(function (o) { var c = principal(o); onde[c] = (onde[c] || 0) + 1; });
-            mover = confirm((aqui.length ? aqui.length + " produto(s) de " + cat + " vão entrar nela.\n\n" : "Nenhum produto de " + cat + " tem essas palavras no nome.\n\n") +
-                fora.length + " produto(s) com essas palavras estão em OUTRA categoria (" +
+            mover = confirm((aqui.length ? aqui.length + " produto(s) de " + cat + " vão entrar em \"" + nome + "\".\n\n" : "") +
+                fora.length + " produto(s) desse tipo estão em OUTRA categoria (" +
                 Object.keys(onde).map(function (c) { return c + ": " + onde[c]; }).join(", ") + ").\n\n" +
-                "Mover esses " + fora.length + " pra " + cat + " → " + nome.trim() + "?\n(OK = mover · Cancelar = só criar a subcategoria)");
+                "Mover pra " + cat + " → " + nome + "?\n(OK = mover · Cancelar = só criar a subcategoria)");
         }
-        pedirCategorias({ op: "add-sub", categoria: cat, nome: nome.trim(), palavras: pal },
-            "✅ Subcategoria \"" + nome.trim() + "\" criada em " + cat + (mover ? " e " + fora.length + " produto(s) movidos pra ela." : (aqui.length ? " (" + aqui.length + " produto(s) já caem nela)." : ".")));
+        pedirCategorias({ op: "add-sub", categoria: cat, nome: nome, palavras: palavras.join(", ") },
+            "✅ Subcategoria \"" + nome + "\" criada em " + cat +
+            (mover ? " e " + fora.length + " produto(s) movidos pra ela." : aqui.length ? " com " + aqui.length + " produto(s)." : "."));
         if (mover) {
             var dados = new FormData();
             dados.append("senha", ler());
             dados.append("itens", JSON.stringify(fora.map(function (o) {
                 var resto = String(o.categoria || "").split(",").map(function (s) { return s.trim(); }).filter(function (s) { return /^v[ií]deos?$/i.test(s); });
                 return { acao: "anuncios", op: "categoria", slug: o.slug, categoria: [cat].concat(resto).join(", ") };
-            }).concat(fora.map(function (o) { return { acao: "anuncios", op: "sub", slug: o.slug, sub: nome.trim() }; }))));
+            })));
             fetch(WORKER_URL + "/lote", { method: "POST", body: dados }).catch(function (e) { aviso("❌ Não consegui mover: " + e.message, true); });
         }
     }
@@ -369,18 +402,17 @@
             if (confirm("Apagar a subcategoria \"" + nome + "\"? Os produtos dela vão pra outra subcategoria ou pra \"Outros\".")) pedirCategorias({ op: "del-sub", categoria: cat, nome: nome }, "🗑️ Subcategoria apagada.");
             return;
         }
-        var pal = prompt("Palavras que aparecem no nome dos produtos (separadas por vírgula):", palavrasDaSub(cat, nome));
-        if (pal === null) return;
-        pedirCategorias({ op: "edit-sub", categoria: cat, nome: nome, novoNome: novo.trim(), palavras: pal }, "✅ Subcategoria atualizada.");
+        // as palavras de antes continuam + as do nome novo (sem perguntar)
+        var pal = palavrasDaSub(cat, nome).split(",").map(function (s) { return s.trim(); }).filter(Boolean);
+        palavrasAuto(novo.trim()).forEach(function (p) { if (pal.indexOf(p) < 0) pal.push(p); });
+        pedirCategorias({ op: "edit-sub", categoria: cat, nome: nome, novoNome: novo.trim(), palavras: pal.join(", ") }, "✅ Subcategoria atualizada.");
     }
     function novaCategoria() {
         var nome = prompt("Nova categoria\n\nNome (ex.: Brinquedos):", "");
         if (!nome || !nome.trim()) return;
         var icone = prompt("Um emoji pra ela (ex.: 🧸):", "🏷️");
         if (icone === null) return;
-        var pal = prompt("Palavras que aparecem no nome dos produtos dessa categoria, separadas por vírgula (ajuda o painel a sugerir sozinho). Pode deixar vazio.", "");
-        if (pal === null) return;
-        pedirCategorias({ op: "add-cat", nome: nome.trim(), icone: icone.trim(), palavras: pal },
+        pedirCategorias({ op: "add-cat", nome: nome.trim(), icone: icone.trim(), palavras: palavrasAuto(nome.trim()).join(", ") },
             "✅ Categoria \"" + nome.trim() + "\" criada — já aparece na lista de categorias do Editar e do painel; no menu, assim que tiver oferta nela.");
     }
     function adminCategorias() {
