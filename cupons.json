@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-11T12:16:58Z",
+  "atualizado": "2026-11-11T12:17:07Z",
   "paginas": {
     "Shopee": "https://s.shopee.com.br/4VdOXKYQfW",
     "Mercado Livre": "https://www.mercadolivre.com.br/cupons?source_page=mperfil#nav-header"
@@ -76,6 +76,54 @@
       "obs": "",
       "link": "https://www.mercadolivre.com.br/social/olhadapromos/lists",
       "ate": "2026-11-12T11:26:51Z"
+    },
+    {
+      "codigo": "TODO1111SITE",
+      "loja": "Mercado Livre",
+      "tipo": "R$",
+      "valor": 15.0,
+      "minimo": 99.0,
+      "teto": 0.0,
+      "titulo": "",
+      "obs": "",
+      "link": "",
+      "ate": "2026-11-12T12:16:30Z"
+    },
+    {
+      "codigo": "SITE1111TODO",
+      "loja": "Mercado Livre",
+      "tipo": "R$",
+      "valor": 40.0,
+      "minimo": 299.0,
+      "teto": 0.0,
+      "titulo": "",
+      "obs": "",
+      "link": "",
+      "ate": "2026-11-12T12:16:30Z"
+    },
+    {
+      "codigo": "TODOOSITE1111",
+      "loja": "Mercado Livre",
+      "tipo": "R$",
+      "valor": 60.0,
+      "minimo": 399.0,
+      "teto": 0.0,
+      "titulo": "",
+      "obs": "",
+      "link": "",
+      "ate": "2026-11-12T12:16:30Z"
+    },
+    {
+      "codigo": "SITE11TODO11",
+      "loja": "Mercado Livre",
+      "tipo": "R$",
+      "valor": 150.0,
+      "minimo": 1199.0,
+      "teto": 0.0,
+      "titulo": "",
+      "obs": "",
+      "link": "https://www.mercadolivre.com.br/social/olhadapromos/lists",
+      "ate": "2026-11-12T12:16:30Z"
     }
   ]
 }
