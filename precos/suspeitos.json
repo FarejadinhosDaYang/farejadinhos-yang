@@ -4,16 +4,32 @@
     "produto": "Air Fryer Elgin Facilita Fry 3,5L 1400W",
     "link": "https://meli.la/2mnyAnA",
     "atual": "R$ 186,00",
-    "lido": "33,33",
+    "lido": "19,80",
     "referencia": "R$ 184,00"
+  },
+  {
+    "slug": "amazon-alexa-show-5-3a-geracao-cor-preto",
+    "produto": "Amazon Alexa Show 5 3a Geração Cor Preto",
+    "link": "https://meli.la/2VGbad4",
+    "atual": "R$ 649,90",
+    "lido": "67,59",
+    "referencia": "R$ 500,25"
   },
   {
     "slug": "amazon-echo-dot-5-geracao-com-alexa-e-som",
     "produto": "Amazon Echo Dot 5ª Geração Com Alexa E Som",
     "link": "https://meli.la/259Gn4p",
     "atual": "R$ 442,00",
-    "lido": "43,71",
+    "lido": "48,35",
     "referencia": "R$ 445,55"
+  },
+  {
+    "slug": "apple-ipad-11-a3354-wi-fi-128gb-e-6gb-de-ram-color",
+    "produto": "Apple iPad 11ª geração (A16)",
+    "link": "https://meli.la/1WGpzU1",
+    "atual": "R$ 3.010,00",
+    "lido": "306,61",
+    "referencia": "R$ 3.229,00"
   },
   {
     "slug": "apple-iphone-15-128-gb",
@@ -30,6 +46,14 @@
     "atual": "R$ 4.801,00",
     "lido": "505,44",
     "referencia": "R$ 4.549,00"
+  },
+  {
+    "slug": "ar-condicionado-12000-btus-lg-dual-inverter-ia",
+    "produto": "Ar Condicionado 12000 Btus LG Dual Inverter IA",
+    "link": "https://meli.la/1U7gE6d",
+    "atual": "R$ 2.899,00",
+    "lido": "229,90",
+    "referencia": "R$ 2.299,00"
   },
   {
     "slug": "ar-condicionado-electrolux-color-adapt-inverter",
@@ -84,7 +108,7 @@
     "produto": "Samsung Galaxy A57 5G",
     "link": "https://meli.la/1MNitr6",
     "atual": "R$ 2.397,00",
-    "lido": "224,82",
+    "lido": "301,23",
     "referencia": "R$ 2.550,00"
   },
   {
@@ -134,6 +158,14 @@
     "atual": "R$ 1.822,00",
     "lido": "299,90",
     "referencia": "R$ 1.208,00"
+  },
+  {
+    "slug": "enfeites-de-natal-buque-galhos-bolha-de-barba",
+    "produto": "Enfeites De Natal Buque Galhos Bolha De Barba",
+    "link": "https://s.shopee.com.br/6L5hmNffiv",
+    "atual": "R$ 16,99",
+    "lido": "R$ 37,99",
+    "referencia": "R$ 15,99"
   },
   {
     "slug": "iphone-16e-128-gb-preto-distribuidor-autorizado",
@@ -188,7 +220,7 @@
     "produto": "Apple iPhone 18 Pro Max",
     "link": "https://meli.la/2fXqW9L",
     "atual": "R$ 10.289,00",
-    "lido": "994,81",
+    "lido": "10980,00",
     "referencia": "preco posto a mao em 18/10 23:09"
   },
   {
@@ -208,19 +240,11 @@
     "referencia": "R$ 15,00"
   },
   {
-    "slug": "panificadora-19-programas-gallant-600w-preta",
-    "produto": "Panificadora 19 Programas Gallant 600w Preta",
-    "link": "https://meli.la/1fG2LXg",
-    "atual": "R$ 454,77",
-    "lido": "47,29",
-    "referencia": "R$ 422,75"
-  },
-  {
     "slug": "samsung-galaxy-s25-5g-256gb-12gb-camera-tripla",
     "produto": "Samsung Galaxy S25 5G",
     "link": "https://meli.la/25scAq6",
     "atual": "R$ 2.397,00",
-    "lido": "406,28",
+    "lido": "419,87",
     "referencia": "R$ 3.689,00"
   },
   {
@@ -238,5 +262,13 @@
     "atual": "R$ 10,98",
     "lido": "R$ 4,99",
     "referencia": "R$ 10,99"
+  },
+  {
+    "slug": "tablet-samsung-galaxy-tab-a11-128gb",
+    "produto": "Tablet Samsung Galaxy Tab A11+, 128gb",
+    "link": "https://meli.la/32m3cG6",
+    "atual": "R$ 743,53",
+    "lido": "140,75",
+    "referencia": "R$ 495,69"
   }
 ]

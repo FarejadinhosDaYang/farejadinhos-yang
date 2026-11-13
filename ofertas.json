@@ -294,7 +294,8 @@
     "precoAPrazo": "",
     "liberacao": "2026-10-29T00:16:09Z",
     "fixo": true,
-    "precoConferido": "2026-11-11T18:50:46Z"
+    "precoConferido": "2026-11-11T18:50:46Z",
+    "semPrecoDesde": "2026-11-13T15:31:59Z"
   },
   {
     "produto": "Organizador De Cosmético Maquiagem Acrílico",
@@ -316,7 +317,7 @@
         "link": "https://s.shopee.com.br/1LgcVYkMms",
         "loja": "Shopee",
         "preco": "R$ 36,90",
-        "conferido": "2026-11-12T23:50:07Z",
+        "conferido": "2026-11-13T15:31:26Z",
         "manual": "2026-11-04T11:12:28Z",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/4491067a-6f2d-4150-9208-17f078f4fde3.jpg"
@@ -468,7 +469,7 @@
         "link": "https://s.shopee.com.br/113m6wldSa",
         "loja": "Shopee",
         "preco": "R$ 15,50",
-        "conferido": "2026-11-12T23:50:07Z",
+        "conferido": "2026-11-13T15:31:26Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/c91c05bb-fc9d-4998-ba21-7778a79be6e3.jpg"
@@ -816,7 +817,7 @@
   },
   {
     "produto": "Samsung Galaxy S26 FE 5G",
-    "preco": "R$ 3.958,87",
+    "preco": "R$ 3.958,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -826,7 +827,7 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-fe-128gb-8gb-ram-tela/",
     "slug": "celular-samsung-galaxy-s26-fe-128gb-8gb-ram-tela",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "R$ 3.958,87",
+    "precoAVista": "R$ 3.958,90",
     "precoAPrazo": "3999,00",
     "liberacao": "2026-10-19T19:24:00Z",
     "parcelas": 12,
@@ -907,7 +908,7 @@
         "tamanho": "128GB"
       }
     ],
-    "precoConferido": "2026-11-12T23:50:06Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Apple iPhone 18 Pro",
@@ -1196,7 +1197,7 @@
         "link": "https://s.shopee.com.br/Lo5JioApb",
         "loja": "Shopee",
         "preco": "R$ 13,98",
-        "conferido": "2026-11-12T23:50:07Z",
+        "conferido": "2026-11-13T15:31:26Z",
         "manual": "2026-11-03T22:26:13Z",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/b75c760f-0d60-473e-af6d-d6c622fa2641.jpg"
@@ -1204,8 +1205,8 @@
       {
         "link": "https://s.shopee.com.br/W7VW1nXUc",
         "loja": "Shopee",
-        "preco": "R$ 13,96",
-        "conferido": "2026-11-13T06:48:03Z",
+        "preco": "R$ 14,91",
+        "conferido": "2026-11-13T15:31:26Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/5909e84a-a0aa-4101-86e6-527945314011.jpg"
@@ -1214,7 +1215,7 @@
         "link": "https://s.shopee.com.br/3qO9eNHmOc",
         "loja": "Shopee",
         "preco": "R$ 13,07",
-        "conferido": "2026-11-12T23:50:07Z",
+        "conferido": "2026-11-13T15:31:26Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/38202402-281c-44ad-b301-6ea6d255a7a8.jpg"
@@ -1925,7 +1926,7 @@
         "link": "https://s.shopee.com.br/6L5XvU7ThA",
         "loja": "Shopee",
         "preco": "R$ 34,99",
-        "conferido": "2026-11-12T23:50:07Z",
+        "conferido": "2026-11-13T15:31:26Z",
         "manual": "2026-11-03T22:22:36Z",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/c416ac11-699e-48ae-addb-b7b12d017a75.jpg"
@@ -2041,8 +2042,8 @@
         "conferido": "2026-11-12T01:40:14Z",
         "manual": "",
         "confirmado": true,
-        "pendente": "R$ 538,78",
-        "pendenteEm": "2026-11-13T06:48:03Z"
+        "pendente": "R$ 510,05",
+        "pendenteEm": "2026-11-13T15:31:26Z"
       }
     ],
     "precoConferido": "2026-11-12T18:26:09Z"
@@ -2650,7 +2651,7 @@
   },
   {
     "produto": "Parafusadeira Furadeira 48v Profissional",
-    "preco": "R$ 121,15",
+    "preco": "R$ 109,03",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Ferramentas",
@@ -2660,11 +2661,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/parafusadeira-furadeira-48v-profissional/",
     "slug": "parafusadeira-furadeira-48v-profissional",
     "data": "2026-10-28T00:58:09Z",
-    "precoAVista": "R$ 121,15",
+    "precoAVista": "R$ 109,03",
     "precoAPrazo": "129,00",
     "liberacao": "2026-10-30T23:47:06Z",
     "parcelas": 4,
-    "precoConferido": "2026-11-12T23:50:06Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Aparelho medidor de pressão digital de braço BSP11",
@@ -2809,7 +2810,7 @@
   },
   {
     "produto": "Copo Térmico Gigante 1,2l Inox Com Tampa Canudo",
-    "preco": "R$ 47,45",
+    "preco": "R$ 48,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -2822,7 +2823,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-30T13:05:42Z",
-    "precoConferido": "2026-11-12T01:40:14Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Aparelho Medidor de Pressão Arterial Aferidor",
@@ -3151,7 +3152,7 @@
   },
   {
     "produto": "BASIKE Carregador Portátil 20000mAh",
-    "preco": "R$ 149,00",
+    "preco": "R$ 195,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Acessórios de Celular",
@@ -3164,7 +3165,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-28T15:15:26Z",
-    "precoConferido": "2026-11-13T06:48:02Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "ICoffee Moedor De Café Manual Compacto Em Inox",
@@ -3334,7 +3335,7 @@
   },
   {
     "produto": "Creme Hidratante Facial 5% Manteiga de Karité + 5%",
-    "preco": "R$ 38,70",
+    "preco": "R$ 39,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Skincare",
@@ -3347,7 +3348,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-30T23:03:22Z",
-    "precoConferido": "2026-11-11T18:50:46Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Principia Gel de Limpeza Suave - GL-02 c/ 200g",
@@ -3368,7 +3369,7 @@
   },
   {
     "produto": "Protetor Solar Facial PS-01 FPS 60 Principia",
-    "preco": "R$ 48,60",
+    "preco": "R$ 49,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Skincare",
@@ -3386,13 +3387,13 @@
         "link": "https://s.shopee.com.br/2BFyxpAD4U",
         "loja": "Shopee",
         "preco": "R$ 32,99",
-        "conferido": "2026-11-12T23:50:07Z",
+        "conferido": "2026-11-13T15:31:26Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/846505d6-c2f5-4637-ab1c-efdbaa624d67.jpg"
       }
     ],
-    "precoConferido": "2026-11-11T18:50:46Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Creme Calmante Multirreparador Facial CM-01",
@@ -3431,7 +3432,7 @@
         "link": "https://s.shopee.com.br/9Kj9UzivWg",
         "loja": "Shopee",
         "preco": "R$ 48,60",
-        "conferido": "2026-11-12T23:50:07Z",
+        "conferido": "2026-11-13T15:31:26Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/b25e1400-d31f-428b-9a41-f1bc2d4a2bd0.jpg"
@@ -3440,7 +3441,7 @@
         "link": "https://s.shopee.com.br/1141ZgEeR7",
         "loja": "Shopee",
         "preco": "R$ 48,60",
-        "conferido": "2026-11-12T23:50:07Z",
+        "conferido": "2026-11-13T15:31:26Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/019aea3e-06a4-4b78-bcb6-cd1132c504cb.jpg"
@@ -3449,7 +3450,7 @@
         "link": "https://s.shopee.com.br/9V2ZhIiIBj",
         "loja": "Shopee",
         "preco": "R$ 48,60",
-        "conferido": "2026-11-12T23:50:07Z",
+        "conferido": "2026-11-13T15:31:26Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/723227bc-8cd7-4b2f-a059-e438617321ac.jpg"
@@ -3596,7 +3597,7 @@
         "link": "https://s.shopee.com.br/AUukjGcOx6",
         "loja": "Shopee",
         "preco": "R$ 19,90",
-        "conferido": "2026-11-12T23:50:07Z",
+        "conferido": "2026-11-13T15:31:26Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/332ad675-aa95-49e7-bae6-263cfc67c40b.jpg"
@@ -3637,7 +3638,7 @@
   },
   {
     "produto": "Panela De Arroz Fast Rice 5 Mondial 400W - NPE-08-5X -",
-    "preco": "R$ 131,76",
+    "preco": "R$ 134,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -3647,9 +3648,9 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/panela-de-arroz-fast-rice-5-mondial-400w-npe-08-5x/",
     "slug": "panela-de-arroz-fast-rice-5-mondial-400w-npe-08-5x",
     "data": "2026-11-01T13:00:50Z",
-    "precoAVista": "R$ 131,76",
+    "precoAVista": "R$ 134,90",
     "precoAPrazo": "189,36",
-    "precoConferido": "2026-11-12T09:55:50Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Panela Elétrica De Arroz Pratic Rice Pe-43-6X Inox",
@@ -3670,7 +3671,7 @@
         "link": "https://meli.la/2315FMj",
         "loja": "Mercado Livre",
         "preco": "R$ 199,93",
-        "conferido": "2026-11-12T23:50:07Z",
+        "conferido": "2026-11-13T15:31:26Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/d899a5b2-476c-4d3b-a393-486236660f92.jpg"
@@ -3696,7 +3697,7 @@
   },
   {
     "produto": "Panela Elétrica de Arroz, Mondial, 700W - PE-42-10X -",
-    "preco": "R$ 206,12",
+    "preco": "R$ 206,09",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -3706,9 +3707,9 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/panela-eletrica-de-arroz-mondial-700w-pe-42-10x/",
     "slug": "panela-eletrica-de-arroz-mondial-700w-pe-42-10x",
     "data": "2026-11-01T13:03:51Z",
-    "precoAVista": "R$ 206,12",
+    "precoAVista": "R$ 206,09",
     "precoAPrazo": "442,00",
-    "precoConferido": "2026-11-12T18:26:09Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Panela de Arroz Elétrica Mondial Fast Rice 5",
@@ -4867,7 +4868,7 @@
   },
   {
     "produto": "Carregador iPhone Turbo Tipo-C 20W + Cabo",
-    "preco": "R$ 14,98",
+    "preco": "R$ 15,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Acessórios de Celular",
@@ -4881,7 +4882,7 @@
     "precoAPrazo": "",
     "liberacao": "2026-11-03T16:07:48Z",
     "fixo": true,
-    "precoConferido": "2026-11-13T06:48:02Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Portátil Abdominais Ventosas Fortes 3 Ajustes",
@@ -4951,7 +4952,8 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-03T18:17:46Z",
-    "precoConferido": "2026-11-12T09:55:51Z"
+    "precoConferido": "2026-11-12T09:55:51Z",
+    "semPrecoDesde": "2026-11-13T15:31:59Z"
   },
   {
     "produto": "Carregador Turbo Inteligente + V8/tipo c com Cabo",
@@ -5122,7 +5124,7 @@
         "link": "https://s.shopee.com.br/5q9RBMsnYc",
         "loja": "Shopee",
         "preco": "R$ 25,88",
-        "conferido": "2026-11-12T23:50:07Z",
+        "conferido": "2026-11-13T15:31:26Z",
         "manual": "2026-11-04T18:34:57Z",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/b7b04f7f-282f-4953-be87-d09631541f4c.jpg"
@@ -5611,7 +5613,7 @@
   },
   {
     "produto": "L'Oréal Paris Elseve Óleo Extraordinário 100ml",
-    "preco": "R$ 37,90",
+    "preco": "R$ 36,75",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Utilidades",
@@ -5624,11 +5626,11 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T15:45:00Z",
-    "precoConferido": "2026-11-13T06:48:02Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Creatina Monohidratada 500g Pouch",
-    "preco": "R$ 74,90",
+    "preco": "R$ 59,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Academia",
@@ -5641,11 +5643,11 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-04T19:12:53Z",
-    "precoConferido": "2026-11-13T06:48:02Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Fritadeira Elétrica AFON-12L-BG Forno Oven",
-    "preco": "R$ 451,86",
+    "preco": "R$ 484,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -5655,7 +5657,7 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/fritadeira-eletrica-afon-12l-bg-forno-oven/",
     "slug": "fritadeira-eletrica-afon-12l-bg-forno-oven",
     "data": "2026-11-03T18:03:25Z",
-    "precoAVista": "R$ 451,86",
+    "precoAVista": "R$ 484,90",
     "precoAPrazo": "522,40",
     "liberacao": "2026-11-05T11:45:00Z",
     "parcelas": 10,
@@ -5667,10 +5669,12 @@
         "conferido": "2026-11-13T06:48:03Z",
         "manual": "",
         "confirmado": true,
-        "imagem": "https://farejadinhosdayang.com.br/assets/8cf5a57f-8ef3-48c4-90a2-a682d0380f3a.jpg"
+        "imagem": "https://farejadinhosdayang.com.br/assets/8cf5a57f-8ef3-48c4-90a2-a682d0380f3a.jpg",
+        "pendente": "R$ 490,82",
+        "pendenteEm": "2026-11-13T15:31:26Z"
       }
     ],
-    "precoConferido": "2026-11-13T06:48:02Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Travesseiro Cervical Abranuv Ergonômico Espuma",
@@ -5692,7 +5696,7 @@
   },
   {
     "produto": "Kit 4 Shorts 2 Em 1 Duplo Dryfit Masculino",
-    "preco": "R$ 89,99",
+    "preco": "R$ 80,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Moda",
@@ -5705,7 +5709,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-03T17:48:29Z",
-    "precoConferido": "2026-11-13T06:48:02Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Eps-6905 BaIança Epsilon Inteligente Bluetooth",
@@ -5726,7 +5730,7 @@
   },
   {
     "produto": "Air Fryer Oven Philco 16L Digital com Visor PAF16C",
-    "preco": "R$ 42,45",
+    "preco": "R$ 32,28",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -5736,10 +5740,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/air-fryer-oven-philco-16l-digital-com-visor-paf16c/",
     "slug": "air-fryer-oven-philco-16l-digital-com-visor-paf16c",
     "data": "2026-11-03T18:03:26Z",
-    "precoAVista": "42,45",
+    "precoAVista": "R$ 32,28",
     "precoAPrazo": "522,40",
     "liberacao": "2026-11-05T13:45:00Z",
-    "parcelas": 10
+    "parcelas": 10,
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Tablet Samsung Galaxy Tab A11+, 128gb",
@@ -5813,7 +5818,7 @@
   },
   {
     "produto": "Kit 5 Toalhas Banho Gigante Grossa Hotel Luxo 480g",
-    "preco": "R$ 131,36",
+    "preco": "R$ 138,27",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Casa",
@@ -5823,11 +5828,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/kit-5-toalhas-banho-gigante-grossa-hotel-luxo-480g/",
     "slug": "kit-5-toalhas-banho-gigante-grossa-hotel-luxo-480g",
     "data": "2026-11-03T18:03:27Z",
-    "precoAVista": "R$ 131,36",
+    "precoAVista": "R$ 138,27",
     "precoAPrazo": "149,92",
     "liberacao": "2026-11-04T20:42:53Z",
     "parcelas": 4,
-    "precoConferido": "2026-11-12T18:26:09Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Kit 2 Travesseiros Antialérgico Lavável Fibra",
@@ -5912,7 +5917,7 @@
         "link": "https://link.amazon/B01z8sG7o",
         "loja": "Amazon",
         "preco": "R$ 74,90",
-        "conferido": "2026-11-12T23:50:07Z",
+        "conferido": "2026-11-13T15:31:26Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/cad782b9-47ca-4e41-a153-5b7080ec0d90.jpg"
@@ -5959,7 +5964,7 @@
         "link": "https://meli.la/1WtuMcp",
         "loja": "Mercado Livre",
         "preco": "R$ 32,41",
-        "conferido": "2026-11-12T23:50:07Z",
+        "conferido": "2026-11-13T15:31:26Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/19933955-ffd6-425e-a7ec-252e0532afc2.webp"
@@ -5968,7 +5973,7 @@
   },
   {
     "produto": "Air Fryer Forno 25L French Door Mondial",
-    "preco": "R$ 975,16",
+    "preco": "R$ 902,40",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -5978,15 +5983,15 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/air-fryer-forno-25l-french-door-mondial/",
     "slug": "air-fryer-forno-25l-french-door-mondial",
     "data": "2026-11-03T18:03:28Z",
-    "precoAVista": "R$ 975,16",
+    "precoAVista": "R$ 902,40",
     "precoAPrazo": "1026,50",
     "liberacao": "2026-11-05T20:12:56Z",
     "parcelas": 10,
-    "precoConferido": "2026-11-13T06:48:02Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Parafusadeira Furadeira De Impacto The Black Tools",
-    "preco": "R$ 139,90",
+    "preco": "R$ 125,91",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Ferramentas",
@@ -5996,11 +6001,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/parafusadeira-furadeira-de-impacto-the-black-tools/",
     "slug": "parafusadeira-furadeira-de-impacto-the-black-tools",
     "data": "2026-11-03T18:03:28Z",
-    "precoAVista": "R$ 139,90",
+    "precoAVista": "R$ 125,91",
     "precoAPrazo": "150,25",
     "liberacao": "2026-11-05T00:27:53Z",
     "parcelas": 5,
-    "precoConferido": "2026-11-12T23:50:06Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Fritadeira Air Fryer 11 Litros 8 Funções 1800w",
@@ -6022,7 +6027,7 @@
   },
   {
     "produto": "Cafeteira Espresso Philips Walita Cor Preto",
-    "preco": "R$ 209,53",
+    "preco": "R$ 229,72",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Café",
@@ -6032,11 +6037,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/cafeteira-espresso-philips-walita-cor-preto/",
     "slug": "cafeteira-espresso-philips-walita-cor-preto",
     "data": "2026-11-03T18:03:29Z",
-    "precoAVista": "R$ 209,53",
+    "precoAVista": "R$ 229,72",
     "precoAPrazo": "2199,00",
     "liberacao": "2026-11-04T23:27:53Z",
     "parcelas": 10,
-    "precoConferido": "2026-11-13T06:48:02Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Parafusadeira Furadeira Impacto Sem Fio 2 Baterias",
@@ -6075,7 +6080,7 @@
   },
   {
     "produto": "Panificadora 19 Programas Gallant 600w Preta",
-    "preco": "R$ 454,77",
+    "preco": "R$ 440,10",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Utilidades, Vídeos",
@@ -6085,17 +6090,17 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/panificadora-19-programas-gallant-600w-preta/",
     "slug": "panificadora-19-programas-gallant-600w-preta",
     "data": "2026-11-03T18:03:29Z",
-    "precoAVista": "R$ 454,77",
+    "precoAVista": "R$ 440,10",
     "precoAPrazo": "789,00",
     "liberacao": "2026-11-05T16:17:36Z",
     "parcelas": 10,
     "video": "videos/panificadora-19-programas-gallant-600w-preta.mp4",
     "videoCapa": "videos/panificadora-19-programas-gallant-600w-preta.jpg",
-    "precoConferido": "2026-11-12T23:50:06Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Air Fryer Oven 12L WAP 10 Funções Pré-Programadas",
-    "preco": "R$ 474,05",
+    "preco": "R$ 434,15",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -6105,11 +6110,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/air-fryer-oven-12l-wap-10-funcoes-pre-programadas/",
     "slug": "air-fryer-oven-12l-wap-10-funcoes-pre-programadas",
     "data": "2026-11-03T18:03:29Z",
-    "precoAVista": "R$ 474,05",
+    "precoAVista": "R$ 434,15",
     "precoAPrazo": "532,00",
     "liberacao": "2026-11-05T20:12:56Z",
     "parcelas": 10,
-    "precoConferido": "2026-11-11T18:50:46Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Creatina Monohidratada Pura 300g Suplemento",
@@ -6306,7 +6311,7 @@
         "link": "https://s.shopee.com.br/7VHfATBuFm",
         "loja": "Shopee",
         "preco": "R$ 11,90",
-        "conferido": "2026-11-12T23:50:07Z",
+        "conferido": "2026-11-13T15:31:26Z",
         "manual": "2026-11-03T18:30:57Z",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/7e8e1dbe-61d5-4765-8fc7-751d5f0f4027.jpg"
@@ -6441,7 +6446,7 @@
   },
   {
     "produto": "Cafeteira Elétrica Programavel Mallory 1,5 Litros",
-    "preco": "R$ 217,99",
+    "preco": "R$ 241,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -6454,7 +6459,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T18:02:36Z",
-    "precoConferido": "2026-11-13T06:48:02Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Caneca Copo De Café Coffee Com Termômetro DIGITAL",
@@ -6542,7 +6547,7 @@
         "link": "https://s.shopee.com.br/6AllZIstjf",
         "loja": "Shopee",
         "preco": "R$ 29,98",
-        "conferido": "2026-11-12T23:50:07Z",
+        "conferido": "2026-11-13T15:31:26Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/d13437fd-dd40-4451-8663-ea23c8954bfe.jpg"
@@ -6601,7 +6606,7 @@
   },
   {
     "produto": "Liquidificador 3 velocidades 550W Turbo Power",
-    "preco": "R$ 109,29",
+    "preco": "R$ 121,42",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -6614,7 +6619,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T20:12:56Z",
-    "precoConferido": "2026-11-13T06:48:02Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Kit 6 Tampas Silicone Reutilizável Elástica Tapoer",
@@ -6636,7 +6641,7 @@
         "link": "https://s.shopee.com.br/40hGzK198R",
         "loja": "Shopee",
         "preco": "R$ 15,99",
-        "conferido": "2026-11-12T23:50:07Z",
+        "conferido": "2026-11-13T15:31:26Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/c80271d0-ffda-4fca-935a-23b4fec884bf.jpg"
@@ -6645,7 +6650,7 @@
   },
   {
     "produto": "Pipoqueira Elétrica Sem Óleo Philco Preta 1200W",
-    "preco": "R$ 108,90",
+    "preco": "R$ 119,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -6658,7 +6663,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T20:12:56Z",
-    "precoConferido": "2026-11-13T06:48:02Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Fritadeira Air Fryer Itatiaia 3,5 Litros 127V",
@@ -6766,7 +6771,7 @@
         "link": "https://s.shopee.com.br/7KyGOzRSWh",
         "loja": "Shopee",
         "preco": "R$ 31,99",
-        "conferido": "2026-11-12T23:50:07Z",
+        "conferido": "2026-11-13T15:31:26Z",
         "manual": "2026-11-04T11:13:17Z",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/8b75f462-f50a-4c3f-b0d0-1b89a229dd25.jpg"
@@ -6775,7 +6780,7 @@
         "link": "https://s.shopee.com.br/8AXNOWOHpm",
         "loja": "Shopee",
         "preco": "R$ 27,59",
-        "conferido": "2026-11-12T23:50:07Z",
+        "conferido": "2026-11-13T15:31:26Z",
         "manual": "2026-11-04T11:13:55Z",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/465d0a0f-d9b5-4628-84da-ccdc820276dc.jpg"
@@ -6852,7 +6857,7 @@
   },
   {
     "produto": "Liquidificador Britânia 2,6L 4 Velocidades",
-    "preco": "R$ 89,90",
+    "preco": "R$ 99,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -6865,7 +6870,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T20:12:56Z",
-    "precoConferido": "2026-11-13T06:48:02Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Travesseiro Ortopédico Cervical Borboleta Coop",
@@ -7103,7 +7108,7 @@
         "link": "https://link.amazon/B09ondv1V",
         "loja": "Outra loja",
         "preco": "R$ 849,00",
-        "conferido": "2026-11-12T23:50:07Z",
+        "conferido": "2026-11-13T15:31:26Z",
         "manual": "2026-11-05T20:12:56Z",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/87ae73c7-5aae-4fed-a01f-85877f77aaa5.jpg"
@@ -7226,7 +7231,7 @@
   },
   {
     "produto": "Liquidificador Rosa Britânia 1400W 3L",
-    "preco": "R$ 135,00",
+    "preco": "R$ 149,00",
     "precoAntigo": "R$ 169,32",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -7239,11 +7244,11 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-07T21:48:18Z",
-    "precoConferido": "2026-11-13T06:48:02Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Liquidificador Britânia 1200W 3L 12 Velocidades",
-    "preco": "R$ 126,00",
+    "preco": "R$ 129,90",
     "precoAntigo": "R$ 169,51",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -7256,7 +7261,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-07T21:48:18Z",
-    "precoConferido": "2026-11-12T09:55:51Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Mini Liquidificador Portátil De Suco De Alimentos",
@@ -7276,7 +7281,7 @@
   },
   {
     "produto": "1,8 Litros Chaleira Elétrica Inox Vidro Bule",
-    "preco": "R$ 36,90",
+    "preco": "R$ 36,99",
     "precoAntigo": "R$ 59,52",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -7289,7 +7294,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-07T21:48:18Z",
-    "precoConferido": "2026-11-13T06:48:02Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Chaleira Elétrica Inox 1.8 Litros Desligamento",
@@ -8267,8 +8272,7 @@
     "precoAPrazo": "2799,00",
     "liberacao": "2026-11-09T12:17:24Z",
     "parcelas": 10,
-    "precoConferido": "2026-11-10T09:54:10Z",
-    "semPrecoDesde": "2026-11-12T01:40:37Z"
+    "precoConferido": "2026-11-10T09:54:10Z"
   },
   {
     "produto": "Ar Condicionado Inverter Midea Ecomaster 12000Btu",
@@ -8325,7 +8329,7 @@
   },
   {
     "produto": "Ar Condicionado Split Elgin Eco Inverter II WiFi",
-    "preco": "R$ 1.800,00",
+    "preco": "R$ 2.069,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -8335,7 +8339,7 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/ar-condicionado-split-elgin-eco-inverter-ii-wifi/",
     "slug": "ar-condicionado-split-elgin-eco-inverter-ii-wifi",
     "data": "2026-11-09T12:17:27Z",
-    "precoAVista": "R$ 1.800,00",
+    "precoAVista": "R$ 2.069,90",
     "precoAPrazo": "1939,00",
     "liberacao": "2026-11-09T12:17:24Z",
     "parcelas": 12,
@@ -8350,7 +8354,7 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/2c5357d5-8f0d-446a-b744-d7026810b9e7.jpg"
       }
     ],
-    "precoConferido": "2026-11-12T23:50:06Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Ar Condicionado Split HW LG AI Smart Inverter",
@@ -8555,7 +8559,7 @@
   },
   {
     "produto": "Creme Gel Regenerador Facial Gota de Colágeno",
-    "preco": "R$ 31,90",
+    "preco": "R$ 34,57",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Skincare",
@@ -8568,7 +8572,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-09T13:58:19Z",
-    "precoConferido": "2026-11-13T06:48:02Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Kit Facial Kokeshi Completo 3 Passos Hidratação",
@@ -8672,7 +8676,7 @@
   },
   {
     "produto": "Aspirador de Pó Vertical Philco Ciclone",
-    "preco": "R$ 144,90",
+    "preco": "R$ 129,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -8685,7 +8689,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-09T13:58:19Z",
-    "precoConferido": "2026-11-13T06:48:02Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Café Aromatizado Torrado e Moido Italle Sabores",
@@ -8806,7 +8810,7 @@
   },
   {
     "produto": "Carregador Power Bank Portátil 20000mah Universal",
-    "preco": "R$ 56,99",
+    "preco": "R$ 60,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrônicos",
@@ -8819,7 +8823,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-10T22:39:14Z",
-    "precoConferido": "2026-11-13T06:48:02Z"
+    "precoConferido": "2026-11-13T15:31:26Z"
   },
   {
     "produto": "Kit Essências 20ml + Umidificador",
