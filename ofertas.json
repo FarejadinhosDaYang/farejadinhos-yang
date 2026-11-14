@@ -5727,24 +5727,6 @@
     "precoConferido": "2026-11-12T09:55:51Z"
   },
   {
-    "produto": "Air Fryer Oven Philco 16L Digital com Visor PAF16C",
-    "preco": "R$ 42,45",
-    "precoAntigo": "",
-    "cupom": "",
-    "categoria": "Eletrodomésticos",
-    "destaque": false,
-    "imagem": "df07c704-b70d-4d57-8f3b-6f6fa91c5047.jpg",
-    "link": "https://meli.la/1Bb6ynk",
-    "url": "https://farejadinhosdayang.com.br/ofertas/air-fryer-oven-philco-16l-digital-com-visor-paf16c/",
-    "slug": "air-fryer-oven-philco-16l-digital-com-visor-paf16c",
-    "data": "2026-11-03T18:03:26Z",
-    "precoAVista": "R$ 42,45",
-    "precoAPrazo": "522,40",
-    "liberacao": "2026-11-05T13:45:00Z",
-    "parcelas": 10,
-    "precoConferido": "2026-11-13T22:07:58Z"
-  },
-  {
     "produto": "Tablet Samsung Galaxy Tab A11+, 128gb",
     "preco": "R$ 743,42",
     "precoAntigo": "",
@@ -8859,5 +8841,23 @@
     "data": "2026-11-11T11:58:29Z",
     "precoAVista": "77,56",
     "precoAPrazo": "96,96"
+  },
+  {
+    "produto": "Air Fryer Oven Philco 16L Digital com Visor PAF16C",
+    "preco": "R$ 439,90",
+    "precoAntigo": "",
+    "cupom": "",
+    "categoria": "Eletrodomésticos",
+    "destaque": false,
+    "imagem": "df07c704-b70d-4d57-8f3b-6f6fa91c5047.jpg",
+    "link": "https://meli.la/1Bb6ynk",
+    "url": "https://farejadinhosdayang.com.br/ofertas/air-fryer-oven-philco-16l-digital-com-visor-paf16c/",
+    "slug": "air-fryer-oven-philco-16l-digital-com-visor-paf16c",
+    "data": "2026-11-03T18:03:26Z",
+    "precoAVista": "439,90",
+    "precoAPrazo": "522,40",
+    "liberacao": "2026-11-05T13:45:00Z",
+    "precoManual": "2026-11-14T15:08:17Z",
+    "parcelas": 10
   }
 ]
