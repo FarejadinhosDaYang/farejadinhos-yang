@@ -82,6 +82,21 @@ def buscar(palavra, limite, campos):
     return ((gql(q).get("productOfferV2") or {}).get("nodes")) or []
 
 
+def buscar_paciente(palavra, limite, campos, tentativas=5):
+    """A API às vezes devolve 10000 (System Error) ou 10030 (limite) quando está
+    cheia — principalmente se a conferência de preços está rodando junto. Em vez
+    de desistir na hora, espera e tenta de novo (10s, 20s, 40s, 80s)."""
+    for i in range(tentativas):
+        try:
+            return buscar(palavra, limite, campos)
+        except Exception as e:  # noqa: BLE001
+            msg = str(e)
+            passageiro = any(c in msg for c in ("10000", "10030", "System Error", "timed out", "Timeout", "502", "503", "504"))
+            if not passageiro or i == tentativas - 1:
+                raise
+            time.sleep(10 * 2 ** i)
+
+
 def numero(v):
     try:
         return float(v)
@@ -164,10 +179,20 @@ def main():
     t = iso(agora())
     vistos, erros, pesquisas = set(), [], 0
 
-    for categoria, palavras in cfg["categorias"].items():
-        for palavra in palavras:
+    tarefas = [(c, p) for c, ps in cfg["categorias"].items() for p in ps]
+    falhas = []
+    for rodada in (1, 2):
+        if rodada == 2:
+            if not falhas:
+                break
+            # 2ª chance pras que falharam: espera a API respirar
+            print(f"Repetindo {len(falhas)} pesquisa(s) que falharam...")
+            time.sleep(90)
+            tarefas, falhas = falhas, []
+            erros = []
+        for categoria, palavra in tarefas:
             try:
-                nodes = buscar(palavra, cfg.get("porBusca", 30), campos)
+                nodes = buscar_paciente(palavra, cfg.get("porBusca", 30), campos)
                 pesquisas += 1
             except Exception as e:  # noqa: BLE001
                 msg = str(e)
@@ -181,11 +206,12 @@ def main():
                         continue
                 else:
                     erros.append(f"{palavra}: {msg[:160]}")
+                    falhas.append((categoria, palavra))
                     if "10020" in msg or "10035" in msg:   # chave errada / sem acesso
                         print(msg)
                         return 1
                     continue
-            time.sleep(0.6)
+            time.sleep(1.5)
             for n in nodes:
                 pid = f"{n.get('shopId')}.{n.get('itemId')}"
                 nome = n.get("productName") or ""
@@ -219,6 +245,11 @@ def main():
                     p["palavras"] = (p["palavras"] + [palavra])[-5:]
                 if pid not in vistos and "sales" in campos:
                     vendas = int(numero(n.get("sales")))
+                    # a Shopee às vezes RECONTA e o total cai: recomeça a contagem
+                    # (guardando o ritmo de antes), em vez de zerar o "em alta"
+                    if p["vendas"] and vendas < p["vendas"][-1][1] * 0.98:
+                        p["ritmoGuardado"] = [p.get("porDia"), p.get("porDiaSemana"), t]
+                        p["vendas"] = []
                     if not p["vendas"] or p["vendas"][-1][0][:13] != t[:13]:
                         p["vendas"].append([t, vendas])
                     else:
@@ -236,6 +267,11 @@ def main():
         p["noSite"] = pid in no_site_ids or norm(p.get("nome")) in no_site_nomes
         p["vendasTotal"] = p["vendas"][-1][1] if p.get("vendas") else None
         p["porDia"], p["porDiaSemana"] = ritmo(p.get("vendas") or [])
+        g = p.get("ritmoGuardado")
+        if g and p["porDia"] is None:
+            p["porDia"], p["porDiaSemana"] = g[0], g[1]   # recontagem recente: usa o ritmo de antes
+        elif g and p["porDiaSemana"] is not None:
+            p.pop("ritmoGuardado", None)
         p["novo"] = de_iso(p["primeiro"]) > agora() - timedelta(hours=30)
         # pontuação do "em alta": ritmo de vendas (escala log), nota e desconto ajudam um pouco
         base = p["porDia"] if p["porDia"] is not None else (p["vendasTotal"] or 0) / 365

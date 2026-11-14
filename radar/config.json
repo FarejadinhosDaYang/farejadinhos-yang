@@ -61,7 +61,10 @@
       "liquidificador",
       "aspirador de po",
       "cafeteira eletrica",
-      "mini processador"
+      "mini processador",
+      "ventilador",
+      "chaleira eletrica",
+      "sanduicheira"
     ],
     "Eletrônicos": [
       "fone bluetooth",
@@ -125,6 +128,13 @@
       "jogo de chaves",
       "furadeira",
       "caixa de ferramentas"
+    ],
+    "Automação": [
+      "tomada inteligente",
+      "lampada inteligente wifi",
+      "interruptor inteligente",
+      "sensor de presenca wifi",
+      "fechadura digital"
     ]
   }
 }
