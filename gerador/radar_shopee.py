@@ -36,6 +36,7 @@ IDS_SITE = os.path.join(SITE, "precos", "shopee-ids.json")
 TESTE = "--teste" in sys.argv
 GUARDA_DIAS = 21          # some do radar quem não aparece há mais que isso
 PONTOS_MAX = 30           # leituras de vendas guardadas por produto
+PRAZO = time.time() + 12 * 60   # depois de 12 min, para de insistir e grava o que conseguiu
 
 CAMPOS = ["itemId", "shopId", "productName", "priceMin", "priceMax", "priceDiscountRate", "imageUrl",
           "offerLink", "productLink", "shopName", "commissionRate", "sales", "ratingStar"]
@@ -88,6 +89,8 @@ def buscar_paciente(palavra, limite, campos, tentativas=8):
     tentativa seguinte — testado com várias ordens, limites e campos). Então
     tenta de novo logo, com esperas curtas (2s, 3s, 5s, 8s...)."""
     esperas = [2, 3, 5, 8, 10, 15, 20]
+    if time.time() > PRAZO:   # rodada passou do tempo: 1 tentativa só, sem insistir
+        tentativas = 1
     for i in range(tentativas):
         try:
             return buscar(palavra, limite, campos)
@@ -185,7 +188,7 @@ def main():
     falhas = []
     for rodada in (1, 2):
         if rodada == 2:
-            if not falhas:
+            if not falhas or time.time() > PRAZO:
                 break
             # 2ª chance pras que falharam: espera a API respirar
             print(f"Repetindo {len(falhas)} pesquisa(s) que falharam...")
