@@ -82,10 +82,12 @@ def buscar(palavra, limite, campos):
     return ((gql(q).get("productOfferV2") or {}).get("nodes")) or []
 
 
-def buscar_paciente(palavra, limite, campos, tentativas=5):
-    """A API às vezes devolve 10000 (System Error) ou 10030 (limite) quando está
-    cheia — principalmente se a conferência de preços está rodando junto. Em vez
-    de desistir na hora, espera e tenta de novo (10s, 20s, 40s, 80s)."""
+def buscar_paciente(palavra, limite, campos, tentativas=8):
+    """Desde 09/11/2026 a BUSCA por palavra da Shopee devolve 10000 (System
+    Error) em ~2 de cada 3 pedidos, ao acaso (mesma busca dá certo na
+    tentativa seguinte — testado com várias ordens, limites e campos). Então
+    tenta de novo logo, com esperas curtas (2s, 3s, 5s, 8s...)."""
+    esperas = [2, 3, 5, 8, 10, 15, 20]
     for i in range(tentativas):
         try:
             return buscar(palavra, limite, campos)
@@ -94,7 +96,7 @@ def buscar_paciente(palavra, limite, campos, tentativas=5):
             passageiro = any(c in msg for c in ("10000", "10030", "System Error", "timed out", "Timeout", "502", "503", "504"))
             if not passageiro or i == tentativas - 1:
                 raise
-            time.sleep(10 * 2 ** i)
+            time.sleep(esperas[min(i, len(esperas) - 1)] * (3 if "10030" in msg else 1))
 
 
 def numero(v):
@@ -187,7 +189,7 @@ def main():
                 break
             # 2ª chance pras que falharam: espera a API respirar
             print(f"Repetindo {len(falhas)} pesquisa(s) que falharam...")
-            time.sleep(90)
+            time.sleep(30)
             tarefas, falhas = falhas, []
             erros = []
         for categoria, palavra in tarefas:

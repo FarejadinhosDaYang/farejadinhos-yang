@@ -21,7 +21,7 @@ import time
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from anuncios_comum import SITE, ler, preco_br  # noqa: E402
-from radar_shopee import bloqueado, buscar, norm, numero  # noqa: E402
+from radar_shopee import bloqueado, buscar_paciente as buscar, norm, numero  # noqa: E402
 
 NOTA_MIN = 4.5
 VENDAS_MIN = 100
