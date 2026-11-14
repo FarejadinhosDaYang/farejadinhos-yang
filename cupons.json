@@ -1,129 +1,45 @@
 {
-  "atualizado": "2026-11-11T12:17:07Z",
+  "atualizado": "2026-11-14T15:13:56Z",
   "paginas": {
     "Shopee": "https://s.shopee.com.br/4VdOXKYQfW",
     "Mercado Livre": "https://www.mercadolivre.com.br/cupons?source_page=mperfil#nav-header"
   },
   "cupons": [
     {
-      "codigo": "CORREPROMELI",
-      "loja": "Mercado Livre",
-      "tipo": "%",
-      "valor": 12.0,
-      "minimo": 199.0,
-      "teto": 300.0,
-      "titulo": "",
-      "obs": "",
-      "link": "",
-      "ate": "2026-11-12T11:26:51Z"
-    },
-    {
-      "codigo": "MODASEMPREML",
+      "codigo": "AUTO1411",
       "loja": "Mercado Livre",
       "tipo": "%",
       "valor": 15.0,
-      "minimo": 49.0,
-      "teto": 60.0,
+      "minimo": 249.0,
+      "teto": 40.0,
       "titulo": "",
       "obs": "",
-      "link": "",
-      "ate": "2026-11-12T11:26:51Z"
+      "link": "https://meli.la/1Freibk",
+      "ate": "2026-11-15T15:08:52Z"
     },
     {
-      "codigo": "OFFSEMPRENOML",
+      "codigo": "ELETRO1411",
       "loja": "Mercado Livre",
       "tipo": "%",
-      "valor": 20.0,
-      "minimo": 79.0,
-      "teto": 80.0,
-      "titulo": "",
-      "obs": "",
-      "link": "",
-      "ate": "2026-11-12T11:26:51Z"
-    },
-    {
-      "codigo": "CORREPROCUPOM",
-      "loja": "Mercado Livre",
-      "tipo": "%",
-      "valor": 20.0,
-      "minimo": 99.0,
-      "teto": 60.0,
-      "titulo": "",
-      "obs": "",
-      "link": "",
-      "ate": "2026-11-12T11:26:51Z"
-    },
-    {
-      "codigo": "PROMOPRACASA",
-      "loja": "Mercado Livre",
-      "tipo": "%",
-      "valor": 25.0,
-      "minimo": 79.0,
-      "teto": 80.0,
-      "titulo": "",
-      "obs": "",
-      "link": "",
-      "ate": "2026-11-12T11:26:51Z"
-    },
-    {
-      "codigo": "CORREAGORAML",
-      "loja": "Mercado Livre",
-      "tipo": "R$",
-      "valor": 150.0,
-      "minimo": 999.0,
-      "teto": 0.0,
-      "titulo": "",
-      "obs": "",
-      "link": "https://www.mercadolivre.com.br/social/olhadapromos/lists",
-      "ate": "2026-11-12T11:26:51Z"
-    },
-    {
-      "codigo": "TODO1111SITE",
-      "loja": "Mercado Livre",
-      "tipo": "R$",
       "valor": 15.0,
-      "minimo": 99.0,
-      "teto": 0.0,
+      "minimo": 500.0,
+      "teto": 100.0,
       "titulo": "",
       "obs": "",
-      "link": "",
-      "ate": "2026-11-12T12:16:30Z"
+      "link": "https://meli.la/1sMwZeq",
+      "ate": "2026-11-15T15:08:52Z"
     },
     {
-      "codigo": "SITE1111TODO",
+      "codigo": "MODA1411",
       "loja": "Mercado Livre",
-      "tipo": "R$",
-      "valor": 40.0,
-      "minimo": 299.0,
-      "teto": 0.0,
+      "tipo": "%",
+      "valor": 10.0,
+      "minimo": 89.0,
+      "teto": 20.0,
       "titulo": "",
       "obs": "",
-      "link": "",
-      "ate": "2026-11-12T12:16:30Z"
-    },
-    {
-      "codigo": "TODOOSITE1111",
-      "loja": "Mercado Livre",
-      "tipo": "R$",
-      "valor": 60.0,
-      "minimo": 399.0,
-      "teto": 0.0,
-      "titulo": "",
-      "obs": "",
-      "link": "",
-      "ate": "2026-11-12T12:16:30Z"
-    },
-    {
-      "codigo": "SITE11TODO11",
-      "loja": "Mercado Livre",
-      "tipo": "R$",
-      "valor": 150.0,
-      "minimo": 1199.0,
-      "teto": 0.0,
-      "titulo": "",
-      "obs": "",
-      "link": "https://www.mercadolivre.com.br/social/olhadapromos/lists",
-      "ate": "2026-11-12T12:16:30Z"
+      "link": "https://meli.la/2QCqKNP",
+      "ate": "2026-11-15T15:08:52Z"
     }
   ]
 }
