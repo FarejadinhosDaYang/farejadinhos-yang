@@ -1,0 +1,48 @@
+[
+  {
+    "acao": "cupons-site",
+    "cupons": [
+      {
+        "codigo": "AUTO1411",
+        "loja": "Mercado Livre",
+        "tipo": "%",
+        "valor": 15,
+        "minimo": 249,
+        "teto": 40,
+        "titulo": "",
+        "obs": "",
+        "link": "https://meli.la/1Freibk",
+        "ate": "2026-11-15T15:09:47Z"
+      },
+      {
+        "codigo": "ELETRO1411",
+        "loja": "Mercado Livre",
+        "tipo": "%",
+        "valor": 15,
+        "minimo": 500,
+        "teto": 100,
+        "titulo": "",
+        "obs": "",
+        "link": "https://meli.la/1sMwZeq",
+        "ate": "2026-11-15T15:09:47Z"
+      },
+      {
+        "codigo": "MODA1411",
+        "loja": "Mercado Livre",
+        "tipo": "%",
+        "valor": 10,
+        "minimo": 89,
+        "teto": 20,
+        "titulo": "",
+        "obs": "",
+        "link": "https://meli.la/2QCqKNP",
+        "ate": "2026-11-15T15:09:47Z"
+      }
+    ],
+    "paginas": {
+      "Shopee": "https://s.shopee.com.br/4VdOXKYQfW",
+      "Mercado Livre": "https://www.mercadolivre.com.br/cupons?source_page=mperfil#nav-header",
+      "Amazon": ""
+    }
+  }
+]
