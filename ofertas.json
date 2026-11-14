@@ -37,7 +37,7 @@
   },
   {
     "produto": "Fita Teste Piscina Cloro, Ph, Alcalinidade",
-    "preco": "R$ 35,80",
+    "preco": "R$ 29,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Piscina",
@@ -61,7 +61,7 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/6e2cf82b-eb7c-47f2-8534-5ce3c40d140f.webp"
       }
     ],
-    "precoConferido": "2026-11-10T17:57:20Z"
+    "precoConferido": "2026-11-14T21:37:19Z"
   },
   {
     "produto": "Clorador Flutuante Para Piscina Suporte",
@@ -434,7 +434,7 @@
         "link": "https://s.shopee.com.br/5q91rpTEf8",
         "loja": "Shopee",
         "preco": "R$ 29,76",
-        "conferido": "2026-10-17T23:01:37Z",
+        "conferido": "2026-11-14T21:37:20Z",
         "manual": "2026-11-07T21:12:34Z",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/7206dbe5-84b5-4986-86ba-5285f47d455d.jpg"
@@ -728,16 +728,14 @@
       {
         "link": "https://link.amazon/B0epLOItP",
         "loja": "Outra loja",
-        "preco": "R$ 4.079,15",
-        "conferido": "2026-11-14T10:28:29Z",
+        "preco": "R$ 4.776,67",
+        "conferido": "2026-11-14T21:37:20Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/be80d970-5211-4ffe-8904-6a755e29303b.jpg",
         "variacao": "Preto",
         "cor": "#2B2B2B",
-        "tamanho": "256GB",
-        "pendente": "R$ 4.776,67",
-        "pendenteEm": "2026-11-14T17:13:55Z"
+        "tamanho": "256GB"
       },
       {
         "link": "https://meli.la/1WPbdmM",
@@ -2044,8 +2042,8 @@
         "conferido": "2026-11-12T01:40:14Z",
         "manual": "",
         "confirmado": true,
-        "pendente": "R$ 589,95",
-        "pendenteEm": "2026-11-14T17:13:55Z"
+        "pendente": "R$ 520,71",
+        "pendenteEm": "2026-11-14T21:37:20Z"
       }
     ],
     "precoConferido": "2026-11-12T18:26:09Z"
@@ -2090,16 +2088,14 @@
       {
         "link": "https://link.amazon/B098ObooL",
         "loja": "Outra loja",
-        "preco": "R$ 7.099,08",
-        "conferido": "2026-11-14T10:28:29Z",
+        "preco": "R$ 7.543,09",
+        "conferido": "2026-11-14T21:37:20Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/8a3e1230-4e3e-4109-877a-8c16b096077d.jpg",
         "variacao": "Prata",
         "cor": "#D9DCE1",
-        "tamanho": "256GB",
-        "pendente": "R$ 7.543,09",
-        "pendenteEm": "2026-11-14T17:13:55Z"
+        "tamanho": "256GB"
       },
       {
         "link": "https://meli.la/1PdZsTk",
@@ -2655,7 +2651,7 @@
   },
   {
     "produto": "Parafusadeira Furadeira 48v Profissional",
-    "preco": "R$ 124,90",
+    "preco": "R$ 118,65",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Ferramentas",
@@ -2665,11 +2661,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/parafusadeira-furadeira-48v-profissional/",
     "slug": "parafusadeira-furadeira-48v-profissional",
     "data": "2026-10-28T00:58:09Z",
-    "precoAVista": "R$ 124,90",
+    "precoAVista": "R$ 118,65",
     "precoAPrazo": "129,00",
     "liberacao": "2026-10-30T23:47:06Z",
     "parcelas": 4,
-    "precoConferido": "2026-11-14T02:33:56Z"
+    "precoConferido": "2026-11-14T21:37:19Z"
   },
   {
     "produto": "Aparelho medidor de pressão digital de braço BSP11",
@@ -3997,8 +3993,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-03T12:43:09Z",
-    "precoConferido": "2026-11-03T01:37:27Z",
-    "semPrecoDesde": "2026-11-13T06:48:33Z"
+    "precoConferido": "2026-11-03T01:37:27Z"
   },
   {
     "produto": "Papai Noel Escalador 30 40 na Escada Enfeite",
@@ -4906,7 +4901,7 @@
   },
   {
     "produto": "Suporte Organizador De Ovos Dispenser",
-    "preco": "R$ 10,98",
+    "preco": "R$ 10,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Casa, Vídeos",
@@ -4920,7 +4915,7 @@
     "precoAPrazo": "",
     "liberacao": "2026-11-03T18:32:08Z",
     "anuncios": [],
-    "precoConferido": "2026-11-11T11:00:46Z"
+    "precoConferido": "2026-11-14T21:37:19Z"
   },
   {
     "produto": "Suporte Para Telefone Principal Alça De Montagem",
@@ -5818,7 +5813,7 @@
   },
   {
     "produto": "Kit 2 Travesseiros Antialérgico Lavável Fibra",
-    "preco": "R$ 35,90",
+    "preco": "R$ 22,89",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Casa",
@@ -5828,10 +5823,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/kit-2-travesseiros-antialergico-lavavel-fibra/",
     "slug": "kit-2-travesseiros-antialergico-lavavel-fibra",
     "data": "2026-11-03T18:03:27Z",
-    "precoAVista": "35,90",
+    "precoAVista": "R$ 22,89",
     "precoAPrazo": "113,72",
     "liberacao": "2026-11-04T22:42:53Z",
-    "parcelas": 4
+    "parcelas": 4,
+    "precoConferido": "2026-11-14T21:37:19Z"
   },
   {
     "produto": "Balança Digital Bioimpedância Profissional smart",
@@ -5898,13 +5894,11 @@
       {
         "link": "https://link.amazon/B01z8sG7o",
         "loja": "Amazon",
-        "preco": "R$ 74,90",
-        "conferido": "2026-11-14T10:28:29Z",
+        "preco": "R$ 75,90",
+        "conferido": "2026-11-14T21:37:20Z",
         "manual": "",
         "confirmado": true,
-        "imagem": "https://farejadinhosdayang.com.br/assets/cad782b9-47ca-4e41-a153-5b7080ec0d90.jpg",
-        "pendente": "R$ 75,90",
-        "pendenteEm": "2026-11-14T17:13:55Z"
+        "imagem": "https://farejadinhosdayang.com.br/assets/cad782b9-47ca-4e41-a153-5b7080ec0d90.jpg"
       }
     ],
     "precoConferido": "2026-11-12T23:50:06Z"
@@ -6171,7 +6165,7 @@
   },
   {
     "produto": "Filtro Coador De Café Inox 103 Reutilizável",
-    "preco": "R$ 27,99",
+    "preco": "R$ 28,91",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Café",
@@ -6184,7 +6178,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T11:00:00Z",
-    "precoConferido": "2026-11-14T17:13:55Z"
+    "precoConferido": "2026-11-14T21:37:19Z"
   },
   {
     "produto": "Panela De Pressão Elétrica Philco Ppp01p 6L",
@@ -7127,7 +7121,8 @@
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/a5f2db09-9f23-4943-8a4d-b4aac4830dd3.jpg"
       }
-    ]
+    ],
+    "semPrecoDesde": "2026-11-14T21:37:50Z"
   },
   {
     "produto": "Amazon Echo Show 11 Modelo Com Tela Vibrant Fullhd",
@@ -7186,15 +7181,13 @@
       {
         "link": "https://link.amazon/B0fjVSGPO",
         "loja": "Outra loja",
-        "preco": "R$ 798,99",
-        "conferido": "2026-11-13T22:07:59Z",
+        "preco": "R$ 799,01",
+        "conferido": "2026-11-14T21:37:20Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/a9e12775-fc07-440c-aef2-65de1f6dfdd7.jpg",
         "variacao": "Ametista",
-        "cor": "#6B4F9E",
-        "pendente": "R$ 799,01",
-        "pendenteEm": "2026-11-14T17:13:55Z"
+        "cor": "#6B4F9E"
       }
     ],
     "precoConferido": "2026-11-12T23:50:06Z"
@@ -7489,7 +7482,7 @@
   },
   {
     "produto": "Apple iPad 11ª geração (A16)",
-    "preco": "R$ 3.080,00",
+    "preco": "R$ 3.078,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -7638,7 +7631,7 @@
         "configuracao": "Wi-Fi + Cellular"
       }
     ],
-    "precoConferido": "2026-11-14T17:13:55Z"
+    "precoConferido": "2026-11-14T21:37:19Z"
   },
   {
     "produto": "Apple iPad Wifi 9th Geração Cinza Espacial A2602",
@@ -8481,7 +8474,7 @@
   },
   {
     "produto": "Mini Liquidificador Portátil Copo Caneca 500ml",
-    "preco": "R$ 49,90",
+    "preco": "R$ 55,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -8494,7 +8487,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-09T13:58:19Z",
-    "precoConferido": "2026-11-14T10:28:29Z"
+    "precoConferido": "2026-11-14T21:37:19Z"
   },
   {
     "produto": "GOKOCO Escova Secadora 5 Em 1 Conjunto De Secador",
@@ -8780,7 +8773,7 @@
   },
   {
     "produto": "Fita Selante De Pvc À Prova D 'Água Para Cozinha",
-    "preco": "R$ 10,00",
+    "preco": "R$ 10,50",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Ferramentas, Vídeos",
@@ -8795,11 +8788,11 @@
     "liberacao": "2026-11-10T22:39:14Z",
     "video": "videos/fita-selante-de-pvc-a-prova-d-agua-para-cozinha.mp4",
     "videoCapa": "videos/fita-selante-de-pvc-a-prova-d-agua-para-cozinha.jpg",
-    "precoConferido": "2026-11-14T10:28:29Z"
+    "precoConferido": "2026-11-14T21:37:19Z"
   },
   {
     "produto": "Carregador Power Bank Portátil 20000mah Universal",
-    "preco": "R$ 56,99",
+    "preco": "R$ 60,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrônicos",
@@ -8812,7 +8805,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-10T22:39:14Z",
-    "precoConferido": "2026-11-14T02:33:56Z"
+    "precoConferido": "2026-11-14T21:37:19Z"
   },
   {
     "produto": "Kit Essências 20ml + Umidificador",
