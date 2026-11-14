@@ -1662,7 +1662,9 @@ window.farejaFiltrarCategoria = function(categoria){
     filtroAtivo = categoria ? { tipo: "categoria", valor: categoria } : { tipo: "todas", valor: "" };
     const url = new URL(window.location.href);
     if(categoria) url.searchParams.set("categoria", categoria); else url.searchParams.delete("categoria");
-    history.replaceState(null, "", url);
+    // cada categoria vira um passo no histórico: a setinha de voltar do celular volta pra anterior
+    url.hash = "";
+    if(url.href !== window.location.href) history.pushState({ fareja: 1 }, "", url);
     montarCategorias();
     aplicarFiltros();
     const alvo = document.getElementById("barraTodas");
@@ -1779,7 +1781,37 @@ function cardHtml(o){
         `;
 }
 
-document.getElementById("busca").addEventListener("input", aplicarFiltros);
+// a busca fica no endereço: ao voltar de uma oferta, a pesquisa continua lá
+let buscaUrlTimer = null;
+document.getElementById("busca").addEventListener("input", function(){
+    aplicarFiltros();
+    clearTimeout(buscaUrlTimer);
+    buscaUrlTimer = setTimeout(() => {
+        const url = new URL(window.location.href);
+        const t = this.value.trim();
+        if(t) url.searchParams.set("q", t); else url.searchParams.delete("q");
+        history.replaceState(history.state, "", url);
+    }, 400);
+});
+
+// setinha de voltar do navegador entre categorias: refaz o filtro do endereço
+window.addEventListener("popstate", function(){
+    if(!ofertas.length) return;
+    const p = new URLSearchParams(window.location.search);
+    const cat = p.get("categoria") || "";
+    const q = p.get("q") || "";
+    const loja = (p.get("loja") || "").toLowerCase();
+    const atual = filtroAtivo.tipo === "categoria" ? filtroAtivo.valor : "";
+    if(cat === atual && q === document.getElementById("busca").value.trim() && loja === lojaAtiva) return;
+    filtroAtivo = cat ? { tipo: "categoria", valor: cat } : { tipo: "todas", valor: "" };
+    document.getElementById("busca").value = q;
+    lojaAtiva = LOJAS.some(l => l.id === loja) ? loja : "";
+    montarCategorias();
+    montarLojas();
+    aplicarFiltros();
+    const alvo = document.getElementById("barraTodas");
+    if(alvo && cat) alvo.scrollIntoView({ block: "start" });
+});
 document.getElementById("ordem").addEventListener("change", function(){
     // guarda a escolha no endereço, pra um link compartilhado abrir igual
     const url = new URL(window.location.href);

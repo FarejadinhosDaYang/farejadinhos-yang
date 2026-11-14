@@ -73,6 +73,13 @@ window.farejaIconesExtras();
 
     script.insertAdjacentHTML("beforebegin", html);
 
+    // "voltar pra onde eu estava" (home guarda a posição; outras páginas ganham o botão ← Voltar)
+    var vt = document.createElement("script");
+    vt.src = base + "assets/voltar.js?v=1";
+    vt.setAttribute("data-base", base);
+    if (home) vt.setAttribute("data-home", "1");
+    document.head.appendChild(vt);
+
     // Temporada especial (Black November): na página inicial o index.html
     // carrega direto, antes do carrossel; nas outras, carrega daqui.
     if (!home && !window.FarejadinhosTemporada) {
