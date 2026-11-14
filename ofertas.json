@@ -525,7 +525,7 @@
   },
   {
     "produto": "Saco a Vacuo COM ou SEM Bomba Organização",
-    "preco": "R$ 16,50",
+    "preco": "R$ 29,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Casa",
@@ -538,7 +538,6 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-30T21:21:20Z",
-    "precoConferido": "2026-10-28T12:51:57Z",
     "anuncios": [
       {
         "link": "https://s.shopee.com.br/qkLudmGnb",
@@ -549,7 +548,8 @@
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/891a7f11-1226-4ad6-97bb-587e284160ee.jpg"
       }
-    ]
+    ],
+    "precoConferido": "2026-11-14T02:33:56Z"
   },
   {
     "produto": "Kit 2 Prateleiras Reto Adesivo Premium Suporte",
@@ -735,7 +735,9 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/be80d970-5211-4ffe-8904-6a755e29303b.jpg",
         "variacao": "Preto",
         "cor": "#2B2B2B",
-        "tamanho": "256GB"
+        "tamanho": "256GB",
+        "pendente": "R$ 4.079,15",
+        "pendenteEm": "2026-11-14T02:33:56Z"
       },
       {
         "link": "https://meli.la/1WPbdmM",
@@ -817,7 +819,7 @@
   },
   {
     "produto": "Samsung Galaxy S26 FE 5G",
-    "preco": "R$ 3.958,90",
+    "preco": "R$ 3.998,97",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -827,7 +829,7 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-fe-128gb-8gb-ram-tela/",
     "slug": "celular-samsung-galaxy-s26-fe-128gb-8gb-ram-tela",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "R$ 3.958,90",
+    "precoAVista": "R$ 3.998,97",
     "precoAPrazo": "3999,00",
     "liberacao": "2026-10-19T19:24:00Z",
     "parcelas": 12,
@@ -908,7 +910,7 @@
         "tamanho": "128GB"
       }
     ],
-    "precoConferido": "2026-11-13T15:31:26Z"
+    "precoConferido": "2026-11-14T02:33:56Z"
   },
   {
     "produto": "Apple iPhone 18 Pro",
@@ -1160,7 +1162,7 @@
   },
   {
     "produto": "Kit Saco A Vácuo Grande Organizador Edredom",
-    "preco": "R$ 16,43",
+    "preco": "R$ 29,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Utilidades, Vídeos",
@@ -1174,7 +1176,7 @@
     "precoAPrazo": "",
     "liberacao": "2026-10-19T22:12:00Z",
     "precoManual": "2026-10-20T01:49:15Z",
-    "precoConferido": "2026-11-03T15:56:10Z"
+    "precoConferido": "2026-11-14T02:33:56Z"
   },
   {
     "produto": "Porta Ovos 4 Andares Rolante em Plástico",
@@ -2042,8 +2044,8 @@
         "conferido": "2026-11-12T01:40:14Z",
         "manual": "",
         "confirmado": true,
-        "pendente": "R$ 531,90",
-        "pendenteEm": "2026-11-13T22:07:59Z"
+        "pendente": "R$ 589,95",
+        "pendenteEm": "2026-11-14T02:33:56Z"
       }
     ],
     "precoConferido": "2026-11-12T18:26:09Z"
@@ -2095,7 +2097,9 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/8a3e1230-4e3e-4109-877a-8c16b096077d.jpg",
         "variacao": "Prata",
         "cor": "#D9DCE1",
-        "tamanho": "256GB"
+        "tamanho": "256GB",
+        "pendente": "R$ 7.099,08",
+        "pendenteEm": "2026-11-14T02:33:56Z"
       },
       {
         "link": "https://meli.la/1PdZsTk",
@@ -2651,7 +2655,7 @@
   },
   {
     "produto": "Parafusadeira Furadeira 48v Profissional",
-    "preco": "R$ 118,65",
+    "preco": "R$ 124,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Ferramentas",
@@ -2661,15 +2665,15 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/parafusadeira-furadeira-48v-profissional/",
     "slug": "parafusadeira-furadeira-48v-profissional",
     "data": "2026-10-28T00:58:09Z",
-    "precoAVista": "R$ 118,65",
+    "precoAVista": "R$ 124,90",
     "precoAPrazo": "129,00",
     "liberacao": "2026-10-30T23:47:06Z",
     "parcelas": 4,
-    "precoConferido": "2026-11-13T22:07:58Z"
+    "precoConferido": "2026-11-14T02:33:56Z"
   },
   {
     "produto": "Aparelho medidor de pressão digital de braço BSP11",
-    "preco": "R$ 108,99",
+    "preco": "R$ 103,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Utilidades",
@@ -2682,7 +2686,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-28T23:17:42Z",
-    "precoConferido": "2026-11-13T22:07:58Z"
+    "precoConferido": "2026-11-14T02:33:56Z"
   },
   {
     "produto": "Kit 3 Toalhas De Banho Gigante Luxo Grossa Atacado",
@@ -3032,7 +3036,7 @@
   },
   {
     "produto": "Lixadeira de Unhas Elétrica com Broca e Motor",
-    "preco": "R$ 19,99",
+    "preco": "R$ 21,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Beleza",
@@ -3048,7 +3052,7 @@
     "ordem": {
       "Beleza": 10
     },
-    "precoConferido": "2026-11-11T18:50:46Z"
+    "precoConferido": "2026-11-14T02:33:56Z"
   },
   {
     "produto": "Carregador Portátil 12000mAh LED com Cabos",
@@ -3670,13 +3674,11 @@
       {
         "link": "https://meli.la/2315FMj",
         "loja": "Mercado Livre",
-        "preco": "R$ 199,93",
-        "conferido": "2026-11-13T15:31:26Z",
+        "preco": "R$ 199,85",
+        "conferido": "2026-11-14T02:33:56Z",
         "manual": "",
         "confirmado": true,
-        "imagem": "https://farejadinhosdayang.com.br/assets/d899a5b2-476c-4d3b-a393-486236660f92.jpg",
-        "pendente": "R$ 199,85",
-        "pendenteEm": "2026-11-13T22:07:59Z"
+        "imagem": "https://farejadinhosdayang.com.br/assets/d899a5b2-476c-4d3b-a393-486236660f92.jpg"
       }
     ],
     "precoConferido": "2026-11-13T22:07:58Z"
@@ -3699,7 +3701,7 @@
   },
   {
     "produto": "Panela Elétrica de Arroz, Mondial, 700W - PE-42-10X -",
-    "preco": "R$ 206,09",
+    "preco": "R$ 206,12",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -3709,9 +3711,9 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/panela-eletrica-de-arroz-mondial-700w-pe-42-10x/",
     "slug": "panela-eletrica-de-arroz-mondial-700w-pe-42-10x",
     "data": "2026-11-01T13:03:51Z",
-    "precoAVista": "R$ 206,09",
+    "precoAVista": "R$ 206,12",
     "precoAPrazo": "442,00",
-    "precoConferido": "2026-11-13T15:31:26Z"
+    "precoConferido": "2026-11-14T02:33:56Z"
   },
   {
     "produto": "Panela de Arroz Elétrica Mondial Fast Rice 5",
@@ -5649,7 +5651,7 @@
   },
   {
     "produto": "Fritadeira Elétrica AFON-12L-BG Forno Oven",
-    "preco": "R$ 484,90",
+    "preco": "R$ 451,86",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -5659,7 +5661,7 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/fritadeira-eletrica-afon-12l-bg-forno-oven/",
     "slug": "fritadeira-eletrica-afon-12l-bg-forno-oven",
     "data": "2026-11-03T18:03:25Z",
-    "precoAVista": "R$ 484,90",
+    "precoAVista": "R$ 451,86",
     "precoAPrazo": "522,40",
     "liberacao": "2026-11-05T11:45:00Z",
     "parcelas": 10,
@@ -5671,10 +5673,12 @@
         "conferido": "2026-11-13T22:07:59Z",
         "manual": "",
         "confirmado": true,
-        "imagem": "https://farejadinhosdayang.com.br/assets/8cf5a57f-8ef3-48c4-90a2-a682d0380f3a.jpg"
+        "imagem": "https://farejadinhosdayang.com.br/assets/8cf5a57f-8ef3-48c4-90a2-a682d0380f3a.jpg",
+        "pendente": "R$ 452,74",
+        "pendenteEm": "2026-11-14T02:33:56Z"
       }
     ],
-    "precoConferido": "2026-11-13T15:31:26Z"
+    "precoConferido": "2026-11-14T02:33:56Z"
   },
   {
     "produto": "Travesseiro Cervical Abranuv Ergonômico Espuma",
@@ -5991,7 +5995,7 @@
   },
   {
     "produto": "Parafusadeira Furadeira De Impacto The Black Tools",
-    "preco": "R$ 132,90",
+    "preco": "R$ 139,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Ferramentas",
@@ -6001,11 +6005,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/parafusadeira-furadeira-de-impacto-the-black-tools/",
     "slug": "parafusadeira-furadeira-de-impacto-the-black-tools",
     "data": "2026-11-03T18:03:28Z",
-    "precoAVista": "R$ 132,90",
+    "precoAVista": "R$ 139,90",
     "precoAPrazo": "150,25",
     "liberacao": "2026-11-05T00:27:53Z",
     "parcelas": 5,
-    "precoConferido": "2026-11-13T22:07:58Z"
+    "precoConferido": "2026-11-14T02:33:56Z"
   },
   {
     "produto": "Fritadeira Air Fryer 11 Litros 8 Funções 1800w",
@@ -6100,7 +6104,7 @@
   },
   {
     "produto": "Air Fryer Oven 12L WAP 10 Funções Pré-Programadas",
-    "preco": "R$ 434,15",
+    "preco": "R$ 527,15",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -6110,11 +6114,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/air-fryer-oven-12l-wap-10-funcoes-pre-programadas/",
     "slug": "air-fryer-oven-12l-wap-10-funcoes-pre-programadas",
     "data": "2026-11-03T18:03:29Z",
-    "precoAVista": "R$ 434,15",
+    "precoAVista": "R$ 527,15",
     "precoAPrazo": "532,00",
     "liberacao": "2026-11-05T20:12:56Z",
     "parcelas": 10,
-    "precoConferido": "2026-11-13T15:31:26Z"
+    "precoConferido": "2026-11-14T02:33:56Z"
   },
   {
     "produto": "Creatina Monohidratada Pura 300g Suplemento",
@@ -6222,7 +6226,7 @@
   },
   {
     "produto": "Varal De Chão Vertical Grande De Roupas 3 Andares",
-    "preco": "R$ 79,97",
+    "preco": "R$ 94,05",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Casa",
@@ -6235,7 +6239,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T20:12:56Z",
-    "precoConferido": "2026-11-13T22:07:58Z"
+    "precoConferido": "2026-11-14T02:33:56Z"
   },
   {
     "produto": "Sanduicheira Elétrica Cadence SAN400 Preta",
@@ -6982,7 +6986,7 @@
   },
   {
     "produto": "Interruptor Inteligente WiFi Touch 2 Teclas com Tomada",
-    "preco": "R$ 92,90",
+    "preco": "R$ 100,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Automação",
@@ -6992,10 +6996,10 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/interruptor-inteligente-wifi-touch-2-teclas-com-tomada/",
     "slug": "interruptor-inteligente-wifi-touch-2-teclas-com-tomada",
     "data": "2026-11-05T19:57:15Z",
-    "precoAVista": "R$ 92,90",
+    "precoAVista": "R$ 100,00",
     "precoAPrazo": "89,90",
     "fixo": true,
-    "precoConferido": "2026-11-13T22:07:58Z"
+    "precoConferido": "2026-11-14T02:33:56Z"
   },
   {
     "produto": "Interruptor de Luz Inteligente Tuya Wifi Touch Brasil",
@@ -7504,7 +7508,7 @@
   },
   {
     "produto": "Apple iPad 11ª geração (A16)",
-    "preco": "R$ 3.010,00",
+    "preco": "R$ 3.048,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -7653,7 +7657,7 @@
         "configuracao": "Wi-Fi + Cellular"
       }
     ],
-    "precoConferido": "2026-11-12T18:26:09Z"
+    "precoConferido": "2026-11-14T02:33:56Z"
   },
   {
     "produto": "Apple iPad Wifi 9th Geração Cinza Espacial A2602",
@@ -8019,7 +8023,8 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-08T21:53:55Z",
-    "precoConferido": "2026-11-11T11:00:46Z"
+    "precoConferido": "2026-11-11T11:00:46Z",
+    "semPrecoDesde": "2026-11-14T02:34:15Z"
   },
   {
     "produto": "Apple iPad Pro Wi-Fi de 11 polegadas 1 TB)",
@@ -8036,11 +8041,12 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-08T21:53:55Z",
-    "precoConferido": "2026-11-11T11:00:46Z"
+    "precoConferido": "2026-11-11T11:00:46Z",
+    "semPrecoDesde": "2026-11-14T02:34:15Z"
   },
   {
     "produto": "Apple iPad Air 13\" (M3)",
-    "preco": "R$ 11.265,31",
+    "preco": "R$ 6.111,10",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -8098,11 +8104,11 @@
         "configuracao": "Wi-Fi"
       }
     ],
-    "precoConferido": "2026-11-13T06:48:02Z"
+    "precoConferido": "2026-11-14T02:33:56Z"
   },
   {
     "produto": "Samsung Galaxy S26+ 5G",
-    "preco": "R$ 4.998,00",
+    "preco": "R$ 5.064,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -8156,7 +8162,7 @@
         "tamanho": "256GB"
       }
     ],
-    "precoConferido": "2026-11-12T18:26:09Z"
+    "precoConferido": "2026-11-14T02:33:56Z"
   },
   {
     "produto": "Chaleira Elétrica Jarra Água Quente e Fria Bule",
@@ -8310,7 +8316,8 @@
     "precoAVista": "1991,00",
     "precoAPrazo": "2191,00",
     "liberacao": "2026-11-09T12:17:24Z",
-    "parcelas": 10
+    "parcelas": 10,
+    "semPrecoDesde": "2026-11-14T02:34:15Z"
   },
   {
     "produto": "Ar Condicionado Split Zen Agratto 12000 Btus Frio",
@@ -8331,7 +8338,7 @@
   },
   {
     "produto": "Ar Condicionado Split Elgin Eco Inverter II WiFi",
-    "preco": "R$ 2.069,90",
+    "preco": "R$ 1.939,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -8341,7 +8348,7 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/ar-condicionado-split-elgin-eco-inverter-ii-wifi/",
     "slug": "ar-condicionado-split-elgin-eco-inverter-ii-wifi",
     "data": "2026-11-09T12:17:27Z",
-    "precoAVista": "R$ 2.069,90",
+    "precoAVista": "R$ 1.939,00",
     "precoAPrazo": "1939,00",
     "liberacao": "2026-11-09T12:17:24Z",
     "parcelas": 12,
@@ -8356,7 +8363,7 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/2c5357d5-8f0d-446a-b744-d7026810b9e7.jpg"
       }
     ],
-    "precoConferido": "2026-11-13T15:31:26Z"
+    "precoConferido": "2026-11-14T02:33:56Z"
   },
   {
     "produto": "Ar Condicionado Split HW LG AI Smart Inverter",
@@ -8378,7 +8385,7 @@
   },
   {
     "produto": "Ar-Condicionado Split 12000 BTUs Inverter Lite",
-    "preco": "R$ 1.820,37",
+    "preco": "R$ 1.999,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -8388,11 +8395,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/ar-condicionado-split-12000-btus-inverter-lite/",
     "slug": "ar-condicionado-split-12000-btus-inverter-lite",
     "data": "2026-11-09T12:17:28Z",
-    "precoAVista": "R$ 1.820,37",
+    "precoAVista": "R$ 1.999,00",
     "precoAPrazo": "1893,68",
     "liberacao": "2026-11-09T12:17:24Z",
     "parcelas": 12,
-    "precoConferido": "2026-11-12T18:26:09Z"
+    "precoConferido": "2026-11-14T02:33:56Z"
   },
   {
     "produto": "Ar Condicionado Split Inverter 12000 BTUs Hisense",
@@ -8680,7 +8687,7 @@
   },
   {
     "produto": "Aspirador de Pó Vertical Philco Ciclone",
-    "preco": "R$ 129,90",
+    "preco": "R$ 117,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -8693,7 +8700,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-09T13:58:19Z",
-    "precoConferido": "2026-11-13T15:31:26Z"
+    "precoConferido": "2026-11-14T02:33:56Z"
   },
   {
     "produto": "Café Aromatizado Torrado e Moido Italle Sabores",
@@ -8814,7 +8821,7 @@
   },
   {
     "produto": "Carregador Power Bank Portátil 20000mah Universal",
-    "preco": "R$ 60,99",
+    "preco": "R$ 56,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrônicos",
@@ -8827,7 +8834,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-10T22:39:14Z",
-    "precoConferido": "2026-11-13T15:31:26Z"
+    "precoConferido": "2026-11-14T02:33:56Z"
   },
   {
     "produto": "Kit Essências 20ml + Umidificador",
