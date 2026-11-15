@@ -31,16 +31,37 @@ jobs:
       - name: Baixar repositorio
         uses: actions/checkout@v4
 
-      - name: Instalar ferramentas (video, emoji, navegador)
+      # ferramentas guardadas entre uma montagem e outra (cache grátis do GitHub): só instala do zero na 1ª vez
+      - name: Editor de vídeo e emoji (guardados)
         timeout-minutes: 12
+        continue-on-error: true
+        uses: awalsh128/cache-apt-pkgs-action@v1.4.3
+        with:
+          packages: ffmpeg fonts-noto-color-emoji
+          version: reel-1
+
+      - name: Guardar navegador e pacotes do Python
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/ms-playwright
+            ~/.cache/pip
+          key: reel-${{ runner.os }}-pw-1
+
+      - name: Python e navegador
+        timeout-minutes: 10
         run: |
-          # o espelho do apt às vezes trava: tempo limite curto + novas tentativas
-          APT="-o Acquire::Retries=3 -o Acquire::http::Timeout=25 -o Acquire::https::Timeout=25"
-          sudo apt-get $APT update -q || true
-          sudo apt-get $APT install -y -q --no-install-recommends ffmpeg fonts-noto-color-emoji
+          # se o cache do editor falhar por algum motivo, instala do jeito antigo (mais lento, mas funciona)
+          if ! command -v ffmpeg >/dev/null || [ ! -f /usr/share/fonts/truetype/noto/NotoColorEmoji.ttf ]; then
+            APT="-o Acquire::Retries=3 -o Acquire::http::Timeout=25 -o Acquire::https::Timeout=25"
+            sudo apt-get $APT update -q || true
+            sudo apt-get $APT install -y -q --no-install-recommends ffmpeg fonts-noto-color-emoji
+          fi
+          sudo fc-cache -f >/dev/null 2>&1 || true
           python3 -m pip install --quiet playwright numpy pillow
-          # o runner já tem as bibliotecas do Chrome; só baixa o navegador (sem --with-deps, que roda o apt de novo)
+          # o runner já tem as bibliotecas do Chrome; se o navegador já está guardado, isto termina na hora
           python3 -m playwright install chromium
+          ffmpeg -version | head -1
 
       - name: Baixar os arquivos enviados
         run: |
