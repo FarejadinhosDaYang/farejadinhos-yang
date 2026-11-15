@@ -602,6 +602,11 @@ h1,h2,h3,.brand{
 
 .oferta-card .pegar-oferta{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 
+/* oferta que veio na notificação: destacada no topo */
+.oferta-card.do-aviso{ position:relative; box-shadow:0 0 0 2.5px var(--orange,#F7941D), 0 10px 26px rgba(247,148,29,.22); }
+.oferta-card.do-aviso::before{ content:"🔔 farejada pra você"; position:absolute; z-index:4; top:6px; left:50%; transform:translateX(-50%);
+    background:var(--orange,#F7941D); color:#2B1B12; font:800 11px 'Work Sans',Arial,sans-serif; padding:3px 9px; border-radius:999px; white-space:nowrap; }
+
 /* 🐾 Pegar oferta + 🔔 me avise quando baixar, lado a lado */
 .oferta-card .acoes-card{ display:flex; gap:6px; margin:0 13px 14px; align-items:stretch; }
 .oferta-card .acoes-card .pegar-oferta{ flex:1; min-width:0; margin:0; }
@@ -1178,6 +1183,9 @@ let filtroAtivo = { tipo: "todas", valor: "" };
 const parametrosUrl = new URLSearchParams(window.location.search);
 const categoriaInicial = parametrosUrl.get("categoria") || "";
 const buscaInicial = parametrosUrl.get("q") || "";
+const avisoSlugs = (parametrosUrl.get("aviso") || "").split(",").map(s => s.trim()).filter(Boolean);
+const avisoPalavra = (parametrosUrl.get("pal") || "").trim();
+let avisoSo = false;   // aviso com ofertas de lugares diferentes: mostra só elas
 const ordemInicial = parametrosUrl.get("ordem") || "recentes";
 
 // ===== Lojas =====
@@ -1343,6 +1351,27 @@ async function carregar(){
     filtroAtivo = categoriaInicial
         ? { tipo: "categoria", valor: categoriaInicial }
         : { tipo: "todas", valor: "" };
+
+    // Veio de um aviso (notificação) com várias ofertas: ?aviso=slug1,slug2&pal=capa de celular
+    // Cai na subcategoria (ou categoria) em comum delas, com as farejadas no topo;
+    // se forem de lugares diferentes, usa a palavra que a pessoa segue; senão, mostra só elas.
+    if(avisoSlugs.length && !categoriaInicial && !buscaInicial){
+        const V = FarejadinhosVitrine;
+        const doAviso = ofertas.filter(o => avisoSlugs.includes(o.slug));
+        if(doAviso.length){
+            const mae = [...new Set(doAviso.map(o => V.categoriaPrincipal(o)))];
+            const subs = [...new Set(doAviso.map(o => V.subcategoriaDe(o) || ""))];
+            if(mae.length === 1 && subs.length === 1 && subs[0]) filtroAtivo = { tipo: "categoria", valor: mae[0] + "/" + subs[0] };
+            else if(mae.length === 1) filtroAtivo = { tipo: "categoria", valor: mae[0] };
+            else if(avisoPalavra) document.getElementById("busca").value = avisoPalavra;
+            else avisoSo = true;
+            if(filtroAtivo.tipo === "categoria"){
+                const url = new URL(window.location.href);
+                url.searchParams.set("categoria", filtroAtivo.valor);
+                history.replaceState(history.state, "", url);
+            }
+        }
+    }
 
     const selOrdem = document.getElementById("ordem");
     if([...selOrdem.options].some(o => o.value === ordemInicial)) selOrdem.value = ordemInicial;
@@ -1612,10 +1641,13 @@ function montarCategorias(){
 function aplicarFiltros(){
 
     const termo = document.getElementById("busca").value.toLowerCase();
+    // busca sem ligar pra acento ("eletrica" acha "Elétrica")
+    const semAc = s => String(s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    const termoN = semAc(termo).trim();
 
     const filtradas = ofertas.filter(o => {
 
-        const bateBusca = (o.produto || "").toLowerCase().includes(termo);
+        const bateBusca = !termoN || semAc(o.produto).includes(termoN);
 
         let bateFiltro = true;
 
@@ -1645,6 +1677,11 @@ function aplicarFiltros(){
     if(filtroAtivo.tipo === "categoria" && document.getElementById("ordem").value === "recentes"){
         lista = FarejadinhosVitrine.ordenarNaCategoria(lista, filtroAtivo.valor);
     }
+    // farejadas do aviso no topo (até a pessoa mexer nos filtros)
+    if(avisoSlugs.length){
+        if(avisoSo) lista = lista.filter(o => avisoSlugs.includes(o.slug));
+        lista = lista.filter(o => avisoSlugs.includes(o.slug)).concat(lista.filter(o => !avisoSlugs.includes(o.slug)));
+    }
     render(lista);
     // modo admin: dá pra arrastar os cards pra arrumar a ordem desta categoria
     document.dispatchEvent(new CustomEvent("fareja:lista", { detail: window.farejaUltimaLista = {
@@ -1659,6 +1696,7 @@ function aplicarFiltros(){
 
 // Usado pela lateral de categorias e pelo menu: filtra sem recarregar
 window.farejaFiltrarCategoria = function(categoria){
+    avisoSlugs.length = 0; avisoSo = false;   // mexeu nos filtros: o aviso já cumpriu o papel
     filtroAtivo = categoria ? { tipo: "categoria", valor: categoria } : { tipo: "todas", valor: "" };
     const url = new URL(window.location.href);
     if(categoria) url.searchParams.set("categoria", categoria); else url.searchParams.delete("categoria");
@@ -1754,7 +1792,7 @@ function cardHtml(o){
         const linkLoja = /^https?:\/\//i.test(o.link || "") ? o.link : paginaOferta;
 
         return `
-        <article class="oferta-card" data-slug="${escapeHtml(o.slug)}">
+        <article class="oferta-card${avisoSlugs.includes(o.slug) ? " do-aviso" : ""}" data-slug="${escapeHtml(o.slug)}">
             <a class="card-link" href="${paginaOferta}">
                 <div class="img-wrap">
                     <img src="${o.imagemUrl ? escapeHtml(o.imagemUrl) : "assets/" + encodeURIComponent(o.imagem)}" alt="${escapeHtml(o.produto)}" loading="lazy">
@@ -1784,6 +1822,7 @@ function cardHtml(o){
 // a busca fica no endereço: ao voltar de uma oferta, a pesquisa continua lá
 let buscaUrlTimer = null;
 document.getElementById("busca").addEventListener("input", function(){
+    avisoSlugs.length = 0; avisoSo = false;
     aplicarFiltros();
     clearTimeout(buscaUrlTimer);
     buscaUrlTimer = setTimeout(() => {

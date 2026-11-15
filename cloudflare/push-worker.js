@@ -335,10 +335,15 @@ async function avisarOfertasNovas(env) {
     }
     const catsComuns = [...new Set(bate.flatMap(categoriasDe))];
     const unica = catsComuns.length === 1 ? catsComuns[0] : "";
+    // o site escolhe onde cair: subcategoria/categoria em comum dessas ofertas
+    // (ex.: capas de celular -> Celulares › Acessórios), com elas no topo;
+    // se forem de lugares diferentes, busca pela palavra que a pessoa segue.
+    const palavra = pals.find(p => bate.some(o => semAcento(o.produto).includes(p))) || "";
+    const slugs = bate.slice(0, 30).map(o => o.slug);
     return {
-      titulo: "🐶 A Yang farejou " + bate.length + " ofertas pra você" + (unica ? " em " + unica : ""),
+      titulo: "🐶 A Yang farejou " + bate.length + " ofertas pra você" + (unica ? " em " + unica : (palavra ? ": " + palavra : "")),
       mensagem: bate.slice(0, 3).map(o => String(o.produto || "").slice(0, 40)).join(" · "),
-      url: SITE + "/" + (unica ? "?categoria=" + encodeURIComponent(unica) + "#tituloGrid" : "#tituloGrid"),
+      url: SITE + "/?aviso=" + encodeURIComponent(slugs.join(",")) + (palavra ? "&pal=" + encodeURIComponent(palavra) : "") + "#tituloGrid",
       imagem: bate[0].imagem ? SITE + "/assets/" + encodeURIComponent(bate[0].imagem) : "",
     };
   }, v, true);
