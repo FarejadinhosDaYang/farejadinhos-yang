@@ -1,45 +1,33 @@
 {
-  "atualizado": "2026-11-14T15:14:47Z",
+  "atualizado": "2026-11-15T16:58:17Z",
   "paginas": {
     "Shopee": "https://s.shopee.com.br/4VdOXKYQfW",
     "Mercado Livre": "https://www.mercadolivre.com.br/cupons?source_page=mperfil#nav-header"
   },
   "cupons": [
     {
-      "codigo": "AUTO1411",
+      "codigo": "CUPOMPRATEC",
       "loja": "Mercado Livre",
-      "tipo": "%",
-      "valor": 15.0,
-      "minimo": 249.0,
-      "teto": 40.0,
+      "tipo": "R$",
+      "valor": 300.0,
+      "minimo": 2299.0,
+      "teto": 0.0,
       "titulo": "",
       "obs": "",
-      "link": "https://meli.la/1Freibk",
-      "ate": "2026-11-15T15:09:47Z"
+      "link": "",
+      "ate": "2026-11-16T16:53:11Z"
     },
     {
-      "codigo": "ELETRO1411",
+      "codigo": "OFERTASML25",
       "loja": "Mercado Livre",
       "tipo": "%",
-      "valor": 15.0,
+      "valor": 25.0,
       "minimo": 500.0,
-      "teto": 100.0,
+      "teto": 0.0,
       "titulo": "",
       "obs": "",
-      "link": "https://meli.la/1sMwZeq",
-      "ate": "2026-11-15T15:09:47Z"
-    },
-    {
-      "codigo": "MODA1411",
-      "loja": "Mercado Livre",
-      "tipo": "%",
-      "valor": 10.0,
-      "minimo": 89.0,
-      "teto": 20.0,
-      "titulo": "",
-      "obs": "",
-      "link": "https://meli.la/2QCqKNP",
-      "ate": "2026-11-15T15:09:47Z"
+      "link": "",
+      "ate": "2026-11-16T16:53:11Z"
     }
   ]
 }
