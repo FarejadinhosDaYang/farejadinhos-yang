@@ -1,0 +1,36 @@
+[
+  {
+    "acao": "cupons-site",
+    "cupons": [
+      {
+        "codigo": "CUPOMPRATEC",
+        "loja": "Mercado Livre",
+        "tipo": "R$",
+        "valor": 300,
+        "minimo": 2299,
+        "teto": 0,
+        "titulo": "",
+        "obs": "",
+        "link": "",
+        "ate": "2026-11-16T16:53:11Z"
+      },
+      {
+        "codigo": "OFERTASML25",
+        "loja": "Mercado Livre",
+        "tipo": "%",
+        "valor": 25,
+        "minimo": 500,
+        "teto": 0,
+        "titulo": "",
+        "obs": "",
+        "link": "",
+        "ate": "2026-11-16T16:53:11Z"
+      }
+    ],
+    "paginas": {
+      "Shopee": "https://s.shopee.com.br/4VdOXKYQfW",
+      "Mercado Livre": "https://www.mercadolivre.com.br/cupons?source_page=mperfil#nav-header",
+      "Amazon": ""
+    }
+  }
+]
