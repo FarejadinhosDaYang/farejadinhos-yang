@@ -15,6 +15,7 @@ pedido.json:
     "capa_t": 13.0,                      (opcional: segundo do vídeo usado na capa)
     "legenda_fundo": true,               (opcional: caixa escura atrás da legenda — bom pra gravação de tela)
     "legenda_top": 215,                  (opcional: altura da legenda em px; o padrão é no meio da tela)
+    "sem_narradora": true,               (opcional: sem voz — cada [de-até] vira uma frase ESCRITA na tela; ver sem_narradora.py)
     "musica": "animada"                  (opcional: nome (ou parte do nome) de um arquivo de _video-yang/musicas/;
                                           sem esse campo sorteia uma de lá; "nenhuma" = sem música)
   }
@@ -320,7 +321,10 @@ def main():
     base = os.path.dirname(os.path.abspath(sys.argv[1]))
     caminho = lambda p: p if os.path.isabs(p) else os.path.join(base, p)
     pid = pedido.get("id") or "reel"
-    video, voz = caminho(pedido["video"]), caminho(pedido["voz"])
+    video = caminho(pedido["video"])
+    if pedido.get("sem_narradora"):
+        return main_sem_narradora(pedido, pasta, pid, video)
+    voz = caminho(pedido["voz"])
 
     frases, cenas = frases_com_cenas(pedido["texto"])
     if not frases: raise SystemExit("O texto da narração está vazio.")
@@ -359,7 +363,12 @@ def main():
     musica = escolher_musica(pedido, pid)
     if musica: por_musica(reel, musica, dur)
 
-    titulo = pedido.get("titulo") or falas[0]["texto"]
+    finalizar(pedido, pasta, pid, video, reel, dur, falas[0]["texto"], frases, de, ate)
+
+
+def finalizar(pedido, pasta, pid, video, reel, dur, primeira, frases, de, ate):
+    """Capa + legenda do post + log (igual nos dois modos)."""
+    titulo = pedido.get("titulo") or primeira
     capa_t = pedido.get("capa_t")
     capa_t = float(capa_t) if capa_t not in (None, "") else de + 0.6 * (ate - de)
     capa = os.path.join(pasta, f"{pid}-capa.jpg")
@@ -378,6 +387,35 @@ def main():
     open(os.path.join(pasta, f"{pid}-legenda.txt"), "w", encoding="utf-8").write(legenda_post(frases, oferta))
     log(f"pronto: {os.path.basename(reel)} ({dur:.1f}s) e {os.path.basename(capa)}")
     open(os.path.join(pasta, f"{pid}-log.txt"), "w", encoding="utf-8").write("\n".join(LOG) + "\n")
+
+def grupos_escritos(texto):
+    """Modo sem narradora: cada marcação [de-até] é UMA frase escrita na tela (não divide nas reticências)."""
+    marcas = list(MARCA.finditer(texto))
+    if not marcas: raise SystemExit("No modo sem narradora o texto precisa das marcações de cena, ex.: [0-2.5] Frase…")
+    grupos = []
+    for i, m in enumerate(marcas):
+        fim = marcas[i + 1].start() if i + 1 < len(marcas) else len(texto)
+        a, b = (float(x.replace(",", ".")) for x in m.groups())
+        if b < a: a, b = b, a
+        frase = re.sub(r"\s+", " ", texto[m.end():fim]).strip()
+        if frase: grupos.append((site_escrito(frase), (a, b)))
+    return grupos
+
+
+def main_sem_narradora(pedido, pasta, pid, video):
+    import sem_narradora
+    grupos = grupos_escritos(pedido["texto"])
+    log(f"sem narradora: {len(grupos)} frases escritas")
+    reel, dur = sem_narradora.montar(pedido, pasta, pid, video, grupos, juntar_pedacos, duracao, log, escolher_musica)
+    limpas = [re.sub(r"[*|]", "", g[0]).strip() for g in grupos]
+    # pra legenda do post: cada frase termina com pontuação (senão fica tudo grudado)
+    ponto = lambda f: f if re.search(r"[.!?…]\s*(\S*)$", sem_narradora.EMOJI_RE.sub("", f).strip() + " ") and \
+        re.search(r"[.!?…]$", sem_narradora.EMOJI_RE.sub("", f).strip()) else re.sub(r"^(.*?[^\s])(\s*(?:%s)*)$" % sem_narradora.EMOJI_RE.pattern, r"\1.\2", f)
+    frases_post = [ponto(f) for f in limpas]
+    # a tela final já chama pra comentar: a legenda do post leva o "Comenta QUERO"
+    frases = frases_post + (["comenta"] if pedido.get("comenta", True) is not False else [])
+    finalizar(pedido, pasta, pid, video, reel, dur, sem_narradora.EMOJI_RE.sub("", limpas[0]).strip(), frases, 0, duracao(video))
+
 
 if __name__ == "__main__":
     main()

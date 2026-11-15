@@ -56,6 +56,11 @@ button:disabled{opacity:.6;cursor:wait}
 <form class="caixa" id="form">
   <label>Senha do painel <input type="password" id="senha" autocomplete="current-password" required></label>
 
+  <label style="background:#fff;border:2px solid var(--red);border-radius:14px;padding:12px">📋 Colar o roteiro do Claude (tudo de uma vez)
+    <textarea id="roteiro" style="min-height:90px" placeholder="Cole aqui o bloco inteiro que o Claude mandou (começa com PRODUTO: …). Os campos de baixo se preenchem sozinhos."></textarea>
+    <small id="roteiroOk">Depois é só escolher o vídeo (e a voz, se tiver narradora) e apertar o botão.</small>
+  </label>
+
   <label>Produto
     <input id="busca" placeholder="Digite pra procurar (ex.: aspirador)…" autocomplete="off">
     <select id="produto"><option value="">— escolha o produto (opcional) —</option></select>
@@ -70,9 +75,14 @@ button:disabled{opacity:.6;cursor:wait}
     <span><b>📎 Já tenho o vídeo pronto</b> — só anexar na página do produto (vídeos feitos no Claude ou em outro app). Sem voz, sem montagem: escolha o produto acima e mande o MP4.</span>
   </label>
 
+  <label class="so-montar" style="display:flex;gap:10px;align-items:flex-start;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;cursor:pointer">
+    <input type="checkbox" id="semNarr" style="width:auto;margin-top:3px">
+    <span><b>🔇 Sem narradora</b> — sem voz: as frases aparecem <b>escritas</b> na tela, uma por cena, e no fim entra a Yang com "COMENTA QUERO". Sai sem som, pra você pôr o áudio em alta no Instagram.</span>
+  </label>
+
   <div class="dupla">
     <label>🎞️ Vídeo do produto <input type="file" id="video" accept="video/*" required></label>
-    <label class="so-montar">🎙️ Voz do ElevenLabs (MP3) <input type="file" id="voz" accept="audio/*,.mp3" required></label>
+    <label class="so-montar so-voz">🎙️ Voz do ElevenLabs (MP3) <input type="file" id="voz" accept="audio/*,.mp3" required></label>
   </div>
 
   <label class="so-montar">Texto da narração
@@ -156,20 +166,80 @@ function preencher(filtro){
 }
 $("busca").addEventListener("input", e => preencher(e.target.value));
 
-// ---- "já tenho o vídeo pronto" ----
+// ---- "já tenho o vídeo pronto" / "sem narradora" ----
 function modoPronto(){
-  const pronto = $("pronto").checked;
+  const pronto = $("pronto").checked, sem = $("semNarr").checked;
   document.querySelectorAll(".so-montar").forEach(el => { el.style.display = pronto ? "none" : ""; });
-  $("voz").required = !pronto; $("texto").required = !pronto;
+  document.querySelectorAll(".so-voz").forEach(el => { el.style.display = (pronto || sem) ? "none" : ""; });
+  $("voz").required = !pronto && !sem; $("texto").required = !pronto;
   if (!$("btn").disabled) $("btn").textContent = pronto ? "📎 Anexar vídeo à oferta" : "🎬 Montar reel";
 }
 $("pronto").addEventListener("change", modoPronto);
+$("semNarr").addEventListener("change", modoPronto);
+
+// ---- colar o roteiro inteiro: cada coisa vai pro seu campo ----
+const semAcento = t => String(t || "").normalize("NFD").replace(/\p{Mn}/gu, "").toLowerCase();
+function acharProduto(nome){
+  const pal = semAcento(nome).replace(/[^a-z0-9 ]/g, " ").split(/\s+/).filter(w => w.length > 2);
+  if (!pal.length) return null;
+  let melhor = null, nota = 0;
+  for (const o of ofertas){
+    const alvo = " " + semAcento(o.produto + " " + o.slug).replace(/[^a-z0-9]/g, " ") + " ";
+    const n = pal.filter(w => alvo.includes(" " + w + " ")).length / pal.length;
+    if (n > nota){ nota = n; melhor = o; }
+  }
+  return nota >= 0.6 ? melhor : null;
+}
+function lerRoteiro(){
+  const bruto = $("roteiro").value;
+  if (!bruto.trim()) return;
+  const campos = {}; let texto = []; let noTexto = false;
+  for (const linha of bruto.split(/\r?\n/)){
+    const m = !noTexto && linha.match(/^\s*([A-Za-zÀ-ú ]{3,20}):\s*(.*)$/);
+    if (m){
+      const k = semAcento(m[1]).trim();
+      if (k === "texto"){ noTexto = true; if (m[2].trim()) texto.push(m[2]); }
+      else campos[k] = m[2].trim();
+    } else if (noTexto || /^\s*\[/.test(linha)){ noTexto = true; texto.push(linha); }
+  }
+  const feito = [];
+  const sim = v => /^(s|sim|yes|1|true)/i.test(v || "");
+  if (campos.narradora !== undefined){ $("semNarr").checked = !sim(campos.narradora); feito.push($("semNarr").checked ? "🔇 sem narradora" : "🎙️ com narradora"); }
+  if (campos.produto){
+    const o = acharProduto(campos.produto);
+    if (o){ $("busca").value = ""; preencher(""); $("produto").value = o.slug; $("palavras").value = ""; feito.push("produto: " + o.produto); }
+    else { $("produto").value = ""; $("palavras").value = semAcento(campos.produto).replace(/[^a-z0-9 ]/g, " ").split(/\s+/).filter(w => w.length > 2).slice(0, 3).join(" ");
+           feito.push("⏳ produto ainda não está no site — o vídeo espera por: " + $("palavras").value); }
+  }
+  if (campos.capa !== undefined){ $("titulo").value = campos.capa; feito.push("capa"); }
+  if (campos.faixa){ const f = [...$("faixa").options].find(op => semAcento(op.text).includes(semAcento(campos.faixa).replace(/[^a-z ]/g, "").trim()));
+                     if (f) $("faixa").value = f.value; }
+  if (campos.balao !== undefined){ $("balao").value = campos.balao; feito.push("balão"); }
+  if (campos["foto da capa"] !== undefined){ $("capa_t").value = parseFloat(String(campos["foto da capa"]).replace(",", ".")) || ""; }
+  if (campos.musica !== undefined) $("musica").value = campos.musica;
+  if (campos["fundo escuro"] !== undefined) $("legenda_fundo").checked = sim(campos["fundo escuro"]);
+  if (texto.length){ $("texto").value = texto.join("\n").trim(); feito.push("texto com " + (($("texto").value.match(/\[/g) || []).length) + " cenas"); }
+  modoPronto();
+  $("roteiroOk").innerHTML = "✅ Preenchido: " + esc(feito.join(" · ")) + "<br>Agora escolha o vídeo" + ($("semNarr").checked ? "" : " e a voz") + " e aperte o botão.";
+}
+$("roteiro").addEventListener("input", () => { clearTimeout(lerRoteiro.t); lerRoteiro.t = setTimeout(lerRoteiro, 300); });
+
+// voz "vazia" pro modo sem narradora (o Worker pede um arquivo de voz)
+function silencio(){
+  const n = 8000, b = new ArrayBuffer(44 + n * 2), v = new DataView(b);
+  const s = (o, t) => [...t].forEach((c, i) => v.setUint8(o + i, c.charCodeAt(0)));
+  s(0, "RIFF"); v.setUint32(4, 36 + n * 2, true); s(8, "WAVE"); s(12, "fmt "); v.setUint32(16, 16, true);
+  v.setUint16(20, 1, true); v.setUint16(22, 1, true); v.setUint32(24, 8000, true); v.setUint32(28, 16000, true);
+  v.setUint16(32, 2, true); v.setUint16(34, 16, true); s(36, "data"); v.setUint32(40, n * 2, true);
+  return new File([b], "silencio.wav", { type: "audio/wav" });
+}
 
 // ---- enviar ----
 let esperando = "";
 $("form").addEventListener("submit", e => {
   e.preventDefault();
-  const senha = $("senha").value.trim(), video = $("video").files[0], voz = $("voz").files[0], texto = $("texto").value.trim();
+  const sem = $("semNarr").checked && !$("pronto").checked;
+  const senha = $("senha").value.trim(), video = $("video").files[0], voz = sem ? silencio() : $("voz").files[0], texto = $("texto").value.trim();
   const st = $("status"), btn = $("btn"), barra = $("barra");
   const pronto = $("pronto").checked;
   if (pronto && (!senha || !video || !$("produto").value)){ st.className = "status erro"; st.textContent = "Preencha a senha, escolha o produto e mande o vídeo."; return; }
@@ -179,7 +249,7 @@ $("form").addEventListener("submit", e => {
   const num = id => { const v = $(id).value.trim(); return v === "" ? "" : Number(v); };
   const pedido = pronto ? { pronto: true, produto, slug } : { produto, slug, texto, titulo: $("titulo").value.trim(), faixa: $("faixa").value, balao: $("balao").value.trim(),
                    de: num("de"), ate: num("ate"), capa_t: num("capa_t"), legenda_fundo: $("legenda_fundo").checked,
-                   musica: $("musica").value.trim(), palavras: slug ? "" : $("palavras").value.trim() };
+                   musica: $("musica").value.trim(), palavras: slug ? "" : $("palavras").value.trim(), sem_narradora: sem };
   const dados = new FormData();
   dados.append("senha", senha); dados.append("pedido", JSON.stringify(pedido));
   dados.append("video", video); if (!pronto) dados.append("voz", voz);

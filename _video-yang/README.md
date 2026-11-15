@@ -125,3 +125,22 @@ modelos de reconhecimento de fala), por isso a legenda vem do texto do roteiro, 
 
 Se surgirem versões oficiais das expressões (geradas na mesma ferramenta da arte original: boca fechada,
 olhos fechados, surpresa, desconfiada…), basta salvar com os mesmos nomes em `cabeca/`.
+
+## Roteiro em bloco (colar tudo de uma vez no painel) e modo sem narradora
+O Claude manda o roteiro num bloco só; na página "Gerar reel" ele vai inteiro na caixa 📋 e cada linha cai no seu campo:
+```
+PRODUTO: <nome do produto como está no site>     (não achou no site → o vídeo vai pra fila de pendentes)
+NARRADORA: sim | não                             (não = frases escritas na tela, sem voz — sem_narradora.py)
+CAPA: Gancho|*palavra amarela*
+FAIXA: 🐾 ACHADINHO DE CASA
+BALÃO: Olha isso!
+FOTO DA CAPA: 1.5
+MÚSICA: nenhuma                                  (opcional)
+FUNDO ESCURO: sim                                (opcional, gravação de tela)
+TEXTO:
+[0-2.5] Frase da cena…
+[2.5-5] Outra frase…
+```
+Sem narradora: cada `[de-até]` é uma frase escrita (`*palavra*` amarela, emoji funciona, a 1ª sai maior); o trecho fica mais
+lento ou repete se a frase precisar de mais tempo pra ler; no fim, 2,8 s de tela da Yang com COMENTA QUERO + site. Sai sem
+som (áudio em alta no Instagram) ou com `MÚSICA:` da pasta musicas/.
