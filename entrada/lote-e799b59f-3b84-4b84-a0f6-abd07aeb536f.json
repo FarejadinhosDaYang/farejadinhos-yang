@@ -1,0 +1,72 @@
+[
+  {
+    "acao": "cupons-site",
+    "cupons": [
+      {
+        "codigo": "CUPOMPRATEC",
+        "loja": "Mercado Livre",
+        "tipo": "R$",
+        "valor": 300,
+        "minimo": 2299,
+        "teto": 0,
+        "titulo": "",
+        "obs": "",
+        "link": "",
+        "ate": "2026-11-16T16:53:40Z"
+      },
+      {
+        "codigo": "OFERTASML25",
+        "loja": "Mercado Livre",
+        "tipo": "%",
+        "valor": 25,
+        "minimo": 500,
+        "teto": 0,
+        "titulo": "",
+        "obs": "",
+        "link": "",
+        "ate": "2026-11-16T16:53:40Z"
+      },
+      {
+        "codigo": "ESPORTES1511",
+        "loja": "Mercado Livre",
+        "tipo": "",
+        "valor": 0,
+        "minimo": 0,
+        "teto": 0,
+        "titulo": "",
+        "obs": "",
+        "link": "",
+        "ate": "2026-11-16T16:53:40Z"
+      },
+      {
+        "codigo": "OFERTASNOML",
+        "loja": "Mercado Livre",
+        "tipo": "",
+        "valor": 0,
+        "minimo": 0,
+        "teto": 0,
+        "titulo": "",
+        "obs": "",
+        "link": "https://meli.la/1gN8Zf6",
+        "ate": "2026-11-16T16:53:40Z"
+      },
+      {
+        "codigo": "ENTREGASFULL1511",
+        "loja": "Mercado Livre",
+        "tipo": "",
+        "valor": 0,
+        "minimo": 0,
+        "teto": 0,
+        "titulo": "",
+        "obs": "",
+        "link": "https://meli.la/1yjECjG",
+        "ate": "2026-11-16T16:53:40Z"
+      }
+    ],
+    "paginas": {
+      "Shopee": "https://s.shopee.com.br/4VdOXKYQfW",
+      "Mercado Livre": "https://www.mercadolivre.com.br/cupons?source_page=mperfil#nav-header",
+      "Amazon": ""
+    }
+  }
+]
