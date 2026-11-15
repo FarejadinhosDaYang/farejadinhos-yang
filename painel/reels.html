@@ -24,6 +24,14 @@ label small{font-weight:500;color:var(--muted);font-size:12.5px;line-height:1.45
 input,select,textarea{width:100%;padding:11px 12px;border:1.5px solid var(--line);border-radius:10px;font:500 15px 'Work Sans',Arial,sans-serif;background:#fff;color:var(--ink)}
 textarea{min-height:120px;resize:vertical;line-height:1.45}
 .dupla{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.prev{display:none;gap:10px;align-items:center;margin-top:8px;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:8px}
+.prev.on{display:flex}
+.prev video,.prev img{width:72px;height:128px;object-fit:cover;border-radius:8px;background:#000;flex:none}
+.prev img{height:72px;object-fit:contain;background:#fff}
+.prev audio{width:100%}
+.prev small{display:block;word-break:break-all}
+.alerta{display:none;margin-top:8px;padding:8px 10px;border-radius:10px;background:#FFF4CC;border:1.5px solid #E8B400;font-size:13px}
+.alerta.on{display:block}
 @media (max-width:560px){.dupla{grid-template-columns:1fr}}
 details{border:1.5px dashed var(--line);border-radius:12px;padding:10px 12px;background:#fff}
 summary{cursor:pointer;font-weight:700;font-size:14px}
@@ -64,6 +72,7 @@ button:disabled{opacity:.6;cursor:wait}
   <label>Produto
     <input id="busca" placeholder="Digite pra procurar (ex.: aspirador)…" autocomplete="off">
     <select id="produto"><option value="">— escolha o produto (opcional) —</option></select>
+    <div class="prev" id="prevProduto"><img alt=""><span><b>Foto do anúncio</b><small>Confere se é o mesmo produto do vídeo.</small></span></div>
     <small>Com o produto escolhido, a oferta vai pra categoria Vídeos e não sai mais do ar.</small>
   </label>
   <label>Produto ainda não está no site? <input id="palavras" placeholder="ex.: escova 5 em 1" autocomplete="off">
@@ -75,15 +84,18 @@ button:disabled{opacity:.6;cursor:wait}
     <span><b>📎 Já tenho o vídeo pronto</b> — só anexar na página do produto (vídeos feitos no Claude ou em outro app). Sem voz, sem montagem: escolha o produto acima e mande o MP4.</span>
   </label>
 
-  <label class="so-montar" style="display:flex;gap:10px;align-items:flex-start;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;cursor:pointer">
+  <label class="so-montar" data-disp="flex" style="display:flex;gap:10px;align-items:flex-start;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;cursor:pointer">
     <input type="checkbox" id="semNarr" style="width:auto;margin-top:3px">
     <span><b>🔇 Sem narradora</b> — sem voz: as frases aparecem <b>escritas</b> na tela, uma por cena, e no fim entra a Yang com "COMENTA QUERO". Sai sem som, pra você pôr o áudio em alta no Instagram.</span>
   </label>
 
   <div class="dupla">
-    <label>🎞️ Vídeo do produto <input type="file" id="video" accept="video/*" required></label>
-    <label class="so-montar so-voz">🎙️ Voz do ElevenLabs (MP3) <input type="file" id="voz" accept="audio/*,.mp3" required></label>
+    <label>🎞️ Vídeo do produto <input type="file" id="video" accept="video/*" required>
+      <div class="prev" id="prevVideo"><video muted loop playsinline autoplay></video><span><b></b><small></small></span></div></label>
+    <label class="so-montar so-voz">🎙️ Voz do ElevenLabs (MP3) <input type="file" id="voz" accept="audio/*,.mp3" required>
+      <div class="prev" id="prevVoz" style="flex-direction:column;align-items:stretch"><audio controls></audio><small></small></div></label>
   </div>
+  <div class="alerta" id="alertaTempo"></div>
 
   <label class="so-montar">Texto da narração
     <textarea id="texto" required placeholder='Cole aqui exatamente o texto que você colou no ElevenLabs, com as reticências (…). Ex.: Sabe aquela sujeira do trilho… Esse mini aspirador resolve! … comenta "quero" que eu te mando o link… ou entra no farejadinhos da Yang ponto com ponto bê érre, tá na bio!'></textarea>
@@ -169,13 +181,49 @@ $("busca").addEventListener("input", e => preencher(e.target.value));
 // ---- "já tenho o vídeo pronto" / "sem narradora" ----
 function modoPronto(){
   const pronto = $("pronto").checked, sem = $("semNarr").checked;
-  document.querySelectorAll(".so-montar").forEach(el => { el.style.display = pronto ? "none" : ""; });
-  document.querySelectorAll(".so-voz").forEach(el => { el.style.display = (pronto || sem) ? "none" : ""; });
+  document.querySelectorAll(".so-montar").forEach(el => { el.style.display = pronto ? "none" : (el.dataset.disp || ""); });
+  document.querySelectorAll(".so-voz").forEach(el => { el.style.display = (pronto || sem) ? "none" : (el.dataset.disp || ""); });
   $("voz").required = !pronto && !sem; $("texto").required = !pronto;
   if (!$("btn").disabled) $("btn").textContent = pronto ? "📎 Anexar vídeo à oferta" : "🎬 Montar reel";
 }
 $("pronto").addEventListener("change", modoPronto);
 $("semNarr").addEventListener("change", modoPronto);
+
+// ---- prévias: ver qual vídeo/voz/produto foi escolhido ----
+const durVideo = { s: 0 };
+function prevArquivo(input, caixa, tipo){
+  const f = $(input).files[0], c = $(caixa), m = c.querySelector(tipo);
+  if (m.dataset.url) URL.revokeObjectURL(m.dataset.url);
+  if (!f){ c.classList.remove("on"); if (tipo === "video") durVideo.s = 0; conferirTempos(); return; }
+  m.dataset.url = URL.createObjectURL(f); m.src = m.dataset.url; c.classList.add("on");
+  const nome = f.name.replace(/^From_Klickpin\.com-_/i, "").slice(0, 70);
+  m.onloadedmetadata = () => {
+    const d = m.duration || 0;
+    if (tipo === "video"){ durVideo.s = d; c.querySelector("b").textContent = Math.round(d) + " s de vídeo"; c.querySelector("small").textContent = nome; }
+    else c.querySelector("small").textContent = Math.round(d) + " s de voz · " + nome;
+    conferirTempos();
+  };
+}
+$("video").addEventListener("change", () => prevArquivo("video", "prevVideo", "video"));
+$("voz").addEventListener("change", () => prevArquivo("voz", "prevVoz", "audio"));
+function prevProduto(){
+  const o = ofertas.find(x => x.slug === $("produto").value), c = $("prevProduto");
+  if (o && o.imagem){ c.querySelector("img").src = "../assets/" + o.imagem; c.querySelector("b").textContent = o.produto; c.classList.add("on"); }
+  else c.classList.remove("on");
+}
+$("produto").addEventListener("change", prevProduto);
+// avisa quando os tempos do roteiro não combinam com o tamanho do vídeo (sinal de vídeo trocado)
+function conferirTempos(){
+  const a = $("alertaTempo"), d = durVideo.s;
+  const fins = [...$("texto").value.matchAll(/\[\s*[\d.,]+\s*-\s*([\d.,]+)\s*\]/g)].map(m => parseFloat(m[1].replace(",", ".")));
+  if (!d || !fins.length || $("pronto").checked){ a.classList.remove("on"); return; }
+  const max = Math.max(...fins);
+  let msg = "";
+  if (max > d + 1) msg = `⚠️ O roteiro vai até o segundo ${max}, mas este vídeo só tem ${Math.round(d)} s. <b>Será que é o vídeo certo?</b>`;
+  else if (d > 25 && max < d * 0.3) msg = `⚠️ O roteiro só usa os primeiros ${Math.round(max)} s de um vídeo de ${Math.round(d)} s. <b>Confere se é o vídeo certo.</b>`;
+  a.innerHTML = msg; a.classList.toggle("on", !!msg);
+}
+$("texto").addEventListener("input", conferirTempos);
 
 // ---- colar o roteiro inteiro: cada coisa vai pro seu campo ----
 const semAcento = t => String(t || "").normalize("NFD").replace(/\p{Mn}/gu, "").toLowerCase();
@@ -219,7 +267,7 @@ function lerRoteiro(){
   if (campos.musica !== undefined) $("musica").value = campos.musica;
   if (campos["fundo escuro"] !== undefined) $("legenda_fundo").checked = sim(campos["fundo escuro"]);
   if (texto.length){ $("texto").value = texto.join("\n").trim(); feito.push("texto com " + (($("texto").value.match(/\[/g) || []).length) + " cenas"); }
-  modoPronto();
+  modoPronto(); prevProduto(); conferirTempos();
   $("roteiroOk").innerHTML = "✅ Preenchido: " + esc(feito.join(" · ")) + "<br>Agora escolha o vídeo" + ($("semNarr").checked ? "" : " e a voz") + " e aperte o botão.";
 }
 $("roteiro").addEventListener("input", () => { clearTimeout(lerRoteiro.t); lerRoteiro.t = setTimeout(lerRoteiro, 300); });
@@ -284,7 +332,8 @@ function limparPraProximo(){
   ["video", "voz"].forEach(id => { $(id).value = ""; });
   $("produto").value = ""; $("semNarr").checked = false; $("legenda_fundo").checked = false;
   $("roteiroOk").textContent = "Cole o bloco do próximo vídeo.";
-  modoPronto();
+  prevArquivo("video", "prevVideo", "video"); prevArquivo("voz", "prevVoz", "audio"); prevProduto();
+  modoPronto(); conferirTempos();
 }
 
 function acompanhar(inicio){
