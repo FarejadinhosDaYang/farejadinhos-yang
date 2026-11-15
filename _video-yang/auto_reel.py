@@ -409,8 +409,10 @@ def main_sem_narradora(pedido, pasta, pid, video):
     reel, dur = sem_narradora.montar(pedido, pasta, pid, video, grupos, juntar_pedacos, duracao, log, escolher_musica)
     limpas = [re.sub(r"[*|]", "", g[0]).strip() for g in grupos]
     # pra legenda do post: cada frase termina com pontuação (senão fica tudo grudado)
-    ponto = lambda f: f if re.search(r"[.!?…]\s*(\S*)$", sem_narradora.EMOJI_RE.sub("", f).strip() + " ") and \
-        re.search(r"[.!?…]$", sem_narradora.EMOJI_RE.sub("", f).strip()) else re.sub(r"^(.*?[^\s])(\s*(?:%s)*)$" % sem_narradora.EMOJI_RE.pattern, r"\1.\2", f)
+    def ponto(f):
+        fim = re.search(r"[\s\U0001F000-\U0001FAFF\u2600-\u27BF\u2B00-\u2BFF\uFE0F\u200D]*$", f).start()
+        corpo, rabo = f[:fim], f[fim:]
+        return f if not corpo or re.search(r"[.!?…:]$", corpo) else corpo + "." + rabo
     frases_post = [ponto(f) for f in limpas]
     # a tela final já chama pra comentar: a legenda do post leva o "Comenta QUERO"
     frases = frases_post + (["comenta"] if pedido.get("comenta", True) is not False else [])
