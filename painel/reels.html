@@ -88,6 +88,10 @@ button:disabled{opacity:.6;cursor:wait}
     <input type="checkbox" id="semNarr" style="width:auto;margin-top:3px">
     <span><b>🔇 Sem narradora</b> — sem voz: as frases aparecem <b>escritas</b> na tela, uma por cena, e no fim entra a Yang com "COMENTA QUERO". Sai sem som, pra você pôr o áudio em alta no Instagram.</span>
   </label>
+  <label class="so-montar so-sem" data-disp="flex" style="display:none;gap:10px;align-items:flex-start;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;cursor:pointer">
+    <input type="checkbox" id="somOriginal" style="width:auto;margin-top:3px">
+    <span><b>🔊 Manter o som original do vídeo</b> — pra vídeo ASMR (barulhinho do produto). Sem isso, sai sem som.</span>
+  </label>
 
   <div class="dupla">
     <label>🎞️ Vídeo do produto <input type="file" id="video" accept="video/*" required>
@@ -183,6 +187,7 @@ function modoPronto(){
   const pronto = $("pronto").checked, sem = $("semNarr").checked;
   document.querySelectorAll(".so-montar").forEach(el => { el.style.display = pronto ? "none" : (el.dataset.disp || ""); });
   document.querySelectorAll(".so-voz").forEach(el => { el.style.display = (pronto || sem) ? "none" : (el.dataset.disp || ""); });
+  document.querySelectorAll(".so-sem").forEach(el => { el.style.display = (!pronto && sem) ? (el.dataset.disp || "") : "none"; });
   $("voz").required = !pronto && !sem; $("texto").required = !pronto;
   if (!$("btn").disabled) $("btn").textContent = pronto ? "📎 Anexar vídeo à oferta" : "🎬 Montar reel";
 }
@@ -265,6 +270,7 @@ function lerRoteiro(){
   if (campos.balao !== undefined){ $("balao").value = campos.balao; feito.push("balão"); }
   if (campos["foto da capa"] !== undefined){ $("capa_t").value = parseFloat(String(campos["foto da capa"]).replace(",", ".")) || ""; }
   if (campos.musica !== undefined) $("musica").value = campos.musica;
+  if (campos["som original"] !== undefined){ $("somOriginal").checked = sim(campos["som original"]); if ($("somOriginal").checked) feito.push("🔊 som original"); }
   if (campos["fundo escuro"] !== undefined) $("legenda_fundo").checked = sim(campos["fundo escuro"]);
   if (texto.length){ $("texto").value = texto.join("\n").trim(); feito.push("texto com " + (($("texto").value.match(/\[/g) || []).length) + " cenas"); }
   modoPronto(); prevProduto(); conferirTempos();
@@ -297,7 +303,7 @@ $("form").addEventListener("submit", e => {
   const num = id => { const v = $(id).value.trim(); return v === "" ? "" : Number(v); };
   const pedido = pronto ? { pronto: true, produto, slug } : { produto, slug, texto, titulo: $("titulo").value.trim(), faixa: $("faixa").value, balao: $("balao").value.trim(),
                    de: num("de"), ate: num("ate"), capa_t: num("capa_t"), legenda_fundo: $("legenda_fundo").checked,
-                   musica: $("musica").value.trim(), palavras: slug ? "" : $("palavras").value.trim(), sem_narradora: sem };
+                   musica: $("musica").value.trim(), palavras: slug ? "" : $("palavras").value.trim(), sem_narradora: sem, som_original: sem && $("somOriginal").checked };
   const dados = new FormData();
   dados.append("senha", senha); dados.append("pedido", JSON.stringify(pedido));
   dados.append("video", video); if (!pronto) dados.append("voz", voz);
@@ -330,7 +336,7 @@ $("form").addEventListener("submit", e => {
 function limparPraProximo(){
   ["roteiro", "texto", "titulo", "balao", "capa_t", "de", "ate", "palavras", "busca"].forEach(id => { if ($(id)) $(id).value = ""; });
   ["video", "voz"].forEach(id => { $(id).value = ""; });
-  $("produto").value = ""; $("semNarr").checked = false; $("legenda_fundo").checked = false;
+  $("produto").value = ""; $("semNarr").checked = false; $("somOriginal").checked = false; $("legenda_fundo").checked = false;
   $("roteiroOk").textContent = "Cole o bloco do próximo vídeo.";
   prevArquivo("video", "prevVideo", "video"); prevArquivo("voz", "prevVoz", "audio"); prevProduto();
   modoPronto(); conferirTempos();

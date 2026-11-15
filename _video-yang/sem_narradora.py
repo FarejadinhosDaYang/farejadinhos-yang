@@ -9,6 +9,8 @@ Cada marcação = um trecho do vídeo + a frase que aparece escrita enquanto ele
 - *palavra* sai em amarelo. Emoji funciona. A 1ª frase (o gancho) sai maior.
 - No fim: tela da Yang com "COMENTA QUERO" + "ou entra no farejadinhosdayang.com.br" (2,8 s).
 - Sem som (pra pôr o áudio em alta no Instagram) — ou com música da pasta musicas/ se o pedido pedir.
+- "som_original": true → mantém o som do próprio vídeo (bom pra vídeo ASMR), cortado junto com as cenas;
+  nesse modo o trecho quase não fica lento (no máximo 0,8×), pra o som não ficar arrastado: repete em vez disso.
 """
 import os, re, subprocess
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
@@ -157,9 +159,32 @@ def tempo_leitura(texto):
     return max(1.3, 0.45 + palavras * 0.3)
 
 
+def tem_audio(video):
+    r = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "a", "-show_entries", "stream=index", "-of", "csv=p=0", video],
+                       capture_output=True, text=True)
+    return bool(r.stdout.strip())
+
+
+def audio_original(video, pedacos, corpo, dur, saida):
+    """Som do próprio vídeo, nos mesmos trechos e velocidades da imagem; some suave na tela final."""
+    ent, filt = [], []
+    for i, (a, b, v) in enumerate(pedacos):
+        ent += ["-ss", f"{a:.3f}", "-t", f"{b - a:.3f}", "-i", video]
+        d = (b - a) / v
+        filt.append(f"[{i}:a]aresample=48000,aformat=channel_layouts=stereo,atempo={v:.4f},"
+                    f"apad,atrim=0:{d:.4f},asetpts=N/SR/TB[a{i}]")
+    filt.append("".join(f"[a{i}]" for i in range(len(pedacos))) + f"concat=n={len(pedacos)}:v=0:a=1,"
+                f"loudnorm=I=-16:TP=-2:LRA=11,apad,atrim=0:{dur:.3f},afade=t=out:st={max(0, corpo - 0.4):.2f}:d=1.2[s]")
+    subprocess.run(["ffmpeg", "-nostdin", "-loglevel", "error", "-y", *ent, "-filter_complex", ";".join(filt),
+                    "-map", "[s]", "-c:a", "pcm_s16le", saida], check=True)
+
+
 def montar(pedido, pasta, pid, video, grupos, juntar_pedacos, duracao, log, escolher_musica=None):
     """grupos = [(texto, (de, ate))] — uma frase escrita por marcação. Devolve (reel, duracao)."""
     total = duracao(video)
+    som = bool(pedido.get("som_original")) and tem_audio(video)
+    if pedido.get("som_original") and not som: log("som original pedido, mas o vídeo não tem som — sai sem som")
+    lento = 0.8 if som else 0.5      # com o som do vídeo, não deixa arrastado
     topo = float(pedido.get("legenda_top")) if pedido.get("legenda_top") not in (None, "") else 300
     pedacos_v, linha_tempo, t = [], [], 0.0
     for i, (texto, (a, b)) in enumerate(grupos):
@@ -175,7 +200,7 @@ def montar(pedido, pasta, pid, video, grupos, juntar_pedacos, duracao, log, esco
                 a, b = meio - novo / 2, meio + novo / 2
             pedacos_v.append((a, b, v)); d = (b - a) / v
         else:
-            v = max(0.5, tam / ler); voltas = 1
+            v = max(lento, tam / ler); voltas = 1
             while tam * voltas / v < ler - 0.01 and voltas < 4: voltas += 1
             pedacos_v += [(a, b, v)] * voltas; d = tam * voltas / v
         linha_tempo.append((t, t + d, texto))
@@ -208,8 +233,14 @@ def montar(pedido, pasta, pid, video, grupos, juntar_pedacos, duracao, log, esco
     filt.append(f"[{n}:v]scale={W}:{H},fps={FPS},format=yuv420p,setsar=1,fade=t=in:st=0:d=0.25[fim]")
     filt.append("[corpo][fim]concat=n=2:v=1:a=0[v]")
     reel = os.path.join(pasta, f"{pid}-reel.mp4")
-    musica = escolher_musica(pedido, pid) if (escolher_musica and str(pedido.get("musica") or "").strip()) else None
-    if musica:
+    musica = None if som else (escolher_musica(pedido, pid) if (escolher_musica and str(pedido.get("musica") or "").strip()) else None)
+    if som:
+        wav = os.path.join(pasta, f"{pid}-som.wav")
+        audio_original(video, pedacos_v, corpo, dur, wav)
+        entradas += ["-i", wav]
+        filt.append(f"[{n + 1}:a]anull[a]")
+        log("som original do vídeo")
+    elif musica:
         entradas += ["-stream_loop", "-1", "-i", musica]
         filt.append(f"[{n + 1}:a]aresample=48000,aformat=channel_layouts=stereo,loudnorm=I=-16:TP=-2:LRA=11,"
                     f"atrim=0:{dur},asetpts=N/SR/TB,afade=t=in:d=0.4,afade=t=out:st={max(0, dur - 1.5):.2f}:d=1.5[a]")
@@ -221,5 +252,6 @@ def montar(pedido, pasta, pid, video, grupos, juntar_pedacos, duracao, log, esco
                     "-map", "[v]", "-map", "[a]", "-t", f"{dur}", "-c:v", "libx264", "-preset", "medium", "-crf", "20",
                     "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "128k", "-movflags", "+faststart", reel], check=True)
     for _, _, p in pngs: os.remove(p)
+    if som: os.remove(wav)
     os.remove(final); os.remove(fundo)
     return reel, dur

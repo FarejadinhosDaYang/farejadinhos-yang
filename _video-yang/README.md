@@ -137,6 +137,7 @@ BALÃO: Olha isso!
 FOTO DA CAPA: 1.5
 MÚSICA: nenhuma                                  (opcional)
 FUNDO ESCURO: sim                                (opcional, gravação de tela)
+SOM ORIGINAL: sim                                (opcional, só sem narradora: mantém o som do vídeo — ASMR)
 TEXTO:
 [0-2.5] Frase da cena…
 [2.5-5] Outra frase…
