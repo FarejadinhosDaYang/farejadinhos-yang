@@ -17,12 +17,21 @@ jobs:
   disparar:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Mandar cada lote novo pro Gerar lote
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
+          ANTES: ${{ github.event.before }}
         run: |
-          jq -r '[.commits[].added[]] | unique | .[] | select(test("^entrada/claude/.*\\.json$"))' "$GITHUB_EVENT_PATH" > novos.txt
+          # arquivos de lote que entraram neste push (o "added" do evento nem sempre vem preenchido)
+          if git cat-file -e "$ANTES" 2>/dev/null; then
+            git diff --name-only --diff-filter=A "$ANTES" "$GITHUB_SHA" -- 'entrada/claude/*.json' > novos.txt
+          else
+            git show --name-only --diff-filter=A --format= "$GITHUB_SHA" -- 'entrada/claude/*.json' > novos.txt
+          fi
           cat novos.txt
           while read -r arq; do
             [ -n "$arq" ] || continue
