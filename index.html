@@ -602,6 +602,10 @@ h1,h2,h3,.brand{
 
 .oferta-card .pegar-oferta{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 
+/* "Mostrando resultados para chaleira" (busca com erro de digitação) */
+.busca-corrigida{ margin:0 0 12px; padding:9px 13px; background:#FFF4E6; border:1.5px solid #FFE0B8; border-radius:12px; font:500 14px 'Work Sans',Arial,sans-serif; color:#6A4A00; }
+.busca-corrigida b{ color:var(--red-dark,#C21A24); }
+
 /* oferta que veio na notificação: destacada no topo */
 .oferta-card.do-aviso{ position:relative; box-shadow:0 0 0 2.5px var(--orange,#F7941D), 0 10px 26px rgba(247,148,29,.22); }
 .oferta-card.do-aviso::before{ content:"🔔 farejada pra você"; position:absolute; z-index:4; top:6px; left:50%; transform:translateX(-50%);
@@ -1152,6 +1156,7 @@ footer a{ color:var(--red-dark); font-weight:600; text-decoration:none; }
 
 <div class="categorias-row" id="categoriasRow"></div>
 
+<div class="busca-corrigida" id="buscaCorrigida" hidden></div>
 <div class="grid" id="grid"></div>
 <div class="vazio" id="vazio" style="display:none">A Yang tá farejando a próxima oferta 🐾 — volta já já!</div>
 <!-- busca com poucos resultados: "Pede pra Yang farejar" na Shopee -->
@@ -1170,6 +1175,7 @@ Preços, cupons e estoque foram conferidos na publicação e podem mudar na loja
 <script src="assets/nav.js"></script>
 <script src="assets/categorias-config.js"></script>
 <script src="assets/vitrine.js"></script>
+<script src="assets/busca-tolerante.js"></script>
 <script src="assets/cupons-vitrine.js" data-base=""></script>
 <script src="assets/pedir.js" data-base=""></script>
 <script>
@@ -1638,16 +1644,26 @@ function montarCategorias(){
     });
 }
 
+let buscador = null, buscadorDe = null;
 function aplicarFiltros(){
 
     const termo = document.getElementById("busca").value.toLowerCase();
-    // busca sem ligar pra acento ("eletrica" acha "Elétrica")
+    // busca que perdoa erro de digitação/português ("lacheira" acha chaleira) e acento
+    if(window.FarejadinhosBusca && (!buscador || buscadorDe !== ofertas)){ buscador = FarejadinhosBusca.criar(ofertas); buscadorDe = ofertas; }
     const semAc = s => String(s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     const termoN = semAc(termo).trim();
+    const achado = termoN && buscador ? buscador.buscar(termoN) : null;
+    const aviso = document.getElementById("buscaCorrigida");
+    if(aviso){
+        if(achado && !achado.exato && achado.corrigido){
+            aviso.innerHTML = "🐶 Mostrando resultados para <b>" + escapeHtml(achado.corrigido) + "</b>";
+            aviso.hidden = false;
+        } else aviso.hidden = true;
+    }
 
     const filtradas = ofertas.filter(o => {
 
-        const bateBusca = !termoN || semAc(o.produto).includes(termoN);
+        const bateBusca = !termoN || (achado ? achado.bate(o) : semAc(o.produto).includes(termoN));
 
         let bateFiltro = true;
 
@@ -1672,6 +1688,8 @@ function aplicarFiltros(){
     document.getElementById("tituloGrid").textContent = titulo;
 
     let lista = ordenar(filtradas, document.getElementById("ordem").value);
+    // busca corrigida: os mais parecidos com o que a pessoa digitou primeiro
+    if(achado && !achado.exato) lista = lista.map((o, i) => [o, achado.distancia(o), i]).sort((a, b) => a[1] - b[1] || a[2] - b[2]).map(x => x[0]);
     // Dentro de uma categoria: semelhantes juntos (por subcategoria e nome).
     // Só na ordem padrão ("mais recentes"); se a pessoa escolheu outra ordem, respeita.
     if(filtroAtivo.tipo === "categoria" && document.getElementById("ordem").value === "recentes"){
