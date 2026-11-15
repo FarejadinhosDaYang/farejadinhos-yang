@@ -235,7 +235,7 @@ function silencio(){
 }
 
 // ---- enviar ----
-let esperando = "";
+const esperando = new Map();   // id → nome do produto (vários reels montando ao mesmo tempo)
 $("form").addEventListener("submit", e => {
   e.preventDefault();
   const sem = $("semNarr").checked && !$("pronto").checked;
@@ -263,12 +263,13 @@ $("form").addEventListener("submit", e => {
     let r = {}; try{ r = JSON.parse(xhr.responseText); }catch(e){}
     if (xhr.status === 200 && r.ok){
       try{ localStorage.setItem("farejadinhos_admin_senha", senha); }catch(e){}
-      esperando = r.id; btn.textContent = "⏳ Montando…";
+      esperando.set(r.id, produto || "Reel");
+      limparPraProximo();
+      btn.disabled = false; btn.textContent = ($("pronto").checked ? "📎 Anexar vídeo à oferta" : "🎬 Montar reel"); barra.style.display = "none";
       st.className = "status espera";
-      st.textContent = pronto
-        ? "✅ Vídeo recebido! Em uns 3 minutos ele entra na página do produto. Pode mandar o próximo quando terminar."
-        : "✅ Arquivos recebidos! A Yang está montando o reel (uns 5 a 8 minutos). Pode deixar esta página aberta — ela avisa quando ficar pronto.";
-      acompanhar(Date.now());
+      st.textContent = "✅ " + (produto || "Reel") + " recebido! " + (pronto ? "Entra na página do produto em uns 3 minutos." : "Montando (uns 5 a 8 minutos).") +
+        " Já pode mandar o próximo — " + esperando.size + " na fila. Esta página avisa quando cada um ficar pronto.";
+      if (!acompanhar.rodando) acompanhar(Date.now());
     } else {
       st.className = "status erro"; st.textContent = "❌ " + (r.erro || ("erro " + xhr.status));
       btn.disabled = false; btn.textContent = ($("pronto").checked ? "📎 Anexar vídeo à oferta" : "🎬 Montar reel"); barra.style.display = "none";
@@ -278,19 +279,32 @@ $("form").addEventListener("submit", e => {
   xhr.send(dados);
 });
 
+function limparPraProximo(){
+  ["roteiro", "texto", "titulo", "balao", "capa_t", "de", "ate", "palavras", "busca"].forEach(id => { if ($(id)) $(id).value = ""; });
+  ["video", "voz"].forEach(id => { $(id).value = ""; });
+  $("produto").value = ""; $("semNarr").checked = false; $("legenda_fundo").checked = false;
+  $("roteiroOk").textContent = "Cole o bloco do próximo vídeo.";
+  modoPronto();
+}
+
 function acompanhar(inicio){
+  acompanhar.rodando = true;
   setTimeout(async () => {
     const lista = await carregar();
-    const item = lista.find(x => x.id === esperando);
-    const st = $("status"), btn = $("btn");
-    if (item){
-      st.className = "status " + (item.status === "pronto" ? "ok" : "erro");
-      st.textContent = item.status === "pronto" ? "✅ Reel pronto! Está logo aí embaixo." : "❌ Deu erro ao montar — veja o detalhe na lista aí embaixo.";
-      btn.disabled = false; btn.textContent = ($("pronto").checked ? "📎 Anexar vídeo à oferta" : "🎬 Montar reel"); $("barra").style.display = "none"; esperando = "";
-    } else if (Date.now() - inicio > 25 * 60e3){
-      st.className = "status erro"; st.textContent = "Demorou mais que o normal. Confira em GitHub → Actions → Gerar reel.";
-      btn.disabled = false; btn.textContent = ($("pronto").checked ? "📎 Anexar vídeo à oferta" : "🎬 Montar reel");
-    } else acompanhar(inicio);
+    const st = $("status"), avisos = [];
+    for (const [id, nome] of [...esperando]){
+      const item = lista.find(x => x.id === id);
+      if (item){ avisos.push((item.status === "pronto" ? "✅ " : "❌ ") + nome + (item.status === "pronto" ? " ficou pronto" : " deu erro (veja na lista)")); esperando.delete(id); }
+    }
+    if (avisos.length){
+      st.className = "status " + (avisos.some(a => a.startsWith("❌")) ? "erro" : "ok");
+      st.textContent = avisos.join(" · ") + (esperando.size ? " — ainda montando: " + esperando.size : " — todos prontos! Estão aí embaixo.");
+    }
+    if (esperando.size && Date.now() - inicio < 30 * 60e3) acompanhar(inicio);
+    else {
+      acompanhar.rodando = false;
+      if (esperando.size){ st.className = "status erro"; st.textContent = "Alguns demoraram mais que o normal. Confira em GitHub → Actions → Gerar reel."; esperando.clear(); }
+    }
   }, 30000);
 }
 

@@ -75,7 +75,7 @@ jobs:
       - name: Registrar na lista, video na pagina da oferta
         if: always()
         run: |
-          python3 - <<'PY'
+          cat > /tmp/registrar.py <<'PY'
           import json, os, subprocess, datetime
           pid = os.environ["ID"]
           try: pedido = json.load(open(f"entrada-reel/{pid}-pedido.json", encoding="utf-8"))
@@ -114,12 +114,15 @@ jobs:
           PY
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add reels/lista.json ofertas.json
-          git add videos/ 2>/dev/null || true
-          git commit -m "Reel montado pelo painel: ${ID}" || exit 0
-          for i in 1 2 3 4; do
-            git pull --rebase && git push && break
-            sleep $((5 * i))
+          # vários reels podem terminar juntos: a cada tentativa parte do main mais novo e refaz o registro
+          for i in 1 2 3 4 5 6; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            python3 /tmp/registrar.py
+            git add reels/lista.json ofertas.json
+            git add videos/ 2>/dev/null || true
+            git commit -q -m "Reel montado pelo painel: ${ID}" || exit 0
+            git push && break
+            sleep $((RANDOM % 10 + 5 * i))
           done
 
       - name: Apagar os arquivos recebidos (não pesar a release)
