@@ -16,12 +16,12 @@
     "referencia": "R$ 500,25"
   },
   {
-    "slug": "apple-ipad-11-a3354-wi-fi-128gb-e-6gb-de-ram-color",
-    "produto": "Apple iPad 11ª geração (A16)",
-    "link": "https://meli.la/1WGpzU1",
-    "atual": "R$ 3.106,00",
-    "lido": "313,82",
-    "referencia": "R$ 3.229,00"
+    "slug": "amazon-echo-dot-5-geracao-com-alexa-e-som",
+    "produto": "Amazon Echo Dot 5ª Geração Com Alexa E Som",
+    "link": "https://meli.la/259Gn4p",
+    "atual": "R$ 495,95",
+    "lido": "43,03",
+    "referencia": "R$ 445,55"
   },
   {
     "slug": "apple-ipad-wifi-9th-geracao-cinza-espacial-a2602",
@@ -68,7 +68,7 @@
     "produto": "Ar Condicionado Inverter Midea Ecomaster 12000Btu",
     "link": "https://meli.la/14RttwU",
     "atual": "R$ 2.499,00",
-    "lido": "288,90",
+    "lido": "284,90",
     "referencia": "R$ 2.217,00"
   },
   {
@@ -108,7 +108,7 @@
     "produto": "Samsung Galaxy A37 5G",
     "link": "https://meli.la/2yTLtgG",
     "atual": "R$ 1.599,00",
-    "lido": "150,23",
+    "lido": "156,30",
     "referencia": "R$ 1.619,00"
   },
   {
@@ -140,16 +140,8 @@
     "produto": "Samsung Galaxy S25 Ultra 5G",
     "link": "https://meli.la/2LUJ4yy",
     "atual": "R$ 4.700,00",
-    "lido": "543,42",
+    "lido": "509,32",
     "referencia": "R$ 5.798,00"
-  },
-  {
-    "slug": "chaleira-eletrica-jarra-agua-quente-e-fria-bule",
-    "produto": "Chaleira Elétrica Jarra Água Quente e Fria Bule",
-    "link": "https://s.shopee.com.br/6VOy7oSZl4",
-    "atual": "R$ 39,90",
-    "lido": "R$ 39,99",
-    "referencia": "preco posto a mao em 09/11 09:08"
   },
   {
     "slug": "cortador-fatiador-de-ovos-cozido-em-aco-inoxidavel",
@@ -176,20 +168,20 @@
     "referencia": "R$ 15,99"
   },
   {
+    "slug": "fritadeira-air-fryer-11-litros-8-funcoes-1800w",
+    "produto": "Fritadeira Air Fryer 11 Litros 8 Funções 1800w",
+    "link": "https://meli.la/22AXZHX",
+    "atual": "R$ 350,10",
+    "lido": "41,48",
+    "referencia": "R$ 350,10"
+  },
+  {
     "slug": "garrafa-forma-de-gelo-2-em-1-portatil-silicone",
     "produto": "Garrafa Forma De Gelo 2 Em 1 Portátil Silicone",
     "link": "https://meli.la/2J1vgiU",
     "atual": "R$ 23,10",
     "lido": "68,00",
     "referencia": "R$ 23,10"
-  },
-  {
-    "slug": "grand-theft-auto-vi-playstation-5",
-    "produto": "Grand Theft Auto VI - PlayStation 5",
-    "link": "https://meli.la/2wzufWH",
-    "atual": "R$ 404,10",
-    "lido": "54,88",
-    "referencia": "R$ 414,00"
   },
   {
     "slug": "iphone-16e-128-gb-preto-distribuidor-autorizado",
@@ -286,5 +278,13 @@
     "atual": "R$ 6.578,00",
     "lido": "751,12",
     "referencia": "R$ 6.749,00"
+  },
+  {
+    "slug": "suporte-organizador-de-ovos-dispenser",
+    "produto": "Suporte Organizador De Ovos Dispenser",
+    "link": "https://s.shopee.com.br/1BNbcmEt04",
+    "atual": "R$ 10,99",
+    "lido": "R$ 4,99",
+    "referencia": "R$ 10,99"
   }
 ]
