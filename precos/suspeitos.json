@@ -20,7 +20,7 @@
     "produto": "Amazon Echo Dot 5ª Geração Com Alexa E Som",
     "link": "https://meli.la/259Gn4p",
     "atual": "R$ 485,90",
-    "lido": "48,25",
+    "lido": "45,93",
     "referencia": "R$ 445,55"
   },
   {
@@ -140,7 +140,7 @@
     "produto": "Samsung Galaxy S25 FE 5G",
     "link": "https://meli.la/1RxB7bM",
     "atual": "R$ 2.699,00",
-    "lido": "289,90",
+    "lido": "333,20",
     "referencia": "R$ 2.948,00"
   },
   {
@@ -148,7 +148,7 @@
     "produto": "Samsung Galaxy S25 Ultra 5G",
     "link": "https://meli.la/2LUJ4yy",
     "atual": "R$ 4.700,00",
-    "lido": "644,30",
+    "lido": "539,99",
     "referencia": "R$ 5.798,00"
   },
   {
@@ -176,28 +176,12 @@
     "referencia": "R$ 15,99"
   },
   {
-    "slug": "fritadeira-air-fryer-oven-11-litros-1800w-8-funcoes",
-    "produto": "Fritadeira Air Fryer Oven 11 Litros 1800w 8 Funções",
-    "link": "https://meli.la/1mWCQnU",
-    "atual": "R$ 382,14",
-    "lido": "55,57",
-    "referencia": "R$ 382,14"
-  },
-  {
     "slug": "garrafa-forma-de-gelo-2-em-1-portatil-silicone",
     "produto": "Garrafa Forma De Gelo 2 Em 1 Portátil Silicone",
     "link": "https://meli.la/2J1vgiU",
     "atual": "R$ 23,10",
     "lido": "68,00",
     "referencia": "R$ 23,10"
-  },
-  {
-    "slug": "grand-theft-auto-vi-playstation-5",
-    "produto": "Grand Theft Auto VI - PlayStation 5",
-    "link": "https://meli.la/2wzufWH",
-    "atual": "R$ 418,41",
-    "lido": "54,38",
-    "referencia": "R$ 414,00"
   },
   {
     "slug": "iphone-16e-128-gb-preto-distribuidor-autorizado",
@@ -236,7 +220,7 @@
     "produto": "Apple iPhone 17e",
     "link": "https://meli.la/2JcC7BW",
     "atual": "R$ 4.299,00",
-    "lido": "476,40",
+    "lido": "476,39",
     "referencia": "R$ 4.499,00"
   },
   {
@@ -272,14 +256,6 @@
     "referencia": "R$ 15,00"
   },
   {
-    "slug": "kit-potes-640ml-marmita-vidro-yab-hermetico-tampa",
-    "produto": "Kit Potes 640ml Marmita Vidro Yab Hermético Tampa",
-    "link": "https://s.shopee.com.br/9APrKddATS",
-    "atual": "R$ 39,99",
-    "lido": "R$ 119,99",
-    "referencia": "R$ 39,99"
-  },
-  {
     "slug": "samsung-galaxy-s25-5g-256gb-12gb-camera-tripla",
     "produto": "Samsung Galaxy S25 5G",
     "link": "https://meli.la/25scAq6",
@@ -294,5 +270,13 @@
     "atual": "R$ 6.578,00",
     "lido": "634,27",
     "referencia": "R$ 6.749,00"
+  },
+  {
+    "slug": "suporte-organizador-de-ovos-dispenser",
+    "produto": "Suporte Organizador De Ovos Dispenser",
+    "link": "https://s.shopee.com.br/1BNbcmEt04",
+    "atual": "R$ 10,99",
+    "lido": "R$ 4,99",
+    "referencia": "R$ 10,99"
   }
 ]
