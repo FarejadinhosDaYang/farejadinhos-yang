@@ -38,7 +38,7 @@
   },
   {
     "produto": "Fita Teste Piscina Cloro, Ph, Alcalinidade",
-    "preco": "R$ 28,09",
+    "preco": "R$ 29,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Piscina",
@@ -60,11 +60,11 @@
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/6e2cf82b-eb7c-47f2-8534-5ce3c40d140f.webp",
-        "pendente": "R$ 28,09",
-        "pendenteEm": "2026-11-20T03:18:29Z"
+        "pendente": "R$ 29,00",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       }
     ],
-    "precoConferido": "2026-11-20T03:18:28Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Clorador Flutuante Para Piscina Suporte",
@@ -547,7 +547,7 @@
         "link": "https://s.shopee.com.br/qkLudmGnb",
         "loja": "Shopee",
         "preco": "R$ 17,59",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/891a7f11-1226-4ad6-97bb-587e284160ee.jpg"
@@ -641,7 +641,7 @@
         "link": "https://meli.la/1kNRYGJ",
         "loja": "Mercado Livre",
         "preco": "R$ 4.115,00",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/ef69e910-f44f-4146-aea1-bd3432707f27.jpg",
@@ -653,15 +653,13 @@
         "link": "https://meli.la/2ALJ41f",
         "loja": "Mercado Livre",
         "preco": "R$ 3.898,00",
-        "conferido": "2026-11-19T13:08:53Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/23380efc-aaaa-456c-b9b8-96bc1327ed70.jpg",
         "variacao": "Prata",
         "cor": "#D9DCE1",
-        "tamanho": "256GB",
-        "pendente": "R$ 3.744,00",
-        "pendenteEm": "2026-11-20T11:39:33Z"
+        "tamanho": "256GB"
       },
       {
         "link": "https://link.amazon/B0ggIgIKA",
@@ -709,14 +707,16 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/9d5ab7e9-2633-4888-9ca1-efa70aee77d5.jpg",
         "variacao": "Verde-claro",
         "cor": "#BFD8C2",
-        "tamanho": "256GB"
+        "tamanho": "256GB",
+        "pendente": "R$ 4.332,22",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       }
     ],
     "precoConferido": "2026-11-20T11:39:32Z"
   },
   {
     "produto": "Samsung Galaxy S26 5G",
-    "preco": "R$ 5.149,00",
+    "preco": "R$ 4.999,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -726,7 +726,7 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera/",
     "slug": "celular-samsung-galaxy-s26-5g-256gb-12gb-ram-cmera",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "R$ 5.149,00",
+    "precoAVista": "R$ 4.999,90",
     "precoAPrazo": "5066,16",
     "liberacao": "2026-10-19T11:56:00Z",
     "parcelas": 12,
@@ -742,8 +742,8 @@
         "variacao": "Preto",
         "cor": "#2B2B2B",
         "tamanho": "256GB",
-        "pendente": "R$ 4.799,90",
-        "pendenteEm": "2026-11-20T11:39:33Z"
+        "pendente": "R$ 5.088,00",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       },
       {
         "link": "https://meli.la/1WPbdmM",
@@ -761,7 +761,7 @@
         "link": "https://meli.la/2KzgjBD",
         "loja": "Mercado Livre",
         "preco": "R$ 5.332,00",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/27fcc4fd-f442-474a-924f-66013bd70f82.jpg",
@@ -773,7 +773,7 @@
         "link": "https://meli.la/1jGAfoA",
         "loja": "Mercado Livre",
         "preco": "R$ 5.332,00",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/3f7cb797-7782-4ba1-afd5-63199ac1880e.jpg",
@@ -791,7 +791,9 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/b3296023-b631-4228-a910-b037345c24a4.jpg",
         "variacao": "Dourado",
         "cor": "#D8B66A",
-        "tamanho": "256GB"
+        "tamanho": "256GB",
+        "pendente": "R$ 2.998,00",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       },
       {
         "link": "https://meli.la/17MjX5v",
@@ -803,13 +805,15 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/da27405b-f838-40cf-99fc-a16de7e1d456.jpg",
         "variacao": "Prata",
         "cor": "#D9DCE1",
-        "tamanho": "256GB"
+        "tamanho": "256GB",
+        "pendente": "R$ 3.232,00",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       },
       {
         "link": "https://meli.la/2HXsRws",
         "loja": "Mercado Livre",
         "preco": "R$ 5.798,00",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/1540006c-d134-49c8-95ce-135f4869c618.jpg",
@@ -821,7 +825,7 @@
     "variacao": "Violeta",
     "cor": "#8B7BB8",
     "tamanho": "256GB",
-    "precoConferido": "2026-11-20T11:39:32Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Samsung Galaxy S26 FE 5G",
@@ -859,7 +863,7 @@
         "link": "https://meli.la/2K6mtkY",
         "loja": "Mercado Livre",
         "preco": "R$ 3.563,00",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/13f0b90a-d946-4ef2-8b34-2df37ff55382.jpg",
@@ -907,7 +911,7 @@
         "link": "https://link.amazon/B01aESrhc",
         "loja": "Amazon",
         "preco": "R$ 3.999,00",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "2026-11-08T22:00:26Z",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/9361e4d6-9898-4dae-817b-1efcbaed41ee.jpg",
@@ -943,7 +947,7 @@
         "link": "https://link.amazon/B0gjV7qSG",
         "loja": "Amazon",
         "preco": "R$ 11.998,89",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "2026-11-08T22:00:26Z",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/f239387f-12a3-41b3-82df-8cce8f557681.jpg",
@@ -955,7 +959,7 @@
         "link": "https://link.amazon/B005XNMIm",
         "loja": "Amazon",
         "preco": "R$ 11.998,89",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/4857ab60-a3fb-40ab-8a3b-c6e606427805.jpg",
@@ -979,7 +983,7 @@
         "link": "https://link.amazon/B00i1rCGe",
         "loja": "Amazon",
         "preco": "R$ 11.998,89",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "2026-11-08T22:00:26Z",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/4bbc2d8d-391f-49b3-9819-d33021502780.jpg",
@@ -1016,7 +1020,7 @@
         "link": "https://meli.la/2aqeq61",
         "loja": "Mercado Livre",
         "preco": "R$ 13.049,00",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "2026-11-08T22:00:26Z",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/6b544441-1378-49e7-a3c5-c9e29425e5c5.jpg",
@@ -1035,8 +1039,8 @@
         "variacao": "Prateado",
         "cor": "#D9DCE1",
         "tamanho": "512GB",
-        "pendente": "R$ 10.799,00",
-        "pendenteEm": "2026-11-20T11:39:33Z"
+        "pendente": "R$ 13.049,00",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       },
       {
         "link": "https://meli.la/1ohUHDP",
@@ -1054,7 +1058,7 @@
         "link": "https://meli.la/2EUJcVr",
         "loja": "Mercado Livre",
         "preco": "R$ 13.049,00",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "2026-11-08T22:00:26Z",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/0ccb1f83-94e3-449f-997a-9563e40c0cd0.jpg",
@@ -1133,7 +1137,7 @@
   },
   {
     "produto": "Aspirador Manual Piscina Herbinject Azul",
-    "preco": "R$ 34,04",
+    "preco": "R$ 59,06",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Piscina",
@@ -1143,12 +1147,12 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/aspirador-manual-piscina-herbinject-azul/",
     "slug": "aspirador-manual-piscina-herbinject-azul",
     "data": "2026-10-15T22:42:11Z",
-    "precoAVista": "R$ 34,04",
+    "precoAVista": "R$ 59,06",
     "precoAPrazo": "213,78",
     "liberacao": "2026-10-19T15:40:00Z",
     "precoManual": "2026-10-19T11:40:05Z",
     "parcelas": 6,
-    "precoConferido": "2026-11-20T03:18:28Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Organizador de Geladeira para Temperos 2,3L",
@@ -1216,7 +1220,7 @@
         "link": "https://s.shopee.com.br/W7VW1nXUc",
         "loja": "Shopee",
         "preco": "R$ 13,96",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/5909e84a-a0aa-4101-86e6-527945314011.jpg"
@@ -1255,7 +1259,7 @@
   },
   {
     "produto": "Samsung Galaxy S25 Ultra 5G",
-    "preco": "R$ 5.635,00",
+    "preco": "R$ 5.798,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -1265,7 +1269,7 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s25-ultra-5g-256gb/",
     "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
     "data": "2026-10-18T15:10:05Z",
-    "precoAVista": "R$ 5.635,00",
+    "precoAVista": "R$ 5.798,00",
     "precoAPrazo": "6443,00",
     "liberacao": "2026-10-18T20:00:30Z",
     "precoManual": "2026-10-22T20:24:30Z",
@@ -1284,21 +1288,21 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/de513558-84b1-4223-b4eb-36e1289eba0b.jpg",
         "variacao": "Titânio Prata",
         "cor": "#CFD2D6",
-        "tamanho": "256GB"
+        "tamanho": "256GB",
+        "pendente": "R$ 5.309,00",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       },
       {
         "link": "https://meli.la/2USMMF2",
         "loja": "Mercado Livre",
         "preco": "R$ 5.798,00",
-        "conferido": "2026-11-19T13:08:53Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/7766908e-7337-4702-9a89-62c975f5dc97.jpg",
         "variacao": "Titânio Preto",
         "cor": "#3A3A3C",
-        "tamanho": "256GB",
-        "pendente": "R$ 5.635,00",
-        "pendenteEm": "2026-11-20T11:39:33Z"
+        "tamanho": "256GB"
       },
       {
         "link": "https://link.amazon/B0f2dJClJ",
@@ -1346,7 +1350,9 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/a383c632-ec96-4995-9fad-0122ae3821df.jpg",
         "variacao": "Titânio Prata",
         "cor": "#CFD2D6",
-        "tamanho": "256GB"
+        "tamanho": "256GB",
+        "pendente": "R$ 5.899,00",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       },
       {
         "link": "https://meli.la/1PUifZf",
@@ -1358,7 +1364,9 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/e65ef6d7-8c26-41fb-9d0c-d14bae208910.jpg",
         "variacao": "Titânio Cinza",
         "cor": "#8A8D91",
-        "tamanho": "512GB"
+        "tamanho": "512GB",
+        "pendente": "R$ 4.935,00",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       },
       {
         "link": "https://meli.la/1dpmDky",
@@ -1385,14 +1393,14 @@
         "variacao": "Titânio Prata",
         "cor": "#CFD2D6",
         "tamanho": "512GB",
-        "pendente": "R$ 4.115,00",
-        "pendenteEm": "2026-11-18T21:34:57Z"
+        "pendente": "R$ 4.935,00",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       },
       {
         "link": "https://meli.la/2zz9UHL",
         "loja": "Mercado Livre",
         "preco": "R$ 5.382,00",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/a1b2a935-7ecb-4796-9e7a-4f9eaed4d832.jpg",
@@ -1401,11 +1409,11 @@
         "tamanho": "512GB"
       }
     ],
-    "precoConferido": "2026-11-20T11:39:32Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Samsung Galaxy A57 5G",
-    "preco": "R$ 1.899,00",
+    "preco": "R$ 2.279,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -1415,7 +1423,7 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-a57-256gb-cinza-2/",
     "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
     "data": "2026-10-23T00:12:14Z",
-    "precoAVista": "R$ 1.899,00",
+    "precoAVista": "R$ 2.279,00",
     "precoAPrazo": "2399,00",
     "liberacao": "2026-10-24T13:48:00Z",
     "parcelas": 10,
@@ -1431,8 +1439,8 @@
         "variacao": "Cinza",
         "cor": "#9AA0A6",
         "tamanho": "256GB",
-        "pendente": "R$ 1.791,00",
-        "pendenteEm": "2026-11-20T11:39:33Z"
+        "pendente": "R$ 1.899,00",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       },
       {
         "link": "https://meli.la/1Tzf8zK",
@@ -1449,36 +1457,32 @@
       {
         "link": "https://meli.la/1AzGze7",
         "loja": "Mercado Livre",
-        "preco": "R$ 2.397,00",
-        "conferido": "2026-11-08T21:54:10Z",
-        "manual": "2026-11-08T22:00:26Z",
+        "preco": "R$ 2.279,00",
+        "conferido": "2026-11-20T20:19:44Z",
+        "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/aa497acc-8146-427f-857b-bdb99f944b03.jpg",
         "variacao": "Cinza",
         "cor": "#9AA0A6",
-        "tamanho": "256GB",
-        "pendente": "R$ 2.279,00",
-        "pendenteEm": "2026-11-20T11:39:33Z"
+        "tamanho": "256GB"
       },
       {
         "link": "https://meli.la/1WhcE1a",
         "loja": "Mercado Livre",
         "preco": "R$ 2.399,00",
-        "conferido": "2026-11-08T21:54:10Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "2026-11-08T22:00:26Z",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/9dad4001-40d8-4597-abf0-d3f8532c17ef.jpg",
         "variacao": "Lilás",
         "cor": "#B9A6D9",
-        "tamanho": "256GB",
-        "pendente": "R$ 2.398,00",
-        "pendenteEm": "2026-11-20T11:39:33Z"
+        "tamanho": "256GB"
       },
       {
         "link": "https://link.amazon/B0gyjVkQF",
         "loja": "Amazon",
         "preco": "R$ 2.665,44",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/f7388c05-5ada-41b8-88ea-bf7909eade0c.jpg",
@@ -1514,7 +1518,7 @@
         "link": "https://link.amazon/B016qFRCn",
         "loja": "Amazon",
         "preco": "R$ 2.665,56",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "2026-11-08T22:00:26Z",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/10ffc489-d770-4243-9725-0f0d55d363e0.jpg",
@@ -1533,36 +1537,32 @@
         "variacao": "Azul-claro",
         "cor": "#BFD8EC",
         "tamanho": "128GB",
-        "pendente": "R$ 1.791,00",
-        "pendenteEm": "2026-11-20T11:39:33Z"
+        "pendente": "R$ 1.799,00",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       },
       {
         "link": "https://link.amazon/B01rKoMmq",
         "loja": "Amazon",
-        "preco": "R$ 2.110,00",
-        "conferido": "2026-11-20T03:18:29Z",
+        "preco": "R$ 2.029,04",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/7bc69ed4-dc64-4010-808c-8bfdf9f1447c.jpg",
         "variacao": "Cinza",
         "cor": "#9AA0A6",
-        "tamanho": "128GB",
-        "pendente": "R$ 2.029,04",
-        "pendenteEm": "2026-11-20T11:39:33Z"
+        "tamanho": "128GB"
       },
       {
         "link": "https://link.amazon/B02CSyq28",
         "loja": "Amazon",
-        "preco": "R$ 1.997,00",
-        "conferido": "2026-11-20T03:18:29Z",
+        "preco": "R$ 1.991,10",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/82ac67ab-3267-4070-919b-abdd6a6a6ea9.jpg",
         "variacao": "Azul-claro",
         "cor": "#BFD8EC",
-        "tamanho": "128GB",
-        "pendente": "R$ 1.991,10",
-        "pendenteEm": "2026-11-20T11:39:33Z"
+        "tamanho": "128GB"
       },
       {
         "link": "https://link.amazon/B04pJlKfA",
@@ -1574,13 +1574,15 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/6aa17578-1757-4e7a-bdf4-01483b515bea.jpg",
         "variacao": "Azul-escuro",
         "cor": "#2C3E66",
-        "tamanho": "128GB"
+        "tamanho": "128GB",
+        "pendente": "R$ 1.989,90",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       },
       {
         "link": "https://link.amazon/B09NMtUSS",
         "loja": "Amazon",
         "preco": "R$ 2.110,00",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/df8eff88-5e32-4070-a56c-6793c9472808.jpg",
@@ -1592,11 +1594,11 @@
     "variacao": "Cinza",
     "cor": "#9AA0A6",
     "tamanho": "256GB",
-    "precoConferido": "2026-11-20T11:39:32Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Samsung Galaxy A37 5G",
-    "preco": "R$ 1.599,00",
+    "preco": "R$ 1.603,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -1606,7 +1608,7 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-a37-5g-128gb-4/",
     "slug": "celular-samsung-galaxy-a37-5g-128gb-4",
     "data": "2026-10-23T00:12:15Z",
-    "precoAVista": "R$ 1.599,00",
+    "precoAVista": "R$ 1.603,00",
     "precoAPrazo": "1799,00",
     "liberacao": "2026-10-26T20:28:37Z",
     "parcelas": 10,
@@ -1615,7 +1617,7 @@
         "link": "https://meli.la/1rCMkSR",
         "loja": "Mercado Livre",
         "preco": "R$ 1.599,00",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "variacao": "Grafite",
@@ -1629,7 +1631,9 @@
         "manual": "",
         "confirmado": true,
         "variacao": "Branco",
-        "imagem": "https://farejadinhosdayang.com.br/assets/a3a1f2b6-85fa-49e6-9d49-5ae37b7f4561.jpg"
+        "imagem": "https://farejadinhosdayang.com.br/assets/a3a1f2b6-85fa-49e6-9d49-5ae37b7f4561.jpg",
+        "pendente": "R$ 1.529,00",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       },
       {
         "link": "https://meli.la/17xzqfE",
@@ -1639,13 +1643,15 @@
         "manual": "",
         "confirmado": true,
         "variacao": "Lilás",
-        "imagem": "https://farejadinhosdayang.com.br/assets/af7b1fc5-53d3-4249-8def-b97677e0ad0b.jpg"
+        "imagem": "https://farejadinhosdayang.com.br/assets/af7b1fc5-53d3-4249-8def-b97677e0ad0b.jpg",
+        "pendente": "R$ 1.529,00",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       },
       {
         "link": "https://link.amazon/B0cxsOo6f",
         "loja": "Amazon",
         "preco": "R$ 1.737,99",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/6f25fc69-de4b-4a08-86e8-88ba2e843f94.jpg",
@@ -1663,13 +1669,15 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/05aaac33-8909-44c6-bdd3-367c91c19e8e.jpg",
         "variacao": "Branco",
         "cor": "#F2F2F2",
-        "tamanho": "128GB"
+        "tamanho": "128GB",
+        "pendente": "R$ 1.679,25",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       },
       {
         "link": "https://link.amazon/B09Sq7d4e",
         "loja": "Amazon",
         "preco": "R$ 1.679,26",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/a48aa744-4570-43c0-9bc2-552808e0d85d.jpg",
@@ -1687,7 +1695,9 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/db3582a5-5cce-45c1-9fa5-52c31f31201a.jpg",
         "variacao": "Verde",
         "cor": "#8DB596",
-        "tamanho": "128GB"
+        "tamanho": "128GB",
+        "pendente": "R$ 1.746,00",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       },
       {
         "link": "https://meli.la/2cAgZxT",
@@ -1735,7 +1745,9 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/2458707c-ee85-4007-b29e-a1feb646085b.jpg",
         "variacao": "Branco",
         "cor": "#F2F2F2",
-        "tamanho": "256GB"
+        "tamanho": "256GB",
+        "pendente": "R$ 1.899,00",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       },
       {
         "link": "https://link.amazon/B0a2ZCUcC",
@@ -1765,7 +1777,7 @@
         "link": "https://link.amazon/B0dDnp4Kg",
         "loja": "Amazon",
         "preco": "R$ 2.210,00",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/c79ff9c0-683d-4923-bb78-8e2252d1620c.jpg",
@@ -1777,7 +1789,7 @@
         "link": "https://link.amazon/B02BDdRkq",
         "loja": "Amazon",
         "preco": "R$ 2.210,00",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/e5a91024-b1e4-42b0-a570-c42070f86b01.jpg",
@@ -1788,7 +1800,7 @@
     ],
     "variacao": "Azul-marinho",
     "tamanho": "128GB",
-    "precoConferido": "2026-11-20T11:39:32Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Moedor Multifuncional de Café 110V com Design",
@@ -2070,7 +2082,9 @@
         "preco": "R$ 522,40",
         "conferido": "2026-11-20T03:18:29Z",
         "manual": "",
-        "confirmado": true
+        "confirmado": true,
+        "pendente": "R$ 490,41",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       }
     ],
     "precoConferido": "2026-11-20T03:18:28Z"
@@ -2096,7 +2110,7 @@
   },
   {
     "produto": "Samsung Galaxy S26 Ultra 5G",
-    "preco": "R$ 5.635,00",
+    "preco": "R$ 7.199,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -2106,7 +2120,7 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/samsung-galaxy-s26-ultra-5g-dual-sim-preto-256gb/",
     "slug": "samsung-galaxy-s26-ultra-5g-dual-sim-preto-256gb",
     "data": "2026-10-23T00:12:14Z",
-    "precoAVista": "R$ 5.635,00",
+    "precoAVista": "R$ 7.199,00",
     "precoAPrazo": "7499,00",
     "liberacao": "2026-10-23T20:20:00Z",
     "precoManual": "2026-10-28T00:17:48Z",
@@ -2146,7 +2160,9 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/b581f450-a5e0-44ab-a336-68b41d55e52e.jpg",
         "variacao": "Violeta",
         "cor": "#8B7BB8",
-        "tamanho": "256GB"
+        "tamanho": "256GB",
+        "pendente": "R$ 5.798,00",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       },
       {
         "link": "https://meli.la/1vwFpuw",
@@ -2159,8 +2175,8 @@
         "variacao": "Dourado",
         "cor": "#D8B66A",
         "tamanho": "256GB",
-        "pendente": "R$ 5.050,00",
-        "pendenteEm": "2026-11-19T21:38:40Z"
+        "pendente": "R$ 5.309,00",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       },
       {
         "link": "https://meli.la/2R6f1fE",
@@ -2173,8 +2189,8 @@
         "variacao": "Prata",
         "cor": "#D9DCE1",
         "tamanho": "256GB",
-        "pendente": "R$ 5.050,00",
-        "pendenteEm": "2026-11-19T21:38:40Z"
+        "pendente": "R$ 5.309,00",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       },
       {
         "link": "https://meli.la/1yGd4Kv",
@@ -2211,18 +2227,18 @@
         "variacao": "Dourado",
         "cor": "#D8B66A",
         "tamanho": "1TB",
-        "pendente": "R$ 5.050,00",
-        "pendenteEm": "2026-11-19T21:38:40Z"
+        "pendente": "R$ 10.419,00",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       }
     ],
     "variacao": "Preto",
     "cor": "#2B2B2B",
     "tamanho": "256GB",
-    "precoConferido": "2026-11-20T11:39:32Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Samsung Galaxy S25 FE 5G",
-    "preco": "R$ 2.778,00",
+    "preco": "R$ 3.232,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -2232,7 +2248,7 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/celular-samsung-galaxy-s25-fe-5g-128gb-2/",
     "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-2",
     "data": "2026-10-23T00:12:13Z",
-    "precoAVista": "R$ 2.778,00",
+    "precoAVista": "R$ 3.232,00",
     "precoAPrazo": "3276,00",
     "liberacao": "2026-10-23T00:42:12Z",
     "precoManual": "2026-10-28T00:20:23Z",
@@ -2241,7 +2257,7 @@
         "link": "https://meli.la/1yVXM5E",
         "loja": "Mercado Livre",
         "preco": "R$ 2.998,00",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/72a70978-5436-4a4b-8b8c-b289c054d4bc.jpg",
@@ -2260,8 +2276,8 @@
         "variacao": "Azul-marinho",
         "cor": "#2F3E66",
         "tamanho": "128GB",
-        "pendente": "R$ 2.778,00",
-        "pendenteEm": "2026-11-20T11:39:33Z"
+        "pendente": "R$ 3.232,00",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       },
       {
         "link": "https://meli.la/2iaFhf3",
@@ -2286,8 +2302,8 @@
         "variacao": "Azul-marinho",
         "cor": "#2F3E66",
         "tamanho": "128GB",
-        "pendente": "R$ 2.925,09",
-        "pendenteEm": "2026-11-20T11:39:33Z"
+        "pendente": "R$ 3.332,00",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       },
       {
         "link": "https://link.amazon/B0hInp9wQ",
@@ -2300,8 +2316,8 @@
         "variacao": "Azul",
         "cor": "#3E6FB6",
         "tamanho": "128GB",
-        "pendente": "R$ 2.925,09",
-        "pendenteEm": "2026-11-20T11:39:33Z"
+        "pendente": "R$ 3.332,00",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       },
       {
         "link": "https://link.amazon/B0hTD3IKp",
@@ -2343,7 +2359,7 @@
         "link": "https://link.amazon/B03YuvRTr",
         "loja": "Amazon",
         "preco": "R$ 3.872,07",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/44356f1d-14de-4e79-b224-f1c3606b15ca.jpg",
@@ -2356,7 +2372,7 @@
     "variacao": "Azul-marinho",
     "cor": "#2F3E66",
     "tamanho": "128GB",
-    "precoConferido": "2026-11-20T11:39:32Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Protetor Solar Facial Hidrabene FPS 70 Toque Seco",
@@ -2629,7 +2645,7 @@
         "link": "https://s.shopee.com.br/qkY4sfvOs",
         "loja": "Shopee",
         "preco": "R$ 36,99",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/c34da242-9216-44f6-aa7e-c4a38ab49d19.jpg"
@@ -2849,7 +2865,7 @@
   },
   {
     "produto": "Copo Térmico Gigante 1,2l Inox Com Tampa Canudo",
-    "preco": "R$ 48,99",
+    "preco": "R$ 45,07",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -2862,7 +2878,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-30T13:05:42Z",
-    "precoConferido": "2026-11-13T15:31:26Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Aparelho Medidor de Pressão Arterial Aferidor",
@@ -2883,7 +2899,7 @@
   },
   {
     "produto": "Jogo 6 Taças Vinho Tinto Cristal Luxo Titanium",
-    "preco": "R$ 60,99",
+    "preco": "R$ 112,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -2896,7 +2912,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-30T14:18:35Z",
-    "precoConferido": "2026-11-20T11:39:32Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Cuscuzeiro Individual Mini Tetinha Alumínio Polido",
@@ -2918,7 +2934,7 @@
   },
   {
     "produto": "Torneira De Pia Gourmet Flexível De Parede Jato",
-    "preco": "R$ 23,95",
+    "preco": "R$ 32,97",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -2931,11 +2947,11 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-30T16:00:38Z",
-    "precoConferido": "2026-11-19T13:08:53Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Suporte Inox Pendurar Vassoura Pá Rodo Mop",
-    "preco": "R$ 30,90",
+    "preco": "R$ 29,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Casa",
@@ -2948,7 +2964,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-31T21:30:00Z",
-    "precoConferido": "2026-11-07T14:05:57Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Mini Mixer Elétrico Recarregável USB 3 Velocidades",
@@ -3003,7 +3019,7 @@
   },
   {
     "produto": "Faqueiro Tramontina Búzios cem Aço Inox",
-    "preco": "R$ 64,59",
+    "preco": "R$ 56,01",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -3016,7 +3032,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-31T18:00:00Z",
-    "precoConferido": "2026-11-20T11:39:32Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Marmita Elétrica Preta Bivolt Portátil Doméstica",
@@ -3126,7 +3142,7 @@
   },
   {
     "produto": "Suporte Magnético Forte Para Telefone Carro 360 °",
-    "preco": "R$ 13,99",
+    "preco": "R$ 15,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Acessórios de Celular",
@@ -3139,7 +3155,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-10-28T13:42:06Z",
-    "precoConferido": "2026-11-20T03:18:28Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Mini Mixer Portátil Misturador de Bebidas Batedor",
@@ -3475,7 +3491,7 @@
         "link": "https://s.shopee.com.br/9Kj9UzivWg",
         "loja": "Shopee",
         "preco": "R$ 48,60",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/b25e1400-d31f-428b-9a41-f1bc2d4a2bd0.jpg"
@@ -3484,7 +3500,7 @@
         "link": "https://s.shopee.com.br/1141ZgEeR7",
         "loja": "Shopee",
         "preco": "R$ 48,60",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/019aea3e-06a4-4b78-bcb6-cd1132c504cb.jpg"
@@ -3493,7 +3509,7 @@
         "link": "https://s.shopee.com.br/9V2ZhIiIBj",
         "loja": "Shopee",
         "preco": "R$ 48,60",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/723227bc-8cd7-4b2f-a059-e438617321ac.jpg"
@@ -3718,8 +3734,8 @@
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/d899a5b2-476c-4d3b-a393-486236660f92.jpg",
-        "pendente": "R$ 199,85",
-        "pendenteEm": "2026-11-20T11:39:33Z"
+        "pendente": "R$ 206,03",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       }
     ],
     "precoConferido": "2026-11-19T21:38:39Z"
@@ -3742,7 +3758,7 @@
   },
   {
     "produto": "Panela Elétrica de Arroz, Mondial, 700W - PE-42-10X -",
-    "preco": "R$ 206,09",
+    "preco": "R$ 174,79",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -3752,13 +3768,13 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/panela-eletrica-de-arroz-mondial-700w-pe-42-10x/",
     "slug": "panela-eletrica-de-arroz-mondial-700w-pe-42-10x",
     "data": "2026-11-01T13:03:51Z",
-    "precoAVista": "R$ 206,09",
+    "precoAVista": "R$ 174,79",
     "precoAPrazo": "442,00",
-    "precoConferido": "2026-11-18T21:34:56Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Panela de Arroz Elétrica Mondial Fast Rice 5",
-    "preco": "R$ 144,84",
+    "preco": "R$ 141,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -3771,7 +3787,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-01T13:04:51Z",
-    "precoConferido": "2026-11-12T23:50:06Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Panela de Arroz Elétrica 5 Xícaras 400W NPE-05-5X",
@@ -3826,8 +3842,8 @@
       {
         "link": "https://s.shopee.com.br/30pFoFjYwh",
         "loja": "Shopee",
-        "preco": "R$ 239,90",
-        "conferido": "2026-11-20T11:39:33Z",
+        "preco": "R$ 319,00",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/e18f05d6-3da9-43b9-a1d0-0493d64e22a9.jpg"
@@ -3872,7 +3888,7 @@
   },
   {
     "produto": "Festão Aramado Galhos Verde Cru Enfeite de Natal",
-    "preco": "R$ 29,99",
+    "preco": "R$ 48,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -3886,7 +3902,7 @@
     "precoAPrazo": "",
     "liberacao": "2026-11-03T00:41:35Z",
     "fixo": true,
-    "precoConferido": "2026-11-20T11:39:32Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Árvore De Natal Pinheiro Canadense Luxo Base",
@@ -4680,7 +4696,7 @@
   },
   {
     "produto": "Kit Metros de Festão Enfeite Natalino X 2MT",
-    "preco": "R$ 48,80",
+    "preco": "R$ 45,22",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Natal",
@@ -4693,7 +4709,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T20:12:56Z",
-    "precoConferido": "2026-11-19T21:38:39Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Ano Trem De Natal Ornamento De Madeira Bonito",
@@ -4914,7 +4930,7 @@
   },
   {
     "produto": "Carregador iPhone Turbo Tipo-C 20W + Cabo",
-    "preco": "R$ 14,98",
+    "preco": "R$ 16,29",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Acessórios de Celular",
@@ -4928,7 +4944,7 @@
     "precoAPrazo": "",
     "liberacao": "2026-11-03T16:07:48Z",
     "fixo": true,
-    "precoConferido": "2026-11-20T03:18:28Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Portátil Abdominais Ventosas Fortes 3 Ajustes",
@@ -5386,7 +5402,7 @@
   },
   {
     "produto": "Carregador rápido de 120W 67W com 6A USB C cabo 1M",
-    "preco": "R$ 19,90",
+    "preco": "R$ 20,90",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Acessórios de Celular",
@@ -5398,7 +5414,8 @@
     "data": "2026-11-03T15:47:57Z",
     "precoAVista": "",
     "precoAPrazo": "",
-    "liberacao": "2026-11-04T00:39:41Z"
+    "liberacao": "2026-11-04T00:39:41Z",
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Copo Térmico Cafe 450ml Inox com Display Digital",
@@ -5655,7 +5672,8 @@
     "precoAPrazo": "449,90",
     "liberacao": "2026-11-03T21:53:15Z",
     "parcelas": 8,
-    "precoConferido": "2026-11-20T11:39:32Z"
+    "precoConferido": "2026-11-20T11:39:32Z",
+    "semPrecoDesde": "2026-11-20T20:22:40Z"
   },
   {
     "produto": "L'Oréal Paris Elseve Óleo Extraordinário 100ml",
@@ -5711,20 +5729,18 @@
       {
         "link": "https://meli.la/2YpnSfA",
         "loja": "Mercado Livre",
-        "preco": "R$ 484,90",
-        "conferido": "2026-11-15T21:56:58Z",
+        "preco": "R$ 469,90",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
-        "imagem": "https://farejadinhosdayang.com.br/assets/8cf5a57f-8ef3-48c4-90a2-a682d0380f3a.jpg",
-        "pendente": "R$ 469,90",
-        "pendenteEm": "2026-11-20T11:39:33Z"
+        "imagem": "https://farejadinhosdayang.com.br/assets/8cf5a57f-8ef3-48c4-90a2-a682d0380f3a.jpg"
       }
     ],
     "precoConferido": "2026-11-20T11:39:32Z"
   },
   {
     "produto": "Travesseiro Cervical Abranuv Ergonômico Espuma",
-    "preco": "R$ 119,90",
+    "preco": "R$ 140,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Casa",
@@ -5734,11 +5750,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/travesseiro-cervical-abranuv-ergonomico-espuma/",
     "slug": "travesseiro-cervical-abranuv-ergonomico-espuma",
     "data": "2026-11-03T18:03:25Z",
-    "precoAVista": "R$ 119,90",
+    "precoAVista": "R$ 140,00",
     "precoAPrazo": "181,62",
     "liberacao": "2026-11-04T16:57:36Z",
     "parcelas": 6,
-    "precoConferido": "2026-11-19T21:38:39Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Kit 4 Shorts 2 Em 1 Duplo Dryfit Masculino",
@@ -5927,7 +5943,7 @@
   },
   {
     "produto": "Electrolux Kit 3 Bowls Tigelas de Aço Inox",
-    "preco": "R$ 78,85",
+    "preco": "R$ 104,40",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Cozinha",
@@ -5937,7 +5953,7 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/electrolux-kit-3-bowls-tigelas-de-aco-inox/",
     "slug": "electrolux-kit-3-bowls-tigelas-de-aco-inox",
     "data": "2026-11-03T18:03:28Z",
-    "precoAVista": "R$ 78,85",
+    "precoAVista": "R$ 104,40",
     "precoAPrazo": "93,12",
     "liberacao": "2026-11-05T20:12:56Z",
     "parcelas": 3,
@@ -5952,11 +5968,11 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/cad782b9-47ca-4e41-a153-5b7080ec0d90.jpg"
       }
     ],
-    "precoConferido": "2026-11-19T21:38:39Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Air Fryer Elgin Facilita Fry 3,5L 1400W",
-    "preco": "R$ 186,20",
+    "preco": "R$ 166,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -5966,11 +5982,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/air-fryer-elgin-facilita-fry-3-5l-1400w/",
     "slug": "air-fryer-elgin-facilita-fry-3-5l-1400w",
     "data": "2026-11-03T18:03:28Z",
-    "precoAVista": "R$ 186,20",
+    "precoAVista": "R$ 166,99",
     "precoAPrazo": "249,00",
     "liberacao": "2026-11-05T18:47:36Z",
     "parcelas": 6,
-    "precoConferido": "2026-11-19T13:08:53Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Kit 2 Sacos Para Lavar Tênis E Sapatos Em Máquina",
@@ -5996,8 +6012,8 @@
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/19933955-ffd6-425e-a7ec-252e0532afc2.webp",
-        "pendente": "R$ 29,00",
-        "pendenteEm": "2026-11-20T11:39:33Z"
+        "pendente": "R$ 49,49",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       }
     ],
     "precoConferido": "2026-11-16T20:36:53Z"
@@ -6076,7 +6092,7 @@
   },
   {
     "produto": "Parafusadeira Furadeira Impacto Sem Fio 2 Baterias",
-    "preco": "R$ 116,99",
+    "preco": "R$ 119,99",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Ferramentas",
@@ -6086,15 +6102,15 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/parafusadeira-furadeira-impacto-sem-fio-2-baterias/",
     "slug": "parafusadeira-furadeira-impacto-sem-fio-2-baterias",
     "data": "2026-11-03T18:03:29Z",
-    "precoAVista": "R$ 116,99",
+    "precoAVista": "R$ 119,99",
     "precoAPrazo": "117,52",
     "liberacao": "2026-11-05T14:30:00Z",
     "parcelas": 4,
-    "precoConferido": "2026-11-19T21:38:39Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Mixer Power Inox 3 Em 1 600w Elgin Lunar -",
-    "preco": "R$ 110,20",
+    "preco": "R$ 98,60",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -6107,7 +6123,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T20:12:56Z",
-    "precoConferido": "2026-11-20T11:39:32Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Panificadora 19 Programas Gallant 600w Preta",
@@ -6131,7 +6147,7 @@
   },
   {
     "produto": "Air Fryer Oven 12L WAP 10 Funções Pré-Programadas",
-    "preco": "R$ 474,05",
+    "preco": "R$ 527,15",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -6141,15 +6157,15 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/air-fryer-oven-12l-wap-10-funcoes-pre-programadas/",
     "slug": "air-fryer-oven-12l-wap-10-funcoes-pre-programadas",
     "data": "2026-11-03T18:03:29Z",
-    "precoAVista": "R$ 474,05",
+    "precoAVista": "R$ 527,15",
     "precoAPrazo": "532,00",
     "liberacao": "2026-11-05T20:12:56Z",
     "parcelas": 10,
-    "precoConferido": "2026-11-20T11:39:32Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Creatina Monohidratada Pura 300g Suplemento",
-    "preco": "R$ 42,11",
+    "preco": "R$ 42,20",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Academia",
@@ -6162,7 +6178,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T00:57:53Z",
-    "precoConferido": "2026-11-20T11:39:32Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Fritadeira Elétrica Philips Walita sem Óleo 220V",
@@ -6254,7 +6270,7 @@
   },
   {
     "produto": "Varal De Chão Vertical Grande De Roupas 3 Andares",
-    "preco": "R$ 69,90",
+    "preco": "R$ 65,27",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Casa",
@@ -6267,11 +6283,11 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-05T20:12:56Z",
-    "precoConferido": "2026-11-20T11:39:32Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Sanduicheira Elétrica Cadence SAN400 Preta",
-    "preco": "R$ 99,70",
+    "preco": "R$ 94,63",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -6281,11 +6297,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/sanduicheira-eletrica-cadence-san400-preta/",
     "slug": "sanduicheira-eletrica-cadence-san400-preta",
     "data": "2026-11-03T18:03:31Z",
-    "precoAVista": "R$ 99,70",
+    "precoAVista": "R$ 94,63",
     "precoAPrazo": "94,89",
     "liberacao": "2026-11-05T20:12:56Z",
     "parcelas": 3,
-    "precoConferido": "2026-11-20T03:18:28Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Massageador Pistola Elétrica Profissional Muscular",
@@ -6435,7 +6451,7 @@
         "link": "https://s.shopee.com.br/9KjR4Kwhky",
         "loja": "Shopee",
         "preco": "R$ 23,00",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "2026-11-09T13:59:36Z",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/bf2ea8bb-1798-43a0-b09e-d4c91f5f9eee.jpg",
@@ -6677,7 +6693,7 @@
         "link": "https://s.shopee.com.br/40hGzK198R",
         "loja": "Shopee",
         "preco": "R$ 16,99",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/c80271d0-ffda-4fca-935a-23b4fec884bf.jpg"
@@ -6852,8 +6868,8 @@
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/2dbc057b-3689-4c70-9632-2d40b4221c6c.jpg",
-        "pendente": "R$ 4.399,00",
-        "pendenteEm": "2026-11-20T11:39:33Z"
+        "pendente": "R$ 3.898,00",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       }
     ],
     "parcelas": 10
@@ -6911,7 +6927,7 @@
   },
   {
     "produto": "Travesseiro Ortopédico Cervical Borboleta Coop",
-    "preco": "R$ 139,99",
+    "preco": "R$ 131,10",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Casa, Vídeos",
@@ -6921,12 +6937,12 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/travesseiro-ortopedico-cervical-borboleta-coop/",
     "slug": "travesseiro-ortopedico-cervical-borboleta-coop",
     "data": "2026-11-03T18:03:30Z",
-    "precoAVista": "R$ 139,99",
+    "precoAVista": "R$ 131,10",
     "precoAPrazo": "183,36",
     "liberacao": "2026-11-05T15:30:00Z",
     "precoManual": "2026-11-04T22:34:50Z",
     "parcelas": 6,
-    "precoConferido": "2026-11-20T11:39:32Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Avental Unissex Cozinha Profissional Ajustável",
@@ -7075,7 +7091,7 @@
         "link": "https://link.amazon/B0dP1cCZs",
         "loja": "Outra loja",
         "preco": "R$ 289,00",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/d876efd6-a8e6-4c78-9829-e8537a1235c7.jpg",
@@ -7086,7 +7102,7 @@
         "link": "https://link.amazon/B04dJ4css",
         "loja": "Outra loja",
         "preco": "R$ 289,00",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/ded30cd8-a5eb-45c6-a6c1-e93ec037bc69.jpg",
@@ -7097,7 +7113,7 @@
         "link": "https://link.amazon/B0h5C2Xke",
         "loja": "Outra loja",
         "preco": "R$ 289,00",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/0de13687-5b9b-4082-80cf-3a7c54731e73.jpg",
@@ -7109,7 +7125,7 @@
   },
   {
     "produto": "Echo Show 15 Amazon Smart Display Full Hd 15,6''",
-    "preco": "R$ 2.089,00",
+    "preco": "R$ 1.799,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Automação",
@@ -7123,7 +7139,7 @@
     "precoAPrazo": "",
     "liberacao": "2026-11-05T20:11:21Z",
     "sub": "Assistentes e Controles",
-    "precoConferido": "2026-11-20T03:18:28Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Amazon Alexa Show 5 3a Geração Cor Preto",
@@ -7146,7 +7162,7 @@
         "link": "https://link.amazon/B09ondv1V",
         "loja": "Outra loja",
         "preco": "R$ 649,99",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/87ae73c7-5aae-4fed-a01f-85877f77aaa5.jpg"
@@ -7175,7 +7191,7 @@
         "link": "https://link.amazon/B03w4joYd",
         "loja": "Outra loja",
         "preco": "R$ 409,00",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/a5f2db09-9f23-4943-8a4d-b4aac4830dd3.jpg"
@@ -7242,7 +7258,7 @@
         "link": "https://link.amazon/B0fjVSGPO",
         "loja": "Outra loja",
         "preco": "R$ 599,00",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/a9e12775-fc07-440c-aef2-65de1f6dfdd7.jpg",
@@ -7271,7 +7287,7 @@
   },
   {
     "produto": "Liquidificador Rosa Britânia 1400W 3L",
-    "preco": "R$ 149,90",
+    "preco": "R$ 149,00",
     "precoAntigo": "R$ 169,32",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -7284,7 +7300,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-07T21:48:18Z",
-    "precoConferido": "2026-11-18T21:34:56Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Liquidificador Britânia 1200W 3L 12 Velocidades",
@@ -7321,7 +7337,7 @@
   },
   {
     "produto": "1,8 Litros Chaleira Elétrica Inox Vidro Bule",
-    "preco": "R$ 38,90",
+    "preco": "R$ 36,99",
     "precoAntigo": "R$ 59,52",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -7334,7 +7350,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-07T21:48:18Z",
-    "precoConferido": "2026-11-18T21:34:56Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Chaleira Elétrica Inox 1.8 Litros Desligamento",
@@ -7457,7 +7473,7 @@
         "link": "https://s.shopee.com.br/8V9gLak10u",
         "loja": "Shopee",
         "preco": "R$ 65,03",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/bcecc169-f5c9-4b07-93de-3657496e9ee9.jpg"
@@ -7467,7 +7483,7 @@
   },
   {
     "produto": "Medicube Zero Pore Pads 2.0",
-    "preco": "R$ 113,00",
+    "preco": "R$ 112,75",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Skincare, Vídeos",
@@ -7482,11 +7498,11 @@
     "liberacao": "2026-11-08T15:36:06Z",
     "video": "videos/medicube-zero-pore-pads-2-0.mp4",
     "videoCapa": "videos/medicube-zero-pore-pads-2-0.jpg",
-    "precoConferido": "2026-11-20T11:39:32Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Escova 5 em 1 Secador, Pente, Modelador",
-    "preco": "R$ 49,99",
+    "preco": "R$ 50,99",
     "precoAntigo": "R$ 149,97",
     "cupom": "",
     "categoria": "Beleza, Vídeos",
@@ -7501,7 +7517,7 @@
     "liberacao": "2026-11-08T15:36:06Z",
     "video": "videos/escova-5-em-1-secador-pente-modelador.mp4",
     "videoCapa": "videos/escova-5-em-1-secador-pente-modelador.jpg",
-    "precoConferido": "2026-11-20T03:18:28Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "KIT Formas Assadeira Papel Manteiga Descartável",
@@ -7542,7 +7558,7 @@
   },
   {
     "produto": "Apple iPad 11ª geração (A16)",
-    "preco": "R$ 3.116,00",
+    "preco": "R$ 3.115,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -7587,8 +7603,8 @@
         "cor": "#F2D64B",
         "tamanho": "128GB",
         "configuracao": "Wi-Fi",
-        "pendente": "R$ 3.125,00",
-        "pendenteEm": "2026-11-20T11:39:33Z"
+        "pendente": "R$ 2.200,00",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       },
       {
         "link": "https://link.amazon/B04BKfcOJ",
@@ -7607,7 +7623,7 @@
         "link": "https://link.amazon/B03gBwdmU",
         "loja": "Amazon",
         "preco": "R$ 4.299,00",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "2026-11-08T22:00:26Z",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/dbe55e62-4071-40df-8116-1bd8a92065c1.jpg",
@@ -7646,7 +7662,7 @@
         "link": "https://link.amazon/B0bELM6O4",
         "loja": "Amazon",
         "preco": "R$ 5.354,46",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "2026-11-08T22:00:26Z",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/91c2c9fd-7a29-4e3f-af81-457730d89c38.jpg",
@@ -7659,7 +7675,7 @@
         "link": "https://link.amazon/B08Vq6QDF",
         "loja": "Amazon",
         "preco": "R$ 6.138,86",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "2026-11-08T22:00:26Z",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/788d34b8-9bb1-466d-9e0c-2be8a0c4c453.jpg",
@@ -7672,7 +7688,7 @@
         "link": "https://link.amazon/B0hT2Qcs8",
         "loja": "Amazon",
         "preco": "R$ 5.007,81",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "2026-11-08T22:00:26Z",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/34e7bf12-a195-4601-b7d9-95d1151a675d.jpg",
@@ -7685,7 +7701,7 @@
         "link": "https://link.amazon/B09sobyL3",
         "loja": "Amazon",
         "preco": "R$ 4.660,40",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "2026-11-08T22:00:26Z",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/61b674a7-e5b8-403b-b997-f1f4dc73b63b.jpg",
@@ -7695,7 +7711,7 @@
         "configuracao": "Wi-Fi + Cellular"
       }
     ],
-    "precoConferido": "2026-11-19T21:38:39Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Apple iPad Wifi 9th Geração Cinza Espacial A2602",
@@ -7712,11 +7728,12 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-08T21:53:55Z",
-    "precoConferido": "2026-11-19T03:31:38Z"
+    "precoConferido": "2026-11-19T03:31:38Z",
+    "semPrecoDesde": "2026-11-20T20:22:40Z"
   },
   {
     "produto": "Apple iPhone 17",
-    "preco": "R$ 5.683,00",
+    "preco": "R$ 5.448,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -7743,7 +7760,9 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/f37f16ea-4127-4b7c-aa29-d69fad675079.jpg",
         "variacao": "Azul-névoa",
         "cor": "#A9C1D9",
-        "tamanho": "256GB"
+        "tamanho": "256GB",
+        "pendente": "R$ 5.448,00",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       },
       {
         "link": "https://meli.la/22H6evE",
@@ -7755,7 +7774,9 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/feec0052-8518-4f30-929f-10aa25b739db.jpg",
         "variacao": "Lavanda",
         "cor": "#C9B8E8",
-        "tamanho": "256GB"
+        "tamanho": "256GB",
+        "pendente": "R$ 5.448,00",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       },
       {
         "link": "https://meli.la/1uyKpPq",
@@ -7767,7 +7788,9 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/f2cfd694-1d23-449c-b12b-bbf1f3324b4f.jpg",
         "variacao": "Preto",
         "cor": "#2B2B2B",
-        "tamanho": "256GB"
+        "tamanho": "256GB",
+        "pendente": "R$ 5.448,00",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       },
       {
         "link": "https://meli.la/1cKsiyi",
@@ -7779,10 +7802,12 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/53ff0f14-b9a3-4c93-a1c3-88453a83c57e.jpg",
         "variacao": "Sálvia",
         "cor": "#A8B89A",
-        "tamanho": "256GB"
+        "tamanho": "256GB",
+        "pendente": "R$ 5.448,00",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       }
     ],
-    "precoConferido": "2026-11-10T02:13:49Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Apple iPhone 16e",
@@ -7807,7 +7832,7 @@
         "link": "https://meli.la/2gjcm33",
         "loja": "Mercado Livre",
         "preco": "R$ 3.099,00",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/de7615be-993e-4ed5-948c-aa451ba0ee11.jpg",
@@ -7831,7 +7856,7 @@
         "link": "https://link.amazon/B0hj2pBal",
         "loja": "Amazon",
         "preco": "R$ 3.443,33",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/134fbd7e-a24c-4892-a408-9f0ecfcd5127.jpg",
@@ -7865,7 +7890,7 @@
         "link": "https://meli.la/16eNDbQ",
         "loja": "Mercado Livre",
         "preco": "R$ 4.801,00",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/3e81b101-608e-4ea5-a123-e6c07cc4013e.jpg",
@@ -7877,7 +7902,7 @@
         "link": "https://meli.la/1Eez1kC",
         "loja": "Mercado Livre",
         "preco": "R$ 4.801,00",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/b338e9b2-dca8-4d00-b967-d8633e767304.jpg",
@@ -7889,7 +7914,7 @@
         "link": "https://meli.la/131ADZ2",
         "loja": "Mercado Livre",
         "preco": "R$ 4.654,00",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/5937c126-dd7d-4a47-863e-047a653b7f65.jpg",
@@ -7901,7 +7926,7 @@
         "link": "https://meli.la/16D9G7n",
         "loja": "Mercado Livre",
         "preco": "R$ 4.801,00",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/023d0f05-d6a3-41e3-84d9-c3bf781f0ea9.jpg",
@@ -7913,7 +7938,7 @@
         "link": "https://link.amazon/B05Xze2Si",
         "loja": "Amazon",
         "preco": "R$ 5.054,44",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "2026-11-08T22:00:26Z",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/c84cf8a4-124e-4081-a763-079a17b211b6.jpg",
@@ -7925,7 +7950,7 @@
         "link": "https://link.amazon/B00xHyOg1",
         "loja": "Amazon",
         "preco": "R$ 5.054,44",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "2026-11-08T22:00:26Z",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/4ee1d667-2cb9-46b9-bbe9-6529d9f2f79d.jpg",
@@ -7937,7 +7962,7 @@
         "link": "https://link.amazon/B03q9GNti",
         "loja": "Amazon",
         "preco": "R$ 5.054,44",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "2026-11-08T22:00:26Z",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/849ca2a1-0b3d-49ca-b7b0-c6217e1040bf.jpg",
@@ -7961,7 +7986,7 @@
         "link": "https://link.amazon/B0gSsCjyT",
         "loja": "Amazon",
         "preco": "R$ 5.054,44",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "2026-11-08T22:00:26Z",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/1a597174-8980-48b1-8328-fc0659ba9ac6.jpg",
@@ -7995,7 +8020,7 @@
         "link": "https://link.amazon/B04whvWJL",
         "loja": "Amazon",
         "preco": "R$ 4.732,22",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/ecc9db0b-89c3-4d47-8076-1811a915177c.jpg",
@@ -8026,15 +8051,15 @@
         "variacao": "Rosa-pálido",
         "cor": "#F3D3D3",
         "tamanho": "256GB",
-        "pendente": "R$ 4.887,78",
-        "pendenteEm": "2026-11-20T11:39:33Z"
+        "pendente": "R$ 4.776,58",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       }
     ],
     "precoConferido": "2026-11-18T13:14:47Z"
   },
   {
     "produto": "Apple iPhone 15 (128 GB)",
-    "preco": "R$ 4.073,00",
+    "preco": "R$ 3.905,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Celulares",
@@ -8047,7 +8072,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-08T21:53:55Z",
-    "precoConferido": "2026-11-20T11:39:32Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Apple iPad Pro Wi-Fi de 12,9 polegadas + Cellular",
@@ -8107,7 +8132,7 @@
         "link": "https://link.amazon/B00KS1zMh",
         "loja": "Amazon",
         "preco": "R$ 11.999,00",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/548da5ac-c6b7-4db9-aece-ed59ec8ef291.jpg",
@@ -8133,7 +8158,7 @@
         "link": "https://link.amazon/B07JHIMvz",
         "loja": "Amazon",
         "preco": "R$ 7.923,00",
-        "conferido": "2026-11-19T13:08:53Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/acbd3400-b381-40c9-a28f-3d02c049ad21.jpg",
@@ -8174,7 +8199,9 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/bd931e95-2bf8-453b-916f-4fa8bbe4f419.jpg",
         "variacao": "Azul",
         "cor": "#3E6FB6",
-        "tamanho": "256GB"
+        "tamanho": "256GB",
+        "pendente": "R$ 5.262,11",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       },
       {
         "link": "https://link.amazon/B0eh9VY4X",
@@ -8186,7 +8213,9 @@
         "imagem": "https://farejadinhosdayang.com.br/assets/4cfb925e-1ec4-4c3f-9800-7d0ce0bd47ae.jpg",
         "variacao": "Branco",
         "cor": "#F2F2F2",
-        "tamanho": "256GB"
+        "tamanho": "256GB",
+        "pendente": "R$ 4.998,00",
+        "pendenteEm": "2026-11-20T20:19:44Z"
       },
       {
         "link": "https://link.amazon/B0bIPnoe1",
@@ -8243,7 +8272,7 @@
   },
   {
     "produto": "Ar condicionado Split Hi Wall Gree G-Side Auto",
-    "preco": "R$ 2.393,00",
+    "preco": "R$ 2.429,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -8253,7 +8282,7 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/ar-condicionado-split-hi-wall-gree-g-side-auto/",
     "slug": "ar-condicionado-split-hi-wall-gree-g-side-auto",
     "data": "2026-11-09T12:17:25Z",
-    "precoAVista": "R$ 2.393,00",
+    "precoAVista": "R$ 2.429,00",
     "precoAPrazo": "2799,00",
     "liberacao": "2026-11-09T12:17:24Z",
     "parcelas": 10,
@@ -8262,13 +8291,13 @@
         "link": "https://link.amazon/B09udojRu",
         "loja": "Amazon",
         "preco": "R$ 2.205,90",
-        "conferido": "2026-11-20T03:18:29Z",
+        "conferido": "2026-11-20T20:19:44Z",
         "manual": "",
         "confirmado": true,
         "imagem": "https://farejadinhosdayang.com.br/assets/c4b4eeac-cc2f-454f-940b-1267666e9ea3.jpg"
       }
     ],
-    "precoConferido": "2026-11-20T03:18:28Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Ar Condicionado Electrolux Color Adapt Inverter",
@@ -8309,7 +8338,7 @@
   },
   {
     "produto": "Ar Condicionado 12000 Btus LG Dual Inverter IA",
-    "preco": "R$ 2.893,00",
+    "preco": "R$ 2.913,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -8319,15 +8348,15 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/ar-condicionado-12000-btus-lg-dual-inverter-ia/",
     "slug": "ar-condicionado-12000-btus-lg-dual-inverter-ia",
     "data": "2026-11-09T12:17:26Z",
-    "precoAVista": "R$ 2.893,00",
+    "precoAVista": "R$ 2.913,00",
     "precoAPrazo": "2799,00",
     "liberacao": "2026-11-09T12:17:24Z",
     "parcelas": 10,
-    "precoConferido": "2026-11-19T21:38:39Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Ar Condicionado Inverter Midea Ecomaster 12000Btu",
-    "preco": "R$ 2.769,00",
+    "preco": "R$ 2.069,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -8337,11 +8366,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/ar-condicionado-inverter-midea-ecomaster-12000btu/",
     "slug": "ar-condicionado-inverter-midea-ecomaster-12000btu",
     "data": "2026-11-09T12:17:26Z",
-    "precoAVista": "R$ 2.769,00",
+    "precoAVista": "R$ 2.069,00",
     "precoAPrazo": "2359,00",
     "liberacao": "2026-11-09T12:17:24Z",
     "parcelas": 10,
-    "precoConferido": "2026-11-18T21:34:56Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Ar Condicionado 12000 Btus Hw Inverter Midea Frio",
@@ -8363,7 +8392,7 @@
   },
   {
     "produto": "Ar Condicionado Split Zen Agratto 12000 Btus Frio",
-    "preco": "R$ 1.774,00",
+    "preco": "R$ 1.832,00",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -8373,11 +8402,11 @@
     "url": "https://farejadinhosdayang.com.br/ofertas/ar-condicionado-split-zen-agratto-12000-btus-frio/",
     "slug": "ar-condicionado-split-zen-agratto-12000-btus-frio",
     "data": "2026-11-09T12:17:27Z",
-    "precoAVista": "R$ 1.774,00",
+    "precoAVista": "R$ 1.832,00",
     "precoAPrazo": "1899,00",
     "liberacao": "2026-11-09T12:17:24Z",
     "parcelas": 10,
-    "precoConferido": "2026-11-19T21:38:39Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Ar Condicionado Split Elgin Eco Inverter II WiFi",
@@ -8613,7 +8642,7 @@
   },
   {
     "produto": "Creme Gel Regenerador Facial Gota de Colágeno",
-    "preco": "R$ 31,90",
+    "preco": "R$ 34,57",
     "precoAntigo": "",
     "cupom": "",
     "categoria": "Skincare",
@@ -8626,7 +8655,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-09T13:58:19Z",
-    "precoConferido": "2026-11-20T03:18:28Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Kit Facial Kokeshi Completo 3 Passos Hidratação",
@@ -9127,7 +9156,7 @@
   },
   {
     "produto": "Mini Máquina Seladora De Embalagem",
-    "preco": "R$ 11,98",
+    "preco": "R$ 12,00",
     "precoAntigo": "R$ 26,04",
     "cupom": "",
     "categoria": "Eletrodomésticos",
@@ -9140,7 +9169,7 @@
     "precoAVista": "",
     "precoAPrazo": "",
     "liberacao": "2026-11-14T15:28:38Z",
-    "precoConferido": "2026-11-16T09:46:01Z"
+    "precoConferido": "2026-11-20T20:19:43Z"
   },
   {
     "produto": "Limpador Desengordurante Heavy Duty 500mL",

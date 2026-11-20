@@ -8,22 +8,6 @@
     "referencia": "preco posto a mao em 14/11 12:08"
   },
   {
-    "slug": "arvore-de-natal-pinheiro-600-galhos-cheia-premium",
-    "produto": "Árvore De Natal Pinheiro 600 Galhos Cheia Premium",
-    "link": "https://s.shopee.com.br/20wXDnNYad",
-    "atual": "R$ 64,90",
-    "lido": "R$ 189,90",
-    "referencia": "R$ 64,90"
-  },
-  {
-    "slug": "aspirador-manual-piscina-herbinject-azul",
-    "produto": "Aspirador Manual Piscina Herbinject Azul",
-    "link": "https://meli.la/1t2eJpi",
-    "atual": "R$ 34,04",
-    "lido": "386,51",
-    "referencia": "R$ 40,88"
-  },
-  {
     "slug": "cafeteira-espresso-philips-walita-cor-preto",
     "produto": "Cafeteira Espresso Philips Walita Cor Preto",
     "link": "https://meli.la/1h4v88c",
@@ -64,11 +48,19 @@
     "referencia": "R$ 15,99"
   },
   {
+    "slug": "fritadeira-sem-oleo-air-fryer-digital-4l-mondial",
+    "produto": "Fritadeira Sem Óleo Air Fryer Digital 4L Mondial",
+    "link": "https://meli.la/1eFBrXD",
+    "atual": "R$ 239,90",
+    "lido": "409,00",
+    "referencia": "R$ 157,56"
+  },
+  {
     "slug": "iphone-18-pro-256gb-preto-somente-esim",
     "produto": "Apple iPhone 18 Pro",
     "link": "https://meli.la/18pktG2",
     "atual": "R$ 9.499,00",
-    "lido": "10799,00",
+    "lido": "1979,00",
     "referencia": "preco posto a mao em 18/10 23:09"
   },
   {
@@ -100,8 +92,16 @@
     "produto": "Kit Jogo De Ferramentas Aço Carbono Titanium",
     "link": "https://meli.la/2TUExAZ",
     "atual": "R$ 21,90",
-    "lido": "27,71",
+    "lido": "29,99",
     "referencia": "R$ 13,45"
+  },
+  {
+    "slug": "kit-limpeza-e-manutencao-de-piscina-completo",
+    "produto": "Kit Limpeza E Manutenção De Piscina Completo",
+    "link": "https://meli.la/1V3wJNN",
+    "atual": "R$ 103,27",
+    "lido": "42,09",
+    "referencia": "R$ 109,90"
   },
   {
     "slug": "suporte-organizador-de-ovos-dispenser",
@@ -118,13 +118,5 @@
     "atual": "R$ 743,39",
     "lido": "1424,00",
     "referencia": "R$ 495,69"
-  },
-  {
-    "slug": "travesseiro-cervical-abranuv-ergonomico-espuma",
-    "produto": "Travesseiro Cervical Abranuv Ergonômico Espuma",
-    "link": "https://meli.la/1dqAsET",
-    "atual": "R$ 119,90",
-    "lido": "72,09",
-    "referencia": "R$ 175,64"
   }
 ]
