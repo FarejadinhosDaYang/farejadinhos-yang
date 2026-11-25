@@ -52,7 +52,7 @@
     "produto": "Apple iPhone 18 Pro",
     "link": "https://meli.la/18pktG2",
     "atual": "R$ 9.499,00",
-    "lido": "10199,00",
+    "lido": "9744,00",
     "referencia": "preco posto a mao em 18/10 23:09"
   },
   {
@@ -60,7 +60,7 @@
     "produto": "Apple iPhone 18 Pro Max",
     "link": "https://meli.la/2fXqW9L",
     "atual": "R$ 10.289,00",
-    "lido": "12297,00",
+    "lido": "1790,00",
     "referencia": "preco posto a mao em 18/10 23:09"
   },
   {
@@ -78,6 +78,14 @@
     "atual": "R$ 15,00",
     "lido": "R$ 34,90",
     "referencia": "R$ 15,00"
+  },
+  {
+    "slug": "kit-limpeza-e-manutencao-de-piscina-completo",
+    "produto": "Kit Limpeza E Manutenção De Piscina Completo",
+    "link": "https://meli.la/1V3wJNN",
+    "atual": "R$ 76,53",
+    "lido": "42,09",
+    "referencia": "R$ 109,90"
   },
   {
     "slug": "pisca-strobo-cordao-enfeites-de-natal-decoracao",
@@ -100,7 +108,7 @@
     "produto": "Tablet Samsung Galaxy Tab A11+, 128gb",
     "link": "https://meli.la/32m3cG6",
     "atual": "R$ 743,39",
-    "lido": "1408,00",
+    "lido": "1419,00",
     "referencia": "R$ 495,69"
   }
 ]
