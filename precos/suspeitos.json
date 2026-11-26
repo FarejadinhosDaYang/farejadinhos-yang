@@ -24,11 +24,19 @@
     "referencia": "R$ 512,90"
   },
   {
+    "slug": "amazon-alexa-show-5-3a-geracao-cor-preto",
+    "produto": "Amazon Alexa Show 5 3a Geração Cor Preto",
+    "link": "https://meli.la/2VGbad4",
+    "atual": "R$ 643,08",
+    "lido": "67,21",
+    "referencia": "R$ 500,25"
+  },
+  {
     "slug": "amazon-echo-dot-5-geracao-com-alexa-e-som",
     "produto": "Amazon Echo Dot 5ª Geração Com Alexa E Som",
     "link": "https://meli.la/259Gn4p",
     "atual": "R$ 417,73",
-    "lido": "48,83",
+    "lido": "39,03",
     "referencia": "R$ 445,55"
   },
   {
@@ -44,8 +52,24 @@
     "produto": "Apple iPad 11ª geração (A16)",
     "link": "https://meli.la/1WGpzU1",
     "atual": "R$ 3.229,00",
-    "lido": "327,66",
+    "lido": "326,70",
     "referencia": "R$ 3.229,00"
+  },
+  {
+    "slug": "apple-ipad-wifi-9th-geracao-cinza-espacial-a2602",
+    "produto": "Apple iPad Wifi 9th Geração Cinza Espacial A2602",
+    "link": "https://meli.la/1znEs6S",
+    "atual": "R$ 2.343,00",
+    "lido": "269,90",
+    "referencia": "R$ 2.343,00"
+  },
+  {
+    "slug": "apple-iphone-15-128-gb",
+    "produto": "Apple iPhone 15 (128 GB)",
+    "link": "https://meli.la/1pJ5mp4",
+    "atual": "R$ 3.499,00",
+    "lido": "387,90",
+    "referencia": "R$ 3.779,00"
   },
   {
     "slug": "apple-iphone-16-128-gb",
@@ -56,12 +80,12 @@
     "referencia": "R$ 4.549,00"
   },
   {
-    "slug": "ar-condicionado-electrolux-color-adapt-inverter",
-    "produto": "Ar Condicionado Electrolux Color Adapt Inverter",
-    "link": "https://meli.la/1uNKrGi",
-    "atual": "R$ 2.399,00",
-    "lido": "239,90",
-    "referencia": "R$ 2.399,00"
+    "slug": "ar-condicionado-inverter-12k-midea-ecomaster-43",
+    "produto": "Ar Condicionado Inverter 12k Midea Ecomaster &#43",
+    "link": "https://meli.la/1xzoqis",
+    "atual": "R$ 2.917,00",
+    "lido": "301,70",
+    "referencia": "R$ 2.119,00"
   },
   {
     "slug": "ar-condicionado-inverter-midea-ecomaster-12000btu",
@@ -70,6 +94,14 @@
     "atual": "R$ 2.000,00",
     "lido": "288,90",
     "referencia": "R$ 2.217,00"
+  },
+  {
+    "slug": "ar-condicionado-split-elgin-eco-inverter-ii-wifi",
+    "produto": "Ar Condicionado Split Elgin Eco Inverter II WiFi",
+    "link": "https://link.amazon/B05wXHZSS",
+    "atual": "R$ 3.102,00",
+    "lido": "192,00",
+    "referencia": "R$ 2.068,60"
   },
   {
     "slug": "ar-condicionado-split-hi-wall-gree-g-side-auto",
@@ -132,7 +164,7 @@
     "produto": "Samsung Galaxy S25 Ultra 5G",
     "link": "https://meli.la/2LUJ4yy",
     "atual": "R$ 4.798,00",
-    "lido": "499,90",
+    "lido": "533,20",
     "referencia": "R$ 5.798,00"
   },
   {
@@ -148,7 +180,7 @@
     "produto": "Echo Show 15 Amazon Smart Display Full Hd 15,6''",
     "link": "https://meli.la/34frVqf",
     "atual": "R$ 2.089,00",
-    "lido": "2579,00",
+    "lido": "299,90",
     "referencia": "R$ 1.208,00"
   },
   {
@@ -272,19 +304,11 @@
     "referencia": "R$ 6.749,00"
   },
   {
-    "slug": "suporte-organizador-de-ovos-dispenser",
-    "produto": "Suporte Organizador De Ovos Dispenser",
-    "link": "https://s.shopee.com.br/1BNbcmEt04",
-    "atual": "R$ 10,99",
-    "lido": "R$ 4,99",
-    "referencia": "R$ 10,99"
-  },
-  {
     "slug": "tablet-samsung-galaxy-tab-a11-128gb",
     "produto": "Tablet Samsung Galaxy Tab A11+, 128gb",
     "link": "https://meli.la/32m3cG6",
     "atual": "R$ 743,39",
-    "lido": "137,75",
+    "lido": "137,65",
     "referencia": "R$ 495,69"
   }
 ]
