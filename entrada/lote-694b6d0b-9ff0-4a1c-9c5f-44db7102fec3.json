@@ -1,0 +1,156 @@
+[
+  {
+    "acao": "cupons-site",
+    "cupons": [
+      {
+        "codigo": "INFLUPRIME",
+        "loja": "Amazon",
+        "tipo": "R$",
+        "valor": 150,
+        "minimo": 500,
+        "teto": 0,
+        "titulo": "",
+        "obs": "",
+        "link": "https://amzn.divulgador.link/vdTGfjoZ",
+        "ate": "2026-11-28T16:54:00Z"
+      },
+      {
+        "codigo": "TECHONOMELI",
+        "loja": "Mercado Livre",
+        "tipo": "",
+        "valor": 0,
+        "minimo": 0,
+        "teto": 0,
+        "titulo": "",
+        "obs": "",
+        "link": "https://meli.la/2EYpRK3",
+        "ate": "2026-11-28T16:54:00Z"
+      },
+      {
+        "codigo": "ELETRO300",
+        "loja": "",
+        "tipo": "",
+        "valor": 0,
+        "minimo": 0,
+        "teto": 0,
+        "titulo": "",
+        "obs": "",
+        "link": "",
+        "ate": "2026-11-28T16:54:00Z"
+      },
+      {
+        "codigo": "C4RR1NH070",
+        "loja": "Shopee",
+        "tipo": "",
+        "valor": 0,
+        "minimo": 0,
+        "teto": 0,
+        "titulo": "",
+        "obs": "",
+        "link": "https://s.shopee.com.br/5fqecPx7pI",
+        "ate": "2026-11-28T16:54:00Z"
+      },
+      {
+        "codigo": "H55MELI",
+        "loja": "Mercado Livre",
+        "tipo": "%",
+        "valor": 20,
+        "minimo": 79,
+        "teto": 80,
+        "titulo": "",
+        "obs": "",
+        "link": "https://meli.la/17pDrdf",
+        "ate": "2026-11-28T16:54:00Z"
+      },
+      {
+        "codigo": "VEMGASTAR40AF",
+        "loja": "Shopee",
+        "tipo": "R$",
+        "valor": 40,
+        "minimo": 120,
+        "teto": 0,
+        "titulo": "",
+        "obs": "",
+        "link": "https://s.shopee.com.br/Lp8G7yPDv",
+        "ate": "2026-11-28T16:54:00Z"
+      },
+      {
+        "codigo": "BLACKSONHO",
+        "loja": "",
+        "tipo": "%",
+        "valor": 100,
+        "minimo": 0,
+        "teto": 0,
+        "titulo": "",
+        "obs": "",
+        "link": "https://amzn.divulgador.link/vSJVIYmW",
+        "ate": "2026-11-28T16:54:00Z"
+      },
+      {
+        "codigo": "MODANABLACK",
+        "loja": "Amazon",
+        "tipo": "%",
+        "valor": 10,
+        "minimo": 80,
+        "teto": 30,
+        "titulo": "",
+        "obs": "",
+        "link": "https://amzn.divulgador.link/KPat8vvO",
+        "ate": "2026-11-28T16:54:00Z"
+      },
+      {
+        "codigo": "DESCONTO199",
+        "loja": "Mercado Livre",
+        "tipo": "",
+        "valor": 0,
+        "minimo": 0,
+        "teto": 0,
+        "titulo": "",
+        "obs": "",
+        "link": "https://meli.la/2NpTwoh",
+        "ate": "2026-11-28T16:54:00Z"
+      },
+      {
+        "codigo": "SUPEROFF",
+        "loja": "Mercado Livre",
+        "tipo": "R$",
+        "valor": 250,
+        "minimo": 1499,
+        "teto": 0,
+        "titulo": "",
+        "obs": "",
+        "link": "https://www.mercadolivre.com.br/social/olhadapromos/lists",
+        "ate": "2026-11-28T17:20:00Z"
+      },
+      {
+        "codigo": "QEQPLAMDPRASD",
+        "loja": "",
+        "tipo": "%",
+        "valor": 20,
+        "minimo": 79,
+        "teto": 60,
+        "titulo": "",
+        "obs": "",
+        "link": "",
+        "ate": "2026-11-28T17:20:00Z"
+      },
+      {
+        "codigo": "MAISOFERTAS30",
+        "loja": "Mercado Livre",
+        "tipo": "%",
+        "valor": 30,
+        "minimo": 0,
+        "teto": 500,
+        "titulo": "",
+        "obs": "",
+        "link": "https://www.mercadolivre.com.br/social/olhadapromos/lists",
+        "ate": "2026-11-28T17:20:00Z"
+      }
+    ],
+    "paginas": {
+      "Shopee": "https://s.shopee.com.br/4VdOXKYQfW",
+      "Mercado Livre": "https://www.mercadolivre.com.br/cupons?source_page=mperfil#nav-header",
+      "Amazon": ""
+    }
+  }
+]
