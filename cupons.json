@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-27T16:59:42Z",
+  "atualizado": "2026-11-27T17:04:53Z",
   "paginas": {
     "Shopee": "https://s.shopee.com.br/4VdOXKYQfW",
     "Mercado Livre": "https://www.mercadolivre.com.br/cupons?source_page=mperfil#nav-header"
@@ -112,6 +112,18 @@
       "obs": "",
       "link": "https://meli.la/2NpTwoh",
       "ate": "2026-11-28T16:54:00Z"
+    },
+    {
+      "codigo": "SUPEROFF",
+      "loja": "Mercado Livre",
+      "tipo": "R$",
+      "valor": 250.0,
+      "minimo": 1499.0,
+      "teto": 0.0,
+      "titulo": "",
+      "obs": "",
+      "link": "https://www.mercadolivre.com.br/social/olhadapromos/lists",
+      "ate": "2026-11-28T16:59:08Z"
     }
   ]
 }
