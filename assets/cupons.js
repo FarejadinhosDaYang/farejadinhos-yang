@@ -87,9 +87,19 @@
 
             var url = linha.match(/https?:\/\/\S+/);
             var m = linha.match(/(?:cupom|c[óo]digo)\s*:\s*([A-Z0-9][A-Z0-9_-]{2,29})\b/i);
+            var codigos = m && !/^https?:/i.test(m[1]) ? [m[1].toUpperCase()] : [];
+            // linha que começa com 🎟️ / 🎫 / 🏷️ é cupom, com ou sem "cupom:"
+            // ("🎟️ TODOSITE0711", "🎟️ OFFNOML / FAVORITO", "🎟️ Cupom NATAL10 - 10% OFF")
+            if (/^\s*(?:\uD83C\uDF9F|\uD83C\uDFAB|\uD83C\uDFF7)/.test(linha) && !url) {
+                var achados = (linha.replace(/^[^A-Za-z0-9]+/, "").match(/\b[A-Z0-9][A-Z0-9_-]{2,29}\b/g) || []).filter(function (c) {
+                    return /[A-Z]/.test(c) && !/^(CUPOM|CUPONS|CODIGO|CÓDIGO|USE|USAR|OFF|OU|DE|DO|DA|NO|NA|PIX|R)$/.test(c) &&
+                        !/^\d+(%|OFF)?$/.test(c);
+                });
+                achados.forEach(function (c) { if (codigos.indexOf(c) < 0) codigos.push(c); });
+            }
 
-            if (m && !/^https?:/i.test(m[1])) {
-                var codigo = m[1].toUpperCase();
+            if (codigos.length) {
+                var codigo = codigos[0];
                 var textoBloco = bloco.join(" ");
                 // A regra é a última linha do bloco que fala de % ou R$ OFF
                 var linhaRegra = "";
@@ -113,6 +123,13 @@
                     produto: regra.tipo ? "" : (bloco.filter(function (b) { return !/^https?:|^meli\.la$|^DE |POR /i.test(b); }).slice(-1)[0] || "")
                 };
                 cupons.push(ultimo);
+                // vários códigos na mesma linha ("OFFNOML / FAVORITO"): mesma regra pra todos
+                for (var k = 1; k < codigos.length; k++) {
+                    var copia = {};
+                    for (var ch in ultimo) copia[ch] = ultimo[ch];
+                    copia.codigo = codigos[k];
+                    cupons.push(copia);
+                }
                 bloco = [];
                 if (url) { ultimo.link = url[0]; ultimo.loja = ultimo.loja || lojaDoLink(url[0]); ultimo = null; }
                 continue;
