@@ -55,10 +55,12 @@
         if (pct) { r.tipo = "%"; r.valor = numeroBR(pct[1]); }
         else if (fixo) { r.tipo = "R$"; r.valor = numeroBR(fixo[1]); }
 
-        var min = t.match(/(?:acima de|a partir de|compras? (?:acima )?de|m[ií]nimo(?: de)?|\bem)\s*R\$\s*([\d.,]+)/i);
+        var min = t.match(/(?:acima de|a partir de|compras? (?:acima )?de|compras? m[ií]n(?:\.|ima)?\s*:?|m[ií]nimo(?: de)?\s*:?|\bm[ií]n\.?\s*:?|\bem)\s*R\$\s*([\d.,]+)/i);
         if (min) r.minimo = numeroBR(min[1]);
 
-        var teto = t.match(/limitad[oa]\s*(?:a|em|até)?\s*R\$\s*([\d.,]+)/i) || t.match(/(?:até|máx(?:imo)?\.?)\s*R\$\s*([\d.,]+)\s*(?:OFF|de desconto)/i);
+        var teto = t.match(/limitad[oa]\s*(?:a|em|até)?\s*R\$\s*([\d.,]+)/i) ||
+            t.match(/desconto\s+m[áa]x(?:\.|imo)?\s*:?\s*(?:de\s*)?R\$\s*([\d.,]+)/i) ||
+            t.match(/(?:até|máx(?:imo)?\.?)\s*R\$\s*([\d.,]+)\s*(?:OFF|de desconto)/i);
         if (teto && r.tipo === "%") r.teto = numeroBR(teto[1]);
 
         // "R$30 OFF em R$ 149" — o mínimo não pode ser o próprio desconto
@@ -80,6 +82,7 @@
         var cupons = [];
         var bloco = [];          // linhas desde o cupom anterior
         var ultimo = null;       // cupom esperando o link
+        var daLinha = [];        // cupons da última linha de código (pra completar a regra)
 
         for (var i = 0; i < linhas.length; i++) {
             var linha = linhas[i];
@@ -98,6 +101,18 @@
                 achados.forEach(function (c) { if (codigos.indexOf(c) < 0) codigos.push(c); });
             }
 
+            // linha logo depois do cupom com o resto da regra ("Compra mín.: R$199 | Desconto máx: R$200")
+            if (!codigos.length && !url && daLinha.length && /compra m[ií]n|\bm[ií]n(?:\.|imo)?\b|desconto m[áa]x|\bm[áa]x(?:\.|imo)?\b/i.test(linha) && !/%/.test(linha)) {
+                var extra = lerRegra(daLinha.textoRegra + " " + linha);
+                daLinha.textoRegra += " " + linha;
+                daLinha.forEach(function (c) {
+                    if (!c.tipo && extra.tipo) { c.tipo = extra.tipo; c.valor = extra.valor; c.produto = ""; }
+                    if (extra.minimo) c.minimo = extra.minimo;
+                    if (extra.teto) c.teto = extra.teto;
+                });
+                continue;
+            }
+
             if (codigos.length) {
                 var codigo = codigos[0];
                 var textoBloco = bloco.join(" ");
@@ -111,6 +126,9 @@
                         break;
                     }
                 }
+                // regra na MESMA linha do código ("🎟️ CHEGOUOFF 👉 10% OFF") vale mais
+                var resto = linha.replace(new RegExp("^[\\s\\S]*?" + codigos[codigos.length - 1]), "");
+                if (/%|OFF|desconto/i.test(resto)) linhaRegra = resto;
                 var regra = lerRegra(linhaRegra);
                 ultimo = {
                     codigo: codigo,
@@ -122,6 +140,10 @@
                     link: "",
                     produto: regra.tipo ? "" : (bloco.filter(function (b) { return !/^https?:|^meli\.la$|^DE |POR /i.test(b); }).slice(-1)[0] || "")
                 };
+                // linha de categoria logo antes ("Eletrônicos,Áudio e Video") vira o título do cupom
+                var cat = (bloco[bloco.length - 1] || "").replace(/^[^A-Za-zÀ-ÿ]+/, "").trim();
+                if (cat && cat.length <= 40 && !/\d|%|R\$|https?:|frete|vendido|oferta|compre|aproveit|corre|link|cupo|desconto/i.test(cat))
+                    ultimo.titulo = cat.replace(/\s*,\s*/g, ", ");
                 cupons.push(ultimo);
                 // vários códigos na mesma linha ("OFFNOML / FAVORITO"): mesma regra pra todos
                 for (var k = 1; k < codigos.length; k++) {
@@ -130,6 +152,8 @@
                     copia.codigo = codigos[k];
                     cupons.push(copia);
                 }
+                daLinha = cupons.slice(cupons.length - codigos.length);
+                daLinha.textoRegra = linhaRegra;
                 bloco = [];
                 if (url) { ultimo.link = url[0]; ultimo.loja = ultimo.loja || lojaDoLink(url[0]); ultimo = null; }
                 continue;
