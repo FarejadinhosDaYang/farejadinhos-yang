@@ -23,35 +23,43 @@
     var css = document.createElement("style");
     css.textContent =
         ".cup-secao{margin-top:24px;scroll-margin-top:150px}" +
-        ".cup-secao .secao-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:8px}" +
+        ".cup-secao .secao-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:4px}" +
         ".cup-secao .secao-head h2{margin:0}" +
+        ".cup-sub{margin:0 0 10px;font:500 13px 'Work Sans',Arial,sans-serif;color:#8A7563}" +
         ".cup-abas{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}" +
         ".cup-abas::-webkit-scrollbar{display:none}" +
         ".cup-aba{flex:0 0 auto;border:1.5px solid #F0DFC4;background:#fff;border-radius:999px;padding:5px 12px;font:700 12.5px 'Work Sans',Arial,sans-serif;color:#5C4636;cursor:pointer}" +
         ".cup-aba.ativa{background:#2B1B12;border-color:#2B1B12;color:#fff}" +
-        ".cup-faixa{display:flex;align-items:flex-start;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 10px;scrollbar-width:thin}" +
-        // cartão = um "ticket" enxuto: loja + validade, código, (desconto)
-        ".cup-card{flex:0 0 228px;scroll-snap-align:start;position:relative;background:#fff;border:1.5px solid #F0DFC4;border-radius:14px;padding:10px 12px 11px 16px;display:flex;flex-direction:column;gap:8px;font-family:'Work Sans',Arial,sans-serif;color:#2B1B12;box-shadow:0 3px 10px rgba(43,27,18,.05);overflow:hidden}" +
-        ".cup-card:before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--cor)}" +
-        ".cup-linha1{display:flex;align-items:center;justify-content:space-between;gap:6px;font-size:11.5px}" +
-        ".cup-loja{font-weight:800;color:#2B1B12;text-decoration:none;display:inline-flex;align-items:center;gap:5px}" +
-        ".cup-loja i{width:8px;height:8px;border-radius:50%;background:var(--cor);box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}" +
-        ".cup-tempo{color:#8A7563;font-weight:600;white-space:nowrap}" +
-        ".cup-cod{display:flex;align-items:stretch;border:1.5px dashed #E2CFAE;border-radius:10px;background:#FFFAF1;overflow:hidden}" +
-        ".cup-cod code{flex:1;min-width:0;padding:8px 4px 8px 9px;font:800 14px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}" +
-        ".cup-copiar{border:0;border-left:1.5px dashed #E2CFAE;background:transparent;padding:0 9px;font:800 12.5px 'Work Sans',Arial,sans-serif;color:#C21A24;cursor:pointer;white-space:nowrap}" +
-        ".cup-copiar:hover{background:#FFF1DE}" +
+        // celular: carrossel com o próximo aparecendo; computador: grade
+        ".cup-faixa{display:flex;align-items:stretch;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 12px;scrollbar-width:none}" +
+        ".cup-faixa::-webkit-scrollbar{display:none}" +
+        "@media (min-width:760px){.cup-secao .cup-faixa{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));overflow:visible}}" +
+        // ticket: desconto em destaque, regra, código, botão da loja
+        ".cup-card{flex:0 0 76%;max-width:280px;scroll-snap-align:start;position:relative;background:#fff;border:1.5px solid #F0DFC4;border-radius:16px;display:flex;flex-direction:column;font-family:'Work Sans',Arial,sans-serif;color:#2B1B12;box-shadow:0 4px 14px rgba(43,27,18,.06);overflow:hidden}" +
+        "@media (min-width:760px){.cup-secao .cup-card{max-width:none}}" +
+        ".cup-topo{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:7px 12px;background:var(--cor);color:var(--txt);font:800 12.5px 'Work Sans',Arial,sans-serif}" +
+        ".cup-topo a{color:inherit;text-decoration:none}" +
+        ".cup-serve{background:#E6F4EA;color:#1F7A44;border-radius:999px;padding:1px 8px;font-size:11px}" +
+        ".cup-corpo{display:flex;flex-direction:column;gap:8px;padding:11px 12px 12px;flex:1}" +
+        ".cup-valor{font:800 26px/1 'Baloo 2',Arial,sans-serif;color:#C21A24;letter-spacing:-.3px}" +
+        ".cup-valor.sem{font-size:19px;color:#2B1B12}" +
+        ".cup-regra{font-size:12.5px;color:#5C4636;line-height:1.35;min-height:17px}" +
+        ".cup-cod{display:flex;align-items:stretch;border:1.5px dashed #E2CFAE;border-radius:10px;background:#FFFAF1;overflow:hidden;margin-top:auto}" +
+        ".cup-cod code{flex:1;min-width:0;padding:8px 4px 8px 10px;font:800 14px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}" +
         ".cup-cod code.longo{font-size:12px}" +
+        ".cup-copiar{border:0;border-left:1.5px dashed #E2CFAE;background:transparent;padding:0 11px;font:800 12.5px 'Work Sans',Arial,sans-serif;color:#C21A24;cursor:pointer;white-space:nowrap}" +
+        ".cup-copiar:hover{background:#FFF1DE}" +
         ".cup-copiar.ok{color:#1F7A44}" +
-        ".cup-info{font-size:12px;color:#5C4636;line-height:1.3;min-height:16px}" +
-        ".cup-info b{font:800 14px 'Baloo 2',Arial,sans-serif;color:#C21A24;margin-right:4px}" +
-        ".cup-resgatar{display:block;text-align:center;border-radius:10px;padding:9px;font:800 13px 'Work Sans',Arial,sans-serif;text-decoration:none;background:var(--cor);color:var(--txt)}" +
+        ".cup-ir{display:block;text-align:center;border-radius:10px;padding:9px 8px;font:800 13px 'Work Sans',Arial,sans-serif;text-decoration:none;background:var(--cor);color:var(--txt);cursor:pointer;border:0;width:100%}" +
+        ".cup-ir:hover{filter:brightness(.95)}" +
+        ".cup-mais{display:block;margin:2px auto 0;border:1.5px solid #F0DFC4;background:#fff;border-radius:999px;padding:7px 16px;font:700 13px 'Work Sans',Arial,sans-serif;color:#5C4636;cursor:pointer}" +
+        ".cup-como{margin:6px 0 0;font:500 12px 'Work Sans',Arial,sans-serif;color:#8A7563;text-align:center}" +
         // na página da oferta
         ".cup-oferta{margin:14px 0 4px;text-align:left}" +
         ".cup-oferta h3{font:800 15px 'Baloo 2',Arial,sans-serif;margin:0 0 6px;color:#2B1B12}" +
         ".cup-oferta .cup-faixa{padding-bottom:6px}" +
-        ".cup-card.serve{border-color:#9ED3B1}" +
-        ".cup-serve{color:#1F7A44;font-weight:800}";
+        ".cup-oferta .cup-card{flex-basis:230px}" +
+        ".cup-card.serve{border-color:#9ED3B1}";
     document.head.appendChild(css);
 
     function esc(t) { var d = document.createElement("div"); d.textContent = t == null ? "" : String(t); return d.innerHTML; }
@@ -82,60 +90,96 @@
         return dados;
     }
 
-    // desconto em poucas palavras — só o que a mensagem informou de verdade
-    function infoTxt(c) {
-        var destaque = c.titulo || (c.tipo === "%" && c.valor ? c.valor + "% OFF" : c.tipo === "R$" && c.valor ? dinheiro(c.valor) + " OFF" : c.tipo === "frete" ? "Frete grátis" : "");
-        var regras = [];
-        if (c.tipo === "%" && c.teto) regras.push("até " + dinheiro(c.teto));
-        if (c.minimo > 1) regras.push("mín. " + dinheiro(c.minimo));
+    function lojaDoLink(link) {
+        var l = String(link || "").toLowerCase();
+        if (/shopee|shp\.ee/.test(l)) return "Shopee";
+        if (/mercadoli[bv]re|meli\.la/.test(l)) return "Mercado Livre";
+        if (/amazon\.|amzn|a\.co\/|link\.amazon/.test(l)) return "Amazon";
+        return "";
+    }
+    // cupom "arrumado" pra mostrar: loja pelo link; desconto absurdo (>= 90%) = sem regra
+    function limpo(c) {
+        var x = {};
+        for (var k in c) x[k] = c[k];
+        x.loja = x.loja || lojaDoLink(x.link);
+        if (x.tipo === "%" && !(x.valor > 0 && x.valor < 90)) { x.tipo = ""; x.valor = 0; }
+        if (x.tipo === "R$" && !(x.valor > 0)) x.tipo = "";
+        return x;
+    }
+    // quanto o cupom vale "no máximo" (pra pôr os melhores primeiro)
+    function peso(c) {
+        if (c.tipo === "R$") return c.valor;
+        if (c.tipo === "%") return c.teto || c.valor * 5;
+        return 0;
+    }
+    function valorTxt(c) {
+        if (c.tipo === "%") return c.valor + "% OFF";
+        if (c.tipo === "R$") return dinheiro(c.valor) + " OFF";
+        if (c.tipo === "frete") return "Frete grátis";
+        return "";
+    }
+    function regraTxt(c) {
+        var r = [];
+        if (c.minimo > 1) r.push("em compras a partir de " + dinheiro(c.minimo));
+        if (c.tipo === "%" && c.teto) r.push("até " + dinheiro(c.teto) + " de desconto");
+        if (!c.tipo) r.push(c.codigo ? "o desconto aparece no carrinho" : "toque e resgate na loja");
         var obs = /^cupom do produto/i.test(c.obs || "") ? "" : (c.obs || "");
-        if (obs) regras.push(obs);
-        return (destaque ? "<b>" + esc(destaque) + "</b>" : "") + esc(regras.join(" · "));
-    }
-    function quandoSome(c) {
-        var ate = Date.parse(c.ate || "");
-        if (!isFinite(ate)) return "";
-        var h = (ate - Date.now()) / 3600000;
-        if (h < 1) return "⏳ últimos minutos";
-        if (h < 24) return "⏳ " + Math.round(h) + "h";
-        return "até " + new Date(ate).toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" });
+        if (obs) r.push(obs);
+        var s = r.join(" · ");
+        return s.charAt(0).toUpperCase() + s.slice(1);
     }
 
-    function copiar(texto, botao) {
-        var ok = function () { var t = botao.textContent; botao.textContent = "Copiado ✓"; botao.classList.add("ok"); setTimeout(function () { botao.textContent = t; botao.classList.remove("ok"); }, 1600); };
-        if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(texto).then(ok, function () { prompt("Copie o cupom:", texto); });
-        else prompt("Copie o cupom:", texto);
+    function copiar(texto, botao, depois) {
+        var ok = function () {
+            if (botao) { var t = botao.textContent; botao.textContent = "Copiado ✓"; botao.classList.add("ok"); setTimeout(function () { botao.textContent = t; botao.classList.remove("ok"); }, 1600); }
+            if (depois) depois();
+        };
+        if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(texto).then(ok, function () { prompt("Copie o cupom:", texto); if (depois) depois(); });
+        else { prompt("Copie o cupom:", texto); if (depois) depois(); }
     }
 
-    function cartao(c, paginas, serve) {
-        var lj = LOJAS[c.loja] || { id: "outra", cor: "#8A7563", texto: "#fff" };
+    function cartao(c0, paginas, serve) {
+        var c = limpo(c0);
+        var lj = LOJAS[c.loja] || { id: "outra", cor: "#5C4636", texto: "#fff" };
         var link = c.link || (paginas && paginas[c.loja]) || "";
-        var info = infoTxt(c);
+        var valor = c.titulo && !valorTxt(c) ? c.titulo : valorTxt(c);
         var nomeLoja = esc(c.loja || "Cupom");
+        var irTxt = c.codigo ? "Copiar e ir " + (c.loja ? "pra " + esc(c.loja) : "pra loja") + " ↗" : "🎟️ Resgatar " + (c.loja ? "na " + esc(c.loja) : "na loja") + " ↗";
         return '<div class="cup-card' + (serve ? " serve" : "") + '" data-loja="' + esc(c.loja || "") + '" style="--cor:' + lj.cor + ";--txt:" + lj.texto + '">' +
-            '<div class="cup-linha1">' +
-            (link ? '<a class="cup-loja" href="' + esc(link) + '" target="_blank" rel="sponsored noopener"><i></i>' + nomeLoja + " ↗</a>" : '<span class="cup-loja"><i></i>' + nomeLoja + "</span>") +
-            '<span class="cup-tempo">' + (serve ? '<span class="cup-serve">✓ serve aqui</span>' : esc(quandoSome(c))) + "</span></div>" +
-            (c.codigo
-                ? '<div class="cup-cod"><code' + (c.codigo.length > 13 ? ' class="longo"' : "") + ' title="' + esc(c.codigo) + '">' + esc(c.codigo) + '</code><button type="button" class="cup-copiar" data-codigo="' + esc(c.codigo) + '">Copiar</button></div>'
-                : (link ? '<a class="cup-resgatar" href="' + esc(link) + '" target="_blank" rel="sponsored noopener">🎟️ Resgatar cupons</a>' : "")) +
-            (info ? '<div class="cup-info">' + info + "</div>" : "") +
-            "</div>";
+            '<div class="cup-topo"><span>' + nomeLoja + "</span>" +
+            (serve ? '<span class="cup-serve">✓ serve aqui</span>' : (c.titulo && valorTxt(c) ? "<span>" + esc(c.titulo) + "</span>" : "")) + "</div>" +
+            '<div class="cup-corpo">' +
+            '<div class="cup-valor' + (valor ? "" : " sem") + '">' + esc(valor || (c.codigo ? "Cupom de desconto" : "Cupons pra resgatar")) + "</div>" +
+            '<div class="cup-regra">' + esc(regraTxt(c)) + "</div>" +
+            (c.codigo ? '<div class="cup-cod"><code' + (c.codigo.length > 13 ? ' class="longo"' : "") + ' title="' + esc(c.codigo) + '">' + esc(c.codigo) + '</code><button type="button" class="cup-copiar" data-codigo="' + esc(c.codigo) + '">Copiar</button></div>' : "") +
+            (link ? '<a class="cup-ir" href="' + esc(link) + '" target="_blank" rel="sponsored noopener"' + (c.codigo ? ' data-codigo="' + esc(c.codigo) + '"' : "") + ">" + irTxt + "</a>" : "") +
+            "</div></div>";
     }
 
     function ligarCopiar(raiz) {
         raiz.querySelectorAll(".cup-copiar").forEach(function (b) {
             b.onclick = function () { copiar(b.getAttribute("data-codigo"), b); };
         });
+        // "Copiar e ir pra loja": copia o código e abre a loja (o link é de afiliado)
+        raiz.querySelectorAll(".cup-ir[data-codigo]").forEach(function (a) {
+            a.addEventListener("click", function () {
+                try { if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(a.getAttribute("data-codigo")); } catch (e) {}
+                var bt = a.parentNode.querySelector(".cup-copiar");
+                if (bt) { bt.textContent = "Copiado ✓"; bt.classList.add("ok"); }
+            });
+        });
     }
 
     // ---------- página inicial ----------
     function naHome(secao) {
         carregar().then(function (d) {
-            var cupons = d.cupons || [];
+            var cupons = (d.cupons || []).map(limpo);
             if (!cupons.length) { secao.hidden = true; return; }
+            // os que valem mais primeiro; os sem regra no fim
+            cupons.sort(function (a, b) { return peso(b) - peso(a); });
             var lojas = [];
             cupons.forEach(function (c) { if (c.loja && lojas.indexOf(c.loja) < 0) lojas.push(c.loja); });
+            var MOSTRA = 8;
             secao.hidden = false;
             secao.className = "cup-secao";
             secao.innerHTML =
@@ -143,13 +187,30 @@
                 (lojas.length > 1 ? '<div class="cup-abas"><button type="button" class="cup-aba ativa" data-l="">Todos</button>' +
                     lojas.map(function (l) { return '<button type="button" class="cup-aba" data-l="' + esc(l) + '">' + esc(l) + "</button>"; }).join("") + "</div>" : "") +
                 "</div>" +
-                '<div class="cup-faixa">' + cupons.map(function (c) { return cartao(c, d.paginas); }).join("") + "</div>";
+                '<p class="cup-sub">Copie o código e cole na hora de pagar. Vale por pouco tempo — a Yang troca todo dia 🐶</p>' +
+                '<div class="cup-faixa">' + cupons.map(function (c, i) { return cartao(c, d.paginas).replace('class="cup-card', 'data-i="' + i + '" class="cup-card'); }).join("") + "</div>" +
+                (cupons.length > MOSTRA ? '<button type="button" class="cup-mais">Ver todos os ' + cupons.length + " cupons</button>" : "");
             ligarCopiar(secao);
+            var todos = false, lojaSel = "";
+            function mostrar() {
+                var n = 0;
+                secao.querySelectorAll(".cup-card").forEach(function (c) {
+                    var ok = !lojaSel || c.getAttribute("data-loja") === lojaSel;
+                    if (ok) n++;
+                    // no computador (grade) mostra 8 até pedir mais; no celular o carrossel mostra todos
+                    c.style.display = ok && (todos || lojaSel || n <= MOSTRA || window.innerWidth < 760) ? "" : "none";
+                });
+                var m = secao.querySelector(".cup-mais");
+                if (m) m.style.display = todos || lojaSel || window.innerWidth < 760 ? "none" : "";
+            }
+            mostrar();
+            var mais = secao.querySelector(".cup-mais");
+            if (mais) mais.onclick = function () { todos = true; mostrar(); };
             secao.querySelectorAll(".cup-aba").forEach(function (a) {
                 a.onclick = function () {
                     secao.querySelectorAll(".cup-aba").forEach(function (x) { x.classList.toggle("ativa", x === a); });
-                    var l = a.getAttribute("data-l");
-                    secao.querySelectorAll(".cup-card").forEach(function (c) { c.style.display = !l || c.getAttribute("data-loja") === l ? "" : "none"; });
+                    lojaSel = a.getAttribute("data-l");
+                    mostrar();
                     secao.querySelector(".cup-faixa").scrollLeft = 0;
                 };
             });
@@ -157,13 +218,6 @@
     }
 
     // ---------- página da oferta: cupons da mesma loja ----------
-    function lojaDoLink(link) {
-        var l = String(link || "").toLowerCase();
-        if (/shopee|shp\.ee/.test(l)) return "Shopee";
-        if (/mercadoli[bv]re|meli\.la/.test(l)) return "Mercado Livre";
-        if (/amazon\.|amzn\.|a\.co\/|link\.amazon/.test(l)) return "Amazon";
-        return "";
-    }
     function naOferta(oferta, depois) {
         if (!oferta || !depois || !depois.parentNode) return;
         if (/^\s*celulares?\s*(,|$)/i.test(String(oferta.categoria || "").normalize("NFD").replace(/[̀-ͯ]/g, ""))) return;
@@ -171,7 +225,7 @@
         if (!loja) return;
         carregar().then(function (d) {
             var preco = numeroBR(oferta.preco);
-            var da = (d.cupons || []).filter(function (c) { return c.loja === loja; });
+            var da = (d.cupons || []).map(limpo).filter(function (c) { return c.loja === loja; });
             if (!da.length) return;
             // os que cabem no preço primeiro (pelas regras escritas; o carrinho é quem decide)
             var serve = function (c) { return (c.tipo === "%" || c.tipo === "R$") && (!c.minimo || preco >= c.minimo); };
