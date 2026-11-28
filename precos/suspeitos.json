@@ -1,19 +1,19 @@
 [
   {
-    "slug": "10-azevinho-artificial-de-natal",
-    "produto": "10 azevinho artificial de natal",
-    "link": "https://s.shopee.com.br/LoUdLc79N",
-    "atual": "R$ 21,99",
-    "lido": "R$ 79,99",
-    "referencia": "R$ 21,99"
-  },
-  {
     "slug": "air-fryer-elgin-facilita-fry-3-5l-1400w",
     "produto": "Air Fryer Elgin Facilita Fry 3,5L 1400W",
     "link": "https://meli.la/2mnyAnA",
     "atual": "R$ 175,03",
     "lido": "18,31",
     "referencia": "R$ 184,00"
+  },
+  {
+    "slug": "air-fryer-forno-25l-french-door-mondial",
+    "produto": "Air Fryer Forno 25L French Door Mondial",
+    "link": "https://meli.la/1A77Qf9",
+    "atual": "R$ 892,71",
+    "lido": "121,49",
+    "referencia": "R$ 975,18"
   },
   {
     "slug": "amazon-alexa-show-5-3a-geracao-cor-preto",
@@ -32,14 +32,6 @@
     "referencia": "R$ 1.822,00"
   },
   {
-    "slug": "apple-ipad-11-a3354-wi-fi-128gb-e-6gb-de-ram-color",
-    "produto": "Apple iPad 11ª geração (A16)",
-    "link": "https://meli.la/1WGpzU1",
-    "atual": "R$ 3.229,00",
-    "lido": "325,74",
-    "referencia": "R$ 3.229,00"
-  },
-  {
     "slug": "apple-ipad-wifi-9th-geracao-cinza-espacial-a2602",
     "produto": "Apple iPad Wifi 9th Geração Cinza Espacial A2602",
     "link": "https://meli.la/1znEs6S",
@@ -48,28 +40,20 @@
     "referencia": "R$ 2.343,00"
   },
   {
-    "slug": "apple-iphone-15-128-gb",
-    "produto": "Apple iPhone 15 (128 GB)",
-    "link": "https://meli.la/1pJ5mp4",
-    "atual": "R$ 3.499,00",
-    "lido": "379,90",
-    "referencia": "R$ 3.779,00"
-  },
-  {
     "slug": "apple-iphone-16-128-gb",
     "produto": "Apple iPhone 16",
     "link": "https://meli.la/1wL976k",
     "atual": "R$ 4.633,00",
-    "lido": "477,70",
+    "lido": "499,90",
     "referencia": "R$ 4.549,00"
   },
   {
-    "slug": "ar-condicionado-12000-btus-lg-dual-inverter-ia",
-    "produto": "Ar Condicionado 12000 Btus LG Dual Inverter IA",
-    "link": "https://meli.la/1U7gE6d",
-    "atual": "R$ 2.599,00",
-    "lido": "301,30",
-    "referencia": "R$ 2.299,00"
+    "slug": "ar-condicionado-12000-btus-hw-inverter-midea-frio",
+    "produto": "Ar Condicionado 12000 Btus Hw Inverter Midea Frio",
+    "link": "https://meli.la/1zgNhmd",
+    "atual": "R$ 1.939,00",
+    "lido": "231,90",
+    "referencia": "R$ 1.991,00"
   },
   {
     "slug": "ar-condicionado-inverter-midea-ecomaster-12000btu",
@@ -78,14 +62,6 @@
     "atual": "R$ 2.000,00",
     "lido": "288,90",
     "referencia": "R$ 2.217,00"
-  },
-  {
-    "slug": "ar-condicionado-split-12000-btus-inverter-lite",
-    "produto": "Ar-Condicionado Split 12000 BTUs Inverter Lite",
-    "link": "https://link.amazon/B0akagErm",
-    "atual": "R$ 2.099,00",
-    "lido": "144,00",
-    "referencia": "R$ 1.977,89"
   },
   {
     "slug": "ar-condicionado-split-elgin-eco-inverter-ii-wifi",
@@ -104,11 +80,19 @@
     "referencia": "R$ 2.121,00"
   },
   {
+    "slug": "ar-condicionado-split-inverter-hitachi-12000-btu",
+    "produto": "Ar Condicionado Split Inverter Hitachi 12000 BTU",
+    "link": "https://meli.la/1NwwdiZ",
+    "atual": "R$ 1.979,00",
+    "lido": "401,04",
+    "referencia": "R$ 1.979,00"
+  },
+  {
     "slug": "ar-condicionado-split-zen-agratto-12000-btus-frio",
     "produto": "Ar Condicionado Split Zen Agratto 12000 Btus Frio",
     "link": "https://meli.la/2DYctmw",
     "atual": "R$ 2.299,00",
-    "lido": "187,90",
+    "lido": "212,90",
     "referencia": "R$ 1.804,00"
   },
   {
@@ -116,7 +100,7 @@
     "produto": "Árvore De Natal Pinheiro 600 Galhos Cheia Premium",
     "link": "https://s.shopee.com.br/20wXDnNYad",
     "atual": "R$ 64,90",
-    "lido": "R$ 189,90",
+    "lido": "R$ 129,90",
     "referencia": "R$ 64,90"
   },
   {
@@ -128,11 +112,19 @@
     "referencia": "R$ 99,89"
   },
   {
+    "slug": "celular-samsung-galaxy-a37-5g-128gb-4",
+    "produto": "Samsung Galaxy A37 5G",
+    "link": "https://meli.la/2yTLtgG",
+    "atual": "R$ 1.577,00",
+    "lido": "171,80",
+    "referencia": "R$ 1.619,00"
+  },
+  {
     "slug": "celular-samsung-galaxy-a57-256gb-cinza-2",
     "produto": "Samsung Galaxy A57 5G",
     "link": "https://meli.la/1MNitr6",
     "atual": "R$ 2.198,00",
-    "lido": "249,90",
+    "lido": "230,58",
     "referencia": "R$ 2.550,00"
   },
   {
@@ -142,14 +134,6 @@
     "atual": "R$ 3.898,00",
     "lido": "547,77",
     "referencia": "R$ 2.518,00"
-  },
-  {
-    "slug": "celular-samsung-galaxy-s25-fe-5g-128gb-2",
-    "produto": "Samsung Galaxy S25 FE 5G",
-    "link": "https://meli.la/1RxB7bM",
-    "atual": "R$ 2.699,00",
-    "lido": "299,90",
-    "referencia": "R$ 2.948,00"
   },
   {
     "slug": "celular-samsung-galaxy-s25-ultra-5g-256gb",
@@ -192,19 +176,11 @@
     "referencia": "R$ 15,99"
   },
   {
-    "slug": "iphone-16e-128-gb-preto-distribuidor-autorizado",
-    "produto": "Apple iPhone 16e",
-    "link": "https://meli.la/13NA7RL",
-    "atual": "R$ 3.098,00",
-    "lido": "325,90",
-    "referencia": "R$ 3.149,00"
-  },
-  {
     "slug": "iphone-17-256-gb-branco-distribuidor-autorizado",
     "produto": "Apple iPhone 17",
     "link": "https://meli.la/1d4TwCk",
     "atual": "R$ 5.566,00",
-    "lido": "585,90",
+    "lido": "669,83",
     "referencia": "R$ 5.593,00"
   },
   {
@@ -220,7 +196,7 @@
     "produto": "iPhone 17 Pro Max 256GB - Laranja-cósmico",
     "link": "https://meli.la/2wS1Uaq",
     "atual": "R$ 9.599,00",
-    "lido": "916,70",
+    "lido": "869,86",
     "referencia": "R$ 8.199,00"
   },
   {
@@ -228,7 +204,7 @@
     "produto": "Apple iPhone 17e",
     "link": "https://meli.la/2JcC7BW",
     "atual": "R$ 4.326,00",
-    "lido": "455,40",
+    "lido": "529,08",
     "referencia": "R$ 4.499,00"
   },
   {
@@ -244,7 +220,7 @@
     "produto": "Apple iPhone 18 Pro Max",
     "link": "https://meli.la/2fXqW9L",
     "atual": "R$ 10.289,00",
-    "lido": "10469,00",
+    "lido": "998,32",
     "referencia": "preco posto a mao em 18/10 23:09"
   },
   {
@@ -262,6 +238,14 @@
     "atual": "R$ 15,00",
     "lido": "R$ 34,90",
     "referencia": "R$ 15,00"
+  },
+  {
+    "slug": "panificadora-19-programas-gallant-600w-preta",
+    "produto": "Panificadora 19 Programas Gallant 600w Preta",
+    "link": "https://meli.la/1fG2LXg",
+    "atual": "R$ 411,35",
+    "lido": "41,87",
+    "referencia": "R$ 422,75"
   },
   {
     "slug": "pisca-strobo-cordao-enfeites-de-natal-decoracao",
@@ -284,7 +268,7 @@
     "produto": "Samsung Galaxy S26 Ultra 5G",
     "link": "https://meli.la/2mkji2E",
     "atual": "R$ 6.498,00",
-    "lido": "699,90",
+    "lido": "694,06",
     "referencia": "R$ 6.749,00"
   },
   {
@@ -292,7 +276,7 @@
     "produto": "Tablet Samsung Galaxy Tab A11+, 128gb",
     "link": "https://meli.la/32m3cG6",
     "atual": "R$ 741,36",
-    "lido": "138,72",
+    "lido": "158,50",
     "referencia": "R$ 495,69"
   }
 ]
